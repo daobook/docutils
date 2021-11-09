@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'docutils-doc'
+project = 'docutils'
 copyright = '2021, xinetzone'
 author = 'xinetzone'
 
@@ -31,6 +31,7 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinxext.rediraffe',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -47,7 +48,7 @@ language = 'zh_CN'
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store',
-                    'sandbox/**', 'docutils/test', 'docutils/docutils',
+                    'docutils/test', 'docutils/docutils',
                     'docutils/tools/**', 'docutils/licenses/**',
                     'requirements.txt', 'prest/**']
 
@@ -71,3 +72,14 @@ source_suffix = {
 
 locale_dirs = ['locales/']  # path is example but recommended.
 gettext_compact = False  # optional.
+
+rediraffe_redirects = {
+    "web/README": "docutils/README",
+    "web/docs/index": "docutils/docs/index",
+    "web/docs/user/mailing-lists": "docutils/docs/user/mailing-lists",
+    "web/BUGS": "docutils/BUGS",
+    "web/docs/dev/todo": "docutils/docs/dev/todo",
+    "web/RELEASE-NOTES": "docutils/RELEASE-NOTES",
+    "web/docs/dev/repository": "docutils/docs/dev/repository",
+    "web/sandbox/README": "docutils/sandbox/README",
+}

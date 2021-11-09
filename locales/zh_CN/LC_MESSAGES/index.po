@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../index.rst:13
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../index.rst:19
 msgid "user"
@@ -60,7 +60,7 @@ msgstr ""
 
 #: ../../index.rst:8
 msgid "docutils' documentation!"
-msgstr ""
+msgstr "docutils 文档"
 
 #: ../../index.rst:11
 msgid "Documentation"
@@ -68,7 +68,7 @@ msgstr ""
 
 #: ../../index.rst:87
 msgid "Indices and tables"
-msgstr ""
+msgstr "索引和表格"
 
 #: ../../index.rst:89
 msgid ":ref:`genindex`"

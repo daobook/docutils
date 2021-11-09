@@ -7,13 +7,12 @@
 docutils' documentation!
 ========================================
 
-Documentation
-==============
-
 .. toctree::
    :maxdepth: 1
    :caption: Overview
 
+   web/index
+   web/mirror/setext
    docutils/docs/index
 
 .. toctree::
@@ -57,16 +56,7 @@ Documentation
    :glob:
 
    docutils/docs/ref/*
-
-.. toctree::
-   :maxdepth: 1
-   :caption: web
-
-   web/index
-   web/rst
-   web/mirror/setext
    
-
 .. toctree::
    :maxdepth: 1
    :caption: docutils other
@@ -79,9 +69,18 @@ Documentation
    :caption: reStructuredText
    :glob:
 
+   web/rst
    docutils/docs/user/rst/**
    docutils/docs/dev/rst/**
    docutils/docs/ref/rst/**
+
+.. toctree::
+   :maxdepth: 1
+   :caption: sandbox
+   :glob:
+
+   sandbox/README
+   sandbox/**/*
 
 Indices and tables
 ==================
