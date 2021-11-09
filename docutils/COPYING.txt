@@ -68,9 +68,9 @@ Public Domain Dedication`. [#]_)
 Exceptions
 ==========
 
-The exceptions to the `Public Domain Dedication`_ above are:
+The exceptions to the `Public Domain Dedication`_ above are::
 
-* docutils/parsers/recommonmark_wrapper.py
+  docutils/parsers/recommonmark_wrapper.py
   docutils/utils/error_reporting.py
   docutils/utils/math/__init__.py
   docutils/utils/math/latex2mathml.py
