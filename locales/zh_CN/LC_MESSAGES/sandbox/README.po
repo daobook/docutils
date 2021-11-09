@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 16:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../sandbox/README.txt:5
+msgid "README: The Sandbox"
+msgstr "Sandbox 自述"
+
+#: ../../sandbox/README.txt:7
+msgid ""
+"The Sandbox_ is a place to play around, to try out and share ideas. The "
+"`sandbox/`_ directory is a part of the Subversion repository but it isn't"
+" distributed as part of Docutils_ releases."
+msgstr ""
+"Sandbox_ 是一个可以体验、尝试和分享想法的地方。"
+"`sandbox/`_ 目录是 Subversion 存储库的一部分，"
+"但它不是作为 Docutils_ 发行版的一部分分发的。"
+
+#: ../../sandbox/README.txt:11
+msgid "It's OK to make a mess in the Sandbox! But please, play nice."
+msgstr ""
+"在 Sandbox 中搞得一团糟也没关系！但是，请友好一点。"
+
+#: ../../sandbox/README.txt:13
+msgid ""
+"A project-specific subdirectory should be created for each new project. "
+"Any developer who wants to play in the sandbox may create their own "
+"subdirectory (suggested name: SourceForge ID, or given name + family "
+"initial), but project directories are recommended over personal "
+"directories, which discourage collaboration."
+msgstr ""
+"应该为每个新项目创建一个特定于项目的子目录。"
+"任何想要使用沙箱的开发人员都可以创建他们自己的子目录"
+"（建议的名称：SourceForge ID，或者给定名称+family初始化），"
+"但是项目目录比个人目录更可取，这不利于协作。"
+
+
+#: ../../sandbox/README.txt:19
+msgid ""
+"For more information, please see the `Docutils Project Policies`_. The "
+"Sandbox is mirrored at the Docutils web site, so the `Docutils Web Site`_"
+" documentation applies as well."
+msgstr ""
+"有关更多信息，请参阅 `Docutils Project Policies`_。"
+"沙盒镜像在 Docutils 网站上，"
+"因此 `Docutils Web Site`_ 文档同样适用"
+
+#: ../../sandbox/README.txt:35
+msgid "Sandbox Projects"
+msgstr "Sandbox 项目"
+
+#: ../../sandbox/README.txt:37
+msgid "See the `sandbox/`_ directory for a complete list."
+msgstr "完整的列表见 `sandbox/`_ 目录。"
+
+#: ../../sandbox/README.txt:39
+msgid "Some Sandbox projects, are also sorted into the `Docutils Link List`_."
+msgstr "一些沙盒项目，也被分到了 `Docutils 链接列表`_."
+
