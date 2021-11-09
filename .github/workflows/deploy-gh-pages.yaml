@@ -14,10 +14,10 @@ jobs:
         with:
           fetch-depth: 0  # fetch all history so that last modified date-times are accurate
 
-      - name: 🐍 Set up Python 3.9
+      - name: 🐍 Set up Python 3.10
         uses: actions/setup-python@v2
         with:
-          python-version: "3.9"
+          python-version: "3.10"
 
       - name: 🧳 Cache pip
         uses: actions/cache@v2
@@ -53,9 +53,11 @@ jobs:
       - name: 🔥 Clean up files
         run: rm -r _build/doctrees/
 
-      - name: 🚀 Deploy to GitHub pages
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+    - name: 🚀 Deploy to GitHub pages
+        uses: peaceiris/actions-gh-pages@v3.6.1
         with:
-          branch: gh-pages # The branch to deploy to.
-          folder: _build/html # Synchronise with build.py -> build_directory
-          single-commit: true # Delete existing files
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _build/html
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+
