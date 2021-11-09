@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../index.rst:13
+msgid "Overview"
+msgstr ""
+
+#: ../../index.rst:19
+msgid "user"
+msgstr ""
+
+#: ../../index.rst:26
+msgid "api"
+msgstr ""
+
+#: ../../index.rst:33
+msgid "dev"
+msgstr ""
+
+#: ../../index.rst:40
+msgid "howto"
+msgstr ""
+
+#: ../../index.rst:47
+msgid "peps"
+msgstr ""
+
+#: ../../index.rst:54
+msgid "ref"
+msgstr ""
+
+#: ../../index.rst:61
+msgid "web"
+msgstr ""
+
+#: ../../index.rst:70
+msgid "docutils other"
+msgstr ""
+
+#: ../../index.rst:77
+msgid "reStructuredText"
+msgstr ""
+
+#: ../../index.rst:8
+msgid "docutils' documentation!"
+msgstr ""
+
+#: ../../index.rst:11
+msgid "Documentation"
+msgstr ""
+
+#: ../../index.rst:87
+msgid "Indices and tables"
+msgstr ""
+
+#: ../../index.rst:89
+msgid ":ref:`genindex`"
+msgstr ""
+
+#: ../../index.rst:90
+msgid ":ref:`modindex`"
+msgstr ""
+
+#: ../../index.rst:91
+msgid ":ref:`search`"
+msgstr ""
+

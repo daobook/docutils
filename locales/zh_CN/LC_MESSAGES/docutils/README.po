@@ -1,0 +1,600 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/README.txt:3
+msgid "README: Docutils 0.18.1b.dev"
+msgstr ""
+
+#: ../../docutils/README.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/README.txt:5
+msgid "David Goodger"
+msgstr ""
+
+#: ../../docutils/README.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/README.txt:6
+msgid "goodger@python.org"
+msgstr ""
+
+#: ../../docutils/README.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/README.txt:7
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/README.txt
+msgid "Web site"
+msgstr ""
+
+#: ../../docutils/README.txt:8
+msgid "http://docutils.sourceforge.net/"
+msgstr ""
+
+#: ../../docutils/README.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/README.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/README.txt:12
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/README.txt:15
+msgid "Quick-Start"
+msgstr ""
+
+#: ../../docutils/README.txt:17
+msgid "This is for those who want to get up & running quickly."
+msgstr ""
+
+#: ../../docutils/README.txt:19
+msgid "Docutils requires Python, available from http://www.python.org/."
+msgstr ""
+
+#: ../../docutils/README.txt:22
+msgid "See Requirements_ below for details."
+msgstr ""
+
+#: ../../docutils/README.txt:24
+msgid "Install the latest stable release from PyPi with pip_::"
+msgstr ""
+
+#: ../../docutils/README.txt:28
+msgid ""
+"To install a pre-relase, append the option ``--pre``. To install a "
+"`development version`_, follow the instructions in section "
+"`Installation`_ below."
+msgstr ""
+
+#: ../../docutils/README.txt:32
+msgid ""
+"Use the `front-end scripts`_ to convert reStructuredText documents. Try "
+"for example::"
+msgstr ""
+
+#: ../../docutils/README.txt:38
+msgid "See Usage_ below for details."
+msgstr ""
+
+#: ../../docutils/README.txt:44
+msgid "Purpose"
+msgstr ""
+
+#: ../../docutils/README.txt:46
+msgid ""
+"The purpose of the Docutils project is to create a set of tools for "
+"processing plaintext documentation into useful formats, such as HTML, "
+"LaTeX, troff (man pages), OpenOffice, and native XML.  Support for the "
+"following sources has been implemented:"
+msgstr ""
+
+#: ../../docutils/README.txt:51
+msgid "Standalone files."
+msgstr ""
+
+#: ../../docutils/README.txt:53
+msgid "`PEPs (Python Enhancement Proposals)`_."
+msgstr ""
+
+#: ../../docutils/README.txt:55
+msgid "Support for the following sources is planned:"
+msgstr ""
+
+#: ../../docutils/README.txt:57
+msgid ""
+"Inline documentation from Python modules and packages, extracted with "
+"namespace context."
+msgstr ""
+
+#: ../../docutils/README.txt:60
+msgid "Email (RFC-822 headers, quoted excerpts, signatures, MIME parts)."
+msgstr ""
+
+#: ../../docutils/README.txt:62
+msgid "Wikis, with global reference lookups of \"wiki links\"."
+msgstr ""
+
+#: ../../docutils/README.txt:64
+msgid "Compound documents, such as multiple chapter files merged into a book."
+msgstr ""
+
+#: ../../docutils/README.txt:67
+msgid "And others as discovered."
+msgstr ""
+
+#: ../../docutils/README.txt:74
+msgid "Requirements"
+msgstr ""
+
+#: ../../docutils/README.txt:76
+msgid "To run the code, Python_ must be installed."
+msgstr ""
+
+#: ../../docutils/README.txt:78
+msgid "Docutils 0.16 and later supports Python 2.7 and 3.5+ natively.  [#2to3]_"
+msgstr ""
+
+#: ../../docutils/README.txt:79
+msgid "Docutils 0.14 dropped Python 2.4, 2.5, 3.1 and 3.2 support."
+msgstr ""
+
+#: ../../docutils/README.txt:80
+msgid "Docutils 0.10 dropped Python 2.3 support."
+msgstr ""
+
+#: ../../docutils/README.txt:81
+msgid "From version 0.6, Docutils is compatible with Python 3. [#2to3]_"
+msgstr ""
+
+#: ../../docutils/README.txt:82
+msgid "For Docutils 0.5, Python 2.2.1+ is required."
+msgstr ""
+
+#: ../../docutils/README.txt:83
+msgid "Up to Docutils 0.4, Python 2.1 is required."
+msgstr ""
+
+#: ../../docutils/README.txt:85
+msgid ""
+"Up to version 0.15, the Docutils codebase was translated \"on-demand\" "
+"using the 2to3 tool."
+msgstr ""
+
+#: ../../docutils/README.txt:89
+msgid "Recommendations"
+msgstr ""
+
+#: ../../docutils/README.txt:91
+msgid ""
+"Docutils uses the following packages for enhanced functionality, if they "
+"are installed:"
+msgstr ""
+
+#: ../../docutils/README.txt:94
+msgid "Installation_ is usually done with pip_ or setuptools_."
+msgstr ""
+
+#: ../../docutils/README.txt:96
+msgid ""
+"The `Python Imaging Library`_, or PIL, is used for some image "
+"manipulation operations."
+msgstr ""
+
+#: ../../docutils/README.txt:99
+msgid ""
+"The `Pygments`_ package provides syntax highlight of \"code\" directives "
+"and roles."
+msgstr ""
+
+#: ../../docutils/README.txt:102
+msgid "The `recommonmark`_ parser is used to parse input in Markdown format."
+msgstr ""
+
+#: ../../docutils/README.txt:104
+msgid ""
+"The `Docutils Link List <docs/user/links.html>`__ records projects that "
+"users of Docutils and reStructuredText may find useful."
+msgstr ""
+
+#: ../../docutils/README.txt:115
+msgid "Development version"
+msgstr ""
+
+#: ../../docutils/README.txt:117
+msgid ""
+"While we are trying to follow a \"release early & often\" policy, "
+"features are added frequently.  Since the code in the repository_ is "
+"usually in a bug-free state, we recommend using a current snapshot or a "
+"working copy."
+msgstr ""
+
+#: ../../docutils/README.txt:122
+msgid ""
+"To get a _`snapshot`, go to the code page and click the download snapshot"
+" button:"
+msgstr ""
+
+#: ../../docutils/README.txt:125
+msgid ""
+"Docutils code, documentation, front-end tools, and tests: "
+"https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/"
+msgstr ""
+
+#: ../../docutils/README.txt:128
+msgid ""
+"Sandbox (experimental, contributed code): "
+"https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/sandbox/"
+msgstr ""
+
+#: ../../docutils/README.txt:131
+msgid ""
+"To keep up to date on the latest developments, download fresh copies of "
+"the snapshots regularly or use a `working copy of the Docutils code "
+"repository`__."
+msgstr ""
+
+#: ../../docutils/README.txt:134
+msgid "Continue with the `Installation`_ instructions below."
+msgstr ""
+
+#: ../../docutils/README.txt:140
+msgid "Installation"
+msgstr ""
+
+#: ../../docutils/README.txt:142
+msgid "Steps to install Docutils from source:"
+msgstr ""
+
+#: ../../docutils/README.txt:144
+msgid "Go to the directory containing the file ``setup.py``."
+msgstr ""
+
+#: ../../docutils/README.txt:146
+msgid ""
+"A snapshot_ must be unpacked in a temporary directory (**not** directly "
+"in Python's ``site-packages``) first."
+msgstr ""
+
+#: ../../docutils/README.txt:149
+msgid ""
+"Run ``setup.py install``. [#setup-requires-setuptools]_ On Windows "
+"systems it may be sufficient to double-click ``install.py``."
+msgstr ""
+
+#: ../../docutils/README.txt:152
+msgid ""
+"``setup.py`` requires the `setuptools`_ package. For a manual install see"
+" the options in `Setting up for Docutils development`__."
+msgstr ""
+
+#: ../../docutils/README.txt:158
+msgid "Optional steps:"
+msgstr ""
+
+#: ../../docutils/README.txt:160
+msgid "`running the test suite`_"
+msgstr ""
+
+#: ../../docutils/README.txt:162
+msgid "`converting the documentation`_"
+msgstr ""
+
+#: ../../docutils/README.txt:164
+msgid "OS-specific installation instructions follow."
+msgstr ""
+
+#: ../../docutils/README.txt:168
+msgid "GNU/Linux, BSDs, Unix, Mac OS X, etc."
+msgstr ""
+
+#: ../../docutils/README.txt:170
+msgid "Open a shell."
+msgstr ""
+
+#: ../../docutils/README.txt:172
+msgid "Go to the directory containing ``setup.py``::"
+msgstr ""
+
+#: ../../docutils/README.txt:176
+msgid ""
+"Install the package (you may need root permissions to complete this "
+"step)::"
+msgstr ""
+
+#: ../../docutils/README.txt:183
+msgid ""
+"If the python executable isn't on your path, you'll have to specify the "
+"complete path, such as ``/usr/local/bin/python``."
+msgstr ""
+
+#: ../../docutils/README.txt:186
+msgid ""
+"To install for a specific Python version, use this version in the setup "
+"call, e.g. ::"
+msgstr ""
+
+#: ../../docutils/README.txt:191
+msgid ""
+"To install for different Python versions, repeat step 3 for every "
+"required version. The last installed version will be used in the `shebang"
+" line`_ of the ``rst2*.py`` wrapper scripts."
+msgstr ""
+
+#: ../../docutils/README.txt:198
+msgid "Windows"
+msgstr ""
+
+#: ../../docutils/README.txt:200
+msgid ""
+"Just double-click ``install.py``.  If this doesn't work, try the "
+"following:"
+msgstr ""
+
+#: ../../docutils/README.txt:203
+msgid ""
+"Open a DOS Box (Command Shell, MS-DOS Prompt, or whatever they're calling"
+" it these days)."
+msgstr ""
+
+#: ../../docutils/README.txt:206
+msgid "Go to the directory created by expanding the archive::"
+msgstr ""
+
+#: ../../docutils/README.txt:210
+msgid "Install the package::"
+msgstr ""
+
+#: ../../docutils/README.txt:214
+msgid ""
+"To install for a specific python version, specify the Python executable "
+"for this version."
+msgstr ""
+
+#: ../../docutils/README.txt:217
+msgid ""
+"To install for different Python versions, repeat step 3 for every "
+"required version."
+msgstr ""
+
+#: ../../docutils/README.txt:222
+msgid "Usage"
+msgstr ""
+
+#: ../../docutils/README.txt:224
+msgid ""
+"There are many front-end tools in the unpacked \"tools\" subdirectory. "
+"Installation under Unix places copies in the PATH. You may want to begin "
+"with the \"rst2html.py\" front-end tool.  Most tools take up to two "
+"arguments, the source path and destination path, with STDIN and STDOUT "
+"being the defaults.  Use the ``--help`` option to the front-end tools for"
+" details on options and arguments.  See `Docutils Front-End Tools`_ for "
+"full documentation."
+msgstr ""
+
+#: ../../docutils/README.txt:232
+msgid ""
+"The package modules are continually growing and evolving.  The "
+"``docutils.statemachine`` module is usable independently.  It contains "
+"extensive inline documentation (in reStructuredText format of course)."
+msgstr ""
+
+#: ../../docutils/README.txt:236
+msgid "Contributions are welcome!"
+msgstr ""
+
+#: ../../docutils/README.txt:242
+msgid "Project Files & Directories"
+msgstr ""
+
+#: ../../docutils/README.txt:244
+msgid "README.txt: You're reading it."
+msgstr ""
+
+#: ../../docutils/README.txt:246
+msgid ""
+"COPYING.txt: Public Domain Dedication and copyright details for non-"
+"public-domain files (most are PD)."
+msgstr ""
+
+#: ../../docutils/README.txt:249
+msgid "FAQ.txt: Frequently Asked Questions (with answers!)."
+msgstr ""
+
+#: ../../docutils/README.txt:251
+msgid "RELEASE-NOTES.txt: Summary of the major changes in recent releases."
+msgstr ""
+
+#: ../../docutils/README.txt:253
+msgid ""
+"HISTORY.txt: A detailed change log, for the current and all previous "
+"project releases."
+msgstr ""
+
+#: ../../docutils/README.txt:256
+msgid "BUGS.txt: Known bugs, and how to report a bug."
+msgstr ""
+
+#: ../../docutils/README.txt:258
+msgid "THANKS.txt: List of contributors."
+msgstr ""
+
+#: ../../docutils/README.txt:260
+msgid "setup.py: Installation script.  See \"Installation\" below."
+msgstr ""
+
+#: ../../docutils/README.txt:262
+msgid ""
+"install.py: Quick & dirty installation script.  Just run it.  For any "
+"kind of customization or help though, setup.py must be used."
+msgstr ""
+
+#: ../../docutils/README.txt:265
+msgid "docutils: The project source directory, installed as a Python package."
+msgstr ""
+
+#: ../../docutils/README.txt:268
+msgid ""
+"docs: The project documentation directory.  Read ``docs/index.txt`` for "
+"an overview."
+msgstr ""
+
+#: ../../docutils/README.txt:271
+msgid ""
+"docs/user: The project user documentation directory.  Contains the "
+"following documents, among others:"
+msgstr ""
+
+#: ../../docutils/README.txt:274
+msgid "docs/user/tools.txt: Docutils Front-End Tools"
+msgstr ""
+
+#: ../../docutils/README.txt:275
+msgid "docs/user/latex.txt: Docutils LaTeX Writer"
+msgstr ""
+
+#: ../../docutils/README.txt:276
+msgid "docs/user/rst/quickstart.txt: A ReStructuredText Primer"
+msgstr ""
+
+#: ../../docutils/README.txt:277
+msgid "docs/user/rst/quickref.html: Quick reStructuredText (HTML only)"
+msgstr ""
+
+#: ../../docutils/README.txt:279
+msgid ""
+"docs/ref: The project reference directory. "
+"``docs/ref/rst/restructuredtext.txt`` is the reStructuredText reference."
+msgstr ""
+
+#: ../../docutils/README.txt:283
+msgid ""
+"licenses: Directory containing copies of license files for non-public-"
+"domain files."
+msgstr ""
+
+#: ../../docutils/README.txt:286
+msgid ""
+"tools: Directory for Docutils front-end tools.  See "
+"``docs/user/tools.txt`` for documentation."
+msgstr ""
+
+#: ../../docutils/README.txt:289
+msgid ""
+"test: Unit tests.  Not required to use the software, but very useful if "
+"you're planning to modify it.  See `Running the Test Suite`_ below."
+msgstr ""
+
+#: ../../docutils/README.txt:295
+msgid "Converting the documentation"
+msgstr ""
+
+#: ../../docutils/README.txt:297
+msgid ""
+"After unpacking and installing the Docutils package, the following shell "
+"commands will generate HTML for all included documentation::"
+msgstr ""
+
+#: ../../docutils/README.txt:303
+msgid "On Windows systems, type::"
+msgstr ""
+
+#: ../../docutils/README.txt:308
+msgid ""
+"The final directory name of the ``<archive_directory_path>`` is "
+"\"docutils\" for snapshots.  For official releases, the directory may be "
+"called \"docutils-X.Y.Z\", where \"X.Y.Z\" is the release version. "
+"Alternatively::"
+msgstr ""
+
+#: ../../docutils/README.txt:317
+msgid ""
+"Some files may generate system messages (warnings and errors).  The "
+"``docs/user/rst/demo.txt`` file (under the archive directory) contains "
+"five intentional errors.  (They test the error reporting mechanism!)"
+msgstr ""
+
+#: ../../docutils/README.txt:323
+msgid "Running the Test Suite"
+msgstr ""
+
+#: ../../docutils/README.txt:325
+msgid ""
+"The test suite is documented in `Docutils Testing`_ "
+"(docs/dev/testing.txt)."
+msgstr ""
+
+#: ../../docutils/README.txt:327
+msgid ""
+"To run the entire test suite, open a shell and use the following "
+"commands::"
+msgstr ""
+
+#: ../../docutils/README.txt:333
+msgid "Under Windows, type::"
+msgstr ""
+
+#: ../../docutils/README.txt:339
+msgid ""
+"You should see a long line of periods, one for each test, and then a "
+"summary like this::"
+msgstr ""
+
+#: ../../docutils/README.txt:347
+msgid ""
+"The number of tests will grow over time, and the times reported will "
+"depend on the computer running the tests.  The difference between the two"
+" times represents the time required to set up the tests (import modules, "
+"create data structures, etc.)."
+msgstr ""
+
+#: ../../docutils/README.txt:352
+msgid ""
+"If any of the tests fail, please `open a bug report`_ or `send an email`_"
+" (see `Bugs <BUGS.html>`_). Please include all relevant output, "
+"information about your operating system, Python version, and Docutils "
+"version.  To see the Docutils version, use one of the ``rst2*`` front "
+"ends or ``tools/quicktest.py`` with the ``--version`` option, e.g.::"
+msgstr ""
+
+#: ../../docutils/README.txt:362
+msgid "Windows users type these commands::"
+msgstr ""
+
+#: ../../docutils/README.txt:377
+msgid "Getting Help"
+msgstr ""
+
+#: ../../docutils/README.txt:379
+msgid ""
+"If you have questions or need assistance with Docutils or "
+"reStructuredText, please post a message to the Docutils-users_ mailing "
+"list."
+msgstr ""
+

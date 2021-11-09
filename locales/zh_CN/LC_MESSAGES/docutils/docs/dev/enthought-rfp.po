@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:3
+msgid "Enthought API Documentation Tool"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:6
+msgid "Request for Proposals"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt
+#: ../../docutils/docs/dev/enthought-rfp.txt:122
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:8
+msgid "Janet Swisher, Senior Technical Writer"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt
+msgid "Organization"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:9
+msgid "`Enthought, Inc. <http://www.enthought.com>`_"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt
+#: ../../docutils/docs/dev/enthought-rfp.txt:123
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:10
+msgid "2004 by Enthought, Inc."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt
+#: ../../docutils/docs/dev/enthought-rfp.txt:143
+msgid "License"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:11
+msgid "`Enthought License`_ (BSD Style)"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:15
+msgid ""
+"The following is excerpted from the full RFP, and is published here with "
+"permission from `Enthought, Inc.`_  See the `Plan for Enthought API "
+"Documentation Tool`__."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:20
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:26
+msgid "Requirements"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:28
+msgid "The documentation tool will address the following high-level goals:"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:32
+msgid "Documentation Extraction"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:34
+msgid ""
+"Documentation will be generated directly from Python source code, drawing"
+" from the code structure, docstrings, and possibly other comments."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:38
+msgid ""
+"The tool will extract logical constructs as appropriate, minimizing the "
+"need for comments that are redundant with the code structure. The output "
+"should reflect both documented and undocumented elements."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:45
+msgid "Source Format"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:47
+msgid ""
+"The docstrings will be formatted in as terse syntax as possible. Required"
+" tags, syntax, and white space should be minimized."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:50
+msgid ""
+"The tool must support the use of Traits.  Special comment syntax for "
+"Traits may be necessary.  Information about the Traits package is "
+"available at http://code.enthought.com/traits/.  In the following "
+"example, each trait definition is prefaced by a plain comment::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:70
+msgid ""
+"Support for ReStructuredText (ReST) format is desirable, because much of "
+"the existing docstrings uses ReST.  However, the complete ReST "
+"specification need not be supported, if a subset can achieve the project "
+"goals.  If the tool does not support ReST, the contractor should also "
+"provide a tool or path to convert existing docstrings."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:79
+msgid "Output Format"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:81
+msgid "Documentation will be output as a navigable suite of HTML files."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:84
+msgid ""
+"The style of the HTML files will be customizable by a cascading style "
+"sheet and/or a customizable template."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:87
+msgid ""
+"Page elements such as headers and footer should be customizable, to "
+"support differing requirements from one documentation project to the "
+"next."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:93
+msgid "Output Structure and Navigation"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:95
+msgid ""
+"The navigation scheme for the HTML files should not rely on frames, and "
+"should harmonize with conversion to Microsoft HTML Help (.chm) format."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:99
+msgid ""
+"The output should be structured to make navigable the architecture of the"
+" Python code.  Packages, modules, classes, traits, and functions should "
+"be presented in clear, logical hierarchies. Diagrams or trees for "
+"inheritance, collaboration, sub-packaging, etc. are desirable but not "
+"required."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:105
+msgid ""
+"The output must include indexes that provide a comprehensive view of all "
+"packages, modules, and classes.  These indexes will provide readers with "
+"a clear and exhaustive view of the code base.  These indexes should be "
+"presented in a way that is easily accessible and allows easy navigation."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:111
+msgid ""
+"Cross-references to other documented elements will be used throughout the"
+" documentation, to enable the reader to move quickly relevant "
+"information.  For example, where type information for an element is "
+"available, the type definition should be cross-referenced."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:117
+msgid ""
+"The HTML suite should provide consistent navigation back to the home "
+"page, which will include the following information:"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:120
+msgid "Bibliographic information"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:124
+msgid "Release date"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:125
+msgid "Version number"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:127
+msgid "Abstract"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:129
+msgid "References"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:131
+msgid "Links to related internal docs (i.e., other docs for the same product)"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:134
+msgid ""
+"Links to related external docs (e.g., supporting development docs, Python"
+" support docs, docs for included packages)"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:137
+msgid ""
+"It should be possible to specify similar information at the top level of "
+"each package, so that packages can be included as appropriate for a given"
+" application."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-rfp.txt:145
+msgid ""
+"Enthought intends to release the software under an open-source (\"BSD-"
+"style\") license."
+msgstr ""
+

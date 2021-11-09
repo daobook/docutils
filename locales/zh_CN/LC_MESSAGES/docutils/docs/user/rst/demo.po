@@ -1,0 +1,1054 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/user/rst/demo.txt:6
+msgid "reStructuredText Demonstration"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:13
+msgid "Examples of Syntax Constructs"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:17
+msgid "David Goodger"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "Address"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:18
+msgid "123 Example Street Example, EX  Canada A1B 2C3"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:21
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "Authors"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:22
+msgid "Me; Myself; I"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "organization"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:23
+msgid "humankind"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "date"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:24
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "status"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:25
+msgid "This is a \"work in progress\""
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "revision"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:26
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "version"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:27
+msgid "1"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "copyright"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:28
+msgid ""
+"This document has been placed in the public domain. You may do with it as"
+" you wish. You may copy, modify, redistribute, reattribute, sell, buy, "
+"rent, lease, destroy, or improve it, quote it at length, excerpt, "
+"incorporate, collate, fold, staple, or mutilate it, or do anything else "
+"to it that your or anyone else's heart desires."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "field name"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:35
+msgid "This is a generic bibliographic field."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "field name 2"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:37
+msgid "Generic bibliographic fields may contain multiple body elements."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:39
+msgid "Like this."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "Dedication"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:43
+msgid "For Docutils users & co-developers."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "abstract"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:47
+msgid ""
+"This document is a demonstration of the reStructuredText markup language,"
+" containing examples of all basic reStructuredText constructs and many "
+"advanced constructs."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:51
+msgid "reStructuredText, demonstration, demo, parser"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:51
+msgid ""
+"A demonstration of the reStructuredText markup language, containing "
+"examples of all basic constructs and many advanced constructs."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:56
+msgid "Table of Contents"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:62
+msgid "Structural Elements"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:65
+msgid "Section Title"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:67
+msgid "That's it, the text just above this line."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:70
+msgid "Transitions"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:72
+msgid "Here's a transition:"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:76
+msgid "It divides the section."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:79
+msgid "Body Elements"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:82
+msgid "Paragraphs"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:84
+msgid "A paragraph."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:87
+msgid "Inline Markup"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:89
+msgid ""
+"Paragraphs contain text and may contain inline markup: *emphasis*, "
+"**strong emphasis**, ``inline literals``, standalone hyperlinks "
+"(http://www.python.org), external hyperlinks (Python_), internal cross-"
+"references (example_), external hyperlinks with embedded URIs (`Python "
+"web site <http://www.python.org>`__), footnote references (manually "
+"numbered [1]_, anonymous auto-numbered [#]_, labeled auto-numbered "
+"[#label]_, or symbolic [*]_), citation references ([CIT2002]_), "
+"substitution references (|example|), and _`inline hyperlink targets` (see"
+" Targets_ below for a reference back to here). Character-level inline "
+"markup is also possible (although exceedingly ugly!) in *re*\\ "
+"``Structured``\\ *Text*.  Problems are indicated by |problematic| text "
+"(generated by processing errors; this one is intentional)."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:540
+msgid "EXAMPLE"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:103
+msgid ""
+"The default role for interpreted text is `Title Reference`.  Here are "
+"some explicit interpreted text roles: a PEP reference (:PEP:`287`); an "
+"RFC reference (:RFC:`2822`); a :sub:`subscript`; a :sup:`superscript`; "
+"and explicit roles for :emphasis:`standard` :strong:`inline` "
+":literal:`markup`."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:111
+msgid ""
+"Let's test wrapping and whitespace significance in inline literals: "
+"``This is an example of --inline-literal --text, --including some-- "
+"strangely--hyphenated-words.  Adjust-the-width-of-your-browser-window to "
+"see how the text is wrapped.  -- ---- --------  Now note    the spacing"
+"    between the    words of    this sentence    (words should    be "
+"grouped    in pairs).``"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:118
+msgid ""
+"If the ``--pep-references`` option was supplied, there should be a live "
+"link to PEP 258 here."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:122
+msgid "Bullet Lists"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:124
+msgid "A bullet list"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:126
+#: ../../docutils/docs/user/rst/demo.txt:133
+msgid "Nested bullet list."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:127
+#: ../../docutils/docs/user/rst/demo.txt:134
+msgid "Nested item 2."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:129
+#: ../../docutils/docs/user/rst/demo.txt:137
+msgid "Item 2."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:131
+msgid "Paragraph 2 of item 2."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:136
+msgid "Third level."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:139
+msgid "Nested item 3."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:142
+msgid "Enumerated Lists"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:144
+msgid "Arabic numerals."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:146
+msgid "lower alpha)"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:148
+msgid "(lower roman)"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:150
+msgid "upper alpha."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:152
+msgid "upper roman)"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:154
+msgid "Lists that don't start at 1:"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:156
+msgid "Three"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:158
+msgid "Four"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:160
+msgid "C"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:162
+msgid "D"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:164
+msgid "iii"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:166
+msgid "iv"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:168
+msgid "List items may also be auto-enumerated."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:171
+msgid "Definition Lists"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:173
+#: ../../docutils/docs/user/rst/demo.txt:177
+#: ../../docutils/docs/user/rst/demo.txt:180
+msgid "Term"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:174
+#: ../../docutils/docs/user/rst/demo.txt:180
+msgid "Definition"
+msgstr ""
+
+msgid "classifier"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:176
+msgid "Definition paragraph 1."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:178
+msgid "Definition paragraph 2."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:183
+msgid "Field Lists"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "what"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:185
+msgid ""
+"Field lists map field names to field bodies, like database records.  They"
+" are often part of an extension syntax.  They are an unambiguous variant "
+"of RFC 2822 fields."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "how arg1 arg2"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:191
+msgid "The field marker is a colon, the field name, and a colon."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:193
+msgid ""
+"The field body may contain one or more body elements, indented relative "
+"to the field marker."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:197
+msgid "Option Lists"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:199
+msgid "For listing command-line options:"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:201
+msgid "command-line option \"a\""
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:202
+msgid "options can have arguments and long descriptions"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:204
+msgid "options can be long also"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:205
+msgid "long options can also have arguments"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:209
+msgid "The description can also start on the next line."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:211
+msgid ""
+"The description may contain multiple body elements, regardless of where "
+"it starts."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:214
+msgid "Multiple options are an \"option group\"."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:215
+msgid "Commonly-seen: short & long options."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:217
+msgid "Multiple options with arguments."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:218
+msgid "DOS/VMS-style options too"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:220
+msgid "There must be at least two spaces between the option and the description."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:224
+msgid "Literal Blocks"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:226
+msgid ""
+"Literal blocks are indicated with a double-colon (\"::\") at the end of "
+"the preceding paragraph (over there ``-->``).  They can be indented::"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:234
+msgid "Or they can be quoted without indentation::"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:241
+msgid "Line Blocks"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:243
+msgid "This is a line block.  It ends with a blank line."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:244
+msgid "Each new line begins with a vertical bar (\"|\")."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:245
+msgid "Line breaks and initial indents are preserved."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:247
+msgid ""
+"Continuation lines are wrapped portions of long lines; they begin with a "
+"space in place of the vertical bar."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:249
+msgid ""
+"The left edge of a continuation line need not be aligned with the left "
+"edge of the text above it."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:251
+msgid "This is a second line block."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:253
+msgid "Blank lines are permitted internally, but they must begin with a \"|\"."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:255
+msgid "Take it away, Eric the Orchestra Leader!"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "A one, two, a one two three four"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "Half a bee, philosophically,"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "must, *ipso facto*, half not be."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "But half the bee has got to be,"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "*vis a vis* its entity.  D'you see?"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "But can a bee be said to be"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "or not to be an entire bee,"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "when half the bee is not a bee,"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "due to some ancient injury?"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "Singing..."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:272
+msgid "Block Quotes"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:274
+msgid "Block quotes consist of indented body elements:"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:276
+msgid ""
+"My theory by A. Elk.  Brackets Miss, brackets.  This theory goes as "
+"follows and begins now.  All brontosauruses are thin at one end, much "
+"much thicker in the middle and then thin again at the far end.  That is "
+"my theory, it is mine, and belongs to me and I own it, and what it is "
+"too."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:289
+msgid "Anne Elk (Miss)"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:285
+msgid "Doctest Blocks"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:293
+msgid "Tables"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:295
+msgid "Here's a grid table followed by a simple table:"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:298
+msgid "Header row, column 1 (header rows optional)"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:298
+msgid "Header 2"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:298
+msgid "Header 3"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:298
+msgid "Header 4"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:301
+msgid "body row 1, column 1"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:301
+msgid "column 2"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:301
+msgid "column 3"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:301
+msgid "column 4"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:303
+msgid "body row 2"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:303
+msgid "Cells may span columns."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:305
+msgid "body row 3"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:305
+msgid "Cells may span rows."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:305
+msgid "Table cells"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:306
+msgid "contain"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:307
+msgid "body elements."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:307
+msgid "body row 4"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:309
+msgid "body row 5"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:309
+msgid "Cells may also be empty: ``-->``"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:314
+msgid "Inputs"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:314
+msgid "Output"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:316
+msgid "A"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:316
+msgid "B"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:316
+msgid "A or B"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:318
+#: ../../docutils/docs/user/rst/demo.txt:319
+#: ../../docutils/docs/user/rst/demo.txt:320
+msgid "False"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:319
+#: ../../docutils/docs/user/rst/demo.txt:320
+#: ../../docutils/docs/user/rst/demo.txt:321
+msgid "True"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:325
+msgid "Footnotes"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:327
+msgid ""
+"A footnote contains body elements, consistently indented by at least 3 "
+"spaces."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:330
+msgid "This is the footnote's second paragraph."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:332
+msgid ""
+"Footnotes may be numbered, either manually (as in [1]_) or automatically "
+"using a \"#\"-prefixed label.  This footnote has a label so it can be "
+"referred to from multiple places, both as a footnote reference "
+"([#label]_) and as a hyperlink reference (label_)."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:338
+msgid ""
+"This footnote is numbered automatically and anonymously using a label of "
+"\"#\" only."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:341
+msgid ""
+"Footnotes may also use symbols, specified with a \"*\" label. Here's a "
+"reference to the next footnote: [*]_."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:344
+msgid "This footnote shows the next symbol in the sequence."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:346
+msgid ""
+"Here's an unreferenced footnote, with a reference to a nonexistent "
+"footnote: [5]_."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:350
+msgid "Citations"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:352
+msgid ""
+"Citations are text-labeled footnotes. They may be rendered separately and"
+" differently from footnotes."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:355
+msgid ""
+"Here's a reference to the above, [CIT2002]_, and a [nonexistent]_ "
+"citation."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:359
+msgid "Targets"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:363
+msgid ""
+"This paragraph is pointed to by the explicit \"example\" target. A "
+"reference can be found under `Inline Markup`_, above. `Inline hyperlink "
+"targets`_ are also possible."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:367
+msgid ""
+"Section headers are implicit targets, referred to by name. See Targets_, "
+"which is a subsection of `Body Elements`_."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:370
+msgid ""
+"Explicit external targets are interpolated into references such as "
+"\"Python_\"."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:375
+msgid ""
+"Targets may be indirect and anonymous.  Thus `this phrase`__ may also "
+"refer to the Targets_ section."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:380
+msgid ""
+"Here's a `hyperlink reference without a target`_, which generates an "
+"error."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:384
+#: ../../docutils/docs/user/rst/demo.txt:391
+msgid "Duplicate Target Names"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:386
+msgid ""
+"Duplicate names in section headers or other implicit targets will "
+"generate \"info\" (level-1) system messages.  Duplicate names in explicit"
+" targets will generate \"warning\" (level-2) system messages."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:393
+msgid ""
+"Since there are two \"Duplicate Target Names\" section headers, we cannot"
+" uniquely refer to either of them by name.  If we try to (like this: "
+"`Duplicate Target Names`_), an error is generated."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:398
+msgid "Directives"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:402
+msgid ""
+"These are just a sample of the many reStructuredText Directives.  For "
+"others, please see "
+"http://docutils.sourceforge.net/docs/ref/rst/directives.html."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:407
+msgid "Document Parts"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:409
+msgid ""
+"An example of the \"contents\" directive can be seen above this section "
+"(a local, untitled table of contents_) and at the beginning of the "
+"document (a document-wide `table of contents`_)."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:414
+msgid "Images"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:416
+msgid "An image directive (also clickable -- a hyperlink reference):"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:421
+msgid "A figure directive:"
+msgstr ""
+
+msgid "reStructuredText, the markup syntax"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:426
+msgid "A figure is an image with a caption and/or a legend:"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:429
+msgid "re"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:429
+msgid "Revised, revisited, based on 're' module."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:431
+msgid "Structured"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:431
+msgid "Structure-enhanced text, structuredtext."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:433
+msgid "Text"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:433
+msgid "Well it is, isn't it?"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:436
+msgid "This paragraph is also part of the legend."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:439
+msgid "Admonitions"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:441
+msgid "Directives at large."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:445
+msgid "Don't take any wooden nickels."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:447
+msgid "Mad scientist at work!"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:449
+msgid "Does not compute."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:451
+msgid "It's bigger than a bread box."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:454
+msgid "Wash behind your ears."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:455
+msgid "Clean up your room."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:456
+msgid "Call your mother."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:457
+msgid "Back up your data."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:459
+msgid "This is a note."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:461
+#, python-format
+msgid "15% if the service is good."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:463
+msgid ""
+"Strong prose may provoke extreme mental exertion. Reader discretion is "
+"strongly advised."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:466
+msgid "And, by the way..."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:468
+msgid "You can make up your own admonition too."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:471
+msgid "Topics, Sidebars, and Rubrics"
+msgstr ""
+
+msgid "Optional Sidebar Title"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:476
+msgid "This is a sidebar.  It is for text outside the flow of the main text."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt
+msgid "This is a rubric inside a sidebar"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:481
+msgid ""
+"Sidebars often appears beside the main text with a border and background "
+"color."
+msgstr ""
+
+msgid "Topic Title"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:486
+msgid "This is a topic."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:489
+msgid "This is a rubric"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:491
+msgid "Target Footnotes"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:496
+msgid "Replacement Text"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:498
+msgid "I recommend you try |Python|_."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:503
+msgid "Compound Paragraph"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:507
+msgid "This paragraph contains a literal block::"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:513
+msgid ""
+"and thus consists of a simple paragraph, a literal block, and another "
+"simple paragraph.  Nonetheless it is semantically *one* paragraph."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:517
+msgid ""
+"This construct is called a *compound paragraph* and can be produced with "
+"the \"compound\" directive."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:521
+msgid "Meta"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:523
+msgid ""
+"The `“meta” directive`__ is used to specify metadata to be stored in, "
+"e.g., HTML META tags or ODT file properties."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:526
+msgid "reStructuredText, test, parser"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:526
+msgid ""
+"A test document, containing at least one example of each reStructuredText"
+" construct."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:536
+msgid "Substitution Definitions"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:538
+msgid "An inline image (|example|) example:"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:542
+msgid "(Substitution definitions are not visible in the HTML source.)"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:545
+msgid "Comments"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:547
+msgid "Here's one:"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:555
+msgid "(View the HTML source to see the comment.)"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:558
+msgid "Error Handling"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:560
+msgid "Any errors caught during processing will generate system messages."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:562
+msgid "|*** Expect 6 errors (including this one). ***|"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/demo.txt:564
+msgid ""
+"There should be six messages in the following, auto-generated section, "
+"\"Docutils System Messages\":"
+msgstr ""
+

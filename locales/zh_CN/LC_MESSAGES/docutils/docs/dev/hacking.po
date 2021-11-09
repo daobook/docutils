@@ -1,0 +1,340 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/dev/hacking.txt:3
+msgid "Docutils_ Hacker's Guide"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:5
+msgid "Lea Wiemann"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:7
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:8
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt
+msgid "Abstract"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:11
+msgid ""
+"This is the introduction to Docutils for all persons who want to extend "
+"Docutils in some way."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:13
+msgid ""
+"You have used reStructuredText_ and played around with the `Docutils "
+"front-end tools`_ before.  Some (basic) Python knowledge is certainly "
+"helpful (though not necessary, strictly speaking)."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:23
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:26
+msgid "Overview of the Docutils Architecture"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:28
+msgid ""
+"To give you an understanding of the Docutils architecture, we'll dive "
+"right into the internals using a practical example."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:31
+msgid "Consider the following reStructuredText file::"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:37
+msgid ""
+"Using the ``rst2html.py`` front-end tool, you would get an HTML output "
+"which looks like this::"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:48
+msgid ""
+"While this looks very simple, it's enough to illustrate all internal "
+"processing stages of Docutils.  Let's see how this document is processed "
+"from the reStructuredText source to the final HTML output:"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:54
+msgid "Reading the Document"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:56
+msgid ""
+"The **Reader** reads the document from the source file and passes it to "
+"the parser (see below).  The default reader is the standalone reader "
+"(``docutils/readers/standalone.py``) which just reads the input data from"
+" a single text file.  Unless you want to do really fancy things, there is"
+" no need to change that."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:62
+msgid ""
+"Since you probably won't need to touch readers, we will just move on to "
+"the next stage:"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:67
+msgid "Parsing the Document"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:69
+msgid ""
+"The **Parser** analyzes the the input document and creates a **node "
+"tree** representation.  In this case we are using the **reStructuredText "
+"parser** (``docutils/parsers/rst/__init__.py``). To see what that node "
+"tree looks like, we call ``quicktest.py`` (which can be found in the "
+"``tools/`` directory of the Docutils distribution) with our example file "
+"(``test.txt``) as first parameter (Windows users might need to type "
+"``python quicktest.py test.txt``)::"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:89
+msgid "Let us now examine the node tree:"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:91
+msgid ""
+"The top-level node is ``document``.  It has a ``source`` attribute whose "
+"value is ``text.txt``.  There are two children: A ``paragraph`` node and "
+"a ``target`` node.  The ``paragraph`` in turn has children: A text node "
+"(\"My \"), an ``emphasis`` node, a text node (\" language is \"), a "
+"``reference`` node, and again a ``Text`` node (\".\")."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:97
+msgid ""
+"These node types (``document``, ``paragraph``, ``emphasis``, etc.) are "
+"all defined in ``docutils/nodes.py``.  The node types are internally "
+"arranged as a class hierarchy (for example, both ``emphasis`` and "
+"``reference`` have the common superclass ``Inline``).  To get an overview"
+" of the node class hierarchy, use epydoc (type ``epydoc nodes.py``) and "
+"look at the class hierarchy tree."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:106
+msgid "Transforming the Document"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:108
+msgid ""
+"In the node tree above, the ``reference`` node does not contain the "
+"target URI (``http://www.python.org/``) yet."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:111
+msgid ""
+"Assigning the target URI (from the ``target`` node) to the ``reference`` "
+"node is *not* done by the parser (the parser only translates the input "
+"document into a node tree)."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:115
+msgid ""
+"Instead, it's done by a **Transform**.  In this case (resolving a "
+"reference), it's done by the ``ExternalTargets`` transform in "
+"``docutils/transforms/references.py``."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:119
+msgid ""
+"In fact, there are quite a lot of Transforms, which do various useful "
+"things like creating the table of contents, applying substitution "
+"references or resolving auto-numbered footnotes."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:123
+msgid ""
+"The Transforms are applied after parsing.  To see how the node tree has "
+"changed after applying the Transforms, we use the ``rst2pseudoxml.py`` "
+"tool:"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:141
+msgid ""
+"For our small test document, the only change is that the ``refname`` "
+"attribute of the reference has been replaced by a ``refuri`` attribute "
+"|---| the reference has been resolved."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:145
+msgid ""
+"While this does not look very exciting, transforms are a powerful tool to"
+" apply any kind of transformation on the node tree."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:148
+msgid ""
+"By the way, you can also get a \"real\" XML representation of the node "
+"tree by using ``rst2xml.py`` instead of ``rst2pseudoxml.py``."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:153
+msgid "Writing the Document"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:155
+msgid ""
+"To get an HTML document out of the node tree, we use a **Writer**, the "
+"HTML writer in this case (``docutils/writers/html4css1.py``)."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:158
+msgid ""
+"The writer receives the node tree and returns the output document. For "
+"HTML output, we can test this using the ``rst2html.py`` tool::"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:178
+msgid ""
+"So here we finally have our HTML output.  The actual document contents "
+"are in the fourth-last line.  Note, by the way, that the HTML writer did "
+"not render the (invisible) ``target`` node |---| only the ``paragraph`` "
+"node and its children appear in the HTML output."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:185
+msgid "Extending Docutils"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:187
+msgid "Now you'll ask, \"how do I actually extend Docutils?\""
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:189
+msgid ""
+"First of all, once you are clear about *what* you want to achieve, you "
+"have to decide *where* to implement it |---| in the Parser (e.g. by "
+"adding a directive or role to the reStructuredText parser), as a "
+"Transform, or in the Writer.  There is often one obvious choice among "
+"those three (Parser, Transform, Writer).  If you are unsure, ask on the "
+"Docutils-develop_ mailing list."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:196
+msgid ""
+"In order to find out how to start, it is often helpful to look at similar"
+" features which are already implemented.  For example, if you want to add"
+" a new directive to the reStructuredText parser, look at the "
+"implementation of a similar directive in "
+"``docutils/parsers/rst/directives/``."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:204
+msgid "Modifying the Document Tree Before It Is Written"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:206
+msgid ""
+"You can modify the document tree right before the writer is called. One "
+"possibility is to use the publish_doctree_ and publish_from_doctree_ "
+"functions."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:210
+msgid "To retrieve the document tree, call::"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:214
+msgid "Please see the docstring of publish_doctree for a list of parameters."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:219
+msgid ""
+"``document`` is the root node of the document tree.  You can now change "
+"the document by accessing the ``document`` node and its children |---| "
+"see `The Node Interface`_ below."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:223
+msgid ""
+"When you're done with modifying the document tree, you can write it out "
+"by calling::"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:233
+msgid "The Node Interface"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:235
+msgid ""
+"As described in the overview above, Docutils' internal representation of "
+"a document is a tree of nodes.  We'll now have a look at the interface of"
+" these nodes."
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:239
+msgid "(To be completed.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:243
+msgid "What Now?"
+msgstr ""
+
+#: ../../docutils/docs/dev/hacking.txt:245
+msgid ""
+"This document is not complete.  Many topics could (and should) be covered"
+" here.  To find out with which topics we should write about first, we are"
+" awaiting *your* feedback.  So please ask your questions on the Docutils-"
+"develop_ mailing list."
+msgstr ""
+

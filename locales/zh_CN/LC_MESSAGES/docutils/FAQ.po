@@ -1,0 +1,1441 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/FAQ.txt:10
+msgid "Docutils FAQ (Frequently Asked Questions)"
+msgstr ""
+
+#: ../../docutils/FAQ.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:12
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/FAQ.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:13
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/FAQ.txt
+msgid "Web site"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:14
+msgid "https://docutils.sourceforge.io/"
+msgstr ""
+
+#: ../../docutils/FAQ.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:15
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:16
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:21
+msgid ""
+"This is a work in progress.  If you are reading a local copy, the `master"
+" copy`_ might be newer.  This document uses are relative links; if they "
+"don't work, please use the `master copy`_."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:25
+msgid ""
+"Please feel free to ask questions and/or provide answers; send email to "
+"the `Docutils-users`_ mailing list.  Project members should feel free to "
+"edit the source text file directly."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:36
+msgid "Docutils"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:39
+msgid "What is Docutils?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:41
+msgid ""
+"Docutils_ is a system for processing plaintext documentation into useful "
+"formats, such as HTML, XML, and LaTeX.  It supports multiple types of "
+"input, such as standalone files, `PEPs (Python Enhancement Proposals)`_, "
+"and string input. Client code may add other input types, e.g. Sphinx_ "
+"comes with an extension to extract inline documentation from Python "
+"modules and packages."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:48
+msgid "The Docutils distribution consists of:"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:50
+msgid "a library (the \"docutils\" package), which `can be used by client code`_;"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:52
+msgid ""
+"several `front-end tools`_ (such as ``rst2html.py``, which converts "
+"reStructuredText input into HTML output);"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:54
+msgid "a `test suite`_; and"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:55
+msgid "documentation_."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:57
+msgid ""
+"For an overview of the Docutils project implementation, see `PEP 258`_, "
+"\"Docutils Design Specification\"."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:60
+msgid "Docutils is implemented in Python_."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:74
+msgid "Why is it called \"Docutils\"?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:76
+msgid ""
+"Docutils is short for \"Python Documentation Utilities\".  The name "
+"\"Docutils\" was inspired by \"Distutils\", the Python Distribution "
+"Utilities architected by Greg Ward, a component of Python's standard "
+"library."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:81
+msgid ""
+"The earliest known use of the term \"docutils\" in a Python context was a"
+" `fleeting reference`__ in a message by Fred Drake on 1999-12-02 in the "
+"Python Doc-SIG mailing list.  It was suggested `as a project name`__ on "
+"2000-11-27 on Doc-SIG, again by Fred Drake, in response to a question "
+"from Tony \"Tibs\" Ibbs: \"What do we want to *call* this thing?\".  This"
+" was shortly after David Goodger first `announced reStructuredText`__ on "
+"Doc-SIG."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:89
+msgid ""
+"Tibs used the name \"Docutils\" for `his effort`__ \"to document what the"
+" Python docutils package should support, with a particular emphasis on "
+"documentation strings\".  Tibs joined the current project (and its "
+"predecessors) and graciously donated the name."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:94
+msgid ""
+"For more history of reStructuredText and the Docutils project, see `An "
+"Introduction to reStructuredText`_."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:97
+msgid ""
+"Please note that the name is \"Docutils\", not \"DocUtils\" or \"Doc-"
+"Utils\" or any other variation.  It is pronounced as in \"DOCumentation "
+"UTILitieS\", with emphasis on the first syllable."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:109
+msgid "Is there a GUI authoring environment for Docutils?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:111
+msgid "See the links to editors_ supporting reStructuredText."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:117
+msgid "What is the status of the Docutils project?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:119
+msgid ""
+"Docutils is mainly stable, with documented APIs and architecture subject "
+"to change after announcement and a transition period."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:122
+msgid ""
+"We fix bugs as they are reported.  This means the code from the "
+"repository_ (or the snapshots_) is the most stable as well as the most "
+"featureful most of the time."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:128
+msgid "What is the Docutils project release policy?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:130
+msgid ""
+"Besides the regular releases_, we provide automatically-generated "
+"snapshots_ which always contain the latest code from the repository_. As "
+"the project matures, we may formalize on a stable/development-branch "
+"scheme, but we're not using anything like that yet."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:142
+msgid "How can I get a new feature into Docutils?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:144
+msgid ""
+"Present your idea at the docutils-develop_ mailing list or file a ticket "
+"at Docutils' `feature request tracker`_."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:147
+msgid "See the `Docutils Policies`__ for a more detailed answer."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:155
+msgid "reStructuredText"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:158
+msgid "What is reStructuredText?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:160
+msgid ""
+"reStructuredText_ is an easy-to-read, what-you-see-is-what-you-get "
+"plaintext markup syntax and parser system.  The reStructuredText parser "
+"is a component of Docutils_.  reStructuredText is a revision and "
+"reinterpretation of the StructuredText_ and Setext_ lightweight markup "
+"systems."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:166
+msgid ""
+"If you are reading this on the web, you can see for yourself.  `The "
+"source for this FAQ <FAQ.txt>`_ is written in reStructuredText; open it "
+"in another window and compare them side by side."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:170
+msgid ""
+"`A ReStructuredText Primer`_ and the `Quick reStructuredText`_ user "
+"reference are a good place to start.  The `reStructuredText Markup "
+"Specification`_ is a detailed technical specification."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:185
+msgid "Why is it called \"reStructuredText\"?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:187
+msgid ""
+"The name came from a combination of \"StructuredText\", one of "
+"reStructuredText's predecessors, with \"re\": \"revised\", \"reworked\", "
+"and \"reinterpreted\", and as in the ``re.py`` regular expression module."
+" For a detailed history of reStructuredText and the Docutils project, see"
+" `An Introduction to reStructuredText`_."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:193
+msgid "\"reStructuredText\" is **ONE** word, *not two!*"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:197
+msgid "What's the standard abbreviation for \"reStructuredText\"?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:199
+msgid ""
+"\"RST\" and \"ReST\" (or \"reST\") are both acceptable.  Care should be "
+"taken with capitalization, to avoid confusion with \"REST__\", an acronym"
+" for \"Representational State Transfer\"."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:203
+msgid ""
+"The abbreviations \"reSTX\" and \"rSTX\"/\"rstx\" should **not** be used;"
+" they overemphasize reStructuredText's predecessor, Zope's "
+"StructuredText."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:211
+msgid "What's the standard filename extension for a reStructuredText file?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:213
+msgid ""
+"It's \".txt\".  Some people would like to use \".rest\" or \".rst\" or "
+"\".restx\", but why bother?  ReStructuredText source files are meant to "
+"be readable as plaintext, and most operating systems already associate "
+"\".txt\" with text files.  Using a specialized filename extension would "
+"require that users alter their OS settings, which is something that many "
+"users will not be willing or able to do."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:220
+msgid "Also see `What's the official MIME type for reStructuredText data?`_"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:224
+msgid "Are there any reStructuredText editor extensions?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:226
+msgid "See the list of editors_ supporting reStructuredText."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:230
+msgid "How can I indicate the document title?  Subtitle?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:232
+msgid ""
+"A uniquely-adorned section title at the beginning of a document is "
+"treated specially, as the document title.  Similarly, a uniquely-adorned "
+"section title immediately after the document title becomes the document "
+"subtitle.  For example::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:245
+msgid "Counterexample::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:255
+msgid "Another counterexample::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:269
+msgid ""
+"How can I represent esoteric characters (e.g. character entities) in a "
+"document?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:271
+msgid ""
+"For example, say you want an em-dash (XML character entity &mdash;, "
+"Unicode character U+2014) in your document: use a real em-dash. Insert "
+"concrete characters (e.g. type a *real* em-dash) into your input file, "
+"using whatever encoding suits your application, and tell Docutils the "
+"input encoding.  Docutils uses Unicode internally, so the em-dash "
+"character is a real em-dash internally."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:278
+msgid ""
+"Emacs users should refer to the `Emacs Support for reStructuredText`__ "
+"document.  Tips for other editors are welcome."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:283
+msgid ""
+"ReStructuredText has no character entity subsystem; it doesn't know "
+"anything about XML charents.  To Docutils, \"&mdash;\" in input text is 7"
+" discrete characters; no interpretation happens.  When writing HTML, the "
+"\"&\" is converted to \"&amp;\", so in the raw output you'd see "
+"\"&amp;mdash;\".  There's no difference in interpretation for text inside"
+" or outside inline literals or literal blocks -- there's no character "
+"entity interpretation in either case."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:291
+msgid ""
+"If you can't use a Unicode-compatible encoding and must rely on 7-bit "
+"ASCII, there is a workaround.  New in Docutils 0.3.10 is a set of "
+"`Standard Substitution Definition Sets`_, which provide equivalents of "
+"XML & HTML character entity sets as substitution definitions.  For "
+"example, the Japanese yen currency symbol can be used as follows::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:301
+msgid "Thanks to David Priest for the original idea."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:303
+msgid ""
+"If you insist on using XML-style charents, you'll have to implement a "
+"pre-processing system to convert to UTF-8 or something.  That introduces "
+"complications though; you can no longer *write* about charents naturally;"
+" instead of writing \"&mdash;\" you'd have to write \"&amp;mdash;\"."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:309
+msgid ""
+"For the common case of long dashes, you might also want to insert the "
+"following substitution definitions into your document (both of them are "
+"using the \"unicode_\" directive)::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:321
+msgid ""
+"Now you can write dashes using pure ASCII: \"``foo |--| bar; foo |---| "
+"bar``\", rendered as \"foo |--| bar; foo |---| bar\". The ``:trim:`` "
+"option for the em dash is necessary because you cannot write "
+"\"``foo|---|bar``\"; thus you need to add spaces (\"``foo |---| bar``\") "
+"and advise the reStructuredText parser to trim the spaces."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:338
+msgid "How can I generate backticks using a Scandinavian keyboard?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:340
+msgid ""
+"The use of backticks in reStructuredText is a bit awkward with "
+"Scandinavian keyboards, where the backtick is a \"dead\" key.  To get one"
+" ` character one must press SHIFT-` + SPACE."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:344
+msgid ""
+"Unfortunately, with all the variations out there, there's no way to "
+"please everyone.  For Scandinavian programmers and technical writers, "
+"this is not limited to reStructuredText but affects many languages and "
+"environments."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:349
+msgid "Possible solutions include"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:351
+msgid ""
+"If you have to input a lot of backticks, simply type one in the "
+"normal/awkward way, select it, copy and then paste the rest (CTRL-V is a "
+"lot faster than SHIFT-` + SPACE)."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:355
+msgid "Use keyboard macros."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:357
+msgid ""
+"Remap the keyboard.  The Scandinavian keyboard layout is awkward for "
+"other programming/technical characters too; for example, []{} etc. are a "
+"bit awkward compared to US keyboards."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:361
+msgid "According to Axel Kollmorgen,"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:363
+msgid ""
+"Under Windows, you can use the `Microsoft Keyboard Layout Creator "
+"<http://www.microsoft.com/globaldev/tools/msklc.mspx>`__ to easily map "
+"the backtick key to a real backtick (no dead key). took me five minutes "
+"to load my default (german) keyboard layout, untick \"Dead Key?\" from "
+"the backtick key properties (\"in all shift states\"), \"build dll and "
+"setup package\", install the generated .msi, and add my custom keyboard "
+"layout via Control Panel > Regional and Language Options > Languages > "
+"Details > Add Keyboard layout (and setting it as default \"when you start"
+" your computer\")."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:374
+msgid "Use a virtual/screen keyboard or character palette, such as:"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:376
+msgid ""
+"`Web-based keyboards <http://keyboard.lab.co.il/>`__ (IE only "
+"unfortunately)."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:378
+msgid "Windows: `Click-N-Type <http://www.lakefolks.org/cnt/>`__."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:379
+msgid ""
+"Mac OS X: the Character Palette can store a set of favorite characters "
+"for easy input.  Open System Preferences, International, Input Menu tab, "
+"enable \"Show input menu in menu bar\", and be sure that Character "
+"Palette is enabled in the list."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:384
+msgid "If anyone knows of other/better solutions, please `let us know`_."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:388
+msgid "Are there any tools for HTML/XML-to-reStructuredText?  (Round-tripping)"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:390
+msgid ""
+"People have tossed the idea around, and some implementations of "
+"reStructuredText-generating tools can be found in the `Docutils Link "
+"List`_."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:394
+msgid ""
+"There's no reason why reStructuredText should not be round-trippable "
+"to/from XML; any technicalities which prevent round-tripping would be "
+"considered bugs.  Whitespace would not be identical, but paragraphs "
+"shouldn't suffer.  The tricky parts would be the smaller details, like "
+"links and IDs and other bookkeeping."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:400
+#, python-format
+msgid ""
+"For HTML, true round-tripping may not be possible.  Even adding lots of "
+"extra \"class\" attributes may not be enough.  A \"simple HTML\" to RST "
+"filter is possible -- for some definition of \"simple HTML\" -- but HTML "
+"is used as dumb formatting so much that such a filter may not be "
+"particularly useful.  An 80/20 approach should work though: build a tool "
+"that does 80% of the work automatically, leaving the other 20% for manual"
+" tweaks."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:412
+msgid "Are there any Wikis that use reStructuredText syntax?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:414
+msgid ""
+"There are several, with various degrees of completeness.  With no implied"
+" endorsement or recommendation, and in no particular order:"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:417
+msgid ""
+"`Ian Bicking's experimental code "
+"<http://docutils.sf.net/sandbox/ianb/wiki/Wiki.py>`__"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:420
+msgid ""
+"`MoinMoin <http://moinmoin.wikiwikiweb.de/>`__ has some support; `here's "
+"a sample <http://moinmoin.wikiwikiweb.de/RestSample>`__"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:423
+msgid "Zope-based `Zwiki <http://zwiki.org/>`__"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:425
+msgid "Zope3-based Zwiki (in the Zope 3 source tree as ``zope.products.zwiki``)"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:428
+msgid "`StikiWiki <http://mithrandr.moria.org/code/stikiwiki/>`__"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:430
+msgid ""
+"`Trac <http://trac.edgewall.com//>`__ `supports using reStructuredText "
+"<http://trac.edgewall.com//wiki/WikiRestructuredText>`__ as an "
+"alternative to wiki markup. This includes support for `TracLinks "
+"<http://trac.edgewall.com//wiki/TracLinks>`__ from within RST text via a "
+"custom RST reference-directive or, even easier, an interpreted text role "
+"'trac'"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:438
+msgid "Please `let us know`_ of any other reStructuredText Wikis."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:447
+msgid "Are there any Weblog (Blog) projects that use reStructuredText syntax?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:449
+msgid "With no implied endorsement or recommendation, and in no particular order:"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:452
+msgid "`Firedrop <http://www.voidspace.org.uk/python/firedrop2/>`__"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:453
+msgid "`PyBloxsom <http://pyblosxom.sourceforge.net/>`__"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:454
+msgid "`Lino WebMan <http://lino.sourceforge.net/webman.html>`__"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:455
+msgid ""
+"`Pelican <http://blog.getpelican.com/>`__ (also  listed `on PyPi "
+"<http://pypi.python.org/pypi/pelican>`__)"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:458
+msgid "Please `let us know`_ of any other reStructuredText Blogs."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:464
+msgid "How should I mark up lists?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:466
+msgid ""
+"Bullet_ & enumerated_ list markup is very intuitive but there are 2 "
+"points that must be noted:"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:472
+msgid "Lists should **not** be indented.  This is correct::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:483
+msgid "while this is probably incorrect::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:494
+msgid ""
+"The extra indentation (of the list containing items 1.1 and 1.2) is "
+"recognized as a block quote.  This is usually not what you mean and it "
+"causes the list in the output to be indented too much."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:498
+msgid ""
+"There **must** be blank lines around list items, except between items of "
+"the same level, where blank lines are optional.  The example above shows "
+"this."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:502
+msgid ""
+"Note that formatting of the *output* is independent of the input, and is "
+"decided by the writer and the stylesheet.  For instance, lists *are* "
+"indented in HTML output by default.  See `How are lists formatted in "
+"HTML?`_ for details."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:509
+msgid "Could lists be indented without generating block quotes?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:511
+msgid ""
+"Some people like to write lists with indentation but don't intend a "
+"blockquote context.  There has been a lot of discussion about allowing "
+"this in reStructuredText, but there are some issues that would need to be"
+" resolved before it could be implemented.  There is a summary of the "
+"issues and pointers to the discussions in `the to-do list`__."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:521
+msgid "Could the requirement for blank lines around lists be relaxed?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:523
+msgid "Short answer: no."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:525
+msgid ""
+"In reStructuredText, it would be impossible to unambiguously mark up and "
+"parse lists without blank lines before and after.  Deeply nested lists "
+"may look ugly with so many blank lines, but it's a price we pay for "
+"unambiguous markup.  Some other plaintext markup systems do not require "
+"blank lines in nested lists, but they have to compromise somehow, either "
+"accepting ambiguity or requiring extra complexity. For example, `Epytext "
+"<http://epydoc.sf.net/epytext.html#list>`__ does not require blank lines "
+"around lists, but it does require that lists be indented and that "
+"ambiguous cases be escaped."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:537
+msgid "How can I include mathematical equations in documents?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:539
+msgid "Use the `math directive`_ and `math role`_, available since Docutils 0.8."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:546
+msgid "Is nested inline markup possible?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:548
+msgid ""
+"Not currently, no.  It's on the `to-do list`__ (`details here`__), and "
+"hopefully will be part of the reStructuredText parser soon.  At that "
+"time, markup like this will become possible::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:558
+msgid ""
+"There are workarounds, but they are either convoluted or ugly or both. "
+"They are not recommended."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:561
+msgid ""
+"Inline markup can be combined with hyperlinks using `substitution "
+"definitions`__ and references__ with the `\"replace\" directive`__. For "
+"example::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:570
+msgid ""
+"It is not possible for just a portion of the replacement text to be a "
+"hyperlink; it's the entire replacement text or nothing."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:577
+msgid ""
+"The `\"raw\" directive`__ can be used to insert raw HTML into HTML "
+"output::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:588
+msgid "Raw LaTeX is supported for LaTeX output, etc."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:594
+msgid "How to indicate a line break or a significant newline?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:596
+msgid ""
+"`Line blocks`__ are designed for address blocks, verse, and other cases "
+"where line breaks are significant and must be preserved.  Unlike literal "
+"blocks, the typeface is not changed, and inline markup is recognized.  "
+"For example::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:617
+msgid ""
+"Here's a workaround for manually inserting explicit line breaks in HTML "
+"output::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:630
+msgid "A URL containing asterisks doesn't work.  What to do?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:632
+msgid ""
+"Asterisks are valid URL characters (see :RFC:`2396`), sometimes used in "
+"URLs.  For example::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:637
+msgid ""
+"Unfortunately, the parser thinks the asterisks are indicating emphasis.  "
+"The slashes serve as delineating punctuation, allowing the asterisks to "
+"be recognized as markup.  The example above is separated by the parser "
+"into a truncated URL, an emphasized word, and some regular text::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:647
+msgid ""
+"To turn off markup recognition, use a backslash to escape at least the "
+"first asterisk, like this::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:652
+msgid "Escaping the second asterisk doesn't hurt, but it isn't necessary."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:656
+msgid "How can I make a literal block with *some* formatting?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:658
+msgid "Use the `parsed-literal`_ directive."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:662
+msgid ""
+"Scenario: a document contains some source code, which calls for a literal"
+" block to preserve linebreaks and whitespace.  But part of the source "
+"code should be formatted, for example as emphasis or as a hyperlink.  "
+"This calls for a *parsed* literal block::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:671
+msgid ""
+"The emphasis (``*tricky*``) and footnote reference (``[1]_``) will be "
+"parsed."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:676
+msgid "Can reStructuredText be used for web or generic templating?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:678
+msgid ""
+"Docutils and reStructuredText can be used with or as a component of a "
+"templating system, but they do not themselves include templating "
+"functionality.  Templating should simply be left to dedicated templating "
+"systems.  Users can choose a templating system to apply to their "
+"reStructuredText documents as best serves their interests."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:684
+msgid ""
+"There are many good templating systems for Python (ht2html_, YAPTU_, "
+"Quixote_'s PTL, Cheetah_, etc.; see this non-exhaustive list of `some "
+"other templating systems`_), and many more for other languages, each with"
+" different approaches.  We invite you to try several and find one you "
+"like.  If you adapt it to use Docutils/reStructuredText, please consider "
+"contributing the code to Docutils or `let us know`_ and we'll keep a list"
+" here."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:692
+msgid ""
+"One reST-specific web templating system is `rest2web "
+"<http://www.voidspace.org.uk/python/rest2web>`_, a tool for automatically"
+" building websites, or parts of websites."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:706
+msgid "How can I mark up a FAQ or other list of questions & answers?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:708
+msgid "There is no specific syntax for FAQs and Q&A lists.  Here are two options:"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:711
+msgid ""
+"For a FAQ (Frequently Asked Questions, usually with answers), a "
+"convenient way to mark up the questions is as section titles, with the "
+"answer(s) as section content.  This document is marked up in this way."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:716
+msgid ""
+"The advantages of using section titles for questions are: sections can be"
+" numbered automatically, and a table of contents can be generated "
+"automatically.  One limitation of this format is that questions must fit "
+"on one line (section titles may not wrap, in the source text).  For very "
+"long questions, the title may be a summary of the question, with the full"
+" question in the section body."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:723
+msgid "Field lists work well as Q&A lists::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:730
+msgid "In order to separate questions, lists can be used:"
+msgstr ""
+
+#: ../../docutils/FAQ.txt
+msgid "Q"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:732
+msgid "What kind of question can we put here?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt
+msgid "A"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:734
+msgid "Any kind we like!"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:736
+msgid "How many answers can a question have?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:737
+msgid "It can have one,"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:738
+msgid "or more."
+msgstr ""
+
+#: ../../docutils/FAQ.txt
+msgid "A3"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:739
+msgid "Answers can be numbered like this."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:740
+msgid "Or like this."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:741
+msgid "We're flexible!"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:743
+msgid ""
+"If you don't want to number or otherwise mark questions, you can use an "
+"empty comment between individual field lists to separate them::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:759
+msgid "Can I produce documents in right-to-left languages?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:761
+msgid ""
+"Languages written from right to left, such as Arabic and Hebrew, must be "
+"reordered according to the `Unicode Bidi Algorithm`_.  This requires "
+"support from the editor and special markup in the output format."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:766
+msgid ""
+"The source format of reStructuredText is relatively bidi-friendly: most "
+"constructs are denoted by punctuation without intrusion of English and "
+"when you must write in English, it's usually on a separate line.  So any "
+"editor that auto-detects direction per-line (like gedit or geresh_) will "
+"suffice."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:772
+msgid ""
+"Moreover, it's possible to translate_ all reStructuredText keywords. "
+"Docutils 0.17 includes translations for Arab, Hebrew, and Persian/Farsi."
+"  This should allow reasonable use of editors limited to a single base "
+"direction for the whole document (like Notepad, Vim and text boxes in "
+"Firefox)."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:782
+msgid ""
+"The second problem is bidi markup of the output.  There is an almost "
+"transparent implicit solution for HTML:"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:785
+msgid ""
+"Grab http://cben-hacks.sourceforge.net/bidi/hibidi.py and http://cben-"
+"hacks.sourceforge.net/bidi/rst2html_hibidi.py. Put them both in the same "
+"directory and make them executable."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:789
+msgid "Use ``rst2html_hibidi.py`` instead of ``rst2html.py``."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:791
+msgid ""
+"It infers dir attributes in the HTML from the text.  It does it "
+"hierachically, giving much better results than usual.  You can still use "
+"LRM/RLM and LRE/RLE/PDF control codes to help it."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:795
+msgid ""
+"If you want the gory details: See the full theory_, and note the "
+"incomplete practice_ (this is still a partial implementation - but "
+"sufficient for most needs)."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:802
+msgid ""
+"There is also an explicit way to set directions through CSS and classes "
+"in the HTML:"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:805
+msgid ""
+"Copy ``default.css`` to a new file and add relevant parts of the "
+"following::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:825
+msgid ""
+"Select this new stylesheet with ``--stylesheet=<file>`` or the "
+"stylesheet_ setting."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:828
+msgid ""
+"Now if you need to override the direction of some element (from a "
+"paragraph to a whole section), write::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:833
+msgid "or::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:837
+msgid "before it (see the class_ directive for details)."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:839
+msgid ""
+"To change the direction of some inline text fragment, you can use "
+"RLE/LRE/PDF control characters, or write ``:rtl:`RTL text``` / "
+"``:ltr:`RTL text```.  To use the latter syntax, you must write this once "
+"at the beginning of your document::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:850
+msgid ""
+"LaTeX is quite hard to implement (it doesn't support the bidi algorithm, "
+"so all direction changes - even numbers in RTL text - must be explicitly "
+"marked).  Other formats are more-or-less easy."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:854
+msgid ""
+"If you have any questions/problems/bugs related to bidi with docutils, "
+"ask `Beni Cherniavsky`__ directly or the `Docutils-users`_ mailing list."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:862
+msgid "What's the official MIME type for reStructuredText data?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:864
+msgid ""
+"While there is no registered MIME type for reStructuredText, the "
+"\"official unofficial\" standard MIME type is \"text/x-rst\". [#]_  This "
+"was invented for the build system for PEPs (Python Enhancement "
+"Proposals), and it's used by the python.org web site build system."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:869
+msgid ""
+"Also see `What's the standard filename extension for a reStructuredText "
+"file?`_"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:872
+msgid "The \"x-\" prefix means it's an unregistered MIME type."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:876
+msgid "HTML Writer"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:879
+msgid "What is the status of the HTML Writer?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:881
+msgid ""
+"The default HTML Writer module, ``docutils/writers/html4css1.py``, is a "
+"proof-of-concept reference implementation.  While it is a complete "
+"implementation, some aspects of the HTML it produces may be outdated or "
+"incompatible with older browsers or specialized applications (such as web"
+" templating)."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:887
+msgid "For the full selection see `Docutils HTML writers`_"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:892
+msgid "What browsers are supported?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:894
+msgid ""
+"No specific browser is targeted; all modern graphical browsers should "
+"work.  Some older browsers, text-only browsers, and browsers without full"
+" CSS support are known to produce inferior results.  Firefox, Safari, "
+"Opera, Chrome, Edge, and MS Internet Explorer (version 5.0 and up) are "
+"known to give good results.  Reports of experiences with other browsers "
+"are welcome."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:903
+msgid "Unexpected results from tools/rst2html.py: H1, H1 instead of H1, H2.  Why?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:905
+msgid "Here's the question in full:"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:907
+msgid "I have this text::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:925
+msgid ""
+"When I run it through tools/rst2html.py, I get unexpected results "
+"(below).  I was expecting H1, H2, then H3; instead, I get H1, H1, H2::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:947
+msgid "What gives?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:949
+msgid ""
+"Check the \"class\" attribute on the H1 tags, and you will see a "
+"difference.  The first H1 is actually ``<h1 class=\"title\">``; this is "
+"the document title, and the default stylesheet renders it centered. There"
+" can also be an ``<h2 class=\"subtitle\">`` for the document subtitle."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:955
+msgid ""
+"If there's only one highest-level section title at the beginning of a "
+"document, it is treated specially, as the document title.  (Similarly, a "
+"lone second-highest-level section title may become the document "
+"subtitle.)  See `How can I indicate the document title?  Subtitle?`_ for "
+"details.  Rather than use a plain H1 for the document title, we use ``<h1"
+" class=\"title\">`` so that we can use H1 again within the document.  Why"
+" do we do this?  HTML only has H1-H6, so by making H1 do double duty, we "
+"effectively reserve these tags to provide 6 levels of heading beyond the "
+"single document title."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:965
+msgid ""
+"With \"html4css1\", HTML is being used for dumb formatting for nothing "
+"but final display. A stylesheet *is required*, and one is provided; see "
+"`Docutils HTML writers`_.  Of course, you're welcome to roll your own.  "
+"The default stylesheet provides rules to format ``<h1 class=\"title\">`` "
+"and ``<h2 class=\"subtitle\">`` differently from ordinary ``<h1>`` and "
+"``<h2>``::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:978
+msgid ""
+"If you don't want the top section heading to be interpreted as a title at"
+" all, disable the `doctitle_xform`_ setting (``--no-doc-title`` option)."
+"  This will interpret your document differently from the standard "
+"settings, which might not be a good idea.  If you don't like the reuse of"
+" the H1 in the HTML output, you can tweak the `initial_header_level`_ "
+"setting (``--initial-header-level`` option) -- but unless you match its "
+"value to your specific document, you might end up with bad HTML (e.g. H3 "
+"without H2)."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:991
+msgid "(Thanks to Mark McEahern for the question and much of the answer.)"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:993
+msgid ""
+"For the html5 writer, `initial_header_level`_ defaults to ``2`` because "
+"this is what the `HTML5 standard`__ expects as start value for headings "
+"nested in <section> elements."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1013
+msgid "How are lists formatted in HTML?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1015
+msgid ""
+"If list formatting looks strange, first check that you understand `list "
+"markup`__."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1020
+msgid ""
+"By default, HTML browsers indent lists relative to their context. This "
+"follows a long tradition in browsers (but isn't so established in print)."
+"  If you don't like it, you should change the stylesheet."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1024
+msgid ""
+"This is different from how lists look in reStructuredText source. Extra "
+"indentation in the source indicates a blockquote, resulting in too much "
+"indentation in the browser."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1028
+msgid ""
+"A list item can contain multiple paragraphs etc.  In complex cases list "
+"items are separated by vertical space.  By default this spacing is "
+"omitted in \"simple\" lists.  A list is simple if every item contains a "
+"simple paragraph and/or a \"simple\" nested list.  For example:"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1034
+msgid "text"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1036 ../../docutils/FAQ.txt:1038
+#: ../../docutils/FAQ.txt:1039 ../../docutils/FAQ.txt:1041
+msgid "simple"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1043
+msgid "text after a nested list"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1045
+msgid "multiple"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1047
+msgid "paragraphs"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1049
+msgid ""
+"In this example the nested lists are simple (and should appear compacted)"
+" but the outer list is not."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1052
+msgid ""
+"If you want all lists to have equal spacing, disable the `compact_lists`_"
+" setting (``--no-compact-lists`` option).  The precise spacing can be "
+"controlled in the stylesheet."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1056
+msgid ""
+"Note again that this is not exactly WYSIWYG: it partially resembles the "
+"rules about blank lines being optional between list items in "
+"reStructuredText -- but adding/removing optional blank lines does not "
+"affect spacing in the output!  It's a feature, not a bug: you write it as"
+" you like but the output is styled consistently."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1066
+msgid "Why do enumerated lists only use numbers (no letters or roman numerals)?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1068
+msgid ""
+"The rendering of enumerators (the numbers or letters acting as list "
+"markers) is completely governed by the stylesheet, so either the browser "
+"can't find the stylesheet (try enabling the `embed_stylesheet`_ setting "
+"[``--embed-stylesheet`` option]), or the browser can't understand it (try"
+" a not too old Firefox, Chrome, Opera, Safari, Edge, or even MSIE)."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1079
+msgid "There appear to be garbage characters in the HTML.  What's up?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1081
+msgid ""
+"What you're seeing is most probably not garbage, but the result of a "
+"mismatch between the actual encoding of the HTML output and the encoding "
+"your browser is expecting.  Your browser is misinterpreting the HTML "
+"data, which is encoded text.  A discussion of text encodings is beyond "
+"the scope of this FAQ; see one or more of these documents for more info:"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1088
+msgid ""
+"`UTF-8 and Unicode FAQ for Unix/Linux "
+"<http://www.cl.cam.ac.uk/~mgk25/unicode.html>`_"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1091
+msgid ""
+"Chapters 3 and 4 of `Introduction to i18n [Internationalization] "
+"<http://www.debian.org/doc/manuals/intro-i18n/>`_"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1094
+msgid ""
+"`Python Unicode Tutorial "
+"<http://www.reportlab.com/i18n/python_unicode_tutorial.html>`_"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1097
+msgid ""
+"`Python Unicode Objects: Some Observations on Working With Non-ASCII "
+"Character Sets <http://effbot.org/zone/unicode-objects.htm>`_"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1100
+msgid ""
+"The common case is with the default output encoding (UTF-8), when either "
+"numbered sections are used (via the \"sectnum_\" directive) or symbol-"
+"footnotes.  3 non-breaking spaces are inserted in each numbered section "
+"title, between the generated number and the title text.  Most footnote "
+"symbols are not available in ASCII, nor are non-breaking spaces.  When "
+"encoded with UTF-8 and viewed with ordinary ASCII tools, these characters"
+" will appear to be multi-character garbage."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1108
+msgid ""
+"You may have an decoding problem in your browser (or editor, etc.). The "
+"encoding of the output is set to \"utf-8\", but your browser isn't "
+"recognizing that.  You can either try to fix your browser (enable \"UTF-8"
+" character set\", sometimes called \"Unicode\"), or choose a different "
+"encoding for the HTML output.  You can also try ``--output-"
+"encoding=ascii:xmlcharrefreplace`` for HTML or XML, but not applicable to"
+" non-XMLish outputs (if using runtime settings/configuration files, use "
+"``output_encoding=ascii`` and "
+"``output_encoding_error_handler=xmlcharrefreplace``)."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1118
+msgid ""
+"If you're generating document fragments, the \"Content-Type\" metadata "
+"(between the HTML ``<head>`` and ``</head>`` tags) must agree with the "
+"encoding of the rest of the document.  For UTF-8, it should be::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1124
+msgid ""
+"Also, Docutils normally generates an XML declaration as the first line of"
+" the output.  It must also match the document encoding.  For UTF-8::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1133
+msgid "How can I retrieve the body of the HTML document?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1135
+msgid ""
+"(This is usually needed when using Docutils in conjunction with a "
+"templating system.)"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1138
+msgid ""
+"You can use the `docutils.core.publish_parts()`_ function, which returns "
+"a dictionary containing an 'html_body_' entry."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1146
+msgid "Why is the Docutils XHTML served as \"Content-type: text/html\"?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1148
+msgid "Full question:"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1150
+msgid "Docutils' HTML output looks like XHTML and is advertised as such::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1156
+msgid "But this is followed by::"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1160
+msgid "Shouldn't this be \"application/xhtml+xml\" instead of \"text/html\"?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1162
+msgid ""
+"Short answer: if we didn't serve XHTML as \"text/html\" (which is a "
+"perfectly valid thing to do), it couldn't be viewed in Internet Explorer."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1166
+#, python-format
+msgid ""
+"Long answer: In a perfect web, the Docutils XHTML output would be 100% "
+"strict XHTML.  But it's not a perfect web, and a major source of "
+"imperfection is Internet Explorer.  When the \"html4css1\" writer was "
+"created, IE represented the overwhelming majority of web browsers \"in "
+"the wild\". The behaviour is kept for backwards compatibility while "
+"modern, semantic HTML output is available with the \"html5\" writer."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1174
+msgid ""
+"(Thanks to Martin F. Krafft, Robert Kern, Michael Foord, and Alan G. "
+"Isaac.)"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1179
+msgid "Python Source Reader"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1182
+msgid "Can I use Docutils for Python auto-documentation?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1184
+msgid "Yes, in conjunction with other projects."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1186
+msgid "The Sphinx_ documentation generator includes an autodoc module."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1190
+msgid ""
+"Version 2.0 of Ed Loper's `Epydoc <http://epydoc.sourceforge.net/>`_ "
+"supports reStructuredText-format docstrings for HTML output.  Docutils "
+"0.3 or newer is required.  Development of a Docutils-specific auto-"
+"documentation tool will continue.  Epydoc works by importing Python "
+"modules to be documented, whereas the Docutils-specific tool, described "
+"above, will parse modules without importing them (as with `HappyDoc "
+"<http://happydoc.sourceforge.net/>`_, which doesn't support "
+"reStructuredText)."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1199
+msgid ""
+"The advantages of parsing over importing are security and flexibility; "
+"the disadvantage is complexity/difficulty."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1202
+msgid ""
+"Security: untrusted code that shouldn't be executed can be parsed; "
+"importing a module executes its top-level code."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1204
+msgid ""
+"Flexibility: comments and unofficial docstrings (those not supported by "
+"Python syntax) can only be processed by parsing."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1206
+msgid ""
+"Complexity/difficulty: it's a lot harder to parse and analyze a module "
+"than it is to ``import`` and analyze one."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1209
+msgid ""
+"For more details, please see \"Docstring Extraction Rules\" in `PEP "
+"258`_, item 3 (\"How\")."
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1214
+msgid "Miscellaneous"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1217
+msgid "Is the Docutils document model based on any existing XML models?"
+msgstr ""
+
+#: ../../docutils/FAQ.txt:1219
+msgid ""
+"Not directly, no.  It borrows bits from DocBook, HTML, and others.  I "
+"(David Goodger) have designed several document models over the years, and"
+" have my own biases.  The Docutils document model is designed for "
+"simplicity and extensibility, and has been influenced by the needs of the"
+" reStructuredText markup."
+msgstr ""
+

@@ -1,0 +1,3342 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/user/config.txt:3
+msgid "Docutils Configuration"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:5
+msgid "David Goodger"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:7
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:8
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+msgid "Docutils Security for Web Applications"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:13
+msgid ""
+"For details about securing web applications, please see `Deploying "
+"Docutils Securely <../howto/security.html>`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:17
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:21
+msgid "Configuration Files"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:23
+msgid ""
+"Configuration files are used for persistent customization; they can be "
+"set once and take effect every time you use a front-end tool. "
+"Configuration file settings override the built-in defaults, and command-"
+"line options override all."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:28
+msgid ""
+"By default, Docutils checks the following places for configuration files,"
+" in the following order:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:31
+msgid ""
+"``/etc/docutils.conf``: This is a system-wide configuration file, "
+"applicable to all Docutils processing on the system."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:34
+msgid ""
+"``./docutils.conf``: This is a project-specific configuration file, "
+"located in the current directory.  The Docutils front end has to be "
+"executed from the directory containing this configuration file for it to "
+"take effect (note that this may have nothing to do with the location of "
+"the source files).  Settings in the project-specific configuration file "
+"will override corresponding settings in the system-wide file."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:42
+msgid ""
+"``~/.docutils``: This is a user-specific configuration file, located in "
+"the user's home directory.  Settings in this file will override "
+"corresponding settings in both the system-wide and project-specific "
+"configuration files."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:47
+msgid ""
+"If more than one configuration file is found, all will be read but later "
+"entries will override earlier ones.  For example, a \"stylesheet\" entry "
+"in a user-specific configuration file will override a \"stylesheet\" "
+"entry in the system-wide file."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:52
+msgid ""
+"The default implicit config file paths can be overridden by the "
+"``DOCUTILSCONFIG`` environment variable.  ``DOCUTILSCONFIG`` should "
+"contain a colon-separated (semicolon-separated on Windows) sequence of "
+"config file paths to search for; leave it empty to disable implicit "
+"config files altogether.  Tilde-expansion is performed on paths. Paths "
+"are interpreted relative to the current working directory. Empty path "
+"items are ignored."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:60
+msgid ""
+"In addition, a configuration file may be explicitly specified with the "
+"``--config`` command-line option.  This configuration file is read after "
+"the three implicit ones listed above (or the ones defined by the "
+"``DOCUTILSCONFIG`` environment variable), and its entries will have "
+"priority."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:69
+msgid "Configuration File Syntax"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:71
+msgid ""
+"Configuration files are UTF-8-encoded text files.  The ConfigParser.py_ "
+"module from Python_'s standard library is used to read them.  From its "
+"documentation:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:75
+msgid ""
+"The configuration file consists of sections, lead by a \"[section]\" "
+"header and followed by \"name: value\" entries, with continuations in the"
+" style of `RFC 822`_; \"name=value\" is also accepted.  Note that leading"
+" whitespace is removed from values.  ...  Lines beginning with \"#\" or "
+"\";\" are ignored and may be used to provide comments."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:82
+msgid "No format string interpolation is done."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:84
+msgid ""
+"Configuration file entry names correspond to internal runtime settings.  "
+"Underscores (\"_\") and hyphens (\"-\") can be used interchangeably in "
+"entry names; hyphens are automatically converted to underscores."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:89
+msgid ""
+"For on/off switch settings (_`booleans`), the following values are "
+"recognized:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt
+msgid "On"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:92
+msgid "\"true\", \"yes\", \"on\", \"1\""
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt
+msgid "Off"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:93
+msgid "\"false\", \"no\", \"off\", \"0\", \"\" (no value)"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:97
+msgid "List values can be comma- or colon-delimited."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:99
+msgid ""
+"strip_classes_, strip_elements_with_classes_, stylesheet, and "
+"stylesheet_path use the comma as delimiter, whitespace around list values"
+" is stripped. ::"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:110
+msgid ""
+"expose_internals_, ignore_ and prune_ use the colon as delimiter and do "
+"not strip whitespace::"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:117
+msgid "Example"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:119
+msgid ""
+"This is from the ``tools/docutils.conf`` configuration file supplied with"
+" Docutils::"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:140
+msgid ""
+"Individual configuration sections and settings are described in the "
+"following section."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:146
+msgid "Configuration File Sections & Entries"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:148
+msgid ""
+"Below are the Docutils runtime settings, listed by config file section.  "
+"**Any setting may be specified in any section, but only settings from "
+"active sections will be used.**  Sections correspond to Docutils "
+"components (module name or alias; section names are always in lowercase "
+"letters).  Each `Docutils application`_ uses a specific set of "
+"components; corresponding configuration file sections are applied when "
+"the application is used.  Configuration sections are applied in general-"
+"to-specific order, as follows:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:157
+msgid "`[general]`_"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:159
+msgid ""
+"`[parsers]`_, parser dependencies, and the section specific to the Parser"
+" used (\"[... parser]\").  Currently, only `[restructuredtext parser]`_ "
+"is applicable."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:163
+msgid ""
+"`[readers]`_, reader dependencies, and the section specific to the Reader"
+" used (\"[... reader]\").  For example, `[pep reader]`_ depends on "
+"`[standalone reader]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:167
+msgid ""
+"`[writers]`_, writer family (\"[... writers]\"; if applicable), writer "
+"dependencies, and the section specific to the writer used (\"[... "
+"writer]\").  For example, `[pep_html writer]`_ depends on `[html "
+"writers]`_ and `[html4css1 writer]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:172
+msgid ""
+"`[applications]`_, application dependencies, and the section specific to "
+"the Application (front-end tool) in use (\"[... application]\")."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:176
+msgid ""
+"Since any setting may be specified in any section, this ordering allows "
+"component- or application-specific overrides of earlier settings.  For "
+"example, there may be Reader-specific overrides of general settings; "
+"Writer-specific overrides of Parser settings; Application-specific "
+"overrides of Writer settings; and so on."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:182
+msgid ""
+"If multiple configuration files are applicable, the process is completed "
+"(all sections are applied in the order given) for each one before going "
+"on to the next.  For example, a \"[pep_html writer] stylesheet\" setting "
+"in an earlier configuration file would be overridden by an \"[html4css1 "
+"writer] stylesheet\" setting in a later file."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:189
+msgid "Some knowledge of Python_ is assumed for some attributes."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:199
+msgid "[general]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:201
+msgid "Settings in the \"[general]\" section are always applied."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:204
+msgid "auto_id_prefix"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:206
+msgid ""
+"Prefix prepended to all auto-generated `identifier keys` generated within"
+" the document, after id_prefix_. Ensure the value conforms to the "
+"restrictions on identifiers in the output format, as it is not subjected "
+"to the `identifier normalization`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:211
+msgid "A trailing \"%\" is replaced with the tag name (new in Docutils 0.16)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:213
+msgid ""
+"Default: \"%\" (changed in 0.18 from \"id\"). Option: ``--auto-id-"
+"prefix`` (hidden, intended mainly for programmatic use)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:220
+msgid "datestamp"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:222
+msgid ""
+"Include a time/datestamp in the document footer.  Contains a format "
+"string for Python's ``time.strftime``.  See the `time module "
+"documentation`__."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:226
+msgid "Default: None. Options: ``--date, -d, --time, -t, --no-datestamp``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:229
+msgid "Configuration file entry examples::"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:245
+msgid "debug"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:247
+msgid "Report debug-level system messages."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:249
+msgid "Default: don't (None).  Options: ``--debug, --no-debug``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:252
+msgid "dump_internals"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:254
+msgid ""
+"At the end of processing, write all internal attributes of the document "
+"(``document.__dict__``) to stderr."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:257
+msgid ""
+"Default: don't (None). Option: ``--dump-internals`` (hidden, for "
+"development use only)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:261
+msgid "dump_pseudo_xml"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:263
+msgid ""
+"At the end of processing, write the pseudo-XML representation of the "
+"document to stderr."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:266
+msgid ""
+"Default: don't (None). Option: ``--dump-pseudo-xml`` (hidden, for "
+"development use only)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:270
+msgid "dump_settings"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:272
+msgid "At the end of processing, write all Docutils settings to stderr."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:274
+msgid ""
+"Default: don't (None). Option: ``--dump-settings`` (hidden, for "
+"development use only)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:278
+msgid "dump_transforms"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:280
+msgid ""
+"At the end of processing, write a list of all transforms applied to the "
+"document to stderr."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:283
+msgid ""
+"Default: don't (None). Option: ``--dump-transforms`` (hidden, for "
+"development use only)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:287
+msgid "error_encoding"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:289
+msgid "The text encoding for error output."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:291
+msgid "Default: \"ascii\".  Options: ``--error-encoding, -e``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:294
+msgid "error_encoding_error_handler"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:296
+msgid ""
+"The error handler for unencodable characters in error output.  See "
+"output_encoding_error_handler_ for acceptable values."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:299
+msgid ""
+"Default: \"backslashreplace\" Options: ``--error-encoding-error-handler, "
+"--error-encoding, -e``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:303
+msgid "exit_status_level"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:305
+msgid ""
+"A system message level threshold; non-halting system messages at or above"
+" this level will produce a non-zero exit status at normal exit.  Exit "
+"status is the maximum system message level plus 10 (11 for INFO, etc.)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:310
+msgid "Default: disabled (5).  Option: ``--exit-status``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:313
+msgid "expose_internals"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:315
+msgid ""
+"List_ of internal attributes to expose as external attributes (with "
+"\"internal:\" namespace prefix).  To specify multiple attributes in "
+"configuration files, use colons to separate names; on the command line, "
+"the option may be used more than once."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:320
+msgid ""
+"Default: don't (None). Option: ``--expose-internal-attribute`` (hidden, "
+"for development use only)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:324
+msgid "footnote_backlinks"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:326
+msgid ""
+"Enable or disable backlinks from footnotes_ and citations_ to their "
+"references."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:329
+msgid ""
+"Default: enabled (True). Options: ``--footnote-backlinks, --no-footnote-"
+"backlinks``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:333
+msgid "generator"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:335
+msgid ""
+"Include a \"Generated by Docutils\" credit and link in the document "
+"footer."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:337
+msgid "Default: off (None).  Options: ``--generator, -g, --no-generator``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:340
+msgid "halt_level"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:342
+msgid ""
+"The threshold at or above which system messages are converted to "
+"exceptions, halting execution immediately.  If `traceback`_ is set, the "
+"exception will propagate; otherwise, Docutils will exit."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:346
+msgid "Default: severe (4).  Options: ``--halt, --strict``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:349
+msgid "id_prefix"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:351
+msgid ""
+"Prefix prepended to all identifier keys generated within the document. "
+"Ensure the value conforms to the restrictions on identifiers in the "
+"output format, as it is not subjected to the `identifier normalization`_."
+" See also auto_id_prefix_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:356
+msgid ""
+"Default: \"\" (empty). Option: ``--id-prefix`` (hidden, intended mainly "
+"for programmatic use)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:360
+msgid "input_encoding"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:362
+msgid "The text encoding for input."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:364
+msgid "Default: auto-detect (None).  Options: ``--input-encoding, -i``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:367
+msgid "input_encoding_error_handler"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:369
+msgid ""
+"The error handler for undecodable characters in the input. Acceptable "
+"values include:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:372
+#: ../../docutils/docs/user/config.txt:425
+msgid "strict"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:373
+#: ../../docutils/docs/user/config.txt:426
+msgid "Raise an exception in case of an encoding error."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:375
+#: ../../docutils/docs/user/config.txt:428
+msgid "replace"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:375
+msgid ""
+"Replace malformed data with the official Unicode replacement character, "
+"U+FFFD."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:378
+#: ../../docutils/docs/user/config.txt:430
+#: ../../docutils/docs/user/config.txt:2078
+msgid "ignore"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:378
+#: ../../docutils/docs/user/config.txt:431
+msgid "Ignore malformed data and continue without further notice."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:380
+msgid ""
+"Acceptable values are the same as for the \"error\" parameter of Python's"
+" ``unicode`` function; other values may be defined in applications or in "
+"future versions of Python."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:384
+msgid ""
+"Default: \"strict\". Options: ``--input-encoding-error-handler, --input-"
+"encoding, -i``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:388
+msgid "language_code"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:390
+msgid "Case-insensitive `language tag`_ as defined in `BCP 47`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:392
+msgid ""
+"Sets the document language, also used for localized directive and role "
+"names as well as Docutils-generated text."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:395
+msgid ""
+"A typical language identifier consists of a 2-letter language code from "
+"`ISO 639`_ (3-letter codes can be used if no 2-letter code exists). The "
+"language identifier can have an optional subtag, typically for variations"
+" based on country (from `ISO 3166`_ 2-letter country codes).  Avoid "
+"subtags except where they add useful distinguishing information. Examples"
+" of language tags include \"fr\", \"en-GB\", \"pt-br\" (the same as \"pt-"
+"BR\"), and \"de-1901\" (German with pre-1996 spelling)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:404
+msgid ""
+"The language of document parts can be specified with a "
+"\"language-<language tag>\" `class attribute`_, e.g. ``.. class:: "
+"language-el-polyton`` for a quote in polytonic Greek."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:408
+msgid "Default: English (\"en\").  Options: ``--language, -l``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:413
+msgid "output_encoding"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:415
+msgid "The text encoding for output."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:417
+msgid "Default: \"UTF-8\".  Options: ``--output-encoding, -o``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:420
+msgid "output_encoding_error_handler"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:422
+msgid ""
+"The error handler for unencodable characters in the output. Acceptable "
+"values include:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:428
+msgid "Replace malformed data with a suitable replacement marker, such as \"?\"."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:433
+msgid "xmlcharrefreplace"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:433
+msgid ""
+"Replace with the appropriate XML character reference, such as "
+"\"``&#8224;``\"."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:436
+msgid "backslashreplace"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:436
+msgid "Replace with backslash escape sequences, such as \"``\\u2020``\"."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:438
+msgid ""
+"Acceptable values are the same as for the \"error\" parameter of Python's"
+" ``encode`` string method; other values may be defined in applications or"
+" in future versions of Python."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:442
+msgid ""
+"Default: \"strict\". Options: ``--output-encoding-error-handler, "
+"--output-encoding, -o``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:446
+msgid "record_dependencies"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:448
+msgid ""
+"Path to a file where Docutils will write a list of files that were "
+"required to generate the output, e.g. included files or embedded "
+"stylesheets [#dependencies]_. [#pwd]_ The format is one path per line "
+"with forward slashes as separator, the encoding is ``utf8``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:453
+msgid "Set to ``-`` in order to write dependencies to stdout."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:455
+msgid ""
+"This option is particularly useful in conjunction with programs like "
+"``make`` using ``Makefile`` rules like::"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:461
+msgid ""
+"If the filesystem encoding differs from utf8, replace the ``cat`` command"
+" with a call to a converter, e.g.::"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:466
+msgid "Default: None.  Option: ``--record-dependencies``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:468
+msgid ""
+"Images are only added to the dependency list if they are embedded into "
+"the output or the reStructuredText parser extracted image dimensions from"
+" the file."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:473
+msgid "report_level"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:475
+msgid "Report system messages at or higher than <level>:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:477
+msgid "1  info 2  warning 3  error 4  severe 5  none"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:483
+msgid ""
+"Default: warning (2). Options: ``--report, -r, --verbose, -v, --quiet, "
+"-q``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:487
+msgid "sectnum_xform"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:489
+msgid ""
+"Enable or disable automatic section numbering by Docutils "
+"(docutils.transforms.parts.SectNum) associated with the `sectnum "
+"directive`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:493
+msgid ""
+"If disabled, section numbers might be added to the output by the renderer"
+" (e.g. by LaTeX or via a CSS style definition)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:496
+msgid ""
+"Default: enabled (True). Options: ``--section-numbering``, ``--no-"
+"section-numbering``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:502
+msgid "source_link"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:504
+msgid ""
+"Include a \"View document source\" link in the document footer.  URL will"
+" be relative to the destination."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:507
+msgid "Default: don't (None). Options: ``--source-link, -s, --no-source-link``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:511
+msgid "source_url"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:513
+msgid "An explicit URL for a \"View document source\" link, used verbatim."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:515
+msgid ""
+"Default: compute if source_link (None). Options: ``--source-url, --no-"
+"source-link``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:519
+msgid "strict_visitor"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:521
+msgid ""
+"When processing a document tree with the Visitor pattern, raise an error "
+"if a writer does not support a node type listed as optional. For "
+"transitional development use."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:525
+msgid ""
+"Default: disabled (None). Option: ``--strict-visitor`` (hidden, for "
+"development use only)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:529
+msgid "strip_classes"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:531
+msgid ""
+"Comma-separated list_ of \"classes\" attribute values to remove from all "
+"elements in the document tree. The command line option may be used more "
+"than once."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:535
+#: ../../docutils/docs/user/config.txt:554
+#: ../../docutils/docs/user/config.txt:663
+msgid "Potentially dangerous; use with caution."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:537
+msgid "Default: disabled (None).  Option: ``--strip-class``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:540
+msgid "strip_comments"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:542
+msgid "Enable the removal of comment elements from the document tree."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:544
+msgid ""
+"Default: disabled (None). Options: ``--strip-comments``, ``--leave-"
+"comments``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:548
+msgid "strip_elements_with_classes"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:550
+msgid ""
+"Comma-separated list_ of \"classes\" attribute values; matching elements "
+"are removed from the document tree. The command line option may be used "
+"more than once."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:556
+msgid "Default: disabled (None).  Option: ``--strip-element-with-class``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:559
+msgid "title"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:561
+msgid ""
+"The `document title` as metadata which does not become part of the "
+"document body. Stored as the document's `title attribute`_. For example, "
+"in HTML output the metadata document title appears in the title bar of "
+"the browser window."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:566
+msgid ""
+"This setting overrides a displayed `document title`_ and is overridden by"
+" a `\"title\" directive`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:569
+msgid "Default: none.  Option: ``--title``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:576
+msgid "toc_backlinks"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:578
+msgid ""
+"Enable backlinks from section titles to table of contents entries "
+"(\"entry\"), to the top of the TOC (\"top\"), or disable (\"none\")."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:581
+msgid ""
+"Default: \"entry\". Options: ``--toc-entry-backlinks, --toc-top-"
+"backlinks, --no-toc-backlinks``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:585
+msgid "traceback"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:587
+msgid ""
+"Enable Python tracebacks when halt-level system messages and other "
+"exceptions occur.  Useful for debugging, and essential for issue reports."
+"  Exceptions are allowed to propagate, instead of being caught and "
+"reported (in a user-friendly way) by Docutils."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:592
+msgid ""
+"Default: disabled (None) unless Docutils is run programmatically using "
+"the `Publisher Interface`_. Options: ``--traceback, --no-traceback``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:599
+msgid "warning_stream"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:601
+msgid "Path to a file for the output of system messages (warnings). [#pwd]_"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:603
+msgid "Default: stderr (None).  Option: ``--warnings``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:607
+msgid "[parsers]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:609
+msgid "Generic parser options:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:612
+msgid "file_insertion_enabled"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:614
+msgid ""
+"Enable or disable directives or directive that insert the contents of "
+"external files, such as \"include_\" or \"raw_\" with option \"url\". A "
+"\"warning\" system message (including the directive text) is inserted "
+"instead.  (See also raw_enabled_ for another security-relevant setting.)"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:619
+msgid ""
+"Default: enabled (True). Options: ``--file-insertion-enabled, --no-file-"
+"insertion``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:626
+msgid "line_length_limit"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:628
+msgid ""
+"Maximal number of characters in an input line or `substitution`_ "
+"definition. To prevent extraordinary high processing times or memory "
+"usage for certain input constructs, a \"warning\" system message is "
+"inserted instead."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:633
+msgid "Default: 10 000. Option: ``--line-length-limit``"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:636
+#: ../../docutils/docs/user/config.txt:1634
+msgid "New in Docutils 0.17."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:641
+msgid "raw_enabled"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:643
+msgid ""
+"Enable or disable the \"raw_\" directive.  A \"warning\" system message "
+"(including the directive text) is inserted instead.  See also "
+"file_insertion_enabled_ for another security-relevant setting."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:647
+msgid "Default: enabled (True).  Options: ``--raw-enabled, --no-raw``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:651
+msgid "[restructuredtext parser]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:654
+msgid "character_level_inline_markup"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:656
+msgid ""
+"Relax the `inline markup recognition rules`_ requiring whitespace or "
+"punctuation around inline markup."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:659
+msgid ""
+"Allows character level inline markup without escaped whithespace and is "
+"especially suited for languages that do not use whitespace to separate "
+"words (e.g. Japanese, Chinese)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:665
+msgid ""
+"When changing this setting to \"True\", inline markup characters in URLs,"
+" names and formulas must be escaped to prevent recognition and possible "
+"errors. Examples::"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:674
+msgid ""
+"Default: disabled (False). Options: ``--character-level-inline-markup, "
+"--word-level-inline-markup``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:677
+#: ../../docutils/docs/user/config.txt:1316
+msgid "New in Docutils 0.13."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:680
+msgid "pep_references"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:682
+msgid "Recognize and link to standalone PEP references (like \"PEP 258\")."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:684
+msgid ""
+"Default: disabled (None); enabled (True) in PEP Reader. Option: ``--pep-"
+"references``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:688
+msgid "pep_base_url"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:689
+msgid "Base URL for PEP references."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:691
+msgid "Default: \"http://www.python.org/peps/\". Option: ``--pep-base-url``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:695
+msgid "pep_file_url_template"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:697
+msgid ""
+"Template for PEP file part of URL, interpolated with the PEP number and "
+"appended to pep_base_url_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:700
+#, python-format
+msgid "Default: \"pep-%04d\".  Option: ``--pep-file-url``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:703
+msgid "rfc_references"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:705
+msgid "Recognize and link to standalone RFC references (like \"RFC 822\")."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:707
+msgid ""
+"Default: disabled (None); enabled (True) in PEP Reader. Option: ``--rfc-"
+"references``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:711
+msgid "rfc_base_url"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:713
+msgid "Base URL for RFC references."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:715
+msgid "Default: \"http://www.faqs.org/rfcs/\".  Option: ``--rfc-base-url``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:718
+msgid "smart_quotes"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:720
+msgid ""
+"Activate the experimental SmartQuotes_ transform to change straight "
+"quotation marks to typographic form. `Quote characters`_ are selected "
+"according to the language of the current block element (see "
+"language_code_, smartquotes_locales_, and the `pre-defined quote "
+"sets`__)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:725
+msgid ""
+"Also changes consecutive runs of hyphen-minus and full stops (``---``, "
+"``--``, ``...``) to em-dash, en-dash, and ellipsis Unicode characters "
+"respectively."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:729
+#: ../../docutils/docs/user/config.txt:775
+msgid "Supported values:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:732
+msgid "booleans_ (yes/no)"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:732
+msgid "Use smart quotes?"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:735
+msgid "alt (or \"alternative\")"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:735
+msgid "Use alternative quote set (if defined for the language)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:737
+msgid "Default: \"no\". Option: ``--smart-quotes``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:739
+msgid "New in Docutils 0.10."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:748
+msgid "smartquotes_locales"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:750
+msgid "Typographical quotes used by the SmartQuotes_ transform."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:752
+msgid ""
+"A comma-separated list_ with language tag and a set of four quotes "
+"(primary open/close, secondary open/close)smartquotes_locales. (If more "
+"than one character shall be used for a quote (e.g. padding in French "
+"quotes), a colon-separated list may be used.)"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:763
+msgid "Example:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:758
+msgid ""
+"Ensure a correct leading apostrophe in ``'s Gravenhage`` in Dutch (at the"
+" cost of incorrect opening single quotes) and set French quotes to double"
+" and single guillemets with inner padding::"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:765
+msgid "Default: None. Option: ``--smartquotes-locales``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:767
+msgid "New in Docutils 0.14."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:770
+msgid "syntax_highlight"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:772
+msgid ""
+"Token type names used by Pygments_ when parsing contents of the code_ "
+"directive and role."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:777
+msgid "long"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:778
+msgid "Use hierarchy of long token type names."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:780
+msgid "short"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:780
+msgid ""
+"Use short token type names. (For use with `Pygments-generated "
+"stylesheets`_.)"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:784
+msgid "none"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:783
+msgid ""
+"No code parsing. Use this to avoid the \"Pygments not found\" warning "
+"when Pygments is not installed."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:786
+msgid "Default: \"long\".  Option: ``--syntax-highlight``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:788
+msgid "New in Docutils 0.9."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:796
+msgid "tab_width"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:798
+msgid "Number of spaces for hard tab expansion."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:800
+msgid "Default: 8.  Option: ``--tab-width``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:803
+msgid "trim_footnote_reference_space"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:805
+msgid "Remove spaces before `footnote references`_?"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:807
+msgid "Default: None [#]_"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:809
+msgid ""
+"Options: ``--trim-footnote-reference-space, --leave-footnote-reference-"
+"space``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:811
+msgid ""
+"Depending on the writer-specific `footnote_references setting`_. The "
+"footnote space is trimmed if the reference style is \"superscript\", and "
+"it is left if the reference style is \"brackets\"."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:816
+msgid "[markdown parser]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:818
+msgid "Experimental, based on recommonmark_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:823
+msgid "[readers]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:827
+msgid "[standalone reader]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:830
+msgid "docinfo_xform"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:832
+msgid ""
+"Enable or disable the `bibliographic field list`_ transform "
+"(docutils.transforms.frontmatter.DocInfo)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:835
+msgid "Default: enabled (True).  Options: ``--no-doc-info``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:838
+msgid "doctitle_xform"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:840
+msgid ""
+"Enable or disable the promotion of a lone top-level section title to "
+"`document title`_ (and subsequent section title to document subtitle "
+"promotion; docutils.transforms.frontmatter.DocTitle)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:844
+msgid "Default: enabled (True).  Options: ``--no-doc-title``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:847
+msgid "sectsubtitle_xform"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:849
+msgid ""
+"Enable or disable the promotion of the title of a lone subsection to a "
+"subtitle (docutils.transforms.frontmatter.SectSubTitle)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:852
+msgid ""
+"Default: disabled (False). Options: ``--section-subtitles, --no-section-"
+"subtitles``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:857
+msgid "[pep reader]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:859
+msgid ""
+"The `pep_references`_ and `rfc_references`_ settings (`[restructuredtext "
+"parser]`_) are set on by default."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:870
+msgid "[writers]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:873
+msgid "[docutils_xml writer]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:877
+msgid ""
+"In Python versions older than 2.7.3 and 3.2.3, the newlines_ and indents_"
+" options may adversely affect whitespace; use them only for reading "
+"convenience (see http://bugs.python.org/issue4147)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:881
+msgid ""
+"The XML declaration carries text encoding information. If the encoding is"
+" not UTF-8 or ASCII and the XML declaration is missing, standard tools "
+"may be unable to read the generated XML."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:886
+msgid "doctype_declaration"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:888
+msgid "Generate XML with a DOCTYPE declaration."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:890
+msgid "Default: do (True).  Options: ``--no-doctype``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:893
+msgid "indents"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:895
+msgid "Generate XML with indents and newlines."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:897
+msgid "Default: don't (None).  Options: ``--indents``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:900
+msgid "newlines"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:902
+msgid "Generate XML with newlines before and after tags."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:904
+msgid "Default: don't (None).  Options: ``--newlines``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:910
+#: ../../docutils/docs/user/config.txt:1250
+msgid "xml_declaration"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:912
+msgid ""
+"Generate XML with an XML declaration. See also `xml_declaration [html "
+"writers]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:915
+msgid "Default: do (True).  Option: ``--no-xml-declaration``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:919
+msgid "[html writers]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:924
+#: ../../docutils/docs/user/config.txt:1507
+msgid "attribution"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:926
+msgid ""
+"Format for `block quote`_ attributions: one of \"dash\" (em-dash prefix),"
+" \"parentheses\"/\"parens\", or \"none\". See also `attribution [latex "
+"writers]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:930
+msgid "Default: \"dash\".  Option: ``--attribution``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:934
+msgid "cloak_email_addresses"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:936
+#, python-format
+msgid ""
+"Scramble email addresses to confuse harvesters.  In the reference URI, "
+"the \"@\" will be replaced by %-escapes (as of RFC 1738).  In the visible"
+" text (link text) of an email reference, the \"@\" and all periods "
+"(\".\") will be surrounded by ``<span>`` tags. Furthermore, HTML entities"
+" are used to encode these characters in order to further complicate "
+"decoding the email address.  For example, \"abc@example.org\" will be "
+"output as::"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:947
+msgid ""
+"While cloaking email addresses will have little to no impact on the "
+"rendering and usability of email links in most browsers, some browsers "
+"(e.g. the ``links`` browser) may decode cloaked email addresses "
+"incorrectly."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:952
+msgid "Default: don't cloak (None).  Option: ``--cloak-email-addresses``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:955
+msgid "compact_lists"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:957
+msgid ""
+"Remove extra vertical whitespace between items of bullet lists and "
+"enumerated lists, when list items are all \"simple\" (i.e., items each "
+"contain one paragraph and/or one \"simple\" sub-list only).  The "
+"behaviour can be specified directly via \"class\" attributes (values "
+"\"compact\" and \"open\") in the document."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:963
+msgid "Default: enabled (True). Options: ``--compact-lists, --no-compact-lists``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:967
+msgid "compact_field_lists"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:969
+msgid ""
+"Remove extra vertical whitespace between items of `field lists`_ that are"
+" \"simple\" (i.e., all field bodies each contain at most one paragraph)."
+"  The behaviour can be specified directly via \"class\" attributes "
+"(values \"compact\" and \"open\") in the document."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:974
+msgid ""
+"Default: enabled (True). Options: ``--compact-field-lists, --no-compact-"
+"field-lists``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:981
+#: ../../docutils/docs/user/config.txt:1549
+msgid "embed_stylesheet"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:983
+msgid ""
+"Embed the stylesheet in the output HTML file.  The stylesheet file must "
+"specified by the stylesheet_path_ setting and must be accessible during "
+"processing. See also `embed_stylesheet [latex writers]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:988
+msgid "Default: enabled. Options: ``--embed-stylesheet, --link-stylesheet``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:996
+#: ../../docutils/docs/user/config.txt:1563
+msgid "footnote_references"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:998
+msgid ""
+"Format for `footnote references`_, one of \"superscript\" or "
+"\"brackets\". See also `footnote_references [latex writers]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1001
+#: ../../docutils/docs/user/config.txt:1568
+msgid ""
+"Overrides [#override]_ trim_footnote_reference_space_, if the parser "
+"supports this option."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1004
+msgid "Default: \"brackets\".  Option: ``--footnote-references``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1007
+msgid "initial_header_level"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1009
+msgid ""
+"The initial level for header elements.  This does not affect the document"
+" title & subtitle; see doctitle_xform_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1012
+msgid ""
+"Default: writer dependent (see `[html4css1 writer]`_, `[html5 writer]`_, "
+"`[pep_html writer]`_). Option: ``--initial-header-level``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1018
+msgid "math_output"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1020
+msgid ""
+"The format of mathematical content (`math directive`_ and role) in the "
+"output document. Supported values are (case insensitive):"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt
+msgid "HTML"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1024
+msgid ""
+"Format math in standard HTML enhanced by CSS rules. Requires the "
+"``math.css`` stylesheet (in the system `stylesheet directory "
+"<stylesheet_dirs [html writers]_>`__)"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1028
+msgid ""
+"A `stylesheet_path <stylesheet_path [html writers]_>`__ can be appended "
+"after whitespace. The specified stylesheet(s) will only be referenced or "
+"embedded if required (i.e. if there is mathematical content in the "
+"document)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt
+msgid "MathJax"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1034
+msgid ""
+"Format math for display with MathJax_, a JavaScript-based math rendering "
+"engine."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1042
+#: ../../docutils/docs/user/config.txt:1088
+msgid "Pro:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1038
+msgid "Works across multiple browsers and platforms."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1040
+msgid "Large set of `supported LaTeX math commands and constructs`__"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1046
+#: ../../docutils/docs/user/config.txt:1103
+msgid "Con:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1045
+msgid ""
+"Rendering requires JavaScript and an Internet connection or local MathJax"
+" installation."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1048
+msgid ""
+"A URL pointing to a MathJax library should be appended after whitespace. "
+"A warning is given if this is missing."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1051
+msgid ""
+"It is recommended to install__ the MathJax library on the same server as "
+"the rest of the deployed site files."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1056
+msgid ""
+"Example: Install the library at the top level of the web server’s "
+"hierarchy in the directory ``MathJax`` and set::"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1061
+msgid ""
+"The easiest way to use MathJax is to link directly to a public "
+"installation. In that case, there is no need to install MathJax locally."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1064
+msgid ""
+"Downside: Downloads JavaScript code from a third-party site --- opens the"
+" door to cross-site scripting attacks!"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1067
+msgid "Example: MathJax `getting started`__ documentation uses::"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1072
+msgid "See https://www.jsdelivr.com/ for details and terms of use."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1076
+msgid "Use a local MathJax installation on the *client* machine, e.g.::"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1080
+msgid "This is the fallback if no URL is specified."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt
+msgid "MathML"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1083
+msgid "Embed math content as presentational MathML_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1086
+msgid "The W3C recommendation for math on the web."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1088
+msgid "Self-contained documents (no JavaScript, no external downloads)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1091
+msgid "Limited `browser support`__."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1093
+msgid ""
+"Docutil's latex2mathml converter supports only a `subset of LaTeX math "
+"syntax`__."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1096
+msgid ""
+"With the \"html4css1\" writer, the resulting HTML document does not "
+"validate, as there is no DTD for `MathML + XHTML Transitional`. However, "
+"MathML-enabled browsers will render it fine."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1105
+msgid ""
+"An external converter can be appended after whitespace, e.g., ``--math-"
+"output=\"MathML latexml\"``:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1110
+msgid "blahtexml_"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1109
+msgid ""
+"Fast conversion, support for many symbols and environments, but no "
+"\"align\" (or other equation-aligning) environment. (C++)"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1113
+msgid "LaTeXML_"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1113
+msgid "Comprehensive macro support but *very* slow. (Perl)"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1116
+msgid "TtM_"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1116
+msgid ""
+"No \"matrix\", \"align\" and  \"cases\" environments. Support may be "
+"removed."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt
+msgid "LaTeX"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1119
+msgid "Include literal LaTeX code."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1121
+msgid "The failsafe fallback."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1123
+msgid "Default: HTML math.css.  Option: ``--math-output``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1125
+msgid "New in Docutils 0.8."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1139
+#: ../../docutils/docs/user/config.txt:1715
+#: ../../docutils/docs/user/config.txt:1944
+msgid "stylesheet"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1141
+msgid ""
+"A comma-separated list of CSS stylesheet URLs, used verbatim. See also "
+"`stylesheet [latex writers]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1144
+msgid "Overrides also stylesheet_path_. [#override]_"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1146
+msgid "Default: None.  Option: ``--stylesheet``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1152
+#: ../../docutils/docs/user/config.txt:1739
+msgid "stylesheet_dirs"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1154
+msgid ""
+"A comma-separated list of directories where stylesheets can be found. "
+"Used by the stylesheet_path_ setting when expanding relative path "
+"arguments."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1157
+msgid ""
+"Note: This setting defines a \"search path\" (similar to the PATH "
+"variable for executables). However, the term \"path\" is already used in "
+"the stylesheet_path_ setting with the meaning of a file location."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1162
+#: ../../docutils/docs/user/config.txt:1751
+msgid ""
+"Default: the working directory of the process at launch and the directory"
+" with default stylesheet files (writer and installation specific). Use "
+"the ``--help`` option to get the exact value. Option: ``--stylesheet-"
+"dirs``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1172
+#: ../../docutils/docs/user/config.txt:1760
+msgid "stylesheet_path"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1174
+msgid ""
+"A comma-separated list of paths to CSS stylesheets. Relative paths are "
+"expanded if a matching file is found in the stylesheet_dirs__. If "
+"embed_stylesheet__ is False, paths are rewritten relative to the output "
+"HTML file. See also `stylesheet_path [latex writers]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1180
+msgid ""
+"Also overrides \"stylesheet\". [#override]_ Pass an empty string (to "
+"either \"stylesheet\" or \"stylesheet_path\") to deactivate stylesheet "
+"inclusion."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1184
+msgid ""
+"Default: writer dependent (see `[html4css1 writer]`_, `[html5 writer]`_, "
+"`[pep_html writer]`_). Option: ``--stylesheet-path``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1195
+#: ../../docutils/docs/user/config.txt:1784
+msgid "table_style"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1197
+msgid ""
+"Class value(s) added to all tables_. See also `table_style [latex "
+"writers]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1200
+msgid "The default CSS sylesheets define:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1203
+msgid "borderless"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1203
+msgid "No borders around the table."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1206
+msgid "align-left, align-center, align-right"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1206
+msgid "Align the tables"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1208
+msgid "The HTML5 stylesheets also define:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1211
+msgid "booktabs"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1211
+msgid "Only lines above and below the table and a thin line after the head."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1215
+msgid "captionbelow"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1214
+msgid "Place the table caption below the table (New in Docutils 0.17)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1217
+msgid "In addition, the HTML writers support:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1222
+msgid "colwidths-auto"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1220
+msgid ""
+"Delegate the determination of table column widths to the back-end (leave "
+"out the ``<colgroup>`` column specification). Overridden by the "
+"\"widths\" option of the `table directive`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1227
+msgid "colwidths-grid"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1225
+msgid ""
+"Backwards compatibility setting. Write column widths determined from the "
+"source to the HTML file. Overridden by the \"widths\" option of the "
+"`table directive`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1229
+msgid "Default: \"\".  Option: ``--table-style``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1237
+#: ../../docutils/docs/user/config.txt:1800
+msgid "template"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1239
+msgid ""
+"Path to template file, which must be encoded in UTF-8. [#pwd]_ See also "
+"`template [latex writers]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1242
+msgid ""
+"Default: \"template.txt\" in the writer's directory (installed "
+"automatically; for the exact machine-specific path, use the ``--help`` "
+"option). Option: ``--template``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1252
+msgid ""
+"Prepend an XML declaration. See also `xml_declaration [docutils_xml "
+"writer]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1255
+msgid ""
+"The XML declaration carries text encoding information.  If the encoding "
+"is not UTF-8 or ASCII and the XML declaration is missing, standard XML "
+"tools may be unable to read the generated XHTML."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1259
+msgid ""
+"Default: writer dependent. Options: ``--xml-declaration``, ``--no-xml-"
+"declaration``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1264
+msgid "[html4css1 writer]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1266
+msgid ""
+"The `HTML4/CSS1 Writer`_ generates output that conforms to the `XHTML 1 "
+"Transitional`_ specification. It shares all settings defined in the "
+"`[html writers]`_ `configuration section`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1273
+#: ../../docutils/docs/user/config.txt:1322
+#: ../../docutils/docs/user/config.txt:1384
+#: ../../docutils/docs/user/config.txt:1426
+#: ../../docutils/docs/user/config.txt:1869
+#: ../../docutils/docs/user/config.txt:1912
+msgid "Writer Specific Defaults"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1276
+#: ../../docutils/docs/user/config.txt:1326
+#: ../../docutils/docs/user/config.txt:1387
+msgid "`initial_header_level`_"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1276
+#: ../../docutils/docs/user/config.txt:1387
+msgid "1 (for \"<h1>\")"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1279
+#: ../../docutils/docs/user/config.txt:1329
+#: ../../docutils/docs/user/config.txt:1390
+msgid "`stylesheet_path <stylesheet_path [html writers]_>`__:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1279
+msgid "\"html4css1.css\""
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1282
+msgid "`xml_declaration <xml_declaration [html writers]_>`__"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1282
+msgid "enabled (True)"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1289
+msgid "field_name_limit"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1291
+msgid ""
+"The maximum width (in characters) for one-column `field names`_. Longer "
+"field names will span an entire row of the table used to render the field"
+" list.  0 indicates \"no limit\".  See also option_limit_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1295
+msgid "Default: 14 (i.e. 14 characters).  Option: ``--field-name-limit``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1299
+msgid "option_limit"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1301
+msgid ""
+"The maximum width (in characters) for options in `option lists`_. Longer "
+"options will span an entire row of the table used to render the option "
+"list.  0 indicates \"no limit\". See also field_name_limit_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1306
+msgid "Default: 14 (i.e. 14 characters).  Option: ``--option-limit``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1310
+msgid "[html5 writer]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1312
+msgid ""
+"The `HTML5 Writer`_ generates valid XML that is compatible with `HTML5`_."
+" It shares all settings defined in the `[html writers]`_ `configuration "
+"section`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1325
+msgid ""
+"2 (for \"<h2>\", cf. the \"`The h1, h2, h3, h4, h5, and h6 elements`__\" "
+"in the HTML Standard)"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1329
+msgid "\"minimal.css, plain.css\""
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1335
+msgid "embed_images"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1337
+msgid "Deprecated. Obsoleted by image_loading_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1341
+msgid "image_loading"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1343
+msgid "Suggest at which point images should be loaded."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt
+msgid "embed"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1345
+msgid ""
+"If the image can be read from the local file system, the image data is "
+"embedded into the HTML document."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt
+msgid "link"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1348
+msgid "Link to image in the HTML document (default)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt
+msgid "lazy"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1350
+msgid ""
+"Link to image. Specify the `lazy loading attribute`_ to defer fetching "
+"the image."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1353
+msgid "Default: \"link\". Option: ``--image-loading``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1355
+#: ../../docutils/docs/user/config.txt:1373
+#: ../../docutils/docs/user/config.txt:1653
+msgid "New in Docutils 0.18."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1364
+msgid "section_self_link"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1366
+msgid ""
+"Append an empty anchor element with a ``href`` to the section to section "
+"headings. See ``responsive.css`` for an example how this can be styled to"
+" show a symbol allowing users to copy the section's URL."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1370
+msgid ""
+"Default: disabled (False). Options: ``--section-self-link``, ``--no-"
+"section-self-link``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1377
+msgid "[pep_html writer]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1379
+msgid ""
+"The PEP/HTML Writer derives from the HTML4/CSS1 Writer, and shares all "
+"settings defined in the `[html writers]`_ and `[html4css1 writer]`_ "
+"`configuration sections`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1390
+msgid "\"pep.css\""
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1395
+msgid "`template <template [html writers]_>`__:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1393
+msgid ""
+"``docutils/writers/pep_html/template.txt`` in the installation directory."
+"  For the exact machine-specific path, use the ``--help`` option."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1398
+msgid "no_random"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1399
+msgid ""
+"Do not use a random banner image.  Mainly used to get predictable results"
+" when testing."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1402
+msgid "Default: random enabled (None).  Options: ``--no-random`` (hidden)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1405
+msgid "pep_home"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1407
+msgid "Home URL prefix for PEPs."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1409
+msgid "Default: current directory (\".\").  Option: ``--pep-home``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1412
+msgid "python_home"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1413
+msgid "Python's home URL."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1415
+msgid "Default: parent directory (\"..\").  Option: ``--python-home``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1419
+msgid "[s5_html writer]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1421
+msgid ""
+"The S5/HTML Writer derives from the HTML4/CSS1 Writer, and shares all "
+"settings defined in the `[html writers]`_ and `[html4css1 writer]`_ "
+"`configuration sections`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1429
+msgid "compact_lists_:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1429
+msgid "disable compact lists."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1434
+#: ../../docutils/docs/user/config.txt:1936
+msgid "template__:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1432
+msgid ""
+"``docutils/writers/s5_html/template.txt`` in the installation directory."
+"  For the exact machine-specific path, use the ``--help`` option."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1440
+msgid "hidden_controls"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1442
+msgid ""
+"Auto-hide the presentation controls in slideshow mode, or or keep them "
+"visible at all times."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1445
+msgid ""
+"Default: auto-hide (True). Options: ``--hidden-controls``, ``--visible-"
+"controls``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1449
+msgid "current_slide"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1451
+msgid "Enable or disable the current slide indicator (\"1/15\")."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1453
+msgid ""
+"Default: disabled (None). Options: ``--current-slide``, ``--no-current-"
+"slide``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1457
+msgid "overwrite_theme_files"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1459
+msgid ""
+"Allow or prevent the overwriting of existing theme files in the "
+"``ui/<theme>`` directory.  This has no effect if \"theme_url_\" is used."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1463
+msgid ""
+"Default: keep existing theme files (None). Options: ``--keep-theme-"
+"files``, ``--overwrite-theme-files``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1467
+msgid "theme"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1469
+msgid ""
+"Name of an installed S5 theme, to be copied into a ``ui/<theme>`` "
+"subdirectory, beside the destination file (output HTML).  Note that "
+"existing theme files will not be overwritten; the existing theme "
+"directory must be deleted manually. Also overrides the \"theme_url_\" "
+"setting. [#override]_"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1475
+msgid "Default: \"default\".  Option: ``--theme``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1478
+msgid "theme_url"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1480
+msgid ""
+"The URL of an S5 theme directory.  The destination file (output HTML) "
+"will link to this theme; nothing will be copied.  Also overrides the "
+"\"theme_\" setting. [#override]_"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1484
+msgid "Default: None.  Option: ``--theme-url``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1487
+msgid "view_mode"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1489
+msgid "The initial view mode, either \"slideshow\" or \"outline\"."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1491
+msgid "Default: \"slidewhow\".  Option: ``--view-mode``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1496
+msgid "[latex writers]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1498
+msgid ""
+"Common settings for the `LaTeX writers`_ `[latex2e writer]`_ and `[xetex "
+"writer]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1509
+msgid "See `attribution [html writers]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1512
+msgid "compound_enumerators"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1514
+msgid ""
+"Enable or disable compound enumerators for nested `enumerated lists`_ "
+"(e.g. \"1.2.a.ii\")."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1517
+msgid ""
+"Default: disabled (None). Options: ``--compound-enumerators``, ``--no-"
+"compound-enumerators``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1521
+msgid "documentclass"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1523
+msgid "Specify LaTeX documentclass."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1525
+msgid "Default: \"article\".  Option: ``--documentclass``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1528
+msgid "documentoptions"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1530
+msgid ""
+"Specify document options.  Multiple options can be given, separated by "
+"commas."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1533
+msgid "Default: \"a4paper\".  Option: ``--documentoptions``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1537
+msgid "docutils_footnotes"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1538
+msgid ""
+"Use the Docutils-specific macros ``\\DUfootnote`` and "
+"``\\DUfootnotetext`` for footnotes_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1541
+msgid "TODO: The alternative, \"use_latex_footnotes\" is not implemented yet."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1543
+msgid "Default: on.  Option: ``--docutils-footnotes``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1551
+msgid ""
+"Embed the stylesheet(s) in the header of the output file.  The "
+"stylesheets must be accessible during processing.  Currently, this fails "
+"if the file is not available via the given path (i.e. the file is *not* "
+"searched in the `TeX input path`_). See also `embed_stylesheet [html "
+"writers]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1557
+msgid "Default: off.  Options: ``--embed-stylesheet, --link-stylesheet``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1565
+msgid ""
+"Format for `footnote references`_: one of \"superscript\" or "
+"\"brackets\". See also `footnote_references [html writers]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1571
+msgid "Default: \"superscript\".  Option: ``--footnote-references``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1575
+msgid "graphicx_option"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1577
+msgid "LaTeX graphicx package option."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1579
+msgid "Possible values are \"dvips\", \"pdftex\", \"dvipdfmx\"."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1581
+msgid "Default: \"\".  Option: ``--graphicx-option``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1584
+msgid "hyperlink_color"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1586
+msgid "Color of any hyperlinks embedded in text."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1588
+msgid ""
+"\"0\" or \"false\" disable coloring of links. (Links will be marked by "
+"red boxes that are not printed),"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1590
+msgid "\"black\" results in “invisible“ links,"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1592
+msgid "Set hyperref_options_ to \"draft\" to completely disable hyperlinking."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1594
+msgid "Default: \"blue\".  Option: ``--hyperlink-color``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1597
+msgid "hyperref_options"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1599
+msgid ""
+"Options for the `hyperref TeX package`_. If hyperlink_color_ is not "
+"\"false\", the expansion of ::"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1605
+msgid "is prepended."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1607
+msgid "Default: \"\".   Option: ``--hyperref-options``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1613
+msgid "latex_preamble"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1615
+msgid ""
+"LaTeX code that will be inserted in the document preamble. Can be used to"
+" load packages with options or (re-) define LaTeX macros without writing "
+"a custom style file (new in Docutils 0.7)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1619
+msgid ""
+"Default: writer dependent (see `[latex2e writer]`_, `[xetex writer]`_). "
+"Option: ``--latex-preamble``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1624
+msgid "legacy_class_functions"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1626
+msgid ""
+"Use legacy functions ``\\DUtitle`` and ``\\DUadmonition`` with a comma-"
+"separated list of class values as optional argument. If `False`, class "
+"values are handled with wrappers and admonitions use the ``DUadmonition``"
+" environment. See `Generating LaTeX with Docutils`__ for details."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1631
+msgid ""
+"Default: False (changed in Docutils 0.18). Options: ``--legacy-class-"
+"functions``, ``--new-class-functions``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1640
+msgid "legacy_column_widths"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1642
+msgid ""
+"Use \"legacy algorithm\" or new algorithm to determine table column "
+"widths."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1644
+msgid ""
+"The new algorithm limits the table width to the text width or specified "
+"table width and keeps the ratio of specified column widths."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1647
+msgid ""
+"Custom table and/or column widths can be set with the respective options "
+"of the `table directive`_. See also `Generating LaTeX with Docutils`__."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1650
+msgid ""
+"Default: True (will change to False in 0.19). Options: ``--legacy-column-"
+"widths``, ``--new-column-widths``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1659
+msgid "literal_block_env"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1661
+msgid "When possible\\ [#]_, use the specified environment for `literal blocks`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1663
+msgid ""
+"Default: \"\" (quoting of whitespace and special chars). Option: "
+"``--literal-block-env``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1666
+msgid ""
+"A literal-block element may originate from a `parsed literal`_. A LaTeX "
+"verbatim environment is only usable it does not contain inline elements."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1674
+msgid "reference_label"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1676
+msgid ""
+"Per default the latex-writer puts the reference title into hyper "
+"references. Specify \"ref*\" or \"pageref*\" to get the section number or"
+" the page number."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1680
+msgid "Default: \"\" (use hyper references).  Option: ``--reference-label``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1683
+msgid "section_enumerator_separator"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1685
+msgid ""
+"The separator between section number prefix and enumerator for compound "
+"enumerated lists (see `compound_enumerators`_)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1688
+msgid ""
+"Generally it isn't recommended to use both sub-sections and nested "
+"enumerated lists with compound enumerators.  This setting avoids "
+"ambiguity in the situation where a section \"1\" has a list item "
+"enumerated \"1.1\", and subsection \"1.1\" has list item \"1\".  With a "
+"separator of \".\", these both would translate into a final compound "
+"enumerator of \"1.1.1\".  With a separator of \"-\", we get the "
+"unambiguous \"1-1.1\" and \"1.1-1\"."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1696
+msgid "Default: \"-\".  Option: ``--section-enumerator-separator``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1701
+msgid "section_prefix_for_enumerators"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1703
+msgid ""
+"Enable or disable section (\".\" subsection ...) prefixes for compound "
+"enumerators.  This has no effect unless `compound_enumerators`_ are "
+"enabled."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1707
+msgid ""
+"Default: disabled (None). Options: ``--section-prefix-for-enumerators``, "
+"``--no-section-prefix-for-enumerators``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1717
+msgid ""
+"A comma-separated list_ of style files. See also `stylesheet [html "
+"writers]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1720
+msgid "Overrides also stylesheet_path__. [#override]_"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1722
+msgid ""
+"If `embed_stylesheet`__ is False (default), the stylesheet files are "
+"referenced with ``\\usepackage`` (extension ``.sty`` or no extension) or "
+"``\\input`` (any other extension)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1726
+msgid "LaTeX will search the specified files in the `TeX input path`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1728
+msgid "Default: no stylesheet (\"\").  Option: ``--stylesheet``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1741
+msgid ""
+"A comma-separated list of directories where stylesheets can be found. "
+"Used by the stylesheet_path__ setting."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1744
+msgid ""
+"Note: This setting defines a \"search path\" (similar to the PATH "
+"variable for executables). However, the term \"path\" is already used in "
+"the stylesheet_path__ setting with the meaning of a file location."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1762
+msgid ""
+"A comma-separated list of style files. Relative paths are expanded if a "
+"matching file is found in the stylesheet_dirs__. If embed_stylesheet__ is"
+" False, paths are rewritten relative to the output file path. Run "
+"``latex`` from the directory containing the output file. See also "
+"`stylesheet_path [html writers]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1769
+msgid "The stylesheet__  option is preferred for files in the `TeX input path`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1771
+msgid "Also overrides stylesheet__. [#override]_"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1773
+msgid "Default: no stylesheet (\"\").  Option: ``--stylesheet-path``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1786
+msgid ""
+"Specify the default style for tables_. See also `table_style [html "
+"writers]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1789
+msgid ""
+"Supported values: \"booktabs\", \"borderless\", \"colwidths-auto\", and "
+"\"standard\". See `Generating LaTeX with Docutils`__ for details."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1792
+msgid "Default: \"standard\".  Option: ``--table-style``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1802
+msgid ""
+"Path [#pwd]_ to template file, which must be encoded in UTF-8. See also "
+"`template [html writers]`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1805
+msgid ""
+"Default: writer dependent (see `[latex2e writer]`_, `[xetex writer]`_). "
+"Option: ``--template``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1810
+msgid "use_bibtex"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1811
+msgid ""
+"Specify style and database for the experimental `BibTeX` support, for "
+"example::"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1816
+msgid "Default: \"\" (don't use BibTeX).  Option ``--use-bibtex``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1819
+msgid "use_latex_abstract"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1821
+msgid "Use LaTeX abstract environment for the document's abstract_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1823
+msgid "Default: off.  Options: ``--use-latex-abstract, --topic-abstract``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1826
+msgid "use_latex_citations"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1828
+msgid "Use \\cite for citations_ instead of a simulation with figure-floats."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1830
+msgid "Default: off.  Options: ``--use-latex-citations, --figure-citations``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1833
+msgid "use_latex_docinfo"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1835
+msgid ""
+"Attach author and date to the `document title`_ instead of the "
+"`bibliographic fields`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1838
+msgid "Default: off.  Options: ``--use-latex-docinfo, --use-docutils-docinfo``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1841
+msgid "use_latex_toc"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1843
+msgid ""
+"To get page numbers in the `table of contents`_, it must be generated by "
+"LaTeX. Usually latex must be run twice to get numbers correct."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1847
+msgid "Default: on.  Options: ``--use-latex-toc, --use-docutils-toc``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1850
+msgid "use_part_section"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1852
+msgid "Add parts on top of the section hierarchy."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1854
+msgid "Default: don't (None).  Option: ``--use-part-section``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1857
+msgid "[latex2e writer]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1859
+msgid ""
+"The `LaTeX2e writer`_ generates a LaTeX source for compilation with 8-bit"
+" LaTeX (pdfTeX_). It shares all settings defined in the `[latex "
+"writers]`_ `configuration section`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1876
+msgid "latex_preamble_"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1872
+msgid "Load the \"PDF standard fonts\" (Times, Helvetica, Courier)::"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1883
+msgid "template__"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1879
+msgid ""
+"\"default.tex\" in the ``docutils/writers/latex2e/`` directory (installed"
+" automatically)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1886
+msgid "font_encoding"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1888
+msgid ""
+"Specify `LaTeX font encoding`_. Multiple options can be given, separated "
+"by commas. The last value becomes the document default. Possible values "
+"are \"\", \"T1\", \"OT1\", \"LGR,T1\" or any other combination of `LaTeX "
+"font encodings`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1893
+msgid "Default: \"T1\".  Option: ``--font-encoding``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1900
+msgid "[xetex writer]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1902
+msgid ""
+"The `XeTeX writer`_ generates a LaTeX source for compilation with `XeTeX "
+"or LuaTeX`_. It derives from the latex2e writer, and shares all settings "
+"defined in the `[latex writers]`_ and `[latex2e writer]`_ `configuration "
+"sections`_."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1923
+msgid "latex_preamble_:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1915
+msgid "Font setup for `Linux Libertine`_,::"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1922
+msgid ""
+"The optional argument ``HyphenChar=None`` to the monospace font prevents "
+"word hyphenation in literal text."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1928
+msgid ""
+"\"xelatex.tex\" in the ``docutils/writers/latex2e/`` directory (installed"
+" automatically)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1939
+msgid "[odf_odt writer]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1941
+msgid "The following command line options are specific to ``odtwriter``:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1946
+msgid "Specify a stylesheet URL, used verbatim."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1948
+msgid "Default: writers/odf_odt/styles.odt in the installation directory."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1951
+msgid "odf-config-file"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1953
+msgid ""
+"Specify a configuration/mapping file relative to the current working "
+"directory for additional ODF options. In particular, this file may "
+"contain a section named \"Formats\" that maps default style names to "
+"names to be used in the resulting output file allowing for adhering to "
+"external standards. For more info and the format of the "
+"configuration/mapping file, see the `Odt Writer for Docutils`_ document."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1961
+msgid "cloak-email-addresses"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1963
+msgid ""
+"Obfuscate email addresses to confuse harvesters while still keeping email"
+" links usable with standards-compliant browsers."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1967
+msgid "no-cloak-email-addresses"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1968
+msgid "Do not obfuscate email addresses."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1971
+msgid "table-border-thickness"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1973
+msgid ""
+"Specify the thickness of table borders in thousands of a cm. Default is "
+"35."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1977
+msgid "add-syntax-highlighting"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1979
+msgid "Add syntax highlighting in literal code blocks."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1982
+msgid "no-syntax-highlighting"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1984
+msgid "Do not add syntax highlighting in literal code blocks. (default)"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1988
+msgid "create-sections"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1990
+msgid "Create sections for headers.  (default)"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1993
+msgid "no-sections"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1995
+msgid "Do not create sections for headers."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1998
+msgid "create-links"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:1999
+msgid "Create links."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2002
+msgid "no-links"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2004
+msgid "Do not create links.  (default)"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2007
+msgid "endnotes-end-doc"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2009
+msgid "Generate endnotes at end of document, not footnotes at bottom of page."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2012
+msgid "no-endnotes-end-doc"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2014
+msgid ""
+"Generate footnotes at bottom of page, not endnotes at end of document. "
+"(default)"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2018
+msgid "generate-list-toc"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2020
+msgid ""
+"Generate a bullet list table of contents, not an ODF/``oowriter`` table "
+"of contents."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2024
+msgid "generate-oowriter-toc"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2026
+msgid ""
+"Generate an ODF/``oowriter`` table of contents, not a bullet list.  "
+"(default) **Note:** ``odtwriter`` is not able to determine page numbers, "
+"so you will need to open the generated document in ``oowriter``, then "
+"right-click on the table of contents and select \"Update\" to insert page"
+" numbers."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2033
+msgid "custom-odt-header"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2035
+msgid ""
+"Specify the contents of a custom header line.  For details about custom "
+"headers and about special field character sequences, see section \"Custom"
+" header/footers: inserting page numbers, date, time, etc\" in the `Odt "
+"Writer for Docutils`_ document for details."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2042
+msgid "custom-odt-footer"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2044
+msgid ""
+"Specify the contents of a custom footer line.  For details about custom "
+"footers and about special field character sequences, see section \"Custom"
+" header/footers: inserting page numbers, date, time, etc\" in the `Odt "
+"Writer for Docutils`_ document for details."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2054
+msgid "[pseudoxml writer]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2057
+msgid "detailed"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2059
+msgid "Pretty-print <#text> nodes."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2061
+msgid "Default:  False.  Option: ``--detailed``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2065
+msgid "[applications]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2068
+msgid "[buildhtml application]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2071
+msgid "dry_run"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2073
+msgid "Do not process files, show files that would be processed."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2075
+msgid "Default:  False.  Option: ``--dry-run``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2080
+msgid ""
+"List_ of wildcard (shell globing) patterns, specifying files to silently "
+"ignore.  To specify multiple patterns, use colon-separated patterns (in "
+"configuration files or on the command line); on the command line, the "
+"option may also be used more than once."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2085
+msgid "Default: None.  Option: ``--ignore``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2088
+msgid "prune"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2090
+msgid ""
+"List_ of directories not to process.  To specify multiple directories, "
+"use colon-separated paths (in configuration files or on the command "
+"line); on the command line, the option may also be used more than once."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2095
+msgid "Default: ['.hg', '.bzr', '.git', '.svn', 'CVS'].  Option: ``--prune``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2099
+msgid "recurse"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2101
+msgid "Recursively scan subdirectories, or ignore subdirectories."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2103
+msgid "Default: recurse (True).  Options: ``--recurse, --local``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2106
+msgid "silent"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2108
+msgid "Work silently (no progress messages).  Independent of \"report_level\"."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2111
+msgid "Default: show progress (None).  Option: ``--silent``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2117
+#: ../../docutils/docs/user/config.txt:2151
+msgid "writer"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2119
+msgid "`HTML writer`_ version. One of \"html\", \"html4\", \"html5\"."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2121
+msgid ""
+"Default: \"html\" (use Docutils' default HTML writer). Option: "
+"``--writer``"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2124
+msgid "New in 0.17. Obsoletes the ``html_writer`` option."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2130
+msgid "[docutils-cli application]"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2132
+msgid "New in 0.18."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2135
+msgid "reader"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2136
+msgid "Reader component name. One of \"standalone\" or \"pep\"."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2138
+msgid "Default: \"standalone\". Option: ``--reader``"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2142
+msgid "parser"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2143
+msgid "Parser component name. One of \"markdown\", \"recommonmark\", or \"rst\""
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2145
+msgid "Default: \"rst\". Option: ``--parser``"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2152
+msgid "Writer component name. One of the valid writer names or aliases."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2154
+msgid "Default: \"html5\". Option: ``--writer``"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2159
+msgid "Other Settings"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2162
+msgid "Command-Line Only"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2164
+msgid ""
+"These settings are only effective as command-line options; setting them "
+"in configuration files has no effect."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2168
+msgid "config"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2170
+msgid ""
+"Path to a configuration file to read (if it exists). [#pwd]_ Settings may"
+" override defaults and earlier settings.  The config file is processed "
+"immediately.  Multiple ``--config`` options may be specified; each will "
+"be processed in turn."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2175
+msgid ""
+"Filesystem path settings contained within the config file will be "
+"interpreted relative to the config file's location (*not* relative to the"
+" current working directory)."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2179
+msgid "Default: None.  Option: ``--config``."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2183
+msgid "Internal Settings"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2185
+msgid ""
+"These settings are for internal use only; setting them in configuration "
+"files has no effect, and there are no corresponding command-line options."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2190
+msgid "_config_files"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2192
+msgid "List of paths of applied configuration files."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2194
+msgid "Default: None.  No command-line options."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2197
+msgid "_directories"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2199
+msgid ""
+"(``buildhtml.py`` front end.)  List of paths to source directories, set "
+"from positional arguments."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2202
+msgid "Default: current working directory (None).  No command-line options."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2206
+msgid "_disable_config"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2208
+msgid ""
+"Prevent standard configuration files from being read.  For programmatic "
+"use only."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2211
+msgid "Default: config files enabled (None).  No command-line options."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2214
+msgid "_destination"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2216
+msgid "Path to output destination, set from positional arguments."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2218
+msgid "Default: stdout (None).  No command-line options."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2221
+msgid "_source"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2223
+msgid "Path to input source, set from positional arguments."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2225
+msgid "Default: stdin (None).  No command-line options."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2235
+msgid "Path relative to the working directory of the process at launch."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2238
+msgid ""
+"The overridden setting will automatically be set to ``None`` for command-"
+"line options and config file settings.  Client programs which specify "
+"defaults that override other settings must do the overriding explicitly, "
+"by assigning ``None`` to the other settings."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2247
+msgid "Old-Format Configuration Files"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2249
+msgid ""
+"Formerly, Docutils configuration files contained a single \"[options]\" "
+"section only.  This was found to be inflexible, and in August 2003 "
+"Docutils adopted the current component-based configuration file sections "
+"as described above.  Docutils will still recognize the old \"[options]\" "
+"section, but complains with a deprecation warning."
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2255
+msgid ""
+"To convert existing config files, the easiest way is to change the "
+"section title: change \"[options]\" to \"[general]\".  Most settings "
+"haven't changed.  The only ones to watch out for are these:"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2260
+msgid "Old-Format Setting"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2260
+msgid "New Section & Setting"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2262
+msgid "pep_stylesheet"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2262
+msgid "[pep_html writer] stylesheet"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2263
+msgid "pep_stylesheet_path"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2263
+msgid "[pep_html writer] stylesheet_path"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2264
+msgid "pep_template"
+msgstr ""
+
+#: ../../docutils/docs/user/config.txt:2264
+msgid "[pep_html writer] template"
+msgstr ""
+

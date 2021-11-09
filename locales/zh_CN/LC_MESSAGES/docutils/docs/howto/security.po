@@ -1,0 +1,316 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/howto/security.txt:3
+msgid "Deploying Docutils Securely"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:5
+msgid "David Goodger"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:7
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:8
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:11
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:14
+msgid "Introduction"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:16
+msgid ""
+"Initially, Docutils was intended for command-line tools and single-user "
+"applications.  Through-the-web editing and processing was not envisaged, "
+"therefore web security was not a consideration.  Once "
+"Docutils/reStructuredText started being incorporated into an ever-"
+"increasing number of web applications (blogs__, wikis__, content "
+"management systems, and others), several security issues arose and have "
+"been addressed.  Still, **Docutils does not come in a through-the-web "
+"secure state**, because this would inconvenience ordinary users.  This "
+"document provides pointers to help you secure the Docutils software in "
+"your applications."
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:32
+msgid "The Issues"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:35
+msgid "File Creation"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:37
+msgid "Docutils does not do any checks before writing to a file:"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:39
+msgid "Existing **files are overwritten** without asking!"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:40
+msgid "Files may be **written to any location** accessible to the process."
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:41
+msgid "There are **no restrictions to** the **file names**."
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:43
+msgid ""
+"Special care must be taken when allowing users to configure the *output "
+"destination* or the `warning_stream`_, `record_dependencies`_, or "
+"`_destination`_ settings."
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:53
+msgid "External Data Insertion"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:55
+msgid ""
+"There are several `reStructuredText directives`_ that can insert external"
+" data (files and URLs) into the output document.  These directives are:"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:59
+msgid "\"include_\", by its very nature,"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:60
+msgid "\"raw_\", through its ``:file:`` and ``:url:`` options,"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:61
+msgid "\"csv-table_\", through its ``:file:`` and ``:url:`` options,"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:62
+msgid "\"image_\", if `embed_images`_ is true."
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:64
+msgid ""
+"The \"include_\" directive and the other directives' file insertion "
+"features can be disabled by setting \"file_insertion_enabled_\" to "
+"\"false__\"."
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:79
+msgid "Raw HTML Insertion"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:81
+msgid ""
+"The \"raw_\" directive is intended for the insertion of non-"
+"reStructuredText data that is passed untouched to the Writer. This "
+"directive can be abused to bypass site features or insert malicious "
+"JavaScript code into a web page.  The \"raw_\" directive can be disabled "
+"by setting \"raw_enabled_\" to \"false\"."
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:91
+msgid "CPU and memory utilization"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:93
+msgid ""
+"Parsing **complex reStructuredText documents may require high processing "
+"resources**. This enables `Denial of Service` attacks using specially "
+"crafted input."
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:97
+msgid ""
+"It is recommended to enforce limits for the computation time and resource"
+" utilization of the Docutils process when processing untrusted input. In "
+"addition, the \"line_length_limit_\" can be adapted."
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:106
+msgid "Securing Docutils"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:109
+msgid "Programmatically Via Application Default Settings"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:111
+msgid ""
+"If your application calls Docutils via one of the `convenience "
+"functions`_, you can pass a dictionary of default settings that override "
+"the component defaults::"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:120
+msgid ""
+"Note that these defaults can be overridden by configuration files (and "
+"command-line options if applicable).  If this is not desired, you can "
+"disable configuration file processing with the ``_disable_config`` "
+"setting::"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:135
+msgid "Via a Configuration File"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:137
+msgid "You may secure Docutils via a configuration file:"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:139
+msgid ""
+"if your application executes one of the `Docutils front-end tools`_ as a "
+"separate process;"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:141
+msgid ""
+"if you cannot or choose not to alter the source code of your application "
+"or the component that calls Docutils; or"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:143
+msgid "if you want to secure all Docutils deployments system-wide."
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:145
+msgid ""
+"If you call Docutils programmatically, it may be preferable to use the "
+"methods described in the section above."
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:148
+msgid "Docutils automatically looks in three places for a configuration file:"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:150
+msgid "``/etc/docutils.conf``, for system-wide configuration,"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:151
+msgid ""
+"``./docutils.conf`` (in the current working directory), for project-"
+"specific configuration, and"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:153
+msgid ""
+"``~/.docutils`` (in the user's home directory), for user-specific "
+"configuration."
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:156
+msgid ""
+"These locations can be overridden by the ``DOCUTILSCONFIG`` environment "
+"variable.  Details about configuration files, the purpose of the various "
+"locations, and ``DOCUTILSCONFIG`` are available in the `\"Configuration "
+"Files\"`_ section of `Docutils Configuration`_."
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:161
+msgid ""
+"To fully secure a recent Docutils installation, the configuration file "
+"should contain the following lines ::"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:168
+msgid ""
+"and untrusted users must be prevented to modify or create local "
+"configuration files that overwrite these settings."
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:177
+msgid "Version Applicability"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:179
+msgid ""
+"The \"file_insertion_enabled_\" and \"raw_enabled_\" settings were added "
+"to Docutils 0.3.9; previous versions will ignore these settings."
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:182
+msgid ""
+"A bug existed in the configuration file handling of these settings in "
+"Docutils 0.4 and earlier: the right-hand-side needed to be left blank (no"
+" values)::"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:190
+msgid "The bug was fixed with the 0.4.1 release on 2006-11-12."
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:192
+msgid "The \"line_length_limit_\" is new in Docutils 0.17."
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:196
+msgid "Related Documents"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:198
+msgid ""
+"`Docutils Runtime Settings`_ explains the relationship between component "
+"settings specifications, application settings specifications, "
+"configuration files, and command-line options"
+msgstr ""
+
+#: ../../docutils/docs/howto/security.txt:202
+msgid ""
+"`Docutils Configuration`_ describes configuration files (locations, "
+"structure, and syntax), and lists all settings and command-line options."
+msgstr ""
+

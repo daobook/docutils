@@ -1,0 +1,381 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/dev/testing.txt:3
+msgid "Docutils_ Testing"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt
+msgid "Authors"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:5
+msgid "Lea Wiemann <LeWiemann@gmail.com>; David Goodger <goodger@python.org>"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:7
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:8
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:13
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:15
+msgid ""
+"When adding new functionality (or fixing bugs), be sure to add test cases"
+" to the test suite.  Practise test-first programming; it's fun, it's "
+"addictive, and it works!"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:19
+msgid ""
+"This document describes how to run the Docutils test suite, how the tests"
+" are organized and how to add new tests or modify existing tests."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:24
+msgid "Running the Test Suite"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:26
+msgid ""
+"Before checking in any changes, run the entire Docutils test suite to be "
+"sure that you haven't broken anything.  From a shell::"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:32
+msgid ""
+"You should run this with multiple Python versions. You can use ``tox`` "
+"for this purpose. To run tests against all supported versions of Python, "
+"run::"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:37
+msgid ""
+"To run against a specific version of Python, use the ``pyNN`` "
+"environment. For example::"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:44
+msgid "Python Versions"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:46
+msgid ""
+"A docutils release has a commitment to support a minimum version and "
+"beyond. Before a release is cut, tests must pass in all supported Python "
+"versions."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:49
+msgid "Docutils 0.16 supports Python 2.7 and Python 3.5 or later."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:51
+msgid ""
+"Therefore, you should install Python 2.7 as well as 3.5 up to the latest "
+"Python (3.7 at the time of this writing) and always run the tests on all "
+"of them (see `Testing across multiple python versions`_). In a pinch, the"
+" edge cases (2.7, and 3.7) should cover most of it."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:56
+msgid "Good resources covering the differences between Python versions:"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:58
+msgid "`What's New in Python 2.7`__"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:59
+msgid "`What's New in Python 3.5`__"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:60
+msgid "`What's New in Python 3.6`__"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:61
+msgid "`What's New in Python 3.7`__"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:62
+msgid "`PEP 290 - Code Migration and Modernization`__"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:76
+msgid "Testing across multiple python versions"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:78
+msgid ""
+"`pyenv`_ can be installed and configured (see `installing pyenv`_) to "
+"test multiple python versions::"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:90
+msgid ""
+"This will give you ``python2.7`` and ``python3.5`` through ``python3.7``."
+" You will also get ``pip2.7``, ``pip3.5``, etc."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:93
+msgid ""
+"To save time, you can use `tox`_. To install tox, run ``pip install "
+"tox``. Once installed, from shell::"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:105
+msgid "Unit Tests"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:107
+msgid "Unit tests test single functions or modules (i.e. whitebox testing)."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:109
+msgid ""
+"If you are implementing a new feature, be sure to write a test case "
+"covering its functionality.  It happens very frequently that your "
+"implementation (or even only a part of it) doesn't work with an older (or"
+" even newer) Python version, and the only reliable way to detect those "
+"cases is using tests."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:115
+msgid ""
+"Often, it's easier to write the test first and then implement the "
+"functionality required to make the test pass."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:120
+msgid "Writing New Tests"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:122
+msgid ""
+"When writing new tests, it very often helps to see how a similar test is "
+"implemented.  For example, the files in the ``test_parsers/test_rst/`` "
+"directory all look very similar.  So when adding a test, you don't have "
+"to reinvent the wheel."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:127
+msgid ""
+"If there is no similar test, you can write a new test from scratch using "
+"Python's ``unittest`` module.  For an example, please have a look at the "
+"following imaginary ``test_square.py``::"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:162
+msgid ""
+"For more details on how to write tests, please refer to the documentation"
+" of the ``unittest`` module."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:167
+msgid "Unit tests and functional test should generally set ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:171
+msgid "in order to be independent on the users local configuration."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:176
+msgid "Functional Tests"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:178
+msgid "The directory ``test/functional/`` contains data for functional tests."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:180
+msgid ""
+"Performing functional testing means testing the Docutils system as a "
+"whole (i.e. blackbox testing)."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:185
+msgid "Directory Structure"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:187
+msgid "``functional/`` The main data directory."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:189
+msgid "``input/`` The input files."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:191
+msgid "``some_test.txt``, for example."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:193
+msgid "``output/`` The actual output."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:195
+#: ../../docutils/docs/dev/testing.txt:199
+msgid "``some_test.html``, for example."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:197
+msgid "``expected/`` The expected output."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:201
+msgid "``tests/`` The config files for processing the input files."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:203
+msgid "``some_test.py``, for example."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:205
+msgid "``_default.py``, the `default configuration file`_."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:209
+msgid "The Testing Process"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:211
+msgid ""
+"When running ``test_functional.py``, all config files in "
+"``functional/tests/`` are processed.  (Config files whose names begin "
+"with an underscore are ignored.)  The current working directory is always"
+" Docutils' main test directory (``test/``)."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:216
+msgid "For example, ``functional/tests/some_test.py`` could read like this::"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:230
+msgid ""
+"The two variables ``test_source`` and ``test_destination`` contain the "
+"input file name (relative to ``functional/input/``) and the output file "
+"name (relative to ``functional/output/`` and ``functional/expected/``).  "
+"Note that the file names can be chosen arbitrarily.  However, the file "
+"names in ``functional/output/`` *must* match the file names in "
+"``functional/expected/``."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:237
+msgid ""
+"If defined, ``_test_more`` must be a function with the following "
+"signature::"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:242
+msgid ""
+"This function is called from the test case to perform tests beyond the "
+"simple comparison of expected and actual output files."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:245
+msgid ""
+"``test_source`` and ``test_destination`` are removed from the namespace, "
+"as are all variables whose names begin with an underscore (\"_\").  The "
+"remaining names are passed as keyword arguments to "
+"``docutils.core.publish_file``, so you can set reader, parser, writer and"
+" anything else you want to configure.  Note that ``settings_overrides`` "
+"is already initialized as a dictionary *before* the execution of the "
+"config file."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:255
+msgid "Creating New Tests"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:257
+msgid ""
+"In order to create a new test, put the input test file into "
+"``functional/input/``.  Then create a config file in "
+"``functional/tests/`` which sets at least input and output file names, "
+"reader, parser and writer."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:262
+msgid ""
+"Now run ``test_functional.py``.  The test will fail, of course, because "
+"you do not have an expected output yet.  However, an output file will "
+"have been generated in ``functional/output/``.  Check this output file "
+"for validity [#]_ and correctness.  Then copy the file to "
+"``functional/expected/``."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:268
+msgid "If you rerun ``test_functional.py`` now, it should pass."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:270
+msgid ""
+"If you run ``test_functional.py`` later and the actual output doesn't "
+"match the expected output anymore, the test will fail."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:273
+msgid ""
+"If this is the case and you made an intentional change, check the actual "
+"output for validity and correctness, copy it to ``functional/expected/`` "
+"(overwriting the old expected output), and commit the change."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:278
+msgid ""
+"The validity of `Docutils XML` can be tested with ``xmllint <document-"
+"referencing-local-Docutils-DTD>.xml --valid --noout``."
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:289
+msgid "The Default Configuration File"
+msgstr ""
+
+#: ../../docutils/docs/dev/testing.txt:291
+msgid ""
+"The file ``functional/tests/_default.py`` contains default settings. It "
+"is executed just before the actual configuration files, which has the "
+"same effect as if the contents of ``_default.py`` were prepended to every"
+" configuration file."
+msgstr ""
+

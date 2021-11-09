@@ -1,0 +1,4966 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/ref/doctree.txt:3
+msgid "The Docutils Document Tree"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:6
+msgid "A Guide to the Docutils DTD"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:8
+msgid "David Goodger"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:9
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:10
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:11
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:12
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:16
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:18
+msgid ""
+"This document describes the XML data structure of Docutils_ documents: "
+"the relationships and semantics of elements and attributes.  The Docutils"
+" document structure is formally defined by the `Docutils Generic DTD`_ "
+"XML document type definition, docutils.dtd_, which is the definitive "
+"source for details of element structural relationships."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:24
+msgid ""
+"This document does not discuss implementation details.  Those can be "
+"found in internal documentation (docstrings) for the ``docutils.nodes`` "
+"module, where the document tree data structure is implemented in a class "
+"library."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:29
+msgid ""
+"The reader is assumed to have some familiarity with XML or SGML, and an "
+"understanding of the data structure meaning of \"tree\".  For a list of "
+"introductory articles, see `Introducing the Extensible Markup Language "
+"(XML)`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:34
+msgid ""
+"The reStructuredText_ markup is used for illustrative examples throughout"
+" this document.  For a gentle introduction, see `A ReStructuredText "
+"Primer`_.  For complete technical details, see the `reStructuredText "
+"Markup Specification`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:52
+msgid "Element Hierarchy"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:56
+msgid ""
+"Below is a simplified diagram of the hierarchy of elements in the "
+"Docutils document tree structure.  An element may contain any other "
+"elements immediately below it in the diagram.  Notes are written in "
+"square brackets.  Element types in parentheses indicate recursive or one-"
+"to-many relationships; sections may contain (sub)sections, tables contain"
+" further body elements, etc. ::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:79
+msgid ""
+"The Docutils document model uses a simple, recursive model for section "
+"structure.  A document_ node may contain body elements and section_ "
+"elements.  Sections in turn may contain body elements and sections. The "
+"level (depth) of a section element is determined from its physical "
+"nesting level; unlike other document models (``<h1>`` in HTML_, "
+"``<sect1>`` in DocBook_, ``<div1>`` in XMLSpec_) the level is not "
+"incorporated into the element name."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:87
+msgid ""
+"The Docutils document model uses strict element content models.  Every "
+"element has a unique structure and semantics, but elements may be "
+"classified into general categories (below).  Only elements which are "
+"meant to directly contain text data have a mixed content model, where "
+"text data and inline elements may be intermixed.  This is unlike the much"
+" looser HTML_ document model, where paragraphs and text data may occur at"
+" the same level."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:101
+msgid "Structural Elements"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:103
+msgid ""
+"Structural elements may only contain child elements; they do not directly"
+" contain text data.  Structural elements may contain body elements or "
+"further structural elements.  Structural elements can only be child "
+"elements of other structural elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:108
+msgid "Category members: document_, section_, topic_, sidebar_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:112
+msgid "Structural Subelements"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:114
+msgid ""
+"Structural subelements are child elements of structural elements. Simple "
+"structuctural subelements (title_, subtitle_) contain text data; the "
+"others are compound and do not directly contain text data."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:118
+msgid ""
+"Category members: title_, subtitle_, decoration_, docinfo_, meta_, "
+"transition_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:123
+msgid "Bibliographic Elements"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:125
+msgid ""
+"The docinfo_ element is an optional child of document_.  It groups "
+"bibliographic elements together.  All bibliographic elements except "
+"authors_ and field_ contain text data.  authors_ contains further "
+"bibliographic elements (most notably author_).  field_ contains "
+"field_name_ and field_body_ body subelements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:131
+msgid ""
+"Category members: address_, author_, authors_, contact_, copyright_, "
+"date_, field_, organization_, revision_, status_, version_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:136
+msgid "Decorative Elements"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:138
+msgid ""
+"The decoration_ element is also an optional child of document_.  It "
+"groups together elements used to generate page headers and footers."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:141
+msgid "Category members: footer_, header_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:145
+msgid "Body Elements"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:147
+msgid ""
+"Body elements are contained within structural elements and compound body "
+"elements.  There are two subcategories of body elements: simple and "
+"compound."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:151
+msgid ""
+"Category members: admonition_, attention_, block_quote_, bullet_list_, "
+"caution_, citation_, comment_, compound_, container_, danger_, "
+"definition_list_, doctest_block_, enumerated_list_, error_, field_list_, "
+"figure_, footnote_, hint_, image_, important_, line_block_, "
+"literal_block_, note_, option_list_, paragraph_, pending_, raw_, rubric_,"
+" substitution_definition_, system_message_, table_, target_, tip_, "
+"warning_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:161
+msgid "Simple Body Elements"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:163
+msgid ""
+"Simple body elements are empty or directly contain text data.  Those that"
+" contain text data may also contain inline elements.  Such elements "
+"therefore have a \"mixed content model\"."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:167
+msgid ""
+"Category members: comment_, doctest_block_, image_, literal_block_, "
+"math_block_, paragraph_, pending_, raw_, rubric_, "
+"substitution_definition_, target_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:173
+msgid "Compound Body Elements"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:175
+msgid ""
+"Compound body elements contain local substructure (body subelements) and "
+"further body elements.  They do not directly contain text data."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:178
+msgid ""
+"Category members: admonition_, attention_, block_quote_, bullet_list_, "
+"caution_, citation_, compound_, container_, danger_, definition_list_, "
+"enumerated_list_, error_, field_list_, figure_, footnote_, hint_, "
+"important_, line_block, note_, option_list_, system_message_, table_, "
+"tip_, warning_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:186
+msgid "Body Subelements"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:188
+msgid ""
+"Compound body elements contain specific subelements (e.g. bullet_list_ "
+"contains list_item_).  Subelements may themselves be compound elements "
+"(containing further child elements, like field_) or simple data elements "
+"(containing text data, like field_name_).  These subelements always occur"
+" within specific parent elements, never at the body element level (beside"
+" paragraphs, etc.)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:195
+msgid ""
+"Category members (simple): attribution_, caption_, classifier_, colspec_,"
+" field_name_, label_, line_, option_argument_, option_string_, term_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:199
+msgid ""
+"Category members (compound): definition_, definition_list_item_, "
+"description_, entry_, field_, field_body_, legend_, list_item_, option_, "
+"option_group_, option_list_item_, row_, tbody_, tgroup_, thead_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:206
+msgid "Inline Elements"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:208
+msgid ""
+"Inline elements directly contain text data, and may also contain further "
+"inline elements.  Inline elements are contained within simple body "
+"elements.  Most inline elements have a \"mixed content model\"."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:212
+msgid ""
+"Category members: abbreviation_, acronym_, citation_reference_, "
+"emphasis_, footnote_reference_, generated_, image_, inline_, literal_, "
+"math_, problematic_, reference_, strong_, subscript_, "
+"substitution_reference_, superscript_, target_, title_reference_, raw_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:220
+msgid "Element Reference"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:225
+msgid ""
+"Each element in the DTD (document type definition) is described in its "
+"own section below.  Each section contains an introduction plus the "
+"following subsections:"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:229
+msgid "Details (of element relationships and semantics):"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:231
+msgid ""
+"Category: One or more references to the element categories in `Element "
+"Hierarchy`_ above.  Some elements belong to more than one category."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:235
+msgid ""
+"Analogues: Describes analogous elements in well-known document models "
+"such as HTML_ or DocBook_.  Lists similarities and differences."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:239
+msgid "Processing: Lists formatting or rendering recommendations for the element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:242
+msgid "Parents: A list of elements which may contain the element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:244
+msgid ""
+"Children: A list of elements which may occur within the element followed "
+"by the formal XML content model from the `Docutils DTD`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:247
+msgid ""
+"Attributes: Describes (or refers to descriptions of) the possible values "
+"and semantics of each attribute."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:250
+msgid ""
+"Parameter Entities: Lists the parameter entities which directly or "
+"indirectly include the element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:253
+msgid ""
+"Examples: reStructuredText_ examples are shown along with fragments of "
+"the document trees resulting from parsing. _`Pseudo-XML` is used for the "
+"results of parsing and processing. Pseudo-XML is a representation of XML "
+"where nesting is indicated by indentation and end-tags are not shown.  "
+"Some of the precision of real XML is given up in exchange for easier "
+"readability.  For example, the following are equivalent:"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:261
+msgid "Real XML::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:270
+msgid "Pseudo-XML::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:281
+msgid ""
+"Many of the element reference sections below are marked \"_`to be "
+"completed`\".  Please help complete this document by contributing to its "
+"writing."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:287
+msgid "``abbreviation``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:289
+msgid ""
+"The ``abbreviation`` element is an inline element used to represent an "
+"abbreviation being used in the document. An example of an abbreviation is"
+" 'St' being used instead of 'Street'."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:295
+#: ../../docutils/docs/ref/doctree.txt:349
+#: ../../docutils/docs/ref/doctree.txt:417
+#: ../../docutils/docs/ref/doctree.txt:477
+#: ../../docutils/docs/ref/doctree.txt:539
+#: ../../docutils/docs/ref/doctree.txt:599
+#: ../../docutils/docs/ref/doctree.txt:666
+#: ../../docutils/docs/ref/doctree.txt:732
+#: ../../docutils/docs/ref/doctree.txt:815
+#: ../../docutils/docs/ref/doctree.txt:885
+#: ../../docutils/docs/ref/doctree.txt:949
+#: ../../docutils/docs/ref/doctree.txt:1015
+#: ../../docutils/docs/ref/doctree.txt:1083
+#: ../../docutils/docs/ref/doctree.txt:1146
+#: ../../docutils/docs/ref/doctree.txt:1202
+#: ../../docutils/docs/ref/doctree.txt:1263
+#: ../../docutils/docs/ref/doctree.txt:1321
+#: ../../docutils/docs/ref/doctree.txt:1364
+#: ../../docutils/docs/ref/doctree.txt:1437
+#: ../../docutils/docs/ref/doctree.txt:1516
+#: ../../docutils/docs/ref/doctree.txt:1557
+#: ../../docutils/docs/ref/doctree.txt:1665
+#: ../../docutils/docs/ref/doctree.txt:1731
+#: ../../docutils/docs/ref/doctree.txt:1822
+#: ../../docutils/docs/ref/doctree.txt:1925
+#: ../../docutils/docs/ref/doctree.txt:1981
+#: ../../docutils/docs/ref/doctree.txt:2024
+#: ../../docutils/docs/ref/doctree.txt:2065
+#: ../../docutils/docs/ref/doctree.txt:2149
+#: ../../docutils/docs/ref/doctree.txt:2197
+#: ../../docutils/docs/ref/doctree.txt:2254
+#: ../../docutils/docs/ref/doctree.txt:2338
+#: ../../docutils/docs/ref/doctree.txt:2423
+#: ../../docutils/docs/ref/doctree.txt:2475
+#: ../../docutils/docs/ref/doctree.txt:2544
+#: ../../docutils/docs/ref/doctree.txt:2615
+#: ../../docutils/docs/ref/doctree.txt:2692
+#: ../../docutils/docs/ref/doctree.txt:2743
+#: ../../docutils/docs/ref/doctree.txt:2847
+#: ../../docutils/docs/ref/doctree.txt:2923
+#: ../../docutils/docs/ref/doctree.txt:2992
+#: ../../docutils/docs/ref/doctree.txt:3036
+#: ../../docutils/docs/ref/doctree.txt:3074
+#: ../../docutils/docs/ref/doctree.txt:3127
+#: ../../docutils/docs/ref/doctree.txt:3187
+#: ../../docutils/docs/ref/doctree.txt:3225
+#: ../../docutils/docs/ref/doctree.txt:3272
+#: ../../docutils/docs/ref/doctree.txt:3310
+#: ../../docutils/docs/ref/doctree.txt:3394
+#: ../../docutils/docs/ref/doctree.txt:3432
+#: ../../docutils/docs/ref/doctree.txt:3470
+#: ../../docutils/docs/ref/doctree.txt:3532
+#: ../../docutils/docs/ref/doctree.txt:3608
+#: ../../docutils/docs/ref/doctree.txt:3698
+#: ../../docutils/docs/ref/doctree.txt:3796
+#: ../../docutils/docs/ref/doctree.txt:3863
+#: ../../docutils/docs/ref/doctree.txt:3946
+#: ../../docutils/docs/ref/doctree.txt:4027
+#: ../../docutils/docs/ref/doctree.txt:4122
+#: ../../docutils/docs/ref/doctree.txt:4183
+#: ../../docutils/docs/ref/doctree.txt:4242
+#: ../../docutils/docs/ref/doctree.txt:4308
+#: ../../docutils/docs/ref/doctree.txt:4384
+#: ../../docutils/docs/ref/doctree.txt:4443
+#: ../../docutils/docs/ref/doctree.txt:4508
+msgid "Details"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt
+msgid "Category"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:298
+#: ../../docutils/docs/ref/doctree.txt:2341
+#: ../../docutils/docs/ref/doctree.txt:2618
+#: ../../docutils/docs/ref/doctree.txt:2995
+msgid "`Inline Elements`_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt
+msgid "Analogues"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:301
+msgid "``abbreviation`` is analogous to the HTML \"abbr\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt
+msgid "Parents"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:304
+#, python-format
+msgid ""
+"All elements employing the `%inline.elements;`_ parameter entity in their"
+" content models may contain ``abbreviation``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt
+msgid "Children"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:308
+msgid "``abbreviation`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt
+msgid "Attributes"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:315
+msgid "The ``abbreviation`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:319
+#: ../../docutils/docs/ref/doctree.txt:384
+#: ../../docutils/docs/ref/doctree.txt:450
+#: ../../docutils/docs/ref/doctree.txt:513
+#: ../../docutils/docs/ref/doctree.txt:569
+#: ../../docutils/docs/ref/doctree.txt:628
+#: ../../docutils/docs/ref/doctree.txt:702
+#: ../../docutils/docs/ref/doctree.txt:774
+#: ../../docutils/docs/ref/doctree.txt:851
+#: ../../docutils/docs/ref/doctree.txt:912
+#: ../../docutils/docs/ref/doctree.txt:989
+#: ../../docutils/docs/ref/doctree.txt:1047
+#: ../../docutils/docs/ref/doctree.txt:1114
+#: ../../docutils/docs/ref/doctree.txt:1181
+#: ../../docutils/docs/ref/doctree.txt:1232
+#: ../../docutils/docs/ref/doctree.txt:1294
+#: ../../docutils/docs/ref/doctree.txt:1348
+#: ../../docutils/docs/ref/doctree.txt:1396
+#: ../../docutils/docs/ref/doctree.txt:1467
+#: ../../docutils/docs/ref/doctree.txt:1542
+#: ../../docutils/docs/ref/doctree.txt:1596
+#: ../../docutils/docs/ref/doctree.txt:1703
+#: ../../docutils/docs/ref/doctree.txt:1774
+#: ../../docutils/docs/ref/doctree.txt:1879
+#: ../../docutils/docs/ref/doctree.txt:1960
+#: ../../docutils/docs/ref/doctree.txt:2011
+#: ../../docutils/docs/ref/doctree.txt:2050
+#: ../../docutils/docs/ref/doctree.txt:2101
+#: ../../docutils/docs/ref/doctree.txt:2175
+#: ../../docutils/docs/ref/doctree.txt:2223
+#: ../../docutils/docs/ref/doctree.txt:2313
+#: ../../docutils/docs/ref/doctree.txt:2372
+#: ../../docutils/docs/ref/doctree.txt:2449
+#: ../../docutils/docs/ref/doctree.txt:2510
+#: ../../docutils/docs/ref/doctree.txt:2580
+#: ../../docutils/docs/ref/doctree.txt:2647
+#: ../../docutils/docs/ref/doctree.txt:2726
+#: ../../docutils/docs/ref/doctree.txt:2779
+#: ../../docutils/docs/ref/doctree.txt:2875
+#: ../../docutils/docs/ref/doctree.txt:2961
+#: ../../docutils/docs/ref/doctree.txt:3164
+#: ../../docutils/docs/ref/doctree.txt:3212
+#: ../../docutils/docs/ref/doctree.txt:3259
+#: ../../docutils/docs/ref/doctree.txt:3296
+#: ../../docutils/docs/ref/doctree.txt:3345
+#: ../../docutils/docs/ref/doctree.txt:3419
+#: ../../docutils/docs/ref/doctree.txt:3457
+#: ../../docutils/docs/ref/doctree.txt:3502
+#: ../../docutils/docs/ref/doctree.txt:3564
+#: ../../docutils/docs/ref/doctree.txt:3641
+#: ../../docutils/docs/ref/doctree.txt:3732
+#: ../../docutils/docs/ref/doctree.txt:3832
+#: ../../docutils/docs/ref/doctree.txt:3893
+#: ../../docutils/docs/ref/doctree.txt:3974
+#: ../../docutils/docs/ref/doctree.txt:4060
+#: ../../docutils/docs/ref/doctree.txt:4149
+#: ../../docutils/docs/ref/doctree.txt:4219
+#: ../../docutils/docs/ref/doctree.txt:4273
+#: ../../docutils/docs/ref/doctree.txt:4341
+#: ../../docutils/docs/ref/doctree.txt:4415
+#: ../../docutils/docs/ref/doctree.txt:4476
+#: ../../docutils/docs/ref/doctree.txt:4544
+msgid "Examples"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:321
+msgid ""
+"The ``abbreviation`` element is not exposed in default restructured text."
+" It can only be accessed through custom roles."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:324
+msgid "Pseudo-XML_ example from a custom `:abbr:` role::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:333
+msgid "``acronym``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:335
+#: ../../docutils/docs/ref/doctree.txt:529
+#: ../../docutils/docs/ref/doctree.txt:802
+#: ../../docutils/docs/ref/doctree.txt:867
+#: ../../docutils/docs/ref/doctree.txt:873
+#: ../../docutils/docs/ref/doctree.txt:997
+#: ../../docutils/docs/ref/doctree.txt:1003
+#: ../../docutils/docs/ref/doctree.txt:1073
+#: ../../docutils/docs/ref/doctree.txt:1805
+#: ../../docutils/docs/ref/doctree.txt:1811
+#: ../../docutils/docs/ref/doctree.txt:2183
+#: ../../docutils/docs/ref/doctree.txt:2411
+#: ../../docutils/docs/ref/doctree.txt:2530
+#: ../../docutils/docs/ref/doctree.txt:2675
+#: ../../docutils/docs/ref/doctree.txt:2681
+#: ../../docutils/docs/ref/doctree.txt:2909
+#: ../../docutils/docs/ref/doctree.txt:3579
+#: ../../docutils/docs/ref/doctree.txt:3585
+#: ../../docutils/docs/ref/doctree.txt:3591
+#: ../../docutils/docs/ref/doctree.txt:3597
+#: ../../docutils/docs/ref/doctree.txt:3669
+#: ../../docutils/docs/ref/doctree.txt:3684
+#: ../../docutils/docs/ref/doctree.txt:3918
+#: ../../docutils/docs/ref/doctree.txt:3924
+#: ../../docutils/docs/ref/doctree.txt:3930
+#: ../../docutils/docs/ref/doctree.txt:3936
+#: ../../docutils/docs/ref/doctree.txt:4006
+#: ../../docutils/docs/ref/doctree.txt:4012
+#: ../../docutils/docs/ref/doctree.txt:4105
+#: ../../docutils/docs/ref/doctree.txt:4111
+#: ../../docutils/docs/ref/doctree.txt:4164
+#: ../../docutils/docs/ref/doctree.txt:4170
+#: ../../docutils/docs/ref/doctree.txt:4294
+msgid "`To be completed`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:339
+msgid "``address``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:341
+msgid ""
+"The ``address`` element holds the surface mailing address information for"
+" the author (individual or group) of the document, or a third-party "
+"contact address.  Its structure is identical to that of the "
+"literal_block_ element: whitespace is significant, especially newlines."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:352
+#: ../../docutils/docs/ref/doctree.txt:542
+#: ../../docutils/docs/ref/doctree.txt:602
+#: ../../docutils/docs/ref/doctree.txt:1018
+#: ../../docutils/docs/ref/doctree.txt:1086
+#: ../../docutils/docs/ref/doctree.txt:1205
+#: ../../docutils/docs/ref/doctree.txt:3473
+#: ../../docutils/docs/ref/doctree.txt:3611
+#: ../../docutils/docs/ref/doctree.txt:3866
+#: ../../docutils/docs/ref/doctree.txt:4446
+msgid "`Bibliographic Elements`_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:355
+msgid "``address`` is analogous to the DocBook \"address\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt
+msgid "Processing"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:358
+msgid ""
+"As with the literal_block_ element, newlines and other whitespace is "
+"significant and must be preserved.  However, a monospaced typeface need "
+"not be used."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:362
+msgid "See also docinfo_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:365
+msgid "The following elements may contain ``address``: docinfo_, authors_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:368
+msgid "``address`` elements contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:375
+msgid ""
+"The ``address`` element contains the `common attributes`_ plus "
+"`xml:space`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt
+msgid "Parameter Entities"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:379
+msgid ""
+"The `%bibliographic.elements;`_ parameter entity directly includes "
+"``address``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:386
+#: ../../docutils/docs/ref/doctree.txt:571
+#: ../../docutils/docs/ref/doctree.txt:630
+#: ../../docutils/docs/ref/doctree.txt:776
+#: ../../docutils/docs/ref/doctree.txt:1049
+#: ../../docutils/docs/ref/doctree.txt:1116
+#: ../../docutils/docs/ref/doctree.txt:1234
+#: ../../docutils/docs/ref/doctree.txt:1296
+#: ../../docutils/docs/ref/doctree.txt:1398
+#: ../../docutils/docs/ref/doctree.txt:1469
+#: ../../docutils/docs/ref/doctree.txt:1776
+#: ../../docutils/docs/ref/doctree.txt:1881
+#: ../../docutils/docs/ref/doctree.txt:2103
+#: ../../docutils/docs/ref/doctree.txt:2225
+#: ../../docutils/docs/ref/doctree.txt:2877
+#: ../../docutils/docs/ref/doctree.txt:3347
+#: ../../docutils/docs/ref/doctree.txt:3504
+#: ../../docutils/docs/ref/doctree.txt:3566
+#: ../../docutils/docs/ref/doctree.txt:3643
+#: ../../docutils/docs/ref/doctree.txt:3734
+#: ../../docutils/docs/ref/doctree.txt:3895
+#: ../../docutils/docs/ref/doctree.txt:3976
+#: ../../docutils/docs/ref/doctree.txt:4275
+#: ../../docutils/docs/ref/doctree.txt:4417
+#: ../../docutils/docs/ref/doctree.txt:4478
+msgid "reStructuredText_ source::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:394
+#: ../../docutils/docs/ref/doctree.txt:578
+#: ../../docutils/docs/ref/doctree.txt:637
+#: ../../docutils/docs/ref/doctree.txt:1056
+#: ../../docutils/docs/ref/doctree.txt:1123
+#: ../../docutils/docs/ref/doctree.txt:1241
+#: ../../docutils/docs/ref/doctree.txt:1614
+#: ../../docutils/docs/ref/doctree.txt:3511
+#: ../../docutils/docs/ref/doctree.txt:3651
+#: ../../docutils/docs/ref/doctree.txt:3902
+#: ../../docutils/docs/ref/doctree.txt:3987
+#: ../../docutils/docs/ref/doctree.txt:4485
+msgid "Complete pseudo-XML_ result after parsing and applying transforms::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:404
+#: ../../docutils/docs/ref/doctree.txt:587
+#: ../../docutils/docs/ref/doctree.txt:654
+#: ../../docutils/docs/ref/doctree.txt:1066
+#: ../../docutils/docs/ref/doctree.txt:1132
+#: ../../docutils/docs/ref/doctree.txt:1250
+#: ../../docutils/docs/ref/doctree.txt:3520
+#: ../../docutils/docs/ref/doctree.txt:3662
+#: ../../docutils/docs/ref/doctree.txt:3911
+#: ../../docutils/docs/ref/doctree.txt:4494
+msgid "See docinfo_ for a more complete example, including processing context."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:409
+msgid "``admonition``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:411
+msgid ""
+"This element is a generic, titled admonition.  Also see the specific "
+"admonition elements Docutils offers (in alphabetical order): caution_, "
+"danger_, error_, hint_, important_, note_, tip_, warning_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:420
+#: ../../docutils/docs/ref/doctree.txt:480
+#: ../../docutils/docs/ref/doctree.txt:669
+#: ../../docutils/docs/ref/doctree.txt:735
+#: ../../docutils/docs/ref/doctree.txt:818
+#: ../../docutils/docs/ref/doctree.txt:1149
+#: ../../docutils/docs/ref/doctree.txt:1367
+#: ../../docutils/docs/ref/doctree.txt:1825
+#: ../../docutils/docs/ref/doctree.txt:1928
+#: ../../docutils/docs/ref/doctree.txt:2068
+#: ../../docutils/docs/ref/doctree.txt:2257
+#: ../../docutils/docs/ref/doctree.txt:2478
+#: ../../docutils/docs/ref/doctree.txt:2547
+#: ../../docutils/docs/ref/doctree.txt:2746
+#: ../../docutils/docs/ref/doctree.txt:3130
+#: ../../docutils/docs/ref/doctree.txt:3313
+#: ../../docutils/docs/ref/doctree.txt:4030
+#: ../../docutils/docs/ref/doctree.txt:4186
+#: ../../docutils/docs/ref/doctree.txt:4511
+msgid "`Compound Body Elements`_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:423
+msgid ""
+"``admonition`` has no direct analogues in common DTDs.  It can be "
+"emulated with primitives and type effects."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:427
+msgid "Rendered distinctly (inset and/or in a box, etc.)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:430
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``admonition``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:435
+msgid ""
+"``admonition`` elements begin with a title_ and may contain one or more "
+"`body elements`_. ::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:441
+msgid "The ``admonition`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:444
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes ``admonition``."
+"  The `%structure.model;`_ parameter entity indirectly includes "
+"``admonition``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:452
+#: ../../docutils/docs/ref/doctree.txt:515
+#: ../../docutils/docs/ref/doctree.txt:704
+#: ../../docutils/docs/ref/doctree.txt:853
+#: ../../docutils/docs/ref/doctree.txt:1183
+#: ../../docutils/docs/ref/doctree.txt:1705
+#: ../../docutils/docs/ref/doctree.txt:1962
+#: ../../docutils/docs/ref/doctree.txt:2512
+#: ../../docutils/docs/ref/doctree.txt:2582
+#: ../../docutils/docs/ref/doctree.txt:2963
+#: ../../docutils/docs/ref/doctree.txt:3166
+#: ../../docutils/docs/ref/doctree.txt:4221
+#: ../../docutils/docs/ref/doctree.txt:4546
+msgid "reStructuredText source::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:458
+#: ../../docutils/docs/ref/doctree.txt:519
+#: ../../docutils/docs/ref/doctree.txt:712
+#: ../../docutils/docs/ref/doctree.txt:784
+#: ../../docutils/docs/ref/doctree.txt:857
+#: ../../docutils/docs/ref/doctree.txt:921
+#: ../../docutils/docs/ref/doctree.txt:1187
+#: ../../docutils/docs/ref/doctree.txt:1407
+#: ../../docutils/docs/ref/doctree.txt:1481
+#: ../../docutils/docs/ref/doctree.txt:1712
+#: ../../docutils/docs/ref/doctree.txt:1891
+#: ../../docutils/docs/ref/doctree.txt:1966
+#: ../../docutils/docs/ref/doctree.txt:2110
+#: ../../docutils/docs/ref/doctree.txt:2319
+#: ../../docutils/docs/ref/doctree.txt:2380
+#: ../../docutils/docs/ref/doctree.txt:2455
+#: ../../docutils/docs/ref/doctree.txt:2516
+#: ../../docutils/docs/ref/doctree.txt:2591
+#: ../../docutils/docs/ref/doctree.txt:2658
+#: ../../docutils/docs/ref/doctree.txt:2799
+#: ../../docutils/docs/ref/doctree.txt:2886
+#: ../../docutils/docs/ref/doctree.txt:2972
+#: ../../docutils/docs/ref/doctree.txt:3108
+#: ../../docutils/docs/ref/doctree.txt:3171
+#: ../../docutils/docs/ref/doctree.txt:3353
+#: ../../docutils/docs/ref/doctree.txt:3570
+#: ../../docutils/docs/ref/doctree.txt:3842
+#: ../../docutils/docs/ref/doctree.txt:4071
+#: ../../docutils/docs/ref/doctree.txt:4225
+#: ../../docutils/docs/ref/doctree.txt:4282
+#: ../../docutils/docs/ref/doctree.txt:4350
+#: ../../docutils/docs/ref/doctree.txt:4550
+msgid "Pseudo-XML_ fragment from simple parsing::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:468
+msgid "``attention``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:470
+msgid ""
+"The ``attention`` element is an admonition, a distinctive and self-"
+"contained notice.  Also see the other admonition elements Docutils offers"
+" (in alphabetical order): caution_, danger_, error_, hint_, important_, "
+"note_, tip_, warning_, and the generic admonition_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:483
+msgid ""
+"``attention`` has no direct analogues in common DTDs.  It can be emulated"
+" with primitives and type effects."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:487
+msgid ""
+"Rendered distinctly (inset and/or in a box, etc.), with the generated "
+"title \"Attention!\" (or similar)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:492
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``attention``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:497
+msgid "``attention`` elements contain one or more `body elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:504
+msgid "The ``attention`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:507
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes ``attention``."
+"  The `%structure.model;`_ parameter entity indirectly includes "
+"``attention``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:527
+msgid "``attribution``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:533
+msgid "``author``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:535
+msgid "The ``author`` element holds the name of the author of the document."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:545
+msgid "``author`` is analogous to the DocBook \"author\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:548
+#: ../../docutils/docs/ref/doctree.txt:608
+#: ../../docutils/docs/ref/doctree.txt:1025
+#: ../../docutils/docs/ref/doctree.txt:1092
+#: ../../docutils/docs/ref/doctree.txt:3480
+#: ../../docutils/docs/ref/doctree.txt:3872
+msgid "See docinfo_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:551
+msgid "The following elements may contain ``author``: docinfo_, authors_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:554
+msgid "``author`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:561
+msgid "The ``author`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:564
+msgid ""
+"The `%bibliographic.elements;`_ parameter entity directly includes "
+"``author``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:592
+msgid "``authors``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:594
+msgid ""
+"The ``authors`` element is a container for author information for "
+"documents with multiple authors."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:605
+msgid "``authors`` is analogous to the DocBook \"authors\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:611
+msgid "Only the docinfo_ element contains ``authors``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:614
+msgid ""
+"``authors`` elements may contain the following elements: author_, "
+"organization_, address_, contact_::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:620
+msgid "The ``authors`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:623
+msgid ""
+"The `%bibliographic.elements;`_ parameter entity directly includes "
+"``authors``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:649
+msgid ""
+"In reStructuredText, multiple author's names are separated with "
+"semicolons (\";\") or commas (\",\"); semicolons take precedence.  There "
+"is currently no way to represent the author's organization, address, or "
+"contact in a reStructuredText \"Authors\" field."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:659
+msgid "``block_quote``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:661
+msgid ""
+"The ``block_quote`` element is used for quotations set off from the main "
+"text (standalone)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:672
+msgid ""
+"``block_quote`` is analogous to the \"blockquote\" element in both HTML "
+"and DocBook."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:676
+msgid ""
+"``block_quote`` elements serve to set their contents off from the main "
+"text, typically with indentation and/or other decoration."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:680
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``block_quote``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:685
+msgid ""
+"``block_quote`` elements contain `body elements`_ followed by an optional"
+" attribution_ element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:693
+msgid "The ``block_quote`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:696
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes "
+"``block_quote``.  The `%structure.model;`_ parameter entity indirectly "
+"includes ``block_quote``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:724
+msgid "``bullet_list``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:726
+msgid ""
+"The ``bullet_list`` element contains list_item_ elements which are "
+"uniformly marked with bullets.  Bullets are typically simple dingbats "
+"(symbols) such as circles and squares."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:738
+msgid ""
+"``bullet_list`` is analogous to the HTML \"ul\" element and to the "
+"DocBook \"itemizedlist\" element.  HTML's \"ul\" is short for \"unordered"
+" list\", which we consider to be a misnomer.  \"Unordered\" implies that "
+"the list items may be randomly rearranged without affecting the meaning "
+"of the list.  Bullet lists *are* often ordered; the ordering is simply "
+"left implicit."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:746
+msgid ""
+"Each list item should begin a new vertical block, prefaced by a "
+"bullet/dingbat."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:750
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``bullet_list``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:755
+msgid "``bullet_list`` elements contain one or more list_item_ elements::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:760
+msgid ""
+"The ``bullet_list`` element contains the `common attributes`_ plus "
+"bullet_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:763
+msgid ""
+"``bullet`` is used to record the style of bullet from the input data.  In"
+" documents processed from reStructuredText_, it contains one of \"-\", "
+"\"+\", or \"*\".  It may be ignored in processing."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:768
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes "
+"``bullet_list``.  The `%structure.model;`_ parameter entity indirectly "
+"includes ``bullet_list``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:796
+#: ../../docutils/docs/ref/doctree.txt:1911
+msgid "See list_item_ for another example."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:800
+msgid "``caption``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:806
+msgid "``caution``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:808
+msgid ""
+"The ``caution`` element is an admonition, a distinctive and self-"
+"contained notice.  Also see the other admonition elements Docutils offers"
+" (in alphabetical order): attention_, danger_, error_, hint_, important_,"
+" note_, tip_, warning_, and the generic admonition_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:821
+msgid "``caution`` is analogous to the `DocBook \"caution\"`_ element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:824
+msgid ""
+"Rendered distinctly (inset and/or in a box, etc.), with the generated "
+"title \"Caution\" (or similar)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:830
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``caution``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:835
+msgid "``caution`` elements contain one or more `body elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:842
+msgid "The ``caution`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:845
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes ``caution``.  "
+"The `%structure.model;`_ parameter entity indirectly includes "
+"``caution``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:865
+msgid "``citation``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:871
+msgid "``citation_reference``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:877
+msgid "``classifier``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:879
+msgid ""
+"The ``classifier`` element contains the classification or type of the "
+"term_ being defined in a definition_list_.  For example, it can be used "
+"to indicate the type of a variable."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:888
+#: ../../docutils/docs/ref/doctree.txt:952
+#: ../../docutils/docs/ref/doctree.txt:2152
+#: ../../docutils/docs/ref/doctree.txt:2695
+#: ../../docutils/docs/ref/doctree.txt:4125
+msgid "`Body Subelements`_ (simple)"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:891
+msgid ""
+"``classifier`` has no direct analogues in common DTDs.  It can be "
+"emulated with primitives or type effects."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:895
+#: ../../docutils/docs/ref/doctree.txt:1331
+#: ../../docutils/docs/ref/doctree.txt:1383
+#: ../../docutils/docs/ref/doctree.txt:4132
+msgid "See definition_list_item_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:898
+msgid "Only the definition_list_item_ element contains ``classifier``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:901
+msgid "``classifier`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:908
+msgid "The ``classifier`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:914
+msgid "Here is a hypothetical data dictionary.  reStructuredText_ source::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:943
+msgid "``colspec``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:945
+msgid "Specifications for a column in a table_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:955
+msgid ""
+"``colspec`` is based on the [exchange-table-model]_ and analogous to the "
+"DocBook \"colspec\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:959
+msgid "The ``colspec`` element contains layout information for the parent table_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:963
+msgid "Only the tgroup_ element contains ``colspec``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:966
+msgid "``colspec`` is an empty element and has no children."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:969
+msgid ""
+"The ``colspec`` element contains the optional \"colnum\", \"colname\", "
+"\"colwidth\", \"colsep\", \"rowsep\", \"align\", \"char\", and "
+"\"charoff\" attributes defined in the exchange-table-model_ plus the "
+"`common attributes`_ and `stub`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:974
+msgid "Docutils uses only colwidth_ and stub_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:978
+msgid ""
+"In contrast to the definition in the exchange-table-model_, unitless "
+"values of the \"colwidth\" are interpreted as proportional values, not "
+"fixed values with unit \"pt\"."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:985
+msgid ""
+"Future versions of Docutils may use the standard form ``number*``, e.g., "
+"“5*” for 5 times the proportion."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:991
+msgid "See table_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:995
+msgid "``comment``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1001
+msgid "``compound``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1007
+msgid "``contact``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1009
+msgid ""
+"The ``contact`` element holds contact information for the author "
+"(individual or group) of the document, or a third-party contact.  It is "
+"typically used for an email or web address."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1021
+msgid ""
+"``contact`` is analogous to the DocBook \"email\" element.  The HTML "
+"\"address\" element serves a similar purpose."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1028
+msgid "The following elements may contain ``contact``: docinfo_, authors_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1031
+msgid "``contact`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1039
+msgid "The ``contact`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1042
+msgid ""
+"The `%bibliographic.elements;`_ parameter entity directly includes "
+"``contact``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1071
+msgid "``container``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1077
+msgid "``copyright``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1079
+msgid "The ``copyright`` element contains the document's copyright statement."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1089
+msgid "``copyright`` is analogous to the DocBook \"copyright\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1095
+msgid "Only the docinfo_ element contains ``copyright``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1098
+msgid "``copyright`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1106
+msgid "The ``copyright`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1109
+msgid ""
+"The `%bibliographic.elements;`_ parameter entity directly includes "
+"``copyright``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1137
+msgid "``danger``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1139
+msgid ""
+"The ``danger`` element is an admonition, a distinctive and self-contained"
+" notice.  Also see the other admonition elements Docutils offers (in "
+"alphabetical order): attention_, caution_, error_, hint_, important_, "
+"note_, tip_, warning_, and the generic admonition_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1152
+msgid ""
+"``danger`` has no direct analogues in common DTDs.  It can be emulated "
+"with primitives and type effects."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1156
+msgid ""
+"Rendered distinctly (inset and/or in a box, etc.), with the generated "
+"title \"!DANGER!\" (or similar)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1160
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``danger``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1165
+msgid "``danger`` elements contain one or more `body elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1172
+msgid "The ``danger`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1175
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes ``danger``.  "
+"The `%structure.model;`_ parameter entity indirectly includes ``danger``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1195
+msgid "``date``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1197
+msgid ""
+"The ``date`` element contains the date of publication, release, or last "
+"modification of the document."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1208
+msgid "``date`` is analogous to the DocBook \"date\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1211
+msgid "Often used with the RCS/CVS keyword \"Date\".  See docinfo_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1214
+msgid "Only the docinfo_ element contains ``date``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1217
+msgid "``date`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1224
+msgid "The ``date`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1227
+msgid ""
+"The `%bibliographic.elements;`_ parameter entity directly includes "
+"``date``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1255
+msgid "``decoration``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1257
+msgid ""
+"The ``decoration`` element is a container for header_ and footer_ "
+"elements and potential future extensions.  These elements are used for "
+"notes, time/datestamp, processing information, etc."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1266
+#: ../../docutils/docs/ref/doctree.txt:1560
+#: ../../docutils/docs/ref/doctree.txt:3077
+#: ../../docutils/docs/ref/doctree.txt:3949
+#: ../../docutils/docs/ref/doctree.txt:4245
+#: ../../docutils/docs/ref/doctree.txt:4387
+msgid "`Structural Subelements`_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1269
+msgid ""
+"There are no direct analogies to ``decoration`` in HTML or in DocBook.  "
+"Equivalents are typically constructed from primitives and/or generated by"
+" the processing system."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1274
+msgid "See the individual `decorative elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1277
+msgid "Only the document_ element contains ``decoration``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1280
+msgid "``decoration`` elements may contain `decorative elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1286
+msgid ""
+"Although the content model doesn't specifically require contents, no "
+"empty ``decoration`` elements are ever created."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1290
+msgid "The ``decoration`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1300
+#: ../../docutils/docs/ref/doctree.txt:2229
+msgid ""
+"Complete pseudo-XML_ result after parsing and applying transforms, "
+"assuming that the datestamp command-line option or configuration setting "
+"has been supplied::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1314
+msgid "``definition``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1316
+msgid ""
+"The ``definition`` element is a container for the body elements used to "
+"define a term_ in a definition_list_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1324
+#: ../../docutils/docs/ref/doctree.txt:1440
+#: ../../docutils/docs/ref/doctree.txt:2850
+msgid "`Body Subelements`_ (compound)"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1327
+msgid ""
+"``definition`` is analogous to the HTML \"dd\" element and to the DocBook"
+" \"listitem\" element (inside a \"variablelistentry\" element)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1334
+msgid "Only definition_list_item_ elements contain ``definition``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1337
+msgid "``definition`` elements contain `body elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1344
+msgid "The ``definition`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1350
+#: ../../docutils/docs/ref/doctree.txt:4151
+msgid ""
+"See the examples for the definition_list_, definition_list_item_, and "
+"classifier_ elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1355
+msgid "``definition_list``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1357
+msgid ""
+"The ``definition_list`` element contains a list of terms and their "
+"definitions.  It can be used for glossaries or dictionaries, to describe "
+"or classify things, for dialogues, or to itemize subtopics (such as in "
+"this reference)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1370
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain "
+"``definition_list``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1375
+msgid ""
+"``definition_list`` elements contain one or more definition_list_item_ "
+"elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1379
+msgid ""
+"``definition_list`` is analogous to the HTML \"dl\" element and to the "
+"DocBook \"variablelist\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1386
+msgid "The ``definition_list`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1390
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes "
+"``definition_list``.  The `%structure.model;`_ parameter entity "
+"indirectly includes ``definition_list``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1426
+msgid "See definition_list_item_ and classifier_ for further examples."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1430
+msgid "``definition_list_item``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1432
+msgid ""
+"The ``definition_list_item`` element contains a single term_/definition_ "
+"pair (with optional classifier_)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1443
+msgid ""
+"``definition_list_item`` is analogous to the DocBook "
+"\"variablelistentry\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1447
+msgid ""
+"The optional classifier_ can be rendered differently from the term_.  "
+"They should be separated visually, typically by spaces plus a colon or "
+"dash."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1452
+msgid "Only the definition_list_ element contains ``definition_list_item``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1456
+msgid ""
+"``definition_list_item`` elements each contain a single term_, an "
+"optional classifier_, and a definition_::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1462
+msgid ""
+"The ``definition_list_item`` element contains only the `common "
+"attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1505
+msgid "See definition_list_ and classifier_ for further examples."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1509
+msgid "``description``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1511
+msgid ""
+"The ``description`` element contains body elements, describing the "
+"purpose or effect of a command-line option or group of options."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1519
+#: ../../docutils/docs/ref/doctree.txt:1984
+#: ../../docutils/docs/ref/doctree.txt:2027
+#: ../../docutils/docs/ref/doctree.txt:3190
+#: ../../docutils/docs/ref/doctree.txt:3228
+#: ../../docutils/docs/ref/doctree.txt:3275
+#: ../../docutils/docs/ref/doctree.txt:3397
+#: ../../docutils/docs/ref/doctree.txt:3435
+msgid "`Body Subelements`_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1522
+msgid "``description`` has no direct analogues in common DTDs."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1525
+#: ../../docutils/docs/ref/doctree.txt:3196
+#: ../../docutils/docs/ref/doctree.txt:3403
+msgid "See option_list_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1528
+msgid "Only the option_list_item_ element contains ``description``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1531
+msgid "``description`` elements may contain `body elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1538
+msgid "The ``description`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1544
+#: ../../docutils/docs/ref/doctree.txt:3214
+#: ../../docutils/docs/ref/doctree.txt:3261
+#: ../../docutils/docs/ref/doctree.txt:3298
+#: ../../docutils/docs/ref/doctree.txt:3421
+#: ../../docutils/docs/ref/doctree.txt:3459
+msgid "See the examples for the option_list_ element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1548
+msgid "``docinfo``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1550
+msgid ""
+"The ``docinfo`` element is a container for displayed document "
+"bibliographic data, or meta-data (data about the document).  It "
+"corresponds to the front matter of a book, such as the title page and "
+"copyright page."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1554
+msgid "See also the meta_ element (for \"hidden\" meta-data)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1563
+msgid ""
+"``docinfo`` is analogous to DocBook \"info\" elements (\"bookinfo\" "
+"etc.).  There are no directly analogous HTML elements; the \"meta\" "
+"element carries some of the same information, albeit invisibly."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1568
+msgid ""
+"The ``docinfo`` element may be rendered as a two-column table or in other"
+" styles.  It may even be invisible or omitted from the processed output."
+"  Meta-data may be extracted from ``docinfo`` children; for example, HTML"
+" ``<meta>`` tags may be constructed."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1573
+msgid ""
+"When Docutils_ transforms a reStructuredText_ field_list_ into a "
+"``docinfo`` element (see the examples below), RCS/CVS keywords are "
+"normally stripped from simple (one paragraph) field bodies.  For complete"
+" details, please see `RCS Keywords`_ in the `reStructuredText Markup "
+"Specification`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1582
+msgid "Only the document_ element contains ``docinfo``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1585
+msgid "``docinfo`` elements contain `bibliographic elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1592
+msgid "The ``docinfo`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1598
+msgid ""
+"Docinfo is represented in reStructuredText_ by a field_list_ in a "
+"bibliographic context: the first non-comment element of a document_, "
+"after any document title_/subtitle_.  The field list is transformed into "
+"a ``docinfo`` element and its children by a transform.  Source::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1640
+msgid ""
+"Note that \"Filename\" is a non-standard ``docinfo`` field, so becomes a "
+"generic ``field`` element.  Also note that the \"RCSfile\" keyword syntax"
+" has been stripped from the \"Filename\" data."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1644
+msgid ""
+"See field_list_ for an example in a non-bibliographic context.  Also see "
+"the individual examples for the various `bibliographic elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1649
+msgid "``doctest_block``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1651
+msgid ""
+"The ``doctest_block`` element is a Python-specific variant of "
+"literal_block_.  It is a block of text where line breaks and whitespace "
+"are significant and must be preserved.  ``doctest_block`` elements are "
+"used for interactive Python interpreter sessions, which are distinguished"
+" by their input prompt: ``>>>``.  They are meant to illustrate usage by "
+"example, and provide an elegant and powerful testing environment via the "
+"`doctest module`_ in the Python standard library."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1668
+#: ../../docutils/docs/ref/doctree.txt:2926
+#: ../../docutils/docs/ref/doctree.txt:3039
+#: ../../docutils/docs/ref/doctree.txt:3535
+msgid "`Simple Body Elements`_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1671
+msgid ""
+"``doctest_block`` is analogous to the HTML \"pre\" element and to the "
+"DocBook \"programlisting\" and \"screen\" elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1675
+msgid ""
+"As with literal_block_, ``doctest_block`` elements are typically rendered"
+" in a monospaced typeface.  It is crucial that all whitespace and line "
+"breaks are preserved in the rendered form."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1680
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``doctest_block``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1685
+msgid "``doctest_block`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1693
+msgid ""
+"The ``doctest_block`` element contains the `common attributes`_ plus "
+"`xml:space`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1697
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes "
+"``doctest_block``.  The `%structure.model;`_ parameter entity indirectly "
+"includes ``doctest_block``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1722
+msgid "``document``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1724
+msgid ""
+"The ``document`` element is the root (topmost) element of the Docutils "
+"document tree.  ``document`` is the direct or indirect ancestor of every "
+"other element in the tree.  It encloses the entire document tree.  It is "
+"the starting point for a document."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1734
+#: ../../docutils/docs/ref/doctree.txt:3701
+#: ../../docutils/docs/ref/doctree.txt:3799
+#: ../../docutils/docs/ref/doctree.txt:4311
+msgid "`Structural Elements`_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1737
+msgid ""
+"``document`` is analogous to the HTML \"html\" element and to several "
+"DocBook elements such as \"book\"."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1741
+msgid "The ``document`` element has no parents."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1744
+msgid ""
+"``document`` elements may contain `structural subelements`_, `structural "
+"elements`_, and `body elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1754
+msgid ""
+"Depending on the source of the data and the stage of processing, the "
+"\"document\" may not initially contain a \"title\".  A document title is "
+"not directly representable in reStructuredText_.  Instead, a lone top-"
+"level section may have its title promoted to become the document title_, "
+"and similarly for a lone second-level (sub)section's title to become the "
+"document subtitle_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1761
+msgid ""
+"The contents of \"decoration_\" may be specified in a document, "
+"constructed programmatically, or both.  The \"docinfo_\" may be "
+"transformed from an initial field_list_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1765
+#, python-format
+msgid ""
+"See the `%structure.model;`_ parameter entity for details of the body of "
+"a ``document``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1769
+msgid ""
+"The ``document`` element contains the `common attributes`_ (ids_, names_,"
+" dupnames_, source_, and classes_), plus an optional `title attribute`_ "
+"which stores the document title metadata."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1783
+msgid "Complete pseudo-XML_ result from simple parsing::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1792
+msgid ""
+"After applying transforms, the section title is promoted to become the "
+"document title::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1803
+msgid "``emphasis``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1809
+msgid "``entry``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1815
+msgid "``enumerated_list``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1817
+msgid ""
+"The ``enumerated_list`` element contains list_item_ elements which are "
+"uniformly marked with enumerator labels."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1828
+msgid ""
+"``enumerated_list`` is analogous to the HTML \"ol\" element and to the "
+"DocBook \"orderedlist\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1832
+msgid ""
+"Each list item should begin a new vertical block, prefaced by a "
+"enumeration marker (such as \"1.\")."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1836
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain "
+"``enumerated_list``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1841
+msgid "``enumerated_list`` elements contain one or more list_item_ elements::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1847
+msgid ""
+"The ``enumerated_list`` element contains the `common attributes`_ plus "
+"enumtype_, prefix_, suffix_, and start_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1851
+msgid ""
+"``enumtype`` is used to record the intended enumeration sequence, one of "
+"\"arabic\" (1, 2, 3, ...), \"loweralpha\" (a, b, c, ..., z), "
+"\"upperalpha\" (A, B, C, ..., Z), \"lowerroman\" (i, ii, iii, iv, ..., "
+"mmmmcmxcix [4999]), or \"upperroman\" (I, II, III, IV, ..., MMMMCMXCIX "
+"[4999])."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1857
+msgid ""
+"``prefix`` stores the formatting characters used before the enumerator.  "
+"In documents originating from reStructuredText_ data, it will contain "
+"either \"\" (empty string) or \"(\" (left parenthesis).  It may or may "
+"not affect processing."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1862
+msgid ""
+"``suffix`` stores the formatting characters used after the enumerator.  "
+"In documents originating from reStructuredText_ data, it will contain "
+"either \".\" (period) or \")\" (right parenthesis). Depending on the "
+"capabilities of the output format, this attribute may or may not affect "
+"processing."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1868
+msgid ""
+"``start`` contains the ordinal value of the first item in the list, in "
+"decimal.  For lists beginning at value 1 (\"1\", \"a\", \"A\", \"i\", or "
+"\"I\"), this attribute may be omitted."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1873
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes "
+"``enumerated_list``.  The `%structure.model;`_ parameter entity "
+"indirectly includes ``enumerated_list``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1915
+msgid "``error``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1917
+msgid ""
+"The ``error`` element is an admonition, a distinctive and self-contained "
+"notice.  Also see the other admonition elements Docutils offers (in "
+"alphabetical order): attention_, caution_, danger_, hint_, important_, "
+"note_, tip_, warning_, and the generic admonition_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1931
+msgid ""
+"``error`` has no direct analogues in common DTDs.  It can be emulated "
+"with primitives and type effects."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1935
+msgid ""
+"Rendered distinctly (inset and/or in a box, etc.), with the generated "
+"title \"Error\" (or similar)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1939
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``error``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1944
+msgid "``error`` elements contain one or more `body elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1951
+msgid "The ``error`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1954
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes ``error``.  The"
+" `%structure.model;`_ parameter entity indirectly includes ``error``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1974
+msgid "``field``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1976
+msgid ""
+"The ``field`` element contains a pair of field_name_ and field_body_ "
+"elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1987
+msgid "``field`` has no direct analogues in common DTDs."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1990
+#: ../../docutils/docs/ref/doctree.txt:2033
+#: ../../docutils/docs/ref/doctree.txt:2158
+msgid "See field_list_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1993
+msgid "The following elements may contain ``field``: docinfo_, field_list_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:1997
+msgid ""
+"Each ``field`` element contains one field_name_ and one field_body_ "
+"element::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2003
+msgid "The ``field`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2006
+msgid ""
+"The `%bibliographic.elements;`_ parameter entity directly includes "
+"``field``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2013
+#: ../../docutils/docs/ref/doctree.txt:2052
+#: ../../docutils/docs/ref/doctree.txt:2177
+msgid "See the examples for the field_list_ and docinfo_ elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2017
+msgid "``field_body``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2019
+msgid ""
+"The ``field_body`` element contains body elements.  It is analogous to a "
+"database field's data."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2030
+msgid "``field_body`` has no direct analogues in common DTDs."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2036
+msgid "Only the field_ element contains ``field_body``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2039
+msgid "``field_body`` elements may contain `body elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2046
+msgid "The ``field_body`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2056
+msgid "``field_list``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2058
+msgid ""
+"The ``field_list`` element contains two-column table-like structures "
+"resembling database records (label & data pairs).  Field lists are often "
+"meant for further processing.  In reStructuredText_, field lists are used"
+" to represent bibliographic fields (contents of the docinfo_ element) and"
+" `directive options`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2071
+msgid ""
+"``field_list`` has no direct analogues in common DTDs.  It can be "
+"emulated with primitives such as tables."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2075
+msgid ""
+"A ``field_list`` is typically rendered as a two-column list, where the "
+"first column contains \"labels\" (usually with a colon suffix). However, "
+"field lists are often used for extension syntax or special processing.  "
+"Such structures do not survive as field lists to be rendered."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2082
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``field_list``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2087
+msgid "``field_list`` elements contain one or more field_ elements. ::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2092
+msgid "The ``field_list`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2095
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes ``field_list``."
+"  The `%structure.model;`_ parameter entity indirectly includes "
+"``field_list``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2142
+msgid "``field_name``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2144
+msgid ""
+"The ``field_name`` element contains text; it is analogous to a database "
+"field's name."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2155
+msgid "``field_name`` has no direct analogues in common DTDs."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2161
+msgid "Only the field_ element contains ``field_name``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2164
+msgid "``field_name`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2171
+msgid "The ``field_name`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2181
+msgid "``figure``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2187
+msgid "``footer``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2189
+msgid ""
+"The ``footer`` element is a container element whose contents are meant to"
+" appear at the bottom of a web page, or repeated at the bottom of every "
+"printed page.  The ``footer`` element may contain processing information "
+"(datestamp, a link to Docutils_, etc.) as well as custom content."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2200
+#: ../../docutils/docs/ref/doctree.txt:2426
+msgid "`Decorative Elements`_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2203
+msgid ""
+"``footer`` is analogous to the HTML5 \"footer\" element. There are no "
+"direct analogies to ``footer`` in HTML4 or DocBook. Equivalents are "
+"typically constructed from primitives and/or generated by the processing "
+"system."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2209
+msgid "Only the decoration_ element contains ``footer``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2212
+msgid "``footer`` elements may contain `body elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2219
+msgid "The ``footer`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2243
+msgid "``footnote``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2245
+msgid ""
+"The ``footnote`` element is used for labeled notes_ that provide "
+"additional context to a passage of text (*footnotes* or *endnotes*). The "
+"corresponding footnote mark in running text is set by the "
+"`footnote_reference`_ element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2260
+msgid "``footnote`` has no direct analogues in DocBook or HTML."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2262
+msgid ""
+"The `DocBook \"footnote\"`_ element combines features of ``footnote`` and"
+" footnote_reference_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2265
+msgid ""
+"The `ARIA role \"note\"`__ may be used to mark a (conforming__) `HTML "
+"emulation`__ as \"a section whose content is parenthetic or ancillary to "
+"the main content of the resource\"."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2269
+msgid ""
+"Depending on the note's position, the `epub:type`__ *footnote* or "
+"*endnote* and the DPub ARIA role `\"doc-footnote\"`__ or `\"doc-"
+"endnote\"`__ may be applicable."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2283
+msgid ""
+"A ``footnote`` element should be set off from the rest of the document, "
+"e.g. with a border or using a smaller font size."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2286
+msgid ""
+"Footnotes may \"float\" to the bottom or margin of a page or a dedicated "
+"section."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2290
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``footnote``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2295
+msgid ""
+"``footnote`` elements begin with an optional label_ and contain `body "
+"elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2303
+msgid ""
+"The ``footnote`` element contains the `common attributes`_ plus auto_ and"
+" backrefs_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2307
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes ``footnote``.  "
+"The `%structure.model;`_ parameter entity indirectly includes "
+"``footnote``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2315
+msgid "reStructuredText_ uses `explicit markup blocks`_ for footnotes::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2331
+msgid "``footnote_reference``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2333
+msgid ""
+"The ``footnote_reference`` element is an inline element representing a "
+"cross reference to a footnote_ (a footnote mark)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2344
+msgid ""
+"The ``footnote_reference`` element resembles the `DocBook "
+"\"footnoteref\"`_ element or the LaTeX ``\\footnotemark`` command."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2347
+msgid ""
+"There is no equivalent in HTML. The ``<a>`` element can be used to "
+"provide a link to the corresponding footnote."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2353
+msgid ""
+"A ``footnote_reference`` should generate a mark matching the label_ of "
+"the referenced footnote. The mark is typically formatted as superscript "
+"or enclosed i square brackets."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2358
+#, python-format
+msgid ""
+"All elements employing the `%inline.elements;`_ parameter entities in "
+"their content models may contain ``footnote-reference``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2362
+msgid "``footnote_reference`` elements may contain text data. ::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2367
+msgid ""
+"The ``footnote_reference`` element contains the `common attributes`_ plus"
+" auto_, refid_, and refname_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2374
+#: ../../docutils/docs/ref/doctree.txt:2451
+#: ../../docutils/docs/ref/doctree.txt:2652
+msgid "reStructuredText source fragment::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2389
+msgid "The ``references.Footnotes`` Docutils transform_ resolves this to::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2405
+msgid "``generated``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2407
+msgid ""
+"Docutils wraps ``generated`` elements around text that is inserted "
+"(generated) by Docutils; i.e., text that was not in the document, like "
+"section numbers inserted by the \"sectnum\" directive."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2415
+msgid "``header``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2417
+msgid ""
+"The ``header`` element is a container element whose contents are meant to"
+" appear at the top of a web page, or at the top of every printed page."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2429
+msgid ""
+"``header`` is analogous to the HTML5 \"header\" element. There are no "
+"direct analogies to ``header`` in HTML4 or DocBook. Equivalents are "
+"typically constructed from primitives and/or generated by the processing "
+"system."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2435
+msgid "Only the decoration_ element contains ``header``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2438
+msgid "``header`` elements may contain `body elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2445
+msgid "The ``header`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2465
+msgid "``hint``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2467
+msgid ""
+"The ``hint`` element is an admonition, a distinctive and self-contained "
+"notice.  Also see the other admonition elements Docutils offers (in "
+"alphabetical order): attention_, caution_, danger_, error_, important_, "
+"note_, tip_, warning_, and the generic admonition_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2481
+msgid ""
+"``hint`` has no direct analogues in common DTDs.  It can be emulated with"
+" primitives and type effects."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2485
+msgid ""
+"Rendered distinctly (inset and/or in a box, etc.), with the generated "
+"title \"Hint\" (or similar)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2489
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``hint``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2494
+msgid "``hint`` elements contain one or more `body elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2501
+msgid "The ``hint`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2504
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes ``hint``.  The "
+"`%structure.model;`_ parameter entity indirectly includes ``hint``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2524
+msgid "``image``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2527
+msgid ""
+"The ``image`` element contains the `common attributes`_ plus uri, align_,"
+" alt, height_, width_, and scale_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2534
+msgid "``important``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2536
+msgid ""
+"The ``important`` element is an admonition, a distinctive and self-"
+"contained notice.  Also see the other admonition elements Docutils offers"
+" (in alphabetical order): attention_, caution_, danger_, error_, hint_, "
+"note_, tip_, warning_, and the generic admonition_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2550
+msgid "``important`` is analogous to the `DocBook \"important\"`_ element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2553
+msgid ""
+"Rendered distinctly (inset and/or in a box, etc.), with the generated "
+"title \"Important\" (or similar)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2559
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``important``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2564
+msgid "``important`` elements contain one or more `body elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2571
+msgid "The ``important`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2574
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes ``important``."
+"  The `%structure.model;`_ parameter entity indirectly includes "
+"``important``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2610
+msgid "``inline``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2612
+msgid "The ``inline`` element is a generic inline container."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2621
+msgid "``inline`` is analogous to the HTML \"span\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2624
+msgid ""
+"Writers typically pass the classes_ attribute to the output document and "
+"leave styling to the backend or a custom stylesheet_. They may also "
+"process the classes_ attribute and convert the ``inline`` element to a "
+"specific element or render the content distinctly for specific class "
+"values. Moreover, writers may ignore the classes attribute and render the"
+" content as ordinary text."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2632
+#: ../../docutils/docs/ref/doctree.txt:2711
+#, python-format
+msgid ""
+"All elements employing the `%inline.elements;`_ parameter entities in "
+"their content models may contain ``inline``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2636
+#: ../../docutils/docs/ref/doctree.txt:2715
+msgid "``inline`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2643
+msgid "The ``inline`` element contains the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2649
+msgid ""
+"`Custom interpreted text roles`_ create ``inline`` elements (unless they "
+"are based on a `standard role`_)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2673
+msgid "``label``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2679
+msgid "``legend``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2685
+msgid "``line``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2687
+msgid ""
+"The ``line`` element contains a single line of text, part of a "
+"`line_block`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2698
+msgid "Only the `line_block`_ element contains ``line``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2701
+msgid "``line`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2704
+msgid ""
+"``line`` has no direct analogues in common DTDs.  It can be emulated with"
+" primitives or type effects."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2708
+#: ../../docutils/docs/ref/doctree.txt:2728
+msgid "See `line_block`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2722
+msgid "The ``line`` element contains the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2732
+msgid "``line_block``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2734
+msgid ""
+"The ``line_block`` element contains a sequence of lines and nested line "
+"blocks.  Line breaks (implied between elements) and leading whitespace "
+"(indicated by nesting) is significant and must be preserved.  "
+"``line_block`` elements are commonly used for verse and addresses.  See "
+"`literal_block`_ for an alternative useful for program listings and "
+"interactive computer sessions."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2749
+msgid ""
+"``line_block`` is analogous to the DocBook \"literallayout\" element and "
+"to the HTML \"pre\" element (with modifications to typeface styles)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2754
+msgid ""
+"Unlike ``literal_block``, ``line_block`` elements are typically rendered "
+"in an ordinary text typeface.  It is crucial that leading whitespace and "
+"line breaks are preserved in the rendered form."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2759
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``line_block``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2764
+msgid ""
+"``line_block`` elements may contain line_ elements and nested line_block_"
+" elements. ::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2770
+msgid "The ``line_block`` element contains the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2773
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes ``line_block``."
+"  The `%structure.model;`_ parameter entity indirectly includes "
+"``line_block``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2781
+msgid "Example source::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2840
+msgid "``list_item``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2842
+msgid "The ``list_item`` element is a container for the elements of a list item."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2853
+msgid ""
+"``list_item`` is analogous to the HTML \"li\" element and to the DocBook "
+"\"listitem\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2857
+msgid "See bullet_list_ or enumerated_list_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2860
+msgid "The bullet_list_ and enumerated_list_ elements contain ``list_item``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2864
+msgid "``list_item`` elements may contain `body elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2871
+msgid "The ``list_item`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2903
+msgid "See bullet_list_ or enumerated_list_ for further examples."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2907
+msgid "``literal``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2913
+msgid "``literal_block``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2915
+msgid ""
+"The ``literal_block`` element contains a block of text where line breaks "
+"and whitespace are significant and must be preserved. ``literal_block`` "
+"elements are commonly used for program listings and interactive computer "
+"sessions.  See `line_block`_ for an alternative useful for verse and "
+"addresses."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2929
+msgid ""
+"``literal_block`` is analogous to the HTML \"pre\" element and to the "
+"DocBook \"programlisting\" and \"screen\" elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2933
+msgid ""
+"``literal_block`` elements are typically rendered in a monospaced "
+"typeface.  It is crucial that all whitespace and line breaks are "
+"preserved in the rendered form."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2938
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``literal_block``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2943
+msgid "``literal_block`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2951
+msgid ""
+"The ``literal_block`` element contains the `common attributes`_ plus "
+"`xml:space`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2955
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes "
+"``literal_block``.  The `%structure.model;`_ parameter entity indirectly "
+"includes ``literal_block``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2983
+msgid "``math``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2985
+msgid ""
+"The ``math`` element contains text in `LaTeX math format` [#latex-math]_ "
+"that is typeset as mathematical notation (inline formula)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2988
+#: ../../docutils/docs/ref/doctree.txt:3032
+msgid ""
+"If the output format does not support math typesetting, the content is "
+"inserted verbatim."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:2998
+msgid ""
+"``math`` is analogous to a MathML \"math\" element or the LaTeX (``$ math"
+" $``) mode."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3002
+msgid "Rendered as mathematical notation."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3005
+#, python-format
+msgid ""
+"All elements employing the `%inline.elements;`_ parameter entities in "
+"their content models may contain ``math``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3009
+msgid "``math`` elements may contain text data."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3016
+#: ../../docutils/docs/ref/doctree.txt:3060
+msgid "The ``math`` element contains the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3018
+msgid ""
+"For details of the supported mathematical language, see the `\"math\" "
+"directive`_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3025
+msgid "``math_block``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3027
+msgid ""
+"The ``math_block`` element contains a block of text in `LaTeX math "
+"format` [#latex-math]_ that is typeset as mathematical notation (display "
+"formula). The ``math_block`` element is generated during the initial "
+"parse from a `\"math\" directive`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3042
+msgid ""
+"``math_block`` is analogous to a LaTeX \"equation*\" environment or a "
+"MathML \"math\" element displayed as block-level element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3046
+msgid ""
+"Rendered in a block as mathematical notation, typically centered or with "
+"indentation"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3050
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``math_block``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3055
+msgid "``math_block`` elements may contain text data. ::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3063
+msgid "``meta``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3065
+msgid ""
+"The ``meta`` element is a container for \"hidden\" document bibliographic"
+" data, or meta-data (data about the document). It corresponds to HTML "
+"META tags."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3069
+msgid ""
+"See also the docinfo_ element for displayed meta-data. The document's "
+"`title attribute`_ stores the metadate document title."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3080
+msgid ""
+"``meta`` is analogous to the HTML \"meta\" element or the file properties"
+" in ODT or PDF documents."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3084
+msgid ""
+"The ``meta`` element is stored as metadata if the export format supports "
+"this. It is typically invisible and may be omitted from the processed "
+"output."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3088
+msgid ""
+"Meta-data may also be extracted from docinfo_ children or the document_ "
+"attributes (title)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3092
+msgid "Only the document_ element contains ``meta``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3095
+msgid "None."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3099
+msgid "Example"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3101
+msgid ""
+"The `\"meta\" directive`_ is used to create a ``meta`` element. "
+"reStructuredText_ source::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3117
+msgid "``note``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3119
+msgid ""
+"The ``note`` element is an admonition, a distinctive and self-contained "
+"notice.  Also see the other admonition elements Docutils offers (in "
+"alphabetical order): attention_, caution_, danger_, error_, hint_, "
+"important_, tip_, warning_, and the generic admonition_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3133
+msgid "``note`` is analogous to the `DocBook \"note\"`_ element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3138
+msgid ""
+"Rendered distinctly (inset and/or in a box, etc.), with the generated "
+"title \"Note\" (or similar)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3143
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``note``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3148
+msgid "``note`` elements contain one or more `body elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3155
+msgid "The ``note`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3158
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes ``note``.  The "
+"`%structure.model;`_ parameter entity indirectly includes ``note``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3179
+msgid "``option``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3181
+msgid ""
+"The ``option`` element groups an option string together with zero or more"
+" option argument placeholders.  Note that reStructuredText_ currently "
+"supports only one argument per option."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3193
+msgid "``option`` has no direct analogues in common DTDs."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3199
+msgid "Only the option_group_ element contains ``option``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3202
+msgid ""
+"Each ``option`` element contains one option_string_ and zero or more "
+"option_argument_ elements. ::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3208
+msgid "The ``option`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3218
+msgid "``option_argument``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3220
+msgid ""
+"The ``option_argument`` element contains placeholder text for option "
+"arguments."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3231
+msgid "``option_argument`` has no direct analogues in common DTDs."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3234
+msgid ""
+"The value of the \"delimiter\" attribute is prefixed to the "
+"``option_argument``, separating it from its option_string_ or a preceding"
+" ``option_argument``.  The ``option_argument`` text is typically rendered"
+" in a monospaced typeface, possibly italicized or otherwise altered to "
+"indicate its placeholder nature."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3241
+msgid "Only the option_ element contains ``option_argument``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3244
+msgid "``option_argument`` elements contain text data only. ::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3249
+msgid ""
+"The ``option_argument`` element contains the `common attributes`_ plus "
+"delimiter_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3252
+msgid ""
+"``delimiter`` contains the text preceding the ``option_argument``: either"
+" the text separating it from the option_string_ (typically either \"=\" "
+"or \" \") or the text between option arguments (typically either \",\" or"
+" \" \")."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3265
+msgid "``option_group``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3267
+msgid ""
+"The ``option_group`` element groups together one or more option_ "
+"elements, all synonyms."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3278
+msgid "``option_group`` has no direct analogues in common DTDs."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3281
+msgid ""
+"Typically option_ elements within an ``option_group`` are joined together"
+" in a comma-separated list."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3285
+msgid "Only the option_list_item_ element contains ``option_group``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3288
+msgid "``option_group`` elements contain one or more option_ elements. ::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3293
+msgid "The ``option_group`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3302
+msgid "``option_list``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3304
+msgid ""
+"Each ``option_list`` element contains a two-column list of command-line "
+"options and descriptions, documenting a program's options."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3316
+msgid ""
+"``option_list`` has no direct analogues in common DTDs.  It can be "
+"emulated with primitives such as tables."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3320
+msgid ""
+"An ``option_list`` is typically rendered as a two-column list, where the "
+"first column contains option strings and arguments, and the second column"
+" contains descriptions."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3325
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``option_list``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3330
+msgid ""
+"``option_list`` elements contain one or more option_list_item_ elements. "
+"::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3336
+msgid "The ``option_list`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3339
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes "
+"``option_list``.  The `%structure.model;`_ parameter entity indirectly "
+"includes ``option_list``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3387
+msgid "``option_list_item``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3389
+msgid ""
+"The ``option_list_item`` element is a container for a pair of "
+"option_group_ and description_ elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3400
+msgid "``option_list_item`` has no direct analogues in common DTDs."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3406
+msgid "Only the option_list_ element contains ``option_list_item``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3409
+msgid ""
+"Each ``option_list_item`` element contains one option_group_ and one "
+"description_ element. ::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3415
+msgid "The ``option_list_item`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3425
+msgid "``option_string``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3427
+msgid "The ``option_string`` element contains the text of a command-line option."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3438
+msgid "``option_string`` has no direct analogues in common DTDs."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3441
+msgid "The ``option_string`` text is typically rendered in a monospaced typeface."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3445
+msgid "Only the option_ element contains ``option_string``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3448
+msgid "``option_string`` elements contain text data only. ::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3453
+msgid "The ``option_string`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3463
+msgid "``organization``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3465
+msgid ""
+"The ``organization`` element contains the name of document author's "
+"organization, or the organization responsible for the document."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3476
+msgid ""
+"``organization`` is analogous to the DocBook \"orgname\", \"corpname\", "
+"or \"publishername\" elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3483
+msgid "Only the docinfo_ element contains ``organization``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3486
+msgid "``organization`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3494
+msgid "The ``organization`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3497
+msgid ""
+"The `%bibliographic.elements;`_ parameter entity directly includes "
+"``organization``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3525
+msgid "``paragraph``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3527
+msgid ""
+"The ``paragraph`` element contains the text and inline elements of a "
+"single paragraph, a fundamental building block of documents."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3538
+msgid ""
+"``paragraph`` is analogous to the HTML \"p\" element and to the DocBook "
+"\"para\" elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3542
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``paragraph``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3547
+msgid "``paragraph`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3555
+msgid "The ``paragraph`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3558
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes ``paragraph``."
+"  The `%structure.model;`_ parameter entity indirectly includes "
+"``paragraph``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3577
+msgid "``pending``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3583
+msgid "``problematic``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3589
+msgid "``raw``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3595
+msgid "``reference``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3601
+msgid "``revision``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3603
+msgid ""
+"The ``revision`` element contains the revision number of the document. It"
+" can be used alone or in conjunction with version_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3614
+msgid ""
+"``revision`` is analogous to but simpler than the DocBook \"revision\" "
+"element.  It closely matches the DocBook \"revnumber\" element, but in a "
+"simpler context."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3619
+msgid "Often used with the RCS/CVS keyword \"Revision\".  See docinfo_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3622
+msgid "Only the docinfo_ element contains ``revision``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3625
+msgid "``revision`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3633
+msgid "The ``revision`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3636
+msgid ""
+"The `%bibliographic.elements;`_ parameter entity directly includes "
+"``revision``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3667
+msgid "``row``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3673
+msgid "``rubric``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3675
+msgid ""
+"rubric n. 1. a title, heading, or the like, in a manuscript, book, "
+"statute, etc., written or printed in red or otherwise distinguished from "
+"the rest of the text. ..."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3684
+msgid "Random House Webster's College Dictionary, 1991"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3681
+msgid ""
+"A rubric is like an informal heading that doesn't correspond to the "
+"document's structure."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3688
+msgid "``section``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3690
+msgid ""
+"The ``section`` element is the main unit of hierarchy for Docutils "
+"documents.  Docutils ``section`` elements are a recursive structure; a "
+"``section`` may contain other ``section`` elements, without limit. "
+"Paragraphs and other body elements may occur before a ``section``, but "
+"not after it."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3704
+msgid ""
+"``section`` is analogous to the recursive \"section\" elements in DocBook"
+" and HTML5."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3708
+msgid "The following elements may contain ``section``: document_, section_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3712
+msgid ""
+"``section`` elements begin with a title_, and may contain `body "
+"elements`_ as well as transition_, topic_, and sidebar_ elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3719
+#, python-format
+msgid ""
+"See the `%structure.model;`_ parameter entity for details of the body of "
+"a ``section``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3723
+msgid "The ``section`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3726
+#, python-format
+msgid ""
+"The `%section.elements;`_ parameter entity directly includes ``section``."
+"  The `%structure.model;`_ parameter entity indirectly includes "
+"``section``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3752
+#: ../../docutils/docs/ref/doctree.txt:4425
+msgid "Complete pseudo-XML_ result after parsing::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3778
+msgid "``sidebar``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3780
+msgid ""
+"Sidebars are like miniature, parallel documents that occur inside other "
+"documents, providing related or reference material.  A ``sidebar`` is "
+"typically offset by a border and \"floats\" to the side of the page; the "
+"document's main text may flow around it.  Sidebars can also be likened to"
+" super-footnotes; their content is outside of the flow of the document's "
+"main text."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3787
+msgid ""
+"The ``sidebar`` element is a nonrecursive section_-like construct which "
+"may occur at the top level of a section_ wherever a body element (list, "
+"table, etc.) is allowed.  In other words, ``sidebar`` elements cannot "
+"nest inside body elements, so you can't have a ``sidebar`` inside a "
+"``table`` or a ``list``, or inside another ``sidebar`` (or topic_)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3802
+msgid "``sidebar`` is analogous to the DocBook \"sidebar\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3805
+msgid ""
+"A ``sidebar`` element should be set off from the rest of the document "
+"somehow, typically with a border.  Sidebars typically \"float\" to the "
+"side of the page and the document's main text flows around them."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3811
+msgid "The following elements may contain ``sidebar``: document_, section_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3815
+msgid ""
+"``sidebar`` elements begin with optional title_ and subtitle_ and contain"
+" `body elements`_ and topic_ elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3824
+msgid "The ``sidebar`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3827
+#, python-format
+msgid "The `%structure.model;`_ parameter entity directly includes ``sidebar``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3834
+msgid ""
+"The `\"sidebar\" directive`_ is used to create a ``sidebar`` element. "
+"reStructuredText_ source::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3856
+msgid "``status``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3858
+msgid ""
+"The ``status`` element contains a status statement for the document, such"
+" as \"Draft\", \"Final\", \"Work In Progress\", etc."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3869
+msgid "``status`` is analogous to the DocBook \"status\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3875
+msgid "Only the docinfo_ element contains ``status``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3878
+msgid "``status`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3885
+msgid "The ``status`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3888
+msgid ""
+"The `%bibliographic.elements;`_ parameter entity directly includes "
+"``status``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3916
+msgid "``strong``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3922
+msgid "``subscript``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3928
+msgid "``substitution_definition``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3934
+msgid "``substitution_reference``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3940
+msgid "``subtitle``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3942
+msgid "The ``subtitle`` element stores the subtitle of a document_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3952
+msgid ""
+"``subtitle`` is analogous to HTML header elements (\"h2\" etc.) and to "
+"the DocBook \"subtitle\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3956
+msgid "A document's subtitle is usually rendered smaller than its title_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3959
+msgid "The document_ and sidebar_ elements may contain ``subtitle``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3962
+msgid "``subtitle`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3970
+msgid "The ``subtitle`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:3997
+msgid ""
+"Note how two section levels have collapsed, promoting their titles to "
+"become the document's title and subtitle.  Since there is only one "
+"structural element (document), the subsection's ``ids`` and ``names`` "
+"attributes are stored in the ``subtitle`` element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4004
+msgid "``superscript``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4010
+msgid "``system_message``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4016
+msgid "``table``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4018
+msgid "The ``table`` element identifies a data arrangement with rows and columns."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4020
+msgid ""
+"Docutils tables are based on the `Exchange subset of the CALS-table "
+"model` [exchange-table-model]_. [#]_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4023
+msgid ""
+"The interpretation of column widths in colspec_ differs from the "
+"specification."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4033
+msgid "``table`` is analogous to the HTML \"table\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4036
+msgid "Content is rendered in rows and columns."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4039
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``table``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4044
+msgid ""
+"``table`` elements begin with an optional title_ (caption) and may "
+"contain one or more `tgroup`_ elements. ::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4050
+msgid ""
+"The ``table`` element contains the attributes frame, colsep, rowsep, and "
+"pgwide defined in the exchange-table-model_, the `common attributes`_, "
+"align_, and width_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4055
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes ``table``.  The"
+" `%structure.model;`_ parameter entity indirectly includes ``table``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4062
+msgid ""
+"In reStructuredText, tables can specified via the table__, csv-table_, or"
+" list-table_ directives or directly as `grid table`_ or `simple table`_, "
+"e.g. ::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4099
+msgid ""
+"`XML Exchange Table Model DTD`, OASIS Technical Memorandum 9901:1999, "
+"http://www.oasis-open.org/html/tm9901.html."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4103
+msgid "``target``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4109
+msgid "``tbody``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4115
+msgid "``term``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4117
+msgid ""
+"The ``term`` element contains a word or phrase being defined in a "
+"definition_list_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4128
+msgid ""
+"``term`` is analogous to the HTML \"dt\" element and to the DocBook "
+"\"term\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4135
+msgid "Only the definition_list_item_ element contains ``term``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4138
+msgid "``term`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4145
+msgid "The ``term`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4156
+msgid "``tgroup``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4158
+msgid "See [exchange-table-model]_. .. parsed-literal::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4168
+msgid "``thead``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4174
+msgid "``tip``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4176
+msgid ""
+"The ``tip`` element is an admonition, a distinctive and self-contained "
+"notice.  Also see the other admonition elements Docutils offers (in "
+"alphabetical order): attention_, caution_, danger_, error_, hint_, "
+"important_, note_, warning_, and the generic admonition_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4189
+msgid "``tip`` is analogous to the `DocBook \"tip\"`_ element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4194
+msgid ""
+"Rendered distinctly (inset and/or in a box, etc.), with the generated "
+"title \"Tip\" (or similar)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4198
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``tip``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4203
+msgid "``tip`` elements contain one or more `body elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4210
+msgid "The ``tip`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4213
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes ``tip``. The "
+"`%structure.model;`_ parameter entity indirectly includes ``tip``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4235
+#: ../../docutils/docs/ref/doctree.txt:5003
+msgid "``title``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4237
+msgid ""
+"The ``title`` element stores the title of a document_, section_, "
+"sidebar_, table_, topic_, or generic admonition_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4248
+msgid ""
+"``title`` is analogous to HTML \"title\" and header (\"h1\" etc.) "
+"elements, and to the DocBook \"title\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4252
+msgid ""
+"The following elements may contain ``title``: admonition_, document_, "
+"section_, sidebar_, table_, topic_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4256
+msgid "``title`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4263
+msgid ""
+"The ``title`` element contains the `common attributes`_ plus refid_ and "
+"auto_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4266
+msgid "``refid`` is used as a backlink to a table of contents entry."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4268
+msgid ""
+"``auto`` is used to indicate (with value \"1\") that the ``title`` has "
+"been numbered automatically."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4292
+msgid "``title_reference``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4298
+msgid "``topic``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4300
+msgid ""
+"The ``topic`` element is a nonrecursive section_-like construct which may"
+" occur at the top level of a section_ wherever a body element (list, "
+"table, etc.) is allowed.  In other words, ``topic`` elements cannot nest "
+"inside body elements, so you can't have a ``topic`` inside a ``table`` or"
+" a ``list``, or inside another ``topic``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4314
+msgid "``topic`` is analogous to the DocBook \"simplesect\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4317
+msgid ""
+"A ``topic`` element should be set off from the rest of the document "
+"somehow, such as with indentation or a border."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4321
+msgid ""
+"The following elements may contain ``topic``: document_, section_, "
+"sidebar_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4325
+msgid "``topic`` elements begin with a title_ and may contain `body elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4333
+msgid "The ``topic`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4336
+#, python-format
+msgid "The `%structure.model;`_ parameter entity directly includes ``topic``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4343
+msgid ""
+"The `\"topic\" directive`_ is used to create a ``topic`` element. "
+"reStructuredText_ source::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4362
+msgid "``transition``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4364
+msgid ""
+"The ``transition`` element is commonly seen in novels and short fiction, "
+"as a gap spanning one or more lines, with or without a type ornament such"
+" as a row of asterisks.  Transitions separate body elements and sections,"
+" dividing a section into untitled divisions.  A transition may not begin "
+"or end a section [#]_ or document, nor may two transitions be immediately"
+" adjacent."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4371
+msgid ""
+"See `Doctree Representation of Transitions`__ in `A Record of "
+"reStructuredText Syntax Alternatives`__."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4374
+msgid ""
+"In reStructuredText markup, a transition may appear to fall at the end of"
+" a section immediately before another section.  A transform recognizes "
+"this case and moves the transition so it separates the sections."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4390
+msgid "``transition`` is analogous to the HTML \"hr\" element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4393
+msgid ""
+"The ``transition`` element is typically rendered as vertical whitespace "
+"(more than that separating paragraphs), with or without a horizontal line"
+" or row of asterisks.  In novels, transitions are often represented as a "
+"row of three well-spaced asterisks with vertical space above and below."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4400
+msgid "The following elements may contain ``transition``: document_, section_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4404
+msgid "The ``transition`` element has no content."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4407
+msgid "The ``transition`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4410
+#, python-format
+msgid ""
+"The `%structure.model;`_ parameter entity directly includes "
+"``transition``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4436
+msgid "``version``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4438
+msgid ""
+"The ``version`` element contains the version number of the document. It "
+"can be used alone or in conjunction with revision_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4449
+msgid ""
+"``version`` may be considered analogous to the DocBook \"revision\", "
+"\"revnumber\", or \"biblioid\" elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4453
+msgid ""
+"Sometimes used with the RCS/CVS keyword \"Revision\".  See docinfo_ and "
+"revision_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4457
+msgid "Only the docinfo_ element contains ``version``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4460
+msgid "``version`` elements may contain text data plus `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4468
+msgid "The ``version`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4471
+msgid ""
+"The `%bibliographic.elements;`_ parameter entity directly includes "
+"``version``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4499
+msgid "``warning``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4501
+msgid ""
+"The ``warning`` element is an admonition, a distinctive and self-"
+"contained notice.  Also see the other admonition elements Docutils offers"
+" (in alphabetical order): attention_, caution_, danger_, error_, hint_, "
+"important_, note_, tip_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4514
+msgid "``warning`` is analogous to the `DocBook \"warning\"`_ element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4519
+msgid ""
+"Rendered distinctly (inset and/or in a box, etc.), with the generated "
+"title \"Warning\" (or similar)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4523
+#, python-format
+msgid ""
+"All elements employing the `%body.elements;`_ or `%structure.model;`_ "
+"parameter entities in their content models may contain ``warning``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4528
+msgid "``warning`` elements contain one or more `body elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4535
+msgid "The ``warning`` element contains only the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4538
+#, python-format
+msgid ""
+"The `%body.elements;`_ parameter entity directly includes ``warning``.  "
+"The `%structure.model;`_ parameter entity indirectly includes "
+"``warning``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4561
+msgid "Attribute types"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4567
+msgid "Standard attribute types"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4569
+msgid ""
+"Attribute types defined in the `attribute types`__ section of the `XML "
+"1.0 specification`_:"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4573
+msgid "_`CDATA`"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4573
+msgid "Character data.  CDATA attributes may contain arbitrary text."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4577
+msgid "_`NMTOKEN`"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4576
+msgid ""
+"A \"name token\".  One or more of letters, digits, \".\", \"-\", and "
+"\"_\"."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4580
+msgid "_`NMTOKENS`"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4580
+msgid "One or more space-separated NMTOKEN values."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4583
+msgid "_`EnumeratedType`"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4583
+msgid "The attribute value may be one of a specified list of values."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4585
+msgid ""
+"Docutils uses `custom attribute types`_ instead of the ID, IDREF, and "
+"IDREFS standard types, because it does not adhere to the `One ID per "
+"Element Type`_ validity constraint."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4593
+msgid "Custom attribute types"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4595
+msgid ""
+"The Docutils DTD defines `parameter entities`_ that resolve to standard "
+"attribute types to highlight specific attribute value constraints."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4602
+msgid "_`yesorno`"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4599
+msgid ""
+"Boolean: no if zero (\"0\"), yes if any other value. Resolves to "
+"``NMTOKEN``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4602
+msgid "Used in the `anonymous`_ and `stub`_ attributes."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4607
+msgid "_`number`"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4605
+msgid "The attribute value must be a number. Resolves to ``NMTOKEN``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4607
+msgid "Used in the `level`_, `morecols`_, `scale`_, and `start`_ attributes."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4613
+msgid "_`measure`"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4610
+msgid ""
+"A number which may be immediately followed by a unit or percent sign. "
+"Resolves to CDATA."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4613
+msgid "Used in the `height`_ and `width`_ attributes."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4618
+msgid "_`classnames.type`"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4616
+msgid ""
+"A space-separated list of `class names` [#classname]_. Resolves to "
+"NMTOKEN."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4618
+msgid "Used in the `classes`_ attribute."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4624
+msgid "_`refname.type`"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4621
+msgid ""
+"A normalized_ `reference name`_. Resolves to CDATA (in contrast to "
+"NMTOKENS, `reference names`_ may consist of any text)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4624
+msgid "Used in the `refname`_ attribute."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4632
+msgid "_`refnames.type`"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4627
+msgid "A space-separated list of `reference names`_. Resolves to CDATA."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4629
+msgid ""
+"`Backslash escaping`_ is used for space characters inside a `reference "
+"name`."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4632
+msgid "Used in the `names`_ and `dupnames`_ attributes."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4639
+msgid "_`ids.type`"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4635
+msgid ""
+"A space-separated list of unique `identifier keys` [#identifier]_. "
+"Resolves to NMTOKENS (the XML `standard attribute types`_ do not provide "
+"for a list of IDs)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4639
+msgid "Used in the `ids`_ attribute."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4646
+msgid "_`idref.type`"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4642
+msgid ""
+"A reference to an `identifier key`_. Resolves to NMTOKEN (Docutils "
+"identifier keys do not use the ID standard type as required by the `IDREF"
+" Validity constraint`_)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4646
+msgid "Used in the `refid`_ attribute."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4652
+msgid "_`idrefs.type`"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4649
+msgid "A list of references to element identifiers. Resolves to NMTOKENS."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4652
+msgid "Used in the `backrefs`_ attribute."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4656
+msgid "`Class names` define sub-classes of existing elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4658
+msgid ""
+"In reStructuredText, custom `class names` can be specified using the "
+"`\"class\" directive`_, a directive's `:class: option`_, or `custom "
+"interpreted text roles`_. Docutils normalizes them to conform to both, "
+"HTML4.1 and CSS1.0 `name` requirements (the regular expression "
+"``[a-z](-?[a-z0-9]+)*``) via the `identifier normalization`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4669
+msgid ""
+"`Identifier keys` are used for cross references in generated documents. "
+"Therefore, they must comply with restrictions in the respective output "
+"formats (HTML4.1__, HTML5__, `polyglot HTML`__, LaTeX__, ODT__, troff "
+"(manpage), XML__)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4674
+msgid ""
+"Identifier keys cannot be specified directly in reStructuredText. "
+"Docutils generates them by applying the `identifier normalization`_ to "
+"`reference names`_ or from the auto_id_prefix_, prepending the id_prefix_"
+" and potentially appending numbers for disambiguation."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4708
+msgid "Attribute Reference"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4716
+msgid "_`Common Attributes`:"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4714
+msgid ""
+"Through the `%basic.atts;`_ parameter entity, all elements contain the "
+"following attributes: ids_, names_ or dupnames_, source_, and classes_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4719
+msgid "``align``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4721
+msgid "Attribute type: `CDATA`_.  Default value: none (inherit)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4723
+msgid ""
+"The ``align`` attribute is used in the figure_, image_, and table_ "
+"elements (via the `%align-h.att;`_ and `%align-hv.att;`_ parameter "
+"entities)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4727
+msgid "``anonymous``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4729
+msgid "Attribute type: `yesorno`_.  Default value: none (implies no)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4731
+msgid ""
+"The ``anonymous`` attribute is used for unnamed hyperlinks in the target_"
+" and reference_ elements (via the `%anonymous.att;`_ parameter entity)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4737
+msgid "``auto``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4739
+#: ../../docutils/docs/ref/doctree.txt:4759
+#: ../../docutils/docs/ref/doctree.txt:4814
+#: ../../docutils/docs/ref/doctree.txt:4909
+#: ../../docutils/docs/ref/doctree.txt:4949
+#: ../../docutils/docs/ref/doctree.txt:4968
+#: ../../docutils/docs/ref/doctree.txt:4995
+#: ../../docutils/docs/ref/doctree.txt:5005
+msgid "Attribute type: `CDATA`_.  Default value: none."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4741
+msgid ""
+"The ``auto`` attribute is used to indicate automatically-numbered "
+"footnote_, footnote_reference_ and title_ elements (via the `%auto.att;`_"
+" parameter entity)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4747
+msgid "``backrefs``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4749
+msgid "Attribute type: `idrefs.type`_.  Default value: none."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4751
+msgid ""
+"The ``backrefs`` attribute contains a space-separated list of identifier_"
+" references, used for backlinks from footnote_, citation_, and "
+"system_message_ elements (via the `%backrefs.att;`_ parameter entity)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4757
+msgid "``bullet``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4761
+msgid "The ``bullet`` attribute is used in the bullet_list_ element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4765
+msgid "``classes``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4767
+msgid "Attribute type: `classnames.type`_.  Default value: none."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4769
+msgid ""
+"The ``classes`` attribute is a space separated list containing zero or "
+"more `class names`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4772
+msgid ""
+"The purpose of the attribute is to indicate an \"is-a\" variant "
+"relationship, to allow an extensible way of defining sub-classes of "
+"existing elements.  It can be used to carry context forward between a "
+"Docutils Reader and Writer, when a custom structure is reduced to a "
+"standardized document tree.  One common use is in conjunction with "
+"stylesheets, to add selection criteria. It should not be used to carry "
+"formatting instructions or arbitrary content."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4779
+msgid ""
+"The ``classes`` attribute's contents should be ignorable.  Writers that "
+"are not familiar with the variant expressed should be able to ignore the "
+"attribute."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4783
+msgid ""
+"``classes`` is one of the `common attributes`_, shared by all Docutils "
+"elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4790
+msgid "``colwidth``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4792
+msgid "Attribute type: `CDATA`_. Default value: \"1*\""
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4794
+msgid ""
+"Column width specification used in the colspec_ element. Defined in the "
+"exchange-table-model_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4797
+msgid ""
+"Either proportional measure of the form number*, e.g., “5*” for 5 times "
+"the proportion, or “*” (which is equivalent to “1*”); fixed measure, "
+"e.g., 2pt for 2 point, 3pi for 3 pica."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4801
+msgid ""
+"The fixed unit values are case insensitive. The standard list of allowed "
+"unit values is “pt” (points), “cm” (centimeters), “mm” (millimeters), "
+"“pi” (picas), and “in” (inches). The default fixed unit should be "
+"interpreted as “pt” if neither a proportion nor a fixed unit is "
+"specified."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4807
+msgid "Currently, Docutils interprets unitless numbers as proportions."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4812
+msgid "``delimiter``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4816
+msgid "The ``delimiter`` attribute is used in the option_argument_ element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4820
+msgid "``dupnames``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4822
+#: ../../docutils/docs/ref/doctree.txt:4880
+msgid "Attribute type: `refnames.type`_.  Default value: none."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4824
+msgid ""
+"The ``dupnames`` attribute replaces the `names`_ attribute when there has"
+" been a naming conflict. ``dupnames`` is one of the `common attributes`_,"
+" shared by all Docutils elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4831
+msgid "``enumtype``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4833
+msgid ""
+"Attribute type: EnumeratedType_, one of \"arabic\", \"loweralpha\", "
+"\"upperalpha\", \"lowerroman\", or \"upperroman\".  Default value: none."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4836
+msgid "The ``enumtype`` attribute is used in the enumerated_list_ element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4840
+msgid "``height``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4842
+#: ../../docutils/docs/ref/doctree.txt:5015
+msgid "Attribute type: measure_.  Default value: none."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4844
+msgid "The ``height`` attribute is used in the image_ element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4848
+msgid "``ids``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4850
+msgid "Attribute type: `ids.type`_.  Default value: none."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4852
+msgid ""
+"The ``ids`` attribute is a space separated list containing one or more "
+"unique `identifier keys`_, typically assigned by the system."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4855
+msgid ""
+"``ids`` is one of the `common attributes`_, shared by all Docutils "
+"elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4864
+msgid "``level``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4866
+#: ../../docutils/docs/ref/doctree.txt:4873
+#: ../../docutils/docs/ref/doctree.txt:4960
+msgid "Attribute type: number_.  Default value: none."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4868
+msgid "The ``level`` attribute is used in the system_message_ element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4871
+msgid "``morecols``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4875
+msgid "The ``morecols`` attribute is used in the table_ element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4878
+msgid "``names``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4882
+msgid ""
+"The ``names`` attribute is a space-separated list containing "
+"`normalized`_ `reference names`_ of an element. Whitespace inside a name "
+"is backslash escaped. Each name in the list must be unique; if there are "
+"name conflicts (two or more elements want to the same name), the contents"
+" will be transferred to the `dupnames`_ attribute on the duplicate "
+"elements. An element may have at most one of the ``names`` or "
+"``dupnames`` attributes, but not both."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4891
+msgid ""
+"`Reference names`_ are identifiers assigned in the markup. They originate"
+" from `internal hyperlink targets`_, a directive's `name option`_, or the"
+" element's title or content and are used for internal cross-references "
+"(cf. refname_)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4896
+msgid ""
+"``names`` is one of the `common attributes`_, shared by all Docutils "
+"elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4907
+msgid "``prefix``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4911
+msgid "The ``prefix`` attribute is used in the enumerated_list_ element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4915
+msgid "``refid``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4917
+msgid "Attribute type: `idref.type`_.  Default value: none."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4919
+msgid "The ``refid`` attribute contains a reference to an `identifier key`_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4921
+#, python-format
+msgid ""
+"``refid`` is used by the target_, reference_, footnote_reference_, "
+"citation_reference_, title_ and problematic_ elements (via the "
+"`%refid.att;`_ and `%reference.atts;`_ parameter entities)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4927
+msgid "``refname``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4929
+msgid "Attribute type: `refname.type`_.  Default value: none."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4931
+msgid ""
+"The ``refname`` attribute contains a reference to one of the `reference "
+"names`_ in the `names`_ attribute of another element.  On a `target`_ "
+"element, ``refname`` indicates an `indirect target`_ which may resolve to"
+" either an internal or external reference.  Docutils \"transforms_\" "
+"replace the ``refname`` attribute with a refid_ pointing to the same "
+"element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4938
+#, python-format
+msgid ""
+"``refname`` is used by the target_, reference_, footnote_reference_, "
+"citation_reference_, and substitution_reference_ elements (via the "
+"`%refname.att;`_ and `%reference.atts;`_ parameter entities)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4947
+msgid "``refuri``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4951
+#, python-format
+msgid ""
+"The ``refuri`` attribute contains an external reference to a URI/URL. It "
+"is used by the target_, reference_, footnote_reference_, and "
+"citation_reference_ elements (via the `%reference.atts;`_ parameter "
+"entity)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4958
+msgid "``scale``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4962
+msgid "The ``scale`` attribute is used in the image_ element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4966
+msgid "``source``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4970
+msgid ""
+"The ``source`` attribute is used to store the path or URL to the source "
+"text that was used to produce the document tree.  It is one of the "
+"`common attributes`_, shared by all Docutils elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4976
+msgid "``start``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4978
+msgid "Attribute type: `number`_.  Default value: none."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4980
+msgid "The ``start`` attribute is used in the enumerated_list_ element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4984
+msgid "``stub``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4986
+msgid "Attribute type: `yesorno`_.  Default value: none."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4988
+msgid ""
+"The ``stub`` attribute is used in the colspec_ element. It marks a table "
+"column containing \"stubs\" (row titles, on the left). See also the csv-"
+"table_ and list-table_ directives."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4993
+msgid "``suffix``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:4997
+msgid "The ``suffix`` attribute is used in the enumerated_list_ element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5007
+msgid ""
+"The ``title`` attribute stores the title metadata of a document_.  This "
+"title is typically not part of the rendered document.  It may for example"
+" be used in HTML's ``title`` element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5013
+msgid "``width``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5017
+msgid ""
+"The ``width`` attribute is used in the figure_, image_, and table_ "
+"element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5021
+msgid "``xml:space``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5023
+msgid ""
+"`Attribute type`: `EnumeratedType`_, one of \"default\" or \"preserve\". "
+"Default value: \"preserve\" (fixed)."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5026
+#, python-format
+msgid ""
+"The ``xml:space`` attribute is a standard XML attribute for whitespace-"
+"preserving elements.  It is used by the literal_block_, line_block_, "
+"doctest_block_, comment_, and raw_ elements (via the `%fixedspace.att;`_ "
+"parameter entity).  It is a fixed attribute, meant to communicate to an "
+"XML parser that the element contains significant whitespace.  The "
+"attribute value should not be set in a document instance."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5037
+msgid "Parameter Entity Reference"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5042
+msgid ""
+"Parameter entities are used to simplify the DTD (to share definitions and"
+" reduce duplication) and to allow the DTD to be customized by wrapper "
+"DTDs (external client DTDs that use or import the Docutils DTD).  "
+"Parameter entities may be overridden by wrapper DTDs, replacing the "
+"definitions below with custom definitions.  Parameter entities whose "
+"names begin with \"additional\" are meant to allow easy extension by "
+"wrapper DTDs."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5051
+msgid "``%align-h.att;``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5053
+msgid ""
+"The ``%align-h.att;`` parameter entity contains the align_ attribute for "
+"horizontal alignment."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5056
+#: ../../docutils/docs/ref/doctree.txt:5069
+#: ../../docutils/docs/ref/doctree.txt:5082
+#: ../../docutils/docs/ref/doctree.txt:5096
+#: ../../docutils/docs/ref/doctree.txt:5110
+msgid "Entity definition::"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5060
+msgid ""
+"The figure_ and table_ elements directly employ the ``%align-h.att;`` "
+"parameter entity in their attribute lists."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5064
+msgid "``%align-hv.att;``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5066
+msgid ""
+"The ``%align-hv.att;`` parameter entity contains the align_ attribute for"
+" horizontal and vertical alignment."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5073
+msgid ""
+"The image_ element directly employs the ``%align-hv.att;`` parameter "
+"entity in its attribute list."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5077
+msgid "``%anonymous.att;``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5079
+msgid ""
+"The ``%anonymous.att;`` parameter entity contains the anonymous_ "
+"attribute, used for unnamed hyperlinks."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5086
+msgid ""
+"The reference_ and target_ elements directly employ the "
+"``%anonymous.att;`` parameter entity in their attribute lists."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5091
+msgid "``%auto.att;``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5093
+msgid ""
+"The ``%auto.att;`` parameter entity contains the auto_ attribute, used to"
+" indicate an automatically-numbered footnote or title."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5100
+msgid ""
+"The footnote_, footnote_reference_, and title_ elements directly employ "
+"the ``%auto.att;`` parameter entity in their attribute lists."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5105
+msgid "``%backrefs.att;``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5107
+msgid ""
+"The ``%backrefs.att;`` parameter entity contains the backrefs_ attribute,"
+" a space-separated list of id references, for backlinks."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5114
+msgid ""
+"The citation_, footnote_, and system_message_ elements directly employ "
+"the ``%backrefs.att;`` parameter entity in their attribute lists."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5119
+msgid "``%basic.atts;``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5121
+msgid "The ``%basic.atts;`` parameter entity lists the `common attributes`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5123
+#: ../../docutils/docs/ref/doctree.txt:5144
+#: ../../docutils/docs/ref/doctree.txt:5167
+#: ../../docutils/docs/ref/doctree.txt:5202
+#: ../../docutils/docs/ref/doctree.txt:5219
+#: ../../docutils/docs/ref/doctree.txt:5250
+#: ../../docutils/docs/ref/doctree.txt:5273
+#: ../../docutils/docs/ref/doctree.txt:5296
+#: ../../docutils/docs/ref/doctree.txt:5316
+#: ../../docutils/docs/ref/doctree.txt:5334
+#: ../../docutils/docs/ref/doctree.txt:5356
+#: ../../docutils/docs/ref/doctree.txt:5396
+msgid "Entity definition:"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5134
+msgid ""
+"The ``%additional.basic.atts;`` parameter entity can be used by wrapper "
+"DTDs to extend ``%basic.atts;``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5139
+msgid "``%bibliographic.elements;``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5141
+msgid ""
+"The ``%bibliographic.elements;`` parameter entity contains an OR-list of "
+"all `bibliographic elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5153
+msgid ""
+"The ``%additional.bibliographic.elements;`` parameter entity can be used "
+"by wrapper DTDs to extend ``%bibliographic.elements;``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5156
+msgid ""
+"Only the docinfo_ element directly employs the "
+"``%bibliographic.elements;`` parameter entity in its content model."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5161
+msgid "``%body.elements;``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5163
+#, python-format
+msgid ""
+"The ``%body.elements;`` parameter entity contains an OR-list of all `body"
+" elements`_.  ``%body.elements;`` is itself contained within the "
+"`%structure.model;`_ parameter entity."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5180
+msgid ""
+"The ``%additional.body.elements;`` parameter entity can be used by "
+"wrapper DTDs to extend ``%body.elements;``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5183
+msgid ""
+"The ``%body.elements;`` parameter entity is directly employed in the "
+"content models of the following elements: admonition_, attention_, "
+"block_quote_, caution_, citation_, compound_, danger_, definition_, "
+"description_, entry_, error_, field_body_, footer_, footnote_, header_, "
+"hint_, important_, legend_, list_item_, note_, sidebar_, system_message_,"
+" tip_, topic_, warning_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5190
+#, python-format
+msgid ""
+"Via `%structure.model;`_, the ``%body.elements;`` parameter entity is "
+"indirectly employed in the content models of the document_ and section_ "
+"elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5196
+#, python-format
+msgid "``%fixedspace.att;``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5198
+#, python-format
+msgid ""
+"The ``%fixedspace.att;`` parameter entity contains the `xml:space`_ "
+"attribute, a standard XML attribute for whitespace-preserving elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5208
+#, python-format
+msgid ""
+"The ``%fixedspace.att;`` parameter entity is directly employed in the "
+"attribute lists of the following elements: address_, comment_, "
+"doctest_block_, line_block_, literal_block_, raw_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5214
+#, python-format
+msgid "``%inline.elements;``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5216
+#, python-format
+msgid ""
+"The ``%inline.elements;`` parameter entity contains an OR-list of all "
+"`inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5229
+#, python-format
+msgid ""
+"The ``%additional.inline.elements;`` parameter entity can be used by "
+"wrapper DTDs to extend ``%inline.elements;``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5232
+#, python-format
+msgid ""
+"Via `%text.model;`_, the ``%inline.elements;`` parameter entity is "
+"indirectly employed in the content models of the following elements: "
+"abbreviation_, acronym_, address_, attribution_, author_, caption_, "
+"classifier_, contact_, copyright_, date_, doctest_block_, emphasis_, "
+"generated_, inline_, line_block_, literal_block_, math_, math_block_, "
+"organization_, paragraph_, problematic_, raw_, reference_, revision_, "
+"rubric_, status_, strong_, subscript_, substitution_definition_, "
+"substitution_reference_, subtitle_, superscript_, target_, term_, title_,"
+" title_reference_, version_"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5245
+#, python-format
+msgid "``%reference.atts;``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5247
+#, python-format
+msgid ""
+"The ``%reference.atts;`` parameter entity groups together the refuri_, "
+"refid_, and refname_ attributes."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5259
+msgid ""
+"The ``%additional.reference.atts;`` parameter entity can be used by "
+"wrapper DTDs to extend ``%additional.reference.atts;``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5262
+#, python-format
+msgid ""
+"The citation_reference_, footnote_reference_, reference_, and target_ "
+"elements directly employ the ``%reference.att;`` parameter entity in "
+"their attribute lists."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5268
+#, python-format
+msgid "``%refid.att;``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5270
+#, python-format
+msgid ""
+"The ``%refid.att;`` parameter entity contains the refid_ attribute, an "
+"internal reference to the `ids`_ attribute of another element."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5279
+#, python-format
+msgid ""
+"The title_ and problematic_ elements directly employ the ``%refid.att;`` "
+"parameter entity in their attribute lists."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5282
+#, python-format
+msgid ""
+"Via `%reference.atts;`_, the ``%refid.att;`` parameter entity is "
+"indirectly employed in the attribute lists of the citation_reference_, "
+"footnote_reference_, reference_, and target_ elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5288
+#, python-format
+msgid "``%refname.att;``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5290
+#, python-format
+msgid ""
+"The ``%refname.att;`` parameter entity contains the refname_ attribute, "
+"an internal reference to the `names`_ attribute of another element.  On a"
+" `target`_ element, ``refname`` indicates an indirect target which may "
+"resolve to either an internal or external reference."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5302
+#, python-format
+msgid ""
+"The substitution_reference_ element directly employs the "
+"``%refname.att;`` parameter entity in its attribute list."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5305
+#, python-format
+msgid ""
+"Via `%reference.atts;`_, the ``%refname.att;`` parameter entity is "
+"indirectly employed in the attribute lists of the citation_reference_, "
+"footnote_reference_, reference_, and target_ elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5311
+#, python-format
+msgid "``%refuri.att;``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5313
+#, python-format
+msgid ""
+"The ``%refuri.att;`` parameter entity contains the refuri_ attribute, an "
+"external reference to a URI/URL."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5322
+#, python-format
+msgid ""
+"Via `%reference.atts;`_, the ``%refuri.att;`` parameter entity is "
+"indirectly employed in the attribute lists of the citation_reference_, "
+"footnote_reference_, reference_, and target_ elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5328
+#, python-format
+msgid "``%section.elements;``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5330
+#, python-format
+msgid ""
+"The ``%section.elements;`` parameter entity contains an OR-list of all "
+"section_-equivalent elements.  ``%section.elements;`` is itself contained"
+" within the `%structure.model;`_ parameter entity."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5341
+#, python-format
+msgid ""
+"The ``%additional.section.elements;`` parameter entity can be used by "
+"wrapper DTDs to extend ``%section.elements;``."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5344
+#, python-format
+msgid ""
+"Via `%structure.model;`_, the ``%section.elements;`` parameter entity is "
+"indirectly employed in the content models of the document_ and section_ "
+"elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5350
+#, python-format
+msgid "``%structure.model;``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5352
+#, python-format
+msgid ""
+"The ``%structure.model;`` parameter entity encapsulates the hierarchical "
+"structure of a document and of its constituent parts. See the discussion "
+"of the `element hierarchy`_ above."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5363
+msgid ""
+"Each document_ or section_ contains zero or more body elements, topics, "
+"and/or sidebars, optionally interspersed with single transitions, "
+"followed by zero or more sections (whose contents are recursively the "
+"same as this model) optionally interspersed with transitions."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5369
+msgid "The following restrictions are imposed by this model:"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5371
+msgid ""
+"Transitions must be separated by other elements (body elements, sections,"
+" etc.).  In other words, a transition may not be immediately adjacent to "
+"another transition."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5375
+msgid "A transition may not occur at the beginning of a document or section."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5386
+#, python-format
+msgid ""
+"The `%structure.model;`_ parameter entity is directly employed in the "
+"content models of the document_ and section_ elements."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5391
+msgid "``%text.model;``"
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5393
+msgid ""
+"The ``%text.model;`` parameter entity is used by many elements to "
+"represent text data mixed with `inline elements`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/doctree.txt:5402
+msgid ""
+"The ``%text.model;`` parameter entity is directly employed in the content"
+" models of the following elements: abbreviation_, acronym_, address_, "
+"author_, caption_, classifier_, contact_, copyright_, date_, "
+"doctest_block_, emphasis_, field_name_, generated_, line_block_, "
+"literal_block_, organization_, paragraph_, problematic_, raw_, "
+"reference_, revision_, status_, strong_, substitution_definition_, "
+"substitution_reference_, subtitle_, target_, term_, title_, version_"
+msgstr ""
+

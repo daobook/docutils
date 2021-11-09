@@ -1,0 +1,186 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/dev/release.txt:3
+msgid "Docutils_ Release Procedure"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt
+msgid "Authors"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:5
+msgid "David Goodger; Lea Wiemann; open to all Docutils developers"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:7
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:8
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:14
+msgid "Releasing (post 2020)"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:16
+msgid "Announce the upcoming release on docutils-develop list."
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:18
+msgid "Consider **feature freeze** or/and **check-in freeze** ."
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:20
+msgid "Update RELEASE-NOTES.txt add section ``Release <version>``."
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:22
+msgid "Consult HISTORY.txt for important changes."
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:24
+msgid ""
+"Change HISTORY.txt title ``Changes Since <previous release>`` to "
+"``Release <version>``."
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:26
+msgid "Set new version with ``sandbox/infrastructure/set_version.sh <version>``"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:28
+msgid "Check what was changed with version control system by ``set_version.sh``"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:30
+msgid "Run tests ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:36
+msgid "or use tox."
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:38
+msgid "``export PYTHONWARNINGS=default`` prints DeprecationWarnings in python3."
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:40
+msgid "Generate universal wheel and source-distribution::"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:45
+msgid "Upload universal wheel and source to test.pypi::"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:49
+msgid "Wait some minutes to test in virtualenv ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:62
+msgid "Test in venv ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:75
+msgid "Commit changes ... the changed version number."
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:77
+msgid "tag 0.## (Note: only directory docutils is copied)::"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:83
+msgid "Now upload to pypi::"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:87
+msgid "and test::"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:107
+msgid "Notify to docutils-developer and user."
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:109
+msgid "upload source and generated html to sf-htdocs/0.## ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:121
+msgid "Check web/index.txt for necessary corrections."
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:122
+msgid "Run sandbox/infrastructure/docutils-update.local to update web-content."
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:123
+msgid "Release to sourceforge."
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:125
+msgid "Upload tar.gz and 0.16 release notes to sourceforge."
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:126
+msgid "Select docutils-0.16.tar.gz as default for all OS."
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:128
+msgid "set_version 0.#.#+1b.dev"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:129
+msgid "test with py2 and py3"
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:130
+msgid "docutils/HISTORY.txt: add title \"Changes Since 0.##\""
+msgstr ""
+
+#: ../../docutils/docs/dev/release.txt:131
+msgid "run sandbox/infrastructure/docutils-update.local"
+msgstr ""
+

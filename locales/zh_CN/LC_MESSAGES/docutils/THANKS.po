@@ -1,0 +1,668 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/THANKS.txt:4
+msgid "Acknowledgements"
+msgstr ""
+
+#: ../../docutils/THANKS.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:6
+msgid "David Goodger"
+msgstr ""
+
+#: ../../docutils/THANKS.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:7
+msgid "goodger@python.org"
+msgstr ""
+
+#: ../../docutils/THANKS.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:8
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/THANKS.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:9
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/THANKS.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:10
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/THANKS.txt:12
+msgid ""
+"I would like to acknowledge the people who have made a direct impact on "
+"the Docutils project, knowingly or not, in terms of encouragement, "
+"suggestions, criticism, bug reports, code contributions, cash donations, "
+"tasty treats, and related projects:"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:17
+msgid "Aahz"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:18
+msgid "David Abrahams"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:19
+msgid "Guy D. Alcos"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:20
+msgid "David Ascher"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:21
+msgid "Ned Batchelder"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:22
+msgid "Heiko Baumann"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:23
+msgid "Anthony Baxter"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:24
+msgid "Eric Bellot"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:25
+msgid "Frank Bennett"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:26
+msgid "Ian Bicking"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:27
+msgid "Marek Blaha"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:28
+msgid "Martin Blais"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:29
+msgid "Stephen Boulet"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:30
+msgid "Fred Bremmer"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:31
+msgid "Simon Budig"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:32
+msgid "Bill Bumgarner"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:33
+msgid "Brett Cannon"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:34
+msgid "Greg Chapman"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:35
+msgid "Nicolas Chauveau"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:36
+msgid "Beni Cherniavsky"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:37
+msgid "Adam Chodorowski"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:38
+msgid "Brent Cook"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:39
+msgid "Laura Creighton"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:40
+msgid "Artur de Sousa Rocha"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:41
+msgid "Stephan Deibel & `Wing IDE <http://wingide.com/>`__"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:42
+msgid "Jason Diamond"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:43
+msgid "William Dode"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:44
+msgid "Fred Drake"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:45
+msgid "Reggie Dugard"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:46
+msgid "Dethe Elza"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:47
+msgid "Marcus Ertl"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:48
+msgid "Benja Fallenstein"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:49
+msgid "fantasai"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:50
+msgid "Stefane Fermigier"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:51
+msgid "Michael Foord"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:52
+msgid "Jim Fulton"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:53
+msgid "Peter Funk"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:54
+msgid "Lele Gaifax"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:55
+msgid "Dinu C. Gherman"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:56
+msgid "Matt Gilbert"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:57
+msgid "Jorge Gonzalez"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:58
+msgid "Engelbert Gruber"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:59
+msgid "Jacob Hallen"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:60
+msgid "Simon Hefti"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:61
+msgid "Doug Hellmann"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:62
+msgid "Marc Herbert"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:63
+msgid "Juergen Hermann"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:64
+msgid "Jannie Hofmeyr"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:65
+msgid "Steve Holden"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:66
+msgid "Michael Hudson"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:67
+msgid "Marcelo Huerta San Martin"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:68
+msgid "Ludger Humbert"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:69
+msgid "Jeremy Hylton"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:70
+msgid "Tony Ibbs"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:71
+msgid "Alan G. Isaac"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:72
+msgid "Alan Jaffray"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:73
+msgid "Joe YS Jaw"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:74
+msgid "Dmitry Jemerov"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:75
+msgid "Richard Jones"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:76
+msgid "Andreas Jung"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:77
+msgid "Robert Kern"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:78
+msgid "Garth Kidd"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:79
+msgid "Philipp Knüsel"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:80
+msgid "Axel Kollmorgen"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:81
+msgid "Jeff Kowalczyk"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:82
+msgid "Martin F. Krafft"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:83
+msgid "Meir Kriheli"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:84
+msgid "Dave Kuhlman"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:85
+msgid "Lloyd Kvam"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:86
+msgid "Kirill Lapshin"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:87
+msgid "Nicola Larosa"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:88
+msgid "Daniel Larsson"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:89
+msgid "Marc-Andre Lemburg"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:90
+msgid "Julien Letessier"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:91
+msgid "Chris Liechti"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:92
+msgid "Wolfgang Lipp"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:93
+msgid "Edward Loper"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:94
+msgid "Dallas Mahrt"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:95
+msgid "Brecht Machiels"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:96
+msgid "Mikolaj Machowski"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:97
+msgid "Ken Manheimer"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:98
+msgid "Bob Marshall"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:99
+msgid "Mark McEahern"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:100
+msgid "Vincent McIntyre"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:101
+msgid "John F Meinel Jr"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:102
+msgid "Ivan Mendez for Free Software Office of the University of A Coruña"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:103
+msgid "Eric Meyer"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:104
+msgid "Günter Milde"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:105
+msgid "Skip Montanaro"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:106
+msgid "Paul Moore"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:107
+msgid "Nigel W. Moriarty"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:108
+msgid "Hisashi Morita"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:109
+msgid "Mark Nodine"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:110
+msgid "Omidyar Network (Pierre Omidyar & Doug Solomon)"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:111
+msgid "Panjunyong"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:112
+msgid "Patrick K. O'Brien"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:113
+msgid "Michel Pelletier"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:114
+msgid "Toshio Kuratomi"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:115
+msgid "Sam Penrose"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:116
+msgid "Tim Peters"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:117
+msgid "Pearu Peterson"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:118
+msgid "Martijn Pieters"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:119
+msgid "Mark Pilgrim"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:120
+msgid "Brett g Porter"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:121
+msgid "David Priest"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:122
+msgid "Jens Quade"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:123
+msgid "Stefan Rank"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:124
+msgid "Edward K. Ream"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:125
+msgid "Andy Robinson"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:126
+msgid "Tavis Rudd"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:127
+msgid "Tracy Ruggles"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:128
+msgid "Oliver Rutherfurd"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:129
+msgid "Luc Saffre"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:130
+msgid "Seo Sanghyeon"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:131
+msgid "Kenichi Sato"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:132
+msgid "Ueli Schlaepfer"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:133
+msgid "Gunnar Schwant"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:134
+msgid "Bill Sconce"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:135
+msgid "Frank Siebenlist"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:136
+msgid "Bruce Smith"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:137
+msgid "Nir Soffer"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:138
+msgid "Asko Soukka"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:139
+msgid "Darek Suchojad"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:140
+msgid "Roman Suzi"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:141
+msgid "Janet Swisher"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:142
+msgid "tav"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:143
+msgid "Kent Tenney"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:144
+msgid "Bob Tolbert"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:145
+msgid "Paul Tremblay"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:146
+msgid "Laurence Tratt"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:147
+msgid "Adrian van den Dries"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:148
+msgid "Guido van Rossum"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:149
+msgid "Miroslav Vasko"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:150
+msgid "Paul Viren"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:151
+msgid "Martin von Loewis"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:152
+msgid "Greg Ward"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:153
+msgid "Barry Warsaw"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:154
+msgid "Wu Wei"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:155
+msgid "Edward Welbourne"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:156
+msgid "Lea Wiemann"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:157
+msgid "Anthony Williams"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:158
+msgid "Robert Wojciechowicz"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:159
+msgid "Ka-Ping Yee"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:160
+msgid "Moshe Zadka"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:161
+msgid "Shmuel Zeigerman"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:163
+msgid "Thank you!"
+msgstr ""
+
+#: ../../docutils/THANKS.txt:165
+msgid ""
+"Special thanks to `SourceForge <http://sourceforge.net>`__ and the "
+"`Python Software Foundation <http://www.python.org/psf/>`__."
+msgstr ""
+
+#: ../../docutils/THANKS.txt:168
+msgid ""
+"Hopefully I haven't forgotten anyone or misspelled any names; apologies "
+"(and please let me know!) if I have."
+msgstr ""
+

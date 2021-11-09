@@ -1,0 +1,5462 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:3
+msgid "LaTeX syntax for mathematics"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt
+msgid "abstract"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:9
+msgid ""
+"Docutils supports mathematical content with a `\"math\" directive`__ and "
+"`role`__. The input format is *LaTeX math syntax*\\ [#math-syntax]_ with "
+"support for Unicode symbols."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:14
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:20
+msgid "Inline formulas and displayed equations"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:22
+msgid ""
+"The **math role** can be used for inline mathematical expressions: "
+"``:math:`\\psi(r) = \\exp(-2r)``` will produce :m:`\\psi(r)=\\exp(-2r)`. "
+"Inside the backtics you can write anything you would write between dollar"
+" signs in a LaTeX document.  [#math-syntax]_"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:29
+msgid ""
+"If you put ``.. default-role:: math`` at the top of your document, you "
+"can write ```x^2``` instead of the longer version: ``:math:`x^2```.  You "
+"can also introduce an abbreviation like this ``.. role:: m(math)``.  That"
+" will allow you to write ``:m:`x^2``` or ```x^2`:m:``."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:36
+msgid ""
+"The **math directive** is used for displayed equations. It corresponds to"
+" an ``equation*`` or ``align*`` environment in a LaTeX document. If you "
+"write::"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:42
+msgid "you will get:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:44
+msgid ""
+"\\psi(r) = e^{-2r}\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:46
+msgid "A more complex example is the definition of the `Fourier transform`_::"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:56
+msgid "which is rendered as:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:58
+msgid ""
+"  (\\mathcal{F}f)(y)\n"
+"   = \\frac{1}{\\sqrt{2\\pi}^{\\ n}}\n"
+"     \\int_{\\mathbb{R}^n} f(x)\\,\n"
+"     e^{-\\mathrm{i} y \\cdot x} \\,\\mathrm{d} x."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:66
+msgid ""
+"The ``:name:`` option puts a label on the equation that can be linked to "
+"by `hyperlink references`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:69
+msgid ""
+"Displayed equations can use ``\\\\`` and ``&`` for line shifts and "
+"alignments::"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:76
+msgid "LaTeX output will wrap it in an ``align*`` environment. The result is:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:79
+msgid ""
+"a &= (x + y)^2         &  b &= (x - y)^2 \\\\\n"
+"  &= x^2 + 2xy + y^2   &    &= x^2 - 2xy + y^2"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:85
+msgid ""
+"The supported LaTeX commands include AMS extensions (see, e.g., the "
+"`Short Math Guide`_). Some of the shown symbols require the \"amssymb\" "
+"`LaTeX package`_ (or another package providing the AMS symbol macros) "
+"when exported with the \"latex\" writer."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:90
+msgid ""
+"The support is limited to a subset of *LaTeX math* by the conversion "
+"required for many output formats.  For HTML, the `math_output`_ "
+"configuration setting (or the corresponding ``--math-output`` command "
+"line option) selects between alternative output formats with different "
+"subsets of supported elements. If a writer does not support math "
+"typesetting, the content is inserted verbatim."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:108
+msgid "Mathematical symbols"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:110
+msgid ""
+"The following tables are adapted from the first edition of \"The LaTeX "
+"Companion\" (Goossens, Mittelbach, Samarin) and the AMS `Short Math "
+"Guide`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:116
+msgid "Accents and embellishments"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:118
+msgid "The \"narrow\" accents are intended for a single-letter base."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:123
+msgid "`\\acute{x}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:123
+msgid "``\\acute{x}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:123
+msgid "`\\dot{t}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:123
+msgid "``\\dot{t}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:123
+msgid "`\\hat{x}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:123
+msgid "``\\hat{x}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:124
+msgid "`\\bar{v}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:124
+msgid "``\\bar{v}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:124
+msgid "`\\ddot{t}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:124
+msgid "``\\ddot{t}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:124
+msgid "`\\mathring{x}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:124
+msgid "``\\mathring{x}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:125
+msgid "`\\breve{x}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:125
+msgid "``\\breve{x}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:125
+msgid "`\\dddot{t}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:125
+msgid "``\\dddot{t}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:125
+msgid "`\\tilde{n}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:125
+msgid "``\\tilde{n}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:126
+msgid "`\\check{x}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:126
+msgid "``\\check{x}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:126
+msgid "`\\grave{x}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:126
+msgid "``\\grave{x}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:126
+msgid "`\\vec{x}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:126
+msgid "``\\vec{x}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:129
+msgid ""
+"When adding an accent to an i or j in math, dotless variants can be "
+"obtained with ``\\imath`` and ``\\jmath``: `\\hat \\imath`, "
+"`\\vec{\\jmath}`."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:132
+msgid "For embellishments that span multiple symbols, use:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:137
+msgid "`\\widetilde{gbi}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:137
+msgid "``\\widetilde{gbi}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:137
+msgid "`\\widehat{gbi}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:137
+msgid "``\\widehat{gbi}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:138
+msgid "`\\overline{gbi}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:138
+msgid "``\\overline{gbi}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:138
+msgid "`\\underline{gbi}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:138
+msgid "``\\underline{gbi}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:139
+msgid "`\\overbrace{gbi}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:139
+msgid "``\\overbrace{gbi}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:139
+msgid "`\\underbrace{gbi}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:139
+msgid "``\\underbrace{gbi}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:140
+msgid "`\\overleftarrow{gbi}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:140
+msgid "``\\overleftarrow{gbi}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:140
+msgid "`\\underleftarrow{gbi}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:140
+msgid "``\\underleftarrow{gbi}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:141
+msgid "`\\overrightarrow{gbi}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:141
+msgid "``\\overrightarrow{gbi}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:141
+msgid "`\\underrightarrow{gbi}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:141
+msgid "``\\underrightarrow{gbi}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:142
+msgid "`\\overleftrightarrow{gbi}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:142
+msgid "``\\overleftrightarrow{gbi}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:142
+msgid "`\\underleftrightarrow{gbi}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:142
+msgid "``\\underleftrightarrow{gbi}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:147
+msgid "Binary operators"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:151
+msgid "`*`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:151
+msgid "``*``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:151
+msgid "`\\circledast`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:151
+msgid "``\\circledast``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:151
+msgid "`\\ominus`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:151
+msgid "``\\ominus``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:152
+msgid "`+`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:152
+msgid "``+``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:152
+msgid "`\\circledcirc`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:152
+msgid "``\\circledcirc``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:152
+msgid "`\\oplus`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:152
+msgid "``\\oplus``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:153
+msgid "`-`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:153
+msgid "``-``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:153
+msgid "`\\circleddash`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:153
+msgid "``\\circleddash``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:153
+msgid "`\\oslash`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:153
+msgid "``\\oslash``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:154
+#: ../../docutils/docs/ref/rst/mathematics.txt:409
+msgid "`:`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:154
+#: ../../docutils/docs/ref/rst/mathematics.txt:409
+msgid "``:``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:154
+msgid "`\\cup`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:154
+msgid "``\\cup``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:154
+msgid "`\\otimes`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:154
+msgid "``\\otimes``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:155
+msgid "`\\Cap`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:155
+msgid "``\\Cap``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:155
+msgid "`\\curlyvee`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:155
+msgid "``\\curlyvee``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:155
+msgid "`\\pm`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:155
+msgid "``\\pm``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:156
+msgid "`\\Cup`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:156
+msgid "``\\Cup``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:156
+msgid "`\\curlywedge`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:156
+msgid "``\\curlywedge``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:156
+msgid "`\\rightthreetimes`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:156
+msgid "``\\rightthreetimes``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:157
+msgid "`\\amalg`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:157
+msgid "``\\amalg``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:157
+msgid "`\\dagger`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:157
+msgid "``\\dagger``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:157
+msgid "`\\rtimes`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:157
+msgid "``\\rtimes``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:158
+msgid "`\\ast`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:158
+msgid "``\\ast``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:158
+msgid "`\\ddagger`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:158
+msgid "``\\ddagger``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:158
+msgid "`\\setminus`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:158
+msgid "``\\setminus``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:159
+msgid "`\\bigcirc`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:159
+msgid "``\\bigcirc``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:159
+msgid "`\\diamond`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:159
+msgid "``\\diamond``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:159
+msgid "`\\smallsetminus`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:159
+msgid "``\\smallsetminus``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:160
+msgid "`\\bigtriangledown`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:160
+msgid "``\\bigtriangledown``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:160
+msgid "`\\div`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:160
+msgid "``\\div``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:160
+msgid "`\\sqcap`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:160
+msgid "``\\sqcap``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:161
+msgid "`\\bigtriangleup`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:161
+msgid "``\\bigtriangleup``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:161
+msgid "`\\divideontimes`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:161
+msgid "``\\divideontimes``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:161
+msgid "`\\sqcup`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:161
+msgid "``\\sqcup``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:162
+msgid "`\\boxdot`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:162
+msgid "``\\boxdot``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:162
+msgid "`\\dotplus`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:162
+msgid "``\\dotplus``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:162
+msgid "`\\star`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:162
+msgid "``\\star``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:163
+msgid "`\\boxminus`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:163
+msgid "``\\boxminus``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:163
+msgid "`\\doublebarwedge`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:163
+msgid "``\\doublebarwedge``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:163
+msgid "`\\times`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:163
+msgid "``\\times``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:164
+msgid "`\\boxplus`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:164
+msgid "``\\boxplus``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:164
+msgid "`\\gtrdot`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:164
+msgid "``\\gtrdot``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:164
+msgid "`\\triangleleft`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:164
+msgid "``\\triangleleft``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:165
+msgid "`\\boxtimes`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:165
+msgid "``\\boxtimes``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:165
+msgid "`\\intercal`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:165
+msgid "``\\intercal``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:165
+msgid "`\\triangleright`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:165
+msgid "``\\triangleright``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:166
+msgid "`\\bullet`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:166
+msgid "``\\bullet``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:166
+msgid "`\\leftthreetimes`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:166
+msgid "``\\leftthreetimes``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:166
+msgid "`\\uplus`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:166
+msgid "``\\uplus``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:167
+msgid "`\\cap`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:167
+msgid "``\\cap``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:167
+msgid "`\\lessdot`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:167
+msgid "``\\lessdot``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:167
+msgid "`\\vee`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:167
+msgid "``\\vee``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:168
+msgid "`\\cdot`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:168
+msgid "``\\cdot``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:168
+msgid "`\\ltimes`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:168
+msgid "``\\ltimes``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:168
+msgid "`\\veebar`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:168
+msgid "``\\veebar``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:169
+msgid "`\\centerdot`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:169
+msgid "``\\centerdot``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:169
+msgid "`\\mp`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:169
+msgid "``\\mp``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:169
+msgid "`\\wedge`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:169
+msgid "``\\wedge``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:170
+msgid "`\\circ`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:170
+msgid "``\\circ``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:170
+msgid "`\\odot`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:170
+msgid "``\\odot``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:170
+msgid "`\\wr`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:170
+msgid "``\\wr``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:175
+msgid "Extensible delimiters"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:176
+msgid ""
+"Unless you indicate otherwise, delimiters in math formulas remain at the "
+"standard size regardless of the height of the enclosed material. To get "
+"adaptable sizes, use ``\\left`` and ``\\right`` prefixes, for example "
+"`g(A,B,Y) = f \\left(A,B,X=h^{[X]}(Y)\\right)` or"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:181
+msgid ""
+"a_n = \\left(\\frac{1}{2}\\right)^n\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:183
+msgid "Use ``.`` for \"empty\" delimiters:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:185
+msgid ""
+"A = \\left . \\frac{1}{1-n}\\, \\right |_{n=0}^\\infty\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:187
+msgid "See also the commands for fixed `delimiter sizes`_ below."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:189
+msgid "The following symbols extend when used with ``\\left`` and ``\\right``:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:192
+msgid "Pairing delimiters"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:196
+msgid "`( )`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:196
+msgid "``( )``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:196
+msgid "`\\langle \\rangle`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:196
+msgid "``\\langle \\rangle``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:197
+msgid "`[ ]`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:197
+msgid "``[ ]``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:197
+msgid "`\\lceil  \\rceil`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:197
+msgid "``\\lceil \\rceil``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:198
+msgid "`\\{ \\}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:198
+msgid "``\\{ \\}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:198
+msgid "`\\lfloor \\rfloor`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:198
+msgid "``\\lfloor \\rfloor``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:199
+msgid "`\\lvert \\rvert`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:199
+msgid "``\\lvert \\rvert``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:199
+msgid "`\\lgroup \\rgroup`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:199
+msgid "``\\lgroup \\rgroup``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:200
+msgid "`\\lVert \\rVert`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:200
+msgid "``\\lVert \\rVert``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:200
+msgid "`\\lmoustache \\rmoustache`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:200
+msgid "``\\lmoustache \\rmoustache``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:205
+msgid "Nonpairing delimiters"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:209
+#: ../../docutils/docs/ref/rst/mathematics.txt:406
+msgid "`|`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:209
+#: ../../docutils/docs/ref/rst/mathematics.txt:406
+msgid "``|``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:209
+msgid "`\\vert`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:209
+msgid "``\\vert``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:209
+msgid "`\\arrowvert`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:209
+msgid "``\\arrowvert``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:210
+msgid "`\\|`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:210
+msgid "``\\|``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:210
+msgid "`\\Vert`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:210
+msgid "``\\Vert``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:210
+msgid "`\\Arrowvert`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:210
+msgid "``\\Arrowvert``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:211
+#: ../../docutils/docs/ref/rst/mathematics.txt:405
+msgid "`/`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:211
+#: ../../docutils/docs/ref/rst/mathematics.txt:405
+msgid "``/``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:211
+msgid "`\\backslash`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:211
+msgid "``\\backslash``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:211
+msgid "`\\bracevert`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:211
+msgid "``\\bracevert``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:214
+msgid ""
+"The use of ``|`` and ``\\|`` for pairs of vertical bars may produce "
+"incorrect spacing, e.g., ``|k|=|-k|`` produces `|k| = |−k|` and "
+"``|\\sin(x)|`` produces `|\\sin(x)|`. The pairing delimiters, e.g. "
+"`\\lvert -k\\rvert` and `\\lvert\\sin(x)\\rvert`, prevent this problem "
+"(in LaTeX and MathJax)."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:223
+msgid "Extensible vertical arrows"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:227
+msgid "`\\uparrow`     ``\\uparrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:227
+msgid "`\\Uparrow`     ``\\Uparrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:228
+msgid "`\\downarrow`   ``\\downarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:228
+msgid "`\\Downarrow`   ``\\Downarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:229
+msgid "`\\updownarrow` ``\\updownarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:229
+msgid "`\\Updownarrow` ``\\Updownarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:234
+msgid "Functions (named operators)"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:238
+msgid "`\\arccos`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:238
+msgid "``\\arccos``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:238
+msgid "`\\gcd`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:238
+msgid "``\\gcd``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:238
+msgid "`\\Pr`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:238
+msgid "``\\Pr``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:239
+msgid "`\\arcsin`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:239
+msgid "``\\arcsin``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:239
+msgid "`\\hom`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:239
+msgid "``\\hom``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:239
+msgid "`\\projlim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:239
+msgid "``\\projlim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:240
+msgid "`\\arctan`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:240
+msgid "``\\arctan``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:240
+msgid "`\\inf`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:240
+msgid "``\\inf``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:240
+msgid "`\\sec`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:240
+msgid "``\\sec``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:241
+msgid "`\\arg`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:241
+msgid "``\\arg``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:241
+msgid "`\\injlim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:241
+msgid "``\\injlim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:241
+msgid "`\\sin`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:241
+msgid "``\\sin``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:242
+msgid "`\\cos`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:242
+msgid "``\\cos``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:242
+msgid "`\\ker`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:242
+msgid "``\\ker``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:242
+msgid "`\\sinh`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:242
+msgid "``\\sinh``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:243
+msgid "`\\cosh`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:243
+msgid "``\\cosh``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:243
+msgid "`\\lg`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:243
+msgid "``\\lg``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:243
+msgid "`\\sup`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:243
+msgid "``\\sup``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:244
+msgid "`\\cot`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:244
+msgid "``\\cot``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:244
+msgid "`\\lim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:244
+msgid "``\\lim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:244
+msgid "`\\tan`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:244
+msgid "``\\tan``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:245
+msgid "`\\coth`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:245
+msgid "``\\coth``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:245
+msgid "`\\liminf`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:245
+msgid "``\\liminf``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:245
+msgid "`\\tanh`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:245
+msgid "``\\tanh``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:246
+msgid "`\\csc`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:246
+msgid "``\\csc``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:246
+msgid "`\\limsup`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:246
+msgid "``\\limsup``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:246
+msgid "`\\varlimsup`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:246
+msgid "``\\varlimsup``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:247
+msgid "`\\deg`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:247
+msgid "``\\deg``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:247
+msgid "`\\ln`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:247
+msgid "``\\ln``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:247
+msgid "`\\varliminf`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:247
+msgid "``\\varliminf``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:248
+msgid "`\\det`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:248
+msgid "``\\det``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:248
+msgid "`\\log`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:248
+msgid "``\\log``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:248
+msgid "`\\varprojlim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:248
+msgid "``\\varprojlim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:249
+msgid "`\\dim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:249
+msgid "``\\dim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:249
+msgid "`\\max`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:249
+msgid "``\\max``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:249
+msgid "`\\varinjlim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:249
+msgid "``\\varinjlim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:250
+msgid "`\\exp`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:250
+msgid "``\\exp``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:250
+msgid "`\\min`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:250
+msgid "``\\min``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:253
+msgid ""
+"Named operators outside the above list can be typeset with "
+"``\\operatorname{name}``, e.g."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:256
+msgid ""
+"\\operatorname{sgn}(-3) = -1.\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:260
+msgid ""
+"The ``\\DeclareMathOperator`` command can only be used in the `LaTeX "
+"preamble`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:267
+msgid "Greek letters"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:269
+msgid ""
+"Greek letters that have Latin look-alikes are rarely used in math "
+"formulas and not supported by LaTeX."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:275
+msgid "`\\Gamma`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:275
+msgid "``\\Gamma``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:275
+msgid "`\\alpha`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:275
+msgid "``\\alpha``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:275
+msgid "`\\mu`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:275
+msgid "``\\mu``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:275
+msgid "`\\omega`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:275
+msgid "``\\omega``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:276
+msgid "`\\Delta`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:276
+msgid "``\\Delta``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:276
+msgid "`\\beta`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:276
+msgid "``\\beta``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:276
+msgid "`\\nu`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:276
+msgid "``\\nu``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:276
+msgid "`\\digamma`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:276
+msgid "``\\digamma``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:277
+msgid "`\\Lambda`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:277
+msgid "``\\Lambda``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:277
+msgid "`\\gamma`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:277
+msgid "``\\gamma``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:277
+msgid "`\\xi`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:277
+msgid "``\\xi``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:277
+msgid "`\\varepsilon`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:277
+msgid "``\\varepsilon``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:278
+msgid "`\\Phi`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:278
+msgid "``\\Phi``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:278
+msgid "`\\delta`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:278
+msgid "``\\delta``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:278
+msgid "`\\pi`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:278
+msgid "``\\pi``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:278
+msgid "`\\varkappa`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:278
+msgid "``\\varkappa``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:279
+msgid "`\\Pi`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:279
+msgid "``\\Pi``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:279
+msgid "`\\epsilon`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:279
+msgid "``\\epsilon``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:279
+msgid "`\\rho`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:279
+msgid "``\\rho``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:279
+msgid "`\\varphi`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:279
+msgid "``\\varphi``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:280
+msgid "`\\Psi`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:280
+msgid "``\\Psi``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:280
+msgid "`\\zeta`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:280
+msgid "``\\zeta``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:280
+msgid "`\\sigma`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:280
+msgid "``\\sigma``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:280
+msgid "`\\varpi`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:280
+msgid "``\\varpi``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:281
+msgid "`\\Sigma`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:281
+msgid "``\\Sigma``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:281
+msgid "`\\eta`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:281
+msgid "``\\eta``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:281
+msgid "`\\tau`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:281
+msgid "``\\tau``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:281
+msgid "`\\varrho`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:281
+msgid "``\\varrho``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:282
+msgid "`\\Theta`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:282
+msgid "``\\Theta``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:282
+msgid "`\\theta`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:282
+msgid "``\\theta``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:282
+msgid "`\\upsilon`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:282
+msgid "``\\upsilon``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:282
+msgid "`\\varsigma`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:282
+msgid "``\\varsigma``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:283
+msgid "`\\Upsilon`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:283
+msgid "``\\Upsilon``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:283
+msgid "`\\iota`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:283
+msgid "``\\iota``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:283
+msgid "`\\phi`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:283
+msgid "``\\phi``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:283
+msgid "`\\vartheta`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:283
+msgid "``\\vartheta``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:284
+msgid "`\\Xi`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:284
+msgid "``\\Xi``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:284
+msgid "`\\kappa`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:284
+msgid "``\\kappa``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:284
+msgid "`\\chi`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:284
+msgid "``\\chi``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:285
+msgid "`\\Omega`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:285
+msgid "``\\Omega``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:285
+msgid "`\\lambda`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:285
+msgid "``\\lambda``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:285
+msgid "`\\psi`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:285
+msgid "``\\psi``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:288
+msgid ""
+"In LaTeX, the default font for capital Greek letters is upright/roman. "
+"*Italic* capital Greek letters can be obtained by loading a `package "
+"providing the \"ISO\" math style`__. They are used by default in MathML."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:292
+msgid ""
+"Individual Greek italic capitals can also be achieved preceding the "
+"letter name with ``var`` like ``\\varPhi``: `\\varGamma\\ \\varDelta\\ "
+"\\varLambda\\ \\varPhi\\ \\varPi\\ \\varPsi\\ \\varSigma\\ \\varTheta\\ "
+"\\varUpsilon\\ \\varXi\\ \\varOmega`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:302
+msgid "Letterlike symbols"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:306
+#: ../../docutils/docs/ref/rst/mathematics.txt:389
+msgid "`\\forall`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:306
+#: ../../docutils/docs/ref/rst/mathematics.txt:389
+msgid "``\\forall``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:306
+msgid "`\\aleph`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:306
+msgid "``\\aleph``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:306
+msgid "`\\hbar`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:306
+msgid "``\\hbar``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:306
+msgid "`\\ell`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:306
+msgid "``\\ell``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:307
+msgid "`\\complement`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:307
+msgid "``\\complement``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:307
+msgid "`\\beth`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:307
+msgid "``\\beth``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:307
+msgid "`\\hslash`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:307
+msgid "``\\hslash``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:307
+msgid "`\\wp`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:307
+msgid "``\\wp``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:308
+#: ../../docutils/docs/ref/rst/mathematics.txt:387
+msgid "`\\exists`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:308
+#: ../../docutils/docs/ref/rst/mathematics.txt:387
+msgid "``\\exists``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:308
+msgid "`\\gimel`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:308
+msgid "``\\gimel``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:308
+msgid "`\\Im`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:308
+msgid "``\\Im``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:308
+msgid "`\\Re`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:308
+msgid "``\\Re``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:309
+msgid "`\\Finv`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:309
+msgid "``\\Finv``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:309
+msgid "`\\daleth`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:309
+msgid "``\\daleth``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:309
+msgid "`\\imath`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:309
+msgid "``\\imath``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:309
+msgid "`\\circledR`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:309
+msgid "``\\circledR``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:310
+msgid "`\\Game`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:310
+msgid "``\\Game``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:310
+msgid "`\\partial`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:310
+msgid "``\\partial``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:310
+msgid "`\\jmath`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:310
+msgid "``\\jmath``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:310
+msgid "`\\circledS`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:310
+msgid "``\\circledS``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:311
+msgid "`\\mho`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:311
+msgid "``\\mho``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:311
+msgid "`\\eth`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:311
+msgid "``\\eth``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:311
+msgid "`\\Bbbk`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:311
+msgid "``\\Bbbk``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:315
+msgid "Mathematical Alphabets"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:317
+msgid ""
+"Mathematical alphabets select a combination of font attributes (shape, "
+"weight, family) [#]_. They are intended for mathematical variables where "
+"style variations are important semantically."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:324
+#: ../../docutils/docs/ref/rst/mathematics.txt:666
+#: ../../docutils/docs/ref/rst/mathematics.txt:739
+msgid "command"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:324
+#: ../../docutils/docs/ref/rst/mathematics.txt:666
+msgid "example"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:324
+#: ../../docutils/docs/ref/rst/mathematics.txt:666
+msgid "result"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:326
+msgid "``\\mathbf``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:326
+msgid "``\\mathbf{r}^2=x^2+y^2+z^2``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:326
+msgid "`\\mathbf{r}^2=x^2+y^2+z^2`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:327
+msgid "``\\mathbb``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:327
+msgid "``\\mathbb{R \\subset C}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:327
+msgid "`\\mathbb{R \\subset C}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:328
+msgid "``\\mathcal``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:328
+msgid "``\\mathcal{F}f(x)``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:328
+msgid "`\\mathcal{F}f(x)`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:329
+msgid "``\\mathfrak``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:329
+msgid "``\\mathfrak{a}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:329
+msgid "`\\mathfrak{a}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:330
+msgid "``\\mathit``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:330
+msgid "``\\mathit{\\Gamma}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:330
+msgid "`\\mathit{\\Gamma}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:331
+msgid "``\\mathrm``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:331
+msgid "``s_\\mathrm{out}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:331
+msgid "`s_\\mathrm{out}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:332
+msgid "``\\mathsf``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:332
+msgid "``\\mathsf x``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:332
+msgid "`\\mathsf x`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:333
+msgid "``\\mathtt``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:333
+msgid "``\\mathtt{0.12}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:333
+msgid "`\\mathtt{0.12}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:336
+msgid ""
+"TeX’s *math alphabets* correspond to the `mathematical alphanumeric "
+"symbols`__ block in Unicode and the \"mathvariant\" `style attribute`__ "
+"in MathML."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:343
+msgid "Additional alphabets are defined in LaTeX packages, e.g."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:348
+msgid "TeX command"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:348
+msgid "LaTeX package"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:348
+msgid "MathML \"mathvariant\""
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:350
+msgid "mathbfit"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:350
+#: ../../docutils/docs/ref/rst/mathematics.txt:351
+#: ../../docutils/docs/ref/rst/mathematics.txt:352
+msgid "isomath_"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:350
+msgid "bold-italic"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:351
+msgid "mathsfit"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:351
+msgid "sans-serif-italic"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:352
+msgid "mathsfbfit"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:352
+msgid "sans-serif-bold-italic"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt
+#: ../../docutils/docs/ref/rst/mathematics.txt:353
+msgid "mathscr"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:353
+msgid "mathrsfs_"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:353
+msgid "script"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:358
+msgid ""
+"This can be used to typeset vector symbols in bold italic in line with "
+"the International Standard [ISO-80000-2]."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:365
+msgid ""
+"The package mathrsfs_ (and some drop-in replacements) define the "
+"``\\mathscr`` macro that selects a differently shaped \"script\" "
+"alphabet. Compare `\\mathscr{A, B, …, Z, a, b, …, z}` with `\\mathcal{A, "
+"B, …, Z, a, b, …, z}`."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:371
+msgid ""
+"In contrast to the math alphabet selectors, ``\\boldsymbol`` only changes"
+" the *font weight*. In LaTeX, it can be used to get a bold version of any"
+" mathematical symbol (for other output formats, results are mixed):"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:375
+msgid ""
+"\\boldsymbol{\\cos(x)\\pm\\alpha \\approx 3\\Gamma \\quad \\forall "
+"x\\in\\mathbb{R}}\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:380
+msgid "Miscellaneous symbols"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:384
+msgid "`\\#`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:384
+msgid "``\\#``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:384
+msgid "`\\clubsuit`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:384
+msgid "``\\clubsuit``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:384
+msgid "`\\neg`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:384
+msgid "``\\neg``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:385
+msgid "`\\&`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:385
+msgid "``\\&``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:385
+msgid "`\\diamondsuit`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:385
+msgid "``\\diamondsuit``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:385
+msgid "`\\nexists`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:385
+msgid "``\\nexists``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:386
+msgid "`\\angle`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:386
+msgid "``\\angle``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:386
+msgid "`\\emptyset`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:386
+msgid "``\\emptyset``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:386
+msgid "`\\prime`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:386
+msgid "``\\prime``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:387
+msgid "`\\backprime`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:387
+msgid "``\\backprime``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:387
+msgid "`\\sharp`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:387
+msgid "``\\sharp``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:388
+msgid "`\\bigstar`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:388
+msgid "``\\bigstar``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:388
+msgid "`\\flat`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:388
+msgid "``\\flat``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:388
+msgid "`\\spadesuit`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:388
+msgid "``\\spadesuit``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:389
+msgid "`\\blacklozenge`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:389
+msgid "``\\blacklozenge``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:389
+msgid "`\\sphericalangle`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:389
+msgid "``\\sphericalangle``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:390
+msgid "`\\blacksquare`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:390
+msgid "``\\blacksquare``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:390
+msgid "`\\heartsuit`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:390
+msgid "``\\heartsuit``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:390
+msgid "`\\square`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:390
+msgid "``\\square``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:391
+msgid "`\\blacktriangle`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:391
+msgid "``\\blacktriangle``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:391
+msgid "`\\infty`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:391
+msgid "``\\infty``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:391
+msgid "`\\surd`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:391
+msgid "``\\surd``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:392
+msgid "`\\blacktriangledown`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:392
+msgid "``\\blacktriangledown``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:392
+msgid "`\\lozenge`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:392
+msgid "``\\lozenge``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:392
+msgid "`\\top`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:392
+msgid "``\\top``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:393
+msgid "`\\bot`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:393
+msgid "``\\bot``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:393
+msgid "`\\measuredangle`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:393
+msgid "``\\measuredangle``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:393
+msgid "`\\triangle`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:393
+msgid "``\\triangle``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:394
+msgid "`\\diagdown`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:394
+msgid "``\\diagdown``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:394
+msgid "`\\nabla`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:394
+msgid "``\\nabla``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:394
+msgid "`\\triangledown`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:394
+msgid "``\\triangledown``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:395
+msgid "`\\diagup`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:395
+msgid "``\\diagup``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:395
+msgid "`\\natural`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:395
+msgid "``\\natural``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:395
+msgid "`\\varnothing`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:395
+msgid "``\\varnothing``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:400
+msgid "Punctuation"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:404
+msgid "`.`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:404
+msgid "``.``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:404
+msgid "`!`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:404
+msgid "``!``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:404
+msgid "`\\vdots`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:404
+msgid "``\\vdots``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:405
+msgid "`?`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:405
+msgid "``?``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:405
+msgid "`\\dotsb`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:405
+msgid "``\\dotsb``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:406
+msgid "`\\colon`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:406
+msgid "``\\colon`` [#]_"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:406
+msgid "`\\dotsc`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:406
+msgid "``\\dotsc``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:407
+msgid "`'`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:407
+msgid "``'``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:407
+msgid "`\\cdots`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:407
+msgid "``\\cdots``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:407
+msgid "`\\dotsi`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:407
+msgid "``\\dotsi``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:408
+msgid "`;`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:408
+msgid "``;``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:408
+msgid "`\\ddots`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:408
+msgid "``\\ddots``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:408
+msgid "`\\dotsm`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:408
+msgid "``\\dotsm``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:409
+msgid "`\\ldots`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:409
+msgid "``\\ldots``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:409
+msgid "`\\dotso`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:409
+msgid "``\\dotso``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:412
+msgid ""
+"Punctuation (not ratio): Compare spacing in `a\\colon b\\to c` to `a:b = "
+"c`."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:416
+msgid "Relation symbols"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:419
+msgid "Arrows"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:423
+msgid "`\\circlearrowleft`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:423
+msgid "``\\circlearrowleft``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:423
+msgid "`\\circlearrowright`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:423
+msgid "``\\circlearrowright``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:424
+msgid "`\\curvearrowleft`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:424
+msgid "``\\curvearrowleft``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:424
+msgid "`\\curvearrowright`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:424
+msgid "``\\curvearrowright``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:425
+msgid "`\\hookleftarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:425
+msgid "``\\hookleftarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:425
+msgid "`\\hookrightarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:425
+msgid "``\\hookrightarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:426
+msgid "`\\leftarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:426
+msgid "``\\leftarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:426
+msgid "`\\rightarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:426
+msgid "``\\rightarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:427
+msgid "`\\Leftarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:427
+msgid "``\\Leftarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:427
+msgid "`\\Rightarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:427
+msgid "``\\Rightarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:428
+msgid "`\\leftarrowtail`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:428
+msgid "``\\leftarrowtail``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:428
+msgid "`\\rightarrowtail`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:428
+msgid "``\\rightarrowtail``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:429
+msgid "`\\leftharpoondown`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:429
+msgid "``\\leftharpoondown``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:429
+msgid "`\\rightharpoondown`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:429
+msgid "``\\rightharpoondown``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:430
+msgid "`\\leftharpoonup`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:430
+msgid "``\\leftharpoonup``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:430
+msgid "`\\rightharpoonup`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:430
+msgid "``\\rightharpoonup``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:431
+msgid "`\\leftleftarrows`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:431
+msgid "``\\leftleftarrows``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:431
+msgid "`\\rightrightarrows`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:431
+msgid "``\\rightrightarrows``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:432
+msgid "`\\leftrightarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:432
+msgid "``\\leftrightarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:432
+msgid "`\\Leftrightarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:432
+msgid "``\\Leftrightarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:433
+msgid "`\\leftrightarrows`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:433
+msgid "``\\leftrightarrows``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:433
+msgid "`\\rightleftarrows`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:433
+msgid "``\\rightleftarrows``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:434
+msgid "`\\leftrightharpoons`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:434
+msgid "``\\leftrightharpoons``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:434
+msgid "`\\rightleftharpoons`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:434
+msgid "``\\rightleftharpoons``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:435
+msgid "`\\leftrightsquigarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:435
+msgid "``\\leftrightsquigarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:435
+msgid "`\\rightsquigarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:435
+msgid "``\\rightsquigarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:436
+msgid "`\\Lleftarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:436
+msgid "``\\Lleftarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:436
+msgid "`\\Rrightarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:436
+msgid "``\\Rrightarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:437
+msgid "`\\longleftarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:437
+msgid "``\\longleftarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:437
+msgid "`\\longrightarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:437
+msgid "``\\longrightarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:438
+msgid "`\\Longleftarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:438
+msgid "``\\Longleftarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:438
+msgid "`\\Longrightarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:438
+msgid "``\\Longrightarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:439
+msgid "`\\longleftrightarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:439
+msgid "``\\longleftrightarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:439
+msgid "`\\Longleftrightarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:439
+msgid "``\\Longleftrightarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:440
+msgid "`\\looparrowleft`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:440
+msgid "``\\looparrowleft``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:440
+msgid "`\\looparrowright`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:440
+msgid "``\\looparrowright``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:441
+msgid "`\\Lsh`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:441
+msgid "``\\Lsh``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:441
+msgid "`\\Rsh`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:441
+msgid "``\\Rsh``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:442
+msgid "`\\mapsto`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:442
+msgid "``\\mapsto``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:442
+msgid "`\\longmapsto`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:442
+msgid "``\\longmapsto``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:443
+msgid "`\\multimap`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:443
+msgid "``\\multimap``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:444
+msgid "`\\nleftarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:444
+msgid "``\\nleftarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:444
+msgid "`\\nrightarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:444
+msgid "``\\nrightarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:445
+msgid "`\\nLeftarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:445
+msgid "``\\nLeftarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:445
+msgid "`\\nRightarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:445
+msgid "``\\nRightarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:446
+msgid "`\\nleftrightarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:446
+msgid "``\\nleftrightarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:446
+msgid "`\\nLeftrightarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:446
+msgid "``\\nLeftrightarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:447
+msgid "`\\nwarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:447
+msgid "``\\nwarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:447
+msgid "`\\nearrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:447
+msgid "``\\nearrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:448
+msgid "`\\swarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:448
+msgid "``\\swarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:448
+msgid "`\\searrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:448
+msgid "``\\searrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:449
+msgid "`\\twoheadleftarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:449
+msgid "``\\twoheadleftarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:449
+msgid "`\\twoheadrightarrow`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:449
+msgid "``\\twoheadrightarrow``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:450
+msgid "`\\upharpoonleft`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:450
+msgid "``\\upharpoonleft``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:450
+msgid "`\\upharpoonright`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:450
+msgid "``\\upharpoonright``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:451
+msgid "`\\downharpoonleft`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:451
+msgid "``\\downharpoonleft``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:451
+msgid "`\\downharpoonright`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:451
+msgid "``\\downharpoonright``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:452
+msgid "`\\upuparrows`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:452
+msgid "``\\upuparrows``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:452
+msgid "`\\downdownarrows`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:452
+msgid "``\\downdownarrows``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:455
+msgid ""
+"Synonyms: `\\gets` ``\\gets``, `\\to` ``\\to``, `\\restriction` "
+"``\\restriction``."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:458
+msgid "Comparison"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:463
+msgid "`<`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:463
+msgid "``<``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:463
+msgid "`\\geq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:463
+msgid "``\\geq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:463
+msgid "`\\ll`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:463
+msgid "``\\ll``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:463
+msgid "`\\prec`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:463
+msgid "``\\prec``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:464
+msgid "`=`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:464
+msgid "``=``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:464
+msgid "`\\geqq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:464
+msgid "``\\geqq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:464
+msgid "`\\lll`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:464
+msgid "``\\lll``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:464
+msgid "`\\precapprox`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:464
+msgid "``\\precapprox``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:465
+msgid "`>`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:465
+msgid "``>``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:465
+msgid "`\\geqslant`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:465
+msgid "``\\geqslant``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:465
+msgid "`\\lnapprox`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:465
+msgid "``\\lnapprox``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:465
+msgid "`\\preccurlyeq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:465
+msgid "``\\preccurlyeq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:466
+msgid "`\\approx`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:466
+msgid "``\\approx``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:466
+msgid "`\\gg`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:466
+msgid "``\\gg``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:466
+msgid "`\\lneq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:466
+msgid "``\\lneq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:466
+msgid "`\\preceq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:466
+msgid "``\\preceq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:467
+msgid "`\\approxeq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:467
+msgid "``\\approxeq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:467
+msgid "`\\ggg`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:467
+msgid "``\\ggg``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:467
+msgid "`\\lneqq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:467
+msgid "``\\lneqq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:467
+msgid "`\\precnapprox`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:467
+msgid "``\\precnapprox``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:468
+msgid "`\\asymp`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:468
+msgid "``\\asymp``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:468
+msgid "`\\gnapprox`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:468
+msgid "``\\gnapprox``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:468
+msgid "`\\lnsim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:468
+msgid "``\\lnsim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:468
+msgid "`\\precneqq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:468
+msgid "``\\precneqq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:469
+msgid "`\\backsim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:469
+msgid "``\\backsim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:469
+msgid "`\\gneq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:469
+msgid "``\\gneq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:469
+msgid "`\\ncong`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:469
+msgid "``\\ncong``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:469
+msgid "`\\precnsim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:469
+msgid "``\\precnsim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:470
+msgid "`\\backsimeq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:470
+msgid "``\\backsimeq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:470
+msgid "`\\gneqq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:470
+msgid "``\\gneqq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:470
+msgid "`\\neq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:470
+msgid "``\\neq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:470
+msgid "`\\precsim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:470
+msgid "``\\precsim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:471
+msgid "`\\bumpeq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:471
+msgid "``\\bumpeq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:471
+msgid "`\\gnsim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:471
+msgid "``\\gnsim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:471
+msgid "`\\ngeq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:471
+msgid "``\\ngeq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:471
+msgid "`\\risingdotseq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:471
+msgid "``\\risingdotseq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:472
+msgid "`\\Bumpeq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:472
+msgid "``\\Bumpeq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:472
+msgid "`\\gtrapprox`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:472
+msgid "``\\gtrapprox``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:472
+msgid "`\\ngeqq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:472
+msgid "``\\ngeqq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:472
+msgid "`\\sim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:472
+msgid "``\\sim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:473
+msgid "`\\circeq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:473
+msgid "``\\circeq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:473
+msgid "`\\gtreqless`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:473
+msgid "``\\gtreqless``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:473
+msgid "`\\ngeqslant`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:473
+msgid "``\\ngeqslant``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:473
+msgid "`\\simeq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:473
+msgid "``\\simeq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:474
+msgid "`\\cong`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:474
+msgid "``\\cong``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:474
+msgid "`\\gtreqqless`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:474
+msgid "``\\gtreqqless``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:474
+msgid "`\\ngtr`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:474
+msgid "``\\ngtr``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:474
+msgid "`\\succ`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:474
+msgid "``\\succ``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:475
+msgid "`\\curlyeqprec`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:475
+msgid "``\\curlyeqprec``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:475
+msgid "`\\gtrless`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:475
+msgid "``\\gtrless``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:475
+msgid "`\\nleq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:475
+msgid "``\\nleq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:475
+msgid "`\\succapprox`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:475
+msgid "``\\succapprox``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:476
+msgid "`\\curlyeqsucc`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:476
+msgid "``\\curlyeqsucc``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:476
+msgid "`\\gtrsim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:476
+msgid "``\\gtrsim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:476
+msgid "`\\nleqq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:476
+msgid "``\\nleqq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:476
+msgid "`\\succcurlyeq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:476
+msgid "``\\succcurlyeq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:477
+msgid "`\\doteq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:477
+msgid "``\\doteq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:477
+msgid "`\\leq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:477
+msgid "``\\leq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:477
+msgid "`\\nleqslant`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:477
+msgid "``\\nleqslant``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:477
+msgid "`\\succeq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:477
+msgid "``\\succeq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:478
+msgid "`\\doteqdot`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:478
+msgid "``\\doteqdot``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:478
+msgid "`\\leqq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:478
+msgid "``\\leqq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:478
+msgid "`\\nless`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:478
+msgid "``\\nless``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:478
+msgid "`\\succnapprox`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:478
+msgid "``\\succnapprox``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:479
+msgid "`\\eqcirc`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:479
+msgid "``\\eqcirc``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:479
+msgid "`\\leqslant`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:479
+msgid "``\\leqslant``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:479
+msgid "`\\nprec`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:479
+msgid "``\\nprec``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:479
+msgid "`\\succneqq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:479
+msgid "``\\succneqq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:480
+msgid "`\\eqsim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:480
+msgid "``\\eqsim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:480
+msgid "`\\lessapprox`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:480
+msgid "``\\lessapprox``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:480
+msgid "`\\npreceq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:480
+msgid "``\\npreceq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:480
+msgid "`\\succnsim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:480
+msgid "``\\succnsim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:481
+msgid "`\\eqslantgtr`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:481
+msgid "``\\eqslantgtr``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:481
+msgid "`\\lesseqgtr`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:481
+msgid "``\\lesseqgtr``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:481
+msgid "`\\nsim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:481
+msgid "``\\nsim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:481
+msgid "`\\succsim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:481
+msgid "``\\succsim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:482
+msgid "`\\eqslantless`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:482
+msgid "``\\eqslantless``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:482
+msgid "`\\lesseqqgtr`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:482
+msgid "``\\lesseqqgtr``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:482
+msgid "`\\nsucc`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:482
+msgid "``\\nsucc``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:482
+msgid "`\\thickapprox`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:482
+msgid "``\\thickapprox``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:483
+msgid "`\\equiv`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:483
+msgid "``\\equiv``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:483
+msgid "`\\lessgtr`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:483
+msgid "``\\lessgtr``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:483
+msgid "`\\nsucceq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:483
+msgid "``\\nsucceq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:483
+msgid "`\\thicksim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:483
+msgid "``\\thicksim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:484
+msgid "`\\fallingdotseq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:484
+msgid "``\\fallingdotseq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:484
+msgid "`\\lesssim`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:484
+msgid "``\\lesssim``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:484
+msgid "`\\triangleq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:484
+msgid "``\\triangleq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:487
+msgid ""
+"The commands ``\\lvertneqq`` and ``\\gvertneqq`` are not supported by "
+"LateX2MathML, as there is no corresponding Unicode character."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:490
+msgid ""
+"Synonyms: `\\ne` ``\\ne``, `\\le` ``\\le``, `\\ge` ``\\ge``, `\\Doteq` "
+"``\\Doteq``, `\\llless` ``\\llless``, `\\gggtr` ``\\gggtr``."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:493
+msgid ""
+"Symbols can be negated prepending ``\\not``, e.g. `\\not=` ``\\not=``, "
+"`\\not\\equiv` ``\\not\\equiv``, `\\not\\gtrless` ``\\not\\gtrless``, "
+"`\\not\\lessgtr` ``\\not\\lessgtr``."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:498
+msgid "Miscellaneous relations"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:502
+msgid "`\\backepsilon`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:502
+msgid "``\\backepsilon``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:502
+msgid "`\\ntrianglelefteq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:502
+msgid "``\\ntrianglelefteq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:502
+msgid "`\\subseteq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:502
+msgid "``\\subseteq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:503
+msgid "`\\because`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:503
+msgid "``\\because``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:503
+msgid "`\\ntriangleright`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:503
+msgid "``\\ntriangleright``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:503
+msgid "`\\subseteqq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:503
+msgid "``\\subseteqq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:504
+msgid "`\\between`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:504
+msgid "``\\between``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:504
+msgid "`\\ntrianglerighteq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:504
+msgid "``\\ntrianglerighteq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:504
+msgid "`\\subsetneq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:504
+msgid "``\\subsetneq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:505
+msgid "`\\blacktriangleleft`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:505
+msgid "``\\blacktriangleleft``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:505
+msgid "`\\nvdash`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:505
+msgid "``\\nvdash``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:505
+msgid "`\\subsetneqq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:505
+msgid "``\\subsetneqq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:506
+msgid "`\\blacktriangleright`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:506
+msgid "``\\blacktriangleright``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:506
+msgid "`\\nVdash`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:506
+msgid "``\\nVdash``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:506
+msgid "`\\supset`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:506
+msgid "``\\supset``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:507
+msgid "`\\bowtie`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:507
+msgid "``\\bowtie``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:507
+msgid "`\\nvDash`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:507
+msgid "``\\nvDash``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:507
+msgid "`\\Supset`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:507
+msgid "``\\Supset``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:508
+msgid "`\\dashv`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:508
+msgid "``\\dashv``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:508
+msgid "`\\nVDash`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:508
+msgid "``\\nVDash``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:508
+msgid "`\\supseteq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:508
+msgid "``\\supseteq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:509
+msgid "`\\frown`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:509
+msgid "``\\frown``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:509
+msgid "`\\parallel`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:509
+msgid "``\\parallel``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:509
+msgid "`\\supseteqq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:509
+msgid "``\\supseteqq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:510
+msgid "`\\in`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:510
+msgid "``\\in``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:510
+msgid "`\\perp`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:510
+msgid "``\\perp``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:510
+msgid "`\\supsetneq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:510
+msgid "``\\supsetneq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:511
+msgid "`\\mid`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:511
+msgid "``\\mid``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:511
+msgid "`\\pitchfork`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:511
+msgid "``\\pitchfork``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:511
+msgid "`\\supsetneqq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:511
+msgid "``\\supsetneqq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:512
+msgid "`\\models`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:512
+msgid "``\\models``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:512
+msgid "`\\propto`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:512
+msgid "``\\propto``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:512
+msgid "`\\therefore`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:512
+msgid "``\\therefore``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:513
+msgid "`\\ni`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:513
+msgid "``\\ni``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:513
+msgid "`\\shortmid`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:513
+msgid "``\\shortmid``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:513
+msgid "`\\trianglelefteq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:513
+msgid "``\\trianglelefteq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:514
+msgid "`\\nmid`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:514
+msgid "``\\nmid``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:514
+msgid "`\\shortparallel`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:514
+msgid "``\\shortparallel``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:514
+msgid "`\\trianglerighteq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:514
+msgid "``\\trianglerighteq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:515
+msgid "`\\notin`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:515
+msgid "``\\notin``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:515
+msgid "`\\smallfrown`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:515
+msgid "``\\smallfrown``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:515
+msgid "`\\varpropto`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:515
+msgid "``\\varpropto``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:516
+msgid "`\\nparallel`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:516
+msgid "``\\nparallel``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:516
+msgid "`\\smallsmile`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:516
+msgid "``\\smallsmile``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:516
+msgid "`\\vartriangle`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:516
+msgid "``\\vartriangle``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:517
+msgid "`\\nshortmid`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:517
+msgid "``\\nshortmid``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:517
+msgid "`\\smile`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:517
+msgid "``\\smile``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:517
+msgid "`\\vartriangleleft`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:517
+msgid "``\\vartriangleleft``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:518
+msgid "`\\nshortparallel`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:518
+msgid "``\\nshortparallel``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:518
+msgid "`\\sqsubset`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:518
+msgid "``\\sqsubset``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:518
+msgid "`\\vartriangleright`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:518
+msgid "``\\vartriangleright``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:519
+msgid "`\\nsubseteq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:519
+msgid "``\\nsubseteq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:519
+msgid "`\\sqsubseteq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:519
+msgid "``\\sqsubseteq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:519
+msgid "`\\vdash`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:519
+msgid "``\\vdash``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:520
+msgid "`\\nsubseteqq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:520
+msgid "``\\nsubseteqq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:520
+msgid "`\\sqsupset`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:520
+msgid "``\\sqsupset``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:520
+msgid "`\\Vdash`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:520
+msgid "``\\Vdash``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:521
+msgid "`\\nsupseteq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:521
+msgid "``\\nsupseteq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:521
+msgid "`\\sqsupseteq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:521
+msgid "``\\sqsupseteq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:521
+msgid "`\\vDash`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:521
+msgid "``\\vDash``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:522
+msgid "`\\nsupseteqq`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:522
+msgid "``\\nsupseteqq``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:522
+msgid "`\\subset`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:522
+msgid "``\\subset``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:522
+msgid "`\\Vvdash`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:522
+msgid "``\\Vvdash``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:523
+msgid "`\\ntriangleleft`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:523
+msgid "``\\ntriangleleft``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:523
+msgid "`\\Subset`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:523
+msgid "``\\Subset``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:526
+msgid "Synonyms: `\\owns` ``\\owns``."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:528
+msgid ""
+"Symbols can be negated prepending ``\\not``, e.g. `\\not\\in` "
+"``\\not\\in``, `\\not\\ni` ``\\not\\ni``."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:531
+msgid ""
+"The commands ``\\varsubsetneq``, ``\\varsubsetneqq``, ``\\varsupsetneq``,"
+" and ``\\varsupsetneqq`` are not supported by LateX2MathML, as there is "
+"no corresponding Unicode character."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:536
+msgid "Variable-sized operators"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:540
+msgid "`\\sum`      ``\\sum``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:540
+msgid "`\\prod`     ``\\prod``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:540
+msgid "`\\bigcap`   ``\\bigcap``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:540
+msgid "`\\bigodot`   ``\\bigodot``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:541
+msgid "`\\int`      ``\\int``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:541
+msgid "`\\coprod`   ``\\coprod``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:541
+msgid "`\\bigcup`   ``\\bigcup``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:541
+msgid "`\\bigoplus`  ``\\bigoplus``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:542
+msgid "`\\oint`     ``\\oint``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:542
+msgid "`\\bigwedge` ``\\bigwedge``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:542
+msgid "`\\biguplus` ``\\biguplus``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:542
+msgid "`\\bigotimes` ``\\bigotimes``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:543
+msgid "`\\smallint` ``\\smallint``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:543
+msgid "`\\bigvee`   ``\\bigvee``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:543
+msgid "`\\bigsqcup` ``\\bigsqcup``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:546
+msgid ""
+"Larger symbols are used in displayed formulas, sum-like symbols have "
+"indices above/below the symbol (see also `scripts and limits`_):"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:549
+msgid ""
+"\\sum_{n=1}^N a_n \\qquad\n"
+"\\int_0^1f(x)\\,dx \\qquad\n"
+"\\prod_{i=1}^{10} b_i \\ldots\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:554
+msgid "Notations"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:557
+msgid "Top and bottom embellishments"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:559
+msgid "See `Accents and embellishments`_."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:562
+msgid "Extensible arrows"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:564
+msgid ""
+"\\xleftarrow and \\xrightarrow produce arrows that extend automatically "
+"to accommodate unusually wide subscripts or superscripts. These commands "
+"take one optional argument (the subscript) and one mandatory argument "
+"(the superscript, possibly empty)::"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:571
+msgid "results in"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:573
+msgid ""
+"A \\xleftarrow{n+\\mu-1} B \\xrightarrow[T]{n\\pm i-1} C\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:576
+msgid "Affixing symbols to other symbols"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:578
+msgid ""
+"In addition to the standard `accents and embellishments`_, other symbols "
+"can be placed above or below a base symbol with the ``\\overset`` and "
+"``\\underset`` commands. The symbol is set in \"scriptstyle\" (smaller "
+"font size). For example, writing ``\\overset{*}{X}`` becomes "
+"`\\overset{*}{X}` and ``\\underset{+}{M}`` becomes `\\underset{+}{M}`."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:586
+msgid "Matrices"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:588
+msgid ""
+"The ``matrix`` and ``cases`` environments can also contain ``\\\\`` and "
+"``&``::"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:594
+msgid "Result:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:596
+msgid ""
+"\\left ( \\begin{matrix} a & b \\\\ c & d \\end{matrix} \\right)\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:599
+msgid ""
+"The environments ``pmatrix``, ``bmatrix``, ``Bmatrix``, ``vmatrix``, and "
+"``Vmatrix`` have (respectively) ( ), [ ], { }, \\| \\|, and `\\Vert\\ "
+"\\Vert` delimiters built in, e.g."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:603
+msgid ""
+"\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} \\qquad\n"
+"\\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} \\qquad\n"
+"\\begin{Vmatrix} a & b \\\\ c & d \\end{Vmatrix}\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:607
+msgid ""
+"To produce a small matrix suitable for use in text, there is a "
+"``smallmatrix`` environment `\\bigl(\\begin{smallmatrix} a & b \\\\ c & d"
+" \\end{smallmatrix}\\bigr)` that comes closer to fitting within a single "
+"text line than a normal matrix."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:614
+msgid "For piecewise function definitions there is a ``cases`` environment:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:616
+msgid ""
+"\\mathrm{sgn}(x) = \\begin{cases}\n"
+"            -1 & x<0\\\\\n"
+"  \\phantom{-}1 & x>0\n"
+"\\end{cases}\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:622
+msgid "Spacing commands"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:624
+msgid ""
+"Horizontal spacing of elements can be controlled with the following "
+"commands:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:630
+msgid ":m:`3\\qquad 4`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:630
+msgid "``3\\qquad 4``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:630
+msgid "= 2em"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:631
+msgid ":m:`3\\quad 4`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:631
+msgid "``3\\quad 4``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:631
+msgid "= 1em"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:632
+msgid ":m:`3~4`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:632
+msgid "``3~4``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:632
+msgid "``3\\nobreakspace 4``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:633
+msgid ":m:`3\\ 4`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:633
+msgid "``3\\ 4``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:633
+msgid "escaped space"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:634
+msgid ":m:`3\\;4`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:634
+msgid "``3\\;4``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:634
+msgid "``3\\thickspace 4``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:635
+msgid ":m:`3\\:4`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:635
+msgid "``3\\:4``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:635
+msgid "``3\\medspace 4``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:636
+msgid ":m:`3\\,4`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:636
+msgid "``3\\,4``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:636
+msgid "``3\\thinspace 4``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:637
+msgid ":m:`3  4`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:637
+msgid "``3  4``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:637
+msgid "regular space [#]_"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:638
+msgid ":m:`3\\!4`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:638
+msgid "``3\\!4``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:638
+msgid "``3\\negthinspace 4``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:639
+msgid ":m:`3\\negmedspace 4`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:639
+msgid "``3\\negmedspace 4``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:640
+msgid ":m:`3\\negthickspace 4`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:640
+msgid "``3\\negthickspace 4``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:641
+msgid "`3\\hspace{1ex}4`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:641
+msgid "``3\\hspace{1ex}4``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:641
+msgid "custom length"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:642
+msgid "`3\\mspace{20mu}4`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:642
+msgid "``3\\mspace{20mu}4``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:642
+msgid "custom length [#]_"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:645
+msgid "Whitespace characters are ignored in LaTeX math mode."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:646
+msgid "Unit must be 'mu' (1 mu = 1/18em)."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:648
+msgid "Negative spacing does not work with MathML (in Firefox 78)."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:650
+msgid ""
+"There are also three commands that leave a space equal to the height and "
+"width of its argument. For example ``\\phantom{XXX}`` results in space as"
+" wide and high as three X’s:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:654
+msgid ""
+"\\frac{\\phantom{XXX}+1}{XXX-1}\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:656
+msgid ""
+"The commands ``\\hphantom`` and ``\\vphantom`` insert space with the "
+"width or height of the argument. They are not supported with "
+"`math_output`_ MathML."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:661
+msgid "Roots"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:668
+msgid "``\\sqrt``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:668
+msgid "``\\sqrt{x^2-1}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:668
+msgid "`\\sqrt{x^2-1}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:669
+msgid "``\\sqrt[3n]{x^2-1}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:669
+msgid "`\\sqrt[3n]{x^2-1}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:670
+msgid "``\\sqrt\\frac{1}{2}``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:670
+msgid "`\\sqrt\\frac{1}{2}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:674
+msgid "Boxed formulas"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:676
+msgid "The command ``\\boxed`` puts a box around its argument:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:678
+msgid ""
+"\\boxed{\\eta \\leq C(\\delta(\\eta) +\\Lambda_M(0,\\delta))}\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:683
+msgid "Fractions and related constructions"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:685
+msgid ""
+"The ``\\frac`` command takes two ar guments, numerator and denominator, "
+"and typesets them in normal fraction form. For example, ``U = "
+"\\frac{R}{I}`` produces `U = \\frac{R}{I}`. Use ``\\dfrac`` or "
+"``\\tfrac`` to force text style and display style respectively."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:690
+msgid ""
+"\\frac{x+1}{x-1}  \\quad\n"
+"\\dfrac{x+1}{x-1} \\quad\n"
+"\\tfrac{x+1}{x-1}\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:694
+msgid "and in text: `\\frac{x+1}{x-1}`, `\\dfrac{x+1}{x-1}`, `\\tfrac{x+1}{x-1}`."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:696
+msgid ""
+"For binomial expressions such as `\\binom{n}{k}`, there are ``\\binom``, "
+"``\\dbinom`` and ``\\tbinom`` commands::"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:701
+msgid "prints"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:703
+msgid ""
+"2^k-\\binom{k}{1}2^{k-1}+\\binom{k}{2}2^{k-2}\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:705
+msgid ""
+"The ``\\cfrac`` command for continued fractions uses displaystyle and "
+"padding for sub-fractions:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:708
+msgid ""
+"\\frac{\\pi}{4} = 1 + \\cfrac{1^2}{\n"
+"                    2 + \\cfrac{3^2}{\n"
+"                        2 + \\cfrac{5^2}{\n"
+"                            2 + \\cfrac{7^2}{2 + \\cdots}\n"
+"                    }}}\n"
+"\\qquad \\text{vs.}\\qquad\n"
+"\\frac{\\pi}{4} = 1 + \\frac{1^2}{\n"
+"                    2 + \\frac{3^2}{\n"
+"                        2 + \\frac{5^2}{\n"
+"                            2 + \\frac{7^2}{2 + \\cdots}\n"
+"                    }}}\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:720
+msgid ""
+"It supports the optional argument ``[l]`` or ``[r]`` for left or right "
+"placement of the numerator:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:723
+msgid ""
+"\\cfrac[l]{x}{x-1} \\quad\n"
+"\\cfrac{x}{x-1}    \\quad\n"
+"\\cfrac[r]{x}{x-1}\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:729
+msgid "Delimiter sizes"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:731
+msgid ""
+"Besides the automatic scaling of `extensible delimiters`_ with ``\\left``"
+" and ``\\right``, there are four commands to manually select delimiters "
+"of fixed size:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:738
+msgid "Sizing"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:738
+msgid "no"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:738
+msgid "``\\left``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:738
+msgid "``\\bigl``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:738
+msgid "``\\Bigl``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:738
+msgid "``\\biggl``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:738
+msgid "``\\Biggl``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:739
+msgid "``\\right``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:739
+msgid "``\\bigr``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:739
+msgid "``\\Bigr``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:739
+msgid "``\\biggr``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:739
+msgid "``\\Biggr``"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:741
+msgid "Result"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:741
+msgid "`\\displaystyle (b) (\\frac{c}{d})`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:741
+msgid "`\\displaystyle \\left(b\\right) \\left(\\frac{c} {d}\\right)`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:741
+msgid "`\\displaystyle \\bigl(b\\bigr) \\bigl(\\frac{c} {d}\\bigr)`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:741
+msgid "`\\displaystyle \\Bigl(b\\Bigr) \\Bigl(\\frac{c} {d}\\Bigr)`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:741
+msgid "`\\displaystyle \\biggl(b\\biggr) \\biggl(\\frac{c} {d}\\biggr)`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:741
+msgid "`\\displaystyle \\Biggl(b\\Biggr) \\Biggl(\\frac{c} {d}\\Biggr)`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:747
+msgid ""
+"There are two or three situations where the delimiter size is commonly "
+"adjusted using these commands:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:750
+msgid ""
+"The first kind of adjustment is done for cumulative operators with "
+"limits, such as summation signs. With ``\\left`` and ``\\right`` the "
+"delimiters usually turn out larger than necessary, and using the ``Big`` "
+"or ``bigg`` sizes instead gives better results:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:755
+msgid ""
+"\\left[\\sum_i a_i\\left\\lvert\\sum_j "
+"x_{ij}\\right\\rvert^p\\right]^{1/p}\n"
+"\\text{ versus }\n"
+"\\biggl[\\sum_i a_i\\Bigl\\lvert\\sum_j "
+"x_{ij}\\Bigr\\rvert^p\\biggr]^{1/p}\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:760
+msgid ""
+"The second kind of situation is clustered pairs of delimiters, where "
+"\\left and \\right make them all the same size (because that is adequate "
+"to cover the encompassed material), but what you really want is to make "
+"some of the delimiters slightly larger to make the nesting easier to see."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:765
+msgid ""
+"\\left((a_1 b_1) - (a_2 b_2)\\right)\n"
+"\\left((a_2 b_1) + (a_1 b_2)\\right)\n"
+"\\quad\\text{versus}\\quad\n"
+"\\bigl((a_1 b_1) - (a_2 b_2)\\bigr)\n"
+"\\bigl((a_2 b_1) + (a_1 b_2)\\bigr)\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:771
+msgid ""
+"The third kind of situation is a slightly oversize object in running "
+"text, such as `\\left|\\frac{b'}{d'}\\right|` where the delimiters "
+"produced by ``\\left`` and ``\\right`` cause too much line spreading. "
+"[#]_ In that case ``\\bigl`` and ``\\bigr`` can be used to produce "
+"delimiters that are larger than the base size but still able to fit "
+"within the normal line spacing: `\\bigl|\\frac{b'}{d'}\\bigr|`."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:778
+msgid ""
+"With MathML, an example would be parentheses around a ``smallmatrix`` "
+"environment `\\left(\\begin{smallmatrix} a & b \\\\ c & d "
+"\\end{smallmatrix}\\right)` vs. `\\Bigl(\\begin{smallmatrix} a & b \\\\ c"
+" & d \\end{smallmatrix}\\Bigr)`."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:784
+#: ../../docutils/docs/ref/rst/mathematics.txt:1092
+msgid "Text"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:786
+msgid ""
+"The main use of the command ``\\text`` is for words or phrases in a "
+"display. It is similar to ``\\mbox`` in its effects but, unlike "
+"``\\mbox``, automatically produces subscript-size text if used in a "
+"subscript, ``k_{\\text{B}}T`` becomes `k_{\\text{B}}T`."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:791
+msgid "Whitespace is kept inside the argument:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:793
+msgid ""
+"f_{[x_{i-1},x_i]} \\text{ is monotonic for }  i = 1,\\,…,\\,c+1\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:796
+msgid "The text may contain math commands wrapped in ``$`` signs, e.g."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:798
+msgid ""
+"(-1)^{n_i} = \\begin{cases} -1 \\quad \\text{if $n_i$ is odd,} \\\\\n"
+"              +1 \\quad \\text{if $n_i$ is even.}\n"
+"\\end{cases}\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:819
+msgid "Integrals and sums"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:821
+msgid ""
+"The limits on integrals, sums, and similar symbols are placed either to "
+"the side of or above and below the base symbol, depending on convention "
+"and context. In inline formulas and fractions, the limits on sums, and "
+"similar symbols like"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:826
+msgid ""
+"\\lim_{n\\to\\infty} \\sum_1^n \\frac{1}{n}\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:828
+msgid "move to index positions: `\\lim_{n\\to\\infty} \\sum_1^n \\frac{1}{n}`."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:831
+msgid "Altering the placement of limits"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:833
+msgid ""
+"The commands ``\\intop`` and ``\\ointop`` produce integral signs with "
+"limits as in sums and similar: `\\intop_0^1`, `\\ointop_c` and"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:836
+msgid ""
+"\\intop_0^1 \\quad \\ointop_c\n"
+"   \\quad \\text{vs.} \\quad\n"
+"\\int^1_0   \\quad \\oint_c\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:840
+msgid ""
+"The commands ``\\limits`` and ``\\nolimits`` override the default "
+"placement of the limits for any operator; ``\\displaylimits`` forces "
+"standard positioning as for the \\sum command. They should follow "
+"immediately after the operator to which they apply."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:845
+msgid ""
+"Compare the same term with default positions, ``\\limits``, and "
+"``\\nolimits`` in inline and display mode: `\\lim_{x\\to0}f(x)`, "
+"`\\lim\\limits_{x\\to0}f(x)`, `\\lim\\nolimits_{x\\to0}f(x)`, vs."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:849
+msgid ""
+"\\lim_{x\\to0}f(x), \\quad\n"
+"\\lim\\limits_{x\\to0}f(x) \\quad\n"
+"\\lim\\nolimits_{x\\to0}f(x).\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:859
+msgid "Changing the size of elements in a formula"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:861
+msgid ""
+"The declarations [#]_ ``\\displaystyle``, ``\\textstyle``, "
+"``\\scriptstyle``, and ``\\scriptscriptstyle``, select a symbol size and "
+"spacing that would be applied in (respectively) display math, inline "
+"math, first-order subscript, or second-order subscript, even when the "
+"current context would normally yield some other size."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:867
+msgid ""
+"For example ``:math:`\\displaystyle \\sum_{n=0}^\\infty \\frac{1}{n}``` "
+"is printed as `\\displaystyle \\sum_{n=0}^\\infty \\frac{1}{n}` rather "
+"than `\\sum_{n=0}^\\infty \\frac{1}{n}` and ::"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:874
+msgid "yields"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:876
+msgid ""
+"\\frac{\\scriptstyle\\sum_{n > 0} z^n}\n"
+"{\\displaystyle\\prod_{1\\leq k\\leq n} (1-q^k)}\n"
+"\\text{ instead of the default }\n"
+"\\frac{\\sum_{n > 0} z^n}\n"
+"{\\prod_{1\\leq k\\leq n} (1-q^k)}."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:884
+msgid ""
+"\"Declarations\" are commands that affect processing of the current "
+"\"group\". In particular, notice where the braces fall that delimit the "
+"effect of the command: Right: ``{\\displaystyle ...}`` Wrong: "
+"``\\displaystyle{...}``."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:889
+msgid ""
+"With math_output_ MathML, the declaration must be the first element after"
+" the opening bracket."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:894
+msgid "Appendix"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:897
+msgid "Tests"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:901
+msgid "Font changes"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:903
+msgid ""
+"Math alphabet macros change the default alphabet (\"mathvariant\" in "
+"MathML), leaving some symbols unchanged:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt
+msgid "normal"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:906
+msgid "`abs(x) \\pm \\alpha \\approx 3 \\Gamma  \\quad \\forall x \\in R`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt
+msgid "mathrm"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:907
+msgid ""
+"`\\mathrm{abs(x) \\pm \\alpha \\approx 3 \\Gamma  \\quad \\forall x \\in "
+"R}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt
+msgid "mathit"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:908
+msgid ""
+"`\\mathit{abs(x) \\pm \\alpha \\approx 3 \\Gamma  \\quad \\forall x \\in "
+"R}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt
+msgid "mathsf"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:909
+msgid ""
+"`\\mathsf{abs(x) \\pm \\alpha \\approx 3 \\Gamma  \\quad \\forall x \\in "
+"R}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt
+msgid "mathbb"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:910
+msgid ""
+"`\\mathbb{abs(x) \\pm \\alpha \\approx 3 \\Gamma  \\quad \\forall x \\in "
+"R}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt
+msgid "mathbf"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:911
+msgid ""
+"`\\mathbf{abs(x) \\pm \\alpha \\approx 3 \\Gamma  \\quad \\forall x \\in "
+"R}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt
+msgid "mathcal"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:912
+msgid ""
+"`\\mathcal{abs(x) \\pm \\alpha \\approx 3 \\Gamma  \\quad \\forall x \\in"
+" R}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:913
+msgid ""
+"`\\mathscr{abs(x) \\pm \\alpha \\approx 3 \\Gamma  \\quad \\forall x \\in"
+" R}`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:915
+msgid ""
+"Unicode supports the following blackboard-bold characters: `\\mathbb{a "
+"\\ldots z A \\ldots Z 0 \\ldots 9 \\mathbb\\Gamma \\mathbb{\\Pi} \\mathbb"
+" {\\Sigma} \\mathbb\\gamma \\mathbb\\pi}`."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:921
+msgid "Inferred <mrow>s in MathML"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:923
+msgid ""
+"The elements <msqrt>, <mstyle>, <merror>, <mpadded>, <mphantom>, "
+"<menclose>, <mtd>, <mscarry>, and <math> treat their contents as a single"
+" inferred mrow formed from all their children."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:927
+msgid ""
+"a = \\sqrt 2 + x,\\quad\n"
+"b = \\sqrt{1+x^2},\\quad\n"
+"c = \\sqrt\\frac{\\sin(x)}{23},\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:931
+msgid ""
+"inline: :math:`a = \\sqrt 2 + x, b = \\sqrt{1+x^2}, c = "
+"\\sqrt\\frac{\\sin(x)}{23}`."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:935
+msgid "Scripts and Limits"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:937
+msgid ""
+"Accents should be nearer to the base (in MathML Firefox 78, it's vice "
+"versa!): `\\bar a \\overline a, \\bar l \\overline l, \\bar i \\overline "
+"i`, `\\vec{r}` `\\overrightarrow{r}`."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:941
+msgid ""
+"Sub- and superscript may be given in any order: `x_i^j = x^j_i` and "
+"`\\int_0^1 = \\int^1_0`."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:944
+msgid "Double exponent: `x^{10^4}`, `r_{T_\\mathrm{in}}` and `x_i^{n^2}`."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:948
+msgid "Nested groups"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:950
+msgid "tex-token returns \"{\" for nested groups:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:952
+msgid ""
+"\\text{das ist ein  {toller} text (unescaped \\{ and \\} is\n"
+"ignored by LaTeX)}\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:956
+msgid "Big delimiters and symbols"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:957
+msgid "Compare automatic sizing with fixed sizes:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:962
+msgid ""
+"\\left( 3                          \\right)\n"
+"\\left( f(x)                       \\right)\n"
+"\\left( \\bar x                     \\right)\n"
+"\\left( \\overline x                \\right)\n"
+"\\left( n_i                        \\right) &= () \\\\\n"
+"\\left( \\underline x               \\right) &= "
+"\\bigl(\\text{big}\\bigr)\\\\\n"
+"\\left( 3^2                        \\right)\n"
+"\\left( \\sqrt{3}                   \\right)\n"
+"\\left( \\sqrt{3^2}                 \\right)\n"
+"\\left( \\sum                       \\right)\n"
+"\\left( \\bigotimes                 \\right)\n"
+"\\left( \\prod                      \\right) &= "
+"\\Bigl(\\text{Big}\\Bigr)\\\\\n"
+"\\left( \\frac{3  }{2}              \\right)\n"
+"\\left( \\frac{3^2}{2^4}            \\right)\n"
+"\\binom{3  }{2}\n"
+"\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}\n"
+"\\left( \\frac{1}{\\sqrt 2}          \\right)\n"
+"\\left( \\int                       \\right)\n"
+"\\left( \\int_0                     \\right)\n"
+"\\left( \\int^1                     \\right)\n"
+"\\left( \\int_0^1                   \\right) &= "
+"\\biggl(\\text{bigg}\\biggr)\\\\\n"
+"\\left( \\frac{\\sqrt 2}{2}          \\right)\n"
+"\\left( \\sum_0                     \\right)\n"
+"\\left( \\sum^1                     \\right)\n"
+"\\left( \\sum_0^1                   \\right)\n"
+"\\left( \\frac{\\frac1x}{\\frac{1}{n}}\\right) &= "
+"\\Biggl(\\text{Bigg}\\Biggr)\\\\\n"
+"\\left( \\intop_0                   \\right)\n"
+"\\left( \\intop^1                   \\right)\n"
+"\\left( \\intop_0^1                 \\right)\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:993
+msgid "And in text:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt
+msgid "`()`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:995
+msgid ""
+"`\\left(3                          \\right) \\left( f(x)"
+"                       \\right) \\left( \\bar x                     "
+"\\right) \\left( \\overline x                \\right) \\left( n_i"
+"                        \\right) \\left( \\sum                       "
+"\\right) \\left( \\sum_0                     \\right) \\left( \\prod"
+"                      \\right)`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt
+msgid "`\\bigl(\\text{big}\\bigr)`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:1005
+msgid ""
+"`\\left(\\underline x               \\right) \\left( 3^2"
+"                        \\right) \\binom{3}{2} "
+"\\left(\\begin{smallmatrix} a & b \\\\ c & d \\end{smallmatrix}"
+"           \\right) \\left( \\bigotimes                 \\right)`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt
+msgid "`\\Bigl(\\text{Big}\\Bigr)`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:1012
+msgid ""
+"`\\left(\\sqrt{3}                   \\right) \\left( \\sqrt{3^2}"
+"                 \\right) \\left( \\frac{3}{2}                \\right) "
+"\\left( \\frac{3^2}{2^4}            \\right) \\left( \\frac{\\sqrt 2}{2}"
+"          \\right) \\left( \\int                       \\right) \\left( "
+"\\int_0                     \\right) \\left( \\int^1                     "
+"\\right) \\left( \\int_0^1                   \\right) \\left( \\sum^1"
+"                     \\right) \\left( \\sum_0^1                   "
+"\\right) \\left( \\frac{\\frac1x}{\\frac{1}{n}}\\right)`"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:1029
+msgid ""
+"Test ``\\left``, ``\\right``, and the  \\bigl/\\bigr, … size commands "
+"with all extensible delimiters."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:1032
+msgid ""
+"\\left.(b\\right)\\ \\bigl(b\\Bigr)\\ \\biggl(b\\Biggr)\n"
+"\\quad\n"
+"\\left.[b\\right]\\ \\bigl[b\\Bigr]\\ \\biggl[b\\Biggr]\n"
+"\\quad\n"
+"\\left.\\{b\\right \\} \\ \\bigl\\{b\\Bigr \\} \\ \\biggl\\{b\\Biggr \\}\n"
+"\\quad\n"
+"\\left.\\langle b\\right\\rangle\\ \\bigl\\langle b\\Bigr\\rangle\\ "
+"\\biggl\\langle b\\Biggr\\rangle\n"
+"\n"
+"\\left.\\lceil b\\right\\rceil\\ \\bigl\\lceil b\\Bigr\\rceil\\ "
+"\\biggl\\lceil b\\Biggr\\rceil\n"
+"\\quad\n"
+"\\left.\\lfloor b\\right\\rfloor\\ \\bigl\\lfloor b\\Bigr\\rfloor\\ "
+"\\biggl\\lfloor b\\Biggr\\rfloor\n"
+"\\quad\n"
+"\\left.\\lvert b\\right\\rvert\\ \\bigl\\lvert b\\Bigr\\rvert\\\n"
+"\\biggl\\lvert b\\Biggr\\rvert\n"
+"\\quad\n"
+"\\left.\\lVert b\\right\\rVert\\ \\bigl\\lVert b\\Bigr\\rVert\\\n"
+"\\biggl\\lVert b\\Biggr\\rVert\n"
+"\n"
+"\\left.\\lgroup b\\right\\rgroup\\ \\bigl\\lgroup b\\Bigr\\rgroup\\ "
+"\\biggl\\lgroup b\\Biggr\\rgroup\n"
+"\\quad\n"
+"\\left.\\lmoustache b\\right\\rmoustache\\ \\bigl\\lmoustache "
+"b\\Bigr\\rmoustache\\ \\biggl\\lmoustache b\\Biggr\\rmoustache\n"
+"\\quad\n"
+"\\left./b\\right\\backslash\\ \\bigl/b\\Bigr\\backslash\\ "
+"\\biggl/b\\Biggr\\backslash\n"
+"\n"
+"\\left.|b\\right\\|\\ \\bigl|b\\Bigr\\|\\ \\biggl|b\\Biggr\\|\n"
+"\\quad\n"
+"\\left.\\vert b\\right\\Vert\\ \\bigl\\vert b\\Bigr\\Vert\\ \\biggl\\vert"
+" b\\Biggr\\Vert\n"
+"\\quad\n"
+"\\left.\\arrowvert b\\right\\Arrowvert\\ \\bigl\\arrowvert "
+"b\\Bigr\\Arrowvert\\ \\biggl\\arrowvert b\\Biggr\\Arrowvert\n"
+"\\quad\n"
+"\\left.\\bracevert b\\right\\bracevert\\ \\bigl\\bracevert "
+"b\\Bigr\\bracevert\\ \\biggl\\bracevert b\\Biggr\\bracevert\n"
+"\\quad\n"
+"\\left.\\vert b\\right\\Vert\\ \\bigl\\vert b\\Bigr\\Vert\\ \\biggl\\vert"
+" b\\Biggr\\Vert"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:1068
+msgid "Variable-sized operators:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:1070
+msgid ""
+"Inline: `\\int\\ \\iint\\ \\iiint\\ \\iiiint\\ \\idotsint \\oint\\ "
+"\\smallint\\ \\sum\\ \\prod\\ \\coprod\\ \\bigwedge\\ \\bigvee\\ "
+"\\bigcap\\ \\bigcup\\ \\biguplus\\ \\bigsqcup\\ \\bigodot\\ \\bigoplus\\ "
+"\\bigotimes` and Display:"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:1074
+msgid ""
+"\\int\\ \\iint\\ \\iiint\\ \\iiiint\\ \\idotsint\\ \\oint\\ \\smallint\\\n"
+"\\sum\\ \\prod\\ \\coprod\\ \\bigwedge\\ \\bigvee\\ \\bigcap\\ \\bigcup\\"
+"\n"
+"\\biguplus\\ \\bigsqcup\\ \\bigodot\\ \\bigoplus\\ \\bigotimes\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:1078
+msgid ""
+"\\int_1 f\\ \\intop_1 f\\ \\iint_1 f\\ \\smallint_1 f\\ \\sum_1\\\n"
+"\\prod_1\\ \\bigwedge_1\\ \\bigcap_1\\ \\biguplus_1\\ \\bigodot_1\\ "
+"\\int^N\\\n"
+"\\intop^N\\ \\iiiint^N\\ \\oint^N\\ \\smallint^N\\ \\sum^N\\ \\coprod^N\\"
+"\n"
+"\\bigvee^N\\ \\bigcup^N\\ \\bigsqcup^N\\ \\bigotimes^N\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:1083
+msgid ""
+"\\int_1^N\\ \\intop_1^N\\ \\iint_1^N\\ \\iiint_1^N\\ \\iiiint_1^N\\\n"
+"\\idotsint_1^N\\ \\oint_1^N\\ \\smallint_1^N\\ \\sum_1^N\\ \\prod_1^N\\\n"
+"\\coprod_1^N\\ \\bigwedge_1^N\\ \\bigvee_1^N\\ \\bigcap_1^N\\ "
+"\\bigcup_1^N\n"
+"\\ \\biguplus_1^N\\ \\bigsqcup_1^N\\ \\bigodot_1^N\\ \\bigoplus_1^N\\\n"
+"\\bigotimes_1^N\n"
+"\n"
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/mathematics.txt:1094
+msgid "The text may contain non-ASCII characters: `n_\\text{Stoß}`."
+msgstr ""
+

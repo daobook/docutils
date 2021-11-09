@@ -1,0 +1,210 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/user/mailing-lists.txt:3
+msgid "Docutils_ Mailing Lists"
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:5
+msgid "Lea Wiemann"
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:7
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:8
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:31
+msgid "All discussion about Docutils takes place on mailing lists."
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:33
+msgid ""
+"There are four different lists with traffic related to Docutils. For an "
+"oversight, see https://sourceforge.net/p/docutils/mailman/. If unsure, "
+"use the **Docutils-users** mailing list:"
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:39
+msgid "Docutils-users"
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:41
+msgid ""
+"The `Docutils-users mailing list`_ is a place to discuss any issues "
+"related to the usage of Docutils and reStructuredText.  (Please be sure "
+"to check the FAQ_ first.)"
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:45
+msgid ""
+"There are several possibilities to **read and post** messages on the "
+"mailing lists; use the one you feel most comfortable with."
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:48
+msgid ""
+"Using an `email subscription`__.  This is the traditional way; you will "
+"receive all messages sent to the mailing list via email."
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:60
+msgid ""
+"Use a newsreader with Gmane's `NNTP interface`__ "
+"(gmane.text.docutils.user on news.gmane.org)."
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:65
+msgid ""
+"**If you do not wish to subscribe,** you can also just send an email "
+"message with your question or comment to Docutils-"
+"users@lists.sourceforge.net."
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:69
+msgid ""
+"Note in your message that you are not subscribed (to make sure that you "
+"receive copies [CCs] of any replies) or check for answers in the "
+"`Docutils-users Archives`_."
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:73
+msgid ""
+"The first time you post a message without being subscribed (also when "
+"posting via Gmane), you will receive an automatic response with the "
+"subject \"Your message to Docutils-users awaits moderator approval\"; "
+"this is done to prevent spam to the mailing lists.  Your message will "
+"usually be approved within a few hours.  To avoid duplicates, please do "
+"not resend your message using a different email address.  After your "
+"first message has been approved, your email address will be added to the "
+"whitelist and future messages will be posted to the mailing list without "
+"moderation."
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:82
+msgid ""
+"To see the collection of prior postings to the list, visit the `Docutils-"
+"users Archives`_."
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:87
+msgid "Docutils-develop"
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:89
+msgid ""
+"Discussions about developing and extending Docutils take place on the "
+"`Docutils-develop mailing list`_."
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:92
+msgid ""
+"You can access this list via `email subscription`__ or news__ "
+"(gmane.text.docutils.devel); the posting address is Docutils-"
+"develop@lists.sourceforge.net."
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:96
+msgid ""
+"To see the collection of prior postings to the list, visit the `Docutils-"
+"develop Archives`__."
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:104
+msgid "Docutils-checkins"
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:106
+msgid ""
+"All check-ins to the `Subversion repository`_ cause a \"check-in email\" "
+"to the `Docutils-checkins list`_.  In order to stay informed about "
+"current development, developers are advised to monitor this mailing list."
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:111
+msgid ""
+"This mailing list is for reading only; please direct any discussion about"
+" the check-ins to Docutils-develop.  (For your convenience, the Reply-To "
+"header of all check-in emails points to Docutils-develop.)"
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:115
+msgid ""
+"This mailing list is accessible via `email subscription`__ or news__ "
+"(gmane.text.docutils.cvs) as well."
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:118
+msgid ""
+"If you are using an email subscription and you would prefer to only "
+"receive check-in messages for changes that affect the main Docutils "
+"distribution (i.e. ``trunk/docutils/*``), go to the `list options`_ page "
+"and select the \"Docutils core\" topic."
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:128
+msgid "Doc-SIG"
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:130
+msgid ""
+"The \"Python Documentation Special Interest Group\" (`Doc-SIG`_) mailing "
+"list is occasionally used to discuss the usage of Docutils for Python "
+"documentation."
+msgstr ""
+
+#: ../../docutils/docs/user/mailing-lists.txt:134
+msgid ""
+"This mailing list can be accessed via `email subscription`__ or news__ "
+"(gmane.comp.python.documentation) as well.  You must be subscribed in "
+"order to post messages to this mailing list."
+msgstr ""
+

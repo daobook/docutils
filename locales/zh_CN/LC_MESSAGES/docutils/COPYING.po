@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/COPYING.txt:3
+msgid "Copying Docutils"
+msgstr ""
+
+#: ../../docutils/COPYING.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/COPYING.txt:5
+msgid "David Goodger"
+msgstr ""
+
+#: ../../docutils/COPYING.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/COPYING.txt:6
+msgid "goodger@python.org"
+msgstr ""
+
+#: ../../docutils/COPYING.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/COPYING.txt:7
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/COPYING.txt
+msgid "Web site"
+msgstr ""
+
+#: ../../docutils/COPYING.txt:8
+msgid "http://docutils.sourceforge.net/"
+msgstr ""
+
+#: ../../docutils/COPYING.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/COPYING.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/COPYING.txt:11
+msgid ""
+"Most of the files included in this project have been placed in the public"
+" domain, and therefore have no license requirements and no restrictions "
+"on copying or usage; see the `Public Domain Dedication`_ below.  There "
+"are a few exceptions_, listed below. Files in the Sandbox_ are not "
+"distributed with Docutils releases and may have different license terms."
+msgstr ""
+
+#: ../../docutils/COPYING.txt:20
+msgid "Public Domain Dedication"
+msgstr ""
+
+#: ../../docutils/COPYING.txt:22
+msgid ""
+"The persons who have associated their work with this project (the "
+"\"Dedicator\": David Goodger and the many contributors to the Docutils "
+"project) hereby dedicate the entire copyright, less the exceptions_ "
+"listed below, in the work of authorship known as \"Docutils\" identified "
+"below (the \"Work\") to the public domain."
+msgstr ""
+
+#: ../../docutils/COPYING.txt:28
+msgid ""
+"The primary repository for the Work is the Internet World Wide Web site "
+"<http://docutils.sourceforge.net/>.  The Work consists of the files "
+"within the \"docutils\" module of the Docutils project Subversion "
+"repository (Internet host docutils.svn.sourceforge.net, filesystem path "
+"/svnroot/docutils), whose Internet web interface is located at "
+"<http://docutils.svn.sourceforge.net/viewvc/docutils/>.  Files dedicated "
+"to the public domain may be identified by the inclusion, near the "
+"beginning of each file, of a declaration of the form::"
+msgstr ""
+
+#: ../../docutils/COPYING.txt:40
+msgid ""
+"Dedicator makes this dedication for the benefit of the public at large "
+"and to the detriment of Dedicator's heirs and successors.  Dedicator "
+"intends this dedication to be an overt act of relinquishment in "
+"perpetuity of all present and future rights under copyright law, whether "
+"vested or contingent, in the Work.  Dedicator understands that such "
+"relinquishment of all rights includes the relinquishment of all rights to"
+" enforce (by lawsuit or otherwise) those copyrights in the Work."
+msgstr ""
+
+#: ../../docutils/COPYING.txt:49
+msgid ""
+"Dedicator recognizes that, once placed in the public domain, the Work may"
+" be freely reproduced, distributed, transmitted, used, modified, built "
+"upon, or otherwise exploited by anyone for any purpose, commercial or "
+"non-commercial, and in any way, including by methods that have not yet "
+"been invented or conceived."
+msgstr ""
+
+#: ../../docutils/COPYING.txt:55
+msgid ""
+"(This dedication is derived from the text of the `Creative Commons Public"
+" Domain Dedication`. [#]_)"
+msgstr ""
+
+#: ../../docutils/COPYING.txt:58
+msgid ""
+"Creative Commons has `retired this legal tool`__ and does not recommend "
+"that it be applied to works: This tool is based on United States law and "
+"may not be applicable outside the US. For dedicating new works to the "
+"public domain, Creative Commons recommend the replacement Public Domain "
+"Dedication CC0_ (CC zero, \"No Rights Reserved\"). So does the Free "
+"Software Foundation in its license-list_."
+msgstr ""
+
+#: ../../docutils/COPYING.txt:69
+msgid "Exceptions"
+msgstr ""
+
+#: ../../docutils/COPYING.txt:71
+msgid "The exceptions to the `Public Domain Dedication`_ above are:"
+msgstr ""
+
+#: ../../docutils/COPYING.txt:73
+msgid ""
+"docutils/parsers/recommonmark_wrapper.py "
+"docutils/utils/error_reporting.py docutils/utils/math/__init__.py "
+"docutils/utils/math/latex2mathml.py "
+"docutils/utils/math/tex2mathml_extern.py "
+"docutils/utils/punctuation_chars.py "
+"docutils/writers/html5_polyglot/__init__.py "
+"docutils/writers/xetex/__init__.py "
+"test/test_parsers/test_recommonmark/*.py "
+"test/test_parsers/test_rst/test_directives/test__init__.py "
+"test/test_parsers/test_rst/test_directives/test_code_parsing.py "
+"test/test_parsers/test_rst/test_line_length_limit_default.py "
+"test/test_parsers/test_rst/test_line_length_limit.py "
+"test/test_writers/test_latex2e_misc.py "
+"test/transforms/test_smartquotes.py tools/docutils-cli.py "
+"tools/rst2html5.py"
+msgstr ""
+
+#: ../../docutils/COPYING.txt:91
+msgid ""
+"Copyright © Günter Milde. Released under the terms of the `2-Clause BSD "
+"license`_ (`local copy <licenses/BSD-2-Clause.txt>`__)."
+msgstr ""
+
+#: ../../docutils/COPYING.txt:95
+msgid "docutils/utils/smartquotes.py"
+msgstr ""
+
+#: ../../docutils/COPYING.txt:97
+msgid ""
+"Copyright © 2011 Günter Milde, based on `SmartyPants`_ © 2003 John Gruber"
+" (released under a 3-Clause BSD license included in the file) and "
+"smartypants.py © 2004, 2007 Chad Miller. Released under the terms of the "
+"`2-Clause BSD license`_ (`local copy <licenses/BSD-2-Clause.txt>`__)."
+msgstr ""
+
+#: ../../docutils/COPYING.txt:106
+msgid "docutils/utils/math/latex2mathml"
+msgstr ""
+
+#: ../../docutils/COPYING.txt:108
+msgid ""
+"Copyright © Jens Jørgen Mortensen, Günter Milde Released under the terms "
+"of the `2-Clause BSD license`_ (`local copy "
+"<licenses/BSD-2-Clause.txt>`__)."
+msgstr ""
+
+#: ../../docutils/COPYING.txt:112
+msgid "docutils/utils/math/math2html.py docutils/writers/html4css1/math.css"
+msgstr ""
+
+#: ../../docutils/COPYING.txt:115
+msgid ""
+"Copyright © Alex Fernández These files are part of eLyXer_, released "
+"under the `GNU General Public License`_ version 3 or later. The author "
+"relicensed them for Docutils under the terms of the `2-Clause BSD "
+"license`_ (`local copy <licenses/BSD-2-Clause.txt>`__)."
+msgstr ""
+
+#: ../../docutils/COPYING.txt:123
+msgid "docutils/utils/roman.py"
+msgstr ""
+
+#: ../../docutils/COPYING.txt:125
+msgid ""
+"copyright by Mark Pilgrim, released under the `Python 2.1.1 license`_ "
+"(`local copy`__)."
+msgstr ""
+
+#: ../../docutils/COPYING.txt:130
+msgid "tools/editors/emacs/rst.el"
+msgstr ""
+
+#: ../../docutils/COPYING.txt:132
+msgid ""
+"copyright by Free Software Foundation, Inc., released under the `GNU "
+"General Public License`_ version 3 or later (`local copy`__)."
+msgstr ""
+
+#: ../../docutils/COPYING.txt:138
+msgid ""
+"The `2-Clause BSD license`_ and the Python licenses are OSI-approved_ and"
+" GPL-compatible_."
+msgstr ""
+
+#: ../../docutils/COPYING.txt:141
+msgid ""
+"Plaintext versions of all the linked-to licenses are provided in the "
+"licenses_ directory."
+msgstr ""
+

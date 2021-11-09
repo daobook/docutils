@@ -1,0 +1,176 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/dev/website.txt:3
+msgid "Docutils Web Site"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:5
+msgid "David Goodger; open to all Docutils developers"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:7
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:8
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:11
+msgid ""
+"The Docutils web site, <http://docutils.sourceforge.net/>, is maintained "
+"by the ``docutils-update.local`` script, run by project maintainers on "
+"their local machines.  The script will process any .txt file which is "
+"newer than the corresponding .html file in the local copy of the "
+"project's web directory and upload the changes to the web site at "
+"SourceForge."
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:28
+msgid ""
+"Please **do not** add any generated .html files to the Docutils "
+"repository.  They will be generated automatically after a one-time setup "
+"(`described below`__)."
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:34
+msgid ""
+"The docutils-update.local__ script is located at ``sandbox/infrastructure"
+"/docutils-update.local``."
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:39
+msgid ""
+"If you want to share files via the web, you can upload them using the "
+"uploaddocutils.sh__ script "
+"(``sandbox/infrastructure/uploaddocutils.sh``)."
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:47
+msgid "Setting Up"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:49
+msgid "(TBA)"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:52
+msgid ""
+"Anyone with checkin privileges can be a web-site maintainer. You need to "
+"set up the directories for a local website build."
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:55
+msgid "The procedure for that was on the docutils-devel list a while ago."
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:59
+msgid "Adding .txt Files"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:62
+msgid "User/Contributor"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:64
+msgid "When adding a new .txt file that should be converted to HTML:"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:66
+msgid ""
+"Edit sandbox/infrastructure/htmlfiles.lst, and add the .html file "
+"corresponding to the new .txt file (please keep the sorted order)."
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:69
+msgid "Commit the edited version to the SVN repository."
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:72
+msgid "Maintainer"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:74
+msgid ""
+"If there are new directories in the SVN, allow the update script to run "
+"once to create the directories in the filesystem before preparing for "
+"HTML processing."
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:78
+msgid ""
+"Run the sandbox/infrastructure/update-htmlfiles shell script to generate "
+".html files::"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:85
+msgid "(Maybe this should become part of docutils-update.local.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:89
+msgid "Removing Files & Directories"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:91
+msgid "Remove from SVN"
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:93
+msgid ""
+"Remove to-be-generated HTML files from "
+"``sandbox/infrastructure/htmlfiles.lst``."
+msgstr ""
+
+#: ../../docutils/docs/dev/website.txt:96
+msgid ""
+"Removing files and directories from SVN will not trigger their removal "
+"from the web site.  Files and directories must be manually removed from "
+"sourceforge.net (under ``/home/project-web/docutils/htdocs/``)."
+msgstr ""
+

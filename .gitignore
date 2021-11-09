@@ -15,3 +15,6 @@ docutils/tools/**/*.html
 /docutils/test/alltests.out
 /docutils/test/record.txt
 /docutils/test/functional/output
+
+_build/
+*.mo

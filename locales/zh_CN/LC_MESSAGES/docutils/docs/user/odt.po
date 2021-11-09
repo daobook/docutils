@@ -1,0 +1,1989 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/user/odt.txt:3
+msgid "Odt Writer for Docutils"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:5
+msgid "Dave Kuhlman"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:7
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:8
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt
+msgid "abstract"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:11
+msgid "This document describes the Docutils odtwriter (rst2odt.py)."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:18
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:21
+msgid "Introduction"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:23
+msgid ""
+"What it does -- ``rst2odt.py`` translates reST (reStructuredText) into a "
+"Open Document Format ``.odt`` file.  You can learn more about the ODF "
+"format here:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:27
+msgid "`OASIS Open Document Format for Office Applications (OpenDocument) TC`_"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:30
+msgid "`Open Document at Wikipedia`_"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:32
+msgid ""
+"You should be able to open documents (.odt files) generated with "
+"``rst2odt.py`` in ``OpenOffice/oowriter``."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:35
+msgid "You can learn more about Docutils and reST here: `Docutils`_"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:39
+msgid "Requirements"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:41
+msgid "In addition to the Docutils standard requirements, ``odtwriter`` requires:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:44
+msgid ""
+"Optional -- `Pygments`_ is required if you want syntax highlighting of "
+"code in literal blocks.  See section `Syntax highlighting`_."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:48
+msgid ""
+"Optional -- `Python Imaging Library`_ (PIL) is required if on an image or"
+" figure directive, you specify ``scale`` but not ``width`` and "
+"``height``.  See section `Images and figures`_."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:55
+msgid "How to Use It"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:57
+msgid "Run it from the command line as follows::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:61
+msgid ""
+"To see usage information and to learn about command line options that you"
+" can use, run the following::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:66
+msgid "Examples::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:75
+msgid "Configuration file"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:77
+msgid ""
+"The options described below can also be set in a configuration file. Use "
+"section ``[odf_odt writer]`` to set options specific to the "
+"``odtwriter``.  For example::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:84
+msgid ""
+"See the \"Docutils Configuration\" document for more information on "
+"Docutils configuration files, including locations which are searched."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:90
+msgid "Command line options"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:92
+msgid "The following command line options are specific to ``odtwriter``:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:94
+msgid ""
+"Specify a stylesheet URL, used verbatim. Default: "
+"writers/odf_odt/styles.odt in the installation directory."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:98
+msgid ""
+"Specify a configuration/mapping file relative to the current working "
+"directory for additional ODF options. In particular, this file may "
+"contain a section named \"Formats\" that maps default style names to "
+"names to be used in the resulting output file allowing for adhering to "
+"external standards. For more info and the format of the "
+"configuration/mapping file, see the odtwriter doc."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:107
+msgid ""
+"Obfuscate email addresses to confuse harvesters while still keeping email"
+" links usable with standards- compliant browsers."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:111
+msgid "Do not obfuscate email addresses."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:113
+msgid ""
+"Specify the thickness of table borders in thousands of a cm.  Default is "
+"35."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:116
+msgid "Add syntax highlighting in literal code blocks."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:118
+msgid "Do not add syntax highlighting in literal code blocks. (default)"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:120
+msgid "Create sections for headers.  (default)"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:121
+msgid "Do not create sections for headers."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:122
+msgid "Create links."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:123
+msgid "Do not create links.  (default)"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:124
+msgid "Generate endnotes at end of document, not footnotes at bottom of page."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:126
+msgid ""
+"Generate footnotes at bottom of page, not endnotes at end of document. "
+"(default)"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:128
+msgid ""
+"Generate a bullet list table of contents, not an ODF/``oowriter`` table "
+"of contents."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:131
+msgid ""
+"Generate an ODF/``oowriter`` table of contents, not a bullet list.  "
+"(default) **Note:** ``odtwriter`` is not able to determine page numbers, "
+"so you will need to open the generated document in ``oowriter``, then "
+"right-click on the table of contents and select \"Update\" to insert page"
+" numbers."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:139
+msgid ""
+"Specify the contents of an custom header line.  See odf_odt writer "
+"documentation for details about special field character sequences.  See "
+"section `Custom header/footers: inserting page numbers, date, time, etc`_"
+" for details"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:145
+msgid ""
+"Specify the contents of an custom footer line.  See odf_odt writer "
+"documentation for details about special field character sequences.  See "
+"section `Custom header/footers: inserting page numbers, date, time, etc`_"
+" for details"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:154
+msgid "Styles and Classes"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:156
+msgid ""
+"``odtwriter`` uses a number of styles that are defined in ``styles.xml`` "
+"in the default ``styles.odt``.  This section describes those styles."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:160
+msgid ""
+"Note that with the ``--stylesheet`` command line option, you can use "
+"either ``styles.odt`` or ``styles.xml``, as described below. Use of "
+"``styles.odt`` is recommended over ``styles.xml``."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:164
+msgid ""
+"You can modify the look of documents generated by ``odtwriter`` in "
+"several ways:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:167
+msgid ""
+"Open (a copy of) ``styles.odt`` in ``OpenOffice/oowriter`` and modify the"
+" style you wish to change. Now, save this document, then generate your "
+"documents using this modified copy of ``styles.odt``."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:172
+msgid ""
+"In my version of ``oowriter``, to modify styles, either (1) press F11 or "
+"(2) use menu item \"Format/Styles and Formatting\", then right-click on "
+"the relevant style and select \"Modify\". Modify the style, then save "
+"your document."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:177
+msgid ""
+"Open a document generated by ``odtwriter`` in `oowriter``.  Now, edit the"
+" style you are interested in modifying.  Now, you can extract the "
+"styles.xml file from your document and either (1) use this as your "
+"default styles file or (2) copy and paste the relevant style definition "
+"into your styles.xml."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:183
+msgid ""
+"Extract ``styles.xml`` from ``styles.odt`` using your favorite "
+"``zip/unzip`` tool.  Then modify ``styles.xml`` with a text editor.  Now "
+"re-zip it back into your own ``styles.odt``, or use it directly by "
+"specifying it with the ``--stylesheet`` command line option.  **Hint:** "
+"If you intend to extract ``styles.xml`` from an ``.odt`` file (and then "
+"\"re-zip\" it), you should turn off XML optimization/compression in "
+"``oowriter``.  In order to this in ``oowriter``, use Tools --> Options..."
+"  --> Load-Save --> General and turn off \"Size optimization for XML "
+"format\"."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:193
+msgid ""
+"Open an empty (or new) document in ``oowriter``.  Define all of the "
+"styles described in this section.  Then, use that document (a .odt file) "
+"as your stylesheet.  ``odtwriter`` will extract the ``styles.xml`` file "
+"from that document and insert it into the output document."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:199
+msgid "Some combination of the above."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:203
+msgid "Styles used by odtwriter"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:205
+msgid "This section describes the styles used by ``odtwriter``."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:207
+msgid ""
+"Note that we do not describe the \"look\" of these styles.  That can be "
+"easily changed by using ``oowriter`` to edit the document ``styles.odt`` "
+"(or a copy of it), and modifying any of the styles described here."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:212
+msgid ""
+"To change the definition and appearance of these styles, open "
+"``styles.odt`` in ``oowriter`` and open the Styles and Formatting window "
+"by using the following menu item::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:218
+msgid ""
+"Then, click on the Paragraph Styles button or the Character Styles button"
+" at the top of the Styles and Formatting window.  You may also need to "
+"select \"All Styles\" from the drop-down selection list at the bottom of "
+"the Styles and Formatting window in order to see the styles used by "
+"``odtwriter``."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:224
+msgid ""
+"Notice that you can make a copy of file ``styles.odt``, modify it using "
+"``oowriter``, and then use your copy with the ``--stylesheet=<file>`` "
+"command line option.  Example::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:232
+msgid "Paragraph styles"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:237
+msgid "rststyle-attribution"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:235
+msgid ""
+"The style for attributions, for example, the attribution in a ``.. "
+"epigraph::`` directive.  Derived from ``rststyle-blockquote``."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:240
+msgid "rststyle-blockindent"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:240 ../../docutils/docs/user/odt.txt:252
+msgid "An indented block."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:243
+msgid "rststyle-blockquote"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:243
+msgid "A block quote."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:246
+msgid "rststyle-blockquote-bulletitem"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:246
+msgid "The style for bullet list items inside block quote."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:249
+msgid "rststyle-blockquote-enumitem"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:249
+msgid "The style for enumerated list items inside block quote."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:252
+msgid "rststyle-bodyindent"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:255
+msgid "rststyle-bulletitem"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:255
+msgid "An item in an bullet list."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:259
+msgid "rststyle-caption"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:258
+msgid "The caption in a figure or image.  Also see ``rststyle-legend``."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:265
+msgid "rststyle-codeblock"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:262
+msgid ""
+"Literal code blocks -- A block of example code.  Created with double "
+"colon (\"::\") followed by an indented block or with the ``.. parsed-"
+"literal::`` directive.  Derived from the ``Preformatted Text`` style in "
+"``oowriter``."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:268
+msgid "rststyle-enumitem"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:268
+msgid "An item in an enumerated list."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:273
+msgid "rststyle-epigraph"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:271
+msgid ""
+"The style for epigraphs, for example, the body of an ``.. epigraph::`` "
+"directive.  Derived from ``rststyle-blockquote``."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:276
+msgid "rststyle-epigraph-bulletitem"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:276
+msgid "The style for bullet list items inside epigraphs."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:279
+msgid "rststyle-epigraph-enumitem"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:279
+msgid "The style for enumerated list items inside epigraphs."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:286
+msgid "rststyle-footer"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:282
+msgid ""
+"The style for footers.  The footer content originates from the "
+"``..footer::`` directive and in response to the command line flags for "
+"generator (``--generator``), date/time generated (``--date`` and "
+"``--time``), and view source link (``--source-link`` and ``--source-"
+"url=URL``)."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:290
+msgid "rststyle-header"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:289
+msgid ""
+"The style for headers.  The header content originates from the "
+"``..header::`` directive."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:295
+msgid "rststyle-highlights"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:293
+msgid ""
+"The style for highlightss, for example, the body of an ``.. "
+"highlights::`` directive.  Derived from ``rststyle-blockquote``."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:298
+msgid "rststyle-highlights-bulletitem"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:298
+msgid "The style for bullet list items inside highlights."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:301
+msgid "rststyle-highlights-enumitem"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:301
+msgid "The style for enumerated list items inside highlights."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:304
+msgid "rststyle-horizontalline"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:304
+msgid "A horizontal line, e.g. used for transitions."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:308
+msgid "rststyle-legend"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:307
+msgid ""
+"The legend in a figure.  See the Docutils figure directive.  Also see "
+"``rststyle-caption``."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:312
+msgid "rststyle-table-title"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:311
+msgid "The style for titles of tables.  See section `The table directive`_."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:317
+msgid "rststyle-textbody"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:315
+msgid ""
+"Normal text.  The style for paragraphs.  Derived from the ``Text body`` "
+"style in ``oowriter``."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:320
+msgid "Character styles"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:323
+msgid "rststyle-emphasis"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:323
+msgid "Emphasis.  Normally rendered as italics."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:326
+msgid "rststyle-inlineliteral"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:326
+msgid "An inline literal."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:329
+msgid "rststyle-strong"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:329
+msgid "Strong emphasis.  Normally rendered as boldface."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:332
+msgid "rststyle-quotation"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:332
+msgid "In-line quoted material."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:335
+msgid "rststyle-codeblock-classname"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:335
+msgid "Syntax highlighting in literal code blocks -- class names."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:338
+msgid "rststyle-codeblock-comment"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:338
+msgid "Syntax highlighting in literal code blocks -- comments."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:341
+msgid "rststyle-codeblock-functionname"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:341
+msgid "Syntax highlighting in literal code blocks -- function names."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:345
+msgid "rststyle-codeblock-keyword"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:344
+msgid "Syntax highlighting in literal code blocks -- Python language keywords."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:349
+msgid "rststyle-codeblock-name"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:348
+msgid ""
+"Syntax highlighting in literal code blocks -- other names, for example, "
+"variables."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:353
+msgid "rststyle-codeblock-number"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:352
+msgid ""
+"Syntax highlighting in literal code blocks -- literal numbers, including "
+"integers, floats, hex numbers, and octal numbers."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:356
+msgid "rststyle-codeblock-operator"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:356
+msgid "Syntax highlighting in literal code blocks -- Python operators."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:360
+msgid "rststyle-codeblock-string"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:359
+msgid "Syntax highlighting in literal code blocks -- literal strings."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:363
+msgid "List styles"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:366
+msgid "rststyle-bulletlist"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:366
+msgid "Bullet lists (but not in the table of contents)"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:369
+msgid "rststyle-blockquote-bulletlist"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:369
+msgid "Bullet lists in block quotes."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:372
+msgid "rststyle-blockquote-enumlist"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:372
+msgid "Enumerated lists in block quotes."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:375
+msgid "rststyle-enumlist-arabic"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:375
+msgid "Enumerated lists, arabic (but not in the table of contents)"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:378
+msgid "rststyle-enumlist-loweralpha"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:378
+msgid "Enumerated lists, lower alpha (but not in the table of contents)"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:381
+msgid "rststyle-enumlist-lowerroman"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:381
+msgid "Enumerated lists, lower roman (but not in the table of contents)"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:384
+msgid "rststyle-enumlist-upperalpha"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:384
+msgid "Enumerated lists, upper alpha (but not in the table of contents)"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:387
+msgid "rststyle-enumlist-upperroman"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:387
+msgid "Enumerated lists, upper roman (but not in the table of contents)"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:391
+msgid "rststyle-epigraph-bulletlist"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:390
+msgid "Bullet lists in epigraphs.  See the ``.. epigraph::`` directive."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:395
+msgid "rststyle-epigraph-enumlist"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:394
+msgid "Enumerated lists in epigraphs.  See the ``.. epigraph::`` directive."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:399
+msgid "rststyle-highlights-bulletlist"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:398
+msgid "Bullet lists in highlights blocks.  See the ``.. highlights::`` directive."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:403
+msgid "rststyle-highlights-enumlist"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:402
+msgid ""
+"Enumerated lists in highlights blocks.  See the ``.. highlights::`` "
+"directive."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:406
+msgid "rststyle-tocbulletlist"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:406
+msgid "Lists in the table of contents when section numbering is off."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:410
+msgid "rststyle-tocenumlist"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:409
+msgid "Lists in the table of contents when section numbering is on."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:413
+msgid "Admonition styles"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:416
+msgid "rststyle-admon-attention-hdr"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:416
+msgid "The style for the attention admonition header/title."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:419
+msgid "rststyle-admon-attention-body"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:419
+msgid "The style for the attention admonition body/paragraph."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:422
+msgid "rststyle-admon-caution-hdr"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:422
+msgid "The style for the caution admonition header/title."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:425
+msgid "rststyle-admon-caution-body"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:425
+msgid "The style for the caution admonition body/paragraph."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:428
+msgid "rststyle-admon-danger-hdr"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:428
+msgid "The style for the  admonition header/title."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:431
+msgid "rststyle-admon-danger-body"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:431
+msgid "The style for the danger admonition body/paragraph."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:434
+msgid "rststyle-admon-error-hdr"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:434
+msgid "The style for the error admonition header/title."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:437
+msgid "rststyle-admon-error-body"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:437
+msgid "The style for the error admonition body/paragraph."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:440 ../../docutils/docs/user/odt.txt:446
+msgid "rststyle-admon-hint-hdr"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:440 ../../docutils/docs/user/odt.txt:446
+msgid "The style for the hint admonition header/title."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:443 ../../docutils/docs/user/odt.txt:449
+msgid "rststyle-admon-hint-body"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:443 ../../docutils/docs/user/odt.txt:449
+msgid "The style for the hint admonition body/paragraph."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:452
+msgid "rststyle-admon-important-hdr"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:452
+msgid "The style for the important admonition header/title."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:455
+msgid "rststyle-admon-important-body"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:455
+msgid "The style for the important admonition body/paragraph."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:458 ../../docutils/docs/user/odt.txt:461
+msgid "rststyle-admon-note-hdr"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:458 ../../docutils/docs/user/odt.txt:461
+msgid "The style for the note admonition header/title."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:464
+msgid "rststyle-admon-tip-body"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:464
+msgid "The style for the tip admonition body/paragraph."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:467
+msgid "rststyle-admon-tip-hdr"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:467
+msgid "The style for the tip admonition header/title."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:470
+msgid "rststyle-admon-warning-body"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:470
+msgid "The style for the warning admonition body/paragraph."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:473
+msgid "rststyle-admon-warning-hdr"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:473
+msgid "The style for the warning admonition header/title."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:476
+msgid "rststyle-admon-generic-body"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:476
+msgid "The style for the generic admonition body/paragraph."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:480
+msgid "rststyle-admon-generic-hdr"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:479
+msgid "The style for the generic admonition header/title."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:483
+msgid "Rubric style"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:486
+msgid "rststyle-rubric"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:486
+msgid "The style for the text in a rubric directive."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:488
+msgid ""
+"The rubric directive recognizes a \"class\" option.  If entered, "
+"odtwriter uses the value of that option instead of the ``rststyle-"
+"rubric`` style.  Here is an example which which attaches the ``rststyle-"
+"heading1`` style to the generated rubric::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:498
+msgid "Table styles"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:500
+msgid ""
+"A table style is generated by ``oowriter`` for each table that you "
+"create.  Therefore, ``odtwriter`` attempts to do something similar. These"
+" styles are created in the ``content.xml`` document in the generated "
+"``.odt`` file.  These styles have names prefixed with \"rststyle-"
+"table-\"."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:506
+msgid ""
+"There are two ways in which you can control the styles of your tables: "
+"one simple, the other a bit more complex, but more powerful."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:510
+msgid ""
+"First, you can change the thickness of the borders of all tables "
+"generated in a document using the \"--table-border-thickness\" command "
+"line option."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:514
+msgid ""
+"Second, you can control additional table properties and you can apply "
+"different styles to different tables within the same document by "
+"customizing and using tables in your stylesheet: ``styles.odt`` or "
+"whatever you name your copy of it using the --stylesheet command line "
+"option.  Then, follow these rules to apply a table style to the tables in"
+" your document:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:521
+msgid ""
+"The default table style -- Optionally, alter and customize the style "
+"applied by default to tables in your document by modifying table "
+"\"rststyle-table-0\" in your stylesheet (``styles.odt`` or a copy).  "
+"Caution: Do not change the name of this table."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:526
+msgid ""
+"User-created table styles -- Add one or more new table styles to be "
+"applied selectively to tables in your document by doing the following:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:530
+msgid ""
+"Using ``oowriter``, add a table to your stylesheet and give it a name "
+"that starts with the prefix \"rststyle-table-\", for example \"rststyle-"
+"table-vegetabledata\".  Customize the table's border thickness, border "
+"color, and table background color."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:535
+msgid ""
+"In your reStructuredText document, apply your new table style to a "
+"specific table by placing the \"..  class::\" directive immediately "
+"before the table, for example::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:541
+msgid ""
+"The default table style will be applied to all tables for which you do "
+"not specify a style with the \"..  class::\" directive."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:544
+msgid ""
+"Customize the table properties in ``oowriter`` using the table properties"
+" dialog for the table (style) that you wish to customize."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:547
+msgid ""
+"Note that \"--table-border-thickness\" command line option overrides the "
+"border thickness specified in the stylesheet."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:550
+msgid ""
+"The specific properties that you can control with this second method are "
+"the following:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:553
+msgid "Border thickness and border color."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:555
+msgid ""
+"Background color -- When you change the background color of a table to be"
+" used as a style (in ``styles.odt`` or whatever you name it), make sure "
+"you change the background color for the *table* and *not* for a cell in "
+"the table.  ``odtwriter`` picks the background color from the table, not "
+"from a cell within the table."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:564
+msgid "Line block styles"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:566
+msgid ""
+"The line block styles wrap the various nested levels of line blocks.  "
+"There is one line block style for each indent level."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:570
+msgid "rststyle-lineblock1"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:570
+msgid "Line block style for line block with no indent."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:573
+msgid "rststyle-lineblock2"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:573
+msgid "Line block style for line block indented 1 level."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:576
+msgid "rststyle-lineblock3"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:576
+msgid "Line block style for line block indented 2 levels."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:579
+msgid "rststyle-lineblock4"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:579
+msgid "Line block style for line block indented 3 levels."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:582
+msgid "rststyle-lineblock5"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:582
+msgid "Line block style for line block indented 4 levels."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:585
+msgid "rststyle-lineblock6"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:585
+msgid "Line block style for line block indented 5 levels."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:587
+msgid "Notes:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:589
+msgid ""
+"``odtwriter`` does not check for a maximum level of indents within line "
+"blocks.  Therefore, you can define additional line block styles for "
+"additional levels if you need them.  Define these styles with the names "
+"``rststyle-lineblock7``, ``rststyle-lineblock8``, ..."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:595
+msgid ""
+"Since the line block style is used to create indentation, a line block "
+"that is inside a block quote will use ``rststyle-lineblock2`` as its "
+"first level of indentation."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:601
+msgid "Footnote and citation styles"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:605
+msgid "rststyle-footnote"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:604
+msgid ""
+"The style for footnotes.  This style affects the footnote content, *not* "
+"the footnote reference in the body of the document."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:612
+msgid "rststyle-citation"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:608
+msgid ""
+"The style for citations.  This style affects the citation content, *not* "
+"the citation reference in the body of the document. You might need to "
+"adjust the indentation in this style depending on the length of the label"
+" used in your citations."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:615
+msgid "Heading and title styles"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:620
+msgid "rststyle-heading{1|2|3|4|5}"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:618
+msgid ""
+"The styles for headings (section titles and sub-titles).  Five levels of "
+"sub-headings are provided: rststyle-heading1 through rststyle-heading5."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:623
+msgid "rststyle-title"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:623
+msgid "The style for the document title."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:627
+msgid "rststyle-subtitle"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:626
+msgid "The style for the document sub-title."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:630
+msgid "Image and figure styles"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:634
+msgid "rststyle-image"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:633
+msgid ""
+"The style applied to an image, either an image by itself or an image in a"
+" figure."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:640
+msgid "rststyle-figureframe"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:637
+msgid ""
+"The style applied to a figure (actually to the frame that surrounds a "
+"figure)."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:643
+msgid "Defining and using a custom stylesheet"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:645
+msgid "You can create your own custom stylesheet.  Here is how:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:647
+msgid "Make a copy of ``styles.odt``, which is in the distribution."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:649
+msgid ""
+"Open your copy of ``styles.odt`` in ``oowriter``.  Modify styles in that "
+"document.  Then, save it."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:652
+msgid ""
+"When you run ``rst2odt.py``, use the ``--stylesheet`` command line option"
+" to use your custom stylesheet.  Run ``rst2odt.py --help`` to learn more "
+"about these options."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:658
+msgid "Why custom stylesheets"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:660 ../../docutils/docs/user/odt.txt:683
+msgid "Here are a few reasons and ideas:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:662
+msgid ""
+"The page size is stored in the style sheet.  The default page size is "
+"``Letter``.  You can change the page size (for example, to ``A4``) in "
+"your custom stylesheet by opening it in ``oowriter``, then clicking on "
+"menu: ``Format/Page...``, then clicking on the ``Page`` tab."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:671
+msgid "Defining and using custom style names"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:673
+msgid ""
+"[Credits: Stefan Merten designed and implemented the custom style names "
+"capability.  Thank you, Stefan.]"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:676
+msgid "You can also instruct ``odtwriter`` to use style names of your own choice."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:681
+msgid "Why custom style names"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:685
+msgid ""
+"Suppose that your organization has a standard set of styles in OOo "
+"``oowriter`` and suppose that the use of these styles is required. You "
+"would like to generate ODF documents from reST text files, and you want "
+"the generated documents to contain these styles."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:691
+msgid ""
+"Suppose that your company or organization has a policy of using a certain"
+" MS Word template for some set of documents.  You would like to generate "
+"ODF documents that use these custom style names, so that you can export "
+"these documents from ODF ``oowriter`` to MS Word documents that use these"
+" style names."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:697
+msgid ""
+"Suppose that your documents are written in a language other than English."
+"  You would like the style names visible in the \"Styles and Formatting\""
+" window in OOo ``oowriter`` (menu item ``Format/Styles and Formatting``) "
+"to be understandable in the language of your users."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:703
+msgid ""
+"``odtwriter`` maps single asterisks/stars (for example, \\*stuff\\*) to "
+"emphasis and double stars to strong.  You'd like to reverse these.  Or, "
+"you would like to generate headings level 3 and 4 where headings level 1 "
+"and 2 would normally be produced."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:710
+msgid "How to use custom style names"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:712
+msgid ""
+"In order to define custom style names and to generate documents that "
+"contain them, do the following:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:716
+msgid ""
+"Create a configuration file containing a \"Formats\" section.  The "
+"configuration file obeys the file format supported by the Python "
+"ConfigParser module: `ConfigParser -- Configuration file parser -- "
+"http://docs.python.org/lib/module-ConfigParser.html "
+"<http://docs.python.org/lib/module-ConfigParser.html>`_."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:723
+msgid ""
+"In the \"Formats\" section of the configuration file, create one option "
+"(a name-value pair) for each custom style name that you wish to define.  "
+"The option name is the standard ``odtwriter`` style name (without "
+"\"rststyle-\"), and the value is your custom style name.  Here is an "
+"example::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:737
+msgid ""
+"Create a styles document that defines the styles generated by "
+"``odtwriter``.  You can create and edit the styles in OOo ``oowriter``.  "
+"It may be helpful to begin by making a copy of the styles document that "
+"is part of the ``odtwriter`` distribution (``styles.odt``)."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:743
+msgid ""
+"When you run ``odtwriter``, specify the ``--odf-config-file`` option.  "
+"You might also want to specify your styles document using the "
+"``--stylesheet`` option in order to include your custom style "
+"definitions.  For example::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:753
+msgid "Classes"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:755
+msgid ""
+"``odtwriter`` uses the following Docutils class to provide additional "
+"control of the generation of ODF content:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:758
+msgid ""
+"Class ``wrap`` -- Use this to cause the wrapping of text around an image."
+"  The default is *not* to wrap text around images. Here is an example::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:770
+msgid "Roles"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:772
+msgid ""
+"You can use a Docutils custom interpreted text role to attach a character"
+" style to an inline area of text.  This capability also enables you to "
+"attach a new character style (with a new name) that you define yourself."
+"  Do this by defining your role in a stylesheet as a character style with"
+" \"rststyle-\" prefixed to your role name, then use the ``role`` "
+"directive and inline markup to apply your role."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:780
+msgid "In order to use this capability, do the following:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:782
+msgid ""
+"Define the character style for your custom role in a stylesheet (a copy "
+"of ``styles.odt``) with the prefix \"rststyle-\". Remember: (1) If the "
+"name of your custom role is \"pretty\", then define a character style "
+"named \"rststyle-pretty\".  (2) Define the style as a *character* style, "
+"and *not*, for example as a paragraph style."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:789
+msgid ""
+"Declare your role in the source reStructuredText document in a ``role`` "
+"directive.  Example::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:794
+msgid "Use inline markup to apply your role to text.  Example::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:798
+msgid "Here is another example::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:804
+msgid ""
+"For more on roles see: `Custom Interpreted Text Roles -- "
+"http://docutils.sourceforge.net/docs/ref/rst/directives.html#custom-"
+"interpreted-text-roles "
+"<http://docutils.sourceforge.net/docs/ref/rst/directives.html#custom-"
+"interpreted-text-roles>`_."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:809
+msgid ""
+"**Note:** The ability to base a role on another existing role is *not* "
+"supported by ``odtwriter``."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:814
+msgid "Hints and Suggestions and Features"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:817
+msgid "Table of contents"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:819
+msgid "The ``..contents::`` directive causes ``odtwriter`` to generate either:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:822
+msgid ""
+"A static, outline style table of contents, if the ``--generate-list-toc``"
+" command line option is specified, or"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:825
+msgid ""
+"An ODF/``oowriter`` style table of contents containing dynamically "
+"updated page numbers and with the formatting control that ``oowriter`` "
+"gives you.  This is the default, or use the command line option "
+"``--generate-list-toc``.  **Note:** ``odtwriter`` is not able to "
+"determine page numbers, so you will need to open the generated document "
+"in ``oowriter``, then right-click on the table of contents and select "
+"\"Update\" to insert correct page numbers."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:836
+msgid "Syntax highlighting"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:838
+msgid ""
+"``odtwriter`` can add syntax highlighting to code in code blocks.  In "
+"order to activate this, do all of the following:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:841
+msgid "Install `Pygments`_ and ..."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:843
+msgid "Use the command line option ``--add-syntax-highlighting``. Example::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:848
+msgid ""
+"The following styles are defined in styles.odt and are used for literal "
+"code blocks and syntax highlighting:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:851
+msgid "Paragraph styles:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:853
+msgid "rststyle-codeblock -- The style for the code block as a whole."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:855
+msgid "Character styles:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:857
+msgid "rststyle-codeblock-classname -- class names."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:859
+msgid "rststyle-codeblock-comment -- comments."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:861
+msgid "rststyle-codeblock-functionname -- function names."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:863
+msgid "rststyle-codeblock-keyword -- Python language keywords."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:865
+msgid "rststyle-codeblock-name -- other names, for example, variables."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:868
+msgid ""
+"rststyle-codeblock-number -- literal numbers, including integers, floats,"
+" hex numbers, and octal numbers."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:871
+msgid "rststyle-codeblock-operator -- Python operators."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:873
+msgid "rststyle-codeblock-string -- literal strings."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:875
+msgid ""
+"Each of the above styles has a default appearance that is defined in "
+"``styles.odt``.  To change that definition and appearance, open "
+"``styles.odt`` in ``oowriter`` and use menu item::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:881
+msgid ""
+"Then, click on the Paragraph Styles button or the Character Styles button"
+" at the top of the Styles and Formatting window.  You may also need to "
+"select \"All Styles\" from the drop-down selection list at the bottom of "
+"the Styles and Formatting window."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:889
+msgid "The container directive"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:891
+msgid ""
+"There is limited support for the ``container`` directive.  The "
+"limitations and rules for the container directive are the following:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:894
+msgid "Only the first class in the list of classes (arguments) is used."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:896
+msgid ""
+"That class/style must be a paragraph style and not (for example) a "
+"character style."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:899
+msgid ""
+"The style/class given to the container directive will have a "
+"\"rststyle-\" prefix in the odt file."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:902
+msgid "So, for example::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:908
+msgid "Only ``style-1`` is used; ``style-2`` and ``style-3`` are ignored."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:910
+msgid ""
+"``rststyle-style-1`` must be defined.  It should be an existing, "
+"predefined style, or you should define it in your stylesheet "
+"(``styles.odt`` or the argument to the ``--stylesheet`` command line "
+"option)."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:915
+msgid "``rststyle-style-1`` must be a paragraph style."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:917
+msgid "To define a paragraph style, use the following menu item in ``oowriter``::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:922
+msgid "Then, click on the Paragraph Styles button."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:924
+msgid ""
+"The following example attaches the ``rststyle-heading2`` style (a "
+"predefined style) to each paragraph/line in the container::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:933
+msgid ""
+"More information on how to define a new style (for example, in your "
+"``styles.odt``) can be found in section `Defining and using custom style "
+"names`_."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:940
+msgid "The table directive"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:942
+msgid "The ``table`` directive can be used to add a title to a table. Example::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:954
+msgid ""
+"The above will insert the title \"A little test table\" at the top of the"
+" table.  You can modify the appearance of the title by modifying the "
+"paragraph style ``rststyle-table-title``."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:960
+msgid "Footnotes and citations"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:962
+msgid "Footnotes and citations are supported."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:964
+msgid ""
+"There are additional styles ``rststyle-footnote`` and ``rststyle-"
+"citation`` for footnotes and citations. See `Footnote and citation "
+"styles`_."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:968
+msgid ""
+"You may need to modify the citation style to fit the length of your "
+"citation references."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:971
+msgid ""
+"Endnotes -- There are command line options that control whether "
+"``odtwriter`` creates endnotes instead of footnotes.  Endnotes appear at "
+"the end of the document instead of at the bottom of the page.  See flags "
+"``--endnotes-end-doc`` and ``--no-endnotes-end-doc`` in section `Command "
+"line options`_."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:979
+msgid "Images and figures"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:981
+msgid ""
+"If on the image or the figure directive you provide the scale option but "
+"do not provide the width and height options, then ``odtwriter`` will "
+"attempt to determine the size of the image using the `Python Imaging "
+"Library`_ (PIL).  If ``odtwriter`` cannot find and import Python Imaging "
+"Library, it will raise an exception.  If this ocurrs, you can fix it by "
+"doing one of the following:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:988
+msgid "Install the Python Imaging Library or"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:990
+msgid "Remove the ``scale`` option or"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:992
+msgid "Add both the ``width`` and the ``height`` options."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:994
+msgid ""
+"So, the rule is: if on any image or figure, you specify scale but not "
+"both width and height, you must install the `Python Imaging Library`_ "
+"library."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:998
+msgid "For more information about PIL, see: `Python Imaging Library`_."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1002
+msgid "The raw directive"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1004
+msgid "The ``raw`` directive is supported.  Use output format type \"odt\"."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1006
+msgid ""
+"You will need to be careful about the formatting of the raw content.  In "
+"particular, introduced whitespace might be a problem."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1009
+msgid ""
+"In order to produce content for the raw directive for use by "
+"``odtwriter``, you might want to extract the file ``content.xml`` from a "
+"``.odt`` file (using some Zip tool), and then clip, paste, and modify a "
+"selected bit of it."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1014
+msgid "Here is an example::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1035
+msgid "The meta directive"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1037
+msgid ""
+"``odtwriter`` supports the ``meta`` directive.  \"keywords\" and "
+"\"description\" are set in their respective odt fields. Other meta fields"
+" are set as \"Custom Properties\". Here is an example::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1048
+msgid ""
+"To see the results of the ``meta`` directive in ``oowriter``, select menu"
+" item \"File/Properties...\", then click on the \"Description\" tab "
+"(\"keywords\" and \"description\" fields) and the \"Custom Properties\" "
+"tab."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1055
+msgid "Footnote references inside footnotes"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1057
+msgid "Not supported."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1059
+msgid "Get a grip.  Be serious.  Try a dose of reality."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1061
+msgid "``odtwriter`` ignores them."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1063
+msgid "They cause ``oowriter`` to croak."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1067
+msgid "Page size"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1069
+msgid ""
+"The default page size, in documents generated by ``odtwriter`` is "
+"``Letter``.  You can change this (for example to ``A4``) by using a "
+"custom stylesheet.  See `Defining and using a custom stylesheet`_ for "
+"instructions on how to do this."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1074
+msgid ""
+"On machines which support ``paperconf``, ``odtwriter`` can insert the "
+"default page size for your locale.  In order for this to work, the "
+"following conditions must be met:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1078
+msgid ""
+"The program ``paperconf`` must be available on your system. ``odtwriter``"
+" uses ``paperconf -s`` to obtain the paper size. See ``man paperconf`` "
+"for more information."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1082
+msgid ""
+"The default page height and width must be removed from the ``styles.odt``"
+" used to generate the document.  A Python script "
+"``rst2odt_prepstyles.py`` is distributed with ``odtwriter`` and is "
+"installed in the ``bin`` directory.  You can remove the page height and "
+"width with something like the following::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1090
+msgid ""
+"If you edit your stylesheet in ``oowriter`` and then save it, "
+"``oowriter`` automatically inserts a page height and width in the styles "
+"for that (stylesheet) document.  If that is not the page size that you "
+"want and you want ``odtwriter`` to insert a default page size using "
+"``paperconf``, then you will need to strip the page size from your "
+"stylesheet each time you edit that stylesheet with ``oowriter``."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1101
+msgid "Custom header/footers: inserting page numbers, date, time, etc"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1103
+msgid ""
+"You can specify custom headers and footers for your document from the "
+"command line.  These headers and footers can be used to insert fields "
+"such as the page number, page count, date, time, etc.  See below for a "
+"complete list."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1108
+msgid ""
+"To insert a custom header or footer, use the \"--custom-odt-header\" or "
+"\"--custom-odt-footer\" command line options.  For example, the following"
+" inserts a footer containing the page number and page count::"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1117
+msgid "Field specifiers"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1119
+msgid ""
+"You can use the following field specifiers to insert ``oowriter`` fields "
+"in your custom headers and footers:"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1123
+msgid "%p%"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1123
+msgid "The current page number."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1126
+msgid "%P%"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1126
+msgid "The number of pages in the document."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1129
+#, python-format
+msgid "%d1%"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1129
+msgid "The current date in format 12/31/99."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1132
+#, python-format
+msgid "%d2%"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1132
+msgid "The current date in format 12/31/1999."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1135
+#, python-format
+msgid "%d3%"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1135
+msgid "The current date in format Dec 31, 1999."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1138
+#, python-format
+msgid "%d4%"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1138
+msgid "The current date in format December 31, 1999."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1141
+#, python-format
+msgid "%d5%"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1141
+msgid "The current date in format 1999-12-31."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1144
+msgid "%t1%"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1144
+msgid "The current time in format 14:22."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1147
+msgid "%t2%"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1147
+msgid "The current time in format 14:22:33."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1150
+msgid "%t3%"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1150
+msgid "The current time in format 02:22 PM."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1153
+msgid "%t4%"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1153
+msgid "The current time in format 02:22:33 PM."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1156
+msgid "%a%"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1156
+msgid "The author of the document (actually the initial creator)."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1159
+msgid "%t%"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1159
+msgid "The document title."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1163
+#, python-format
+msgid "%s%"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1162
+msgid "The document subject."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1165
+msgid ""
+"**Note:** The use of the above field specifiers in the body of your "
+"reStructuredText document is **not** supported, because these specifiers "
+"are not standard across Docutils writers."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1172
+msgid "Credits"
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1174
+msgid ""
+"Stefan Merten designed and implemented the custom style names capability."
+"  Thank you, Stefan."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1177
+msgid ""
+"Michael Schutte supports the Debian GNU/Linux distribution of "
+"``odtwriter``.  Thank you, Michael, for providing and supporting the "
+"Debian package."
+msgstr ""
+
+#: ../../docutils/docs/user/odt.txt:1181
+msgid ""
+"Michael Schutte implemented the fix that enables ``odtwriter`` to pick up"
+" the default paper size on platforms where the program ``paperconf`` is "
+"available.  Thank you."
+msgstr ""
+

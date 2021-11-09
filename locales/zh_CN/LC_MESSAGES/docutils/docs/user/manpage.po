@@ -1,0 +1,267 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/user/manpage.txt:3
+msgid "manpage writer for Docutils_"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:5
+msgid "Engelbert Gruber"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:7
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:8
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:11
+msgid ""
+"This writer explores the possibilities to generate man-pages from "
+"reStructuredText. Man pages are the way for Unix systems to provide help "
+"to the user. GNU does this with (TeX)info-pages."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:16
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:19
+msgid "Module information"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:21
+msgid ""
+"Unix man page belong into a numbered section, 1 is user commands, 8 "
+"contains administrator commands, the headlines of all manpages are "
+"collected into a database, queryable with the program ``apropos``, "
+"therefore the headline should contain a short text describing into which "
+"group this command belongs."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:26
+msgid "That information is collected from the title, subtitle and docinfo."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:28
+msgid ""
+"Also man pages have a defined set of sections, that are more or less "
+"mandatory, see References_."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:31
+msgid "man pages look like::"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:41
+msgid "in roff formatting::"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:52
+msgid "This means we have"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:54
+msgid "a title \"man\""
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:55
+msgid "a subtitle \"an interface to the on-line reference manuals\""
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:56
+msgid "a manual section \"1\""
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:57
+msgid "a manual group \"Manual pager utils\""
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:58
+msgid "a date \"14 May 2001\""
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:59
+msgid "a version \"2.3.19\""
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:62
+msgid "References"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:64
+msgid "man pages from section 7, ``man`` and ``man-pages``."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:66
+msgid "Linux Man Page Howto."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:69
+msgid "Conventions"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:71
+msgid ""
+"man pages have a special structure and organization. From the manpage to "
+"*man*::"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:108
+msgid "new lines in general."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:110
+msgid ""
+"Consecutive blank lines are merged by the viewer but not on printouts. So"
+" one has to be cautious. This is most disturbing when printing "
+"postscript."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:116
+msgid "Roff requests only work when at line start."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:117
+msgid "But consecutive blank lines are merged by the viewer but not on printouts."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:120
+msgid ""
+"So try the rule start new lines in ``visit_``-functions, but only if "
+"necessary. E.g. ``field-names`` are already on a new line because of "
+"docutils structure."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:124
+msgid "Indentation, left margin:"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:126
+msgid ""
+"The writer includes two macros ``.INDENT`` and ``.UNINDENT`` that keep "
+"track of the indentation in roff-code, for line-blocks python keeps track"
+" of it. WHAT should be the preferred way ?"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:130
+msgid "But standard macros like ``.PP`` might reset it."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:132
+msgid "Why do ``.RE`` and ``.RS`` not work?"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:135
+msgid "Current indent is in register ``.i``."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:137
+msgid ""
+"[LMHT]_ Filenames are always in italics, except in the SYNOPSIS section, "
+"use::"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:142
+msgid "and::"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:146
+msgid ""
+"Tables are possible, via the external processor tbl, although one should "
+"avoid them."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:150
+msgid "TODO - Open issues"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:152
+msgid "How to escape double quotes in macro arguments ?"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:153
+msgid "Typeset URLs : ``man 7 man`` on linux says use ``.UR`` and ``.UE``."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:154
+msgid "How to typeset command/manpage names in text."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:155
+msgid "How to write long syntax lines."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:156
+msgid ""
+"Line ends around email or web addresses in texts. How to distinguish "
+"something is inline or not ?"
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:159
+msgid "Images and equations are discouraged."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:160
+msgid "Lists in admonitions are not intended."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:161
+msgid "Encoding declaration ``'\\\" t -*- coding: ISO-8859-1 -*-`` in first line."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:164
+msgid "BUT if UTF-8 is declared tables are no longer processed."
+msgstr ""
+
+#: ../../docutils/docs/user/manpage.txt:166
+msgid "Input and output encoding are problematic at least."
+msgstr ""
+

@@ -1,0 +1,584 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/user/links.txt:3
+msgid "Docutils_ Link List"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:5
+msgid "Lea Wiemann, the Docutils team"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:7
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:8
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:13
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:15
+msgid ""
+"This document contains links users of Docutils and reStructuredText may "
+"find useful.  Many of the projects listed here are hosted in the "
+"`Docutils Sandbox`_.  If you have something to publish, you can get write"
+" access, too!"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:20
+msgid ""
+"The most current version of this link list can always be found at "
+"https://docutils.sourceforge.io/docs/user/links.html."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:28
+msgid "Editors"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:30
+msgid ""
+"Advanced text editors with reStructuredText support, IDEs, and docutils "
+"GUIs:"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:32
+msgid "Emacs `rst mode <http://docutils.sf.net/tools/editors/emacs>`__."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:34
+msgid "`Vim <http://www.vim.org/index.php>`__:"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:36
+msgid ""
+"`reStructuredText syntax highlighting mode "
+"<http://www.vim.org/scripts/script.php?script_id=973>`__,"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:39
+msgid ""
+"`VST <http://www.vim.org/scripts/script.php?script_id=1334>`__ (Vim "
+"reStructuredText) plugin for Vim7 with folding."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:42
+msgid ""
+"`VOoM <http://www.vim.org/scripts/script.php?script_id=2657>`__ plugin "
+"for Vim that emulates two-pane outliner with support for reStructuredText"
+" (since version 4.0b2)."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:46
+msgid ""
+"`Riv: Take notes in rst <https://github.com/Rykka/riv.vim>`__ Vim plugin "
+"to take notes in reStructured text."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:49
+msgid ""
+"`JED <http://www.jedsoft.org/jed/>`__ programmers editor with `rst mode "
+"<http://jedmodes.sf.net/mode/rst/>`__"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:52
+msgid "`reStructuredText editor plug-in for Eclipse`__"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:56
+msgid "Gnome's gedit offers syntax highlighting and a reST preview pane."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:58
+msgid ""
+"Latest version of the plugin is available from `bittner @ github`_ (See "
+"also: `Gedit third party plugins`__)."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:64
+msgid "Gunnar Schwant's DocFactory_ is a wxPython GUI application for Docutils."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:69
+msgid "ReSTedit_ by Bill Bumgarner is a Docutils GUI for Mac OS X."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:73
+msgid ""
+"Leo_ is an outliner_, written in Python using PyQt. It can be used as IDE"
+" for literal programming, as a filing cabinet holding any kind of data "
+"and as `document editor`__ with outlines containing reStructuredText "
+"markup."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:81
+msgid ""
+"`NoTex <https://notex.ch>`_ is a browser-based reStructuredText editor "
+"with syntax highlighting and PDF/HTML export functionality using Sphinx."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:84
+msgid ""
+"`rsted <https://github.com/anru/rsted>`_ is a \"simple online editor for "
+"reStructuredText on Flask\". You can try it on http://rst.ninjs.org/"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:89
+msgid "Export"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:91
+msgid "Projects providing additional export routes."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:94
+msgid "PDF"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:96
+msgid ""
+"`rst2pdf (reportlab)`__ is a tool to go directly from reStructuredText to"
+" PDF, via ReportLab__. No LaTeX installation is required."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:103
+msgid ""
+"`rst2pdf (pdflatex)`__ by Martin Blais is a minimal front end producing "
+"LaTeX, compiling the LaTeX file, getting the produced output to the "
+"destination location and finally deleting all the messy temporary files "
+"that this process generates."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:110
+msgid ""
+"`rst2pdf (rubber)`__ is a front end for the generation of PDF documents "
+"from a reStructuredText source via LaTeX in one step cleaning up "
+"intermediate files. It uses the rubber__ Python wrapper for LaTeX and "
+"friends."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:118
+msgid "rlpdf_ is another PDF Writer based on ReportLabs."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:122
+msgid ""
+"RinohType_ is a pure Python PDF Writer based on a document template and a"
+" style sheet (beta)."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:128
+msgid "website generators and HTML variants"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:130
+msgid ""
+"The Sphinx_ Python Documentation Generator by Georg Brandl was originally"
+" created to translate the `Python documentation`_. In the meantime, there"
+" is a wide range of `Projects using Sphinx`__"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:134
+msgid ""
+"It can generate complete web sites (interlinked and indexed HTML pages), "
+"ePub, LaTeX, and others from a set of rST source files."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:140
+msgid "The Nikola_ static site generator, uses reStructuredText by default."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:145
+msgid ""
+"Pelican_ is a static site generator (mainly for blogs). Articles/pages "
+"can be written in reStructuredText or Markdown_ format."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:150
+msgid "tinkerer_ is a static bloggin framework based on Sphinx_."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:154
+msgid ""
+"htmlnav_ by Gunnar Schwant, is an HTML writer which supports navigation "
+"bars."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:159
+msgid ""
+"rest2web_, by Michael Foord, is a tool for creating web sites with "
+"reStructuredText."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:164
+msgid ""
+"`html4trans <https://docutils.sourceforge.io/sandbox/html4trans/>`__ "
+"produces XHTML conforming to the version 1.0 Transitional DTD that "
+"contains enough formatting information to be viewed by a lightweight HTML"
+" browser without CSS support."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:169
+msgid ""
+"A `simple HTML writer`_ by Bill Bumgarner that doesn't rely on CSS "
+"stylesheets."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:175
+msgid "ePub"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:177
+msgid ""
+"rst2epub2_ by Matt Harrison includes the epublib (originally by Tim "
+"Tambin) and a rst2epub.py executable for the conversion."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:182
+msgid "Sphinx_ provides ePub as output option, too."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:186
+msgid "Others"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:188
+msgid ""
+"Pandoc_ is a document converter that can write Markdown_, "
+"reStructuredText, HTML, LaTeX, RTF, DocBook XML, and S5."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:193
+msgid ""
+"restxsl_ by Michael Alyn Miller, lets you transform reStructuredText "
+"documents into XML/XHTML files using XSLT stylesheets."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:198
+msgid ""
+"An `XSLT script`__ by Ladislav Lhotka enables reStructuredText "
+"annotations to be included in RELAG NG XML schemas."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:203
+msgid "`DocBook Writer`_ by Oliver Rutherfurd."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:207
+msgid ""
+"Nabu_, written by Martin Blais, is a publishing system which extracts "
+"information from reStructuredText documents and stores it in a database."
+"  Python knowledge is required to write extractor functions and to "
+"retrieve the data from the database again."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:214
+msgid ""
+"The `pickle writer`_ by Martin Blais pickles the document tree to a "
+"binary string. Later unpickling will allow you to publish with other "
+"Writers."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:219
+msgid ""
+"The `Texinfo Writer`_, by Jon Waltman converts reStructuredText to "
+"Texinfo, the documentation format used by the GNU project and the Emacs "
+"text editor.  Texinfo can be used to produce multiple output formats, "
+"including HTML, PDF, and Info."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:226
+msgid "For `confluence CMS`_ see https://github.com/netresearch/rst2confluence."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:230
+msgid "Deploying into wikis might be aided by deploy-rst_."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:236
+msgid "Import"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:238
+msgid "Convert other formats to reStructuredText:"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:240
+msgid ""
+"recommonmark_ is a Markdown_ (CommonMark_) parser for docutils originally"
+" created by Luca Barbato."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:243
+msgid ""
+"Docutils \"markdown\" parser (new in Docutils 0.17) is a wrapper around "
+"recommonmark."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:251
+msgid ""
+"sxw2rest_, by Trent W. Buck, converts StarOffice XML Writer (SXW) files "
+"to reStructuredText."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:256
+msgid ""
+"xml2rst_, an XSLT stylesheet written by Stefan Merten, converts XML dumps"
+" of the document tree (e.g. created with rst2xml.py) back to "
+"reStructuredText."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:262
+msgid ""
+"xhtml2rest_, written by Antonios Christofides, is a simple utility to "
+"convert XHTML to reStructuredText."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:267
+msgid ""
+"DashTable_ by Gustav Klopp converts HTML tables into reStructuredText. "
+"Colspan and Rowspan supported!"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:272
+msgid ""
+"Sphinx_ includes a `LaTeX to Rst converter "
+"<http://svn.python.org/projects/doctools/converter/>`__ in its source "
+"code (trimmed to importing the old Python docs)."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:276
+msgid ""
+"Pandoc_ can read Markdown_ and (subsets of) HTML, and LaTeX and export to"
+" (amongst others) reStructuredText."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:279
+msgid ""
+"PySource_, by Tony Ibbs, is an experimental Python source Reader. There "
+"is some related code in David Goodger's sandbox (pysource_reader_) and a "
+"`Python Source Reader`_ document."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:289
+msgid "Extensions"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:291
+msgid ""
+"Extend the reStructuredText syntax or the features of Docutils. More "
+"extensions are in the `Docutils Sandbox`_."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:294
+msgid ""
+"Beni Cherniavsky has written a generic `preprocessing module`_ for roles "
+"and/or directives and built preprocessors for TeX math for both LaTeX and"
+" HTML output on top of it."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:300
+msgid ""
+"Beni Cherniavsky maintains a Makefile_ for driving Docutils, hoping to "
+"handle everything one might do with Docutils."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:305
+msgid ""
+"The `ASCII art to SVG converter`_ (aafigure) developed by Chris Liechti "
+"can parse ASCII art images, embedded in reST documents and output an "
+"image. This would mean that simple illustrations could be embedded as "
+"ASCII art in the reST source and still look nice when converted to e.g. "
+"HTML"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:314
+msgid ""
+"Quick and easy publishing reStructuredText source files as blog posts on "
+"blogger.com is possible with `rst2blogger`_ ."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:321
+msgid "Related Applications"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:323
+msgid "Applications using docutils/reStructuredText and helper applications."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:325
+msgid "For Wikis, please see the `FAQ entry about Wikis`_."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:327
+msgid "For Blogs (Weblogs), please see the `FAQ entry about Blogs`_."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:329
+msgid ""
+"`Project Gutenberg`_ uses a customized version of Docutils with it's own "
+"xetex- and nroff-writer and epub generator."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:340
+msgid "Tools"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:342
+msgid ""
+"rstcheck_ Checks syntax of reStructuredText and code blocks nested within"
+" it. (Using the Sphinx syntax \"code-block\" for the \"code\" directive.)"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:347
+msgid "restview_ is a viewer for ReStructuredText documents."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:349
+msgid ""
+"Pass the name of a ReStructuredText document to restview, and it will "
+"launch a web server on localhost:random-port and open a web browser. It "
+"will also watch for changes in that file and automatically reload and "
+"rerender it. This is very convenient for previewing a document while "
+"you're editing it."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:359
+msgid "Development"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:361
+msgid ""
+"Sphinx_ extends the ReStructuredText syntax to better support the "
+"documentation of Software (and other) *projects* (but other documents can"
+" be written with it too)."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:365
+msgid ""
+"Since version 2.6, the `Python documentation`_ is based on "
+"reStructuredText and Sphinx."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:370
+msgid ""
+"Trac_, a project management and bug/issue tracking system, supports "
+"`using reStructuredText "
+"<http://trac.edgewall.org/wiki/WikiRestructuredText>`__ as an alternative"
+" to wiki markup."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:377
+msgid ""
+"PyLit_ provides a bidirectional text <--> code converter for *literate "
+"programming with reStructuredText*."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:384
+msgid "CMS Systems"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:386
+msgid "Plone_ and Zope_ both support reStructuredText markup."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:388
+msgid ""
+"ZReST_, by Richard Jones, is a \"ReStructuredText Document for Zope_\" "
+"application that is complete and ready to install."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:397
+msgid "Presentations"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:399
+msgid ""
+"rst2html5_ transform restructuredtext documents to html5 + twitter's "
+"bootstrap css, deck.js or reveal.js"
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:404
+msgid "landslide_ generates HTML5 slideshows from markdown, ReST, or textile."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:408
+msgid "`native support for S5 <slide-shows.s5.html>`_."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:410
+msgid ""
+"The `PythonPoint interface`_ by Richard Jones produces PDF presentations "
+"using ReportLabs' PythonPoint."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:416
+msgid ""
+"rst2beamer_ generates a LaTeX source that uses the `Beamer` document "
+"class. Can be converted to PDF slides with pdfLaTeX/XeLaTeX/LuaLaTeX."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:421
+msgid ""
+"InkSlide_ quick and easy presentations using Inkscape_. InkSlide uses "
+"reStructuredText for markup, although it renders only a subset of rst."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:427
+msgid ""
+"rst2outline_ translates a reStructuredText document to a plain text "
+"outline. This can then be transformed to PowerPoint."
+msgstr ""
+
+#: ../../docutils/docs/user/links.txt:432
+msgid "Pandoc_ can also be used to produce slides"
+msgstr ""
+

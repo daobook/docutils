@@ -1,0 +1,250 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/dev/distributing.txt:3
+msgid "Docutils_ Distributor's Guide"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:5
+msgid "Lea Wiemann"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:7
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:8
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:13
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:15
+msgid ""
+"This document describes how to create packages of Docutils (e.g. for "
+"shipping with a Linux distribution).  If you have any questions, please "
+"direct them to the Docutils-develop_ mailing list."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:19
+msgid "First, please download the most current `release tarball`_ and unpack it."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:27
+msgid "Dependencies"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:29
+msgid "Docutils has the following dependencies:"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:31
+msgid ""
+"Python 2.7 or later is required.  Use \">= Python 2.7\" in the "
+"dependencies."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:34
+msgid ""
+"Docutils may optionally make use of the PIL (`Python Imaging Library`_ or"
+" Pillow_).  If PIL is present, it is automatically detected by Docutils."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:38
+msgid ""
+"Docutils recommends the `Pygments`_ syntax hightlighter. If available, it"
+" is used for highlighting the content of `code directives`_ and roles as "
+"well as included source code files (with the \"code\" option to the "
+"include_ directive)."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:43
+msgid ""
+"Docutils can use the `recommonmark`_ parser to parse input in the "
+"Markdown format (new in 0.17)."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:57
+msgid "Python Files"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:59
+msgid ""
+"The Docutils Python files must be installed into the ``site-packages/`` "
+"directory of Python.  Running ``python setup.py install`` should do the "
+"trick, but if you want to place the files yourself, you can just install "
+"the ``docutils/`` directory of the Docutils tarball to ``/usr/lib/python"
+"/site-packages/docutils/``.  In this case you should also compile the "
+"Python files to ``.pyc`` and/or ``.pyo`` files so that Docutils doesn't "
+"need to be recompiled every time it's executed."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:70
+msgid "Executables"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:72
+msgid ""
+"The executable front-end tools are located in the ``tools/`` directory of"
+" the Docutils tarball."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:75
+msgid ""
+"The ``rst2*.py`` tools are intended for end-users. You should install "
+"them to ``/usr/bin/``.  You do not need to change the names (e.g. to "
+"``docutils-rst2html.py``) because the ``rst2`` prefix is unique."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:81
+msgid "Documentation"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:83
+msgid ""
+"The documentation should be generated using ``buildhtml.py``.  To "
+"generate HTML for all documentation files, go to the ``tools/`` directory"
+" and run::"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:91
+msgid ""
+"Then install the following files to ``/usr/share/doc/docutils/`` (or "
+"wherever you install documentation):"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:94
+msgid "All ``.html`` and ``.txt`` files in the base directory."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:96
+msgid "The ``docs/`` directory."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:98
+msgid ""
+"Do not install the contents of the ``docs/`` directory directly to "
+"``/usr/share/doc/docutils/``; it's incomplete and would contain invalid "
+"references!"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:102
+msgid "The ``licenses/`` directory."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:104
+msgid "``html4css1.css`` in the base directory."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:108
+msgid "Removing the ``.txt`` Files"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:110
+msgid ""
+"If you are tight with disk space, you can remove all ``.txt`` files in "
+"the tree except for:"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:113
+msgid ""
+"those in the ``licenses/`` directory because they have not been processed"
+" to HTML and"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:116
+msgid ""
+"``user/rst/cheatsheet.txt`` and ``user/rst/demo.txt``, which should be "
+"readable in source form."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:119
+msgid ""
+"Before you remove the ``.txt`` files you should rerun ``buildhtml.py`` "
+"with the ``--no-source-link`` switch to avoid broken references to the "
+"source files."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:125
+msgid "Other Files"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:127
+msgid ""
+"You may want to install the Emacs-Lisp files ``tools/editors/emacs/*.el``"
+" into the appropriate directory."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:132
+msgid "Configuration File"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:134
+msgid ""
+"It is possible to have a system-wide configuration file at "
+"``/etc/docutils.conf``.  However, this is usually not necessary.  You "
+"should *not* install ``tools/docutils.conf`` into ``/etc/``."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:140
+msgid "Tests"
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:142
+msgid ""
+"While you probably do not need to ship the tests with your distribution, "
+"you can test your package by installing it and then running "
+"``alltests.py`` from the ``tests/`` directory of the Docutils tarball."
+msgstr ""
+
+#: ../../docutils/docs/dev/distributing.txt:147
+msgid "For more information on testing, view the `Docutils Testing`_ page."
+msgstr ""
+

@@ -1,0 +1,283 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/dev/repository.txt:3
+msgid "The Docutils_ Version Repository"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:5
+msgid "Lea Wiemann, Docutils developers"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:7
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:8
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:13
+msgid "Quick Instructions"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:15
+msgid ""
+"To get a checkout of the Docutils source tree (with the sandboxes) with "
+"SVN_, type ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:20
+msgid "Users of Git_ can clone a mirror of the docutils repository with ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:24
+msgid ""
+"If you are going to commit changes to the repository, please read the "
+"**whole document**, especially the section \"`Information for "
+"Developers`_\"!"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:28
+msgid ""
+"Docutils uses a Subversion_ (SVN) repository located at "
+"``docutils.svn.sourceforge.net``."
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:31
+msgid ""
+"While Unix and Mac OS X users will probably prefer the standard "
+"Subversion command line interface, Windows user may want to try "
+"TortoiseSVN_, a convenient explorer extension.  The instructions apply "
+"analogously."
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:36
+msgid ""
+"There is a Git_ mirror at http://repo.or.cz/docutils.git providing `web "
+"access`_ and the base for `creating a local Git clone`_. [#github-"
+"mirrors]_"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:40
+msgid ""
+"For the project policy on repository use (check-in requirements, "
+"branching, etc.), please see the `Docutils Project Policies`__."
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:52
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:55
+msgid "Accessing the Repository"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:58
+msgid "Web Access"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:60
+msgid ""
+"The repository can be browsed and examined via the web at "
+"http://sourceforge.net/p/docutils/code."
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:63
+msgid ""
+"Alternatively, use the web interface at http://repo.or.cz/docutils.git. "
+"[#github-mirrors]_"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:66
+msgid ""
+"There are also 3rd-party mirrors and forks at GitHub, some of them "
+"orphaned. At the time of this writing (2021-11-03), https://github.com"
+"/live-clones/docutils/tree/master/docutils provides an hourly updated "
+"clone."
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:72
+msgid "Repository Access Methods"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:74
+msgid ""
+"To get a checkout, first determine the root of the repository depending "
+"on your preferred protocol:"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:80
+msgid "anonymous access: (read only)"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:78
+msgid "Subversion_: ``http://svn.code.sf.net/p/docutils/code``"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:80
+msgid "Git_: ``git://repo.or.cz/docutils.git``"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:83
+msgid "`developer access`_: (read and write)"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:83
+msgid "``svn+ssh://<USERNAME>@svn.code.sf.net/p/docutils/code``"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:86
+msgid "Checking Out the Repository"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:90
+msgid "Git_ users can clone a mirror of the docutils repository with ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:94
+msgid ""
+"and proceed according to the `Git documentation`_. Developer access (read"
+" and write) is possible with `git svn`_."
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:100
+msgid ""
+"Subversion_ users can use the following commands (substitute your "
+"preferred repository root for ROOT):"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:103
+msgid "To check out only the current main source tree of Docutils, type ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:107
+msgid ""
+"To check out everything (main tree, sandboxes, web site, and parallel "
+"projects), type ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:112
+msgid ""
+"This will create a working copy of the whole trunk in a new directory "
+"called ``docutils``."
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:115
+msgid ""
+"Note that you probably do *not* want to check out the ROOT itself "
+"(without \"/trunk\"), because then you'd end up fetching the whole "
+"Docutils tree for every branch and tag over and over again."
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:119
+msgid ""
+"To update your working copy later on, ``cd`` into the working copy and "
+"type ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:125
+msgid "Switching the Repository Root"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:127
+msgid ""
+"If you changed your mind and want to use a different repository root, "
+"``cd`` into your working copy and type::"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:136
+msgid "Information for Developers"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:138
+msgid ""
+"If you would like to have write access to the repository, register with "
+"SourceForge.net_ and send your SourceForge.net user names to docutils-"
+"develop@lists.sourceforge.net. (Note that there may be a delay of several"
+" hours until you can commit changes to the repository.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:144
+msgid "Sourceforge SVN access is documented `here`__"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:150
+msgid "Setting Up Your Subversion Client For Development"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:152
+msgid ""
+"Before committing changes to the repository, please ensure that the "
+"following lines are contained (and uncommented) in your local "
+"~/.subversion/config file, so that new files are added with the correct "
+"properties set::"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:178
+msgid "Repository Layout"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:180
+msgid "The following tree shows the repository layout::"
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:206
+msgid ""
+"The main source tree lives at ``docutils/trunk/docutils/``, next to the "
+"sandboxes (``docutils/trunk/sandbox/``) and the web site files "
+"(``docutils/trunk/web/``)."
+msgstr ""
+
+#: ../../docutils/docs/dev/repository.txt:210
+msgid ""
+"``docutils/branches/`` and ``docutils/tags/`` contain (shallow) copies of"
+" either the whole trunk or only the main source tree "
+"(``docutils/trunk/docutils``)."
+msgstr ""
+

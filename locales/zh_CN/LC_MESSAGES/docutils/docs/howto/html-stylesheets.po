@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/howto/html-stylesheets.txt:3
+msgid "Writing HTML (CSS) Stylesheets for Docutils_"
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt:5
+msgid "Lea Wiemann"
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt:7
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt:8
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt:14
+msgid ""
+"The look of Docutils' HTML output is customizable via CSS stylesheets. "
+"The default stylesheets can be found in the ``docutils/writers/html*/`` "
+"directories of the ``html4css1`` and ``html-base`` writers in the "
+"Docutils installation.  Use the front-end command (``rst2html.py`` or "
+"``rst2html5.py``) with the ``--help`` option and look at the description "
+"of the ``--stylesheet-path`` command-line option for the exact machine-"
+"specific location."
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt:22
+msgid ""
+"To customize the look of HTML documents, you can override the settings of"
+" the default stylesheet in your own stylesheet. Specify both, the default"
+" stylesheet and your stylesheet to the ``--stylesheet`` or "
+"``--stylesheet-path`` command line option (or the corresponding settings "
+"in a configuration_ file), e.g. ::"
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt:30
+msgid ""
+"This is the preferable approach if you want to embed the stylesheet(s), "
+"as this ensures that an up-to-date version of ``html4css1.css`` is "
+"embedded."
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt:33
+msgid ""
+"Alternatively, copy the default style sheet to the same place as your "
+"output HTML files will go and place a new file (e.g. called ``my-"
+"docutils.css``) in the same directory and use the following template::"
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt:54
+msgid ""
+"For help on the CSS syntax, see, e.g., the `W3C Specification`_, the "
+"`WDG's guide to Cascading Style Sheets`__, or the `MDN Web Docs`__."
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt:61
+msgid ""
+"It is important that you do not edit a copy of ``html4css1.css`` directly"
+" because ``html4css1.css`` is frequently updated with each new release of"
+" Docutils."
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt:65
+msgid ""
+"Also make sure that you import ``html4css1.css`` (using \"``@import "
+"url(html4css1.css);``\") because the definitions contained in the default"
+" stylesheet are required for correct rendering (margins, alignment, "
+"etc.)."
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt:70
+msgid ""
+"If you think your stylesheet is fancy and you would like to let others "
+"benefit from your efforts, you are encouraged to post the stylesheet to "
+"the Docutils-users_ mailing list. It might find its place in the "
+"`stylesheet collection`_ in the Docutils Sandbox_."
+msgstr ""
+
+#: ../../docutils/docs/howto/html-stylesheets.txt:75
+msgid ""
+"If you decide to share your stylesheet with other users of Docutils, "
+"please keep website-specific customizations not applicable to Docutils' "
+"HTML code in a separate stylesheet."
+msgstr ""
+

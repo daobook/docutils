@@ -1,0 +1,342 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../web/rst.txt:3
+msgid "|reStructuredText|"
+msgstr ""
+
+#: ../../web/rst.txt:235
+msgid "reStructuredText"
+msgstr ""
+
+#: ../../web/rst.txt:6
+msgid "Markup Syntax and Parser Component of Docutils_"
+msgstr ""
+
+#: ../../web/rst.txt
+msgid "Date"
+msgstr ""
+
+#: ../../web/rst.txt:8
+msgid "$Date$"
+msgstr ""
+
+#: ../../web/rst.txt:10
+msgid "\"reStructuredText\" is **ONE** word, *not two!*"
+msgstr ""
+
+#: ../../web/rst.txt:12
+msgid "目录"
+msgstr ""
+
+#: ../../web/rst.txt:14
+msgid ""
+"reStructuredText is an easy-to-read, what-you-see-is-what-you-get "
+"plaintext markup syntax and parser system.  It is useful for in-line "
+"program documentation (such as Python docstrings), for quickly creating "
+"simple web pages, and for standalone documents. reStructuredText is "
+"designed for extensibility for specific application domains.  The "
+"reStructuredText parser is a component of Docutils_.  reStructuredText is"
+" a revision and reinterpretation of the StructuredText_ and Setext_ "
+"lightweight markup systems."
+msgstr ""
+
+#: ../../web/rst.txt:23
+msgid ""
+"The primary goal of reStructuredText is to define and implement a markup "
+"syntax for use in Python docstrings and other documentation domains, that"
+" is readable and simple, yet powerful enough for non-trivial use.  The "
+"intended purpose of the markup is the conversion of reStructuredText "
+"documents into useful structured data formats."
+msgstr ""
+
+#: ../../web/rst.txt:29
+msgid ""
+"See statemachine.py_ for an example of a Python module fully documented "
+"using reStructuredText."
+msgstr ""
+
+#: ../../web/rst.txt:34
+msgid "User Documentation"
+msgstr ""
+
+#: ../../web/rst.txt:36
+msgid "`A ReStructuredText Primer`__ (HTML file, or `text source`__)."
+msgstr ""
+
+#: ../../web/rst.txt:37
+msgid "`Quick reStructuredText`__ (user reference)"
+msgstr ""
+
+#: ../../web/rst.txt:38
+msgid ""
+"`reStructuredText Cheat Sheet`__ (text only; 1 page for syntax, 1 page "
+"directive & role reference)"
+msgstr ""
+
+#: ../../web/rst.txt:41
+msgid ""
+"Users who have questions or need assistance with Docutils or "
+"reStructuredText should post a message to the Docutils-users_ mailing "
+"list."
+msgstr ""
+
+#: ../../web/rst.txt:53
+msgid "Reference Documentation"
+msgstr ""
+
+#: ../../web/rst.txt:55
+msgid ""
+"`An Introduction to reStructuredText`__ (includes the Goals__ and "
+"History__ of reStructuredText)"
+msgstr ""
+
+#: ../../web/rst.txt:57
+msgid "`reStructuredText Markup Specification`__"
+msgstr ""
+
+#: ../../web/rst.txt:58
+msgid "`reStructuredText Directives`__"
+msgstr ""
+
+#: ../../web/rst.txt:59
+msgid "`reStructuredText Interpreted Text Roles`__"
+msgstr ""
+
+#: ../../web/rst.txt:70
+msgid "Developer Documentation"
+msgstr ""
+
+#: ../../web/rst.txt:72
+msgid "`A Record of reStructuredText Syntax Alternatives`__"
+msgstr ""
+
+#: ../../web/rst.txt:73
+msgid "`Problems With StructuredText`__"
+msgstr ""
+
+#: ../../web/rst.txt:80
+msgid "How-To's"
+msgstr ""
+
+#: ../../web/rst.txt:82
+msgid "`Creating reStructuredText Directives`__"
+msgstr ""
+
+#: ../../web/rst.txt:83
+msgid "`Creating reStructuredText Interpreted Text Roles`__"
+msgstr ""
+
+#: ../../web/rst.txt:90
+msgid "Try it Online"
+msgstr ""
+
+#: ../../web/rst.txt:92
+msgid ""
+"If you want to try reStructuredText out without downloading Docutils, you"
+" can play with the \"simple online editor for reStructuredText\" on "
+"http://rst.ninjs.org/"
+msgstr ""
+
+#: ../../web/rst.txt:98
+msgid "Testimonials"
+msgstr ""
+
+#: ../../web/rst.txt:100
+msgid ""
+"The following testimonials are excerpts from unsolicited posts to mailing"
+" lists and the comp.lang.python newsgroup.  Being excerpts, there's often"
+" context missing, which sometimes tones down the message."
+msgstr ""
+
+#: ../../web/rst.txt:104
+msgid "`Ueli Schlaepfer on Doc-SIG, 2002-03-28`__:"
+msgstr ""
+
+#: ../../web/rst.txt:108
+msgid ""
+"I have adopted reST as my tool of choice for producing notes while doing "
+"lab work (mostly in a matlab environment).  Since then, the quality of "
+"such documentation has increased noticeably, mostly for two reasons:"
+msgstr ""
+
+#: ../../web/rst.txt:113
+msgid ""
+"I no longer need to switch to another tool, so the threshold has fallen "
+"to very low.  Note that \"another tool\" means Winword..."
+msgstr ""
+
+#: ../../web/rst.txt:115
+msgid ""
+"Still, I have a powerful set of markup constructs at my fingertips that "
+"let me create the kind of documents I need with more ease than any other "
+"tool I can think of."
+msgstr ""
+
+#: ../../web/rst.txt:119
+msgid ""
+"Thanks to reST/DPS [now Docutils --ed], I'll soon be able to go ahead and"
+" apply the same tools for extracting documentation out of my Python code."
+"  Hey, that's a printable and a browsable version *for free*!  "
+"Personally, I consider this a large benefit."
+msgstr ""
+
+#: ../../web/rst.txt:124
+msgid ""
+"... All essential constructs for everyday use are there, and much more if"
+" needed. ..."
+msgstr ""
+
+#: ../../web/rst.txt:127
+msgid ""
+"`Guido van Rossum, enthusiastic about PEP 287 but a bit hasty (see the "
+"follow-ups) on Python-Dev, 2002-04-02`__:"
+msgstr ""
+
+#: ../../web/rst.txt:132
+msgid ""
+"Good PEP, David!  What's the next step?  Should the processing code be "
+"incorporated in the standard library?  Should we start converting the "
+"standard library docs to reStructuredText?"
+msgstr ""
+
+#: ../../web/rst.txt:136
+msgid "`Timothy Delaney on comp.lang.python, 2002-04-03`__:"
+msgstr ""
+
+#: ../../web/rst.txt:140
+msgid ""
+"I read through all the reStructuredText docs, comparing the text versions"
+" to the html versions.  I found the text versions to be *very* easy to "
+"read, whilst making it obvious in most cases when something was "
+"\"special\"."
+msgstr ""
+
+#: ../../web/rst.txt:145
+msgid "I particularly like the system of doing hyperlinks..."
+msgstr ""
+
+#: ../../web/rst.txt:147
+msgid ""
+"Definitely +1 from me ... I would really like a standard, clean docstring"
+" format.  Might make it easier to get my next project done in Python..."
+msgstr ""
+
+#: ../../web/rst.txt:151
+msgid "`Guido van Rossum on Python-Dev, 2002-04-03`__:"
+msgstr ""
+
+#: ../../web/rst.txt:155
+msgid ""
+"I think that reStructuredText is a good format for marking up docstrings;"
+" it's probably as good as it gets given the requirements (a fairly "
+"elaborate feature set, yet more readable \"in the raw\" than HTML)."
+msgstr ""
+
+#: ../../web/rst.txt:160
+msgid "`Richard Jones on comp.lang.python, 2002-04-03`__:"
+msgstr ""
+
+#: ../../web/rst.txt:164
+msgid ""
+"How I see it is that ReST is a middle ground between markup and non-.  It"
+" has markup, and you can use it to the extreme.  Or you can follow some "
+"simple conventions (the most basic form of markup) and not worry about "
+"all the finer detail stuff. The difference between::"
+msgstr ""
+
+#: ../../web/rst.txt:172
+msgid "and::"
+msgstr ""
+
+#: ../../web/rst.txt:177
+msgid ""
+"Is pretty clearly to me that the second doesn't *look* like markup, even "
+"though it is."
+msgstr ""
+
+#: ../../web/rst.txt:180
+msgid "`Guido van Rossum on Python-Dev, 2002-04-04`__:"
+msgstr ""
+
+#: ../../web/rst.txt:184
+msgid ""
+"Structured text is really a great idea for certain situations; reST is a "
+"much better implementation of the idea than any versions I've seen "
+"before."
+msgstr ""
+
+#: ../../web/rst.txt:188
+msgid "`Max M on comp.lang.python, 2002-04-05`__:"
+msgstr ""
+
+#: ../../web/rst.txt:192
+msgid "Any programmer can learn the basics in 15 minutes or less."
+msgstr ""
+
+#: ../../web/rst.txt:194
+msgid ""
+"And it really is very very easy to write documents in it.  I do believe "
+"that if I were ever to write a book (again) I would write it in ReST."
+msgstr ""
+
+#: ../../web/rst.txt:198
+msgid ""
+"And as far as I can tell from the specs, ReST solves most of the problems"
+" I have had with structured text.  A few things gets a little more "
+"complicated and some get simpler.  All in all a good bargain."
+msgstr ""
+
+#: ../../web/rst.txt:203
+msgid "I would certainly use it.  I also hope that it gets integrated into Zope."
+msgstr ""
+
+#: ../../web/rst.txt:206
+msgid "`David Abrahams on Python-Dev, 2002-04-06`__:"
+msgstr ""
+
+#: ../../web/rst.txt:210
+msgid ""
+"Incidentally, I'm really excited about reST.  I've been looking for a "
+"tolerable markup for C++ comments, and reST looks like it might fit the "
+"bill."
+msgstr ""
+
+#: ../../web/rst.txt:214
+msgid "`Eric Jones on Python-Dev, 2002-08-01`__:"
+msgstr ""
+
+#: ../../web/rst.txt:218
+msgid ""
+"I would very much like to see reStructuredText, or some minor variation "
+"on it, move forward as a \"standard\" for doc-strings very soon.  I have "
+"long lamented not having a prescribed format *and* an associated "
+"processing tool suite included in the standard library.  Even if the "
+"format isn't perfect (I think it looks very good), it is time to pick a "
+"reasonable candidate and go."
+msgstr ""
+
+#: ../../web/rst.txt:225
+msgid ""
+"This being the Internet, there were plenty of people opposed to the idea "
+"of reStructuredText, some vehemently.  Discovering *those* gems is left "
+"as an exercise for the reader."
+msgstr ""
+

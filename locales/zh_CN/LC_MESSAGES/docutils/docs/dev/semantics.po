@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/dev/semantics.txt:3
+msgid "Docstring Semantics"
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:4
+msgid "David Goodger"
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:5
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:6
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:7
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:8
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:10
+msgid ""
+"These are notes for a possible future PEP providing the final piece of "
+"the Python docstring puzzle: docstring semantics or documentation "
+"methodology.  `PEP 257`_, Docstring Conventions, sketches out some "
+"guidelines, but does not get into methodology details."
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:15
+msgid ""
+"I haven't explored documentation methodology more because, in my opinion,"
+" it is a completely separate issue from syntax, and it's even more "
+"controversial than syntax.  Nobody wants to be told how to lay out their "
+"documentation, a la JavaDoc_.  I think the JavaDoc way is butt-ugly, but "
+"it *is* an established standard for the Java world. Any standard "
+"documentation methodology has to be formal enough to be useful but remain"
+" light enough to be usable.  If the methodology is too strict, too heavy,"
+" or too ugly, many/most will not want to use it."
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:24
+msgid ""
+"I think a standard methodology could benefit the Python community, but it"
+" would be a hard sell.  A PEP would be the place to start.  For most "
+"human-readable documentation needs, the free-form text approach is "
+"adequate.  We'd only need a formal methodology if we want to extract the "
+"parameters into a data dictionary, index, or summary of some kind."
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:32
+msgid "PythonDoc"
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:34
+msgid "(Not to be confused with Daniel Larsson's pythondoc_ project.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:36
+msgid ""
+"A Python version of the JavaDoc_ semantics (not syntax).  A set of "
+"conventions which are understood by the Docutils.  What JavaDoc has done "
+"is to establish a syntax that enables a certain documentation "
+"methodology, or standard *semantics*.  JavaDoc is not just syntax; it "
+"prescribes a methodology."
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:42
+msgid ""
+"Use field lists or definition lists for \"tagged blocks\".  By this I "
+"mean that field lists can be used similarly to JavaDoc's ``@tag`` syntax."
+"  That's actually one of the motivators behind field lists. For example, "
+"we could have::"
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:62
+msgid ""
+"This is taken straight out of docutils/statemachine.py, in which I "
+"experimented with a simple documentation methodology.  Another variation "
+"I've thought of exploits the Grouch_-compatible \"classifier\" element of"
+" definition lists.  For example::"
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:75
+msgid ""
+"Field lists could even be used in a one-to-one correspondence with "
+"JavaDoc ``@tags``, although I doubt if I'd recommend it.  Several ports "
+"of JavaDoc's ``@tag`` methodology exist in Python, most recently Ed "
+"Loper's \"epydoc_\"."
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:82
+msgid "Other Ideas"
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:84
+msgid ""
+"Can we extract comments from parsed modules?  Could be handy for "
+"documenting function/method parameters::"
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:92
+msgid "This would save having to repeat parameter names in the docstring."
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:94
+msgid ""
+"Idea from Mark Hammond's 1998-06-23 Doc-SIG post, \"Re: [Doc-SIG] "
+"Documentation tool\":"
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:97
+msgid ""
+"it would be quite hard to add a new param to this method without "
+"realising you should document it"
+msgstr ""
+
+#: ../../docutils/docs/dev/semantics.txt:100
+msgid ""
+"Frederic Giacometti's `iPhrase Python documentation conventions`_ is an "
+"attachment to his Doc-SIG post of 2001-05-30."
+msgstr ""
+

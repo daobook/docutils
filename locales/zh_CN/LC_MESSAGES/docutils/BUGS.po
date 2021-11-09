@@ -1,0 +1,345 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/BUGS.txt:3
+msgid "Docutils_ Bugs"
+msgstr ""
+
+#: ../../docutils/BUGS.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:5
+msgid "David Goodger; open to all Docutils developers"
+msgstr ""
+
+#: ../../docutils/BUGS.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:6
+msgid "goodger@python.org"
+msgstr ""
+
+#: ../../docutils/BUGS.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:7
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/BUGS.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:8
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/BUGS.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:14
+msgid ""
+"Bugs in Docutils?!?  Yes, we do have a few.  Some are old-timers that "
+"tend to stay in the shadows and don't bother anybody.  Once in a while "
+"new bugs are born.  From time to time some bugs (new and old) crawl out "
+"into the light and must be dealt with.  Icky."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:19
+msgid "This document describes how to report a bug, and lists known bugs."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:22
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:25
+msgid "How To Report A Bug"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:27
+msgid ""
+"If you think you've discovered a bug, please read through these "
+"guidelines before reporting it."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:30
+msgid "First, make sure it's a new bug:"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:32
+msgid ""
+"Please check the list of `known bugs`_ below and the `SourceForge Bug "
+"Tracker`_ to see if it has already been reported."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:35
+msgid ""
+"Are you using the very latest version of Docutils?  The bug may have "
+"already been fixed.  Please get the latest version of Docutils from the "
+"repository_ or from the current snapshot_ and check again.  Even if your "
+"bug has not been fixed, others probably have, and you're better off with "
+"the most up-to-date code."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:41
+msgid ""
+"If you don't have time to check the latest snapshot, please report the "
+"bug anyway.  We'd rather tell you that it's already fixed than miss "
+"reports of unfixed bugs."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:45
+msgid ""
+"If Docutils does not behave the way you expect, look in the "
+"documentation_ (don't forget the FAQ_!) and `mailing list archives`_ for "
+"evidence that it should behave the way you expect."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:49
+msgid "If you're not sure, please ask on the Docutils-users_ mailing list first."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:54
+msgid ""
+"If it's a new bug, the most important thing you can do is to write a "
+"simple description and a recipe that reproduces the bug.  Try to create a"
+" `minimal example`_ that demonstrates the bug.  The easier you make it to"
+" understand and track down the bug, the more likely a fix will be."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:64
+msgid ""
+"A `minimal working example` is a complete example which is as as small "
+"and simple as possible. It should be complete and working, so that"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:67
+msgid ""
+"you cannot accidentally omit information important to diagnosing the "
+"problem and"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:69
+msgid "the person responding can just copy-and-paste the code to try it out."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:71
+msgid ""
+"To construct an example which is as small as possible, the rule quite "
+"simple: *remove/leave out anything which is not necessary*."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:74
+msgid "See also: `What is a minimal working example?`__, `LaTeX FAQ`__"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:79
+msgid "Now you're ready to write the bug report.  Please include:"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:81
+msgid ""
+"A clear description of the bug.  Describe how you expected Docutils to "
+"behave, and contrast that with how it actually behaved.  While the bug "
+"may seem obvious to you, it may not be so obvious to someone else, so "
+"it's best to avoid a guessing game."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:86
+msgid "A complete description of the environment in which you reproduced the bug:"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:89
+msgid "Your operating system & version."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:90
+msgid "The version of Python (``python -V``)."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:91
+msgid ""
+"The version of Docutils (use the \"-V\" option to most Docutils front-end"
+" tools)."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:93
+msgid "Any private modifications you made to Docutils."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:94
+msgid ""
+"Anything else that could possibly be relevant.  Err on the side of too "
+"much information, rather than too little."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:97
+msgid ""
+"A literal transcript of the *exact* command you ran, and the *exact* "
+"output.  Use the \"--traceback\" option to get a complete picture."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:100
+msgid ""
+"The exact input and output files.  Create a `minimal example`_ of the "
+"failing behaviour — it is better to attach complete files to your bug "
+"report than to include just a summary or excerpt."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:104
+msgid ""
+"If you also want to include speculation as to the cause, and even a patch"
+" to fix the bug, that would be great!"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:107
+msgid ""
+"The best place to send your bug report is to the `SourceForge Bug "
+"Tracker`_.  That way, it won't be misplaced or forgotten.  In fact, an "
+"open bug report on SourceForge is a constant irritant that begs to be "
+"squashed."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:112
+msgid "Thank you!"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:114
+msgid "(This section was inspired by the `Subversion project's`__ BUGS__ file.)"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:131
+msgid "Known Bugs"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:133
+msgid "Also see the `SourceForge Bug Tracker`_."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:137
+msgid ""
+"Calling rst2s5.py with a non-existent theme (``--theme does_not_exist``) "
+"causes exceptions.  Such errors should be handled more gracefully."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:141
+msgid ""
+"The \"stylesheet\" setting (a URL, to be used verbatim) should be allowed"
+" to be combined with \"embed_stylesheet\".  The stylesheet data should be"
+" read in using urllib.  There was an assumption that a stylesheet to be "
+"embedded should exist as a file on the local system, and only the "
+"\"stylesheet_path\" setting should be used."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:147
+msgid ""
+"``utils.relative_path()`` sometimes returns absolute _`paths on Windows` "
+"(like ``C:/test/foo.css``) where it could have chosen a relative path."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:151
+msgid ""
+"Furthermore, absolute pathnames are inserted verbatim, like "
+"``href=\"C:/test/foo.css\"`` instead of "
+"``href=\"file:///C:/test/foo.css\"``."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:160
+msgid "Footnote label \"5\" should be \"4\" when processing the following input::"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:170
+msgid "Output::"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:207
+msgid ""
+"IDs are based on names.  Explicit hyperlink targets have priority over "
+"implicit targets.  But if an explicit target comes after an implicit "
+"target with the same name, the ID of the first (implicit) target remains "
+"based on the implicit name.  Since HTML fragment identifiers are based on"
+" the IDs, the first target keeps the name. For example::"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:230
+msgid ""
+"When processed to HTML, the 2 internal hyperlinks (to \"contents\" & "
+"\"section\") will work fine, but hyperlinks from outside the document "
+"using ``href=\"...#contents\"`` and ``href=\"...#section\"`` won't work. "
+"Such external links will connect to the implicit targets (table of "
+"contents and \"Section\" title) instead of the explicit targets "
+"(\"Subsection\" title and last paragraph)."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:237
+msgid ""
+"Hyperlink targets with duplicate names should be assigned new IDs "
+"unrelated to the target names (i.e., \"id\"-prefix serial IDs)."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:240
+msgid ""
+"The \"contents\" ID of the local table of contents in "
+"``test/functional/expected/standalone_rst_pseudoxml.txt`` is lost in the "
+"HTML output at "
+"``test/functional/expected/standalone_rst_html4css1.html``."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:245
+msgid ""
+"_`Blank first columns` in simple tables with explicit row separators "
+"silently swallow their input.  They should at least produce system error "
+"messages.  But, with explicit row separators, the meaning is unambiguous "
+"and ought to be supported::"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:262
+msgid ""
+"Added a commented-out test case to "
+"test/test_parsers/test_rst/test_SimpleTableParser.py."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:265
+msgid ""
+"_`Footnote references with hyperlink targets` cause a possibly invalid "
+"node tree and make the HTML writer crash::"
+msgstr ""
+
+#: ../../docutils/BUGS.txt:278
+msgid ""
+"Anonymous references have \"name\" attributes.  Should they?  Are they "
+"used?  See ``test/test_parsers/test_rst/test_inline_markup.py``."
+msgstr ""
+
+#: ../../docutils/BUGS.txt:281
+msgid ""
+"<reference> elements have a \"name\" attribute, not \"names\".  The "
+"attribute should be \"names\"; this is an inconsistency."
+msgstr ""
+

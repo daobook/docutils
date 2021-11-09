@@ -1,0 +1,3073 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/user/latex.txt:3
+msgid "Generating LaTeX with Docutils"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:5
+msgid "Engelbert Gruber, Günter Milde"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:7
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:8
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt
+msgid "Abstract"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:10
+msgid "This document covers topics specific to Docutils' LaTeX_ export."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:11
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:17 ../../docutils/docs/user/latex.txt:752
+#: ../../docutils/docs/user/latex.txt:763
+#: ../../docutils/docs/user/latex.txt:818
+msgid "LaTeX"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:19
+msgid ""
+"LaTeX__, is a document preparation system for high-quality typesetting. "
+"It is most often used for medium-to-large technical or scientific "
+"documents but it can be used for almost any form of publishing. There "
+"exists a wide selection of `LaTeX Documentation on the net`_ and `books "
+"on LaTeX and related topics`_. For an introduction to LaTeX see, e.g., "
+"`LaTeX2e for authors`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:38
+msgid "LaTeX document classes and packages"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:40
+msgid ""
+"Unlike HTML with CSS, LaTeX uses one common language for markup and style"
+" definitions. Separation of content and style is realized by collecting "
+"style definitions in LaTeX classes and packages, or the `document "
+"preamble <LaTeX preamble_>`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:45
+msgid ""
+"LaTeX document classes and packages (similar to Python modules or C "
+"libraries) provide means to extend or modify the LaTeX language by "
+"redefining macros or providing new ones."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:49
+msgid ""
+"Using the `document class`_ and `style sheet`_ configuration options, you"
+" can select from a *huge* selection of classes and packages (standard as "
+"well as user contributed) coming with your TeX distribution or available "
+"at CTAN_ as well as custom style sheets."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:58
+msgid "Docutils specific LaTeX macros"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:60
+msgid ""
+"Some Docutils objects have no LaTeX counterpart, they will be typeset "
+"using a Docutils specific LaTeX *macro* (command, environment, or length)"
+" to allow customization. By convention, special macros use the prefix "
+"``\\DU``\\ [#]_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:65
+msgid ""
+"The `docutils.sty`_ LaTeX package providing required definitions is part "
+"of Docutils ≥ 0.17 and available on CTAN since 2020-09-04. The generated "
+"LaTeX documents should be kept processable by a standard LaTeX "
+"installation. Therefore fallback definitions are included after the "
+"`custom style sheets`_, if a macro is required in the document and the "
+"`stylesheet`_ setting does not include \"docutils\"."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:72
+msgid ""
+"Custom `style sheets`_ can define alternative implementations with "
+"``\\newcommand``, ``\\newenvironment``, and ``\\newlength`` followed by "
+"``\\setlength``."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:76
+msgid ""
+"Definitions with `raw LaTeX`_ are part of the document body. Use "
+"``\\def``, ``\\renewcommand`` or ``\\renewenvironment``, and "
+"``\\setlength``."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:79
+msgid ""
+"See the test output standalone_rst_latex.tex_ for an example of the "
+"fallback definitions and their use in the document."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:82
+msgid "DU for Documentation Utilities = Docutils"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:89
+msgid "Length units"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:91
+msgid ""
+"LaTeX supports all `length units`_ defined for Docutils plus the "
+"following less common units:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt
+msgid "pt"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:94
+msgid "typewriter's (or LaTeX) point (1 pt = 1/72.27 in)"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt
+msgid "dd"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:95
+msgid "didôt (1 dd = 1238/1157 pt)"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt
+msgid "cc"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:96
+msgid "cîcero (1 cc = 12 dd)"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt
+msgid "sp"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:97
+msgid "scaled point (1sp = 1/65536pt)"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:99
+msgid "Different definitions of the unit \"pt\"!"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:101
+msgid ""
+"In Docutils (as well as CSS) the unit symbol \"pt\" denotes the "
+"`Postscript point` or `DTP point`."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:104
+#, python-format
+msgid ""
+"LaTeX uses \"pt\" for the `LaTeX point`, which is unknown to Docutils and"
+" 0.3 % smaller."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:107
+msgid "The `DTP point` is available in LaTeX as \"bp\" (big point):"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:109
+msgid "1 pt = 1/72.25 in < 1 bp  = 1/72 in"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:111
+msgid ""
+"Lengths specified in the document with unit \"pt\" will be given the unit"
+" \"bp\" in the LaTeX source."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:114
+msgid ""
+"In `raw LaTeX`_ and `custom style sheets`_, the `DTP point` must be "
+"specified as \"bp\", while \"pt\" is interpreted as `LaTeX point`."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:117
+msgid ""
+"The default length unit (added by Docutils to length specifications "
+"without unit) is the \"DTP point\"."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:124
+msgid "PDF generation"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:126
+msgid ""
+"In most cases, LaTeX code is not the desired end-format of the document. "
+"LaTeX offers many ways to generate PDF documents from the LaTeX source, "
+"including:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:133
+msgid "_`pdflatex`"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:131
+msgid ""
+"Generates a PDF document directly from the LaTeX file. Export your "
+"document with the _`LaTeX2e writer` (writer name \"``latex``\", frontend "
+"tool rst2latex.py_)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:138
+msgid "_`xelatex` or _`lualatex`"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:136
+msgid ""
+"The `XeTeX`_ and LuaTeX_ engines work with input files in UTF-8 encoding "
+"and system fonts. Export your document with the _`XeLaTeX writer` (writer"
+" name \"``xetex``\", frontend tool rst2xetex.py_)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:140
+msgid ""
+"You may need to call latex two or three times to get internal references "
+"correct."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:153
+msgid "_`rubber`"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:150
+msgid ""
+"The Rubber__ wrapper for LaTeX and friends can be used to automatically "
+"run all programs the required number of times and delete \"spurious\" "
+"files. This includes processing bibliographic references or indices, as "
+"well as compilation or conversion of figures."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:159
+msgid "Configuration"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:166
+msgid "Options/Settings"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:168
+msgid "Options can be specified as"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:170
+msgid "command-line options, or"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:172
+msgid "configuration settings."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:174
+msgid ""
+"Run ``rst2latex.py --help`` to get a list of available options; see "
+"`Docutils Configuration`_ for details."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:180
+msgid "Classes"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:182
+msgid ""
+"The `\"classes\" attribute`_ is one of the common attributes, shared by "
+"all Docutils elements. In HTML, the common use is to provide selection "
+"criteria for style rules in CSS stylesheets. As there is no comparable "
+"framework for LaTeX, Docutils emulates some of this behaviour via "
+"`Docutils specific LaTeX macros`_. Due to LaTeX limitations, class "
+"arguments are ignored for some elements (e.g. a rubric_)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:193
+#: ../../docutils/docs/user/latex.txt:209
+msgid "*Inline elements*"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:191
+msgid ""
+"are handled via the ``\\DUrole{}`` macro that calls the optional styling "
+"command ``\\DUrole«classargument»`` with one argument (the role content)."
+" See `custom interpreted text roles`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:199
+msgid "*Block level elements*"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:196
+msgid ""
+"are wrapped in \"class environments\": ``\\begin{DUclass}`` calls the "
+"optional styling command ``\\DUCLASS«classargument»{}``, "
+"``\\end{DUclass}`` tries ``\\endDUCLASS«classargument»``."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:201
+msgid "Customization is done by defining matching macros or environments."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:216
+#: ../../docutils/docs/user/latex.txt:307
+#: ../../docutils/docs/user/latex.txt:452
+#: ../../docutils/docs/user/latex.txt:512
+#: ../../docutils/docs/user/latex.txt:722
+#: ../../docutils/docs/user/latex.txt:793
+#: ../../docutils/docs/user/latex.txt:1008
+#: ../../docutils/docs/user/latex.txt:1070
+#: ../../docutils/docs/user/latex.txt:1202
+#: ../../docutils/docs/user/latex.txt:1374
+#: ../../docutils/docs/user/latex.txt:1477
+#: ../../docutils/docs/user/latex.txt:1738
+#: ../../docutils/docs/user/latex.txt:1837
+msgid "Example 1:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:204
+msgid "Use small caps font inside elements with class value \"custom\"."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:207
+msgid "The LaTeX function ``\\textsc`` sets the argument in small caps::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:216
+msgid "*Block-level elements*"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:212
+msgid ""
+"The LaTeX directive (macro without argument) ``\\scshape`` switches to "
+"the small caps font. Its effect is confined to the wrapper ``DUclass`` "
+"environment::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:226
+#: ../../docutils/docs/user/latex.txt:313
+#: ../../docutils/docs/user/latex.txt:458
+#: ../../docutils/docs/user/latex.txt:522
+#: ../../docutils/docs/user/latex.txt:730
+#: ../../docutils/docs/user/latex.txt:804
+#: ../../docutils/docs/user/latex.txt:1015
+#: ../../docutils/docs/user/latex.txt:1078
+#: ../../docutils/docs/user/latex.txt:1208
+#: ../../docutils/docs/user/latex.txt:1381
+#: ../../docutils/docs/user/latex.txt:1489
+#: ../../docutils/docs/user/latex.txt:1755
+#: ../../docutils/docs/user/latex.txt:1843
+msgid "Example 2:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:219
+msgid ""
+"It is even possible to locally redefine other LaTeX macros, e.g. to turn "
+"bullet lists with class value \"enumerateitems\" into enumerated lists::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:229
+msgid "Notes"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:230
+msgid ""
+"Class arguments may contain numbers and hyphens, which need special "
+"treatment in LaTeX command names (see `class directive`_). The commands "
+"``\\csname`` and ``\\endcsname`` or the special command ``\\@namedef`` "
+"can help with the definition of corresponding macros or environments, "
+"e.g.::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:237
+msgid "or ::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:243
+msgid ""
+"Elements can have multiple class arguments. In contrast to HTML/CSS, the "
+"order of the class arguments cannot be ignored in LaTeX"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:246
+msgid "Class handling differs for some elements and class values:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:248
+msgid ""
+"Class argument values starting with ``align-`` are transformed to "
+"\"align\" argument values. Class argument values starting with "
+"``language-`` set the elements language property."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:252
+msgid ""
+"The table element recognizes some special class values. See section "
+"`table style`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:255
+msgid ""
+"If the legacy-class-functions_ setting is True, the special macros "
+"``\\DUadmonition`` and ``\\DUtitle`` are written with a comma separated "
+"list of class values as optional argument."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:263
+msgid "LaTeX code"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:265
+msgid ""
+"Custom LaTeX code can be placed in `style sheets`_, the `LaTeX "
+"preamble`_, the document body (`raw LaTeX`_), or custom templates_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:268
+msgid "The functional tests that come with Docutils, can serve as example."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:270
+msgid "input:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:271
+msgid ""
+"standalone_rst_latex.txt_ (includes files from "
+"`tests/functional/input/data`_)"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:273
+msgid "expected output:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:273
+msgid "standalone_rst_latex.tex_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:287
+msgid "Style sheets"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:289
+msgid ""
+"A common way of LaTeX customization is the preparation of custom style "
+"sheets, either as simple files with LaTeX code snippets or as home-made "
+"`LaTeX packages`_ (see the clsguide_ for an introduction on LaTeX package"
+" writing)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:298
+#: ../../docutils/docs/user/latex.txt:602
+#: ../../docutils/docs/user/latex.txt:640
+#: ../../docutils/docs/user/latex.txt:1114
+msgid "Options:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:295
+msgid "stylesheet_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:297
+msgid ""
+"It is possible to specify multiple style sheets and mix `LaTeX packages`_"
+" with custom style sheets."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:300
+msgid ""
+"You cannot specify package options with the stylesheet_ setting. If you "
+"need to pass options to the package, use the ``\\usepackage`` command in "
+"the `LaTeX preamble`_ or a custom style sheet."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:305
+msgid "Select Latin Modern fonts with the `lmodern` package::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:310
+msgid ""
+"Use the `preamble.tex` home-made custom style sheet together with the "
+"package `kerkis` (Bookman fonts)::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:321
+#: ../../docutils/docs/user/latex.txt:467
+#: ../../docutils/docs/user/latex.txt:544
+#: ../../docutils/docs/user/latex.txt:818
+#: ../../docutils/docs/user/latex.txt:1090
+msgid "Example 3:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:316
+msgid ""
+"Select Palatino fonts with old-style numbers and true small-caps with the"
+" LaTeX command ::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:321
+msgid "in the `LaTeX preamble`_ or `custom style sheets`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:325
+msgid "Stylesheet Repository"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:324
+msgid ""
+"There is a `repository of user-contributed style sheets`_ in the Docutils"
+" Sandbox_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:336
+msgid "LaTeX preamble"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:338
+msgid ""
+"Configuration by LaTeX code in the document preamble is also possible "
+"without a separate stylesheet. This way, packages can be loaded with "
+"options or commands re-defined without the need to create a separate file"
+" (new in Docutils 0.7)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:344
+#: ../../docutils/docs/user/latex.txt:372
+#: ../../docutils/docs/user/latex.txt:588
+#: ../../docutils/docs/user/latex.txt:991
+#: ../../docutils/docs/user/latex.txt:1157
+#: ../../docutils/docs/user/latex.txt:1217
+msgid "Option:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:344
+msgid "latex-preamble_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:347
+#: ../../docutils/docs/user/latex.txt:443
+#: ../../docutils/docs/user/latex.txt:494
+#: ../../docutils/docs/user/latex.txt:566
+#: ../../docutils/docs/user/latex.txt:608
+#: ../../docutils/docs/user/latex.txt:658
+#: ../../docutils/docs/user/latex.txt:715
+#: ../../docutils/docs/user/latex.txt:994
+#: ../../docutils/docs/user/latex.txt:1178
+#: ../../docutils/docs/user/latex.txt:1443
+#: ../../docutils/docs/user/latex.txt:1501
+#: ../../docutils/docs/user/latex.txt:1576
+#: ../../docutils/docs/user/latex.txt:1601
+#: ../../docutils/docs/user/latex.txt:1714
+#: ../../docutils/docs/user/latex.txt:1767
+#: ../../docutils/docs/user/latex.txt:1830
+msgid "Default:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:347
+msgid "used for `font setup`_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:355
+#: ../../docutils/docs/user/latex.txt:382
+#: ../../docutils/docs/user/latex.txt:402
+#: ../../docutils/docs/user/latex.txt:416
+#: ../../docutils/docs/user/latex.txt:571
+#: ../../docutils/docs/user/latex.txt:614
+#: ../../docutils/docs/user/latex.txt:670
+#: ../../docutils/docs/user/latex.txt:831
+#: ../../docutils/docs/user/latex.txt:1108
+#: ../../docutils/docs/user/latex.txt:1140
+#: ../../docutils/docs/user/latex.txt:1184
+#: ../../docutils/docs/user/latex.txt:1219
+#: ../../docutils/docs/user/latex.txt:1278
+#: ../../docutils/docs/user/latex.txt:1299
+#: ../../docutils/docs/user/latex.txt:1316
+#: ../../docutils/docs/user/latex.txt:1345
+#: ../../docutils/docs/user/latex.txt:1410
+#: ../../docutils/docs/user/latex.txt:1424
+#: ../../docutils/docs/user/latex.txt:1460
+#: ../../docutils/docs/user/latex.txt:1586
+#: ../../docutils/docs/user/latex.txt:1608
+#: ../../docutils/docs/user/latex.txt:1719
+#: ../../docutils/docs/user/latex.txt:1773
+#: ../../docutils/docs/user/latex.txt:1813
+msgid "Example:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:350
+msgid ""
+"To use the better looking ``txtt`` font for monospaced text define the "
+"latex-preamble_ setting in a configuration file::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:363
+msgid "Templates"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:365
+msgid ""
+"Some customizations require commands at places other than the insertion "
+"point of stylesheets or depend on the deletion/replacement of parts of "
+"the document. This can be done via a custom template. See the `publisher "
+"documentation`_ for a description of the document parts available in a "
+"template file."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:372
+msgid "template_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:374
+msgid ""
+"In addition to the 'default.tex' template, the latex writer directory "
+"contains the alternatives 'titlepage.tex' (separate title page) and "
+"'titlingpage.tex'\" (separate title page with the `memoir`_ `document "
+"class`_)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:380
+msgid "Print a title page including docinfo, dedication, and abstract::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:388
+msgid "Raw LaTeX"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:390
+msgid ""
+"By means of the `raw directive`_ or a derived `custom role`_, one can "
+"give commands directly to LaTeX. These can be both, styling as well as "
+"printing commands."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:395
+msgid "Math formula::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:401
+msgid ""
+"(Drawback: the formula will be invisible in other output formats. Better "
+"use the `math directive`_)"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:404
+msgid ""
+"Most LaTeX code examples also work as raw LaTeX inside the document. An "
+"exception are commands that need to be given in the document preamble "
+"(e.g. package loading with ``\\usepackage``, which can be achieved with "
+"the ``--style-sheet`` or ``--latex-preamble`` command line options "
+"instead). Remember to use *re-defining* commands for customizing "
+"`Docutils specific LaTeX macros`_ with raw LaTeX."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:412
+msgid "Define the transition command as page break::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:420
+msgid "See also:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:419
+msgid "Defining a macro for a `custom role`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:420
+msgid "Forcing `page breaks`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:427
+msgid "How to configure the ..."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:430
+msgid "admonitions"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:432
+msgid ""
+"Admonitions__ are specially marked \"topics\" that can appear anywhere an"
+" ordinary body element can."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:440
+#: ../../docutils/docs/user/latex.txt:560
+#: ../../docutils/docs/user/latex.txt:655
+#: ../../docutils/docs/user/latex.txt:1172
+#: ../../docutils/docs/user/latex.txt:1308
+msgid "Environment:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:438
+msgid "``DUadmonition``"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:440
+msgid "(Command ``\\DUadmonition`` with legacy-class-functions_.)"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:443
+#, python-format
+msgid "Typeset in a frame (90 % of text width)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:445
+msgid ""
+"The admonition title is typeset with the ``\\DUtitle`` command (see "
+"`titles`_)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:448
+msgid "A lighter layout without the frame::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:455
+msgid "Print all admonitions in the margin::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:461
+msgid "Use the ``.. note::`` admonition for a margin note::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:469
+msgid ""
+"Make sure there is enough space in the margin. ``\\marginpar`` fails in "
+"some places or with some content. See also the environ_ and marginnote_ "
+"packages."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:480
+msgid "custom interpreted text roles"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:482
+msgid ""
+"The rst `role directive`_ allows defining custom `text roles`_ that mark "
+"parts of inline text (spans) with class arguments (see section classes_)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:489
+#: ../../docutils/docs/user/latex.txt:1196
+#: ../../docutils/docs/user/latex.txt:1291
+msgid "Commands:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:486
+msgid "``\\DUrole``: dispatcher command"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:488
+msgid ""
+"``\\DUrole«classargument»``: optional styling command with 1 argument "
+"(the role content)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:492
+msgid ""
+"The default definition of ``\\DUrole{«classargument»}{}`` calls the macro"
+" named ``\\DUrole«classargument»{}`` if it is defined and silently "
+"ignores this class argument if not."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:497
+msgid "Typeset text in small caps::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:503
+msgid "This is transformed to the LaTeX code::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:507
+msgid "The definition ::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:511
+msgid ""
+"as `raw LaTeX`_ or in the custom `style sheet`_ will give the expected "
+"result (if the text font_ supports small caps)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:515
+msgid "Subscript text in normal size and *italic* shape::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:519
+msgid ""
+"As \"sub\" inherits from the standard \"subscript\" role, the LaTeX macro"
+" only needs to set the size and shape::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:525
+msgid "A role with several classes and a converted class name::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:530
+msgid "is translated to the nested commands::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:534
+msgid "With the definitions::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:542
+msgid ""
+"in a `style sheet`_\\ [#]_ or as `raw LaTeX`_ in the document source, "
+"text styled with ``:custom4:`large bold small-caps``` will be typeset "
+"accordingly."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:546
+msgid ""
+"Leave out the ``\\makeatletter`` - ``\\makeatother`` pair if the style "
+"sheet is a LaTeX package (``*.sty``)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:554
+msgid "definition lists"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:556
+msgid ""
+"ReStructuredText `definition lists`__ correspond to HTML ``<dl>`` list "
+"objects."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:560
+msgid "``description``: LaTeX standard environment"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:563
+#: ../../docutils/docs/user/latex.txt:707
+#: ../../docutils/docs/user/latex.txt:1311
+#: ../../docutils/docs/user/latex.txt:1498
+#: ../../docutils/docs/user/latex.txt:1573
+#: ../../docutils/docs/user/latex.txt:1711
+#: ../../docutils/docs/user/latex.txt:1827
+msgid "Command:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:563
+msgid "``\\descriptionlabel``: styling macro for the description term"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:566
+msgid "bold label text, hanging indent"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:569
+msgid "A non-bold label can be achieved with::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:577
+msgid "document class"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:579
+msgid ""
+"There are hundreds of LaTeX document classes installed by modern LaTeX "
+"distributions, provided by publishers, or available at CTAN_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:585
+msgid "Popular document classes:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:583
+msgid "article, report, book: standard document classes"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:584
+msgid "scrartcl, scrrprt, scrbook: KOMA-script_ classes"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:585
+msgid "memoir_: highly configurable class for larger documents"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:588
+msgid "documentclass_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:596
+msgid "document info"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:598
+msgid ""
+"Content of the `bibliographic fields`__ at the top of a document. By "
+"default, docinfo items are typeset as a table."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:602
+msgid "use-latex-docinfo_, use-latex-abstract_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:605
+#: ../../docutils/docs/user/latex.txt:1175
+msgid "Length:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:605
+msgid "``\\DUdocinfowidth``: the width for the `docinfo` table."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:608
+#, python-format
+msgid "90 % of text width: ``0.9\\textwidth``"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:611
+#, python-format
+msgid "set to 70 % of text width::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:623
+msgid "document title"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:625
+msgid ""
+"A lone top-level section title is (usually) transformed to the document "
+"title (see `section structure`_)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:628
+msgid ""
+"The format of the document title is defined by the `document class`_. The"
+" \"article\" document class uses an in-page title and the \"report\" and "
+"\"book\" classes write a separate title page. See the `TeX FAQ`_ on how "
+"to customize the `style of document titles`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:633
+msgid ""
+"The default title page shows only title and subtitle, date and author are"
+" shown in the `document info`_ table."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:637
+msgid "use-latex-docinfo_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:639
+msgid ""
+"``--template=titlepage.tex`` Put docinfo and abstract into the title "
+"page. A separate title page is used also with the \"abstract\" document "
+"class."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:649
+msgid "field lists"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:651
+msgid ""
+"`Field lists`__ may be used as generic two-column table constructs in "
+"documents."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:655
+msgid "``DUfieldlist``"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:658
+msgid "Indented description list."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:661
+msgid "Use a description list customized with enumitem_::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:669
+msgid ""
+"The `KOMA-script`_ classes provide a similar environment under the name "
+"`labeling`."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:677
+msgid "figure and table captions"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:679
+msgid ""
+"The caption_ package provides many ways to customise the captions in "
+"floating environments like figure and table."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:682
+msgid ""
+"The chngcntr_ package helps to configure the numbering of figure and "
+"table caption numberings."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:685
+msgid ""
+"Some document classes (e.g. KOMA-script_) provide additional "
+"configuration. Also see the related `LaTeX FAQ entry`__"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:692
+msgid "Example"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:700
+msgid "figure placement"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:702
+msgid ""
+"Figures_ might be typeset at the place of definition (default) or "
+"\"float\" to a suitable place at the top or bottom of a page. This is "
+"implemented using the float_ package."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:707
+msgid "``\\floatplacement``"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:709
+msgid ""
+"The placement setting is valid from the point of definition until the "
+"next ``\\floatplacement`` command or the end of the document. See "
+"float.pdf_ for details."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:714
+msgid ""
+"``\\floatplacement{figure}{H}`` (here definitely). This corresponds most "
+"closely to the source and HTML placement (principle of least surprise)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:718
+msgid ""
+"In a custom `style sheet`_, set the default to let LaTeX find a suitable "
+"place for figure floats::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:725
+msgid ""
+"To move all following figures to the top or bottom of the page write in "
+"the document source::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:740
+msgid "font"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:742
+msgid ""
+"The selected text font influences the *look*, the *feel*, and the "
+"*readability* of the document (cf. http://www.csarven.ca/web-typography)."
+" Selecting a suitable font also solves the problem with `bad looking PDF "
+"output`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:748
+msgid ""
+"Font selection is one of the main differences between LaTeX and "
+"XeTeX/LuaTeX:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:751
+msgid ""
+"cannot use the fonts of the operating system directly but needs specially"
+" installed fonts with additional supporting files."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:756
+#: ../../docutils/docs/user/latex.txt:770
+#: ../../docutils/docs/user/latex.txt:831
+msgid "XeTeX/LuaTeX"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:755
+msgid ""
+"can use system fonts and provides access to the full feature set of "
+"modern OpenType_ fonts."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:760
+msgid "The default font setup is done in the latex-preamble_:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:763
+msgid "`PDF standard fonts`_ (Times, Helvetica, Courier)"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:766
+msgid ""
+"`Linux Libertine`_, a free, high quality alternative to Times with a wide"
+" coverage of glyphs, styles, and OpenType features."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:769
+msgid ""
+"Despite its name, Linux Libertine can be used on any operating system "
+"that can handle OpenType fonts."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:772
+msgid "Alternative fonts can be selected by"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:775
+msgid ""
+"specifying the corresponding LaTeX package(s) as argument to the "
+"stylesheet_ option_ or with the ``\\usepackage`` LaTeX command."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:778
+msgid "packages can be combined,"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:779
+msgid ""
+"passing options to a package is only possible in a `style sheet`_ or the "
+"`LaTeX preamble`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:782
+msgid ""
+"changing the font-default macros ``\\rmdefault``, ``\\sfdefault`` and/or "
+"``\\ttdefault`` in a custom `style sheet`_, the `LaTeX preamble`_ or `raw"
+" LaTeX`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:787
+msgid "Use `Latin Modern`_. `LaTeX code`_::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:791
+msgid "Command line argument::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:796
+msgid ""
+"The _`Times/Helvetica/Courier` `PDF standard fonts`_ are selected by the "
+"LaTeX code [#]_::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:803
+msgid ""
+"Since Docutils 0.7, this is the default value of the `latex-preamble`_ "
+"option."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:806
+msgid ""
+"When generating PDF-files from LaTeX, the `PDF standard fonts`_ do not "
+"need to be embedded in the document. While this results in smaller files,"
+" the actually used fonts on screen and in print might differ! (For "
+"details see, e.g., the testflow_ package documentation.)"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:814
+msgid ""
+"Use the teletype font from the txfonts_ package. As there is no package "
+"for this, we re-define the font macro with the `LaTeX code`_::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:821
+msgid ""
+"using the macros of the fontspec_ package. Use some font-viewer or "
+"-manager (e.g. fontmatrix_) to find out the correct names of the fonts on"
+" your system."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:826
+msgid ""
+"DejaVu_, very wide coverage, screen optimized. As this font runs wide, "
+"add ``DIV=10`` to the `documentoptions`_::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:839
+msgid "choice of suitable fonts"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:841
+msgid ""
+"High quality free fonts suitable for use with XeTeX/LuaTeX are, e.g., "
+"listed at `Good Libre Fonts`_, `25 Best Free Quality Fonts`_ and the "
+"update `19 More Free Quality Fonts`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:845
+msgid ""
+"The `LaTeX Font Catalogue`_ provides information and examples for a wide "
+"range of fonts available for use with LaTeX. Here is just a selection:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:848
+msgid ""
+"The `Latin Modern`_ (LM) fonts are extended outline versions of the "
+"standard TeX font Computer Modern (CM)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:851
+msgid "simple invocation:  ``--stylesheet=lmodern``"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:853
+msgid "keeps the traditional TeX \"look and feel\":"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:855
+msgid "generally accepted as high quality CM replacement,"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:856
+msgid "comprehensive math support,"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:857
+msgid "including optical sizes,"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:858
+msgid "compatible with extensions made to match CM,"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:859
+msgid "modern types are hard to read at low (screen) resolutions."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:861
+#: ../../docutils/docs/user/latex.txt:879
+msgid "not part of a minimal standard TeX installation"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:863
+msgid "CM-Super_ is another outline CM replacement."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:865
+msgid ""
+"simple invocation: modern LaTeX distributions use CM-Super automatically "
+"instead of CM if it is installed."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:868
+msgid "said to be of inferior quality compared to LM."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:870
+msgid ""
+"not part of a minimal standard TeX installation, bigger download size "
+"than Latin Modern (64 MB)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:873
+msgid "`Bera`_ (Bitstream Vera)"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:875
+msgid "simple invocation:  ``--stylesheet=bera``"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:877
+msgid "optimized for on-screen viewing with goot hinting"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:881
+msgid "PSNFSS_ Postscript fonts"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:883
+msgid "part of every standard TeX installation"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:885
+msgid "smaller PDF/Postscript document size if standard fonts are not embedded"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:888
+msgid "restricted set of glyphs in the free versions [#]_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:890
+msgid "different fonts for roman, sans-serif and typewriter fonts."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:892
+msgid ""
+"invocation somewhat more complex, as several packages are required for a "
+"complete font set, sometimes including package options."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:896
+msgid "Roman (serif) PSNFSS fonts:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:899
+#: ../../docutils/docs/user/latex.txt:945
+msgid "Bookman"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:899
+#: ../../docutils/docs/user/latex.txt:906
+msgid "good legibility but very wide."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:903
+#: ../../docutils/docs/user/latex.txt:950
+msgid "Charter"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:902
+msgid "bread-and-butter type optimized for printing on low-resolution printers"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:906
+#: ../../docutils/docs/user/latex.txt:947
+msgid "New Century Schoolbook"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:914
+#: ../../docutils/docs/user/latex.txt:932
+msgid "Palatino"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:909
+#: ../../docutils/docs/user/latex.txt:921
+msgid "recommended by font experts"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:910
+msgid ""
+"good LaTeX support including matching math fonts, small caps, old-style "
+"figures"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:912
+msgid ""
+"bad rendering in xpdf viewer (auto-hinting leads to different x-hight for"
+" different characters at some magnifications) (this is fixed in recent "
+"versions)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:918
+#: ../../docutils/docs/user/latex.txt:934
+msgid "Times"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:917
+msgid "the serif `PDF Standard Font`_,"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:918
+msgid "overused and quite narrow (devised for multi-column layouts)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:922
+#: ../../docutils/docs/user/latex.txt:952
+#: ../../docutils/docs/user/latex.txt:954
+msgid "Utopia"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:924
+msgid ""
+"Font packages for standard Postscript fonts          (cf. `Using common "
+"Postscript fonts with LaTeX`_)"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:928
+msgid "Package"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:928
+msgid "Roman"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:928
+msgid "Sans Serif"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:928
+msgid "Typewriter"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:928
+msgid "Math"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:930
+msgid "(none)"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:930
+msgid "CM Roman"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:930
+msgid "CM Sans Serif"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:930
+msgid "CM Typewriter"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:930
+msgid "CM Math"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:932
+msgid "mathpazo"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:934
+msgid "mathptmx"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:936
+msgid "helvet"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:936
+msgid "Helvetica"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:938
+msgid "avant"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:938
+#: ../../docutils/docs/user/latex.txt:945
+#: ../../docutils/docs/user/latex.txt:947
+msgid "Avant Garde"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:940
+msgid "courier"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:940
+#: ../../docutils/docs/user/latex.txt:945
+#: ../../docutils/docs/user/latex.txt:947
+msgid "Courier"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:942
+msgid "chancery"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:942
+msgid "Zapf Chancery"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:945
+msgid "bookman"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:947
+msgid "newcent"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:950
+msgid "charter"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:952
+msgid "utopia"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:954
+msgid "fourier"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:954
+msgid "Fourier"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:957
+msgid ""
+"Extended versions of the standard Postscript fonts including accented "
+"chars, as well as real small-caps and old-style numbers are available "
+"with the `TeX Gyre`_ bundle which is part of, e.g., `TeX Live`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:985
+msgid "font encoding"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:987
+msgid ""
+"LaTeX font encodings are described in detail in the encguide_ which is "
+"part of the LaTeX base documentation."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:991
+msgid "font-encoding_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:994
+msgid "\"T1\""
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:997
+msgid "Use the (obsolete) LaTeX default encoding \"OT1\"::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1001
+msgid "or (without loading the fontenc_ package)::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1005
+msgid ""
+"This will improve the look on screen with the default Computer Modern "
+"fonts at the expense of problems with `search and text extraction`_ The "
+"recommended way is to select a T1-encoded \"Type 1\" (vector) font, for "
+"example `Latin Modern`_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1011
+msgid ""
+"Support for characters in the Unicode blocks Latin, Latin-1 Supplement, "
+"and Greek together with a T1-encoded \"Type 1\" (vector) font, for "
+"example `Latin Modern`_::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1023
+msgid "font size"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1025
+msgid ""
+"Add font size in points to the document options, e.g. "
+"``--documentoptions=12``, use e.g. the document classes provided by "
+"extsizes_ for values other than [10,11,12]."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1033
+msgid "footnotes"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1035
+msgid ""
+"By default, footnotes are set with Docutils-specific wrappers around the "
+"standard ``\\footnotemark`` and ``\\footnotetext`` commands.  You can "
+"configure the footnote layout similar to standard LaTeX footnotes in a "
+"custom `style sheet`_ or the `LaTeX preamble`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1040
+msgid ""
+"Further configuration is possible by alternative definitions of "
+"``\\DUfootnotemark`` and ``\\DUfootnotetext``"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1044
+msgid "Set footnote text with a hanging indent."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1046
+msgid "This is the default with KOMA-script_ classes, e.g::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1050
+msgid "(for further configuration, see the `KOMA-script Guide`_),"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1052
+msgid "with package footmisc_::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1057
+msgid "(play with the ``\\footnotemargin`` setting),"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1059
+msgid "redefine ``\\DUfootnotetext`` inserting `\\hangindent`::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1070
+msgid "(adapt the ``\\hangindent`` value)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1073
+msgid "Footnote marks in normal font size, not superscript::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1078
+msgid "(See the `KOMA-script Guide`_ for details and other options.)"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1081
+msgid ""
+"Place the footnote text where it appears in the source document (instead "
+"of at the page bottom). This can be used to get the effect of endnotes "
+"(needs the hanging_ package)::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1097
+msgid "hyphenation"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1099
+msgid ""
+"The amount of hyphenation is influenced by ``\\hyphenpenalty``, setting "
+"it to 10000 almost prevents hyphenation. As this produces lines with more"
+" space between words one should increase Latex's ``\\tolerance`` for "
+"this."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1111
+msgid "hyperlinks"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1114
+msgid "hyperlink-color_, hyperref-options_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1116
+msgid ""
+"Hyperlinks are realized using the hyperref_ package. As it re-defines "
+"many standard LaTeX macros, this package is loaded last, *after* the "
+"style sheets."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1120
+msgid ""
+"However, you can load hyperref before a package that requires its "
+"presence in a `style sheet`_ or the `LaTeX preamble`_ (see example "
+"below). This will ignore options set with hyperlink-color_ and hyperref-"
+"options_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1125
+msgid ""
+"URLs are typeset with the \"url\" package (loaded implicitly by "
+"\"hyperref\"). The font of URLs can be defined with the ``\\urlstyle`` "
+"command. Valid arguments are"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt
+msgid "same"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1129
+msgid "normal text font, Docutils default,"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt
+msgid "tt"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1130
+msgid "teletype (monospaced), LaTeX default,"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt
+msgid "rm"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1131
+msgid "roman,"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt
+msgid "sf"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1132
+msgid "sans serif"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1135
+msgid ""
+"Custom loading of the hyperref package also switches to the LaTeX default"
+" (monospaced fonts for URLs). Reset to use the text font::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1142
+msgid "See also `non-breaking hyperlinks`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1149
+msgid "disable hyperlinks"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1151
+msgid ""
+"To suppress the hyper-linking completely (e.g. for printing or to avoid "
+"clashes with other packages), set hyperref-options_ to \"draft\" or load "
+"the \"nohyperref\" package that comes with the \"hyperref\" bundle."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1157
+msgid "``--hyperref-options=draft``"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1159
+#: ../../docutils/docs/user/latex.txt:1437
+msgid "`LaTeX code`_::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1167
+msgid "line blocks"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1169
+msgid "In `line blocks`__, newlines and leading whitespace are respected."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1172
+msgid "``DUlineblock``: special list environment for line blocks"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1175
+msgid "``\\DUlineblockindent``: indentation of indented lineblock parts."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1178
+msgid "2.5 times the font height: ``2.5em``"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1181
+msgid "set to the paragraph indentation::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1190
+msgid "line spacing"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1193
+msgid "``\\linespread``: for small adjustments"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1195
+msgid ""
+"``\\singlespacing``, ``\\onehalfspacing``, and ``\\doublespacing``: from "
+"package `setspace`"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1199
+msgid "Get document wide double spacing::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1205
+msgid "Increase line spacing by five percent for better readability::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1211
+msgid "literal blocks"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1213
+msgid ""
+"No markup processing is done within a `literal block`__. It is left as-"
+"is, and is typically rendered in a monospaced typeface"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1217
+msgid "literal-block-env_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1221
+msgid "``--literal-block-env=lstlisting``"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1223
+msgid ""
+"The ``lstlisting`` environment is highly configurable (as documented in "
+"listings.pdf_) and provides syntax highlight for many programming "
+"languages, for instance ::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1240
+msgid "and to get LaTeX syntax highlight for a code block with \"listings\"::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1245
+msgid "The indentation of literal blocks can be reset with ::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1249
+msgid "and/or configured with e. g.::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1260
+msgid "lists"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1262
+msgid ""
+"Remove extra vertical whitespace between items of bullet lists and "
+"enumerated lists."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1266
+msgid "Pass the class argument \"compact\" to the list::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1273
+msgid ""
+"The following lines for the `LaTeX preamble`_ use the enumitem_ package "
+"to remove spacing from all lists with class argument \"compact\"::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1281
+msgid "list of figures/tables"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1283
+msgid "Docutils does not support lists of figures or tables."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1285
+msgid ""
+"However, with LaTeX, they can be generated using `raw LaTeX`_ in the "
+"document source."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1289
+msgid "``\\listoffigures``: a list of figures"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1291
+msgid "``\\listoftables``: a list of tables"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1302
+msgid "option list"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1304
+msgid ""
+"`Option lists`__ are two-column lists of command-line options and "
+"descriptions, documenting a program's options."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1308
+msgid "``DUoptionlist``: environment for option lists,"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1311
+msgid "``\\DUoptionlistlabel``: set appearance of the options"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1314
+msgid "set command options with a bold monospace font::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1322
+msgid "page breaks"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1324
+msgid ""
+"Page breaks before top-level sections are the default with a "
+"documentclass that provides \"chapters\", e.g.  \"book\", \"memoir\" or "
+"\"scrbook\"."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1328
+msgid ""
+"Redefining the \\section or \\section* command in a style sheet is "
+"possible too."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1331
+msgid "`Raw LaTeX`_ or a `custom role`_ can be used."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1333
+msgid "The transition element can be re-defined to produce a page break,"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1338
+msgid "Commands"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1336
+msgid "``\\newpage``:  hard pagebreak at exactly this position"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1338
+msgid ""
+"``\\pagebreak[2]``: recommended page break after line end (precedence "
+"1...4)"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1341
+msgid "Define the transition command as page break with the `LaTeX code`_::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1345
+msgid "(use ``\\renewcommand`` with `raw LaTeX`_)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1348
+msgid "page layout"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1350
+msgid ""
+"By default, paper size and margin settings are determined by the document"
+" class."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1353
+msgid "The following packages help to configure the page layout:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1355
+msgid ""
+"The `typearea`_ package (part of the `KOMA-script`_ bundle) calculates a "
+"*good* page layout (based on rules and recommendations of typography "
+"experts)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1359
+msgid ""
+"See the `KOMA-Script Guide`_ for details on what is a *good* layout and "
+"how this is achieved."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1362
+msgid ""
+"The `geometry`_ package is recommended if you have to follow guidelines "
+"with fixed values for the margins. For details see the `geometry "
+"manual`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1367
+msgid ""
+"Let `typearea` determine the type area with ``DIV=calc`` in the "
+"documentoptions::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1372
+msgid ""
+"The ``DIV`` option can also be specified, like ``DIV=10``. It defines how"
+" \"crowded\" a page will be: larger values mean larger text area (at the "
+"expense of readability)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1377
+msgid "`LaTeX code`_ to set margins with the geometry_ package::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1392
+msgid "page headers and footers"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1394
+msgid ""
+"With the fancyhdr_ package or the `KOMA-script`_ classes, you can define "
+"custom page head- and foot-lines."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1397
+msgid ""
+"The `\"header\" and \"footer\" directives`_ save their content in the "
+"macros ``\\DUheader`` rsp. ``\\DUfooter``. The macros can be used in "
+"LaTeX code and will be replaced by LaTeX with the content of the "
+"directives."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1402
+msgid ""
+"`LaTeX code`_ to place left-aligned \"header\" and \"footer\" on every "
+"page with fancyhdr_::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1417
+msgid "page numbering"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1420
+msgid "Number pages by chapter (using the chappg_ package)::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1424
+msgid "See the `chappg documentation`_ for details."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1432
+msgid "paper size"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1434
+msgid ""
+"Paper geometry can be changed using ``--documentoptions`` or with the "
+"`geometry`_ package."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1443
+msgid "a4paper"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1445
+msgid "Some possibilities:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1447
+msgid "a4paper, b3paper, letterpaper, executivepaper, legalpaper"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1448
+msgid "landscape, portrait, twoside."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1451
+msgid "Choose A5 pager in landscape orientation with command line argument::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1455
+msgid "The same with LaTeX commands in the `style sheet`_::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1460
+msgid "For details see the `geometry manual`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1463
+msgid "paragraph indent"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1467
+msgid "Default (in most document classes):"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1466
+msgid ""
+"Indent the first line in a paragraph unless it is the first line of a "
+"chapter, section, subsection, or subsubsection."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1470
+msgid ""
+"To set paragraph indentation to zero but add a vertical space between "
+"load the `parskip` package with the command line argument::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1475
+msgid "or in a custom `style sheet`_ with::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1480
+msgid ""
+"To suppress the indentation of a specific paragraph, you may give it the "
+"class \"noindent\" with, e.g. ::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1487
+msgid "and define the `custom role`_ command::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1492
+msgid "rubric"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1494
+msgid ""
+"A rubric__ is like an informal heading that doesn't correspond to the "
+"document's structure."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1498
+msgid "``\\DUrubric``"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1501
+msgid "subsubsection style (unnumbered), italic"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1507
+msgid "Example1:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1504
+msgid "Set centred and red::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1510
+msgid ""
+"Class attribute values are ignored because the \"classes_ wrapper\" "
+"interferes with LaTeX's formatting (spacing/indentation) of text "
+"following a section heading. Consider using a `topic element`_ or a "
+"container_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1518
+msgid "section headings"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1520
+msgid "Options: documentclass_, use-part-section_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1522
+msgid ""
+"Section headings are converted into LaTeX macros according to their "
+"level, the document class and the value of the use-part-section_ setting:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1526
+msgid "Level"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1526
+msgid "article"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1526
+msgid "article with part"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1526
+msgid "book [#]_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1526
+msgid "book with part"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1528
+msgid "1"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1528
+#: ../../docutils/docs/user/latex.txt:1529
+#: ../../docutils/docs/user/latex.txt:1530
+msgid "section"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1528
+msgid "part"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1528
+#: ../../docutils/docs/user/latex.txt:1529
+msgid "chapter"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1529
+msgid "2"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1529
+#: ../../docutils/docs/user/latex.txt:1530
+#: ../../docutils/docs/user/latex.txt:1531
+msgid "subsection"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1530
+msgid "3"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1530
+#: ../../docutils/docs/user/latex.txt:1531
+#: ../../docutils/docs/user/latex.txt:1532
+msgid "subsubsection"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1531
+msgid "4"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1531
+#: ../../docutils/docs/user/latex.txt:1532
+#: ../../docutils/docs/user/latex.txt:1533
+msgid "paragraph"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1532
+msgid "5"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1532
+#: ../../docutils/docs/user/latex.txt:1533
+#: ../../docutils/docs/user/latex.txt:1534
+msgid "subparagraph"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1533
+msgid "6"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1533
+#: ../../docutils/docs/user/latex.txt:1534
+msgid "DUtitle"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1534
+msgid "7"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1538
+msgid ""
+"One of the document classes 'book', 'memoir', 'report 'scrbook', or "
+"'scrreprt'."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1544
+msgid "section numbering"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1546
+msgid "Sections are numbered if there is a `sectnum directive`_ in the document."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1549
+msgid "Option: sectnum_xform_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1549
+msgid "``--section-numbering``, ``--no-section-numbering``"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1551
+msgid ""
+"If sectnum_xform_ is False, section numbers are generated by LaTeX. In "
+"this case the \"prefix\" and \"suffix\" arguments of the `sectnum "
+"directive`_ are ignored. The section number style is determined by the "
+"`document class`_ and can be configured in a LaTeX `style sheet`_, e.g.::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1558
+msgid "The LaTeX name is 'secnumdepth' (without 't')."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1565
+msgid "sidebar"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1567
+msgid ""
+"Sidebars__ are like miniature, parallel documents that occur inside other"
+" documents, providing related or reference material. They can be likened "
+"to super-footnotes; their content is outside of the flow of the "
+"document's main text."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1573
+msgid "``DUsidebar``"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1576
+msgid "Box with grey background."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1579
+msgid "Use margin notes::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1583
+msgid "Make sure the margin is wide enough to hold the note."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1584
+msgid ""
+"This fails with some constructs inside the `side bar` and where "
+"\\marginpar cannot be used, e.g., inside floats, footnotes, or in frames "
+"made with the framed package (see marginnote_)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1591
+msgid "size of a pixel"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1593
+msgid ""
+"The *physical size* of a pixel depends on the resolution of the output "
+"device and is usually specified in *dots per inch* (DPI)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1596
+msgid ""
+"The *length unit* \"px\" is defined by the output format. For LaTeX, it "
+"is `defined in pdfTeX and LuaTeX`__ (the `xetex` writer emulates this "
+"definition)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1601
+msgid "72 DPI, i.e. 1 px = 1/72 in. [#]_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1604
+msgid "Set the value to match the CSS definition with the `LaTeX code`_::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1610
+msgid "The `CSS length unit ``px```_ defaults to 1/96 inch."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1618
+msgid "table style"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1620
+msgid ""
+"A pre-configured *table style* can be globally selected via the "
+"table_style_ setting or set for individual tables via a `class "
+"directive`_ or the class option of the `table directive`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1624
+msgid "Supported values:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1627
+msgid "standard"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1627
+msgid "Borders around all cells."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1630
+msgid "booktabs"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1630
+msgid "A line above and below the table and one after the head."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1633
+msgid "borderless"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1633
+msgid "No borders."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1644
+msgid "colwidths-auto"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1636
+msgid ""
+"Column width determination by LaTeX. Overridden by the `table "
+"directive`_'s \"widths\" option."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1641
+msgid "``colwidths-auto`` is only suited for tables with simple cell content."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1643
+msgid ""
+"LaTeX puts the content of auto-sized columns on one line (merging "
+"paragraphs) and may fail with complex content."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1651
+msgid ""
+"By default, *column widths* are computed from the source column widths. "
+"The `legacy_column_widths`_ setting selects the conversion algorithm. "
+"Custom column widths can be set with the \"widths\" option of the `table "
+"directive`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1656
+msgid "See also the section on problems with tables_ below."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1666
+msgid "table of contents"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1668
+msgid "A `contents directive`_ is replaced by a table of contents (ToC)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1671
+msgid "Option: use-latex-toc_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1671
+msgid "``--use-latex-toc``, ``--use-docutils-toc``"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1673
+msgid "With use-latex-toc (default since release 0.6):"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1675
+msgid "The ToC is generated by LaTeX (via the ``\\tableofcontents`` command)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1677
+msgid ""
+"The layout depends on the chosen document class and can be configured in "
+"a custom `style sheet`_ (see e.g. the `KOMA-Script Guide`_ for the `KOMA-"
+"script`_ classes)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1681
+msgid "The depth of the ToC and PDF-bookmarks can be configured"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1683
+msgid "with the \"depth\" argument of the `contents directive`_, or"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1685
+msgid "in a style sheet with e.g. ``\\setcounter{tocdepth}{5}``."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1687
+msgid ""
+"Local ToCs are done with the minitoc_ package. See the `minitoc "
+"documentation`_ for the numerous configuration options."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1691
+msgid ""
+"Minitoc supports local ToCs only at \"part\" and top section level "
+"(\"chapter\" or \"section\"). Local `contents` directives at lower levels"
+" are ignored (a warning is issued)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1695
+msgid ""
+"This is an intended feature of the minitoc_ package. If you really "
+"require local ToCs at lower level, turn off the use-latex-toc_ option."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1706
+msgid "title reference role"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1708
+msgid "`Title reference`_ is the default `default role`_ for `interpreted text`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1711
+msgid "``\\DUroletitlereference``"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1714
+msgid "use slanted font (``\\textsl``)"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1717
+msgid "set title references with a bold monospace font::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1728
+msgid "titles"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1730
+msgid ""
+"The titles of admonitions_, sidebar_, and `topic element`_ use the "
+"``\\DUtitle`` command."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1734
+msgid "a centered and somewhat larger title for topcis::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1741
+msgid "a right-pointing hand as title for the \"attention\" directive::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1748
+msgid ""
+"The title argument is \"swallowed\" by the command. To have both, hand "
+"and title use::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1758
+msgid "text encoding"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1760
+msgid ""
+"The encoding of the LaTeX source file is Docutils' *output* encoding but "
+"LaTeX' *input* encoding."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1764
+msgid "Option: output-encoding_"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1764
+msgid "``--output-encoding=OUTPUT-ENCODING``"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1767
+msgid "\"utf8\""
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1770
+msgid ""
+"Encode the LaTeX source file with the ISO `latin-1` (west european) 8-bit"
+" encoding (the default in Docutils versions up to 0.6.)::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1786
+msgid "Note:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1776
+msgid "LaTeX comes with two options for UTF-8 support,"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt
+msgid "utf8"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1778
+msgid ""
+"by the standard `inputenc`_ package with only limited coverage (mainly "
+"accented characters)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt
+msgid "utf8x"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1781
+msgid ""
+"supported by the `ucs`_ package covers a wider range of Unicode "
+"characters than does \"utf8\".  It is, however, a non-standard extension "
+"and no longer developed."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1785
+msgid ""
+"Currently (in version 0.6), \"utf8\" is used if the output-encoding is "
+"any of \"utf_8\", \"U8\", \"UTF\", or \"utf8\"."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1802
+msgid "topic element"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1804
+msgid ""
+"A topic_ is like a block quote with a title, or a self-contained section "
+"with no subsections. Topics and rubrics can be used at places where a "
+"`section title`_ is not allowed (e.g. inside a directive)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1809
+msgid "Use a standard paragraph for a topic::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1820
+msgid "transition element"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1822
+msgid ""
+"Transitions__ are commonly seen in novels and short fiction, as a gap "
+"spanning one or more lines, marking text divisions or signaling changes "
+"in subject, time, point of view, or emphasis."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1827
+msgid "``\\DUtransition``"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1830
+msgid "A horizontal line, 1/3 of text width"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1833
+msgid "Use three stars::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1837
+msgid "Alternatively use the more elaborated version in `transition-stars.sty`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1840
+msgid ""
+"If paragraphs are separated by indentation, you can simply use a vertical"
+" space::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1850
+msgid "Changes"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1852
+msgid ""
+"The Docutils HISTORY_ lists all changes during the history of docutils. "
+"Important changes are summarized in the RELEASE-NOTES_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1860
+msgid "Problems"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1863
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1866
+msgid "Bad looking PDF output"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1868
+msgid ""
+"What I am looking for when I try Docutils is if the PDF files I can get "
+"are of high quality. Unfortunately that never is the case."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1871
+msgid ""
+"So am I just stupid or is there a way to get really high quality pdf from"
+" Docutils?"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1874
+msgid "Make sure the default font is not a bitmap font."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1876
+msgid ""
+"There is `Latin Modern`_ if you like the look of the standard font on "
+"paper, but want nice pdf. Or select something else like Times, Palatino, "
+"... via configuration `options/settings`_. See font_ and font-encoding_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1882
+msgid "footnote mark and text at different pages"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1884
+msgid ""
+"Docutils stores the footnote text in a separate node, at the position "
+"where it is specified in the input document. With the default settings, "
+"the footnote is put at the bottom of the page where the footnote text is "
+"located, maybe far away from the footnote mark (see e.g. "
+"`<rst/demo.txt>`_)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1889
+msgid ""
+"To get footnote mark and text at the same page, keep footnote mark and "
+"footnote text close together."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1894
+msgid "non-breaking hyperlinks"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1896
+msgid ""
+"If you convert with ``latex`` (as opposed to ``pdflatex``), hyperlinks "
+"will not wrap and sometimes stick into the margin."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1905
+msgid "Wrong:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1904
+msgid ""
+"\"breaklinks\" is an internal option that indicates whether the chosen "
+"driver can handle split links. (It might work to *disable* link "
+"breaking.)"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1914
+msgid "Right:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1908
+msgid "Use one of the following:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1910
+msgid "compile with pdflatex_,"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1912
+msgid "use the package breakurl_,"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1914
+msgid "(for printout) `disable hyperlinks`_ using the package \"nohyperref\"."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1916
+msgid "See also the `Link text doesn’t break at end line`_ LaTeX FAQ entry."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1924
+msgid "Glyph not defined in PD1 encoding"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1926
+msgid ""
+"If a section title or other link contains non-Latin (e.g. Cyrillic) "
+"characters, the LaTeX log contains lots of warnings like::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1933
+msgid "This can be solved with the \"unicode\" hyperref_option_ setting::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1937
+msgid ""
+"(works also with non-unicode input/output encoding (e.g. \"koi8r\" or "
+"\"latin1\"). Newer versions of hyperref default to \"unicode=true\"."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1944
+msgid "image inclusion"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1946
+msgid ""
+"Images__ are included in LaTeX with the help of the `graphicx` package. "
+"The supported file formats depend on the used driver:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1949
+msgid ""
+"pdflatex_, lualatex, and xelatex_ work with PNG, JPG, or PDF, but **not "
+"EPS**."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1951
+msgid "Standard latex_ can include **only EPS** graphics, no other format."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1952
+msgid ""
+"latex + dvipdfmx works with EPS and JPG (add 'dvipdfmx' to the "
+"documentoptions_ or graphicx-option_ setting and 'bmpsize' to the "
+"stylesheet_ setting)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1956
+msgid ""
+"If PDF-image inclusion in PDF files fails, specifying ``--graphicx-"
+"option=pdftex`` might help."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1959
+msgid "For details see grfguide.pdf_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1961
+msgid "The Rubber_ wrapper can be used for automatic image conversion."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1963
+msgid ""
+"Docutils expects an URI as pointer to the image file. The latex writer "
+"transforms this URI to a local path. By default, LaTeX does not accept "
+"spaces and more than one dot in the filename. If using \"traditional\" "
+"filenames is not an option, adding grffile_ to the `style sheets`_ can "
+"help."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1977
+msgid "Why are my images too big?"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1979
+msgid "HTML-browsers use the actual screen resolution (usually around 100 DPI)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1982
+msgid "The CSS specification suggests:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1984
+msgid ""
+"It is recommended that the reference pixel be the visual angle of one "
+"pixel on a device with a pixel density of 96 DPI and a distance from the "
+"reader of an arm's length."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1993
+msgid "http://www.w3.org/TR/CSS2/syndata.html#length-units"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1990
+msgid ""
+"This is why pixmap images without size specification or objects with a "
+"size specified in ``px`` tend to come too large in the PDF."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1995
+msgid "Solution:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1994
+msgid ""
+"Specify the image size in fixed units (``pt``, ``cm``, ``in``) or "
+"configure the `size of a pixel`_ (length unit px)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:1998
+msgid "Error ``illegal unit px``"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2000
+msgid ""
+"If you convert the LaTeX source with a legacy program, you might get this"
+" error."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2003
+msgid ""
+"The unit \"px\" was introduced by the `pdfTeX` converter on 2005-02-04. "
+"`pdfTeX` is used also for conversion into DVI format in all modern LaTeX "
+"distributions (since ca. 2006)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2007
+msgid ""
+"If updating LaTeX is not an option, just remove the \"px\" from the "
+"length specification. HTML/CSS will default to \"px\" while the `latexe2`"
+" writer will add the fallback unit \"bp\"."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2012
+msgid "Error ``Symbol \\textcurrency not provided`` ..."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2014
+msgid ""
+"The currency sign (\\\\u00a4) is not supported by all fonts (some have an"
+" Euro sign at its place). You might see an error like::"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2021
+msgid "(which in case of font family \"ptm\" is a false positive). Add either"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt
+msgid "warn"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2023
+msgid "turn the error in a warning, use the default symbol (bitmap), or"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt
+msgid "force,almostfull"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2024
+msgid "use the symbol provided by the font at the users risk,"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2027
+msgid "to the document options or use a different font package."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2030
+msgid "Search and text extraction"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2032
+msgid ""
+"Search for text that contains characters outside the ASCII range (e.g. "
+"umlauts) might fail.  See font_ and `font encoding`_ (as well as "
+"`Searching PDF files`_ for background information)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2036
+msgid ""
+"It may help to load the `cmap` package (via `style sheets`_ or the custom"
+" `LaTeX preamble`_ (see also `Proper use of cmap and mmmap`_)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2045
+msgid "Unicode box drawing and block characters"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2047
+msgid "The easiest solution is to use xelatex_ for `PDF generation`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2049
+msgid "With \"traditional\" TeX engines (e.g. pdflatex_):"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2051
+msgid "Generate LaTeX code with `output-encoding`_ \"utf-8\"."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2053
+msgid ""
+"Add the pmboxdraw_ package to the `style sheets`_. (For shaded boxes also"
+" add the `color` package.)"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2056
+msgid ""
+"Unfortunately, this defines only a subset of the characters (see "
+"pmboxdraw.pdf_ for a list)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2064
+msgid "Bugs and open issues"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2066
+msgid "Open to be fixed or open to discussion."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2068
+msgid ""
+"See also the entries in the `Docutils TODO list`_, the BUGS_ "
+"documentation and the `SourceForge Bug Tracker`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2077
+msgid "Footnotes and citations"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2079
+msgid ""
+"Initially both were implemented using figure floats, because hyperlinking"
+" back and forth seemed to be impossible. Later the `figure` directive was"
+" added that puts images into figure floats."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2083
+msgid ""
+"This results in footnotes, citations, and figures possibly being mixed at"
+" page foot."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2087
+msgid "Workaround:"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2087
+msgid "Select citation handling with the use_latex_citations_ option."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2089
+msgid ""
+"If ``use-latex-citations`` is used, a bibliography is inserted right at "
+"the end of the document. *This should be customizable*."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2092
+msgid ""
+"If ``use-latex-citations`` is used adjacent citation references "
+"(separated only by a single space or a newline) are combined to a single "
+"citation group, i.e. ``[cite1]_ [cite2]_`` results in "
+"``\\cite{cite1,cite2}``. The appearance in the output can be configured "
+"in a `style sheet`_."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2101
+msgid "Tables"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2103
+msgid "Too wide tables (cf. `bug #422`_):"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2105
+msgid ""
+"Try the new_column_widths_ algorithm or use the `\"widths\" option`_ to "
+"manually set the table column widths."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2108
+msgid "Table cells with both multirow and multicolumn are currently not possible."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2114
+msgid "Figures"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2116
+msgid ""
+"Figures are always as wide as the containing text. The \"figwidth\" "
+"argument is currently not supported. As a consequence, the \"align\" "
+"argument has no effect."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2120
+msgid ""
+"Wrapping text around figures is currently not supported. (Requires the "
+"`wrapfig`_ package.)"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2127
+msgid "Miscellaneous"
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2129
+msgid ""
+"Pdfbookmark level 4 (and greater) does not work (might be settable but "
+"complicated)."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2132
+msgid ""
+"Hyperlinks are not hyphenated; this leads to bad spacing. See "
+"docs/user/rst/demo.txt 2.14 directives."
+msgstr ""
+
+#: ../../docutils/docs/user/latex.txt:2135
+msgid ""
+"Pagestyle headings does not work, when sections are starred. Use LaTeX "
+"for the section numbering with the `options/settings`_ ``--no-section-"
+"numbers`` (command line) or ``sectnum_xform: False`` (config file)."
+msgstr ""
+

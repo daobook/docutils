@@ -1,0 +1,328 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/howto/rst-roles.txt:3
+msgid "Creating reStructuredText Interpreted Text Roles"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt
+msgid "Authors"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:5
+msgid "David Goodger"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:7
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:8
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:11
+msgid ""
+"Interpreted text roles are an extension mechanism for inline markup in "
+"reStructuredText.  This document aims to make the creation of new roles "
+"as easy and understandable as possible."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:15
+msgid ""
+"Standard roles are described in `reStructuredText Interpreted Text "
+"Roles`_.  See the `Interpreted Text`_ section in the `reStructuredText "
+"Markup Specification`_ for syntax details."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:27
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:30
+msgid "Define the Role Function"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:32
+msgid ""
+"The role function creates and returns inline elements (nodes) and does "
+"any additional processing required.  Its signature is as follows::"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:43
+msgid ""
+"Function attributes are described below (see `Specify Role Function "
+"Options and Content`_).  The role function parameters are as follows:"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:46
+msgid ""
+"``name``: The local name of the interpreted role, the role name actually "
+"used in the document."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:49
+msgid ""
+"``rawtext``: A string containing the entire interpreted text input, "
+"including the role and markup.  Return it as a ``problematic`` node "
+"linked to a system message if a problem is encountered."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:53
+msgid "``text``: The interpreted text content."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:55
+msgid "``lineno``: The line number where the interpreted text begins."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:57
+msgid ""
+"``inliner``: The ``docutils.parsers.rst.states.Inliner`` object that "
+"called role_fn.  It contains the several attributes useful for error "
+"reporting and document tree access."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:61
+msgid ""
+"``options``: A dictionary of directive options for customization (from "
+"the `\"role\" directive`_), to be interpreted by the role function.  Used"
+" for additional attributes for the generated elements and other "
+"functionality."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:66
+msgid ""
+"``content``: A list of strings, the directive content for customization "
+"(from the `\"role\" directive`_).  To be interpreted by the role "
+"function."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:70
+msgid "Role functions return a tuple of two values:"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:72
+msgid ""
+"A list of nodes which will be inserted into the document tree at the "
+"point where the interpreted role was encountered (can be an empty list)."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:76
+msgid ""
+"A list of system messages, which will be inserted into the document tree "
+"immediately after the end of the current block (can also be empty)."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:81
+msgid "Specify Role Function Options and Content"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:83
+msgid ""
+"Function attributes are for customization, and are interpreted by the "
+"`\"role\" directive`_.  If unspecified, role function attributes are "
+"assumed to have the value ``None``.  Two function attributes are "
+"recognized:"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:88
+msgid ""
+"``options``: The option specification.  All role functions implicitly "
+"support the \"class\" option, unless disabled with an explicit "
+"``{'class': None}``."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:92
+msgid ""
+"An option specification must be defined detailing the options available "
+"to the \"role\" directive.  An option spec is a mapping of option name to"
+" conversion function; conversion functions are applied to each option "
+"value to check validity and convert them to the expected type.  Python's "
+"built-in conversion functions are often usable for this, such as ``int``,"
+" ``float``, and ``bool`` (included in Python from version 2.2.1).  Other "
+"useful conversion functions are included in the "
+"``docutils.parsers.rst.directives`` package. For further details, see "
+"`Creating reStructuredText Directives`_."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:102
+msgid ""
+"``content``: A boolean; true if \"role\" directive content is allowed. "
+"Role functions must handle the case where content is required but not "
+"supplied (an empty content list will be supplied)."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:106
+msgid "As of this writing, no roles accept directive content."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:108
+msgid ""
+"Note that unlike directives, the \"arguments\" function attribute is not "
+"supported for role customization.  Directive arguments are handled by the"
+" \"role\" directive itself."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:118
+msgid "Register the Role"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:120
+msgid ""
+"If the role is a general-use addition to the Docutils core, it must be "
+"registered with the parser and language mappings added:"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:123
+msgid "Register the new role using the canonical name::"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:128
+msgid ""
+"This code is normally placed immediately after the definition of the role"
+" function."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:131
+msgid ""
+"Add an entry to the ``roles`` dictionary in "
+"``docutils/parsers/rst/languages/en.py`` for the role, mapping the "
+"English name to the canonical name (both lowercase).  Usually the English"
+" name and the canonical name are the same.  Abbreviations and other "
+"aliases may also be added here."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:137
+msgid ""
+"Update all the other language modules as well.  For languages in which "
+"you are proficient, please add translations.  For other languages, add "
+"the English role name plus \"(translation required)\"."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:141
+msgid ""
+"If the role is application-specific, use the ``register_local_role`` "
+"function::"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:149
+msgid "Examples"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:151
+msgid ""
+"For the most direct and accurate information, \"Use the Source, Luke!\". "
+"All standard roles are documented in `reStructuredText Interpreted Text "
+"Roles`_, and the source code implementing them is located in the "
+"``docutils/parsers/rst/roles.py`` module.  Several representative roles "
+"are described below."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:159
+msgid "Generic Roles"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:161
+msgid ""
+"Many roles simply wrap a given element around the text.  There's a "
+"special helper function, ``register_generic_role``, which generates a "
+"role function from the canonical role name and node class::"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:167
+msgid ""
+"For the implementation of ``register_generic_role``, see the "
+"``docutils.parsers.rst.roles`` module."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:172
+msgid "RFC Reference Role"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:174
+msgid ""
+"This role allows easy references to RFCs_ (Request For Comments "
+"documents) by automatically providing the base URL, "
+"http://www.faqs.org/rfcs/, and appending the RFC document itself "
+"(rfcXXXX.html, where XXXX is the RFC number).  For example::"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:181
+msgid "This is equivalent to::"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:187
+msgid "Here is the implementation of the role::"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:210
+msgid "Noteworthy in the code above are:"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:212
+msgid ""
+"The interpreted text itself should contain the RFC number.  The ``try`` "
+"clause verifies by converting it to an integer.  If the conversion fails,"
+" the ``except`` clause is executed: a system message is generated, the "
+"entire interpreted text construct (in ``rawtext``) is wrapped in a "
+"``problematic`` node (linked to the system message), and the two are "
+"returned."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:219
+msgid ""
+"The RFC reference itself is constructed from a stock URI, set as the "
+"\"refuri\" attribute of a \"reference\" element."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-roles.txt:222
+msgid ""
+"The ``options`` function parameter, a dictionary, may contain a \"class\""
+" customization attribute; it is interpreted and replaced with a "
+"\"classes\" attribute by the ``set_classes()`` function.  The resulting "
+"\"classes\" attribute is passed through to the \"reference\" element node"
+" constructor."
+msgstr ""
+

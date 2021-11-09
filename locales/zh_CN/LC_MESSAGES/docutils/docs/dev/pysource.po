@@ -1,0 +1,261 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/dev/pysource.txt:3
+msgid "Python Source Reader"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:4
+msgid "David Goodger"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:5
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:6
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:7
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:8
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:10
+msgid ""
+"This document explores issues around extracting and processing docstrings"
+" from Python modules."
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:13
+msgid ""
+"For definitive element hierarchy details, see the \"Python Plaintext "
+"Document Interface DTD\" XML document type definition, pysource.dtd_ "
+"(which modifies the generic docutils.dtd_).  Descriptions below list 'DTD"
+" elements' (XML 'generic identifiers' or tag names) corresponding to "
+"syntax constructs."
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:21
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:24
+msgid "Model"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:26
+msgid ""
+"The Python Source Reader (\"PySource\") model that's evolving in my mind "
+"goes something like this:"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:29
+msgid ""
+"Extract the docstring/namespace [#]_ tree from the module(s) and/or "
+"package(s)."
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:32
+msgid "See `Docstring Extractor`_ below."
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:34
+msgid ""
+"Run the parser on each docstring in turn, producing a forest of doctrees "
+"(per nodes.py)."
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:37
+msgid "Join the docstring trees together into a single tree, running transforms:"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:40
+msgid "merge hyperlinks"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:41
+msgid "merge namespaces"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:42
+msgid ""
+"create various sections like \"Module Attributes\", \"Functions\", "
+"\"Classes\", \"Class Attributes\", etc.; see pysource.dtd_"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:44
+msgid "convert the above special sections to ordinary doctree nodes"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:46
+msgid ""
+"Run transforms on the combined doctree.  Examples: resolving cross-"
+"references/hyperlinks (including interpreted text on Python identifiers);"
+" footnote auto-numbering; first field list -> bibliographic elements."
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:51
+msgid "(Or should step 4's transforms come before step 3?)"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:53
+msgid "Pass the resulting unified tree to the writer/builder."
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:55
+msgid ""
+"I've had trouble reconciling the roles of input parser and output writer "
+"with the idea of modes (\"readers\" or \"directors\").  Does the mode "
+"govern the transformation of the input, the output, or both? Perhaps the "
+"mode should be split into two."
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:60
+msgid ""
+"For example, say the source of our input is a Python module.  Our \"input"
+" mode\" should be the \"Python Source Reader\".  It discovers (from "
+"``__docformat__``) that the input parser is \"reStructuredText\".  If we "
+"want HTML, we'll specify the \"HTML\" output formatter.  But there's a "
+"piece missing.  What *kind* or *style* of HTML output do we want? PyDoc-"
+"style, LibRefMan style, etc.  (many people will want to specify and "
+"control their own style).  Is the output style specific to a particular "
+"output format (XML, HTML, etc.)?  Is the style specific to the input "
+"mode?  Or can/should they be independent?"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:70
+msgid ""
+"I envision interaction between the input parser, an \"input mode\" , and "
+"the output formatter.  The same intermediate data format would be used "
+"between each of these, being transformed as it progresses."
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:76
+msgid "Docstring Extractor"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:78
+msgid ""
+"We need code that scans a parsed Python module, and returns an ordered "
+"tree containing the names, docstrings (including attribute and additional"
+" docstrings), and additional info (in parentheses below) of all of the "
+"following objects:"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:83
+msgid "packages"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:84
+msgid "modules"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:85
+msgid "module attributes (+ values)"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:86
+msgid "classes (+ inheritance)"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:87
+msgid "class attributes (+ values)"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:88
+msgid "instance attributes (+ values)"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:89
+msgid "methods (+ formal parameters & defaults)"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:90
+msgid "functions (+ formal parameters & defaults)"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:92
+msgid ""
+"(Extract comments too?  For example, comments at the start of a module "
+"would be a good place for bibliographic field lists.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:95
+msgid ""
+"In order to evaluate interpreted text cross-references, namespaces for "
+"each of the above will also be required."
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:98
+msgid ""
+"See python-dev/docstring-develop thread \"AST mining\", started on "
+"2001-08-14."
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:103
+msgid "Interpreted Text"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:105
+msgid ""
+"DTD elements: package, module, class, method, function, module_attribute,"
+" class_attribute, instance_attribute, variable, parameter, type, "
+"exception_class, warning_class."
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:109
+msgid ""
+"To classify identifiers explicitly, the role is given along with the "
+"identifier in either prefix or suffix form::"
+msgstr ""
+
+#: ../../docutils/docs/dev/pysource.txt:115
+msgid ""
+"The role may be one of 'package', 'module', 'class', 'method', "
+"'function', 'module_attribute', 'class_attribute', 'instance_attribute', "
+"'variable', 'parameter', 'type', 'exception_class', 'exception', "
+"'warning_class', or 'warning'.  Other roles may be defined."
+msgstr ""
+

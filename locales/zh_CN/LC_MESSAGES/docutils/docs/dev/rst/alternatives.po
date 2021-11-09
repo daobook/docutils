@@ -1,0 +1,3790 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3
+msgid "A Record of reStructuredText Syntax Alternatives"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:5
+msgid "David Goodger"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:7
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:8
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:11
+msgid ""
+"The following are ideas, alternatives, and justifications that were "
+"considered for reStructuredText syntax, which did not originate with "
+"Setext_ or StructuredText_.  For an analysis of constructs which *did* "
+"originate with StructuredText or Setext, please see `Problems With "
+"StructuredText`_.  See the `reStructuredText Markup Specification`_ for "
+"full details of the established syntax."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:18
+msgid "The ideas are divided into sections:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:20
+msgid ""
+"Implemented_: already done.  The issues and alternatives are recorded "
+"here for posterity."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:23
+msgid "`Not Implemented`_: these ideas won't be implemented."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:25
+msgid "Tabled_: these ideas should be revisited in the future."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:27
+msgid ""
+"`To Do`_: these ideas should be implemented.  They're just waiting for a "
+"champion to resolve issues and get them done."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:30
+msgid ""
+"`... Or Not To Do?`_: possible but questionable.  These probably won't be"
+" implemented, but you never know."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:41
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:45
+msgid "Implemented"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:48
+msgid "Field Lists"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:50
+msgid ""
+"Prior to the syntax for field lists being finalized, several alternatives"
+" were proposed."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:53
+msgid "Unadorned RFC822_ everywhere::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:58
+msgid ""
+"Advantages: clean, precedent (RFC822-compliant).  Disadvantage: ambiguous"
+" (these paragraphs are a prime example)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:61
+#: ../../docutils/docs/dev/rst/alternatives.txt:108
+msgid "Conclusion: rejected."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:63
+msgid ""
+"Special case: use unadorned RFC822_ for the very first or very last text "
+"block of a document::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:73
+msgid ""
+"Advantages: clean, precedent (RFC822-compliant).  Disadvantages: special "
+"case, flat (unnested) field lists only, still ambiguous::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:83
+msgid ""
+"Conclusion: rejected for the general case, accepted for specific contexts"
+" (PEPs, email)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:86
+msgid "Use a directive::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:93
+msgid ""
+"Advantages: explicit and unambiguous, RFC822-compliant. Disadvantage: "
+"cumbersome."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:96
+msgid ""
+"Conclusion: rejected for the general case (but such a directive could "
+"certainly be written)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:99
+msgid "Use Javadoc-style::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:105
+msgid ""
+"Advantages: unambiguous, precedent, flexible.  Disadvantages: non-"
+"intuitive, ugly, not RFC822-compliant."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:110
+msgid "Use leading colons::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:115
+msgid ""
+"Advantages: unambiguous, obvious (*almost* RFC822-compliant), flexible, "
+"perhaps even elegant.  Disadvantages: no precedent, not quite "
+"RFC822-compliant."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:119
+msgid "Conclusion: accepted!"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:121
+msgid "Use double colons::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:126
+msgid ""
+"Advantages: unambiguous, obvious? (*almost* RFC822-compliant), flexible, "
+"similar to syntax already used for literal blocks and directives.  "
+"Disadvantages: no precedent, not quite RFC822-compliant, similar to "
+"syntax already used for literal blocks and directives."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:132
+msgid "Conclusion: rejected because of the syntax similarity & conflicts."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:134
+msgid ""
+"Why is RFC822 compliance important?  It's a universal Internet standard, "
+"and super obvious.  Also, I'd like to support the PEP format (ulterior "
+"motive: get PEPs to use reStructuredText as their standard). But it "
+"*would* be easy to get used to an alternative (easy even to convert PEPs;"
+" probably harder to convert python-deviants ;-)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:140
+msgid ""
+"Unfortunately, without well-defined context (such as in email headers: "
+"RFC822 only applies before any blank lines), the RFC822 format is "
+"ambiguous.  It is very common in ordinary text.  To implement field lists"
+" unambiguously, we need explicit syntax."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:145
+msgid "The following question was posed in a footnote:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:147
+msgid ""
+"Should \"bibliographic field lists\" be defined at the parser level, or "
+"at the DPS transformation level?  In other words, are they "
+"reStructuredText-specific, or would they also be applicable to another "
+"(many/every other?) syntax?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:152
+msgid ""
+"The answer is that bibliographic fields are a reStructuredText-specific "
+"markup convention.  Other syntaxes may implement the bibliographic "
+"elements explicitly.  For example, there would be no need for such a "
+"transformation for an XML-based markup syntax."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:162
+msgid "Interpreted Text \"Roles\""
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:164
+msgid ""
+"The original purpose of interpreted text was as a mechanism for "
+"descriptive markup, to describe the nature or role of a word or phrase.  "
+"For example, in XML we could say \"<function>len</function>\" to mark up "
+"\"len\" as a function.  It is envisaged that within Python docstrings "
+"(inline documentation in Python module source files, the primary market "
+"for reStructuredText) the role of a piece of interpreted text can be "
+"inferred implicitly from the context of the docstring within the program "
+"source.  For other applications, however, the role may have to be "
+"indicated explicitly."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:174
+msgid "Interpreted text is enclosed in single backquotes (`)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:176
+msgid ""
+"Initially, it was proposed that an explicit role could be indicated as a "
+"word or phrase within the enclosing backquotes:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:179
+msgid "As a prefix, separated by a colon and whitespace::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:183
+msgid "As a suffix, separated by whitespace and a colon::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:187
+msgid "There are problems with the initial approach:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:189
+msgid ""
+"There could be ambiguity with interpreted text containing colons. For "
+"example, an index entry of \"Mission: Impossible\" would require a "
+"backslash-escaped colon."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:193
+msgid ""
+"The explicit role is descriptive markup, not content, and will not be "
+"visible in the processed output.  Putting it inside the backquotes "
+"doesn't feel right; the *role* isn't being quoted."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:197
+msgid "Tony Ibbs suggested that the role be placed outside the backquotes::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:202
+msgid ""
+"This removes the embedded-colons ambiguity, but limits the role "
+"identifier to be a single word (whitespace would be illegal). Since roles"
+" are not meant to be visible after processing, the lack of whitespace "
+"support is not important."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:207
+msgid ""
+"The suggested syntax remains ambiguous with respect to ratios and some "
+"writing styles.  For example, suppose there is a \"signal\" identifier, "
+"and we write::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:213
+msgid "\"noise\" looks like a role."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:215
+msgid "As an improvement on #2, we can bracket the role with colons::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:219
+msgid ""
+"This syntax is similar to that of field lists, which is fine since both "
+"are doing similar things: describing."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:222
+msgid "This is the syntax chosen for reStructuredText."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:224
+msgid "Another alternative is two colons instead of one::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:228
+msgid "But this is used for analogies (\"A:B::C:D\": \"A is to B as C is to D\")."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:231
+msgid ""
+"Both alternative #2 and #4 lack delimiters on both sides of the role, "
+"making it difficult to parse (by the reader)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:234
+msgid "Some kind of bracketing could be used:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:236
+msgid "Parentheses::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:240
+msgid "Braces::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:244
+msgid "Square brackets::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:248
+msgid "Angle brackets::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:252
+msgid ""
+"(The overlap of \\*ML tags with angle brackets would be too confusing and"
+" precludes their use.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:255
+msgid "Syntax #3 was chosen for reStructuredText."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:259
+msgid "Comments"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:261
+msgid ""
+"A problem with comments (actually, with all indented constructs) is that "
+"they cannot be followed by an indented block -- a block quote -- without "
+"swallowing it up."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:265
+msgid ""
+"I thought that perhaps comments should be one-liners only.  But would "
+"this mean that footnotes, hyperlink targets, and directives must then "
+"also be one-liners?  Not a good solution."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:269
+msgid ""
+"Tony Ibbs suggested a \"comment\" directive.  I added that we could limit"
+" a comment to a single text block, and that a \"multi-block comment\" "
+"could use \"comment-start\" and \"comment-end\" directives.  This would "
+"remove the indentation incompatibility.  A \"comment\" directive "
+"automatically suggests \"footnote\" and (hyperlink) \"target\" directives"
+" as well.  This could go on forever!  Bad choice."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:276
+msgid ""
+"Garth Kidd suggested that an \"empty comment\", a \"..\" explicit markup "
+"start with nothing on the first line (except possibly whitespace) and a "
+"blank line immediately following, could serve as an \"unindent\".  An "
+"empty comment does **not** swallow up indented blocks following it, so "
+"block quotes are safe.  \"A tiny but practical wart.\"  Accepted."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:284
+msgid "Anonymous Hyperlinks"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:286
+msgid "Alan Jaffray came up with this idea, along with the following syntax::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:292
+msgid ""
+"The idea is sound and useful.  I suggested a \"double underscore\" "
+"syntax::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:299
+msgid ""
+"But perhaps single underscores are okay?  The syntax looks better, but "
+"the hyperlink itself doesn't explicitly say \"anonymous\"::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:306
+msgid ""
+"Mixing anonymous and named hyperlinks becomes confusing.  The order of "
+"targets is not significant for named hyperlinks, but it is for anonymous "
+"hyperlinks::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:316
+msgid ""
+"Without the extra syntax of double underscores, determining which "
+"hyperlink references are anonymous may be difficult.  We'd have to check "
+"which references don't have corresponding targets, and match those up "
+"with anonymous targets.  Keeping to a simple consistent ordering (as with"
+" auto-numbered footnotes) seems simplest."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:322
+msgid ""
+"reStructuredText will use the explicit double-underscore syntax for "
+"anonymous hyperlinks.  An alternative (see `Reworking Explicit Markup "
+"(Round 1)`_ below) for the somewhat awkward \".. __:\" syntax is \"__\"::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:332
+msgid "Reworking Explicit Markup (Round 1)"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:334
+msgid ""
+"Alan Jaffray came up with the idea of `anonymous hyperlinks`_, added to "
+"reStructuredText.  Subsequently it was asserted that hyperlinks "
+"(especially anonymous hyperlinks) would play an increasingly important "
+"role in reStructuredText documents, and therefore they require a simpler "
+"and more concise syntax.  This prompted a review of the current and "
+"proposed explicit markup syntaxes with regards to improving usability."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:342
+msgid "Original syntax::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:356
+msgid "The comment text was intentionally made to look like a hyperlink target."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:359
+msgid "Origins:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:361
+msgid ""
+"Except for the colon (a delimiter necessary to allow for phrase-links), "
+"hyperlink target ``.. _blah:`` comes from Setext."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:363
+msgid "Comment syntax from Setext."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:364
+msgid "Footnote syntax from StructuredText (\"named links\")."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:365
+msgid "Directives and anonymous hyperlinks original to reStructuredText."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:367
+#: ../../docutils/docs/dev/rst/alternatives.txt:393
+#: ../../docutils/docs/dev/rst/alternatives.txt:424
+#: ../../docutils/docs/dev/rst/alternatives.txt:836
+#: ../../docutils/docs/dev/rst/alternatives.txt:860
+#: ../../docutils/docs/dev/rst/alternatives.txt:888
+#: ../../docutils/docs/dev/rst/alternatives.txt:920
+#: ../../docutils/docs/dev/rst/alternatives.txt:967
+msgid "Advantages:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:369
+msgid "Consistent explicit markup indicator: \"..\"."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:370
+msgid "Consistent hyperlink syntax: \".. _\" & \":\"."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:372
+#: ../../docutils/docs/dev/rst/alternatives.txt:398
+#: ../../docutils/docs/dev/rst/alternatives.txt:431
+#: ../../docutils/docs/dev/rst/alternatives.txt:473
+#: ../../docutils/docs/dev/rst/alternatives.txt:843
+#: ../../docutils/docs/dev/rst/alternatives.txt:865
+#: ../../docutils/docs/dev/rst/alternatives.txt:892
+#: ../../docutils/docs/dev/rst/alternatives.txt:924
+#: ../../docutils/docs/dev/rst/alternatives.txt:982
+msgid "Disadvantages:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:374
+msgid "Anonymous target markup is awkward: \".. __:\"."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:375
+msgid "The explicit markup indicator (\"..\") is excessively overloaded?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:376
+msgid ""
+"Comment text is limited (can't look like a footnote, hyperlink, or "
+"directive).  But this is probably not important."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:379
+msgid "Alan Jaffray's proposed syntax #1::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:391
+msgid "The hyperlink-connoted underscores have become first-level syntax."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:395
+#: ../../docutils/docs/dev/rst/alternatives.txt:471
+msgid "Anonymous targets are simpler."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:396
+msgid "All hyperlink targets are one character shorter."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:400
+msgid ""
+"Inconsistent internal hyperlink targets.  Unlike all other named "
+"hyperlink targets, there's no colon.  There's an extra leading "
+"underscore, but we can't drop it because without it, \"blah\" looks like "
+"a relative URI.  Unless we restore the colon::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:407
+msgid "Obtrusive markup?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:409
+msgid "Alan Jaffray's proposed syntax #2::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:421
+msgid ""
+"Leading underscores have been (almost) replaced by \"..\", while comments"
+" and directives have gained their own syntax."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:426
+msgid "Anonymous hyperlinks are simpler."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:427
+msgid ""
+"Unique syntax for comments.  Connotation of \"comment\" from some "
+"programming languages (including our favorite)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:429
+msgid "Unique syntax for directives.  Connotation of \"action!\"."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:433
+msgid ""
+"Inconsistent internal hyperlink targets.  Again, unlike all other named "
+"hyperlink targets, there's no colon.  There's a leading underscore, "
+"matching the trailing underscores of references, which no other hyperlink"
+" targets have.  We can't drop that one leading underscore though: without"
+" it, \"blah\" looks like a relative URI.  Again, unless we restore the "
+"colon::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:442
+msgid ""
+"All (except for internal) hyperlink targets lack their leading "
+"underscores, losing the \"hyperlink\" connotation."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:445
+msgid "Obtrusive syntax for comments.  Alternatives::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:452
+msgid "Iffy syntax for directives.  Alternatives?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:454
+msgid "Tony Ibbs' proposed syntax::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:466
+msgid ""
+"This is the same as the current syntax, except for anonymous targets "
+"which drop their \"__: \"."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:469
+msgid "Advantage:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:475
+msgid ""
+"Anonymous targets lack their leading underscores, losing the "
+"\"hyperlink\" connotation."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:477
+msgid ""
+"Anonymous targets are almost indistinguishable from comments. (Better to "
+"know \"up front\".)"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:480
+msgid ""
+"David Goodger's proposed syntax: Perhaps going back to one of Alan's "
+"earlier suggestions might be the best solution.  How about simply adding "
+"\"__ \" as a synonym for \".. __: \" in the original syntax?  These would"
+" become equivalent::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:493
+msgid "Alternative 5 has been adopted."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:497
+msgid "Backquotes in Phrase-Links"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:499
+msgid "[From a 2001-06-05 Doc-SIG post in reply to questions from Doug Hellmann.]"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:502
+msgid ""
+"The first draft of the spec, posted to the Doc-SIG in November 2000, used"
+" square brackets for phrase-links.  I changed my mind because:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:505
+msgid ""
+"In the first draft, I had already decided on single-backquotes for inline"
+" literal text."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:508
+msgid ""
+"However, I wanted to minimize the necessity for backslash escapes, for "
+"example when quoting Python repr-equivalent syntax that uses backquotes."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:512
+msgid ""
+"The processing of identifiers (function/method/attribute/module etc. "
+"names) into hyperlinks is a useful feature.  PyDoc recognizes identifiers"
+" heuristically, but it doesn't take much imagination to come up with "
+"counter-examples where PyDoc's heuristics would result in embarrassing "
+"failure.  I wanted to do it deterministically, and that called for "
+"syntax.  I called this construct \"interpreted text\"."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:520
+msgid ""
+"Leveraging off the ``*emphasis*/**strong**`` syntax, lead to the idea of "
+"using double-backquotes as syntax."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:523
+msgid "I worked out some rules for inline markup recognition."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:525
+msgid ""
+"In combination with #5, double backquotes lent themselves to inline "
+"literals, neatly satisfying #2, minimizing backslash escapes.  In fact, "
+"the spec says that no interpretation of any kind is done within double-"
+"backquote inline literal text; backslashes do *no* escaping within "
+"literal text."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:531
+msgid "Single backquotes are then freed up for interpreted text."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:533
+msgid "I already had square brackets required for footnote references."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:535
+msgid ""
+"Since interpreted text will typically turn into hyperlinks, it was a "
+"natural fit to use backquotes as the phrase-quoting syntax for trailing-"
+"underscore hyperlinks."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:539
+msgid ""
+"The original inspiration for the trailing underscore hyperlink syntax was"
+" Setext.  But for phrases Setext used a very cumbersome "
+"``underscores_between_words_like_this_`` syntax."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:543
+msgid ""
+"The underscores can be viewed as if they were right-pointing arrows: "
+"``-->``.  So ``hyperlink_`` points away from the reference, and ``.. "
+"_hyperlink:`` points toward the target."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:549
+msgid "Substitution Mechanism"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:551
+msgid ""
+"Substitutions arose out of a Doc-SIG thread begun on 2001-10-28 by Alan "
+"Jaffray, \"reStructuredText inline markup\".  It reminded me of a missing"
+" piece of the reStructuredText puzzle, first referred to in my "
+"contribution to \"Documentation markup & processing / PEPs\" (Doc-SIG "
+"2001-06-21)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:557
+msgid ""
+"Substitutions allow the power and flexibility of directives to be shared "
+"by inline text.  They are a way to allow arbitrarily complex inline "
+"objects, while keeping the details out of the flow of text. They are the "
+"equivalent of SGML/XML's named entities.  For example, an inline image "
+"(using reference syntax alternative 4d (vertical bars) and definition "
+"alternative 3, the alternatives chosen for inclusion in the spec)::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:571
+msgid ""
+"The ``|biohazard|`` substitution reference will be replaced in-line by "
+"whatever the ``.. |biohazard|`` substitution definition generates (in "
+"this case, an image).  A substitution definition contains the "
+"substitution text bracketed with vertical bars, followed by a an embedded"
+" inline-compatible directive, such as \"image\".  A transform is required"
+" to complete the substitution."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:578
+msgid "Syntax alternatives for the reference:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:580
+msgid ""
+"Use the existing interpreted text syntax, with a predefined role such as "
+"\"sub\"::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:585
+msgid "Advantages: existing syntax, explicit.  Disadvantages: verbose, obtrusive."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:588
+msgid ""
+"Use a variant of the interpreted text syntax, with a new suffix akin to "
+"the underscore in phrase-link references::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:600
+msgid ""
+"Due to incompatibility with other constructs and ordinary text usage, (f)"
+" and (g) are not possible."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:603
+msgid "Use interpreted text syntax with a fixed internal format::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:619
+msgid ""
+"To avoid ML confusion (k) and (l) are definitely out.  Square brackets "
+"(j) won't work in the target (the substitution definition would be "
+"indistinguishable from a footnote)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:623
+msgid ""
+"The ```/name/``` syntax (g) is reminiscent of \"s/find/sub\" substitution"
+" syntax in ed-like languages.  However, it may have a misleading "
+"association with regexps, and looks like an absolute POSIX path.  (i) is "
+"visually equivalent and lacking the connotations."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:629
+msgid ""
+"A disadvantage of all of these is that they limit interpreted text, "
+"albeit only slightly."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:632
+msgid "Use specialized syntax, something new::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:649
+msgid ""
+"\"#\" (a) and \"@\" (b) are obtrusive.  \"/\" (c) without backquotes "
+"looks just like a POSIX path; it is likely for such usage to appear in "
+"text."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:653
+msgid "\"|\" (d) and \"^\" (h) are feasible."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:655
+msgid ""
+"Redefine the trailing underscore syntax.  See definition syntax "
+"alternative 4, below."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:658
+msgid "Syntax alternatives for the definition:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:660
+msgid ""
+"Use the existing directive syntax, with a predefined directive such as "
+"\"sub\".  It contains a further embedded directive resolving to an "
+"inline-compatible object::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:672
+msgid "The advantages and disadvantages are the same as in inline alternative 1."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:675
+msgid "Use syntax as in #1, but with an embedded directivecompressed::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:680
+msgid "This is a bit better than alternative 1, but still too much."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:682
+msgid ""
+"Use a variant of directive syntax, incorporating the substitution text, "
+"obviating the need for a special \"sub\" directive name.  If we assume "
+"reference alternative 4d (vertical bars), the matching definition would "
+"look like this::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:690
+msgid "(Suggested by Alan Jaffray on Doc-SIG from 2001-11-06.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:692
+msgid ""
+"Instead of adding new syntax, redefine the trailing underscore syntax to "
+"mean \"substitution reference\" instead of \"hyperlink reference\".  "
+"Alan's example::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:701
+msgid ""
+"A problem with the proposed syntax is that URIs which look like simple "
+"reference names (alphanum plus \".\", \"-\", \"_\") would be "
+"indistinguishable from substitution directive names.  A more consistent "
+"syntax would be::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:711
+msgid "(``::`` after ``.. _Jonathan: lj``.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:713
+msgid ""
+"The \"Zope\" target is a simple external hyperlink, but the \"Jonathan\" "
+"target contains a directive.  Alan proposed is that the reference text be"
+" replaced by whatever the referenced directive (the \"directive target\")"
+" produces.  A directive reference becomes a hyperlink reference if the "
+"contents of the directive target resolve to a hyperlink.  If the "
+"directive target resolves to an icon, the reference is replaced by an "
+"inline icon.  If the directive target resolves to a hyperlink, the "
+"directive reference becomes a hyperlink reference."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:723
+msgid "This seems too indirect and complicated for easy comprehension."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:725
+msgid ""
+"The reference in the text will sometimes become a link, sometimes not.  "
+"Sometimes the reference text will remain, sometimes not.  We don't know "
+"*at the reference*::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:732
+msgid "That's a problem."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:734
+msgid ""
+"The syntax that has been incorporated into the spec and parser is "
+"reference alternative 4d with definition alternative 3::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:742
+msgid ""
+"We can also combine substitution references with hyperlink references, by"
+" appending a \"_\" (named hyperlink reference) or \"__\" (anonymous "
+"hyperlink reference) suffix to the substitution reference.  This allows "
+"us to click on an image-link::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:753
+msgid ""
+"There have been several suggestions for the naming of these constructs, "
+"originally called \"substitution references\" and \"substitutions\"."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:757
+msgid "Candidate names for the reference construct:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:759
+msgid "substitution reference"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:760
+msgid "tagging reference"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:761
+msgid "inline directive reference"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:762
+msgid "directive reference"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:763
+msgid "indirect inline directive reference"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:764
+msgid "inline directive placeholder"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:765
+msgid "inline directive insertion reference"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:766
+msgid "directive insertion reference"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:767
+msgid "insertion reference"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:768
+msgid "directive macro reference"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:769
+msgid "macro reference"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:770
+msgid "substitution directive reference"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:772
+msgid "Candidate names for the definition construct:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:774
+msgid "substitution"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:775
+msgid "substitution directive"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:776
+msgid "tag"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:777
+msgid "tagged directive"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:778
+msgid "directive target"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:779
+msgid "inline directive"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:780
+msgid "inline directive definition"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:781
+msgid "referenced directive"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:782
+msgid "indirect directive"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:783
+msgid "indirect directive definition"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:784
+msgid "directive definition"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:785
+msgid "indirect inline directive"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:786
+msgid "named directive definition"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:787
+msgid "inline directive insertion definition"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:788
+msgid "directive insertion definition"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:789
+msgid "insertion definition"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:790
+msgid "insertion directive"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:791
+#: ../../docutils/docs/dev/rst/alternatives.txt:795
+msgid "substitution definition"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:792
+msgid "directive macro definition"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:793
+msgid "macro definition"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:794
+msgid "substitution directive definition"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:797
+msgid ""
+"\"Inline directive reference\" (1c) seems to be an appropriate term at "
+"first, but the term \"inline\" is redundant in the case of the reference."
+"  Its counterpart \"inline directive definition\" (2g) is awkward, "
+"because the directive definition itself is not inline."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:802
+msgid ""
+"\"Directive reference\" (1d) and \"directive definition\" (2k) are too "
+"vague.  \"Directive definition\" could be used to refer to any directive,"
+" not just those used for inline substitutions."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:806
+msgid ""
+"One meaning of the term \"macro\" (1k, 2s, 2t) is too programming-"
+"language-specific.  Also, macros are typically simple text substitution "
+"mechanisms: the text is substituted first and evaluated later.  "
+"reStructuredText substitution definitions are evaluated in place at parse"
+" time and substituted afterwards."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:812
+msgid ""
+"\"Insertion\" (1h, 1i, 2n-2q) is almost right, but it implies that "
+"something new is getting added rather than one construct being replaced "
+"by another."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:816
+msgid ""
+"Which brings us back to \"substitution\".  The overall best names are "
+"\"substitution reference\" (1a) and \"substitution definition\" (2v).  A "
+"long way to go to add one word!"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:822
+msgid "Inline External Targets"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:824
+msgid "Currently reStructuredText has two hyperlink syntax variations:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:826
+msgid "Named hyperlinks::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:838
+#: ../../docutils/docs/dev/rst/alternatives.txt:862
+msgid "The plaintext is readable."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:839
+msgid ""
+"Each target may be reused multiple times (e.g., just write "
+"``\"reference_\"`` again)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:841
+msgid "No synchronized ordering of references and targets is necessary."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:845
+msgid ""
+"The reference text must be repeated as target names; could lead to "
+"mistakes."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:847
+msgid ""
+"The target URLs may be located far from the references, and hard to find "
+"in the plaintext."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:850
+msgid "Anonymous hyperlinks (in current reStructuredText)::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:863
+#: ../../docutils/docs/dev/rst/alternatives.txt:973
+msgid "The reference text does not have to be repeated."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:867
+msgid "References and targets must be kept in sync."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:868
+#: ../../docutils/docs/dev/rst/alternatives.txt:895
+msgid "Targets cannot be reused."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:869
+msgid "The target URLs may be located far from the references."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:871
+msgid ""
+"For comparison and historical background, StructuredText also has two "
+"syntaxes for hyperlinks:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:874
+msgid "First, ``\"reference text\":URL``::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:880
+msgid "Second, ``\"reference text\", http://example.com/absolute_URL``::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:886
+msgid "Both syntaxes share advantages and disadvantages:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:890
+#: ../../docutils/docs/dev/rst/alternatives.txt:922
+msgid "The target is specified immediately adjacent to the reference."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:894
+#: ../../docutils/docs/dev/rst/alternatives.txt:926
+#: ../../docutils/docs/dev/rst/alternatives.txt:984
+msgid "Poor plaintext readability."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:896
+msgid "Both syntaxes use double quotes, common in ordinary text."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:897
+msgid ""
+"In the first syntax, the URL and the last word are stuck together, "
+"exacerbating the line wrap problem."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:899
+msgid ""
+"The second syntax is too magical; text could easily be written that way "
+"by accident (although only absolute URLs are recognized here, perhaps "
+"because of the potential for ambiguity)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:903
+msgid "A new type of \"inline external hyperlink\" has been proposed."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:905
+msgid ""
+"On 2002-06-28, Simon Budig proposed__ a new syntax for reStructuredText "
+"hyperlinks::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:917
+msgid ""
+"The syntax, advantages, and disadvantages are similar to those of "
+"StructuredText."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:927
+msgid "Targets cannot be reused (unless named, but the semantics are unclear)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:930
+msgid "Problems:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:932
+msgid ""
+"The ``\"`ref`_(URL)\"`` syntax forces the last word of the reference text"
+" to be joined to the URL, making a potentially very long word that can't "
+"be wrapped (URLs can be very long). The reference and the URL should be "
+"separate.  This is a symptom of the following point:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:938
+msgid ""
+"The syntax produces a single compound construct made up of two equally "
+"important parts, *with syntax in the middle*, *between* the reference and"
+" the target.  This is unprecedented in reStructuredText."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:943
+msgid ""
+"The \"inline hyperlink\" text is *not* a named reference (there's no "
+"lookup by name), so it shouldn't look like one."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:946
+msgid ""
+"According to the IETF standards RFC 2396 and RFC 2732, parentheses are "
+"legal URI characters and curly braces are legal email characters, making "
+"their use prohibitively difficult."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:950
+msgid "The named/anonymous semantics are unclear."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:952
+msgid ""
+"After an analysis__ of the syntax of (1) above, we came up with the "
+"following compromise syntax::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:964
+msgid ""
+"The syntax builds on that of the existing \"inline internal targets\": "
+"``an _`inline internal target`.``"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:969
+msgid ""
+"The target is specified immediately adjacent to the reference, improving "
+"maintainability:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:972
+msgid "References and targets are easily kept in sync."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:975
+msgid ""
+"The construct is executed in two parts: references identical to existing "
+"references, and targets that are new but not too big a stretch from "
+"current syntax."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:979
+msgid "There's overwhelming precedent for quoting URLs with angle brackets [#]_."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:985
+msgid "Lots of \"line noise\"."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:986
+msgid "Targets cannot be reused (unless named; see below)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:988
+msgid ""
+"To alleviate the readability issue slightly, we could allow the target to"
+" appear later, such as after the end of the sentence::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:995
+msgid ""
+"Problem: this could only work for one reference at a time "
+"(reference/target pairs must be proximate [refA trgA refB trgB], not "
+"interleaved [refA refB trgA trgB] or nested [refA refB trgB trgA]).  This"
+" variation is too problematic; references and inline external targets "
+"will have to be kept immediately adjacent (see (3) below)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1002
+msgid ""
+"The ``\"reference__ __<target>\"`` syntax is actually for \"anonymous "
+"inline external targets\", emphasized by the double underscores.  It "
+"follows that single trailing and leading underscores would lead to "
+"*implicitly named* inline external targets.  This would allow the reuse "
+"of targets by name.  So after ``\"reference_ _<target>\"``, another "
+"``\"reference_\"`` would point to the same target."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1010
+msgid "From RFC 2396 (URI syntax):"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1012
+msgid ""
+"The angle-bracket \"<\" and \">\" and double-quote (\") characters are "
+"excluded [from URIs] because they are often used as the delimiters around"
+" URI in text documents and protocol fields."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1017
+msgid ""
+"Using <> angle brackets around each URI is especially recommended as a "
+"delimiting style for URI that contain whitespace."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1021
+msgid "From RFC 822 (email headers):"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1023
+msgid ""
+"Angle brackets (\"<\" and \">\") are generally used to indicate the "
+"presence of a one machine-usable reference (e.g., delimiting mailboxes), "
+"possibly including source-routing to the machine."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1028
+msgid ""
+"If it is best for references and inline external targets to be "
+"immediately adjacent, then they might as well be integrated. Here's an "
+"alternative syntax embedding the target URL in the reference::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1037
+msgid ""
+"Advantages and disadvantages are similar to those in (2). Readability is "
+"still an issue, but the syntax is a bit less heavyweight (reduced line "
+"noise).  Backquotes are required, even for one-word references; the "
+"target URL is included within the reference text, forcing a phrase "
+"context."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1043
+msgid "We'll call this variant \"embedded URIs\"."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1045
+msgid ""
+"Problem: how to refer to a title like \"HTML Anchors: <a>\" (which ends "
+"with an HTML/SGML/XML tag)?  We could either require more syntax on the "
+"target (like ``\"`reference text __<http://example.com/>`__\"``), or "
+"require the odd conflicting title to be escaped (like ``\"`HTML Anchors: "
+"\\<a>`__\"``).  The latter seems preferable, and not too onerous."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1052
+msgid ""
+"Similarly to (2) above, a single trailing underscore would convert the "
+"reference & inline external target from anonymous to implicitly named, "
+"allowing reuse of targets by name."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1056
+msgid "I think this is the least objectionable of the syntax alternatives."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1058
+msgid ""
+"Other syntax variations have been proposed (by Brett Cannon and Benja "
+"Fallenstein)::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1073
+msgid ""
+"None of these variations are clearly superior to #3 above.  Some have "
+"problems that exclude their use."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1076
+msgid ""
+"With any kind of inline external target syntax it comes down to the "
+"conflict between maintainability and plaintext readability.  I don't see "
+"a major problem with reStructuredText's maintainability, and I don't want"
+" to sacrifice plaintext readability to \"improve\" it."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1081
+msgid ""
+"The proponents of inline external targets want them for easily "
+"maintainable web pages.  The arguments go something like this:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1084
+msgid ""
+"Named hyperlinks are difficult to maintain because the reference text is "
+"duplicated as the target name."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1087
+msgid "To which I said, \"So use anonymous hyperlinks.\""
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1089
+msgid ""
+"Anonymous hyperlinks are difficult to maintain because the references and"
+" targets have to be kept in sync."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1092
+msgid ""
+"\"So keep the targets close to the references, grouped after each "
+"paragraph.  Maintenance is trivial.\""
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1095
+msgid "But targets grouped after paragraphs break the flow of text."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1097
+msgid ""
+"\"Surely less than URLs embedded in the text!  And if the intent is to "
+"produce web pages, not readable plaintext, then who cares about the flow "
+"of text?\""
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1101
+msgid "Many participants have voiced their objections to the proposed syntax:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1103
+msgid ""
+"Garth Kidd: \"I strongly prefer the current way of doing it. Inline is "
+"spectactularly messy, IMHO.\""
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1106
+msgid ""
+"Tony Ibbs: \"I vehemently agree... that the inline alternatives being "
+"suggested look messy - there are/were good reasons they've been taken "
+"out...  I don't believe I would gain from the new syntaxes.\""
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1111
+msgid ""
+"Paul Moore: \"I agree as well.  The proposed syntax is far too "
+"punctuation-heavy, and any of the alternatives discussed are ambiguous or"
+" too subtle.\""
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1115
+msgid "Others have voiced their support:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1117
+msgid ""
+"fantasai: \"I agree with Simon.  In many cases, though certainly not in "
+"all, I find parenthesizing the url in plain text flows better than "
+"relegating it to a footnote.\""
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1121
+msgid ""
+"Ken Manheimer: \"I'd like to weigh in requesting some kind of easy, "
+"direct inline reference link.\""
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1124
+msgid ""
+"(Interesting that those *against* the proposal have been using "
+"reStructuredText for a while, and those *for* the proposal are either new"
+" to the list [\"fantasai\", background unknown] or longtime "
+"StructuredText users [Ken Manheimer].)"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1129
+msgid ""
+"I was initially ambivalent/against the proposed \"inline external "
+"targets\".  I value reStructuredText's readability very highly, and "
+"although the proposed syntax offers convenience, I don't know if the "
+"convenience is worth the cost in ugliness.  Does the proposed syntax "
+"compromise readability too much, or should the choice be left up to the "
+"author?  Perhaps if the syntax is *allowed* but its use strongly "
+"*discouraged*, for aesthetic/readability reasons?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1137
+msgid ""
+"After a great deal of thought and much input from users, I've decided "
+"that there are reasonable use cases for this construct.  The "
+"documentation should strongly caution against its use in most situations,"
+" recommending independent block-level targets instead. Syntax #3 above "
+"(\"embedded URIs\") will be used."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1145
+msgid "Doctree Representation of Transitions"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1147
+msgid ""
+"(Although not reStructuredText-specific, this section fits best in this "
+"document.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1150
+msgid ""
+"Having added the \"horizontal rule\" construct to the `reStructuredText "
+"Markup Specification`_, a decision had to be made as to how to reflect "
+"the construct in the implementation of the document tree.  Given this "
+"source::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1164
+msgid ""
+"The horizontal rule indicates a \"transition\" (in prose terms) or the "
+"start of a new \"division\".  Before implementation, the parsed document "
+"tree would be::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1178
+msgid "There are several possibilities for the implementation:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1180
+msgid ""
+"Implement horizontal rules as \"divisions\" or segments.  A \"division\" "
+"is a title-less, non-hierarchical section.  The first try at an "
+"implementation looked like this::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1194
+msgid ""
+"But the two paragraphs are really at the same level; they shouldn't "
+"appear to be at different levels.  There's really an invisible \"first "
+"division\".  The horizontal rule splits the document body into two "
+"segments, which should be treated uniformly."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1199
+msgid "Treating \"divisions\" uniformly brings us to the second possibility::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1213
+msgid ""
+"With this change, documents and sections will directly contain divisions "
+"and sections, but not body elements.  Only divisions will directly "
+"contain body elements.  Even without a horizontal rule anywhere, the body"
+" elements of a document or section would be contained within a division "
+"element.  This makes the document tree deeper.  This is similar to the "
+"way HTML_ treats document contents: grouped within a ``<body>`` element."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1221
+msgid "Implement them as \"transitions\", empty elements::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1233
+msgid ""
+"A transition would be a \"point element\", not containing anything, only "
+"identifying a point within the document structure.  This keeps the "
+"document tree flatter, but the idea of a \"point element\" like "
+"\"transition\" smells bad.  A transition isn't a thing itself, it's the "
+"space between two divisions.  However, transitions are a practical "
+"solution."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1240
+msgid "Solution 3 was chosen for incorporation into the document tree model."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1246
+msgid "Syntax for Line Blocks"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1248
+msgid ""
+"An early idea: How about a literal-block-like prefix, perhaps \"``;;``\"?"
+"  (It is, after all, a *semi-literal* literal block, no?) Example::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1268
+msgid "Kinda lame."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1270
+msgid ""
+"Another idea: in an ordinary paragraph, if the first line ends with a "
+"backslash (escaping the newline), interpret the entire paragraph as a "
+"verse block?  For example::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1278
+msgid ""
+"(Awful, and arguably invalid, since in Japanese the word \"haiku\" "
+"contains three syllables not two.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1281
+msgid ""
+"This idea was superseded by the rules for escaped whitespace, useful for "
+"`character-level inline markup`_."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1284
+msgid ""
+"In a `2004-02-22 docutils-develop message`__, Jarno Elonen proposed a "
+"\"plain list\" syntax (and also provided a patch)::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1293
+msgid ""
+"This syntax is very natural.  However, these \"plain lists\" seem very "
+"similar to line blocks, and I see so little intrinsic \"list-ness\" that "
+"I'm loathe to add a new object.  I used the term \"blurbs\" to remove the"
+" \"list\" connotation from the originally proposed name. Perhaps line "
+"blocks could be refined to add the two properties they currently lack:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1300
+msgid "long lines wrap nicely"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1301
+msgid "HTML output doesn't look like program code in non-CSS web browsers"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1304
+msgid ""
+"(A) is an issue of all 3 aspects of Docutils: syntax (construct "
+"behaviour), internal representation, and output.  (B) is partly an issue "
+"of internal representation but mostly of output."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1308
+msgid ""
+"ReStructuredText will redefine line blocks with the \"|\"-quoting syntax."
+"  The following is my current thinking."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1313
+msgid "Syntax"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1315
+msgid "Perhaps line block syntax like this would do::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1325
+msgid ""
+"Note that the \"nested\" list does not have nested syntax (the \"|\" are "
+"not further indented); the leading whitespace would still be significant "
+"somehow (more below).  As for long lines in the input, this could "
+"suffice::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1336
+msgid ""
+"The lack of \"|\" on the third line indicates that it's a continuation of"
+" the second line, wrapped."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1339
+msgid ""
+"I don't see much point in allowing arbitrary nested content.  Multiple "
+"paragraphs or bullet lists inside a \"blurb\" doesn't make sense to me. "
+"Simple nested line blocks should suffice."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1345
+msgid "Internal Representation"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1347
+msgid "Line blocks are currently represented as text blobs as follows::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1354
+msgid "Instead, we could represent each line by a separate element::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1362
+msgid ""
+"We'd keep the significance of the leading whitespace of each line either "
+"by converting it to non-breaking spaces at output, or with a per-line "
+"margin.  Non-breaking spaces are simpler (for HTML, anyway) but kludgey, "
+"and wouldn't support indented long lines that wrap.  But should inter-"
+"word whitespace (i.e., not leading whitespace) be preserved?  Currently "
+"it is preserved in line blocks."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1369
+msgid "Representing a more complex line block may be tricky::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1376
+msgid "Perhaps the representation could allow for nested line blocks::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1380
+msgid ""
+"With this model, leading whitespace would no longer be significant. "
+"Instead, left margins are implied by the nesting.  The example above "
+"could be represented as follows::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1397
+msgid "I wasn't sure what to do about even more complex line blocks::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1405
+msgid ""
+"How should that be parsed and nested?  Should the first line have the "
+"same nesting level (== indentation in the output) as the fourth line, or "
+"the same as the last line?  Mark Nodine suggested that such line blocks "
+"be parsed similarly to complexly-nested block quotes, which seems "
+"reasonable.  In the example above, this would result in the nesting of "
+"first line matching the last line's nesting.  In other words, the nesting"
+" would be relative to neighboring lines only."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1416
+msgid "Output"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1418
+msgid ""
+"In HTML, line blocks are currently output as \"<pre>\" blocks, which "
+"gives us significant whitespace and line breaks, but doesn't allow long "
+"lines to wrap and causes monospaced output without stylesheets. Instead, "
+"we could output \"<div>\" elements parallelling the representation above,"
+" where each nested <div class=\"line_block\"> would have an increased "
+"left margin (specified in the stylesheet)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1425
+msgid "Jarno suggested the following HTML output::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1437
+msgid ""
+"The ``<br class=\"hidden\" />`` and ``<span "
+"class=\"hidden\">&nbsp;</span>`` are meant to support non-CSS and non-"
+"graphical browsers.  I understand the case for \"br\", but I'm not so "
+"sure about hidden \"&nbsp;\".  I question how much effort should be put "
+"toward supporting non-graphical and especially non-CSS browsers, at least"
+" for html4css1.py output."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1444
+msgid ""
+"Should the lines themselves be ``<span>`` or ``<div>``?  I don't like "
+"mixing inline and block-level elements."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1449
+msgid "Implementation Plan"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1451
+msgid ""
+"We'll leave the old implementation in place (via the \"line-block\" "
+"directive only) until all Writers have been updated to support the new "
+"syntax & implementation.  The \"line-block\" directive can then be "
+"updated to use the new internal representation, and its documentation "
+"will be updated to recommend the new syntax."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1459
+msgid "List-Driven Tables"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1461
+msgid "The original idea came from Dylan Jay:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1463
+msgid ""
+"... to use a two level bulleted list with something to indicate it should"
+" be rendered as a table ..."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1466
+msgid ""
+"It's an interesting idea.  It could be implemented in as a directive "
+"which transforms a uniform two-level list into a table.  Using a "
+"directive would allow the author to explicitly set the table's "
+"orientation (by column or by row), the presence of row headers, etc."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1471
+msgid "Alternatives:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1473
+msgid "(Implemented in Docutils 0.3.8)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1475
+msgid "Bullet-list-tables might look like this::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1493
+msgid "This list must be written in two levels.  This wouldn't work::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1512
+msgid ""
+"The above is a single list of 12 items.  The blank lines are not "
+"significant to the markup.  We'd have to explicitly specify how many "
+"columns or rows to use, which isn't a good idea."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1516
+msgid ""
+"Beni Cherniavsky suggested a field list alternative.  It could look like "
+"this::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1535
+msgid ""
+"Column order is determined from the order of fields in the first row.  "
+"Field order in all other rows is ignored.  As a side-effect, this allows "
+"trivial re-arrangement of columns.  By using named fields, it becomes "
+"possible to omit fields in some rows without losing track of things, "
+"which is important for spans."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1541
+msgid ""
+"An alternative to two-level bullet lists would be to use enumerated lists"
+" for the table cells::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1557
+msgid ""
+"That provides better correspondence between cells in the same column than"
+" does bullet-list syntax, but not as good as field list syntax.  I think "
+"that were only field-list-tables available, a lot of users would use the "
+"equivalent degenerate case::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1568
+msgid ""
+"Another natural variant is to allow a description list with field lists "
+"as descriptions::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1585
+msgid ""
+"This would make the whole first column a header column (\"stub\"). It's "
+"limited to a single column and a single paragraph fitting on one source "
+"line.  Also it wouldn't allow for empty cells or row spans in the first "
+"column.  But these are limitations that we could live with, like those of"
+" simple tables."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1591
+msgid ""
+"The List-driven table feature could be done in many ways.  Each user will"
+" have their preferred usage.  Perhaps a single \"list-table\" directive "
+"could handle them all, depending on which options and content are "
+"present."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1596
+msgid "Issues:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1598
+msgid "How to indicate that there's 1 header row?  Perhaps two lists?  ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1610
+msgid ""
+"This is probably too subtle though.  Better would be a directive option, "
+"like ``:headrows: 1``.  An early suggestion for the header row(s) was to "
+"use a directive option::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1623
+msgid "But the table data is at two levels and looks inconsistent."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1625
+msgid ""
+"In general, we cannot extract the header row from field lists' field "
+"names because field names cannot contain everything one might put in a "
+"table cell.  A separate header row also allows shorter field names and "
+"doesn't force one to rewrite the whole table when the header text "
+"changes.  But for simpler cases, we can offer a \":header: fields\" "
+"option, which does extract header cells from field names::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1639
+msgid "How to indicate the column widths?  A directive option? ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1644
+msgid "Automatic defaults from the text used?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1646
+msgid "How to handle row and/or column spans?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1648
+msgid ""
+"In a field list, column-spans can be indicated by specifying the first "
+"and last fields, separated by space-dash-space or ellipsis::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1654
+msgid "Commas were proposed for column spans::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1658
+msgid ""
+"But non-adjacent columns become problematic.  Should we report an error, "
+"or duplicate the value into each span of adjacent columns (as was "
+"suggested)?  The latter suggestion is appealing but may be too clever.  "
+"Best perhaps to simply specify the two ends."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1663
+msgid ""
+"It was suggested that comma syntax should be allowed, too, in order to "
+"allow the user to avoid trouble when changing the column order. But "
+"changing the column order of a table with spans is not trivial; we "
+"shouldn't make it easier to mess up."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1668
+msgid ""
+"One possible syntax for row-spans is to simply treat any row where a "
+"field is missing as a row-span from the last row where it appeared. "
+"Leaving a field empty would still be possible by writing a field with "
+"empty content.  But this is too implicit."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1673
+msgid ""
+"Another way would be to require an explicit continuation marker "
+"(``...``/``-\"-``/``\"``?) in all but the first row of a spanned field.  "
+"Empty comments could work (\"..\").  If implemented, the same marker "
+"could also be supported in simple tables, which lack row-spanning "
+"abilities."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1679
+msgid "Explicit markup like \":rowspan:\" and \":colspan:\" was also suggested."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1681
+msgid ""
+"Sometimes in a table, the first header row contains spans.  It may be "
+"necessary to provide a way to specify the column field names "
+"independently of data rows.  A directive option would do it."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1685
+msgid ""
+"We could specify \"column-wise\" or \"row-wise\" ordering, with the same "
+"markup structure.  For example, with definition data::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1702
+msgid "A syntax for _`stubs in grid tables` is easy to imagine::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1710
+msgid "Or this idea from Nick Moffitt::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1722
+msgid "Auto-Enumerated Lists"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1724
+msgid "Implemented 2005-03-24: combination of variation 1 & 2."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1726
+msgid ""
+"The advantage of auto-numbered enumerated lists would be similar to that "
+"of auto-numbered footnotes: lists could be written and rearranged without"
+" having to manually renumber them.  The disadvantages are also the same: "
+"input and output wouldn't match exactly; the markup may be ugly or "
+"confusing (depending on which alternative is chosen)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1732
+msgid "Use the \"#\" symbol.  Example::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1738
+msgid ""
+"Advantages: simple, explicit.  Disadvantage: enumeration sequence cannot "
+"be specified (limited to arabic numerals); ugly."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1741
+msgid ""
+"As a variation on #1, first initialize the enumeration sequence? For "
+"example::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1748
+msgid ""
+"Advantages: simple, explicit, any enumeration sequence possible. "
+"Disadvantages: ugly; perhaps confusing with mixed concrete/abstract "
+"enumerators."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1752
+msgid "Alternative suggested by Fred Bremmer, from experience with MoinMoin::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1758
+msgid ""
+"Advantages: enumeration sequence is explicit (could be multiple \"a.\" or"
+" \"(I)\" tokens).  Disadvantages: perhaps confusing; otherwise erroneous "
+"input (e.g., a duplicate item \"1.\") would pass silently, either causing"
+" a problem later in the list (if no blank lines between items) or "
+"creating two lists (with blanks)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1764
+msgid "Take this input for example::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1772
+msgid ""
+"Currently the parser will produce two list, \"1\" and \"1,2\" (no "
+"warnings, because of the presence of blank lines).  Using Fred's "
+"notation, the current behavior is \"1,1,2 -> 1 1,2\" (without blank lines"
+" between items, it would be \"1,1,2 -> 1 [WARNING] 1,2\").  What should "
+"the behavior be with auto-numbering?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1778
+msgid "Fred has produced a patch__, whose initial behavior is as follows::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1786
+msgid "(After the \"[WARNING]\", the \"3\" would begin a new list.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1788
+msgid ""
+"I have mixed feelings about adding this functionality to the spec & "
+"parser.  It would certainly be useful to some users (myself included; I "
+"often have to renumber lists).  Perhaps it's too clever, asking the "
+"parser to guess too much.  What if you *do* want three one-item lists in "
+"a row, each beginning with \"1.\"?  You'd have to use empty comments to "
+"force breaks.  Also, I question whether \"1,2,2 -> 1,2,3\" is optimal "
+"behavior."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1796
+msgid ""
+"In response, Fred came up with \"a stricter and more explicit rule "
+"[which] would be to only auto-number silently if *all* the enumerators of"
+" a list were identical\".  In that case::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1806
+msgid ""
+"Should any start-value be allowed (\"3,3,3\"), or should auto-numbered "
+"lists be limited to begin with ordinal-1 (\"1\", \"A\", \"a\", \"I\", or "
+"\"i\")?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1813
+msgid "Alternative proposed by Tony Ibbs::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1819
+msgid ""
+"The initial proposal required unique enumerators within a list, but this "
+"limits the convenience of a feature of already limited applicability and "
+"convenience.  Not a useful requirement; dropped."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1823
+msgid ""
+"Instead, simply prepend a \"#\" to a standard list enumerator to indicate"
+" auto-enumeration.  The numbers (or letters) of the enumerators "
+"themselves are not significant, except:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1827
+msgid "as a sequence indicator (arabic, roman, alphabetic; upper/lower),"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1829
+msgid "and perhaps as a start value (first list item)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1831
+msgid ""
+"Advantages: explicit, any enumeration sequence possible. Disadvantages: a"
+" bit ugly."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1836
+msgid "Adjacent citation references"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1838
+msgid ""
+"A special case for inline markup was proposed and implemented: multiple "
+"citation references could be joined into one::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1843
+msgid ""
+"However, this was rejected as an unwarranted exception to the rules for "
+"inline markup. (The main motivation for the proposal, grouping citations "
+"in the latex writer, was implemented by recognising the second group in "
+"the example above and transforming it into ``\\cite{cite1,cite2}``.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1851
+msgid "Inline markup recognition"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1853
+msgid ""
+"Implemented 2011-12-05 (version 0.9): Extended `inline markup recognition"
+" rules`_."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1856
+msgid ""
+"Non-ASCII whitespace, punctuation characters and \"international\" quotes"
+" are allowed around inline markup (based on `Unicode categories`_). The "
+"rules for ASCII characters were not changed."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1860
+msgid "Rejected alternatives:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1862
+msgid "Use `Unicode categories`_ for all chars (ASCII or not)"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1864
+msgid "comprehensible, standards based,"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1865
+msgid "many \"false positives\" need escaping,"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1866
+msgid "not backwards compatible."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1868
+msgid "full backwards compatibility"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt
+msgid "Pi"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1870
+msgid "only before start-string"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt
+msgid "Pf"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1871
+msgid "only behind end-string"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt
+msgid "Po"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1872
+msgid "\"conservative\" sorting of other punctuation:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt
+msgid "``.,;!?\\\\``"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1874
+msgid "Close"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt
+msgid "``¡¿``"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1875
+msgid "Open"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1877
+msgid "backwards compatible,"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1878
+msgid "logical extension of the existing rules,"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1879
+msgid "exception list for \"other\" punctuation needed,"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1880
+msgid "rules even more complicated,"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1881
+msgid ""
+"not clear how to sort \"other\" punctuation that is currently not "
+"recognized,"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1883
+msgid ""
+"international quoting convention like »German ›angular‹ quotes« not "
+"recognized."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1894
+msgid "Not Implemented"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1897
+msgid "Reworking Footnotes"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1899
+msgid ""
+"As a further wrinkle (see `Reworking Explicit Markup (Round 1)`_ above), "
+"in the wee hours of 2002-02-28 I posted several ideas for changes to "
+"footnote syntax:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1903
+msgid "Change footnote syntax from ``.. [1]`` to ``_[1]``? ..."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1904
+msgid ""
+"Differentiate (with new DTD elements) author-date \"citations\" "
+"(``[GVR2002]``) from numbered footnotes? ..."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1906
+msgid "Render footnote references as superscripts without \"[]\"? ..."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1908
+msgid ""
+"These ideas are all related, and suggest changes in the reStructuredText "
+"syntax as well as the docutils tree model."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1911
+msgid ""
+"The footnote has been used for both true footnotes (asides expanding on "
+"points or defining terms) and for citations (references to external "
+"works).  Rather than dealing with one amalgam construct, we could "
+"separate the current footnote concept into strict footnotes and "
+"citations.  Citations could be interpreted and treated differently from "
+"footnotes.  Footnotes would be limited to numerical labels: manual "
+"(\"1\") and auto-numbered (anonymous \"#\", named \"#label\")."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1919
+msgid ""
+"The footnote is the only explicit markup construct (starts with \".. \") "
+"that directly translates to a visible body element.  I've always been a "
+"little bit uncomfortable with the \".. \" marker for footnotes because of"
+" this; \".. \" has a connotation of \"special\", but footnotes aren't "
+"especially \"special\".  Printed texts often put footnotes at the bottom "
+"of the page where the reference occurs (thus \"foot note\").  Some HTML "
+"designs would leave footnotes to be rendered the same positions where "
+"they're defined.  Other online and printed designs will gather footnotes "
+"into a section near the end of the document, converting them to "
+"\"endnotes\" (perhaps using a directive in our case); but this \"special "
+"processing\" is not an intrinsic property of the footnote itself, but a "
+"decision made by the document author or processing system."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1933
+msgid ""
+"Citations are almost invariably collected in a section at the end of a "
+"document or section.  Citations \"disappear\" from where they are defined"
+" and are magically reinserted at some well-defined point. There's more of"
+" a connection to the \"special\" connotation of the \".. \" syntax.  The "
+"point at which the list of citations is inserted could be defined "
+"manually by a directive (e.g., \".. citations::\"), and/or have default "
+"behavior (e.g., a section automatically inserted at the end of the "
+"document) that might be influenced by options to the Writer."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1942
+msgid "Syntax proposals:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1944
+msgid "Footnotes:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1946
+#: ../../docutils/docs/dev/rst/alternatives.txt:1988
+msgid "Current syntax::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1952
+msgid ""
+"The syntax proposed in the original 2002-02-28 Doc-SIG post: remove the "
+"\".. \", prefix a \"_\"::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1959
+msgid ""
+"The leading underscore syntax (earlier dropped because ``.. _[1]:`` was "
+"too verbose) is a useful reminder that footnotes are hyperlink targets."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1963
+msgid ""
+"Minimal syntax: remove the \".. [\" and \"]\", prefix a \"_\", and suffix"
+" a \".\"::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1973
+msgid "Footnotes could be rendered something like this in HTML"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt
+msgid "1. This is a footnote.  The brackets could be dropped"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt
+msgid "from the label, and a vertical bar could set them"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt
+msgid "off from the rest of the document in the HTML."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1979
+msgid ""
+"Two-way hyperlinks on the footnote marker (\"1.\" above) would also help "
+"to differentiate footnotes from enumerated lists."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1982
+msgid ""
+"If converted to endnotes (by a directive/transform), a horizontal half-"
+"line might be used instead.  Page-oriented output formats would typically"
+" use the horizontal line for true footnotes."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1986
+msgid "Footnote references:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1992
+msgid "Minimal syntax to match the minimal footnote syntax above::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1996
+msgid ""
+"As a consequence, pure-numeric hyperlink references would not be "
+"possible; they'd be interpreted as footnote references."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:1999
+msgid ""
+"Citation references: no change is proposed from the current footnote "
+"reference syntax::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2004
+msgid "Citations:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2006
+msgid "Current syntax (footnote syntax)::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2011
+msgid "Possible new syntax::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2020
+msgid ""
+"Without the \".. \" marker, subsequent lines would either have to align "
+"as in one of the above, or we'd have to allow loose alignment (I'd rather"
+" not)::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2027
+msgid ""
+"I proposed adopting the \"minimal\" syntax for footnotes and footnote "
+"references, and adding citations and citation references to "
+"reStructuredText's repertoire.  The current footnote syntax for citations"
+" is better than the alternatives given."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2032
+msgid "From a reply by Tony Ibbs on 2002-03-01:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2034
+msgid "However, I think easier with examples, so let's create one::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2053
+msgid "and look at it with the second syntax proposal::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2072
+msgid ""
+"(I note here that if I have gotten the indentation of the footnotes "
+"themselves correct, this is clearly not as nice.  And if the indentation "
+"should be to the left margin instead, I like that even less)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2077
+msgid "and the third (new) proposal::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2096
+msgid ""
+"I think I don't, in practice, mind the targets too much (the use of a dot"
+" after the number helps a lot here), but I do have a problem with the "
+"body text, in that I don't naturally separate out the footnotes as "
+"different than the rest of the text - instead I keep wondering why there "
+"are numbers interspered in the text.  The use of brackets around the "
+"numbers ([ and ]) made me somehow parse the footnote references as "
+"\"odd\" - i.e., not part of the body text - and thus both easier to skip,"
+" and also (paradoxically) easier to pick out so that I could follow them."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2106
+msgid ""
+"Thus, for the moment (and as always susceptable to argument), I'd say -1 "
+"on the new form of footnote reference (i.e., I much prefer the existing "
+"``[1]_`` over the proposed ``1_``), and ambivalent over the proposed "
+"target change."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2111
+msgid ""
+"That leaves David's problem of wanting to distinguish footnotes and "
+"citations - and the only thing I can propose there is that footnotes are "
+"numeric or # and citations are not (which, as a human being, I can "
+"probably cope with!)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2116
+msgid "From a reply by Paul Moore on 2002-03-01:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2118
+msgid ""
+"I think the current footnote syntax ``[1]_`` is *exactly* the right "
+"balance of distinctness vs unobtrusiveness.  I very definitely don't "
+"think this should change."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2122
+msgid "On the target change, it doesn't matter much to me."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2124
+msgid ""
+"From a further reply by Tony Ibbs on 2002-03-01, referring to the \"[1]\""
+" form and actual usage in email:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2127
+msgid ""
+"Clearly this is a form people are used to, and thus we should consider it"
+" strongly (in the same way that the usage of ``*..*`` to mean emphasis "
+"was taken partly from email practise)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2131
+msgid ""
+"Equally clearly, there is something \"magical\" for people in the use of "
+"a similar form (i.e., ``[1]``) for both footnote reference and footnote "
+"target - it seems natural to keep them similar."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2135
+msgid "..."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2137
+msgid ""
+"I think that this established plaintext usage leads me to strongly "
+"believe we should retain square brackets at both ends of a footnote.  The"
+" markup of the reference end (a single trailing underscore) seems about "
+"as minimal as we can get away with.  The markup of the target end depends"
+" on how one envisages the thing - if \"..\" means \"I am a target\" (as I"
+" tend to see it), then that's good, but one can also argue that the "
+"\"_[1]\" syntax has a neat symmetry with the footnote reference itself, "
+"if one wishes (in which case \"..\" presumably means \"hidden/special\" "
+"as David seems to think, which is why one needs a \"..\" *and* a leading "
+"underline for hyperlink targets."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2149
+msgid ""
+"Given the persuading arguments voiced, we'll leave footnote & footnote "
+"reference syntax alone.  Except that these discussions gave rise to the "
+"\"auto-symbol footnote\" concept, which has been added.  Citations and "
+"citation references have also been added."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2156
+msgid "Syntax for Questions & Answers"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2158
+msgid ""
+"Implement as a generic two-column marked list?  As a standalone (non-"
+"directive) construct?  (Is the markup ambiguous?)  Add support to "
+"parts.contents?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2162
+msgid "New elements would be required.  Perhaps::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2173
+msgid "Originally I thought of implementing a Q&A list with special syntax::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2184
+msgid ""
+"Where each \"Q\" and \"A\" could also be numbered (e.g., \"Q1\").  "
+"However, a simple enumerated or bulleted list will do just fine for "
+"syntax.  A directive could treat the list specially; e.g. the first "
+"paragraph could be treated as a question, the remainder as the answer "
+"(multiple answers could be represented by nested lists).  Without special"
+" syntax, this directive becomes low priority."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2191
+msgid ""
+"As described in the FAQ__, no special syntax or directive is needed for "
+"this application."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2200
+msgid "Tabled"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2203
+msgid "Reworking Explicit Markup (Round 2)"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2205
+msgid "See `Reworking Explicit Markup (Round 1)`_ for an earlier discussion."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2207
+msgid ""
+"In April 2004, a new thread becan on docutils-develop: `Inconsistency in "
+"RST markup`__.  Several arguments were made; the first argument begat "
+"later arguments.  Below, the arguments are paraphrased \"in quotes\", "
+"with responses."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2214
+msgid "References and targets take this form::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2220
+msgid ""
+"But footnotes, \"which generate links just like targets do\", are written"
+" as::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2227
+msgid "\"Footnotes should be written as\"::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2233
+msgid ""
+"But they're not the same type of animal.  That's not a \"footnote "
+"target\", it's a *footnote*.  Being a target is not a footnote's primary "
+"purpose (an arguable point).  It just happens to grow a target "
+"automatically, for convenience.  Just as a section title::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2241
+msgid ""
+"isn't a \"title target\", it's a *title*, which happens to grow a target "
+"automatically.  The consistency is there, it's just deeper than at first "
+"glance."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2245
+msgid ""
+"Also, \".. [1]\" was chosen for footnote syntax because it closely "
+"resembles one form of actual footnote rendering.  \".. _[1]:\" is too "
+"verbose; excessive punctuation is required to get the job done."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2249
+msgid ""
+"For more of the reasoning behind the syntax, see `Problems With "
+"StructuredText (Hyperlinks) <problems.html#hyperlinks>`__ and `Reworking "
+"Footnotes`_."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2253
+msgid ""
+"\"I expect directives to also look like ``.. this:`` [one colon] because "
+"that also closely parallels the link and footnote target markup.\""
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2257
+msgid "There are good reasons for the two-colon syntax:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2259
+msgid "Two colons are used after the directive type for these reasons:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2261
+msgid "Two colons are distinctive, and unlikely to be used in common text."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2264
+msgid "Two colons avoids clashes with common comment text like::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2268
+msgid ""
+"If an implementation of reStructuredText does not recognize a directive "
+"(i.e., the directive-handler is not installed), a level-3 (error) system "
+"message is generated, and the entire directive block (including the "
+"directive itself) will be included as a literal block.  Thus \"::\" is a "
+"natural choice."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2277
+msgid ""
+"The last reason is not particularly compelling; it's more of a convenient"
+" coincidence or mnemonic."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2280
+msgid ""
+"\"Comments always seemed too easy.  I almost never write comments. I'd "
+"have no problem writing '.. comment:' in front of my comments. In fact, "
+"it would probably be more readable, as comments *should* be set off "
+"strongly, because they are very different from normal text.\""
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2286
+msgid ""
+"Many people do use comments though, and some applications of "
+"reStructuredText require it.  For example, all reStructuredText PEPs (and"
+" this document!) have an Emacs stanza at the bottom, in a comment.  "
+"Having to write \".. comment::\" would be very obtrusive."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2291
+msgid ""
+"Comments *should* be dirt-easy to do.  It should be easy to \"comment "
+"out\" a block of text.  Comments in programming languages and other "
+"markup languages are invariably easy."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2295
+msgid ""
+"Any author is welcome to preface their comments with \"Comment:\" or \"Do"
+" Not Print\" or \"Note to Editor\" or anything they like.  A \"comment\" "
+"directive could easily be implemented.  It might be confused with "
+"admonition directives, like \"note\" and \"caution\" though.  In "
+"unrelated (and unpublished and unfinished) work, adding a \"comment\" "
+"directive as a true document element was considered::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2306
+msgid ""
+"\"One of the goals of reStructuredText is to be *readable* by people who "
+"don't know it.  This construction violates that: it is not at all obvious"
+" to the uninitiated that text marked by '..' is a comment.  On the other "
+"hand, '.. comment:' would be totally transparent.\""
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2312
+msgid ""
+"Totally transparent, perhaps, but also very obtrusive.  Another of "
+"`reStructuredText's goals`_ is to be unobtrusive, and \".. comment::\" "
+"would violate that.  The goals of reStructuredText are many, and they "
+"conflict.  Determining the right set of goals and finding solutions that "
+"best fit is done on a case-by-case basis."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2319
+msgid ""
+"Even readability is has two aspects.  Being readable without any prior "
+"knowledge is one.  Being as easily read in raw form as in processed form "
+"is the other.  \"..\" may not contribute to the former aspect, but \".. "
+"comment::\" would certainly detract from the latter."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2327
+msgid ""
+"\"Recently I sent someone an rst document, and they got confused; I had "
+"to explain to them that '..' marks comments, *unless* it's a directive, "
+"etc...\""
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2331
+msgid ""
+"The explanation of directives *is* roundabout, defining comments in terms"
+" of not being other things.  That's definitely a wart."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2334
+msgid ""
+"\"Under the current system, a mistyped directive (with ':' instead of "
+"'::') will be silently ignored.  This is an error that could easily go "
+"unnoticed.\""
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2338
+msgid "A parser option/setting like \"--comments-on-stderr\" would help."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2340
+msgid ""
+"\"I'd prefer to see double-dot-space / command / double-colon as the "
+"standard Docutils markup-marker.  It's unusual enough to avoid being "
+"accidentally used.  Everything that starts with a double-dot should end "
+"with a double-colon.\""
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2345
+msgid ""
+"That would increase the punctuation verbosity of some constructs "
+"considerably."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2348
+msgid "Edward Loper proposed the following plan for backwards compatibility:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2351
+msgid ""
+"\".. foo\" will generate a deprecation warning to stderr, and nothing in "
+"the output (no system messages)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2353
+msgid ""
+"\".. foo: bar\" will be treated as a directive foo.  If there is no foo "
+"directive, then do the normal error output."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2355
+msgid ""
+"\".. foo:: bar\" will generate a deprecation warning to stderr, and be "
+"treated as a directive.  Or leave it valid?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2358
+msgid ""
+"So some existing documents might start printing deprecation warnings, but"
+" the only existing documents that would *break* would be ones that say "
+"something like::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2364
+msgid "instead of::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2368
+msgid ""
+"Here, we're trading fairly common a silent error (directive falsely "
+"treated as a comment) for a fairly uncommon explicitly flagged error "
+"(comment falsely treated as directive).  To make things even easier, we "
+"could add a sentence to the unknown-directive error.  Something like \"If"
+" you intended to create a comment, please use '.. comment:' instead\"."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2375
+msgid ""
+"On one hand, I understand and sympathize with the points raised.  On the "
+"other hand, I think the current syntax strikes the right balance (but I "
+"acknowledge a possible lack of objectivity).  On the gripping hand, the "
+"comment and directive syntax has become well established, so even if it's"
+" a wart, it may be a wart we have to live with."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2381
+msgid ""
+"Making any of these changes would cause a lot of breakage or at least "
+"deprecation warnings.  I'm not sure the benefit is worth the cost."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2384
+msgid "For now, we'll treat this as an unresolved legacy issue."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2389
+msgid "To Do"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2392
+msgid "Nested Inline Markup"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2394
+msgid ""
+"These are collected notes on a long-discussed issue.  The original "
+"mailing list messages should be referred to for details."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2397
+msgid "In a 2001-10-31 discussion I wrote:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2399
+msgid ""
+"Try, for example, `Ed Loper's 2001-03-21 post`_, which details some rules"
+" for nested inline markup. I think the complexity is prohibitive for the "
+"marginal benefit. (And if you can understand that tree without going mad,"
+" you're a better man than I. ;-)"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2404
+msgid ""
+"Inline markup is already fragile. Allowing nested inline markup would "
+"only be asking for trouble IMHO. If it proves absolutely necessary, it "
+"can be added later. The rules for what can appear inside what must be "
+"well thought out first though."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2414
+msgid "In a 2001-11-09 Doc-SIG post, I wrote:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2416
+msgid ""
+"The problem is that in the what-you-see-is-more-or-less-what-you-get "
+"markup language that is reStructuredText, the symbols used for inline "
+"markup (\"*\", \"**\", \"`\", \"``\", etc.) may preclude nesting."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2421
+msgid ""
+"I've rethought this position.  Nested markup is not precluded, just "
+"tricky.  People and software parse \"double and 'single' quotes\" all the"
+" time.  Continuing,"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2425
+msgid ""
+"I've thought over how we might implement nested inline markup. The first "
+"algorithm (\"first identify the outer inline markup as we do now, then "
+"recursively scan for nested inline markup\") won't work; counterexamples "
+"were given in my `last post <http://mail.python.org/pipermail/doc-"
+"sig/2001-November/002363.html>`__."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2431
+msgid "The second algorithm makes my head hurt::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2451
+msgid ""
+"This is similar to how the parser does section title recognition, but "
+"sections are much more regular and deterministic."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2455
+msgid ""
+"Bottom line is, I don't think the benefits are worth the effort, even if "
+"it is possible. I'm not going to try to write the code, at least not now."
+" If somebody codes up a consistent, working, general solution, I'll be "
+"happy to consider it."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2462
+msgid ""
+"In a `2003-05-06 Docutils-Users post`__ Paul Tremblay proposed a new "
+"syntax to allow for easier nesting.  It eventually evolved into this::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2468
+msgid ""
+"The duplication with the existing interpreted text syntax is problematic "
+"though."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2473
+msgid "Could the parser be extended to parse nested interpreted text? ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2478
+msgid ""
+"In a `2003-06-18 Docutils-Develop post`__, Mark Nodine reported on his "
+"implementation of a form of nested inline markup in his Perl-based parser"
+" (unpublished).  He brought up some interesting ideas.  The "
+"implementation was flawed, however, by the change in semantics required "
+"for backslash escapes."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2486
+msgid ""
+"Docutils-develop threads between David Abrahams, David Goodger, and Mark "
+"Nodine (beginning 2004-01-16__ and 2004-01-19__) hashed out many of the "
+"details of a potentially successful implementation, as described below.  "
+"David Abrahams checked in code to the \"nesting\" branch of CVS, awaiting"
+" thorough review."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2495
+msgid ""
+"It may be possible to accomplish nested inline markup in general with a "
+"more powerful inline markup parser.  There may be some issues, but I'm "
+"not averse to the idea of nested inline markup in general.  I just don't "
+"have the time or inclination to write a new parser now.  Of course, a "
+"good patch would be welcome!"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2501
+msgid ""
+"I envisage something like this.  Explicit-role interpreted text must be "
+"nestable.  Prefix-based is probably preferred, since suffix-based will "
+"look like inline literals::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2507
+msgid "But it can be disambiguated, so it ought to be left up to the author::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2511
+msgid "In addition, other forms of inline markup may be nested if unambiguous::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2516
+msgid "IOW, the parser ought to be as permissive as possible."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2520
+msgid "Index Entries & Indexes"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2522
+msgid ""
+"Were I writing a book with an index, I guess I'd need two different kinds"
+" of index targets: inline/implicit and out-of-line/explicit.  For "
+"example::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2541
+msgid ""
+"The words \"paragraph\", \"marked\", and \"index\" would become index "
+"entries pointing at the words in the first paragraph.  The index entry "
+"words appear verbatim in the text.  (Don't worry about the ugly "
+"\":index:\" part; if indexing is the only/main application of interpreted"
+" text in your documents, it can be implicit and omitted.)  The two "
+"directives provide manual indexing, where the index entry words "
+"(\"markup\" and \"syntax\") do not appear in the main text.  We could "
+"combine the two directives into one::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2552
+msgid ""
+"Semicolons instead of commas because commas could *be* part of the index "
+"target, like::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2557
+msgid ""
+"Another reason for index directives is because other inline markup "
+"wouldn't be possible within inline index targets."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2560
+msgid "Sometimes index entries have multiple levels.  Given::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2564
+msgid ""
+"In a hypothetical index, combined with other entries, it might look like "
+"this::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2573
+msgid ""
+"Inline multi-level index targets could be done too.  Perhaps something "
+"like::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2579
+msgid "The opposite sense could also be possible::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2584
+msgid "Also \"see / see also\" index entries."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2586
+msgid "Given::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2592
+msgid ""
+"(The \"index\" directive above actually targets the *preceding* object.)"
+"  The directive should produce something like this XML::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2600
+msgid "This kind of content model would also allow true inline index-entries::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2605
+msgid ""
+"If the \"index\" role were the default for the application, it could be "
+"dropped::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2610
+msgid "Both of these would result in this XML::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2618
+msgid "from 2002-06-24 docutils-develop posts"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2620
+msgid ""
+"If all of your index entries will appear verbatim in the text, this "
+"should be sufficient.  If not (e.g., if you want \"Van Rossum, Guido\" in"
+" the index but \"Guido van Rossum\" in the text), we'll have to figure "
+"out a supplemental mechanism, perhaps using substitutions."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2626
+msgid "I've thought a bit more on this, and I came up with two possibilities:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2628
+msgid ""
+"Using interpreted text, embed the index entry text within the interpreted"
+" text::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2633
+msgid ""
+"The problem with this is obvious: the text becomes cluttered and hard to "
+"read.  The processed output would drop the text in brackets, which goes "
+"against the spirit of interpreted text."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2637
+msgid "Use substitutions::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2643
+msgid ""
+"A problem with this is that each substitution definition must have a "
+"unique name.  A subsequent ``.. |Guido van Rossum| index:: BDFL`` would "
+"be illegal.  Some kind of anonymous substitution definition mechanism "
+"would be required, but I think that's going too far."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2648
+msgid "Both of these alternatives are flawed.  Any other ideas?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2653
+msgid "... Or Not To Do?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2655
+msgid ""
+"This is the realm of the possible but questionably probable.  These ideas"
+" are kept here as a record of what has been proposed, for posterity and "
+"in case any of them prove to be useful."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2661
+msgid "Compound Enumerated Lists"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2663
+msgid ""
+"Allow for compound enumerators, such as \"1.1.\" or \"1.a.\" or \"1(a)\","
+" to allow for nested enumerated lists without indentation?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2668
+msgid "Indented Lists"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2670
+msgid ""
+"Allow for variant styles by interpreting indented lists as if they "
+"weren't indented?  For example, currently the list below will be parsed "
+"as a list within a block quote::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2679
+msgid ""
+"But a lot of people seem to write that way, and HTML browsers make it "
+"look as if that's the way it should be.  The parser could check the "
+"contents of block quotes, and if they contain only a single list, remove "
+"the block quote wrapper.  There would be two problems:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2684
+msgid "What if we actually *do* want a list inside a block quote?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2686
+msgid ""
+"What if such a list comes immediately after an indented construct, such "
+"as a literal block?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2689
+msgid ""
+"Both could be solved using empty comments (problem 2 already exists for a"
+" block quote after a literal block).  But that's a hack."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2692
+msgid ""
+"Perhaps a runtime setting, allowing or disabling this convenience, would "
+"be appropriate.  But that raises issues too:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2695
+msgid ""
+"User A, who writes lists indented (and their config file is set up to "
+"allow it), sends a file to user B, who doesn't (and their config file "
+"disables indented lists).  The result of processing by the two users will"
+" be different."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2700
+msgid "It may seem minor, but it adds ambiguity to the parser, which is bad."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2702
+msgid ""
+"See the `Doc-SIG discussion starting 2001-04-18`__ with Ed Loper's "
+"\"Structuring: a summary; and an attempt at EBNF\", item 4 (and follow-"
+"ups, here__ and here__).  Also `docutils-users, 2003-02-17`__ and "
+"`beginning 2003-08-04`__."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2715
+msgid "Sloppy Indentation of List Items"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2717
+msgid ""
+"Perhaps the indentation shouldn't be so strict.  Currently, this is "
+"required::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2723
+msgid "Anything wrong with this? ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2728
+msgid "Problem? ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2743
+msgid "Hmm...  Non-strict indentation isn't such a good idea."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2747
+msgid "Lazy Indentation of List Items"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2749
+msgid ""
+"Another approach: Going back to the first draft of reStructuredText "
+"(2000-11-27 post to Doc-SIG)::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2756
+msgid ""
+"Change that to *require* a blank line above and below, to reduce "
+"ambiguity.  This \"loosening\" may be added later, once the parser's been"
+" nailed down.  However, a serious drawback of this approach is to limit "
+"the content of each list item to a single paragraph."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2763
+msgid "David's Idea for Lazy Indentation"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2765
+msgid ""
+"Consider a paragraph in a word processor.  It is a single logical line of"
+" text which ends with a newline, soft-wrapped arbitrarily at the right "
+"edge of the page or screen.  We can think of a plaintext paragraph in the"
+" same way, as a single logical line of text, ending with two newlines (a "
+"blank line) instead of one, and which may contain arbitrary line breaks "
+"(newlines) where it was accidentally hard-wrapped by an application.  We "
+"can compensate for the accidental hard-wrapping by \"unwrapping\" every "
+"unindented second and subsequent line.  The indentation of the first line"
+" of a paragraph or list item would determine the indentation for the "
+"entire element.  Blank lines would be required between list items when "
+"using lazy indentation."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2777
+msgid ""
+"The following example shows the lazy indentation of multiple body "
+"elements::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2792
+msgid "A more complex example shows the limitations of lazy indentation::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2819
+msgid "And the ambiguity remains::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2831
+msgid ""
+"Literal blocks and block quotes would still require consistent "
+"indentation for all their lines.  For block quotes, we might be able to "
+"get away with only requiring that the first line of each contained "
+"element be indented.  For example::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2847
+msgid ""
+"Although feasible, this form of lazy indentation has problems.  The "
+"document structure and hierarchy is not obvious from the indentation, "
+"making the source plaintext difficult to read.  This will also make "
+"keeping track of the indentation while writing difficult and error-prone."
+"  However, these problems may be acceptable for Wikis and email mode, "
+"where we may be able to rely on less complex structure (few nested lists,"
+" for example)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2857
+msgid "Multiple Roles in Interpreted Text"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2859
+msgid ""
+"In reStructuredText, inline markup cannot be nested (yet; `see above`__)."
+"  This also applies to interpreted text.  In order to simultaneously "
+"combine multiple roles for a single piece of text, a syntax extension "
+"would be necessary.  Ideas:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2864
+msgid "Initial idea::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2868
+msgid "Suggested by Jason Diamond::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2872
+msgid ""
+"If a document is so complex as to require nested inline markup, perhaps "
+"another markup system should be considered.  By design, reStructuredText "
+"does not have the flexibility of XML."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2880
+msgid "Parameterized Interpreted Text"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2882
+msgid ""
+"In some cases it may be expedient to pass parameters to interpreted text,"
+" analogous to function calls.  Ideas:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2885
+msgid ""
+"Parameterize the interpreted text role itself (suggested by Jason "
+"Diamond)::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2890
+msgid "Positional parameters could also be supported::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2895
+msgid ""
+"Technical problem: current interpreted text syntax does not recognize "
+"roles containing whitespace.  Design problem: this smells like "
+"programming language syntax, but reStructuredText is not a programming "
+"language."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2900
+msgid "Put the parameters inside the interpreted text::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2905
+msgid ""
+"Although this could be defined on an individual basis (per role), we "
+"ought to have a standard.  Hyperlinks with embedded URIs already use "
+"angle brackets; perhaps they could be used here too::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2912
+msgid ""
+"Do angle brackets connote URLs too much for this to be acceptable? How "
+"about the \"tag\" connotation -- does it save them or doom them?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2915
+msgid "`Nested inline markup`_ could prove useful here::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2921
+msgid ""
+"Inline markup roles could even define the default roles of nested inline "
+"markup, allowing this cleaner syntax::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2927
+msgid ""
+"Does this push inline markup too far?  Readability becomes a serious "
+"issue.  Substitutions may provide a better alternative (at the expense of"
+" verbosity and duplication) by pulling the details out of the text flow::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2940
+msgid ""
+"This whole idea may be going beyond the scope of reStructuredText. "
+"Documents requiring this functionality may be better off using XML or "
+"another markup system."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2944
+msgid ""
+"This argument comes up regularly when pushing the envelope of "
+"reStructuredText syntax.  I think it's a useful argument in that it "
+"provides a check on creeping featurism.  In many cases, the resulting "
+"verbosity produces such unreadable plaintext that there's a natural "
+"desire *not* to use it unless absolutely necessary.  It's a matter of "
+"finding the right balance."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2953
+msgid "Syntax for Interpreted Text Role Bindings"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2955
+msgid ""
+"The following syntax (idea from Jeffrey C. Jacobs) could be used to "
+"associate directives with roles::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2963
+msgid ""
+"The syntax is similar to that of substitution declarations, and the "
+"directive/role association may resolve implementation issues.  The "
+"semantics, ramifications, and implementation details would need to be "
+"worked out."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2968
+msgid ""
+"The example above would implement the \"rewrite\" role as adding a "
+"``class=\"rewrite\"`` attribute to the interpreted text (\"inline\" "
+"element).  The stylesheet would then pick up on the \"class\" attribute "
+"to do the actual formatting."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2973
+msgid ""
+"The advantage of the new syntax would be flexibility.  Uses other than "
+"\"class\" may present themselves.  The disadvantage is complexity: having"
+" to implement new syntax for a relatively specialized operation, and "
+"having new semantics in existing directives (\"class::\" would do "
+"something different)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2979
+msgid "The `\"role\" directive`__ has been implemented."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2985
+msgid "Character Processing"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2987
+msgid ""
+"Several people have suggested adding some form of character processing to"
+" reStructuredText:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2990
+msgid "Some sort of automated replacement of ASCII sequences:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2992
+msgid "``--`` to em-dash (or ``--`` to en-dash, and ``---`` to em-dash)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2993
+msgid ""
+"Convert quotes to curly quote entities.  (Essentially impossible for "
+"HTML?  Unnecessary for TeX.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2995
+msgid "Various forms of ``:-)`` to smiley icons."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2996
+msgid ""
+"``\"\\ \"`` to &nbsp;.  Problem with line-wrapping though: it could end "
+"up escaping the newline."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2998
+msgid "Escaped newlines to <BR>."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:2999
+msgid ""
+"Escaped period or quote or dash as a disappearing catalyst to allow "
+"character-level inline markup?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3002
+msgid "XML-style character entities, such as \"&copy;\" for the copyright symbol."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3005
+msgid ""
+"Docutils has no need of a character entity subsystem.  Supporting Unicode"
+" and text encodings, character entities should be directly represented in"
+" the text: a copyright symbol should be represented by the copyright "
+"symbol character.  If this is not possible in an authoring environment, a"
+" pre-processing stage can be added, or a table of substitution "
+"definitions can be devised."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3012
+msgid ""
+"A \"unicode\" directive has been implemented to allow direct "
+"specification of esoteric characters.  In combination with the "
+"substitution construct, \"include\" files defining common sets of "
+"character entities can be defined and used.  `A set of character entity "
+"set definition files have been defined`__ (`tarball`__). There's also `a "
+"description and instructions for use`__."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3023
+msgid ""
+"To allow for `character-level inline markup`_, a limited form of "
+"character processing has been added to the spec and parser: escaped "
+"whitespace characters are removed from the processed document.  Any "
+"further character processing will be of this functional type, rather than"
+" of the character-encoding type."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3032
+msgid "Directive idea::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3036
+msgid "Support Unicode \"U+XXXX\" codes."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3037
+msgid "Support regexps, perhaps with alternative \"regexp-replace\" directive."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3039
+msgid "Flags for regexps; \":flags:\" option, or individuals."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3040
+msgid "Specifically, should the default be case-sensistive or -insensitive?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3045
+msgid "Page Or Line Breaks"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3047
+msgid ""
+"Should ^L (or something else in reST) be defined to mean force/suggest "
+"page breaks in whatever output we have?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3050
+msgid ""
+"A \"break\" or \"page-break\" directive would be easy to add.  A new "
+"doctree element would be required though (perhaps \"break\").  The final "
+"behavior would be up to the Writer.  The directive argument could be one "
+"of page/column/recto/verso for added flexibility."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3055
+msgid ""
+"Currently ^L (Python's ``\\f``) characters are treated as whitespace. "
+"They're converted to single spaces, actually, as are vertical tabs (^K, "
+"Python's ``\\v``).  It would be possible to recognize form feeds as "
+"markup, but it requires some thought and discussion first.  Are there any"
+" downsides?  Many editing environments do not allow the insertion of "
+"control characters.  Will it cause any harm?  It would be useful as a "
+"shorthand for the directive."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3063
+msgid "It's common practice to use ^L before Emacs \"Local Variables\" lists::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3075
+msgid ""
+"These are already present in many PEPs and Docutils project documents.  "
+"From the Emacs manual (info):"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3078
+msgid ""
+"A \"local variables list\" goes near the end of the file, in the last "
+"page.  (It is often best to put it on a page by itself.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3081
+msgid ""
+"It would be unfortunate if this construct caused a final blank page to be"
+" generated (for those Writers that recognize the page breaks). We'll have"
+" to add a transform that looks for a \"break\" plus zero or more comments"
+" at the end of a document, and removes them."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3086
+msgid ""
+"Probably a bad idea because there is no such thing as a page in a generic"
+" document format."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3089
+msgid ""
+"Could the \"break\" concept above be extended to inline forms? E.g. "
+"\"^L\" in the middle of a sentence could cause a line break. Only "
+"recognize it at the end of a line (i.e., ``\\f\\n``)?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3093
+msgid ""
+"Or is formfeed inappropriate?  Perhaps vertical tab (``\\v``), but even "
+"that's a stretch.  Can't use carriage returns, since they're commonly "
+"used for line endings."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3097
+msgid ""
+"Probably a bad idea as well because we do not want to use control "
+"characters for well-readable and well-writable markup, and after all we "
+"have the line block syntax for line breaks."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3103
+msgid "Superscript Markup"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3105
+msgid ""
+"Add ``^superscript^`` inline markup?  The only common non-markup uses of "
+"\"^\" I can think of are as short hand for \"superscript\" itself and for"
+" describing control characters (\"^C to cancel\").  The former supports "
+"the proposed syntax, and it could be argued that the latter ought to be "
+"literal text anyhow (e.g. \"``^C`` to cancel\")."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3111
+msgid ""
+"However, superscripts are seldom needed, and new syntax would break "
+"existing documents.  When it's needed, the ``:superscript:`` (``:sup:``) "
+"role can we used as well."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3117
+msgid "Code Execution"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3119
+msgid "Add the following directives?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3121
+msgid ""
+"\"exec\": Execute Python code & insert the results.  Call it \"python\" "
+"to allow for other languages?"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3124
+msgid ""
+"\"system\": Execute an ``os.system()`` call, and insert the results "
+"(possibly as a literal block).  Definitely dangerous!  How to make it "
+"safe?  Perhaps such processing should be left outside of the document, in"
+" the user's production system (a makefile or a script or whatever).  Or, "
+"the directive could be disabled by default and only enabled with an "
+"explicit command-line option or config file setting. Even then, an "
+"interactive prompt may be useful, such as:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3132
+msgid ""
+"The file.txt document you are processing contains a \"system\" directive "
+"requesting that the ``sudo rm -rf /`` command be executed.  Allow it to "
+"execute?  (y/N)"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3136
+msgid ""
+"\"eval\": Evaluate an expression & insert the text.  At parse time or at "
+"substitution time?  Dangerous?  Perhaps limit to canned macros; see "
+"text.date_."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3142
+msgid ""
+"It's too dangerous (or too complicated in the case of \"eval\").  We do "
+"not want to have such things in the core."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3147
+msgid "``encoding`` Directive"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3149
+msgid ""
+"Add an \"encoding\" directive to specify the character encoding of the "
+"input data?  Not a good idea for the following reasons:"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3152
+msgid ""
+"When it sees the directive, the parser will already have read the input "
+"data, and encoding determination will already have been done."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3155
+msgid ""
+"If a file with an \"encoding\" directive is edited and saved with a "
+"different encoding, the directive may cause data corruption."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3160
+msgid "Support for Annotations"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3162
+msgid ""
+"Add an \"annotation\" role, as the equivalent of the HTML \"title\" "
+"attribute?  This is secondary information that may \"pop up\" when the "
+"pointer hovers over the main text.  A corresponding directive would be "
+"required to associate annotations with the original text (by name, or "
+"positionally as in anonymous targets?)."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3168
+msgid ""
+"There have not been many requests for such feature, though.  Also, "
+"cluttering WYSIWYG plaintext with annotations may not seem like a good "
+"idea, and there is no \"tool tip\" in formats other than HTML."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3174
+msgid "``term`` Role"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3176
+msgid ""
+"Add a \"term\" role for unfamiliar or specialized terminology?  Probably "
+"not; there is no real use case, and emphasis is enough for most cases."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3181
+msgid "Object references"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3183
+msgid "We need syntax for `object references`_."
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3185
+msgid "Parameterized substitutions?  For example::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3192
+msgid "The result would be::"
+msgstr ""
+
+#: ../../docutils/docs/dev/rst/alternatives.txt:3196
+msgid ""
+"But this would require substitution directives to be processed at "
+"reference-time, not at definition-time as they are now.  Or, perhaps the "
+"directives could just leave ``pending`` elements behind, and the "
+"transforms do the work?  How to pass the data through? Too complicated. "
+"Use interpreted text roles."
+msgstr ""
+

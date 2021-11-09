@@ -1,0 +1,671 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/api/publisher.txt:3
+msgid "The Docutils Publisher"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:5
+msgid "David Goodger"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:7
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:8
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:12
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:14
+msgid ""
+"The ``docutils.core.Publisher`` class is the core of Docutils, managing "
+"all the processing and relationships between components.  See `PEP 258`_ "
+"for an overview of Docutils components."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:18
+msgid ""
+"The ``docutils.core.publish_*`` convenience functions are the normal "
+"entry points for using Docutils as a library."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:21
+msgid ""
+"See `Inside A Docutils Command-Line Front-End Tool`_ for an overview of a"
+" typical Docutils front-end tool, including how the Publisher class is "
+"used."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:30
+msgid "Publisher Convenience Functions"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:32
+msgid ""
+"Each of these functions set up a ``docutils.core.Publisher`` object, then"
+" call its ``publish`` method.  ``docutils.core.Publisher.publish`` "
+"handles everything else.  There are several convenience functions in the "
+"``docutils.core`` module:"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt
+msgid "_`publish_cmdline`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:37
+msgid ""
+"for command-line front-end tools, like ``rst2html.py``.  There are "
+"several examples in the ``tools/`` directory.  A detailed analysis of one"
+" such tool is in `Inside A Docutils Command-Line Front-End Tool`_"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt
+msgid "_`publish_file`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:42
+msgid ""
+"for programmatic use with file-like I/O.  In addition to writing the "
+"encoded output to a file, also returns the encoded output as a string."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt
+msgid "_`publish_string`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:46
+msgid ""
+"for programmatic use with string I/O.  Returns the encoded output as a "
+"string."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt
+msgid "_`publish_parts`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:49
+msgid ""
+"for programmatic use with string input; returns a dictionary of document "
+"parts.  Dictionary keys are the names of parts, and values are Unicode "
+"strings; encoding is up to the client. Useful when only portions of the "
+"processed document are desired. See `publish_parts Details`_ below."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:55
+msgid "There are usage examples in the `docutils/examples.py`_ module."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt
+msgid "_`publish_doctree`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:57
+msgid ""
+"for programmatic use with string input; returns a Docutils document tree "
+"data structure (doctree).  The doctree can be modified, pickled & "
+"unpickled, etc., and then reprocessed with `publish_from_doctree`_."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt
+msgid "_`publish_from_doctree`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:62
+msgid ""
+"for programmatic use to render from an existing document tree data "
+"structure (doctree); returns the encoded output as a string."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt
+msgid "_`publish_programmatically`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:66
+msgid ""
+"for custom programmatic use.  This function implements common code and is"
+" used by ``publish_file``, ``publish_string``, and ``publish_parts``.  It"
+" returns a 2-tuple: the encoded string output and the Publisher object."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:76
+msgid "Configuration"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:78
+msgid ""
+"To pass application-specific setting defaults to the Publisher "
+"convenience functions, use the ``settings_overrides`` parameter.  Pass a "
+"dictionary of setting names & values, like this::"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:86
+msgid ""
+"Settings from command-line options override configuration file settings, "
+"and they override application defaults.  For details, see `Docutils "
+"Runtime Settings`_.  See `Docutils Configuration Files`_ for details "
+"about individual settings."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:96
+msgid "Encodings"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:98
+msgid ""
+"The default output encoding of Docutils is UTF-8. Docutils may introduce "
+"some non-ASCII text if you use `auto-symbol footnotes`_ or the "
+"`\"contents\" directive`_."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:109
+msgid "``publish_parts`` Details"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:111
+msgid ""
+"The ``docutils.core.publish_parts`` convenience function returns a "
+"dictionary of document parts.  Dictionary keys are the names of parts, "
+"and values are Unicode strings."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:115
+msgid ""
+"Each Writer component may publish a different set of document parts, "
+"described below.  Not all writers implement all parts."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:120
+msgid "Parts Provided By All Writers"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:123
+msgid "_`encoding`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:123
+msgid "The output encoding setting."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:126
+msgid "_`version`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:126
+msgid "The version of Docutils used."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:130
+msgid "_`whole`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:129
+msgid "``parts['whole']`` contains the entire formatted document."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:133
+msgid "Parts Provided By the HTML Writers"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:136
+msgid "HTML4 Writer"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:140
+msgid "_`body`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:139
+msgid ""
+"``parts['body']`` is equivalent to parts['fragment_'].  It is *not* "
+"equivalent to parts['html_body_']."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:153
+msgid "_`body_prefix`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:143
+msgid "``parts['body_prefix']`` contains::"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:149
+msgid "and, if applicable::"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:159
+msgid "_`body_pre_docinfo`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:156
+msgid "``parts['body_pre_docinfo]`` contains (as applicable)::"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:176
+msgid "_`body_suffix`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:162
+msgid "``parts['body_suffix']`` contains::"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:166
+msgid ""
+"(the end-tag for ``<div class=\"document\">``), the footer division if "
+"applicable::"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:173
+msgid "and::"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:180
+msgid "_`docinfo`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:179
+#: ../../docutils/docs/api/publisher.txt:307
+msgid ""
+"``parts['docinfo']`` contains the document bibliographic data, the "
+"docinfo field list rendered as a table."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:185
+msgid "_`footer`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:183
+msgid ""
+"``parts['footer']`` contains the document footer content, meant to appear"
+" at the bottom of a web page, or repeated at the bottom of every printed "
+"page."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:190
+msgid "_`fragment`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:188
+msgid ""
+"``parts['fragment']`` contains the document body (*not* the HTML "
+"``<body>``).  In other words, it contains the entire document, less the "
+"document title, subtitle, docinfo, header, and footer."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:194
+msgid "_`head`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:193
+msgid ""
+"``parts['head']`` contains ``<meta ... />`` tags and the document "
+"``<title>...</title>``."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:199
+msgid "_`head_prefix`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:197
+msgid ""
+"``parts['head_prefix']`` contains the XML declaration, the DOCTYPE "
+"declaration, the ``<html ...>`` start tag and the ``<head>`` start tag."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:204
+msgid "_`header`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:202
+msgid ""
+"``parts['header']`` contains the document header content, meant to appear"
+" at the top of a web page, or repeated at the top of every printed page."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:208
+msgid "_`html_body`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:207
+msgid ""
+"``parts['html_body']`` contains the HTML ``<body>`` content, less the "
+"``<body>`` and ``</body>`` tags themselves."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:219
+msgid "_`html_head`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:211
+#, python-format
+msgid ""
+"``parts['html_head']`` contains the HTML ``<head>`` content, less the "
+"stylesheet link and the ``<head>`` and ``</head>`` tags themselves.  "
+"Since ``publish_parts`` returns Unicode strings and does not know about "
+"the output encoding, the \"Content-Type\" meta tag's \"charset\" value is"
+" left unresolved, as \"%s\"::"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:219
+#: ../../docutils/docs/api/publisher.txt:228
+msgid "The interpolation should be done by client code."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:228
+msgid "_`html_prolog`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:222
+#, python-format
+msgid ""
+"``parts['html_prolog]`` contains the XML declaration and the doctype "
+"declaration.  The XML declaration's \"encoding\" attribute's value is "
+"left unresolved, as \"%s\"::"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:233
+msgid "_`html_subtitle`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:231
+msgid ""
+"``parts['html_subtitle']`` contains the document subtitle, including the "
+"enclosing ``<h2 class=\"subtitle\">`` & ``</h2>`` tags."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:237
+msgid "_`html_title`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:236
+msgid ""
+"``parts['html_title']`` contains the document title, including the "
+"enclosing ``<h1 class=\"title\">`` & ``</h1>`` tags."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:240
+msgid "_`meta`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:240
+msgid "``parts['meta']`` contains all ``<meta ... />`` tags."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:244
+msgid "_`stylesheet`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:243
+msgid ""
+"``parts['stylesheet']`` contains the embedded stylesheet or stylesheet "
+"link."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:249
+msgid "_`subtitle`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:247
+msgid ""
+"``parts['subtitle']`` contains the document subtitle text and any inline "
+"markup.  It does not include the enclosing ``<h2>`` & ``</h2>`` tags."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:255
+msgid "_`title`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:252
+msgid ""
+"``parts['title']`` contains the document title text and any inline "
+"markup.  It does not include the enclosing ``<h1>`` & ``</h1>`` tags."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:258
+msgid "PEP/HTML Writer"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:260
+msgid ""
+"The PEP/HTML writer provides the same parts as the `HTML4 writer`_, plus "
+"the following:"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:265
+msgid "_`pepnum`"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:264
+msgid "``parts['pepnum']`` contains"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:268
+msgid "S5/HTML Writer"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:270
+msgid "The S5/HTML writer provides the same parts as the `HTML4 writer`_."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:274
+msgid "HTML5 Writer"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:276
+msgid ""
+"The HTML5 writer provides the same parts as the `HTML4 writer`_. However,"
+" it uses semantic HTML5 elements for the document, header and footer."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:282
+msgid "Parts Provided by the LaTeX2e Writer"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:284
+msgid ""
+"See the template files for examples how these parts can be combined into "
+"a valid LaTeX document."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:289
+msgid "abstract"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:288
+msgid ""
+"``parts['abstract']`` contains the formatted content of the 'abstract' "
+"docinfo field."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:297
+msgid "body"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:292
+msgid ""
+"``parts['body']`` contains the document's content. In other words, it "
+"contains the entire document, except the document title, subtitle, and "
+"docinfo."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:296
+msgid ""
+"This part can be included into another LaTeX document body using the "
+"``\\input{}`` command."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:300
+msgid "body_pre_docinfo"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:300
+msgid "``parts['body_pre_docinfo]`` contains the ``\\maketitle`` command."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:304
+msgid "dedication"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:303
+msgid ""
+"``parts['dedication']`` contains the formatted content of the "
+"'dedication' docinfo field."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:313
+msgid "docinfo"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:310
+msgid ""
+"With ``--use-latex-docinfo`` 'author', 'organization', 'contact', "
+"'address' and 'date' info is moved to titledata."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:313
+msgid "'dedication' and 'abstract' are always moved to separate parts."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:317
+msgid "fallbacks"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:316
+msgid ""
+"``parts['fallbacks']`` contains fallback definitions for Docutils-"
+"specific commands and environments."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:321
+msgid "head_prefix"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:320
+msgid ""
+"``parts['head_prefix']`` contains the declaration of documentclass and "
+"document options."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:325
+msgid "latex_preamble"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:324
+msgid ""
+"``parts['latex_preamble']`` contains the argument of the ``--latex-"
+"preamble`` option."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:329
+msgid "pdfsetup"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:328
+msgid ""
+"``parts['pdfsetup']`` contains the PDF properties (\"hyperref\" package "
+"setup)."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:333
+msgid "requirements"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:332
+msgid ""
+"``parts['requirements']`` contains required packages and setup before the"
+" stylesheet inclusion."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:337
+msgid "stylesheet"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:336
+msgid ""
+"``parts['stylesheet']`` contains the embedded stylesheet(s) or stylesheet"
+" loading command(s)."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:341
+msgid "subtitle"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:340
+msgid ""
+"``parts['subtitle']`` contains the document subtitle text and any inline "
+"markup."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:345
+msgid "title"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:344
+msgid "``parts['title']`` contains the document title text and any inline markup."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:351
+msgid "titledata"
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:348
+msgid ""
+"``parts['titledata]`` contains the combined title data in ``\\title``, "
+"``\\author``, and ``\\data`` macros."
+msgstr ""
+
+#: ../../docutils/docs/api/publisher.txt:351
+msgid ""
+"With ``--use-latex-docinfo``, this includes the 'author', 'organization',"
+" 'contact', 'address' and 'date' docinfo items."
+msgstr ""
+

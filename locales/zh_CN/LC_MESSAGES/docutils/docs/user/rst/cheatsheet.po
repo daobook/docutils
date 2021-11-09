@@ -1,0 +1,595 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:3
+msgid "The reStructuredText_ Cheat Sheet: Syntax Reminders"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt
+msgid "Info"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:4
+msgid "See <http://docutils.sf.net/rst.html> for introductory docs."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:5
+msgid "David Goodger <goodger@python.org>"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:6
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:7
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt
+#: ../../docutils/docs/user/rst/cheatsheet.txt:120
+msgid "Description"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:8
+msgid "This is a \"docinfo block\", or bibliographic field list"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:10
+msgid ""
+"If you are reading this as HTML, please read `<cheatsheet.txt>`_ instead "
+"to see the input syntax examples!"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:14
+msgid "Section Structure"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:15
+msgid "Section titles are underlined or overlined & underlined."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:18
+msgid "Body Elements"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:19
+msgid "Grid table:"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:22
+msgid "Paragraphs are flush-left, separated by blank lines."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:25
+msgid "Block quotes are indented."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:22
+msgid "Literal block, preceded by \"::\"::"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:26
+msgid "or::"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt
+msgid "Line blocks preserve line breaks & indents. [new in 0.3.6]"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt
+msgid ""
+"Useful for addresses, verse, and adornment-free lists; long lines can be "
+"wrapped with continuation lines."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:35
+msgid "Simple tables:"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:38
+msgid "List Type"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:38
+msgid "Examples (syntax in the `text source <cheatsheet.txt>`_)"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:40
+msgid "Bullet list"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:40
+msgid "items begin with \"-\", \"+\", or \"*\""
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:41
+msgid "Enumerated list"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:41
+msgid "items use any variation of \"1.\", \"A)\", and \"(i)\""
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:42
+msgid "also auto-enumerated"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:43
+msgid "Definition list"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:43
+msgid "Term is flush-left"
+msgstr ""
+
+msgid "optional classifier"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:44
+msgid "Definition is indented, no blank line between"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:45
+msgid "Field list"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt
+msgid "field name"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:45
+msgid "field body"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:46
+msgid "Option list"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:46
+msgid "at least 2 spaces between option & description"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:50
+msgid "Explicit Markup"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:50
+msgid "Examples (visible in the `text source`_)"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:52
+msgid "Footnote"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:52
+msgid ""
+"Manually numbered or [#] auto-numbered (even [#labelled]) or [*] auto-"
+"symbol"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:54
+msgid "Citation"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:54
+msgid "A citation."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:55
+msgid "Hyperlink Target"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:58
+msgid "Anonymous Target"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:59
+msgid "Directive (\"::\")"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:60
+msgid "Substitution Def"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:61
+msgid "Comment"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:62
+msgid "Empty Comment"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:62
+msgid ""
+"(\"..\" on a line by itself, with blank lines before & after, used to "
+"separate indentation contexts)"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:67
+msgid "Inline Markup"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:68
+msgid ""
+"*emphasis*; **strong emphasis**; `interpreted text`; `interpreted text "
+"with role`:emphasis:; ``inline literal text``; standalone hyperlink, "
+"http://docutils.sourceforge.net; named reference, reStructuredText_; "
+"`anonymous reference`__; footnote reference, [1]_; citation reference, "
+"[CIT2002]_; |substitution|; _`inline internal target`."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:75
+msgid "Directive Quick Reference"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:76
+msgid "See <http://docutils.sf.net/docs/ref/rst/directives.html> for full info."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:79
+msgid "Directive Name"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:79
+msgid "Description (Docutils version added to, in [brackets])"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:81
+msgid "attention"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:81
+msgid ""
+"Specific admonition; also \"caution\", \"danger\", \"error\", \"hint\", "
+"\"important\", \"note\", \"tip\", \"warning\""
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:83
+msgid "admonition"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:83
+msgid "Generic titled admonition: ``.. admonition:: By The Way``"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:84
+msgid "image"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:84
+msgid "``.. image:: picture.png``; many options possible"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:85
+msgid "figure"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:85
+msgid "Like \"image\", but with optional caption and legend"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:86
+msgid "topic"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:86
+msgid "``.. topic:: Title``; like a mini section"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:87
+msgid "sidebar"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:87
+msgid "``.. sidebar:: Title``; like a mini parallel document"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:88
+msgid "parsed-literal"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:88
+msgid "A literal block with parsed inline markup"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:89
+msgid "rubric"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:89
+msgid "``.. rubric:: Informal Heading``"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:90
+msgid "epigraph"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:90
+msgid "Block quote with class=\"epigraph\""
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:91
+msgid "highlights"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:91
+msgid "Block quote with class=\"highlights\""
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:92
+msgid "pull-quote"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:92
+msgid "Block quote with class=\"pull-quote\""
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:93
+msgid "compound"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:93
+msgid "Compound paragraphs [0.3.6]"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:94
+msgid "container"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:94
+msgid "Generic block-level container element [0.3.10]"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:95
+msgid "table"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:95
+msgid "Create a titled table [0.3.1]"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:96
+msgid "list-table"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:96
+msgid "Create a table from a uniform two-level bullet list [0.3.8]"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:97
+msgid "csv-table"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:97
+msgid "Create a table from CSV data [0.3.4]"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:98
+msgid "contents"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:98
+msgid "Generate a table of contents"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:99
+msgid "sectnum"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:99
+msgid "Automatically number sections, subsections, etc."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:100
+msgid "header, footer"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:100
+msgid "Create document decorations [0.3.8]"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:101
+msgid "target-notes"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:101
+msgid "Create an explicit footnote for each external target"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:102
+#: ../../docutils/docs/user/rst/cheatsheet.txt:124
+msgid "math"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:102
+#: ../../docutils/docs/user/rst/cheatsheet.txt:124
+msgid "Mathematical notation (input in LaTeX format)"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:103
+msgid "meta"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:103
+msgid "Document metadata"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:104
+msgid "include"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:104
+msgid "Read an external reST file as if it were inline"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:105
+#: ../../docutils/docs/user/rst/cheatsheet.txt:127
+msgid "raw"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:105
+msgid "Non-reST data passed untouched to the Writer"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:106
+msgid "replace"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:106
+msgid "Replacement text for substitution definitions"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:107
+msgid "unicode"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:107
+msgid "Unicode character code conversion for substitution defs"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:108
+msgid "date"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:108
+msgid "Generates today's date; for substitution defs"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:109
+msgid "class"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:109
+msgid "Set a \"class\" attribute on the next element"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:110
+msgid "role"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:110
+msgid "Create a custom interpreted text role [0.3.2]"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:111
+msgid "default-role"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:111
+msgid "Set the default interpreted text role [0.3.10]"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:112
+#: ../../docutils/docs/user/rst/cheatsheet.txt:131
+msgid "title"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:112
+msgid "Set the metadata document title [0.3.10]"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:116
+msgid "Interpreted Text Role Quick Reference"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:117
+msgid "See <http://docutils.sf.net/docs/ref/rst/roles.html> for full info."
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:120
+msgid "Role Name"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:122
+msgid "emphasis"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:122
+msgid "Equivalent to *emphasis*"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:123
+msgid "literal"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:123
+msgid "Equivalent to ``literal`` but processes backslash escapes"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:125
+msgid "PEP"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:125
+msgid "Reference to a numbered Python Enhancement Proposal"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:126
+msgid "RFC"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:126
+msgid "Reference to a numbered Internet Request For Comments"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:127
+msgid "For non-reST data; cannot be used directly (see docs) [0.3.6]"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:128
+msgid "strong"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:128
+msgid "Equivalent to **strong**"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:129
+msgid "sub"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:129
+msgid "Subscript"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:130
+msgid "sup"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:130
+msgid "Superscript"
+msgstr ""
+
+#: ../../docutils/docs/user/rst/cheatsheet.txt:131
+msgid "Title reference (book, etc.); standard default role"
+msgstr ""
+

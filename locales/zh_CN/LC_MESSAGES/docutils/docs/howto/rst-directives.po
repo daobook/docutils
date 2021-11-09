@@ -1,0 +1,420 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/howto/rst-directives.txt:3
+msgid "Creating reStructuredText_ Directives"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt
+msgid "Authors"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:5
+msgid "Dethe Elza, David Goodger, Lea Wiemann"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:7
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:8
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:14
+msgid ""
+"Directives are the primary extension mechanism of reStructuredText. This "
+"document aims to make the creation of new directives as easy and "
+"understandable as possible.  There are only a couple of reStructuredText-"
+"specific features the developer needs to know to create a basic "
+"directive."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:20
+msgid ""
+"The syntax of directives is detailed in the `reStructuredText Markup "
+"Specification`_, and standard directives are described in "
+"`reStructuredText Directives`_."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:24
+msgid ""
+"Directives are a reStructuredText markup/parser concept.  There is no "
+"\"directive\" document tree element, no single element that corresponds "
+"exactly to the concept of directives.  Instead, choose the most "
+"appropriate elements from the existing Docutils elements.  Directives "
+"build structures using the existing building blocks.  See `The Docutils "
+"Document Tree`_ and the ``docutils.nodes`` module for more about the "
+"building blocks of Docutils documents."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:39
+msgid "Table of Contents"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:42
+msgid "The Directive Class"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:44
+msgid ""
+"Directives are created by defining a directive class that inherits from "
+"``docutils.parsers.rst.Directive``::"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:53
+msgid ""
+"To understand how to implement the directive, let's have a look at the "
+"docstring of the ``Directive`` base class::"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:146
+msgid "Option Conversion Functions"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:148
+msgid ""
+"An option specification (``Directive.option_spec``) must be defined "
+"detailing the options available to the directive.  An option spec is a "
+"mapping of option name to conversion function; conversion functions are "
+"applied to each option value to check validity and convert them to the "
+"expected type.  Python's built-in conversion functions are often usable "
+"for this, such as ``int``, ``float``.  Other useful conversion functions "
+"are included in the ``docutils.parsers.rst.directives`` package (in the "
+"``__init__.py`` module):"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:157
+msgid ""
+"``flag``: For options with no option arguments.  Checks for an argument "
+"(raises ``ValueError`` if found), returns ``None`` for valid flag "
+"options."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:161
+msgid ""
+"``unchanged_required``: Returns the text argument, unchanged. Raises "
+"``ValueError`` if no argument is found."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:164
+msgid ""
+"``unchanged``: Returns the text argument, unchanged.  Returns an empty "
+"string (\"\") if no argument is found."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:167
+msgid ""
+"``path``: Returns the path argument unwrapped (with newlines removed).  "
+"Raises ``ValueError`` if no argument is found."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:170
+msgid ""
+"``uri``: Returns the URI argument with whitespace removed.  Raises "
+"``ValueError`` if no argument is found."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:173
+msgid ""
+"``nonnegative_int``: Checks for a nonnegative integer argument, and "
+"raises ``ValueError`` if not."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:176
+msgid ""
+"``class_option``: Converts the argument into an ID-compatible string and "
+"returns it.  Raises ``ValueError`` if no argument is found."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:180
+msgid "``unicode_code``: Convert a Unicode character code to a Unicode character."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:183
+msgid ""
+"``single_char_or_unicode``: A single character is returned as-is. Unicode"
+" characters codes are converted as in ``unicode_code``."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:186
+msgid ""
+"``single_char_or_whitespace_or_unicode``: As with "
+"``single_char_or_unicode``, but \"tab\" and \"space\" are also supported."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:190
+msgid ""
+"``positive_int``: Converts the argument into an integer.  Raises "
+"ValueError for negative, zero, or non-integer values."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:193
+msgid ""
+"``positive_int_list``: Converts a space- or comma-separated list of "
+"integers into a Python list of integers.  Raises ValueError for non-"
+"positive-integer values."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:197
+msgid ""
+"``encoding``: Verifies the encoding argument by lookup.  Raises "
+"ValueError for unknown encodings."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:200
+msgid ""
+"A further utility function, ``choice``, is supplied to enable options "
+"whose argument must be a member of a finite set of possible values.  A "
+"custom conversion function must be written to use it. For example::"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:210
+msgid ""
+"For example, here is an option spec for a directive which allows two "
+"options, \"name\" and \"value\", each with an option argument::"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:217
+msgid "Error Handling"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:219
+msgid ""
+"If your directive implementation encounters an error during processing, "
+"you should call ``self.error()`` inside the ``run()`` method::"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:226
+msgid ""
+"The ``self.error()`` method will immediately raise an exception that will"
+" be caught by the reStructuredText directive handler.  The directive "
+"handler will then insert an error-level system message in the document at"
+" the place where the directive occurred."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:231
+msgid ""
+"Instead of ``self.error``, you can also use ``self.severe`` and "
+"``self.warning`` for more or less severe problems."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:234
+msgid ""
+"If you want to return a system message *and* document contents, you need "
+"to create the system message yourself instead of using the ``self.error``"
+" convenience method::"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:253
+msgid "Register the Directive"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:255
+msgid ""
+"If the directive is a general-use **addition to the Docutils core**, it "
+"must be registered with the parser and language mappings added:"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:258
+msgid ""
+"Register the new directive using its canonical name in "
+"``docutils/parsers/rst/directives/__init__.py``, in the "
+"``_directive_registry`` dictionary.  This allows the reStructuredText "
+"parser to find and use the directive."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:263
+msgid ""
+"Add an entry to the ``directives`` dictionary in "
+"``docutils/parsers/rst/languages/en.py`` for the directive, mapping the "
+"English name to the canonical name (both lowercase).  Usually the English"
+" name and the canonical name are the same."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:268
+msgid ""
+"Update all the other language modules as well.  For languages in which "
+"you are proficient, please add translations.  For other languages, add "
+"the English directive name plus \"(translation required)\"."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:273
+msgid ""
+"If the directive is **application-specific**, use the "
+"``register_directive`` function::"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:281
+msgid "Examples"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:283
+msgid ""
+"For the most direct and accurate information, \"Use the Source, Luke!\". "
+"All standard directives are documented in `reStructuredText Directives`_,"
+" and the source code implementing them is located in the "
+"``docutils/parsers/rst/directives`` package.  The ``__init__.py`` module "
+"contains a mapping of directive name to module and function name.  "
+"Several representative directives are described below."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:292
+msgid "Admonitions"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:294
+msgid ""
+"`Admonition directives`__, such as \"note\" and \"caution\", are quite "
+"simple.  They have no directive arguments or options.  Admonition "
+"directive content is interpreted as ordinary reStructuredText."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:300
+msgid ""
+"The resulting document tree for a simple reStructuredText line \"``.. "
+"note:: This is a note.``\" looks as follows:"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:305
+msgid "<note>"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:305
+msgid "<paragraph>"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:305
+msgid "This is a note."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:307
+msgid ""
+"The directive class for the \"note\" directive simply derives from a "
+"generic admonition directive class::"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:314
+msgid ""
+"Note that the only thing distinguishing the various admonition directives"
+" is the element (node class) generated.  In the code above, the node "
+"class is set as a class attribute and is read by the ``run()`` method of "
+"``BaseAdmonition``, where the actual processing takes place::"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:347
+msgid "Three things are noteworthy in the ``run()`` method above:"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:349
+msgid ""
+"The ``admonition_node = self.node_class(text)`` line creates the wrapper "
+"element, using the class set by the specific admonition subclasses (as in"
+" note, ``node_class = nodes.note``)."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:353
+msgid ""
+"The call to ``state.nested_parse()`` is what does the actual processing."
+"  It parses the directive content and adds any generated elements as "
+"child elements of ``admonition_node``."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:357
+msgid ""
+"If there was no directive content, the ``assert_has_content()`` "
+"convenience method raises an error exception by calling ``self.error()`` "
+"(see `Error Handling`_ above)."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:363
+msgid "\"image\""
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:367
+msgid ""
+"The \"image_\" directive is used to insert a picture into a document. "
+"This directive has one argument, the path to the image file, and supports"
+" several options.  There is no directive content.  Here's an early "
+"version of the image directive class::"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:403
+msgid "Several things are noteworthy in the code above:"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:405
+msgid ""
+"The \"image\" directive requires a single argument, which is allowed to "
+"contain whitespace (``final_argument_whitespace = True``).  This is to "
+"allow for long URLs which may span multiple lines.  The first line of the"
+" ``run()`` method joins the URL, discarding any embedded whitespace."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:411
+msgid ""
+"The reference is added to the ``options`` dictionary under the \"uri\" "
+"key; this becomes an attribute of the ``nodes.image`` element object.  "
+"Any other attributes have already been set explicitly in the "
+"reStructuredText source text."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:418
+msgid "The Pending Element"
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:420
+msgid ""
+"Directives that cause actions to be performed *after* the complete "
+"document tree has been generated can be implemented using a ``pending`` "
+"node.  The ``pending`` node causes a transform_ to be run after the "
+"document has been parsed."
+msgstr ""
+
+#: ../../docutils/docs/howto/rst-directives.txt:425
+msgid ""
+"For an example usage of the ``pending`` node, see the implementation of "
+"the ``contents`` directive in docutils.parsers.rst.directives.parts__."
+msgstr ""
+

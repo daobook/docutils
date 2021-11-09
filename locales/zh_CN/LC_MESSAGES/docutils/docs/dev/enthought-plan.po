@@ -1,0 +1,558 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/dev/enthought-plan.txt:3
+msgid "Plan for Enthought API Documentation Tool"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:5
+msgid "David Goodger"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:7
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:8
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:9
+msgid "2004 by `Enthought, Inc. <http://www.enthought.com>`_"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt
+msgid "License"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:10
+msgid "`Enthought License`_ (BSD-style)"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:14
+msgid ""
+"This document should be read in conjunction with the `Enthought API "
+"Documentation Tool RFP`__ prepared by Janet Swisher."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:18
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:24
+msgid "Introduction"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:26
+msgid ""
+"In March 2004 at I met Eric Jones, president and CTO of `Enthought, "
+"Inc.`_, at `PyCon 2004`_ in Washington DC.  He told me that Enthought was"
+" using reStructuredText_ for source code documentation, but they had some"
+" issues.  He asked if I'd be interested in doing some work on a "
+"customized API documentation tool.  Shortly after PyCon, Janet Swisher, "
+"Enthought's senior technical writer, contacted me to work out details.  "
+"Some email, a trip to Austin in May, and plenty of Texas hospitality "
+"later, we had a project.  This document will record the details, "
+"milestones, and evolution of the project."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:36
+msgid ""
+"In a nutshell, Enthought is sponsoring the implementation of an open "
+"source API documentation tool that meets their needs.  Fortuitously, "
+"their needs coincide well with the \"Python Source Reader\" description "
+"in `PEP 258`_.  In other words, Enthought is funding some significant "
+"improvements to Docutils, improvements that were planned but never "
+"implemented due to time and other constraints.  The implementation will "
+"take place gradually over several months, on a part-time basis."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:44
+msgid ""
+"This is an ideal example of cooperation between a corporation and an "
+"open-source project.  The corporation, the project, I personally, and the"
+" community all benefit.  Enthought, whose commitment to open source is "
+"also evidenced by their sponsorship of SciPy_, benefits by obtaining a "
+"useful piece of software, much more quickly than would have been possible"
+" without their support.  Docutils benefits directly from the "
+"implementation of one of its core subsystems.  I benefit from the "
+"funding, which allows me to justify the long hours to my wife and family."
+"  All the corporations, projects, and individuals that make up the "
+"community will benefit from the end result, which will be great."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:55
+msgid "All that's left now is to actually do the work!"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:63
+msgid "Development Plan"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:65
+msgid ""
+"Analyze prior art, most notably Epydoc_ and HappyDoc_, to see how they do"
+" what they do.  I have no desire to reinvent wheels unnecessarily.  I "
+"want to take the best ideas from each tool, combined with the outline in "
+"`PEP 258`_ (which will evolve), and build at least the foundation of the "
+"definitive Python auto-documentation tool."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:77
+msgid ""
+"Decide on a base platform.  The best way to achieve Enthought's goals in "
+"a reasonable time frame may be to extend Epydoc or HappyDoc.  Or it may "
+"be necessary to start fresh."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:81
+msgid ""
+"Extend the reStructuredText parser.  See `Proposed Changes to "
+"reStructuredText`_ below."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:84
+msgid ""
+"Depending on the base platform chosen, build or extend the docstring & "
+"doc comment extraction tool.  This may be the biggest part of the "
+"project, but I won't be able to break it down into details until more is "
+"known."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:91
+msgid "Repository"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:93
+msgid ""
+"If possible, all software and documentation files will be stored in the "
+"Subversion repository of Docutils and/or the base project, which are all "
+"publicly-available via anonymous pserver access."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:97
+msgid ""
+"The Docutils project is very open about granting Subversion write access;"
+" so far, everyone who asked has been given access.  Any Enthought staff "
+"member who would like Subversion write access will get it."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:102
+msgid ""
+"If either Epydoc or HappyDoc is chosen as the base platform, I will ask "
+"the project's administrator for CVS access for myself and any Enthought "
+"staff member who wants it.  If sufficient access is not granted -- "
+"although I doubt that there would be any problem -- we may have to begin "
+"a fork, which could be hosted on SourceForge, on Enthought's Subversion "
+"server, or anywhere else deemed appropriate."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:111
+msgid "Copyright & License"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:113
+msgid ""
+"Most existing Docutils files have been placed in the public domain, as "
+"follows::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:118
+msgid ""
+"This is in conjunction with the \"Public Domain Dedication\" section of "
+"COPYING.txt__."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:123
+msgid ""
+"The code and documentation originating from Enthought funding will have "
+"Enthought's copyright and license declaration.  While I will try to keep "
+"Enthought-specific code and documentation separate from the existing "
+"files, there will inevitably be cases where it makes the most sense to "
+"extend existing files."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:129
+msgid "I propose the following:"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:131
+msgid ""
+"New files related to this Enthought-funded work will be identified with "
+"the following field-list headers::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:137
+msgid "The license field text will be linked to the license file itself."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:139
+#, python-format
+msgid ""
+"For significant or major changes to an existing file (more than 10% "
+"change), the headers shall change as follows (for example)::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:146
+msgid ""
+"If the Enthought-funded portion becomes greater than the previously "
+"existing portion, Enthought's copyright line will be shown first."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:149
+#, python-format
+msgid ""
+"In cases of insignificant or minor changes to an existing file (less than"
+" 10% change), the public domain status shall remain unchanged."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:153
+msgid ""
+"A section describing all of this will be added to the Docutils "
+"`COPYING`__ instructions file."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:156
+msgid ""
+"If another project is chosen as the base project, similar changes would "
+"be made to their files, subject to negotiation."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:163
+msgid "Proposed Changes to reStructuredText"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:166
+msgid "Doc Comment Syntax"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:168
+msgid ""
+"The \"traits\" construct is implemented as dictionaries, where standalone"
+" strings would be Python syntax errors.  Therefore traits require "
+"documentation in comments.  We also need a way to differentiate between "
+"ordinary \"internal\" comments and documentation comments (doc comments)."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:174
+msgid "Javadoc uses the following syntax for doc comments::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:181
+msgid ""
+"Python doesn't have multi-line comments; only single-line.  A similar "
+"convention in Python might look like this::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:193
+msgid "How to indicate the end of the doc comment? ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:208
+msgid ""
+"Or do we even need to worry about this case?  A simple blank line could "
+"be used::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:217
+msgid "Other possibilities::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:234
+msgid ""
+"These styles (repeated on each line) work well with line wrapping in "
+"Emacs::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:239
+msgid "These styles do *not* work well with line wrapping in Emacs::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:243
+msgid ""
+"The style of doc comment indicator used could be a runtime, global and/or"
+" per-module setting.  That may add more complexity than it's worth "
+"though."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:249
+#: ../../docutils/docs/dev/enthought-plan.txt:455
+msgid "Recommendation"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:251
+msgid "I recommend adopting \"#*\" on every line::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:259
+msgid "I initially recommended adopting double-hash-marks::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:267
+msgid ""
+"But Janet Swisher rightly pointed out that this could collide with "
+"ordinary comments that are then block-commented.  This applies to double-"
+"hash-marks on the first line only as well.  So they're out."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:271
+msgid ""
+"On the other hand, the JavaDoc-comment style (\"##\" on the first line "
+"only, \"#\" after that) is used in Fredrik Lundh's PythonDoc_.  It may be"
+" worthwhile to conform to this syntax, reinforcing it as a standard. "
+"PythonDoc does not support terse doc comments (text after \"##\" on the "
+"first line)."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:281
+msgid "Update"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:283
+msgid ""
+"Enthought's Traits system has switched to a metaclass base, and traits "
+"are now defined via ordinary attributes.  Therefore doc comments are no "
+"longer absolutely necessary; attribute docstrings will suffice. Doc "
+"comments may still be desirable though, since they allow documentation to"
+" precede the thing being documented."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:291
+msgid "Docstring Density & Whitespace Minimization"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:293
+msgid ""
+"One problem with extensively documented classes & functions, is that "
+"there is a lot of screen space wasted on whitespace.  Here's some current"
+" Enthought code (from lib/cp/fluids/gassmann.py)::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:326
+msgid "The docstring is 24 lines long."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:328
+msgid ""
+"Rather than using subsections, field lists (which exist now) can save 6 "
+"lines::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:354
+msgid ""
+"As with the \"Description\" field above, field bodies may begin on the "
+"same line as the field name, which also saves space."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:357
+msgid "The output for field lists is typically a table structure.  For example:"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt
+msgid "Parameters"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:361
+msgid "temperature"
+msgstr ""
+
+msgid "sequence"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:362
+msgid "Temperature in degrees Celsius"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:363
+msgid "pressure"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:364
+msgid "Pressure in MPa"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:365
+msgid "api"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:366
+msgid "Stock tank oil API"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:367
+msgid "specific_gravity"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:368
+msgid "Specific gravity of gas at STP, default is .56"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt
+msgid "Returns"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:370
+msgid "max_gor"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:371
+msgid "Maximum dissolved gas in liters/liter"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt
+msgid "Description"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:373
+msgid ""
+"This estimate is based on equations given by Mavko, Mukerji, and Dvorkin,"
+" (1998, pp. 218-219, or 2003, p. 236) obtained originally from Batzle and"
+" Wang (1992)."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:377
+msgid ""
+"But the definition lists describing the parameters and return values are "
+"still wasteful of space.  There are a lot of half-filled lines."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:380
+msgid "Definition lists are currently defined as::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:385
+msgid "Where the classifier part is optional.  Ideas for improvements:"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:387
+msgid "We could allow multiple classifiers::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:392
+msgid ""
+"We could allow the definition on the same line as the term, using some "
+"embedded/inline markup:"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:395
+msgid "\"--\" could be used, but only in limited and well-known contexts::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:399
+msgid ""
+"This is the syntax used by StructuredText (one of reStructuredText's "
+"predecessors).  It was not adopted for reStructuredText because it is "
+"ambiguous -- people often use \"--\" in their text, as I just did.  But "
+"given a constrained context, the ambiguity would be acceptable (or would "
+"it?).  That context would be: in docstrings, within a field list, perhaps"
+" only with certain well-defined field names (parameters, returns)."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:407
+msgid ""
+"The \"constrained context\" above isn't really enough to make the "
+"ambiguity acceptable.  Instead, a slightly more verbose but far less "
+"ambiguous syntax is possible::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:413
+msgid ""
+"This syntax has advantages.  Equals signs lend themselves to the "
+"connotation of \"definition\".  And whereas one or two equals signs are "
+"commonly used in program code, three equals signs in a row have no "
+"conflicting meanings that I know of.  (Update: there *are* uses out "
+"there.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:419
+msgid ""
+"The problem with this approach is that using inline markup for structure "
+"is inherently ambiguous in reStructuredText.  For example, writing "
+"*about* definition lists would be difficult::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:425
+msgid ""
+"The parser checks for structural markup before it does inline markup "
+"processing.  But the \"===\" should be protected by its inline literal "
+"context."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:429
+msgid ""
+"We could allow the definition on the same line as the term, using "
+"structural markup.  A variation on bullet lists would work well::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:436
+msgid "Some ambiguity remains::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:440
+msgid ""
+"But the likelihood of such cases is negligible, and they can be covered "
+"in the documentation."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:443
+msgid "Other possibilities for the definition delimiter include::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:450
+msgid ""
+"The third idea currently has the best chance of being adopted and "
+"implemented."
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:457
+msgid "Combining these ideas, the function definition becomes::"
+msgstr ""
+
+#: ../../docutils/docs/dev/enthought-plan.txt:478
+msgid ""
+"The docstring is reduced to 14 lines, from the original 24.  For longer "
+"docstrings with many parameters and return values, the difference would "
+"be more significant."
+msgstr ""
+

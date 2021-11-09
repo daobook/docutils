@@ -1,0 +1,1311 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/user/slide-shows.txt:64
+msgid "Location |bullet| Date"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:5
+msgid "Easy Slide Shows With reST & S5"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt
+msgid "Authors"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:7
+msgid "David Goodger & Chris Liechti"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:8
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:14
+msgid ""
+"How to create quick, good-looking presentation slide shows with "
+"Docutils_/reStructuredText_ and S5_."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:17
+msgid ""
+"This document serves both as a user manual and as a usage example of the "
+"s5_html.py writer and the rst2s5.py front end."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:20
+msgid ""
+"To view this document as a slide show see "
+"http://docutils.sf.net/docs/user/slide-shows.s5.html (or `your local copy"
+" <slide-shows.s5.html>`__)."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:25
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:29
+msgid ""
+"S5 themes are designed for full-screen display areas with a 4:3 aspect "
+"ratio.  If the slide text doesn't fit in your browser window, try "
+"decreasing the text size."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:33
+msgid "Use the space bar to advance, Page Up/Down & arrow keys to navigate."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:35
+msgid ""
+"Best viewed in Firefox_, Safari, and Konqueror.  Click the \"|mode|\" "
+"button to switch between presentation & handout/outline modes.  Hit the "
+"\"C\" key to display the navigation controls, or mouse over the lower "
+"right-hand corner."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:40
+msgid ""
+"Functionality is limited in Opera.  Switch to full-screen mode (F11 key) "
+"to activate Opera Show."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:43
+msgid "S5 works in Internet Explorer, but it may look ugly."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:47
+msgid ""
+"The first slide of a presentation consists of all visible text up to the "
+"first section title.  The document title is also added to the footer of "
+"all slides."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:51
+msgid ""
+"The \"footer\" directive is used to specify part of the slide footer "
+"text.  It is currently limited to one short line (one paragraph)."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:54
+msgid ""
+"There is no support for the \"header\" directive in the themes included "
+"with Docutils."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:68
+msgid "Introduction"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:72
+msgid ""
+"``rst2s5.py`` is a Docutils_ front end that outputs HTML for use with "
+"S5_, a \"Simple Standards-based Slide Show System\" by Eric Meyer."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:79
+msgid ""
+"Prerequisites: Python and the Docutils_ package have to be installed.  "
+"See the `Docutils README`__ file for installation instructions."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:85
+msgid "reStructuredText"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:89
+msgid "Uses normal reStructuredText as input."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:91
+msgid "One section per slide"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:95
+msgid "Each first-level section is converted into a single slide."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:97
+msgid "XHTML output"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:101
+msgid ""
+"Presentations can be viewed using most modern graphical web browsers.  "
+"The browser must support CSS, JavaScript, and XHTML. S5 even works with "
+"IE!"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:105
+msgid ""
+"S5 was designed to add the functionality of the `Opera Show`_ standard "
+"(without Opera Show's limitations) to non-Opera browsers.  Unfortunately,"
+" most of S5's CSS and JavaScript extensions don't function in the Opera "
+"browser."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:112
+#: ../../docutils/docs/user/slide-shows.txt:469
+msgid "Themes"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:116
+msgid "A variety of themes are available.  See `Example Themes`_, below."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:118
+msgid "``rst2s5.py``"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:122
+msgid "The front-end tool to generate S5 slide shows."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:127
+msgid ""
+"The following apply in any supporting browser besides Opera, which uses "
+"the default Opera Show controls instead."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:133
+msgid "Action"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:134
+msgid "Key(s)"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:135
+msgid "Go to the next slide"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:136
+msgid "[Space bar]"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:137
+msgid "[Return]"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:138
+msgid "[Enter]"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:139
+msgid "[Right arrow]"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:140
+msgid "[Down arrow]"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:141
+msgid "[Page down]"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:142
+msgid ""
+"Click the left mouse button outside of the control area, Flash object, or"
+" movie"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:144
+msgid "Go to the previous slide"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:145
+msgid "[Left arrow]"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:146
+msgid "[Up arrow]"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:147
+msgid "[Page up]"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:148
+msgid "Go to the title (first) slide"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:149
+msgid "[Home]"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:150
+msgid "Go to the last slide"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:151
+msgid "[End]"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:152
+msgid "Jump directly to a slide"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:153
+msgid "Type the slide number, then hit [Return] or [Enter]"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:154
+msgid "Skip forward *n* slides"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:155
+msgid ""
+"Type the number of slides to skip, then hit any \"go to next\" key "
+"(except [Return] or [Enter])"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:157
+msgid "Skip backward *n* slides"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:158
+msgid "Type the number of slides to skip, then hit any \"go to previous\" key"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:160
+msgid "Switch between slideshow and outline view"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:161
+msgid "[T]"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:162
+msgid "Click the |mode| button"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:163
+msgid "Show/hide slide controls"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:164
+msgid "[C]"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:165
+msgid "Move the mouse pointer over the control area"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:167
+msgid ""
+"Further details of the S5 user interface can be found at `Eric Meyer's S5"
+" page`__."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:174
+msgid "Features (1)"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:178
+msgid ""
+"The S5/HTML Writer supports all the standard Docutils HTML features.  S5 "
+"has been released to the Public Domain."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:181
+msgid "S5-specific features:"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:185
+msgid "The document title is duplicated on each slide in the S5 footer."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:187
+msgid ""
+"The ``footer`` directive may be used to define additional text in the S5 "
+"footer."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:192
+msgid "But it is limited to one line of text."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:194
+msgid ""
+"This is useful for information such as the date of the presentation "
+"and/or the location.  The field in the footer is left blank if no "
+"``footer`` directive is used."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:198
+#: ../../docutils/docs/user/slide-shows.txt:499
+#: ../../docutils/docs/user/slide-shows.txt:850
+msgid "Example::"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:202
+msgid ""
+"There is also a progress indicator (slide counter) in the footer that can"
+" be enabled.  It's disabled by default."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:205
+msgid "Incremental display."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:209
+msgid ""
+"An \"incremental\" class can be assigned to lists and other elements to "
+"get one-item-at-a-time behavior (like this list).  Incremental display "
+"does not work in the Opera browser."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:213
+msgid "Text auto-scaling."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:217
+msgid ""
+"The text size adjusts relative to the size of your browser window "
+"automatically.  You may need to reload the document after resizing the "
+"window.  The browser and platform affect the font used; be sure to test "
+"the slide show on the presentation system."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:224
+msgid "Features (2): Handouts"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:228
+msgid ""
+"The contents of any element with a \"class\" attribute value of "
+"\"handout\" are hidden in the slide presentation, and are only visible "
+"when the presentation is printed, or viewed in outline mode.  "
+"\"Handout\"-class elements can appear anywhere in the text, as often as "
+"needed."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:234
+msgid ""
+"This means that the slides and extra handout material can be combined in "
+"one document.  The handout can be printed directly from the browser, and "
+"it will contain more than just silly framed slides.  This can be used to "
+"provide more detailed information, or for speaker's notes."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:242
+msgid "Use the \"class\" directive::"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:248
+msgid ""
+"The ``.. class:: handout`` directive can be used to tag individual "
+"paragraphs and other elements.  The \"class\" directive applies to the "
+"first element immediately following::"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:259
+msgid "It also applies to multiple elements in the directive content::"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:269
+msgid "Use the \"container\" directive::"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:275
+msgid ""
+"Arbitrary handout blocks can be created using the ``container`` "
+"directive.  The content is treated as one."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:278
+msgid "Use the \"class\" option of directives that support it::"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:285
+msgid "The following directives support \"class\" options:"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:287
+msgid "all admonition directives (\"admonition\", \"note\", \"hint\", etc.)"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:288
+msgid "\"image\" & \"figure\""
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:289
+msgid "\"topic\""
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:290
+msgid "\"sidebar\""
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:291
+msgid "\"line-block\""
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:292
+msgid "\"parsed-literal\""
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:293
+msgid "\"rubric\""
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:294
+msgid "\"compound\""
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:295
+msgid "\"table\", \"csv-table\", & \"list-table\""
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:296
+msgid "\"target-notes\" (more about that below)"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:297
+msgid "\"role\" (pre-defined; more below)"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:299
+msgid ""
+"Handout contents are also visible on the screen if the S5 view mode is "
+"toggled from \"slide show\" to \"outline\" mode."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:304
+msgid "Caveats"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:308
+msgid "Some Docutils features are not supported by some themes."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:312
+msgid ""
+"For example, header rendering is not supported by the themes supplied "
+"with Docutils."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:315
+msgid ""
+"The \"header\" directive is used to set header text.  S5 automatically "
+"inserts section/slide titles into the \"header\" area of a slide.  If "
+"both Docutils headers and S5 headers (slide titles) exist simultaneously,"
+" they interfere with each other."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:320
+msgid "Care must be taken with the \"contents\" directive."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:324
+msgid ""
+"The ``--no-toc-backlinks`` option is the default for the S5/HTML writer "
+"(``toc_backlinks=0`` setting).  Other values for this setting will change"
+" the CSS class of headings such that they won't show up correctly in the "
+"slide show."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:329
+msgid ""
+"Use the ``:class: handout`` option on the \"contents\" directive to limit"
+" the table of contents to the handout/outline mode only::"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:340
+msgid "3. Subsections ..."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:342
+msgid "... may be used, sparingly."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:346
+msgid ""
+"Only first-level sections become slides.  Not many levels of subsections "
+"can fit on a slide."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:349
+msgid ""
+"Subsections (of any level) work normally in handouts though.  Add \"``.. "
+"class:: handout``\" before a subsection (or sub-subsection, or ...), and "
+"the entire subsection will only appear in the handout."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:355
+msgid "Generating a Slide Show (1)"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:359
+msgid ""
+"Open a console (terminal, command shell) and go to the folder containing "
+"your file, ``slides.txt``."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:362
+msgid "Run the command::"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:366
+msgid "Specify an S5 theme with the ``--theme`` option."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:370
+msgid ""
+"Docutils will copy the S5 theme files into a ``ui/<theme>`` folder beside"
+" the output HTML file.  A slide show can also link to an existing theme "
+"using the ``--theme-url`` option."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:376
+msgid "Generating a Slide Show (2)"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:380
+msgid "Include a copy of any linked stylesheet."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:384
+msgid ""
+"The default Docutils stylesheet, ``html4css1.css``, will normally be "
+"embedded in the output HTML.  If you choose to link to a stylesheet "
+"instead of embedding, you must include a copy (suggested location: in the"
+" ``ui/`` directory)."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:389
+msgid "Open ``slides.html`` in a web browser."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:391
+msgid "Expand the browser window to full-screen mode, and speak."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:395
+msgid ""
+"The `Web Developer`__ extension for Firefox is very useful.  With it, you"
+" can resize your browser window to the exact dimensions of the projector "
+"you'll be using, so you can test beforehand.  There are many other useful"
+" features as well."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:402
+msgid "Profit!"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:406
+msgid "Examples (1)"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:410
+msgid ""
+"Admonitions, tables, sidebars, and other elements can be used in on-"
+"screen presentations in handouts.  Images too!"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt
+msgid "sample image"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:417
+msgid "A"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:417
+msgid "B"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:417
+msgid "A or B"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:419
+#: ../../docutils/docs/user/slide-shows.txt:420
+#: ../../docutils/docs/user/slide-shows.txt:421
+msgid "False"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:420
+#: ../../docutils/docs/user/slide-shows.txt:421
+#: ../../docutils/docs/user/slide-shows.txt:422
+msgid "True"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:427
+msgid "Examples (2): Incremental Text"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:431
+msgid "Paragraphs can be displayed one at a time..."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:435
+msgid "... or a bunch at a time."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:437
+msgid ""
+"This second paragraph is displayed together with the previous one by "
+"grouping them with the \"container\" directive."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:440
+msgid ""
+"`We can also display` `one` `word` `at` `a` `time,` `or a phrase` `at a "
+"time,` `or even` `o`\\ `n`\\ `e` `l`\\ `e`\\ `t`\\ `t`\\ `e`\\ `r` `at a "
+"time!`"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:444
+msgid "`(But the markup ain't pretty.)`"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:448
+msgid "Examples (3): Incr. Graphics"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:450
+msgid "Let's play... Rock, Scissors, Paper"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:473
+msgid "Several themes are available, and they're easy to adapt."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:477
+msgid ""
+"Themes from the `S5 tutorial`__ can be used.  These themes are in the "
+"public domain and may be redistributed freely."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:482
+msgid "Sites with other S5 themes:"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:484
+msgid "http://meyerweb.com/eric/tools/s5/themes/"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:485
+msgid "http://mozilla.wikicities.com/wiki/Firefox_S5:Designs"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:486
+msgid "http://lachy.id.au/dev/mozilla/firefox/s5/"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:487
+msgid "http://www.openlight.com/Python-S5-Theme.tar.gz"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:489
+msgid ""
+"S5 is becoming more popular every day.  Do a web search for \"S5 theme\" "
+"and you're bound to find plenty of choices."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:492
+msgid "\"``--theme``\" option."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:496
+msgid "The theme can be specified with the \"``--theme``\" command-line option."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:503
+msgid "The default theme is \"default\"."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:505
+msgid "\"``theme``\" setting."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:509
+msgid "You can set the theme with the \"``theme``\" configuration file setting."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:512
+msgid "Copied to ``./ui/<theme>/``."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:516
+msgid ""
+"Themes are copied into a ``ui/<theme>`` folder inside the folder "
+"containing the presentation."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:519
+msgid "Link with \"``--theme-url``\" option."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:523
+msgid ""
+"Link to a theme on the same or another web site, using the \"``--theme-"
+"url``\" option or \"``theme_url``\" configuration file setting."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:529
+msgid "Example Themes"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:533
+msgid ""
+"The default theme, \"default\", is a simplified version of S5's default "
+"theme.  It accommodates up to 13 lines of text."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:538
+msgid "\"default\""
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:545
+msgid "Example Themes: Small Text"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:549
+msgid ""
+"The \"small-white\" and \"small-black\" themes are simplifications of the"
+" default theme (**small** black text on a **white** background, and "
+"**small** black text on a **white** background, respectively). They each "
+"accommodate up to 15 lines of text."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:557
+msgid "\"small-white\""
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:561
+msgid "\"small-black\""
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:567
+msgid "Example Themes: Large Text"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:571
+msgid ""
+"The \"big-white\" and \"big-black\" themes feature very large, bold text,"
+" with no footers.  Only five short lines fit in a slide."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:577
+msgid "\"big-white\""
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:581
+msgid "\"big-black\""
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:587
+msgid "Example Themes: Medium Text"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:591
+msgid ""
+"The \"medium-white\" and \"medium-black\" themes feature medium-sized "
+"text.  Up to 8 lines of text are accommodated."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:597
+msgid "\"medium-white\""
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:601
+msgid "\"medium-black\""
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:607
+msgid "S5 Theme Files"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:609
+msgid ""
+"An S5 theme consists of a directory containing several files -- "
+"stylesheets, JavaScript, and graphics:"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:617
+msgid ""
+"The generated HTML contains the entire slide show text.  It also contains"
+" links to the following files:"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:620
+msgid "slides.css simply contains import links to:"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:622
+msgid ""
+"s5-core.css: Default styles critical to the proper functioning of the "
+"slide show; don't touch this!"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:625
+msgid ""
+"framing.css: Sets the basic layout of slide components (header, footer, "
+"controls, etc.  This file is the often edited."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:628
+msgid ""
+"pretty.css: Presentation styles that give the slide show a unique look "
+"and feel.  This is the file that you're most likely to edit for a custom "
+"theme.  You can make a whole new theme just by editing this file, and not"
+" touching the others."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:633
+msgid "outline.css: Styles for outline mode."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:635
+msgid ""
+"print.css: Styles for printing; hides most layout elements, and may "
+"display others."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:638
+msgid ""
+"opera.css: Styles necessary for the proper functioning of S5 in Opera "
+"Show."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:641
+msgid ""
+"slides.js: the JavaScript that drives the dynamic side of the slide show "
+"(actions and navigation controls).  It automatically IDs the slides when "
+"the document loads, builds the navigation menu, handles the hiding and "
+"showing of slides, and so on.  The code also manages the fallback to "
+"Opera Show if you're using the Opera web browser."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:650
+msgid "Making a Custom Theme"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:654
+msgid "Run \"``rst2s5.py --theme <base-theme> <doc>.txt <doc>.html``\"."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:658
+msgid "This initializes the ``ui`` directory with the base theme files."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:660
+msgid "Copy ``ui/<base-theme>`` to ``ui/<new-theme>``."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:662
+msgid "Edit the styles."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:666
+msgid ""
+"Start with ``pretty.css``; edit ``framing.css`` if you need to make "
+"layout changes."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:669
+msgid "Run \"``rst2s5.py --theme-url ui/<new-theme> <doc>.txt <doc>.html``\"."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:673
+msgid ""
+"We use the ``--theme-url`` option to refer to the new theme.  Open your "
+"``<doc>.html`` in a browser to test the new theme."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:676
+msgid "Rinse & repeat."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:680
+msgid "Repeat from step 3 until you're satisfied."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:692
+msgid "Resources:"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:694
+msgid "W3C's `Learning CSS <http://www.w3.org/Style/CSS/learning>`__"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:696
+msgid "`Creating An S5 Theme <http://home.cogeco.ca/~ve3ll/s5themes.htm>`__"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:698
+msgid ""
+"A short tutorial on how to create themes (in German): `Eigenes Theme "
+"erstellen <http://yatil.de/s5/dokumentation/9/>`__"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:703
+msgid "Classes: Incremental (1)"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:707
+msgid ""
+"Several \"class\" attribute values have built-in support in the themes "
+"supplied with Docutils."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:712
+msgid "As described earlier,"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:714
+msgid "``.. class:: incremental``"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:716
+msgid "``.. container:: incremental``"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:725
+msgid "Classes: Incremental (2)"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:727
+msgid "The \"incremental\" interpreted text role is also supported:"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:736
+#: ../../docutils/docs/user/slide-shows.txt:823
+#: ../../docutils/docs/user/slide-shows.txt:872
+msgid "Requires \"``.. include:: <s5defs.txt>``\"."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:740
+msgid "As you can see, this markup is not very convenient."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:744
+msgid "But ``s5defs.txt`` includes this useful definition:"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:745
+msgid "\"``.. default-role:: incremental``\".  So:"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:751
+msgid "`This` `is` `all` `we` `need` `to mark up incremental text.`"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:755
+msgid "Classes: Incremental (3)"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:776
+msgid "This is how the example works."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:778
+msgid ""
+"The animation effects are caused by placing successive images at the same"
+" location, laying each image over the last.  For best results, all images"
+" should be the same size, and the positions of image elements should be "
+"consistent.  Use image transparency (alpha channels) to get overlay "
+"effects."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:784
+msgid ""
+"Absolute positioning is used, which means that the images take up no "
+"space in the flow.  If you want text to follow the images, you have to "
+"specify the total size of the container via a style. Otherwise, the "
+"images and any following text will overlap."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:789
+msgid "These class values do the work:"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:794
+msgid "animation"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:792
+msgid ""
+"This wraps the container with styles that position the images absolutely,"
+" overlaying them over each other.  Only useful on a container."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:800
+msgid "hidden"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:797
+msgid ""
+"Unless overridden (by \"slide-display\", for example), these elements "
+"will not be displayed.  Only the last image will be displayed in handout "
+"mode, when print, or when processed to ordinary HTML, because it does "
+"*not* carry a \"hidden\" class."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:804
+msgid "slide-display"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:803
+msgid ""
+"In conjunction with \"hidden\", these elements will only appear on the "
+"slide, preventing clutter in the handout."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:808
+msgid "incremental"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:807
+msgid ""
+"The second and subsequent images will appear one at a time. The first "
+"image will already be present when the slide is displayed, because it "
+"does *not* carry an \"incremental\" class."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:813
+msgid "Classes: Text Size"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:817
+msgid ":tiny:`tiny` (class & role name: \"tiny\", e.g. \"``:tiny:`text```\")"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:818
+msgid ":small:`small` (\"small\")"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:819
+msgid "normal (unstyled)"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:820
+msgid ":big:`big` (\"big\")"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:821
+msgid ":huge:`huge` (\"huge\")"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:827
+msgid "Classes: Alignment"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:833
+msgid "Left (class name: \"left\")"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:837
+msgid "Center (\"center\" & \"centre\")"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:841
+msgid "Right (\"right\")"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:845
+msgid ""
+"These classes apply to block-level elements only.  They cannot be used "
+"for inline text (i.e., they're not interpreted text roles)."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:858
+msgid "Classes: Text Colours"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:860
+msgid ""
+":black:`black` [black], :gray:`gray`, :silver:`silver`, :white:`white` "
+"[white], :maroon:`maroon`, :red:`red`, :magenta:`magenta`, "
+":fuchsia:`fuchsia`, :pink:`pink`, :orange:`orange`, :yellow:`yellow`, "
+":lime:`lime`, :green:`green`, :olive:`olive`, :teal:`teal`, :cyan:`cyan`,"
+" :aqua:`aqua`, :blue:`blue`, :navy:`navy`, :purple:`purple`"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:867
+msgid ""
+"The class names and role names are the same as the colour names.  For "
+"example, \"``:orange:`text```\" produces \":orange:`text`\"."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:876
+msgid "Classes: Borderless Tables"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:880
+msgid "Here's an ordinary, unstyled table:"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:885
+msgid "Sometimes"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:885
+#: ../../docutils/docs/user/slide-shows.txt:895
+msgid "borders"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:887
+#: ../../docutils/docs/user/slide-shows.txt:897
+msgid "are"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:887
+msgid "useful."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:890
+msgid "And after applying \"``.. class:: borderless``\":"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:895
+msgid "But"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:895
+msgid "sometimes,"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:897
+msgid "**not**"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:897
+msgid "wanted."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:902
+msgid "Classes: Print-Only"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:906
+msgid ""
+"Elements with ``class=\"print\"`` attributes display their contents when "
+"printed, overriding ``class=\"hidden\"``."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:911
+msgid "Example: the \"target-notes\" directive::"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:921
+msgid ""
+"One good example, used in this document, is the \"target-notes\" "
+"directive.  For each external target (hyperlink) in the text, this "
+"directive generates a footnote containing the visible URL as content.  "
+"Footnote references are placed after each hyperlink reference."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:927
+msgid ""
+"The \"topic\" directive is given a \"class\" attribute with values "
+"\"hidden\" and \"print\", so the entire topic will only be displayed when"
+" printed.  The \"target-notes\" directive also assigns a \"class\" "
+"attributes with values \"hidden\" and \"print\" to each of the footnote "
+"references it inserts throughout the text; they will only show up when "
+"printed."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:936
+msgid "Other uses may require \"``.. include:: <s5defs.txt>``\"."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:940
+msgid "Useful Extensions For Firefox"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:942
+msgid "`Autohide`__"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:946
+msgid "Automatically hides toolbars in full-screen mode."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:950
+msgid "`Web Developer`__"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:954
+msgid ""
+"Adds a context submenu and a toolbar with a lot of useful functionality, "
+"including the viewing and live editing of stylesheets, and sizing the "
+"browser window."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:962
+msgid "To Do"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:966
+msgid "Multi-display support:"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:968
+msgid "speaker's notes on the laptop screen"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:969
+msgid "slides on the projector"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:970
+msgid "two views stay in sync"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:971
+msgid "presentation controlled from either display"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:973
+msgid "Add timeout to incremental style."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:977
+msgid ""
+"I.e., incremental-specific style should go away (revert to normal) after "
+"a certain interval."
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:980
+msgid "These will require some serious JavaScript-fu!"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:984
+msgid "That's All, Folks!"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:988
+msgid "Further information: http://docutils.sf.net"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:991
+msgid "Docutils users' mailing list: docutils-users@lists.sf.net"
+msgstr ""
+
+#: ../../docutils/docs/user/slide-shows.txt:994
+msgid "`Any questions?`"
+msgstr ""
+

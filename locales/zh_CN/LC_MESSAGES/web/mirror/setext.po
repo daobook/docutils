@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../web/mirror/setext.txt:3
+msgid "Setext Documents Mirror"
+msgstr "Setext 文档镜像"
+
+#: ../../web/mirror/setext.txt:5
+msgid ""
+"Here are `local copies of some Setext documents`__, made available to "
+"document the prehistory of the Docutils_ project (and especially the "
+"reStructuredText_ markup)."
+msgstr ""
+"这里有一些 `Setext 文档的本地副本`__ ，"
+"可用于记录 Docutils_ 项目的前史（尤其是 reStructuredText_ 标记）。"
+
+#: ../../web/mirror/setext.txt:14
+msgid ""
+"The source for the original Setext (structure-enhanced text) documents "
+"was http://www.bsdi.com/setext/, but it seems to have disappeared from "
+"the Web.  The files in the \"`Setext mirror`_\" are all the files "
+"relating to Setext that I have (including `a tarball of the lot`__)."
+msgstr ""
+"最初的 Setext（structure-enhanced text，即结构增强型文本）文件的"
+"来源是 http://www.bsdi.com/setext/，但它似乎已经从网上消失了。"
+"在 `Setext 镜像`_ 中的文件是本项目的所拥有的与 Setext 有关的文件"
+"（包括 `大量的 tarball`__ ）。"
+
+#: ../../web/mirror/setext.txt:21
+msgid ""
+"I have not been able to locate the originators of Setext, Ian Feldman or "
+"Tony Sanders.  If you know how to contact them, or if you know of an "
+"official repository for the Setext documents, please `inform me`__."
+msgstr ""
+"未能找到 Setext 的发起人 Ian Feldman 或 Tony Sanders。"
+"如果你知道如何联系他们，或者如果你知道如何与他们联系，"
+"或者你知道 Setext 文件的官方存放处，请 `通知我`__。"
+
+#: ../../web/mirror/setext.txt:27
+msgid "David Goodger, 2002-03-25"
+msgstr ""
+

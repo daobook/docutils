@@ -1,0 +1,949 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/user/smartquotes.txt:3
+msgid "Smart Quotes for Docutils"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:5
+msgid ""
+"Günter Milde, based on SmartyPants by John Gruber, Brad Choate, and Chad "
+"Miller"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:7
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:8
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:9
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "License"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:10
+msgid "Released under the terms of the `2-Clause BSD license`_"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "Abstract"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:11
+msgid "This document describes the Docutils `smartquotes` module."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:15
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:18
+msgid "Description"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:20
+msgid ""
+"The `\"smart_quotes\" configuration setting`_ triggers the SmartQuotes "
+"transformation on Text nodes that includes the following steps:"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:23
+msgid "Straight quotes (``\"`` and ``'``) into \"curly\" quote characters"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:24
+msgid "dashes (``--`` and ``---``) into en- and em-dash entities"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:25
+msgid "three consecutive dots (``...`` or ``. . .``) into an ellipsis entity."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:27
+msgid ""
+"This means you can write, edit, and save your documents using plain old "
+"ASCII -- straight quotes, plain dashes, and plain dots -- while Docutils "
+"generates documents with typographical quotes, dashes, and ellipses."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:31
+msgid "Advantages:"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:33
+msgid "Typing speed (especially when blind-typing)."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:34
+msgid ""
+"The possibility to change the quoting style of the complete document with"
+" just one configuration option."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:36
+msgid "Typographical quotes with just 7-bit ASCII characters in the source."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:38
+msgid "However, there are `algorithmic shortcomings`_ for 2 reasons:"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:40
+msgid "Dual use of the \"ASCII-apostrophe\" (') as single quote and apostrophe."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:41
+msgid "Languages that do not use whitespace around words."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:43
+msgid ""
+"So, please consider also `Why You Might Not Want to Use \"Smart\" Quotes "
+"in Your Documents`_."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:51
+msgid "Escaping"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:53
+msgid ""
+"The `SmartQuotes` transform does not modify characters in literal text "
+"such as source code, maths, or literal blocks."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:56
+msgid ""
+"If you need literal straight quotes (or plain hyphens and periods) in "
+"normal text, you can `backslash escape`_ the characters to preserve "
+"ASCII-punctuation."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:63
+msgid "Input"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:63
+msgid "Output"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:65
+msgid "``\\\\``"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:65
+msgid "\\\\"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:65
+msgid "``\\...``"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:65
+msgid "\\..."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:66
+msgid "``\\\"``"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:66
+msgid "\\\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:66
+msgid "``\\--``"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:66
+msgid "\\--"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:67
+msgid "``\\'``"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:67
+msgid "\\'"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:67
+msgid "``\\```"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:67
+msgid "\\`"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:70
+msgid ""
+"This is useful, for example, when you want to use straight quotes as foot"
+" and inch marks:"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:73
+msgid "6\\'2\\\" tall; a 17\\\" monitor."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:79
+msgid "Localization"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:81
+msgid ""
+"Quotation marks have a `variety of forms`__ in different languages and "
+"media."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:86
+msgid ""
+"`SmartQuotes` inserts quotation marks depending on the language of the "
+"current block element and the value of the `\"smart_quotes\" setting`_.\\"
+" [#x-altquot]_ There is built-in support for the following languages:\\ "
+"[#smartquotes-locales]_"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "af"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:95
+msgid "\"'Afrikaans' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "af-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:99
+msgid "\"'Afrikaans' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "ca"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:103
+msgid "\"'Catalan' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "ca-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:107
+msgid "\"'Catalan' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "cs"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:111
+msgid "\"'Czech' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "cs-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:115
+msgid "\"'Czech' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "da"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:119
+msgid "\"'Danish' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "da-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:123
+msgid "\"'Danish' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "de"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:127
+msgid "\"'German' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "de-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:131
+msgid "\"'German' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "de-ch"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:135
+msgid "\"'Swiss-German' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "el"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:139
+msgid "\"'Greek' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "en"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:143
+msgid "\"'English' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "en-uk-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:147
+msgid "\"'British' alternative quotes\" (swaps single and double quotes)"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "eo"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:151
+msgid "\"'Esperanto' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "es"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:155
+msgid "\"'Spanish' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "es-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:159
+msgid "\"'Spanish' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "et"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:163
+msgid "\"'Estonian' quotes\" (no secondary quote listed in Wikipedia)"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "et-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:167
+msgid "\"'Estonian' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "eu"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:171
+msgid "\"'Basque' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "fi"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:175
+msgid "\"'Finnish' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "fi-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:179
+msgid "\"'Finnish' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "fr"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:183
+msgid "\"'French' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "fr-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:187
+msgid "\"'French' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "fr-ch"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:191
+msgid "\"'Swiss-French' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "fr-ch-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:195
+msgid ""
+"\"'Swiss-French' alternative quotes\" (narrow no-break space, see "
+"http://typoguide.ch/)"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "gl"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:200
+msgid "\"'Galician' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "he"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:204
+msgid "\"'Hebrew' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "he-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:208
+msgid "\"'Hebrew' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "hr"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:212
+msgid "\"'Croatian' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "hr-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:216
+msgid "\"'Croatian' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "hsb"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:220
+msgid "\"'Upper Sorbian' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "hsb-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:224
+msgid "\"'Upper Sorbian' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "hu"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:228
+msgid "\"'Hungarian' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "is"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:232
+msgid "\"'Icelandic' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "it"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:236
+msgid "\"'Italian' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "it-ch"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:240
+msgid "\"'Swiss-Italian' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "it-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:244
+msgid "\"'Italian' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "ja"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:248
+msgid "\"'Japanese' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "lt"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:252
+msgid "\"'Lithuanian' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "lv"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:256
+msgid "\"'Latvian' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "nl"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:260
+msgid "\"'Dutch' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "nl-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:264
+msgid "\"'Dutch' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "pl"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:270
+msgid "\"'Polish' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "pl-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:274
+msgid "\"'Polish' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "pt"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:278
+msgid "\"'Portuguese' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "pt-br"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:282
+msgid "\"'Portuguese (Brazil)' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "ro"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:286
+msgid "\"'Romanian' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "ru"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:290
+msgid "\"'Russian' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "sh"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:294
+msgid "\"'Serbo-Croatian' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "sh-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:298
+msgid "\"'Serbo-Croatian' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "sk"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:302
+msgid "\"'Slovak' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "sk-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:306
+msgid "\"'Slovak' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "sl"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:310
+msgid "\"'Slovenian' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "sl-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:314
+msgid "\"'Slovenian' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "sr"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:318
+msgid "\"'Serbian' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "sr-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:322
+msgid "\"'Serbian' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "sv"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:326
+msgid "\"'Swedish' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "sv-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:330
+msgid "\"'Swedish' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "tr"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:334
+msgid "\"'Turkish' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "tr-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:338
+msgid "\"'Turkish' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "uk"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:344
+msgid "\"'Ukrainian' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "uk-x-altquot"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:348
+msgid "\"'Ukrainian' alternative quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "zh-cn"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:352
+msgid "\"'Chinese (China)' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "zh-tw"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:356
+msgid "\"'Chinese (Taiwan)' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:358
+msgid ""
+"Quotes in text blocks in a non-configured language are kept as plain "
+"quotes:"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "undefined"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:362
+msgid "\"'Undefined' quotes\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:364
+msgid ""
+"Tags with the non-standard extension ``-x-altquot`` define the quote set "
+"used with the `\"smart_quotes\" setting`_ value ``\"alt\"``."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:367
+msgid ""
+"The definitions for language-dependend typographical quotes can be "
+"extended or overwritten using the `\"smartquotes_locales\" setting`_."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:371
+msgid ""
+"The following example ensures a correct leading apostrophe in ``'s "
+"Gravenhage`` (at the cost of incorrect leading single quotes) in Dutch "
+"and sets French quotes to double and single guillemets with inner "
+"spacing::"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:383
+msgid "Caveats"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:386
+msgid "Why You Might Not Want to Use \"Smart\" Quotes in Your Documents"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:388
+msgid "For one thing, you might not care."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:390
+msgid ""
+"Most normal, mentally stable individuals do not take notice of proper "
+"typographic punctuation. Many design and typography nerds, however, break"
+" out in a nasty rash when they encounter, say, a restaurant sign that "
+"uses a straight apostrophe to spell \"Joe's\"."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:395
+msgid ""
+"If you're the sort of person who just doesn't care, you might well want "
+"to continue not caring. Using straight quotes -- and sticking to the "
+"7-bit ASCII character set in general -- is certainly a simpler way to "
+"live."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:399
+msgid ""
+"Even if you *do* care about accurate typography, you still might want to "
+"think twice before \"auto-educating\" the quote characters in your "
+"documents. As there is always a chance that the algorithm gets it wrong, "
+"you may instead prefer to use the compose key or some other means to "
+"insert the correct Unicode characters into the source."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:407
+msgid "Algorithmic Shortcomings"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:409
+msgid ""
+"The ASCII character (u0027 APOSTROPHE) is used for apostrophe and single "
+"quotes. If used inside a word, it is converted into an apostrophe:"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:414
+msgid "Il dit : \"C'est 'super' !\""
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:416
+msgid ""
+"At the beginning or end of a word, it cannot be distinguished from a "
+"single quote by the algorithm."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:419
+msgid ""
+"The `right single quotation mark`_ character -- used to close a secondary"
+" (inner) quote in English -- is also \"the preferred character to use for"
+" apostrophe\" (Unicode_). Therefore, \"educating\" works as expected for "
+"apostrophes at the end of a word, e.g.,"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:424
+msgid "Mr. Hastings' pen; three days' leave; my two cents' worth."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:426
+msgid ""
+"However, when apostrophes are used at the start of leading contractions, "
+"\"educating\" will turn the apostrophe into an *opening* secondary quote."
+" In English, this is *not* the apostrophe character, e.g., ``'Twas "
+"brillig`` is \"miseducated\" to"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:431
+msgid "'Twas brillig."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:433
+msgid ""
+"In other locales (French, Italian, German, ...), secondary closing quotes"
+" differ from the apostrophe. A text like::"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:440
+msgid "becomes"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:442
+msgid "«Er sagt: ‹Ich fass› es nicht.›»"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:444
+msgid "with a single closing guillemet in place of the apostrophe."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:446
+msgid ""
+"In such cases, it's best to use the recommended apostrophe character (’) "
+"in the source:"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "’Twas brillig, and the slithy toves"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "Did gyre and gimble in the wabe;"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "All mimsy were the borogoves,"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt
+msgid "And the mome raths outgrabe."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:459
+msgid "History"
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:461
+msgid "The smartquotes module is an adaption of \"SmartyPants_\" to Docutils."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:463
+msgid ""
+"`John Gruber`_ did all of the hard work of writing this software in Perl "
+"for `Movable Type`_ and almost all of this useful documentation.  `Chad "
+"Miller`_ ported it to Python to use with Pyblosxom_."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:467
+msgid ""
+"Portions of the SmartyPants original work are based on Brad Choate's "
+"nifty MTRegex plug-in.  `Brad Choate`_ also contributed a few bits of "
+"source code to this plug-in.  Brad Choate is a fine hacker indeed. "
+"`Jeremy Hedley`_ and `Charles Wiltgen`_ deserve mention for exemplary "
+"beta testing of the original SmartyPants."
+msgstr ""
+
+#: ../../docutils/docs/user/smartquotes.txt:473
+msgid "Internationalization and adaption to Docutils by Günter Milde."
+msgstr ""
+

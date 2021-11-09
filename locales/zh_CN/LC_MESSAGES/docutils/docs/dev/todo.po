@@ -1,0 +1,4196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/dev/todo.txt:3
+msgid "Docutils_ To Do List"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:5
+msgid "David Goodger (with input from many); open to all Docutils developers"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:7
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:8
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:9
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:10
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:15
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:17
+msgid ""
+"Priority items are marked with \"@\" symbols.  The more @s, the higher "
+"the priority.  Items in question form (containing \"?\") are ideas which "
+"require more thought and debate; they are potential to-do's."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:21
+msgid ""
+"Many of these items are awaiting champions.  If you see something you'd "
+"like to tackle, please do!  If there's something you'd like to see done "
+"but are unable to implement it yourself, please consider donating to "
+"Docutils: |donate|"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "Support the Docutils project!"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:33
+msgid "Please see also the Bugs_ document for a list of bugs in Docutils."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:39
+msgid "Minimum Requirements for Python Standard Library Candidacy"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:41
+msgid ""
+"Below are action items that must be added and issues that must be "
+"addressed before Docutils can be considered suitable to be proposed for "
+"inclusion in the Python standard library."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:45
+msgid "Many of these are now handled by Sphinx_"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:47
+msgid "Support for `document splitting`_.  May require some major code rework."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:50
+msgid "Support for subdocuments (see `large documents`_)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:52
+msgid "`Object numbering and object references`_."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:54
+msgid "`Nested inline markup`_."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:56
+msgid "`Python Source Reader`_."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:58
+msgid ""
+"The HTML writer needs to be rewritten (or a second HTML writer added) to "
+"allow for custom classes, and for arbitrary splitting (stack-based?)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:62
+msgid "Documentation_ of the architecture.  Other docs too."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:64
+msgid "Plugin support."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:66
+msgid ""
+"Suitability for `Python module documentation "
+"<http://docutils.sf.net/sandbox/README.html#documenting-python>`_."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:72
+msgid "Repository"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:74
+msgid "Move to a Git repository."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:76
+msgid ""
+"This is a long standing `feature request`__ (with pointers to Sphinx "
+"issues and discussion)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:81
+msgid "From a `post by David Goodger`__"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:83
+msgid ""
+"An absolute requirement, for me, is that such a change be complete. We "
+"can't lose any data or have to refer to the old system as an \"archive\"."
+" So all the SVN history, all branches, and the full sandbox need to be "
+"converted at the same time."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:90
+msgid "Convert with reposurgeon_?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:92
+msgid ""
+"If you are doing a full import rather than gatewaying, reposurgeon is "
+"probably what you want. It has been tested against a lot of large, old, "
+"nasty repositories and is thus known to be robust in the presence of "
+"repository malformations (a property regularly checked by a test suite "
+"that is a rogue's gallery of Subversion botches)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:105
+msgid "`Git Wiki`__"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:105
+msgid "General"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:107
+msgid "Encoding of command line arguments can only be guessed:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:109
+msgid ""
+"try UTF-8/strict first, then try the locale's encoding with strict error "
+"handling, then ASCII/replace?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:112
+#, python-format
+msgid ""
+"UTF-8 is almost 100% safe to try first; false positives are rare, The "
+"locale's encoding with strict error handling may be a reasonable "
+"compromise, but any error would indicate that the locale's encoding is "
+"inappropriate.  The only safe fallback is ASCII/replace."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:118
+msgid "Do not decode argv before option parsing but individual string values?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:121
+msgid ""
+"Allows for separate command-line vs. filesystem encodings, respectively "
+"to keep file names encoded."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:123
+msgid "Allows to configure command-line encoding in a config file,"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:124
+msgid "More complicated."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:126
+msgid "Cf. <http://thread.gmane.org/gmane.text.docutils.user/2890/focus=2957>."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:128
+msgid "Improve handling on Windows:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:130
+msgid "Get graphical installer."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:131
+msgid "Make rst2html.py an .exe file using py2exe."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:135
+msgid ""
+"The user interface is very difficult to use for most Windows users; you "
+"can't really expect them to use the command line.  We need some kind of "
+"GUI that can launch rst2html.py, and save the HTML output to a file, and "
+"launch a browser.  What's important is that we get settings to work with "
+"the GUI.  So we need some way to dynamically generate a list of settings "
+"for the GUI.  The current settings_spec for OptionParser doesn't seem to "
+"be usable for this for the following reasons:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:144
+msgid ""
+"It's biased toward the command line -- there are *two* options for one "
+"boolean setting."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:147
+msgid ""
+"You cannot have both a one-line description and a longer description for "
+"tooltips/help-texts."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:150
+msgid ""
+"It doesn't provide hints for the input type.  You cannot easily infer the"
+" type of a setting from its validator, because any component can add new "
+"validators.  In fact, it may be necessary to have both a hint about the "
+"input type (e.g. string) and a validator (valid ID), or it may be "
+"necessary to have a different set of choices for the CLI (1, INFO, 2, "
+"...) and for the GUI (INFO, WARNING, ...)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:158
+msgid ""
+"It's coupled to the OptionParser.  We want to be able to change the "
+"underlying system without breaking everything."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:161
+msgid ""
+"It's a bunch of primitive structures.  We want an extensible (thus "
+"object-oriented) interface."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:164
+msgid ""
+"So we probably need to create a class for storing all the settings, and "
+"auto-generate the OptionParser data from that."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:167
+msgid ""
+"I talked to Stephan Deibel about getting Docutils integrated into Wing "
+"IDE.  He said it's possible, and he'd be willing to help. There's a "
+"scripting interface to Wing, which we'd use.  We can dynamically generate"
+" a list of preferences and not worry too much about the rendering (from "
+"what I understood); Wing's whole GUI is dynamic anyway.  The interface "
+"could be made usable for other GUIs. For example, we could try to get "
+"option support for DocFactory.  // FW"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:176
+msgid ""
+"Allow different report levels for STDERR and system_messages inside the "
+"document?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:179
+msgid ""
+"Change the docutils-update script (in sandbox/infrastructure), to support"
+" arbitrary branch snapshots."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:182
+msgid ""
+"Move some general-interest sandboxes out of individuals' directories, "
+"into subprojects?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:185
+msgid ""
+"Add option for file (and URL) access restriction to make Docutils usable "
+"in Wikis and similar applications."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:188
+msgid ""
+"2005-03-21: added ``file_insertion_enabled`` & ``raw_enabled`` settings."
+"  These partially solve the problem, allowing or disabling **all** file "
+"accesses, but not limited access."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:192
+msgid "Configuration_ file handling needs discussion:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:194
+msgid ""
+"There should be some error checking on the contents of config files.  How"
+" much checking should be done?  How loudly should Docutils complain if it"
+" encounters an error/problem?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:198
+msgid ""
+"Docutils doesn't complain when it doesn't find a configuration file "
+"supplied with the ``--config`` option.  Should it?  (If yes, error or "
+"warning?)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:202
+msgid "Internationalization:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:204
+msgid ""
+"I18n needs refactoring, the language dictionaries are difficult to "
+"maintain.  Maybe have a look at gettext or similar tools."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:207
+msgid "(This would make a nice Google Summer of Code project)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:209
+msgid ""
+"Language modules: in accented languages it may be useful to have both "
+"accented and unaccented entries in the ``bibliographic_fields`` mapping "
+"for versatility."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:213
+msgid ""
+"Add a \"--strict-language\" option & setting: no English fallback for "
+"language-dependent features."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:216
+msgid ""
+"Make this the default for output (as opposed to input)? Throw an error "
+"with a helpful message, e.g."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:219
+#, python-format
+msgid ""
+"Default \"contents\" title for language %s missing, please specify an "
+"explicit title."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:222
+msgid "or"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:224
+#, python-format
+msgid ""
+"\"attention\" title for language %s missing, please use a generic "
+"admonition with explicit title."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:227
+msgid ""
+"Add internationalization to _`footer boilerplate text` (resulting from \""
+"--generator\", \"--source-link\", and \"--date\" etc.), allowing "
+"translations."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:232
+msgid "Add validation?  See http://pytrex.sourceforge.net, RELAX NG, pyRXP."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:234
+msgid ""
+"In ``docutils.readers.get_reader_class`` (& ``parsers`` & ``writers`` "
+"too), should we be importing \"standalone\" or "
+"\"docutils.readers.standalone\"?  (This would avoid importing top-level "
+"modules if the module name is not in docutils/readers. Potential "
+"nastiness.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:240
+msgid ""
+"Perhaps store a _`name-to-id mapping file`?  This could be stored "
+"permanently, read by subsequent processing runs, and updated with new "
+"entries.  (\"Persistent ID mapping\"?)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:244
+msgid ""
+"Perhaps the ``Component.supports`` method should deal with individual "
+"features (\"meta\" etc.) instead of formats (\"html\" etc.)? Currently, "
+"only the `<meta> node`_ requires the framework."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:248
+msgid ""
+"Do we need it at all?  Or rather let the writers just ignore some nodes "
+"(like we already do for \"class\" values)?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:251
+msgid ""
+"The current implementation of the framework also leads to bug `bug "
+"#241`__ \"doctree-based publishing != publish_string\". The "
+"\"components.Filter\" transform is run by publish_doctree(). When "
+"filtering based on the output format, it should be run by "
+"publish_from_doctree() instead because only then the writer is known."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:258
+msgid "So we need to either remove or fix the framework."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:263
+msgid ""
+"Think about _`large documents` made up of multiple subdocument files.  "
+"Issues: continuity (`persistent sequences`_ above), cross-references "
+"(`name-to-id mapping file`_ above and `targets in other documents`_ "
+"below), splitting (`document splitting`_ below)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:268
+msgid ""
+"When writing a book, the author probably wants to split it up into files,"
+" perhaps one per chapter (but perhaps even more detailed). However, we'd "
+"like to be able to have references from one chapter to another, and have "
+"continuous numbering (pages and chapters, as applicable).  Of course, "
+"none of this is implemented yet.  There has been some thought put into "
+"some aspects; see `the \"include\" directive`__ and the `Reference "
+"Merging`_ transform below."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:276
+msgid ""
+"When I was working with SGML in Japan, we had a system where there was a "
+"top-level coordinating file, book.sgml, which contained the top-level "
+"structure of a book: the <book> element, containing the book <title> and "
+"empty component elements (<preface>, <chapter>, <appendix>, etc.), each "
+"with filename attributes pointing to the actual source for the component."
+"  Something like this::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:292
+msgid "(The \"inrefid\" attribute stood for \"insertion reference ID\".)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:294
+msgid ""
+"The processing system would process each component separately, but it "
+"would recognize and use the book file to coordinate chapter and page "
+"numbering, and keep a persistent ID to (title, page number) mapping "
+"database for cross-references.  Docutils could use a similar system for "
+"large-scale, multipart documents."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:302
+msgid "Aahz's idea:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:304
+msgid "First the ToC::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:312
+msgid "Then a sample use::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:319
+msgid "Which produces::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:324
+msgid ""
+"The ToC in this form doesn't even need to be references to actual reST "
+"documents; I'm simply doing it that way for a minimum of future-proofing,"
+" in case I do want to add the ability to pick up references within "
+"external chapters."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:329
+msgid ""
+"Perhaps, instead of ToC (which would overload the \"contents\" directive "
+"concept already in use), we could use \"manifest\".  A \"manifest\" "
+"directive might associate local reference names with files::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:340
+msgid "Then the sample becomes::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:347
+msgid "Add support for _`multiple output files` and _`generic data handling`:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:350
+msgid ""
+"It should be possible for a component to **emit or reference** data to be"
+" either **included or referenced** in the output document. Examples of "
+"such data are stylesheets or images."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:354
+msgid ""
+"For this, we need a \"data\" object which stores the data either inline "
+"or by referring to a file.  The Docutils framework is responsible for "
+"either:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:358
+msgid ""
+"storing the data in the appropriate location (e.g. in the directory of "
+"the output file, or in a user-specified directory) and providing the "
+"paths of the stored files to the writer, *or*"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:362
+msgid ""
+"providing the data itself to the writer so that it can be embedded in the"
+" output document."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:365
+msgid ""
+"This approach decouples data handling from the data source (which can "
+"either be embedded or referenced) and the destination (which can either "
+"be embedded or referenced as well)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:369
+msgid "See <http://article.gmane.org/gmane.text.docutils.devel/3631>."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:371
+msgid "Add testing for Docutils' front end tools?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:373
+msgid ""
+"Publisher: \"Ordinary setup\" shouldn't require specific ordering; at the"
+" very least, there ought to be error checking higher up in the call "
+"chain.  [Aahz]"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:377
+msgid ""
+"``Publisher.get_settings`` requires that all components be set up before "
+"it's called.  Perhaps the I/O *objects* shouldn't be set, but I/O "
+"*classes*.  Then options are set up (``.set_options``), and "
+"``Publisher.set_io`` (or equivalent code) is called with source & "
+"destination paths, creating the I/O objects."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:383
+msgid ""
+"Perhaps I/O objects shouldn't be instantiated until required.  For split "
+"output, the Writer may be called multiple times, once for each doctree, "
+"and each doctree should have a separate Output object (with a different "
+"path).  Is the \"Builder\" pattern applicable here?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:388
+msgid ""
+"Perhaps I/O objects should become full-fledged components (i.e. "
+"subclasses of ``docutils.Component``, as are Readers, Parsers, and "
+"Writers now), and thus have associated option/setting specs and "
+"transforms."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:393
+msgid ""
+"Multiple file I/O suggestion from Michael Hudson: use a file-like object "
+"or something you can iterate over to get file-like objects."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:396
+msgid ""
+"Add an \"--input-language\" option & setting?  Specify a different "
+"language module for input (bibliographic fields, directives) than for "
+"output.  The \"--language\" option would set both input & output "
+"languages."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:401
+msgid ""
+"Auto-generate reference tables for language-dependent features? Could be "
+"generated from the source modules.  A special command-line option could "
+"be added to Docutils front ends to do this.  (Idea from Engelbert "
+"Gruber.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:406
+msgid ""
+"Enable feedback of some kind from internal decisions, such as reporting "
+"the successful input encoding.  Modify runtime settings? System message?"
+"  Simple stderr output?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:410
+msgid "Rationalize Writer settings (HTML/LaTeX/PEP) -- share settings."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:412
+msgid ""
+"Add an \"--include file\" command-line option (config setting too?), "
+"equivalent to \".. include:: file\" as the first line of the doc text? "
+"Especially useful for character entity sets, text transform specs, "
+"boilerplate, etc."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:417
+msgid ""
+"Support \"include\" as embedded inline-compatible directive in "
+"substitution definitions, e.g. ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:424 ../../docutils/docs/dev/todo.txt:453
+msgid "(cf. Grzegorz Adam Hankiewicz's post from 2014-10-01 in docutils-devel)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:426
+msgid ""
+"Add an ``:optional: <replacement text>`` option to the \"include\" "
+"directive? This would not throw an error for a missing file, instead a "
+"warning is given and ``<replacement text>`` is used instead. It would be "
+"the responsibility of the author to ensure the missing file does not lead"
+" to problems later in the document."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:432
+msgid "Use cases:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:434
+msgid "Standard rST syntax to replace Sphinx's \"literalinclude\"::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:440
+msgid "Variable content taken from a file, e.g."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:442
+msgid "version.txt::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:446
+msgid "optionally used as::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:455
+msgid ""
+"Parameterize the Reporter object or class?  See the `2004-02-18 \"rest "
+"checking and source path\"`_ thread."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:461
+msgid ""
+"Add a \"disable_transforms\" setting? Would allow for easy syntax "
+"checking. Where (\"null\" writer, generic, parser(s), docutils-cli.py)? "
+"Cf. the `2004-02-18 \"rest checking and source path\"`_ thread."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:465
+msgid ""
+"Add a generic meta-stylesheet mechanism?  An external file could "
+"associate style names (\"class\" attributes) with specific elements. "
+"Could be generalized to arbitrary output attributes; useful for HTML & "
+"XMLs.  Aahz implemented something like this in "
+"sandbox/aahz/Effective/EffMap.py."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:473
+msgid ""
+"William Dode suggested that table cells be assigned \"class\" attributes "
+"by columns, so that stylesheets can affect text alignment.  "
+"Unfortunately, there doesn't seem to be a way (in HTML at least) to "
+"leverage the \"colspec\" elements (HTML \"col\" tags) by adding classes "
+"to them.  The resulting HTML is very verbose::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:483
+msgid ""
+"At the very least, it should be an option.  People who don't use it "
+"shouldn't be penalized by increases in their HTML file sizes."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:486
+msgid ""
+"Table rows could also be assigned classes (like odd/even).  That would be"
+" easier to implement."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:489
+msgid "How should it be implemented?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:491
+msgid ""
+"There could be writer options (column classes & row classes) with "
+"standard values."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:494
+msgid ""
+"The table directive could grow some options.  Something like \":cell-"
+"classes: col1 col2 col3\" (either must match the number of columns, or "
+"repeat to fill?)  and \":row-classes: odd even\" (repeat to fill; body "
+"rows only, or header rows too?)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:499
+msgid ""
+"Probably per-table directive options are best.  The \"class\" values "
+"could be used by any writer, and applying such classes to all tables in a"
+" document with writer options is too broad."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:503
+msgid "See also the `table_styling Sphinx extension`_ which defines"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "widths"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:505
+msgid "also in Docutils core (but different implementation)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "column-alignment"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:506
+msgid "Sets per-column text alignment"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "column-wrapping"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:507
+msgid "Sets per-column text wrapping"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "column-dividers"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:508
+msgid "Add dividers between columns"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "column-classes"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:509
+msgid "Add per-column css classes."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "header-columns"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:510
+msgid "Specify number of “stub” columns"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:515
+msgid "Add file-specific settings support to config files, like::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:520
+msgid ""
+"Is this even possible?  Should the criterion be the name of the input "
+"file or the output file?  Alternative (more explicit) syntax::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:529
+msgid ""
+"Or rather allow settings configuration from the rst source file (see "
+"misc.settings_ directive)?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:532
+msgid ""
+"The \"validator\" support added to OptionParser is very similar to "
+"\"traits_\" in SciPy_.  Perhaps something could be done with them? (Had I"
+" known about traits when I was implementing docutils.frontend, I may have"
+" used them instead of rolling my own.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:540
+msgid ""
+"tools/buildhtml.py: Extend the --prune option (\"prune\" config setting) "
+"to accept file names (generic path) in addition to directories (e.g. "
+"--prune=docs/user/rst/cheatsheet.txt, which should *not* be converted to "
+"HTML)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:545
+msgid "Add support for _`plugins`."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:547
+msgid ""
+"_`Config directories`: Currently, ~/.docutils, ./docutils.conf/, & "
+"/etc/docutils.conf are read as configuration_ files.  Proposal: allow "
+"~/.docutils to be a a configuration *directory*, along with "
+"/etc/docutils/ and ./docutils.conf/.  Within these directories, check for"
+" config.txt files.  We can also have subdirectories here, for plugins, S5"
+" themes, components (readers/writers/parsers) etc."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:554
+msgid ""
+"Docutils will continue to support configuration files for backwards "
+"compatibility."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:557
+msgid ""
+"Add support for document decorations other than headers & footers? For "
+"example, top/bottom/side navigation bars for web pages.  Generic "
+"decorations?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:561
+msgid ""
+"Seems like a bad idea as long as it isn't independent from the output "
+"format (for example, navigation bars are only useful for web pages)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:564
+msgid ""
+"docutils_update: Check for a ``Makefile`` in a directory, and run "
+"``make`` if found?  This would allow for variant processing on specific "
+"source files, such as running rst2s5.py instead of rst2html.py."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:569
+msgid ""
+"Add a \"disable table of contents\" setting?  The S5 writer could set it "
+"as a default.  Rationale:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:572
+msgid ""
+"The ``contents`` (table of contents) directive must not be used [in "
+"S5/HTML documents].  It changes the CSS class of headings and they won't "
+"show up correctly in the screen presentation."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:582
+msgid "`Easy Slide Shows With reStructuredText & S5 <../user/slide-shows.html>`_"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:579
+msgid ""
+"Analogue to the ``sectnum_xform`` setting, it could be used by the latex "
+"writer to switch to a LaTeX generated ToC (currently, the latex writer "
+"calls it \"use_latex_toc\")."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:584
+msgid "object numbering and object references"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:586
+msgid "For equations, tables & figures."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:588
+msgid "These would be the equivalent of DocBook's \"formal\" elements."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:590
+msgid ""
+"In LaTeX, automatic counters are implemented for sections, equations and "
+"floats (figures, tables) (configurable via stylesheets or in the latex-"
+"preamble). Objects can be given `reference names`_ with the "
+"``\\label{<refname}`` command, ``\\ref{<refname>}`` inserts the "
+"corresponding number."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:596
+msgid "No such mechanism exists in HTML."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:598
+msgid ""
+"We need _`persistent sequences`, similar to chapter and footnote numbers."
+" See `OpenOffice.org XML`_ \"fields\"."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:601
+msgid "Should the sequences be automatic or manual (user-specifyable)?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:603
+msgid ""
+"It is already possible to give `reference names`_ to objects via internal"
+" hyperlink targets or the \"name\" directive option::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:610
+msgid "or ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:615
+msgid ""
+"Improve the mapping of \"phrase references\" to IDs/labels with Literal "
+"transcription (i.e. ü -> ue, ß -> ss, å -> aa) instead of just stripping "
+"the accents and other non-ASCII chars. See also the feature request "
+"`allow more characters when transforming \"names\" to \"ids\"`__."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:620
+msgid "A \"table\" directive has been implemented, supporting table titles."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:622
+msgid "Perhaps the name could derive from the title/caption?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:627
+msgid ""
+"We need syntax for object references.  Cf. `OpenOffice.org XML`_ "
+"\"reference fields\":"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:630
+msgid ""
+"Parameterized substitutions are too complicated (cf. `or not to do`: "
+"`object references`_)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:633
+msgid "An interpreted text approach is simpler and better::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:637
+msgid ""
+"\"equation\", \"figure\", and \"page\" roles could generate appropriate "
+"boilerplate text::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:642
+msgid "See `Interpreted Text`_ below."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:644
+msgid ""
+"Reference boilerplate could be specified in the document (defaulting to "
+"nothing)::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:652
+msgid "The position of the role (prefix or suffix) could also be utilized"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:657
+msgid ""
+"See also the `Modified rst2html "
+"<http://www.loria.fr/~rougier/coding/article/rst2html.py>`__ by Nicolas "
+"Rougier for a sample implementation."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:662
+msgid "<meta> node"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:664
+msgid ""
+"Up to 0.17, <meta> nodes are non-standard (not part of the Docutils "
+"document tree specification)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:667
+msgid ""
+"The \"Filter\" transform removes \"meta\" nodes from the doctree unless "
+"the output format is \"html\" (rsp. \"html\", \"latex\", or \"odt\" since"
+" 0.17)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:673
+msgid "Suggestion:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:671
+msgid ""
+"Make \"meta\" a generic directive and <meta> nodes standard nodes that "
+"are kept in the doctree. Allow writers to ignore <meta> nodes."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:676
+msgid "Documentation"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:679
+msgid "User Docs"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:681
+msgid ""
+"Add a FAQ entry about using Docutils (with reStructuredText) on a server "
+"and that it's terribly slow.  See the first paragraphs in "
+"<http://article.gmane.org/gmane.text.docutils.user/1584>."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:685
+msgid ""
+"Add document about what Docutils has previously been used for (web/use-"
+"cases.txt?)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:688
+msgid "Improve index in docs/user/config.txt."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:692
+msgid "Developer Docs"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:694
+msgid "Complete `Docutils Runtime Settings <../api/runtime-settings.html>`_."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:696
+msgid ""
+"Improve the internal module documentation (docstrings in the code). "
+"Specific deficiencies listed below."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:699
+msgid ""
+"docutils.parsers.rst.states.State.build_table: data structure required "
+"(including StringList)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:702
+msgid ""
+"docutils.parsers.rst.states: more complete documentation of parser "
+"internals."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:705
+msgid ""
+"docs/ref/doctree.txt: DTD element structural relationships, semantics, "
+"and attributes.  In progress; element descriptions to be completed."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:709
+msgid "Document the ``pending`` elements, how they're generated and what they do."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:712
+msgid ""
+"Document the transforms_ (perhaps in docstrings?): how they're used, what"
+" they do, dependencies & order considerations."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:715
+msgid "Document the HTML classes used by html4css1.py."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:717
+msgid ""
+"Write an overview of the Docutils architecture, as an introduction for "
+"developers.  What connects to what, why, and how.  Either update PEP 258 "
+"(see PEPs_ below) or as a separate doc."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:721
+msgid "Give information about unit tests.  Maybe as a howto?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:723
+msgid "Document the docutils.nodes APIs."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:725
+msgid "Complete the docs/api/publisher.txt docs."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:729
+msgid "How-Tos"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:731
+msgid "Creating Docutils Writers"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:733
+msgid "Creating Docutils Readers"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:735
+msgid "Creating Docutils Transforms_"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:737
+msgid "Creating Docutils Parsers"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:739
+msgid "Using Docutils as a Library"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:743
+msgid "PEPs"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:745
+msgid "Complete PEP 258 Docutils Design Specification."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:747
+msgid "Fill in the blanks in API details."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:749
+msgid "Specify the nodes.py internal data structure implementation?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:751
+msgid ""
+"[Tibs:] Eventually we need to have direct documentation in there on how "
+"it all hangs together - the DTD is not enough (indeed, is it still meant "
+"to be correct?  [Yes, it is. --DG])."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:756
+msgid ""
+"Rework PEP 257, separating style from spec from tools, wrt Docutils? See "
+"Doc-SIG from 2001-06-19/20."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:761
+msgid "Python Source Reader"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:763
+msgid "General:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:765
+msgid "Analyze Tony Ibbs' PySource code."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:767
+msgid "Analyze Doug Hellmann's HappyDoc project."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:769
+msgid "Investigate how POD handles literate programming."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:771
+msgid "Take the best ideas and integrate them into Docutils."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:773
+msgid "Miscellaneous ideas:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:775
+msgid ""
+"Ask Python-dev for opinions (GvR for a pronouncement) on special "
+"variables (__author__, __version__, etc.): convenience vs. namespace "
+"pollution.  Ask opinions on whether or not Docutils should recognize & "
+"use them."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:780
+msgid ""
+"If we can detect that a comment block begins with ``##``, a la JavaDoc, "
+"it might be useful to indicate interspersed section headers & explanatory"
+" text in a module.  For example::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:801
+msgid ""
+"Should standalone strings also become (module/class) docstrings? Under "
+"what conditions?  We want to prevent arbitrary strings from becoming "
+"docstrings of prior attribute assignments etc.  Assume that there must be"
+" no blank lines between attributes and attribute docstrings?  (Use lineno"
+" of NEWLINE token.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:807
+msgid ""
+"Triple-quotes are sometimes used for multi-line comments (such as "
+"commenting out blocks of code).  How to reconcile?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:810
+msgid ""
+"HappyDoc's idea of using comment blocks when there's no docstring may be "
+"useful to get around the conflict between `additional docstrings`_ and "
+"``from __future__ import`` for module docstrings. A module could begin "
+"like this::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:829
+msgid ""
+"Using the JavaDoc convention of a doc-comment block beginning with ``##``"
+" is useful though.  It allows doc-comments and implementation comments."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:836
+msgid ""
+"HappyDoc uses an initial comment block to set \"parser configuration "
+"values\".  Do the same thing for Docutils, to set runtime settings on a "
+"per-module basis?  I.e.::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:842
+msgid ""
+"Could be used to turn on/off function parameter comment recognition & "
+"other marginal features.  Could be used as a general mechanism to augment"
+" config files and command-line options (but which takes precedence?)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:847
+msgid "Multi-file output should be divisible at arbitrary level."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:849
+msgid "Support all forms of ``import`` statements:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:851
+msgid "``import module``: listed as \"module\""
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:852
+msgid "``import module as alias``: \"alias (module)\""
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:853
+msgid "``from module import identifier``: \"identifier (from module)\""
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:854
+msgid ""
+"``from module import identifier as alias``: \"alias (identifier from "
+"module)\""
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:856
+msgid "``from module import *``: \"all identifiers (``*``) from module\""
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:858
+msgid ""
+"Have links to colorized Python source files from API docs?  And vice-"
+"versa: backlinks from the colorized source files to the API docs!"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:862
+msgid ""
+"In summaries, use the first *sentence* of a docstring if the first line "
+"is not followed by a blank line."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:867
+msgid "reStructuredText Parser"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:869
+msgid "Also see the `... Or Not To Do?`__ list."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:874
+msgid "Bugs"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:876
+msgid ""
+"A container directive with ``:class:`` option gets the spurious class "
+"value \"class\"."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:880
+msgid "Misc"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:882
+msgid "Another list problem::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:888
+msgid "This ends up as a definition list.  This is more of a usability issue."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:891
+msgid ""
+"This case is probably meant to be a nested list, but it ends up as a list"
+" inside a block-quote without an error message::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:898
+msgid "It should probably just be an error."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:900
+msgid ""
+"The problem with this is that you don't notice easily in HTML that it's "
+"not a nested list but a block-quote -- there's not much of a visual "
+"difference."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:904
+msgid ""
+"Treat enumerated lists that are not arabic and consist of only one item "
+"in a single line as ordinary paragraphs.  See "
+"<http://article.gmane.org/gmane.text.docutils.user/2635>."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:908
+msgid ""
+"The citation syntax could use some improvements.  See "
+"<http://thread.gmane.org/gmane.text.docutils.user/2499> (and the sub-"
+"thread at "
+"<http://thread.gmane.org/gmane.text.docutils.user/2499/focus=3028>, and "
+"the follow-ups at "
+"<http://thread.gmane.org/gmane.text.docutils.user/3087>, "
+"<http://thread.gmane.org/gmane.text.docutils.user/3110>, "
+"<http://thread.gmane.org/gmane.text.docutils.user/3114>), "
+"<http://thread.gmane.org/gmane.text.docutils.user/2443>, "
+"<http://thread.gmane.org/gmane.text.docutils.user/2715>, "
+"<http://thread.gmane.org/gmane.text.docutils.user/3027>, "
+"<http://thread.gmane.org/gmane.text.docutils.user/3120>, "
+"<http://thread.gmane.org/gmane.text.docutils.user/3253>."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:922
+msgid "The current list-recognition logic has too many false positives, as in ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:929
+msgid ""
+"Here ``V.`` is recognized as an enumerator, which leads to confusion.  We"
+" need to find a solution that resolves such problems without complicating"
+" the spec to much."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:933
+msgid "See <http://thread.gmane.org/gmane.text.docutils.user/2524>."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:935
+msgid ""
+"Add indirect links via citation references & footnote references. "
+"Example::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:943
+msgid "See <http://thread.gmane.org/gmane.text.docutils.user/2499>."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:945
+msgid ""
+"Complain about bad URI characters "
+"(http://article.gmane.org/gmane.text.docutils.user/2046) and disallow "
+"internal whitespace "
+"(http://article.gmane.org/gmane.text.docutils.user/2214)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:950
+msgid ""
+"Create ``info``-level system messages for unnecessarily backslash-escaped"
+" characters (as in ``\"\\something\"``, rendered as \"something\") to "
+"allow checking for errors which silently slipped through."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:955
+msgid "Add (functional) tests for untested roles."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:957
+msgid ""
+"Add test for \":figwidth: image\" option of \"figure\" directive.  (Test "
+"code needs to check if PIL is available on the system.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:960
+msgid ""
+"Add support for CJK double-width whitespace (indentation) & punctuation "
+"characters (markup; e.g. double-width \"*\", \"-\", \"+\")?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:963
+msgid "Add motivation sections for constructs in spec."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:965
+msgid ""
+"Support generic hyperlink references to _`targets in other documents`?  "
+"Not in an HTML-centric way, though (it's trivial to say "
+"``http://www.example.com/doc#name``, and useless in non-HTML contexts).  "
+"XLink/XPointer?  ``.. baseref::``?  See Doc-SIG 2001-08-10."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:971
+msgid ""
+"Implement the header row separator modification to table.el.  (Wrote to "
+"Takaaki Ota & the table.el mailing list on 2001-08-12, suggesting support"
+" for \"=====\" header rows.  On 2001-08-17 he replied, saying he'd put it"
+" on his to-do list, but \"don't hold your breath\".)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:976
+msgid ""
+"Fix the parser's indentation handling to conform with the stricter "
+"definition in the spec.  (Explicit markup blocks should be strict or "
+"forgiving?)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:982
+msgid ""
+"Make the parser modular.  Allow syntax constructs to be added or disabled"
+" at run-time.  Subclassing is probably not enough because it makes it "
+"difficult to apply multiple extensions."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:986
+msgid ""
+"Generalize the \"doctest block\" construct (which is overly Python-"
+"centric) to other interactive sessions?  \"Doctest block\" could be "
+"renamed to \"I/O block\" or \"interactive block\", and each of these "
+"could also be recognized as such by the parser:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:991
+msgid "Shell sessions::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:999
+msgid "Root shell sessions::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1006
+msgid ""
+"Other standard (and unambiguous) interactive session prompts could easily"
+" be added (such as \"> \" for WinDOS)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1009
+msgid ""
+"Tony Ibbs spoke out against this idea (2002-06-14 Doc-SIG thread "
+"\"docutils feedback\")."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1012
+msgid "Add support for pragma (syntax-altering) directives."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1014
+msgid ""
+"Some pragma directives could be local-scope unless explicitly specified "
+"as global/pragma using \":global:\" options."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1017
+msgid ""
+"Support whitespace in angle-bracketed standalone URLs according to "
+"Appendix E (\"Recommendations for Delimiting URI in Context\") of `RFC "
+"2396`_."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1023
+msgid ""
+"Use the vertical spacing of the source text to determine the "
+"corresponding vertical spacing of the output?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1026
+msgid ""
+"[From Mark Nodine]  For cells in simple tables that comprise a single "
+"line, the justification can be inferred according to the following rules:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1030
+msgid ""
+"If the text begins at the leftmost column of the cell, then left "
+"justification, ELSE"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1032
+msgid ""
+"If the text begins at the rightmost column of the cell, then right "
+"justification, ELSE"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1034
+msgid "Center justification."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1036
+msgid ""
+"The onus is on the author to make the text unambiguous by adding blank "
+"columns as necessary.  There should be a parser setting to turn off "
+"justification-recognition (normally on would be fine)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1040
+msgid "Decimal justification?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1042
+msgid ""
+"All this shouldn't be done automatically.  Only when it's requested by "
+"the user, e.g. with something like this::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1050
+msgid "Otherwise it will break existing documents."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1052
+msgid ""
+"Generate a warning or info message for paragraphs which should have been "
+"lists, like this one::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1058
+msgid ""
+"Generalize the \"target-notes\" directive into a command-line option "
+"somehow?  See docutils-develop 2003-02-13."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1061
+msgid ""
+"Allow a \"::\"-only paragraph (first line, actually) to introduce a "
+"_`literal block without a blank line`?  (Idea from Paul Moore.) ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1067
+msgid ""
+"Is indentation enough to make the separation between a paragraph which "
+"contains just a ``::`` and the literal text unambiguous? (There's one "
+"problem with this concession: If one wants a definition list item which "
+"defines the term \"::\", we'd have to escape it.)  It would only be "
+"reasonable to apply it to \"::\"-only paragraphs though. I think the "
+"blank line is visually necessary if there's text before the \"::\"::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1079
+msgid ""
+"Add new syntax for _`nested inline markup`?  Or extend the parser to "
+"parse nested inline markup somehow?  See the `collected notes "
+"<rst/alternatives.html#nested-inline-markup>`__."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1083
+msgid ""
+"Drop the backticks from embedded URIs with omitted reference text? Should"
+" the angle brackets be kept in the output or not? ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1088
+msgid "Probably not worth the trouble."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1090
+msgid ""
+"How about a syntax for alternative hyperlink behavior, such as \"open in "
+"a new window\" (as in HTML's ``<a target=\"_blank\">``)?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1093
+msgid ""
+"The MoinMoin wiki uses a caret (\"^\") at the beginning of the URL (\"^\""
+" is not a legal URI character).  That could work for both inline and "
+"explicit targets::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1101
+msgid ""
+"This may be too specific to HTML.  It hasn't been requested very often "
+"either."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1104
+msgid "Add an option to add URI schemes at runtime."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1106
+msgid "_`Segmented lists`::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1113
+msgid "The initial colon (\":\") can be thought of as a type of bullet"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1115
+msgid "We could even have segment titles::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1121
+msgid ""
+"This would correspond well to DocBook's SegmentedList.  Output could be "
+"tabular or \"name: value\" pairs, as described in DocBook's docs."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1124
+msgid "Enable grid _`tables inside XML comments`, where \"``--``\" ends comments."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1126
+msgid "Implementation possibilities:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1128
+msgid ""
+"Make the table syntax characters into \"table\" directive options. This "
+"is the most flexible but most difficult, and we probably don't need that "
+"much flexibility."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1132
+msgid ""
+"Substitute \"~\" for \"-\" with a specialized directive option (e.g. "
+"\":tildes:\")."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1135
+msgid ""
+"Make the standard table syntax recognize \"~\" as well as \"-\", even "
+"without a directive option.  Individual tables would have to be "
+"internally consistent."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1139
+msgid "Allow Unicode box characters for table markup (`feature request [6]`_)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1142
+msgid ""
+"Directive options are preferable to configuration settings, because "
+"tables are document-specific.  A pragma directive would be another "
+"approach, to set the syntax once for a whole document."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1146
+msgid "Unicode box character markup would kill two birds with one stone."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1148
+msgid ""
+"In the meantime, the list-table_ directive is a good replacement for grid"
+" tables inside XML comments."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1156
+msgid ""
+"Generalize docinfo contents (bibliographic fields): remove specific "
+"fields, and have only a single generic \"field\"?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1159
+msgid "_`Line numbers` and \"source\" in system messages:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1161
+msgid ""
+"Add \"source\" and \"line\" keyword arguments to all Reporter calls? This"
+" would require passing source/line arguments along all intermediate "
+"functions (where currently only `line` is used)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1165
+msgid "Or rather specify \"line\" only if actually needed?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1167
+msgid ""
+"Currently, `document.reporter` uses a state machine instance to determine"
+" the \"source\" and \"line\" info from `statemachine.input_lines` if not "
+"given explicitly. Except for special cases, the \"line\" argument is not "
+"needed because, `document.statemachine` keeps record of the current line "
+"number."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1173
+msgid ""
+"For system messages generated after the parsing is completed (i.e. by "
+"transforms or the writer) \"line\" info must be present in the doctree "
+"elements."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1177
+msgid ""
+"Elements' .line assignments should be checked.  (Assign to .source too?  "
+"Add a set_info method?  To what?)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1180
+msgid ""
+"The \"source\" (and line number in the source) can either be added "
+"explicitly to the elements or determined from the “raw” line number by "
+"`document.statemachine.get_source_and_line`."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1184
+msgid ""
+"Some line numbers in elements are not being set properly (explicitly), "
+"just implicitly/automatically.  See rev. 1.74 of "
+"docutils/parsers/rst/states.py for an example of how to set."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1188
+msgid "The line numbers of definition list items are wrong::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1218
+msgid ""
+"Quite a few nodes are getting a \"None\" source attribute as well.  In "
+"particular, see the bodies of definition lists."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1223
+msgid "Adaptable file extensions"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1226
+msgid "Questions"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1228
+msgid "Should Docutils support adaptable file extensions in hyperlinks?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1230
+msgid ""
+"In the rST source, sister documents are \".txt\" files. If we're "
+"generating HTML, then \".html\" is appropriate; if PDF, then \".pdf\"; "
+"etc."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1234
+msgid "Handle documents only, or objects (images, etc.) also?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1236
+msgid ""
+"Different output formats support different sets of image formats (HTML "
+"supports \".svg\" but not \".pdf\", pdfLaTeX supports \".pdf\" but not "
+"\".svg\", LaTeX supports only \".eps\")."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1240
+msgid ""
+"This is less urgent 2020 than 2004, as `pdflatex` and `lualatex` are now "
+"standard and support most image formats. Also, a wrapper like `rubber`__ "
+"that provides on-the-fly image conversion depends on the \"wrong\" "
+"extension in the LaTeX source."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1247
+msgid "At what point should the extensions be substituted?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1259
+msgid "Transforms_:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1250
+msgid "Fits well in the `Reader → Transformer → Writer`__ processing framework."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1252
+msgid ""
+"Filename/URL extension replacement can be done walking over the Document "
+"tree transforming the document tree from a valid state to another valid "
+"state."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1256
+msgid ""
+"Writer-specific configuration is still possible in the respective "
+"sections of the configuration_ file."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1270
+msgid "Pre- or post-processing:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1262
+msgid "Can be implemented independent of Docutils -- keeps Docutils simple."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1264
+msgid ""
+"... those who need more sophisticated filename extension tweaking can "
+"simply use regular expressions, which isn't too difficult due to the "
+"determinability of the writers.  So there is no need to add a complex "
+"filename-extension-handling feature to Docutils."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1276
+msgid "Proposals"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1278
+msgid ""
+"How about using \".*\" to indicate \"choose the most appropriate filename"
+" extension\"?  For example::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1283
+msgid ""
+"My point about using ``.*`` is that any other mechanism inside reST leads"
+" to too many ambiguities in reading reST documents; at least with ``.*`` "
+"it's clear that some kind of substitution is going on."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1287
+msgid "--- Aahz"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1289
+msgid ""
+"What is to be done for output formats that don't *have* hyperlinks? For "
+"example, LaTeX targeted at print.  Hyperlinks may be \"called out\", as "
+"footnotes with explicit URLs.  (Don't convert the links.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1293
+msgid ""
+"But then there's also LaTeX targeted at PDFs, which *can* have links.  "
+"Perhaps a runtime setting for \"*\" could explicitly provide the "
+"extension, defaulting to the output file's extension."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1297
+msgid ""
+"If this handles images also, how to differentiate between document and "
+"image links?  Element context (within \"image\")?  Which image extension "
+"to use for which document format? For HTML output, there is no reliable "
+"way of determining which extension to use (svg, png, jpg, jpeg, gif, "
+"...)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1303
+msgid ""
+"Should the system check for existing files?  No, not practical (the image"
+" files may be not available when the document is processed to HTML)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1306
+msgid ""
+"Mailing list threads: `Images in both HTML and LaTeX`__ (especially `this"
+" summary of Lea's objections`__)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1312
+msgid ""
+"Chris Liechti suggests a new ``:link:`` role in `more-universal "
+"links?`__::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1329
+msgid "Idea from Jim Fulton: an external lookup table of targets:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1331
+msgid ""
+"I would like to specify the extension (e.g. .txt) [in the source, rather "
+"than ``filename.*``], but tell the converter to change references to the "
+"files anticipating that the files will be converted too."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1336
+msgid "For example::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1342
+msgid "That is, name the files for which extensions should be converted."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1344
+msgid ""
+"Note that I want to refer to original files in the original text "
+"(another.txt rather than another.*) because I want the unconverted text "
+"to stand on its own."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1348
+msgid "Note that in most cases, people will be able to use globs::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1352
+msgid "It might be nice to be able to use multiple arguments, as in::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1356
+msgid "> Handle documents only, or objects (images, etc.) also?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1358
+msgid ""
+"No, documents only, but there really is no need for guesswork. Just get "
+"the file names as command-line arguments.  EIBTI [explicit is better than"
+" implicit]."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1362
+msgid ""
+"In `Patch #169`__ `Hyperlink extension rewriting`, John L. Clark suggests"
+" command line options that map to-be-changed file extensions, e.g.::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1370
+msgid ""
+"Specifying the mapping as regular expressions would make this approach "
+"more generic and easier to implement (use ``re.replace`` and refer to the"
+" \"re\" module's documentation instead of coding and documenting a home-"
+"grown extraction and mapping procedure)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1377
+msgid "Math Markup"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1379
+msgid ""
+"Since Docutils 0.8, a \"math\" role and directive using LaTeX math syntax"
+" as input format is part of reStructuredText."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1382
+msgid "Open issues:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1384
+msgid ""
+"Use a \"Transform\" for math format conversions as extensively discussed "
+"in the \"math directive issues\" thread in May 2008 "
+"(http://osdir.com/ml/text.docutils.devel/2008-05/threads.html)?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1388
+msgid ""
+"Generic `math-output setting`_ (currently specific to HTML). (List of "
+"math-output preferences?)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1391
+msgid "Try to be compatible with `Math support in Sphinx`_?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1393
+msgid ""
+"The ``:label:`` option selects a label for the equation, by which it can "
+"be cross-referenced, and causes an equation number to be issued. In "
+"Docutils, the option ``:name:`` sets the label. Equation numbering is not"
+" implemented yet."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1398
+msgid ""
+"Option ``:nowrap:`` prevents wrapping of the given math in a math "
+"environment (you have to specify the math environment in the content)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1404
+msgid ""
+"Equation numbering and references. (see the section on `object numbering "
+"and object references` for equations, formal tables, and images.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1412
+msgid "alternative input formats"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1414
+msgid ""
+"Use a directive option to specify an alternative input format, e.g. (but "
+"not limited to):"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1430 ../../docutils/docs/dev/todo.txt:1547
+msgid "MathML_"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1418
+msgid ""
+"Not for hand-written code but maybe useful when pasted in (or included "
+"from a file)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1421
+msgid ""
+"For an overview of MathML implementations and tests, see, e.g., the "
+"`mathweb wiki`_ or the `ConTeXT MathML page`_."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1428
+msgid ""
+"A MathML to LaTeX XSLT sheet: https://github.com/davidcarlisle/web-"
+"xslt/tree/master/pmml2tex"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1459
+msgid "ASCIIMath_"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1433
+msgid "Simple, ASCII based math input language (see also `ASCIIMath tutorial`_)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1435
+msgid ""
+"The Python module ASCIIMathML_ translates a string with ASCIIMath into a "
+"MathML tree. Used, e.g., by MultiMarkdown__."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1438
+msgid ""
+"A more comprehensive implementation is ASCIIMathPython_ by Paul Trembley "
+"(also used in his sandbox projects)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1441
+msgid "For conversion to LaTeX, there is"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1443
+msgid ""
+"a JavaScript script at "
+"http://dlippman.imathas.com/asciimathtex/ASCIIMath2TeX.js"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1446
+msgid ""
+"The javascript `asciimath-to-latex` AsciiMath to LaTex converter at the "
+"node package manager https://www.npmjs.com/package/asciimath-to-latex and"
+" at GitHub https://github.com/tylerlong/asciimath-to-latex"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1451
+msgid ""
+"a javascript and a PHP converter script at GitHub "
+"https://github.com/asciimath/asciimathml/tree/master/asciimath-based"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1470
+msgid "`Unicode Nearly Plain Text Encoding of Mathematics`_"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1462
+msgid ""
+"format for lightly marked-up representation of mathematical expressions "
+"in Unicode."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1465
+msgid ""
+"(Unicode Technical Note. Sole responsibility for its contents rests with "
+"the author(s). Publication does not imply any endorsement by the Unicode "
+"Consortium.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1476
+msgid "itex"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1473
+msgid ""
+"See `the culmination of a relevant discussion in 2003 "
+"<http://article.gmane.org/gmane.text.docutils.user/118>`__."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1479
+msgid "LaTeX output"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1481
+msgid "Which equation environments should be supported by the math directive?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1483
+msgid "one line:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1485
+msgid "numbered: `equation`"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1486
+msgid "unnumbered: `equation*`"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1488
+msgid ""
+"multiline (test for ``\\\\`` outside of a nested environment (e.g. "
+"`array` or `cases`)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1491
+msgid "numbered: `align` (number every line)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1493
+msgid ""
+"(To give one common number to all lines, put them in a `split` "
+"environment. Docutils then places it in an `equation` environment.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1496
+msgid "unnumbered: `align*`"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1498
+msgid ""
+"Sphinx math also supports `gather` (checking for blank lines in the "
+"content). Docutils puts content blocks separated by blank lines in "
+"separate math-block doctree nodes. (The only difference of `gather` to "
+"two consecutive \"normal\" environments seems to be that page-breaks "
+"between the two are prevented.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1504
+msgid "See http://www.math.uiuc.edu/~hildebr/tex/displays.html."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1508
+msgid "HTML output"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1510
+msgid ""
+"There is no native math support in HTML. For supported math output "
+"variants see the `math-output setting`_. Add more/better alternatives?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1515
+msgid "Converters from LaTeX to MathML include"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1517
+msgid "TtM_ (C), ``--math-output=MathML ttm``, undocumented, may be removed."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1519
+msgid "No \"matrix\", \"align\" and  \"cases\" environments."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1521
+msgid "MathToWeb_ (Java)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1522
+msgid "TeX4ht_ (TeX based)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1523
+msgid "itex_ (also `used in Abiword`__)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1524
+msgid ""
+"`Steve’s LATEX-to-MathML translator`_ ('mini-language', javascript, "
+"Python)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1526 ../../docutils/docs/dev/todo.txt:1563
+#: ../../docutils/docs/dev/todo.txt:1576
+msgid "`MathJax for Node`_"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1528
+msgid "Write a new converter? E.g. based on:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1530
+msgid ""
+"a generic tokenizer (see e.g. a `latex-codec recipe`_, `updated latex-"
+"codec`_, )"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1532
+msgid "the Unicode-Char <-> LaTeX mappings database unimathsymbols_"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1569
+msgid "HTML/CSS"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1554
+msgid ""
+"format math in standard HTML enhanced by CSS rules (Overview__, `Examples"
+" and experiments`__). The ``math-output=html`` option uses the converter "
+"from eLyXer_ (included with Docutils)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1559
+msgid "Alternatives: LaTeX-math to HTML/CSS converters include"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1561
+msgid "TtH_ (C)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1562
+msgid "Hevea_ (Objective Caml)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1580
+msgid "images"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1572
+msgid "(PNG or SVG) like e.g. Wikipedia."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1574
+msgid "dvisvgm_"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1575
+msgid "the pure-python MathML->SVG converter SVGMath_)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1589
+msgid "client side JavaScript conversion"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1583
+msgid ""
+"Use TeX notation in the web page and JavaScript in the displaying "
+"browser. (implemented as `math-output setting`_ \"mathjax\")."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1586
+msgid "jqMath_ (faster and lighter than MathJax_)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1592
+msgid "OpenOffice output"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1594
+msgid "The `OpenDocument standard`_ version 1.1 says:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1596
+msgid "Mathematical content is represented by MathML 2.0"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1598
+msgid ""
+"However, putting MathML into an ODP file seems tricky as these (maybe "
+"outdated) links suppose: http://idippedut.dk/post/2008/01/25/Do-your-"
+"math-ODF-and-MathML.aspx http://idippedut.dk/post/2008/03/03/Now-I-get-"
+"it-ODF-and-MathML.aspx"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1606
+msgid ""
+"OOoLaTeX__:  \"a set of macros designed to bring the power of LaTeX into "
+"OpenOffice.\""
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1613
+msgid "Directives"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1615
+msgid ""
+"Directives below are often referred to as \"module.directive\", the "
+"directive function.  The \"module.\" is not part of the directive name "
+"when used in a document."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1619
+msgid ""
+"Allow for field lists in list tables.  See "
+"<http://thread.gmane.org/gmane.text.docutils.devel/3392>."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1624
+msgid ""
+"Unify table implementations and unify options of table directives "
+"(http://article.gmane.org/gmane.text.docutils.user/1857)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1627
+msgid "Allow directives to be added at run-time?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1629
+msgid "Use the language module for directive option names?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1631
+msgid ""
+"Add \"substitution_only\" and \"substitution_ok\" function attributes, "
+"and automate context checking?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1634
+msgid "Implement options or features on existing directives:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1636
+msgid ""
+"All directives that produce titled elements should grow implicit "
+"reference names based on the titles."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1639
+msgid ""
+"Allow the _`:trim:` option for all directives when they occur in a "
+"substitution definition, not only the unicode_ directive."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1644
+msgid ""
+"Add the \"class\" option to the unicode_ directive.  For example, you "
+"might want to get characters or strings with borders around them."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1647
+msgid "_`images.figure`: \"title\" and \"number\", to indicate a formal figure?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1650
+msgid "_`parts.sectnum`: \"local\"?, \"refnum\""
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1652
+msgid ""
+"A \"local\" option could enable numbering for sections from a certain "
+"point down, and sections in the rest of the document are not numbered.  "
+"For example, a reference section of a manual might be numbered, but not "
+"the rest.  OTOH, an all-or-nothing approach would probably be enough."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1658
+msgid ""
+"The \"sectnum\" directive should be usable multiple times in a single "
+"document.  For example, in a long document with \"chapter\" and "
+"\"appendix\" sections, there could be a second \"sectnum\" before the "
+"first appendix, changing the sequence used (from 1,2,3... to A,B,C...).  "
+"This is where the \"local\" concept comes in.  This part of the "
+"implementation can be left for later."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1665
+msgid ""
+"A \"refnum\" option (better name?) would insert reference names (targets)"
+" consisting of the reference number.  Then a URL could be of the form "
+"``http://host/document.html#2.5`` (or \"2-5\"?).  Allow internal "
+"references by number?  Allow name-based *and* number-based ids at the "
+"same time, or only one or the other (which would the table of contents "
+"use)?  Usage issue: altering the section structure of a document could "
+"render hyperlinks invalid."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1673
+msgid ""
+"_`parts.contents`: Add a \"suppress\" or \"prune\" option?  It would "
+"suppress contents display for sections in a branch from that point down."
+"  Or a new directive, like \"prune-contents\"?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1677
+msgid ""
+"Add an option to include topics in the TOC?  Another for sidebars? The "
+"\"topic\" directive could have a \"contents\" option, or the \"contents\""
+" directive\" could have an \"include-topics\" option.  See docutils-"
+"develop 2003-01-29."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1682
+msgid ""
+"_`parts.header` & _`parts.footer`: Support multiple, named headers & "
+"footers?  For example, separate headers & footers for odd, even, and the "
+"first page of a document."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1686
+msgid ""
+"This may be too specific to output formats which have a notion of "
+"\"pages\"."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1689
+msgid "_`misc.class`:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1691
+msgid ""
+"Add a ``:parent:`` option for setting the parent's class "
+"(http://article.gmane.org/gmane.text.docutils.devel/3165)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1694
+msgid "_`misc.include`:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1696
+msgid "Option to label lines?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1698
+msgid ""
+"How about an environment variable, say RSTINCLUDEPATH or RSTPATH, for "
+"standard includes (as in ``.. include:: <name>``)? This could be combined"
+" with a setting/option to allow user-defined include directories."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1703
+msgid "Add support for inclusion by URL? ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1708
+msgid ""
+"Strip blank lines from begin and end of a literal included file or file "
+"section. This would correspond to the way a literal block is handled."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1712
+msgid ""
+"As nodes.literal_block expects (and we have) the text as a string (rather"
+" than a list of lines), using a regexp seems the way."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1715
+msgid "_`misc.raw`: add a \"destination\" option to the \"raw\" directive? ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1722
+msgid ""
+"It needs thought & discussion though, to come up with a consistent set of"
+" destination labels and consistent behavior."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1725
+msgid ""
+"And placing HTML code inside the <head> element of an HTML document is "
+"rather the job of a templating system."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1728
+msgid ""
+"_`body.sidebar`: Allow internal section structure?  Adornment styles "
+"would be independent of the main document."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1731
+msgid ""
+"That is really complicated, however, and the document model greatly "
+"benefits from its simplicity."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1734
+msgid ""
+"Implement directives.  Each of the list items below begins with an "
+"identifier of the form, \"module_name.directive_function_name\".  The "
+"directive name itself could be the same as the directive_function_name, "
+"or it could differ."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1739
+msgid "_`html.imagemap`"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1741
+msgid ""
+"It has the disadvantage that it's only easily implementable for HTML, so "
+"it's specific to one output format."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1744
+msgid ""
+"(For non-HTML writers, the imagemap would have to be replaced with the "
+"image only.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1747
+msgid ""
+"_`parts.endnotes` (or \"footnotes\"): See `Footnote & Citation "
+"Gathering`_."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1749
+msgid "_`parts.citations`: See `Footnote & Citation Gathering`_."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1751
+msgid ""
+"_`misc.language`: Specify (= change) the language of a document at parse "
+"time?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1754
+msgid ""
+"The misc.settings_ directive suggested below offers a more generic "
+"approach."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1757
+msgid ""
+"The language of document parts can be indicated by the \"special class "
+"value\" ``\"language-\"`` + `BCP 47`_ language code. Class arguments to "
+"the title are attached to the document's base node - hence titled "
+"documents can be given a different language at parse time. However, "
+"\"language by class attribute\" does not change parsing (localized "
+"directives etc.), only supporting writers."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1767
+msgid ""
+"_`misc.settings`: Set any(?) Docutils runtime setting from within a "
+"document?  Needs much thought and discussion."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1770
+msgid ""
+"Security concerns need to be taken into account (it shouldn't be possible"
+" to enable ``file_insertion_enabled`` from within a document), and "
+"settings that only would have taken effect before the directive (like "
+"``tab-width``) shouldn't be accessible either."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1775
+msgid ""
+"See this sub-thread: "
+"<http://thread.gmane.org/gmane.text.docutils.user/3620/focus=3649>"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1778
+msgid ""
+"_`misc.gather`: Gather (move, or copy) all instances of a specific "
+"element.  A generalization of the `Footnote & Citation Gathering`_ ideas."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1782
+msgid ""
+"Add a custom \"directive\" directive, equivalent to \"role\"?  For "
+"example::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1793
+msgid "Another example::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1803
+msgid ""
+"This acts like macros.  The directive contents will have to be evaluated "
+"when referenced, not when defined."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1806
+msgid "Needs a better name?  \"Macro\", \"substitution\"?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1807
+msgid ""
+"What to do with directive arguments & options when the macro/directive is"
+" referenced?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1810
+msgid ""
+"Make the meaning of block quotes overridable?  Only a 1-shot though; "
+"doesn't solve the general problem."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1813
+msgid "_`conditional directives`:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1815
+msgid "See also the implementation in Sphinx_."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1817
+msgid ""
+"Docutils already has the ability to say \"use this content for Writer X\""
+" via the \"raw\" directive. It also does have the ability to say \"use "
+"this content for any Writer other than X\" via the \"strip-elements with "
+"class\" config value.  However, using \"raw\" input just to select a "
+"special writer is inconvenient in many cases. It wouldn't be difficult to"
+" get more straightforward support, though."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1825
+msgid ""
+"My first idea would be to add a set of conditional directives. Let's call"
+" them \"writer-is\" and \"writer-is-not\" for discussion purposes (don't "
+"worry about implementation details).  We might have::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1852
+msgid ""
+"This could be an interface to the Filter transform "
+"(docutils.transforms.components.Filter)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1855
+msgid ""
+"The ideas in the `adaptable file extensions`_ section above may also be "
+"applicable here."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1858
+msgid "SVG's \"switch\" statement may provide inspiration."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1860
+msgid ""
+"Here's an example of a directive that could produce multiple outputs "
+"(*both* raw troff pass-through *and* a GIF, for example) and allow the "
+"Writer to select. ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1875
+msgid ""
+"_`body.example`: Examples; suggested by Simon Hefti.  Semantics as per "
+"Docbook's \"example\"; admonition-style, numbered, reference, with a "
+"caption/title."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1879
+msgid "_`body.index`: Index targets."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1881
+msgid ""
+"See `Index Entries & Indexes <./rst/alternatives.html#index-entries-"
+"indexes>`__."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1884
+msgid ""
+"_`body.literal`: Literal block, possibly \"formal\" (see `object "
+"numbering and object references`_ above).  Possible options:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1887
+msgid "\"highlight\" a range of lines"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1889
+msgid "include only a specified range of lines"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1891
+msgid ""
+"\"number\" or \"line-numbers\"? (since 0.9 available with \"code\" "
+"directive)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1893
+msgid ""
+"\"styled\" could indicate that the directive should check for style "
+"comments at the end of lines to indicate styling or markup."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1897
+msgid ""
+"Specific derivatives (i.e., a \"python-interactive\" directive) could "
+"interpret style based on cues, like the \">>> \" prompt and "
+"\"input()\"/\"raw_input()\" calls."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1901
+msgid "See docutils-users 2003-03-03."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1903
+msgid ""
+"_`body.listing`: Code listing with title (to be numbered eventually), "
+"equivalent of \"figure\" and \"table\" directives."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1906
+msgid ""
+"_`pysource.usage`: Extract a usage message from the program, either by "
+"running it at the command line with a ``--help`` option or through an "
+"exposed API.  [Suggestion for Optik.]"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1910
+msgid ""
+"_`body.float`: Generic float that can be used for figures, tables, code "
+"listings, flowcharts, ..."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1913
+msgid "There is a Sphinx extension by Ignacio Fernández Galván <jellby@gmail.com>"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1915
+msgid ""
+"I implemented something for generic floats in sphinx, and submitted a "
+"pull request that is still waiting::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1922
+msgid "https://github.com/sphinx-doc/sphinx/pull/1858"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1926
+msgid "Interpreted Text"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1928
+msgid ""
+"Interpreted text is entirely a reStructuredText markup construct, a way "
+"to get around built-in limitations of the medium.  Some roles are "
+"intended to introduce new doctree elements, such as \"title-reference\". "
+"Others are merely convenience features, like \"RFC\"."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1933
+msgid ""
+"All supported interpreted text roles must already be known to the Parser "
+"when they are encountered in a document.  Whether pre-defined in "
+"core/client code, or in the document, doesn't matter; the roles just need"
+" to have already been declared.  Adding a new role may involve adding a "
+"new element to the DTD and may require extensive support, therefore such "
+"additions should be well thought-out.  There should be a limited number "
+"of roles."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1941
+msgid ""
+"The only place where no limit is placed on variation is at the start, at "
+"the Reader/Parser interface.  Transforms are inserted by the Reader into "
+"the Transformer's queue, where non-standard elements are converted.  Once"
+" past the Transformer, no variation from the standard Docutils doctree is"
+" possible."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1947
+msgid ""
+"An example is the Python Source Reader, which will use interpreted text "
+"extensively.  The default role will be \"Python identifier\", which will "
+"be further interpreted by namespace context into <class>, <method>, "
+"<module>, <attribute>, etc. elements (see pysource.dtd), which will be "
+"transformed into standard hyperlink references, which will be processed "
+"by the various Writers.  No Writer will need to have any knowledge of the"
+" Python-Reader origin of these elements."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1955
+msgid ""
+"Add explicit interpreted text roles for the rest of the implicit inline "
+"markup constructs: named-reference, anonymous-reference, footnote-"
+"reference, citation-reference, substitution-reference, target, uri-"
+"reference (& synonyms)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1960
+msgid ""
+"Add directives for each role as well?  This would allow indirect nested "
+"markup::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1969
+msgid "Implement roles:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1971
+msgid ""
+"\"_`raw-wrapped`\" (or \"_`raw-wrap`\"): Base role to wrap raw text "
+"around role contents."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1974
+msgid "For example, the following reStructuredText source ... ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:1986
+msgid "... will yield the following document fragment::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2002
+msgid "Possibly without the intermediate \"inline\" node."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2004
+msgid ""
+"_`\"acronym\" and \"abbreviation\"`: Associate the full text with a short"
+" form.  Jason Diamond's description:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2007
+msgid ""
+"I want to translate ```reST`:acronym:`` into ``<acronym "
+"title='reStructuredText'>reST</acronym>``.  The value of the title "
+"attribute has to be defined out-of-band since you can't parameterize "
+"interpreted text.  Right now I have them in a separate file but I'm "
+"experimenting with creating a directive that will use some form of reST "
+"syntax to let you define them."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2014
+msgid "Should Docutils complain about undefined acronyms or abbreviations?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2017
+msgid ""
+"What to do if there are multiple definitions?  How to differentiate "
+"between CSS (Content Scrambling System) and CSS (Cascading Style Sheets) "
+"in a single document?  David Priest responds,"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2022
+msgid ""
+"The short answer is: you don't.  Anyone who did such a thing would be "
+"writing very poor documentation indeed.  (Though I note that `somewhere "
+"else in the docs`__, there's mention of allowing replacement text to be "
+"associated with the abbreviation.  That takes care of the duplicate "
+"acronyms/abbreviations problem, though a writer would be foolish to ever "
+"need it.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2032
+msgid "How to define the full text?  Possibilities:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2034
+msgid "With a directive and a definition list? ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2043
+msgid ""
+"Would this list remain in the document as a glossary, or would it simply "
+"build an internal lookup table?  A \"glossary\" directive could be used "
+"to make the intention clear. Acronyms/abbreviations and glossaries could "
+"work together."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2048
+msgid ""
+"Then again, a glossary could be formed by gathering individual "
+"definitions from around the document."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2051
+msgid "Some kind of `inline parameter syntax`_? ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2059
+msgid "A combination of 1 & 2?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2061
+msgid ""
+"The multiple definitions issue could be handled by establishing rules of "
+"priority.  For example, directive-based lookup tables have highest "
+"priority, followed by the first inline definition. Multiple definitions "
+"in directive-based lookup tables would trigger warnings, similar to the "
+"rules of `implicit hyperlink targets`__."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2070
+msgid "Using substitutions? ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2075
+msgid ""
+"What do we do for other formats than HTML which do not support tool tips?"
+"  Put the full text in parentheses?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2078
+msgid ""
+"\"figure\", \"table\", \"listing\", \"chapter\", \"page\", etc: See "
+"`object numbering and object references`_ above."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2081
+msgid ""
+"\"glossary-term\": This would establish a link to a glossary.  It would "
+"require an associated \"glossary-entry\" directive, whose contents could "
+"be a definition list::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2092
+msgid ""
+"This would allow entries to be defined anywhere in the document, and "
+"collected (via a \"glossary\" directive perhaps) at one point."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2097
+msgid "Doctree pruning"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2099
+msgid ""
+"[DG 2017-01-02: These are not definitive to-dos, just one developer's "
+"opinion. Added 2009-10-13 by Günter Milde, in r6178.] [Updated by GM "
+"2017-02-04]"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2103
+msgid ""
+"The number of doctree nodes can be reduced by \"normalizing\" some "
+"related nodes. This makes the document model and the writers somewhat "
+"simpler."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2106
+msgid ""
+"The \"doctest\" element can be replaced by literal blocks with a class "
+"attribute (similar to the \"code\" directive output). The syntax shall be"
+" left in reST."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2110
+msgid "[DG 2017-01-02:] +0."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2119
+msgid "Discussion"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2113
+msgid "The syntax could be left in reST (for a set period of time?)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2115
+msgid ""
+"[DG 2017-01-02:] The syntax must be left in reST, practically forever. "
+"Removing it would introduce a huge backwards incompatibility. Any syntax "
+"removal must be preceded by a thorough review and planning, including a "
+"deprecation warning process. My opinion: it's not worth it."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2121
+msgid ""
+"\"Normalize\" special admonitions (note, hint, warning, ...) during "
+"parsing (similar to _`transforms.writer_aux.Admonitions`). There is no "
+"need to keep them as distinct elements in the doctree specification."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2125
+msgid ""
+"[DG 2017-01-02:] -1: <note>{body}</> is much more concise and expressive "
+"than <admonition><title>Note</>{body}</>, and the title translation can "
+"be put off until much later in the process."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2129
+msgid "[GM 2017-02-04]:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2132
+msgid "-0 for <admonition class=note><title>Note</>... instead of <note>:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2132
+msgid "a document is rarely printed/used as doctree or XML."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2135
+msgid "+1 reduce the complexity of the doctree"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2135
+msgid "(there is no 1:1 rST syntax element <-> doctree node mapping anyway)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2139
+msgid "+2 every writer needs 9 visit_*/depart_* method pairs to handle the 9"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2138
+msgid ""
+"subtypes of an admonition, i.e. we could but also remove 36 redundant "
+"methods (HTML, LaTeX, Manpage, ODF)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2141
+msgid "-1 the most unfortunately named of these directives will survive. [#]_"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2143
+msgid "with \"biblical touch\" and hard to translate:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "admonition"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "Ermahnung; Verweis; Warnung; Rüge"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "(exhortation; censure; warning; reprimand, rebuke)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2149
+msgid "Keep the special admonition directives in reStructuredText syntax."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2151
+msgid ""
+"[DG 2017-01-02:] We must definitely keep the syntax. Removing it would "
+"introduce a huge backwards incompatibility."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2156
+msgid "Unimplemented Transforms"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2158
+msgid "_`Footnote & Citation Gathering`"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2160
+msgid ""
+"Collect and move footnotes & citations to the end of a document or the "
+"place of a \"footnotes\" or \"citations\" directive (see "
+"`<./ref/rst/directives.html>_`)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2169
+msgid "Footnotes:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2165
+msgid ""
+"Collect all footnotes that are referenced in the document before the "
+"directive (and after an eventually preceding ``.. footnotes::`` "
+"directive) and insert at this place."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2169
+msgid "Allows \"endnotes\" at a configurable place."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2206
+msgid "Citations:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2172
+msgid "Collect citations that are referenced ..."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2174
+msgid "Citations can be:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2176
+msgid "defined in the document as citation elements"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2178
+msgid "auto-generated from entries in a bibliographic database."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2180
+msgid "based on bibstuff_?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2181
+msgid "also have a look at"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2183
+msgid ""
+"CrossTeX_, a backwards-compatible, improved bibtex re-implementation in "
+"Python (including HTML export). (development stalled since 2 years)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2187
+msgid "Pybtex_,a drop-in replacement for BibTeX written in Python."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2189
+msgid "BibTeX styles & (experimental) pythonic style API."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2190
+msgid "Database in BibTeX, BibTeXML and YAML formats."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2191
+msgid "full Unicode support."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2192
+msgid "Write to TeX, HTML and plain text."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2194
+#, python-format
+msgid ""
+"`Zotero plain <http://e6h.org/%7Eegh/hg/zotero-plain/>`__ supports Zotero"
+" databases and CSL_ styles with Docutils with an ``xcite`` role."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2198
+msgid ""
+"`sphinxcontrib-bibtex`_ Sphinx extension with \"bibliography\" directive "
+"and \"cite\" role supporting BibTeX databases."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2201
+msgid ""
+"`Modified rst2html "
+"<http://www.loria.fr/~rougier/coding/article/rst2html.py>`__ by Nicolas "
+"Rougier."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2206
+msgid "Automatically insert a \"References\" heading?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2213
+msgid "_`Reference Merging`"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2215
+msgid ""
+"When merging two or more subdocuments (such as docstrings), conflicting "
+"references may need to be resolved.  There may be:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2218
+msgid ""
+"duplicate reference and/or substitution names that need to be made "
+"unique; and/or"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2220
+msgid "duplicate footnote numbers that need to be renumbered."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2222
+msgid ""
+"Should this be done before or after reference-resolving transforms are "
+"applied?  What about references from within one subdocument to inside "
+"another?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2226
+msgid "_`Document Splitting`"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2228
+msgid ""
+"If the processed document is written to multiple files (possibly in a "
+"directory tree), it will need to be split up.  Internal references will "
+"have to be adjusted."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2232
+msgid "(HTML only?  Initially, yes.  Eventually, anything should be splittable.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2235
+msgid "Ideas:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2237
+msgid ""
+"Insert a \"destination\" attribute into the root element of each split-"
+"out document, containing the path/filename.  The Output object or Writer "
+"will recognize this attribute and split out the files accordingly.  Must "
+"allow for common headers & footers, prev/next, breadcrumbs, etc."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2243
+msgid ""
+"Transform a single-root document into a document containing multiple "
+"subdocuments, recursively.  The content model of the \"document\" element"
+" would have to change to::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2254
+msgid "(I.e., add the last line -- 0 or more document elements.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2256
+msgid ""
+"Let's look at the case of hierarchical (directories and files) HTML "
+"output.  Each document element containing further document elements would"
+" correspond to a directory (with an index.html file for the content "
+"preceding the subdocuments).  Each document element containing no "
+"subdocuments (i.e., structure model elements only) corresponds to a "
+"concrete file with no directory."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2263
+msgid ""
+"The natural transform would be to map sections to subdocuments, but "
+"possibly only a given number of levels deep."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2266
+msgid "_`Navigation`"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2268
+msgid ""
+"If a document is split up, each segment will need navigation links: "
+"parent, children (small TOC), previous (preorder), next (preorder). Part "
+"of `Document Splitting`_?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2272
+msgid "_`List of System Messages`"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2274
+msgid ""
+"The ``system_message`` elements are inserted into the document tree, "
+"adjacent to the problems themselves where possible.  Some (those "
+"generated post-parse) are kept until later, in ``document.messages``, and"
+" added as a special final section, \"Docutils System Messages\"."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2280
+msgid ""
+"Docutils could be made to generate hyperlinks to all known "
+"system_messages and add them to the document, perhaps to the end of the "
+"\"Docutils System Messages\" section."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2284
+msgid "Fred L. Drake, Jr. wrote:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2286
+msgid ""
+"I'd like to propose that both parse- and transformation-time messages are"
+" included in the \"Docutils System Messages\" section. If there are no "
+"objections, I can make the change."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2290
+msgid ""
+"The advantage of the current way of doing things is that parse-time "
+"system messages don't require a transform; they're already in the "
+"document.  This is valuable for testing (unit tests, tools/quicktest.py)."
+"  So if we do decide to make a change, I think the insertion of parse-"
+"time system messages ought to remain as-is and the Messages transform "
+"ought to move all parse-time system messages (remove from their "
+"originally inserted positions, insert in System Messages section)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2299
+msgid "_`Index Generation`"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2303
+msgid "HTML Writer"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2305
+msgid ""
+"Make the _`list compacting` logic more generic: For example, allow for "
+"literal blocks or line blocks inside of compact list items."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2308
+msgid ""
+"This is not implementable as long as list compacting is done by omitting "
+"``<p>`` tags.  List compacting would need to be done by adjusting CSS "
+"margins instead."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "2015-04-02"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2312
+msgid ""
+"The new html writer no longer strips <p> tags but adds the class value "
+"``simple`` to the list. Formatting is done by CSS --- configurable by a "
+"custom style sheet."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2317
+msgid ""
+"Auto-compactization can be overridden by the ``open`` vs. ``compact`` "
+"class arguments."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2320
+msgid "Idea for field-list rendering: hanging indent::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2328
+msgid ""
+"The new html writer writes field-lists as definition lists with class "
+"``field-list``. Formatting is done by CSS --- configurable by a custom "
+"style sheet. The default style sheet has some examples, including a run-"
+"in field-list style."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2334
+msgid "Add more support for <link> elements, especially for navigation bars."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2337
+msgid ""
+"The framework does not have a notion of document relationships, so "
+"probably raw.destination_ should be used."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2340
+msgid ""
+"We'll have framework support for document relationships when support for "
+"`multiple output files`_ is added.  The HTML writer could automatically "
+"generate <link> elements then."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2346
+msgid ""
+"Base list compaction on the spacing of source list?  Would require parser"
+" support.  (Idea: fantasai, 16 Dec 2002, doc-sig.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2349
+msgid ""
+"Add a tool tip (\"title\" attribute?) to footnote back-links identifying "
+"them as such.  Text in Docutils language module."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2354
+msgid "PEP/HTML Writer"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2356
+msgid ""
+"Remove the generic style information (duplicated from html4css1.css) from"
+" pep.css to avoid redundancy."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2359
+msgid ""
+"Set ``stylesheet-path`` to \"html4css.css,pep.css\" and the ``stylesheet-"
+"dirs`` accordingly instead. (See the xhtml11 writer for an example.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2365
+msgid "S5/HTML Writer"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2367
+msgid "Add a way to begin an untitled slide."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2369
+msgid ""
+"Add a way to begin a new slide, continuation, using the same title as the"
+" previous slide?  (Unnecessary?)  You need that if you have a lot of "
+"items in one section which don't fit on one slide."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2373
+msgid ""
+"Maybe either this item or the previous one can be realized using "
+"transitions."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2376
+msgid ""
+"Have a timeout on incremental items, so the colour goes away after 1 "
+"second."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2379
+msgid ""
+"Add an empty, black last slide (optionally).  Currently the handling of "
+"the last slide is not very nice, it re-cycles through the incremental "
+"items on the last slide if you hit space-bar after the last item."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2384
+msgid "Add a command-line option to disable advance-on-click."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2386
+msgid ""
+"Add a speaker's master document, which would contain a small version of "
+"the slide text with speaker's notes interspersed.  The master document "
+"could use ``target=\"whatever\"`` to direct links to a separate window on"
+" a second monitor (e.g., a projector)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2391
+msgid ""
+"This item and the following items are partially accomplished by the S5 "
+"1.2 code (currently in alpha), which has not yet been integrated into "
+"Docutils."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2395
+msgid ""
+"Speaker's notes -- how to intersperse?  Could use reST comments (\"..\"),"
+" but make them visible in the speaker's master document.  If structure is"
+" necessary, we could use a \"comment\" directive (to avoid nonsensical "
+"DTD changes, the \"comment\" directive could produce an untitled topic "
+"element)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2401
+msgid "The speaker's notes could (should?) be separate from S5's handout content."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2404
+msgid ""
+"The speaker's master document could use frames for easy navigation: TOC "
+"on the left, content on the right."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2407
+msgid ""
+"It would be nice if clicking in the TOC frame simultaneously linked to "
+"both the speaker's notes frame and to the slide window, synchronizing "
+"both.  Needs JavaScript?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2411
+msgid "TOC would have to be tightly formatted -- minimal indentation."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2413
+msgid ""
+"TOC auto-generated, as in the PEP Reader.  (What if there already is a "
+"\"contents\" directive in the document?)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2416
+msgid ""
+"There could be another frame on the left (top-left or bottom-left) "
+"containing a single \"Next\" link, always pointing to the next slide "
+"(synchronized, of course).  Also \"Previous\" link?  FF/Rew go to the "
+"beginning of the next/current parent section?  First/Last also?  Tape-"
+"player-style buttons like ``|<<  <<  <  >  >>  >>|``?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2423
+msgid "Epub/HTML Writer"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2425
+msgid "Add epub as an output format."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2427
+msgid ""
+"epub is an open file format for ebooks based on HTML, specified by the "
+"`International Digital Publishing Forum`_. Thus, documents in epub format"
+" are suited to be read with `electronic reading devices`_."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2431
+msgid ""
+"Pack the output of a HTML writer and supporting files (e.g. images) into "
+"one single epub document."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2434
+msgid ""
+"There are `links to two 3rd party ePub writers`__ in the Docutils link "
+"list. Test and consider moving the better one into the docutils core."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2444
+msgid "LaTeX writer"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2446
+msgid "Also see the Problems__ section in the `latex writer documentation`_."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2456
+msgid "Bug fixes"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2458
+msgid "Too deeply nested lists fail: generate a warning and provide a workaround."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2461
+msgid "2017-02-09 this is fixed for enumeration in 0.13.1"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2463
+msgid "for others, cf. sandbox/latex-variants/tests/rst-levels.txt"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2465
+msgid "File names of included graphics (see also `grffile` package)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2467
+msgid "Paragraph following field-list or table in compound is indented."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2469
+msgid ""
+"This is a problem with the current DUfieldlist definition and with the "
+"use of \"longtable\" for tables. See `other LaTeX constructs and packages"
+" instead of re-implementations`_ for alternatives."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2475
+msgid "Generate clean and configurable LaTeX source"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2477
+msgid "Which packages do we want to use?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2479
+msgid "base and \"recommended\" packages"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2481
+msgid ""
+"(packages that should be in a \"reasonably sized and reasonably modern "
+"LaTeX installation like the `texlive-latex-recommended` Debian package, "
+"say):"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2485
+msgid "No \"fancy\" or \"exotic\" requirements."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2487
+msgid ""
+"pointers to advanced packages and their use in the `latex writer "
+"documentation`_."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2491
+msgid "Configurable placement of figure and table floats"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2493
+msgid "Special class argument to individually place figures?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2495
+msgid "Example::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2500
+msgid "would be written as ``\\figure[htb]{...}`` with the optional args:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "H"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2503
+msgid "place-here"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "h"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2504
+msgid "place-here-if-possible"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "t"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2505
+msgid "place-top"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "b"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2506
+msgid "place-bottom"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt
+msgid "p"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2507
+msgid "place-on-extra-page"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2509
+msgid ""
+"Alternative: class value = \"place-\" + optional arg, e.g. ``:class: "
+"place-htb``."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2513
+msgid "Footnotes"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2515
+msgid ""
+"True footnotes with LaTeX auto-numbering (as option ``--latex-"
+"footnotes``) (also for target-footnotes): Write ``\\footnote{<footnote "
+"content>}`` at the place of the ``<footnote_reference>`` node."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2520
+msgid "Open questions:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2522
+msgid ""
+"Load hyperref_ with option \"hyperfootnotes\" and/or package "
+"footnotebackref_ or leave this to the user?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2525
+msgid ""
+"Consider cases where LaTeX does not support footnotes (inside tables__, "
+"headings__, caption, ...). Use ftnxtra_, tabularx_, tabulary_, "
+"longtable_?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2532
+msgid "Consider `multiple footnote refs to common footnote text`__."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2534
+msgid ""
+"KOMA-script classes and the KOMA scrextend_ package provide ``\\footref``"
+" that can be used for additional references to a ``\\label``-ed footnote."
+" Since 2021-05-01, ``\\footref`` is provided by the LaTeX core, too."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2541
+msgid "Consider numbered vs. symbolic footnotes."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2543
+msgid "document customization (links to how-to and packages)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2574
+msgid "Other LaTeX constructs and packages instead of re-implementations"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2576
+msgid "Check the generated source with package `nag`."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2578
+msgid "enumitem_ (texlive-latex-extra) for field-lists?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2583
+msgid "Default layout"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2585
+msgid "Use italic instead of slanted for titlereference?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2587
+msgid ""
+"Start a new paragraph after lists (as currently) or continue (no blank "
+"line in source, no parindent in output)?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2590
+msgid "Overriding:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2592
+msgid "continue if the `compound paragraph`_ directive is used (as currently), or"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2594
+msgid "force a new paragraph with an empty comment."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2596
+msgid ""
+"Sidebar handling (environment with `framed`, `marginnote`, `wrapfig`, "
+"...)?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2599
+msgid "Use optionlist for docinfo?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2601
+msgid "Keep literal-blocks together on a page, avoid pagebreaks."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2603
+msgid ""
+"Failed experiments up to now: samepage, minipage, pagebreak 1 to 4 before"
+" the block."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2606
+msgid ""
+"Should be possible with ``--literal-block-env==lstlistings`` and some "
+"configuration..."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2609
+msgid "More space between title and subtitle? ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2618
+msgid "Tables"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2620
+msgid "Improve/simplify logic to set the column width in the output."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2622
+msgid "Assumed reST line length for table width setting configurable, or"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2623
+msgid ""
+"use `ltxtable` (a combination of `tabularx` (auto-width) and `longtable` "
+"(page breaks)), or"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2625
+msgid "use tabularx column type ``X`` and let LaTeX decide width, or"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2626
+msgid "use tabulary_?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2630
+msgid "From comp.text.tex (13. 4. 2011):"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2632
+msgid ""
+"When using fixed width columns, you should ensure that the total width "
+"does not exceed \\linewidth: if the first column is p{6cm} the second one"
+" should be p{\\dimexpr\\linewidth-6cm-4\\tabcolsep} because the glue "
+"\\tabcolsep is added twice at every column edge. You may also consider to"
+" set \\tabcolsep to a different value..."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2638
+msgid "csv-tables do not have a colwidth."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2640
+msgid "Add more classes or options, e.g. for"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2642
+msgid "horizontal alignment and rules."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2643
+msgid "long table vs. tabular (see next item)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2645
+msgid ""
+"Use tabular instead of longtable for tables in legends or generally "
+"inside a float?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2648
+msgid ""
+"Alternatively, default to tabular and use longtable only if specified by "
+"config setting or class argument (analogue to booktable)?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2651
+msgid "Table heads and footer for longtable (firstpage lastpage ..)?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2653
+msgid ""
+"In tools.txt the option tables right column, there should be some more "
+"spacing between the description and the next paragraph \"Default:\"."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2656
+msgid ""
+"Paragraph separation in tables is hairy. see http://www.tex.ac.uk/cgi-"
+"bin/texfaq2html?label=struttab"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2659
+msgid "The strut solution did not work."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2660
+msgid ""
+"setting extrarowheight added ad top of row not between paragraphs in a "
+"cell. ALTHOUGH i set it to 2pt because, text is too close to the topline."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2662
+msgid "baselineskip/stretch does not help."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2664
+msgid "Should there be two hlines after table head and on table end?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2666
+msgid "Place titled tables in a float ('table' environment)?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2668
+msgid ""
+"The 'table', 'csv-table', and 'list-table' directives support an "
+"(optional) table title. In analogy to the 'figure' directive this should "
+"map to a table float."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2673
+msgid "Image and figure directives"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2675
+msgid "compare the test case in:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2677
+msgid "`<../../test/functional/input/data/standard.txt>`__"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2678
+msgid "`<../../test/functional/expected/standalone_rst_html4css1.html>`__"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2679
+msgid "`<../../test/functional/expected/standalone_rst_latex.tex>`__"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2681
+msgid ""
+"The default CSS styling for HTML output (plain.css, default.css) lets "
+"text following a right- or left-aligned image float to the side of the "
+"image/figure."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2685
+msgid "Use this default also for LaTeX?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2687
+msgid ""
+"Wrap text around figures/images with class argument \"wrap\" (like the "
+"odt writer)?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2690
+msgid "Use `wrapfig` (or other recommended) package."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2692
+msgid ""
+"support more graphic formats (especially SVG, the only standard vector "
+"format for HTML)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2697
+msgid "Missing features"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2699
+msgid "support \"figwidth\" argument for figures."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2701
+#, python-format
+msgid ""
+"As the 'figwidth' argument is still ignored and the \"natural width\" of "
+"a figure in LaTeX is 100 % of the text width, setting the 'align' "
+"argument has currently no effect on the LaTeX output."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2705
+msgid "Multiple author entries in docinfo (same thing as in html)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2707
+msgid ""
+"Consider supporting the \"compact\" option and class argument (from "
+"rst2html) as some lists look better compact and others need the space."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2710
+msgid "Better citation support (see `Footnote & Citation Gathering`_)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2713
+msgid ""
+"If ``use-latex-citations`` is used, a bibliography is inserted right at "
+"the end of the document."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2716
+msgid ""
+"Put in place of the to-be-implemented \"citations\" directive (see "
+"`Footnote & Citation Gathering`_)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2721
+msgid "Unicode to LaTeX"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2723
+msgid ""
+"The `LyX <http://www.lyx.org>`_ document processor has a comprehensive "
+"Unicode to LaTeX conversion feature with a file called ``unicodesymbols``"
+" that lists LaTeX counterparts for a wide range of Unicode characters."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2727
+msgid "Use this in the LaTeXTranslator? Think of copyright issues!"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2730
+msgid "The \"ucs\" package has many translations in ...doc/latex/ucs/config/"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2732
+msgid "The bibstuff_ tool ships a `latex_codec` Python module!"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2738
+msgid "XeTeX writer"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2740
+msgid ""
+"Glyphs missing in the font are left out in the PDF without warning (e.g. "
+"⇔ left-right double arrow in the functional test output)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2743
+msgid ""
+"Disable word-wrap (hyphenation) in literal text locally with "
+"``providecommand{\\nohyphenation}{\\addfontfeatures{HyphenChar=None}}``?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2748
+msgid "problematic URLs"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2750
+msgid ""
+"^^ LaTeX's special syntax for characters results in \"strange\" "
+"replacements (both with \\href and \\url)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2753
+msgid "`file with ^^ <../strange^^name>`__: `<../strange^^name>`__"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2756
+msgid "Unbalanced braces, { or }, will fail (both with \\href and \\url)::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2761
+msgid "Currently, a warning is written to the error output stream."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2763
+msgid "For correct printing, we can"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2765
+msgid "use the \\href command with \"normal\" escaped name argument, or"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2766
+msgid "define a url-command in the preamble ::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2770
+msgid "but need to find a way to insert it as href argument."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2772
+msgid "The following fails::"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2776
+#, python-format
+msgid "Use %-replacement like http://nowhere/url_with%28parens%29 ?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2778
+msgid "-> does not work for file paths (with pdflatex and xpdf)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2782
+msgid "add-stylesheet option"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2784
+msgid "From http://article.gmane.org/gmane.text.docutils.devel/3429/"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2786
+msgid ""
+"The problem is that since we have a default value, we have to "
+"differentiate between adding another stylesheet and replacing the "
+"default.  I suggest that the existing --stylesheet & --stylesheet-path "
+"options keep their semantics to replace the existing settings.  We could "
+"introduce new --add-stylesheet & --add-stylesheet-path options, which "
+"accumulate; further --stylesheet/--stylesheet-path options would clear "
+"these lists.  The stylesheet or stylesheet_path setting (only one may be "
+"set), plus the added_stylesheets and added_stylesheet_paths settings, "
+"describe the combined styles."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2796
+msgid "For example, this run will have only one custom stylesheet:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2798
+msgid "rstpep2html.py --stylesheet-path custom.css ..."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2800
+msgid "This run will use the default stylesheet, and the custom one:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2802
+msgid "rstpep2html.py --add-stylesheet-path custom.css ..."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2804
+msgid ""
+"This run will use the default stylesheet, a custom local stylesheet, and "
+"an external stylesheet:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2808 ../../docutils/docs/dev/todo.txt:2816
+msgid "rstpep2html.py --add-stylesheet-path custom.css \\"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2808
+msgid "--add-stylesheet http://www.example.org/external.css ..."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2810
+msgid "This run will use only the second custom stylesheet:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2813
+msgid "--stylesheet-path second.css ..."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2819
+msgid "Front-End Tools"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2821
+msgid ""
+"What about if we don't know which Reader and/or Writer we are going to "
+"use?  If the Reader/Writer is specified on the command-line?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2825
+msgid ""
+"The dynamic_ front end ``tools/docutils-cli.py`` (new in 0.17) is an "
+"implementation of concept d) below. It uses 2-stage argument parsing via "
+"the `argparse` module's `partial parsing`_. It still needs some "
+"polishing."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2830
+msgid "Perhaps have different types of front ends:"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2832
+msgid ""
+"_`Fully qualified`: Reader and Writer are hard-coded into the front end "
+"(e.g. ``pep2html [options]``, ``pysource2pdf [options]``)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2836
+msgid ""
+"_`Partially qualified`: Reader is hard-coded, and the Writer is specified"
+" a sub-command (e.g. ``pep2 html [options]``, ``pysource2 pdf "
+"[options]``).  The Writer is known before option processing happens, "
+"allowing the OptionParser to be built dynamically.  Alternatively, the "
+"Writer could be hard-coded and the Reader specified as a sub-command "
+"(e.g. ``htmlfrom pep [options]``)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2844
+msgid ""
+"_`Unqualified`: Reader and Writer are specified as subcommands (e.g. "
+"``publish pep html [options]``, ``publish pysource pdf [options]``).  A "
+"single front end would be sufficient, but probably only useful for "
+"testing purposes."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2849
+msgid ""
+"_`Dynamic`: Reader and/or Writer are specified by options, with defaults "
+"if unspecified (e.g. ``publish --writer manpage [options]``)."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2853
+msgid ""
+"Allow common options before subcommands, as in CVS?  Or group all options"
+" together?  In the case of the `fully qualified`_ front ends, all the "
+"options will have to be grouped together anyway, so there's no advantage "
+"(we can't use it to avoid conflicts) to splitting common and component-"
+"specific options apart."
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2860
+msgid ""
+"Parameterize help text & defaults somehow?  Perhaps a callback?  Or "
+"initialize ``settings_spec`` in ``__init__`` or ``init_options``?"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2863
+msgid ""
+"Disable common options that don't apply? (This should now be easier with "
+"``frontend.filter_settings_spec``.)"
+msgstr ""
+
+#: ../../docutils/docs/dev/todo.txt:2866
+msgid ""
+"Add ``--section-numbering`` command line option.  The \"sectnum\" "
+"directive should override the ``--no-section-numbering`` command line "
+"option then."
+msgstr ""
+

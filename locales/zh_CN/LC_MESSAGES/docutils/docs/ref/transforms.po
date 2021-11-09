@@ -1,0 +1,743 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the docutils-doc
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: docutils-doc \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../docutils/docs/ref/transforms.txt:3
+msgid "Docutils Transforms"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "Author"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:5
+msgid "David Goodger"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "Contact"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:6
+msgid "docutils-develop@lists.sourceforge.net"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "Revision"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:7
+msgid "$Revision$"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "Date"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:8
+msgid "$Date$"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "Copyright"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:9
+msgid "This document has been placed in the public domain."
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:12
+msgid "目录"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:14
+msgid ""
+"Transforms change the document tree in-place, add to the tree, or prune "
+"it. Transforms resolve references and footnote numbers, process "
+"interpreted text, and do other context-sensitive processing. Each "
+"transform is a subclass of ``docutils.transforms.Transform``."
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:19
+msgid ""
+"There are `transforms added by components`_, others (e.g. "
+"``parts.Contents``) are added by the parser, if a corresponding directive"
+" is found in the document."
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:23
+msgid ""
+"To add a transform, components (objects inheriting from "
+"Docutils.Component like Readers, Parsers, Writers, Input, Output) "
+"overwrite the ``get_transforms()`` method of their base class. After the "
+"Reader has finished processing, the Publisher calls "
+"``Transformer.populate_from_components()`` with a list of components and "
+"all transforms returned by the component's ``get_transforms()`` method "
+"are stored in a `transformer object` attached to the document tree."
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:32
+msgid ""
+"For more about transforms and the Transformer object, see also `PEP "
+"258`_. (The ``default_transforms()`` attribute of component classes "
+"mentioned there is deprecated. Use the ``get_transforms()`` method "
+"instead.)"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:40
+msgid "Transforms Listed in Priority Order"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:42
+msgid ""
+"Transform classes each have a default_priority attribute which is used by"
+" the Transformer to apply transforms in order (low to high). The default "
+"priority can be overridden when adding transforms to the Transformer "
+"object."
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:48
+msgid "Transform: module.Class"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:48
+msgid "Added By"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:48
+#: ../../docutils/docs/ref/transforms.txt:134
+msgid "Priority"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:50
+msgid "misc.class"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:50
+msgid "\"class\" (d/p)"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:50
+msgid "210"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:52
+msgid "references.Substitutions"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:52
+#: ../../docutils/docs/ref/transforms.txt:54
+#: ../../docutils/docs/ref/transforms.txt:68
+#: ../../docutils/docs/ref/transforms.txt:70
+#: ../../docutils/docs/ref/transforms.txt:80
+#: ../../docutils/docs/ref/transforms.txt:82
+#: ../../docutils/docs/ref/transforms.txt:84
+#: ../../docutils/docs/ref/transforms.txt:99
+#: ../../docutils/docs/ref/transforms.txt:103
+msgid "standalone (r), pep (r)"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:52
+msgid "220"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:54
+msgid "references.PropagateTargets"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:54
+msgid "260"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:56
+msgid "frontmatter.DocTitle"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:56
+#: ../../docutils/docs/ref/transforms.txt:58
+#: ../../docutils/docs/ref/transforms.txt:60
+msgid "standalone (r)"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:56
+msgid "320"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:58
+msgid "frontmatter.DocInfo"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:58
+msgid "340"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:60
+msgid "frontmatter.SectSubTitle"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:60
+msgid "350"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:62
+msgid "peps.Headers"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:62
+#: ../../docutils/docs/ref/transforms.txt:64
+#: ../../docutils/docs/ref/transforms.txt:72
+msgid "pep (r)"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:62
+msgid "360"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:64
+msgid "peps.Contents"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:64
+msgid "380"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:66
+msgid "universal.StripClasses..."
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:66
+#: ../../docutils/docs/ref/transforms.txt:105
+#: ../../docutils/docs/ref/transforms.txt:107
+msgid "Writer (w)"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:66
+msgid "420"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:68
+msgid "references.AnonymousHyperlinks"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:68
+msgid "440"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:70
+msgid "references.IndirectHyperlinks"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:70
+msgid "460"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+#: ../../docutils/docs/ref/transforms.txt:72
+msgid "peps.TargetNotes"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:72
+msgid "520"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:74
+#: ../../docutils/docs/ref/transforms.txt:78
+msgid "references.TargetNotes"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:74
+#: ../../docutils/docs/ref/transforms.txt:76
+msgid "peps.TargetNotes (t/p)"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:74
+#: ../../docutils/docs/ref/transforms.txt:138
+msgid "0"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:76
+#: ../../docutils/docs/ref/transforms.txt:118
+msgid "misc.CallBack"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:76
+msgid "1"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:78
+msgid "\"target-notes\" (d/p)"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:78
+msgid "540"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:80
+msgid "references.Footnotes"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:80
+msgid "620"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:82
+msgid "references.ExternalTargets"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:82
+msgid "640"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:84
+msgid "references.InternalTargets"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:84
+msgid "660"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:86
+msgid "parts.SectNum"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:86
+msgid "\"sectnum\" (d/p)"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:86
+msgid "710"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:88
+msgid "parts.Contents"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:88
+msgid "\"contents\" (d/p), peps.Contents (t/p)"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:88
+msgid "720"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+#: ../../docutils/docs/ref/transforms.txt:91
+msgid "universal.StripComments"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:91
+#: ../../docutils/docs/ref/transforms.txt:97
+#: ../../docutils/docs/ref/transforms.txt:101
+msgid "Reader (r)"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:91
+msgid "740"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:93
+msgid "peps.PEPZero"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:93
+msgid "peps.Headers (t/p)"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:93
+msgid "760"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:95
+msgid "components.Filter"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:95
+msgid "*not used*"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:95
+msgid "780"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:97
+msgid "universal.Decorations"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:97
+msgid "820"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+#: ../../docutils/docs/ref/transforms.txt:99
+msgid "misc.Transitions"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:99
+msgid "830"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:101
+msgid "universal.ExposeInternals"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:101
+msgid "840"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:103
+msgid "references.DanglingReferences"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:103
+#: ../../docutils/docs/ref/transforms.txt:109
+msgid "850"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:105
+msgid "universal.Messages"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:105
+msgid "860"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:107
+msgid "universal.FilterMessages"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:107
+msgid "870"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:109
+#: ../../docutils/docs/ref/transforms.txt:190
+msgid "universal.SmartQuotes"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:109
+msgid "Parser"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:111
+msgid "universal.TestMessages"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:111
+msgid "DocutilsTestSupport"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:111
+msgid "880"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:113
+msgid "writer_aux.Compound"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:113
+msgid "newlatex2e (w)"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:113
+msgid "910"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:115
+#: ../../docutils/docs/ref/transforms.txt:201
+#: ../../docutils/docs/ref/transforms.txt:204
+msgid "writer_aux.Admonitions"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:115
+msgid "html4css1 (w), latex2e (w)"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:115
+msgid "920"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:118
+msgid "n/a"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:118
+msgid "990"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:121
+msgid "Key:"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:123
+msgid "(r): Reader"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:124
+msgid "(w): Writer"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:125
+msgid "(d): Directive"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:126
+msgid "(t): Transform"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:127
+msgid "(/p): Via a \"pending\" node"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:131
+msgid "Transform Priority Range Categories"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:136
+msgid "From"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:136
+msgid "To"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:136
+msgid "Category"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:138
+msgid "99"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:138
+msgid "immediate execution (added by another transform)"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:139
+msgid "100"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:139
+msgid "199"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:139
+msgid "very early (non-standard)"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:140
+msgid "200"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:140
+msgid "299"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:140
+msgid "very early"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:141
+msgid "300"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:141
+msgid "399"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:141
+msgid "early"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:142
+msgid "400"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:142
+msgid "699"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:142
+msgid "main"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:143
+msgid "700"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:143
+msgid "799"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:143
+msgid "late"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:144
+msgid "800"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:144
+msgid "899"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:144
+msgid "very late"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:145
+msgid "900"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:145
+msgid "999"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:145
+msgid "very late (non-standard)"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:150
+msgid "Transforms added by components"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:156
+msgid "readers.Reader:"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "universal.Decorations,"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "universal.ExposeInternals,"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:159
+msgid "readers.ReReader:"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:159
+#: ../../docutils/docs/ref/transforms.txt:198
+msgid "None"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:173
+msgid "readers.standalone.Reader:"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "references.Substitutions,"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "references.PropagateTargets,"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "frontmatter.DocTitle,"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "frontmatter.SectionSubTitle,"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "frontmatter.DocInfo,"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "references.AnonymousHyperlinks,"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "references.IndirectHyperlinks,"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "references.Footnotes,"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "references.ExternalTargets,"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "references.InternalTargets,"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "references.DanglingReferences,"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:187
+msgid "readers.pep.Reader:"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "misc.Transitions,"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "peps.Headers,"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "peps.Contents,"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:190
+msgid "parsers.rst.Parser"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:195
+msgid "writers.Writer:"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "universal.Messages,"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "universal.FilterMessages,"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt
+msgid "universal.StripClassesAndElements"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:198
+msgid "writers.UnfilteredWriter"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:201
+msgid "writers.latex2e.Writer"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:204
+msgid "writers.html4css1.Writer:"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:206
+msgid "writers.odf_odt.Writer:"
+msgstr ""
+
+#: ../../docutils/docs/ref/transforms.txt:207
+msgid "removes references.DanglingReferences"
+msgstr ""
+
