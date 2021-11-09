@@ -80,7 +80,6 @@ docutils' documentation!
    :glob:
 
    sandbox/README
-   sandbox/**/*
 
 Indices and tables
 ==================

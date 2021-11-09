@@ -13,6 +13,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+from pathlib import Path
 
 
 # -- Project information -----------------------------------------------------
@@ -47,12 +48,13 @@ language = 'zh_CN'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
+
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store',
                     'docutils/test', 'docutils/docutils',
                     'docutils/tools/**', 'docutils/licenses/**',
                     'requirements.txt', 'prest/**']
 
-
+exclude_patterns += [p.as_posix() for p in Path('sandbox').iterdir() if p.is_dir()]
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -81,5 +83,5 @@ rediraffe_redirects = {
     "web/docs/dev/todo": "docutils/docs/dev/todo",
     "web/RELEASE-NOTES": "docutils/RELEASE-NOTES",
     "web/docs/dev/repository": "docutils/docs/dev/repository",
-    "web/sandbox/README": "docutils/sandbox/README",
+    "web/sandbox/README": "sandbox/README",
 }
