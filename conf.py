@@ -18,7 +18,7 @@ from pathlib import Path
 
 # -- Project information -----------------------------------------------------
 
-project = 'docutils'
+project = 'docutilsx'
 copyright = '2021, xinetzone'
 author = 'xinetzone'
 
