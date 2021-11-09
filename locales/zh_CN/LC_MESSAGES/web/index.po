@@ -24,7 +24,7 @@ msgstr ""
 
 #: ../../web/index.txt:6
 msgid "Written in Python, for General- and Special-Purpose Use"
-msgstr ""
+msgstr "用 Python 编写，用于通用和特殊用途"
 
 #: ../../web/index.txt:8
 msgid ""
@@ -34,16 +34,22 @@ msgid ""
 "read, easy to use, what-you-see-is-what-you-get plaintext markup "
 "language."
 msgstr ""
+"Docutils 是一个开源文本处理系统，用于将纯文本文档处理成有用的格式，"
+"如 HTML、LaTeX、man-pages、OpenDocument 或 XML。"
+"它包括 reStructuredText_ ，这是一种易于阅读、易于使用、"
+"所见即所得的纯文本标记语言。"
 
 #: ../../web/index.txt:18
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../web/index.txt:20
 msgid ""
 "**To get up & running quickly**, see the Quick-Start_ section of the "
 "README_ file. The only requirement_ for running Docutils is Python_."
 msgstr ""
+"要快速启动和运行，请参阅 README_ 文件的 快速上手_ 部分。"
+"运行 Docutils 的唯一 需求_ 是 Python_ 。"
 
 #: ../../web/index.txt:23
 msgid ""
@@ -51,12 +57,15 @@ msgid ""
 "Overview`_. If something is unclear or missing, ask at the docutils-"
 "users_ mailing list."
 msgstr ""
+"所有文档都可以从 `Project Documentation Overview`_ 中获取。"
+"如果有什么不清楚或缺失的地方，可以向 docutils-users_ 邮件列表询问。"
 
 #: ../../web/index.txt:27
 msgid ""
 "The |sourceforge| `project page`_ has links to the tracker, mailing "
 "lists, and code repository."
 msgstr ""
+"|sourceforge| `项目页面`_ 有到跟踪器、邮件列表和代码存储库的链接。"
 
 #: ../../web/index.txt:94
 msgid "SourceForge"
@@ -64,7 +73,7 @@ msgstr ""
 
 #: ../../web/index.txt:30
 msgid "All **discussion** about Docutils takes place on the `mailing lists`_."
-msgstr ""
+msgstr "所有关于 Docutils 的讨论都发生在 `mailing lists`_ 中。"
 
 #: ../../web/index.txt:32
 msgid ""
@@ -73,12 +82,17 @@ msgid ""
 "what features to implement.  Thus, if you tell us what you need, we may "
 "help!  Please post any feedback to the docutils-users_ mailing list."
 msgstr ""
+"对于开源项目的开发人员来说，**反馈** 是一个很好的激励因素，非常受欢迎。"
+"我们还依赖反馈来决定要实现哪些特性。"
+"因此，如果你告诉我们你需要什么，我们可能会帮助你！"
+"请将任何反馈信息发送到 docutils-users_ 邮件列表。"
 
 #: ../../web/index.txt:38
 msgid ""
 "If you find a **bug**, please `file a bug report`_ or mail to the "
 "docutils-users_ mailing list."
 msgstr ""
+"如果发现错误，请 `提交错误报告`_ 或通过邮件发送到 docutils-users_。"
 
 #: ../../web/index.txt:41
 msgid ""
@@ -88,10 +102,14 @@ msgid ""
 "mailing list. **Patch** submissions should be filed in the `patch "
 "tracker`_ (preferred) or sent to docutils-develop_."
 msgstr ""
+"我们欢迎各种各样的贡献。有一个 待办清单_，上面满是等待冠军的想法。"
+"如果您有任何关于如何扩展 Docutils 的问题，"
+"请随时在 docutils-develop_ 邮件列表上提问。"
+"补丁提交应归档到 `补丁追踪器`_ (首选)或发送到 docutils-develop_ 。"
 
 #: ../../web/index.txt:48
 msgid "Download"
-msgstr ""
+msgstr "下载"
 
 #: ../../web/index.txt:50
 msgid ""
@@ -99,6 +117,8 @@ msgid ""
 "intended for distributors.  See the `release notes`_ for a list of "
 "changes since the previous release."
 msgstr ""
+"`发布包`_ 可以从 PyPI_ 下载。它们主要是为发布准备的。"
+"请参阅 发布说明_，了解自上一版本以来的变化。"
 
 #: ../../web/index.txt:54
 msgid ""
@@ -107,6 +127,9 @@ msgid ""
 "and *fewer bugs* than the \"official\" releases |---| they're not only "
 "for developers!"
 msgstr ""
+"我们建议您使用 `Docutils Subversion 仓库`_ 中的 snapshot_ [#snapshots]_。"
+"与“官方” |---| 版本相比，快照通常包含更多的特性和更少的 "
+"bug ——它们不仅仅是为开发人员准备的!"
 
 #: ../../web/index.txt:58
 msgid ""
@@ -115,12 +138,18 @@ msgid ""
 "prest/perl and web) or any sub-directory. Browse to the desired directory"
 " and click the \"Download Snapshot\" button."
 msgstr ""
+"[#snapshots] Snapshots 是由 Sourceforge 按需创建的。"
+"您可以下载完整 `trunk 目录`_ （docutils, sandbox_, prest/perl 和 web）"
+"或任何子目录的快照。"
+"浏览到所需的目录，并单击“下载快照”按钮。"
 
 #: ../../web/index.txt:67
 msgid ""
 "Web site, tracker, mailing lists, and repository hosted by "
 "|SourceForge|_. Powered by |Python|_."
 msgstr ""
+"网站、跟踪器、邮件列表和资源库由 |SourceForge|_ 主办。"
+"由 |Python|_ 提供技术支持。"
 
 #: ../../web/index.txt:101
 msgid "Python"
