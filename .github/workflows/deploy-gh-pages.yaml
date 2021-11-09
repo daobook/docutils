@@ -53,7 +53,7 @@ jobs:
       - name: 🔥 Clean up files
         run: rm -r _build/doctrees/
 
-    - name: 🚀 Deploy to GitHub pages
+      - name: 🚀 Deploy to GitHub pages
         uses: peaceiris/actions-gh-pages@v3.6.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
