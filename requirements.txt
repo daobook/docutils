@@ -3,6 +3,7 @@ docutils==0.17
 sphinxcontrib-websupport
 sphinx-intl
 sphinxext-rediraffe
+furo
 # myst-parser
 # sphinxcontrib-mermaid
 # linkify-it-py

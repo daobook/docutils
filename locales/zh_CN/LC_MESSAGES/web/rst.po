@@ -28,7 +28,7 @@ msgstr ""
 
 #: ../../web/rst.txt:6
 msgid "Markup Syntax and Parser Component of Docutils_"
-msgstr ""
+msgstr "Docutils_ 的标记语法和解析器组件"
 
 #: ../../web/rst.txt
 msgid "Date"
@@ -40,7 +40,7 @@ msgstr ""
 
 #: ../../web/rst.txt:10
 msgid "\"reStructuredText\" is **ONE** word, *not two!*"
-msgstr ""
+msgstr "“reStructuredText” 是一个单词，不是两个！"
 
 #: ../../web/rst.txt:12
 msgid "目录"
@@ -57,6 +57,12 @@ msgid ""
 " a revision and reinterpretation of the StructuredText_ and Setext_ "
 "lightweight markup systems."
 msgstr ""
+"reStructuredText 是一个易于阅读的、所见即所得的纯文本标记语法和解析器系统。"
+"它对于内联程序文档（如 Python 文档字符串）、快速创建简单网页和独立文档都很有用。"
+"reStructuredText 是为特定应用领域的可扩展性而设计的。"
+"reStructuredText 解析器是 Docutils_ 的一个组件。"
+"reStructuredText 是对 StructuredText_ 和 Setext_ 轻量级标记系统的修订和重新解释。"
+
 
 #: ../../web/rst.txt:23
 msgid ""
@@ -66,16 +72,21 @@ msgid ""
 "intended purpose of the markup is the conversion of reStructuredText "
 "documents into useful structured data formats."
 msgstr ""
+"reStructuredText 的主要目标是定义和实现一种标记语法，"
+"以便在 Python 文档字符串和其他文档域中使用，"
+"该语法可读性强、简单，但功能强大，足以使用。"
+"标记的预期用途是将 reStructuredText 文档转换为有用的结构化数据格式。"
 
 #: ../../web/rst.txt:29
 msgid ""
 "See statemachine.py_ for an example of a Python module fully documented "
 "using reStructuredText."
 msgstr ""
+"请参阅 statemachine.py_ 以获得使用 reStructuredText 完整文档的 Python 模块示例。"
 
 #: ../../web/rst.txt:34
 msgid "User Documentation"
-msgstr ""
+msgstr "用户文档"
 
 #: ../../web/rst.txt:36
 msgid "`A ReStructuredText Primer`__ (HTML file, or `text source`__)."
