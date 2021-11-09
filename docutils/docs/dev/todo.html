@@ -1,0 +1,3026 @@
+<!doctype html>
+<html class="no-js" lang="zh_CN">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+<link rel="index" title="索引" href="../../../genindex.html" /><link rel="search" title="搜索" href="../../../search.html" /><link rel="next" title="Docutils Web Site" href="website.html" /><link rel="prev" title="Docutils Testing" href="testing.html" />
+
+    <meta name="generator" content="sphinx-4.2.0, furo 2021.10.09"/>
+        <title>Docutils To Do List - docutils 0.0.1 文档</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">docutils 0.0.1 文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">docutils 0.0.1 文档</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">概述</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/index.html">Docutils: Documentation Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/mirror/setext.html">Setext 文档镜像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Docutils Project Documentation Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">user</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/config.html">Docutils Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/emacs.html">Emacs Support for reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/html.html">Docutils HTML writers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/latex.html"><span class="sectnum">1</span> Generating LaTeX with Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/links.html">Docutils Link List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/mailing-lists.html">Docutils Mailing Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/manpage.html">manpage writer for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/odt.html"><span class="sectnum">1</span> Odt Writer for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/smartquotes.html">Smart Quotes for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/tools.html">Docutils Front-End Tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">api</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/cmdline-tool.html">Inside A Docutils Command-Line Front-End Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/publisher.html">The Docutils Publisher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/runtime-settings.html">Docutils Runtime Settings</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">dev</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="distributing.html">Docutils Distributor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enthought-plan.html"><span class="sectnum">1</span> Plan for Enthought API Documentation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="enthought-rfp.html"><span class="sectnum">1</span> Enthought API Documentation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hacking.html">Docutils Hacker’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="policies.html">Docutils Project Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pysource.html">Python Source Reader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release.html">Docutils Release Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="repository.html">The Docutils Version Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="semantics.html">Docstring Semantics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Docutils Testing</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Docutils To Do List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="website.html">Docutils Web Site</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">howto</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/html-stylesheets.html">Writing HTML (CSS) Stylesheets for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/i18n.html">Docutils Internationalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/rst-directives.html">Creating reStructuredText Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/rst-roles.html">Creating reStructuredText Interpreted Text Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/security.html">Deploying Docutils Securely</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">peps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html">Rejection Notice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#road-map-to-the-docstring-peps">Road Map to the Docstring PEPs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#project-web-site">Project Web Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html">Rejection Notice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#project-web-site">Project Web Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#benefits">Benefits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#goals">Goals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#docstring-significant-features">Docstring-Significant Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#questions-answers">Questions &amp; Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#references-footnotes">References &amp; Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#acknowledgements">Acknowledgements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ref</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ref/doctree.html">The Docutils Document Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/transforms.html">Docutils Transforms</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">docutils other</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../BUGS.html">Docutils Bugs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../COPYING.html">Copying Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../FAQ.html"><span class="sectnum">1</span> Docutils FAQ (Frequently Asked Questions)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../HISTORY.html">Docutils History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Docutils 0.18.1b.dev 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../RELEASE-NOTES.html">Docutils Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../THANKS.html">Acknowledgements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">reStructuredText</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/rst.html"></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/rst/cheatsheet.html">The reStructuredText Cheat Sheet: Syntax Reminders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/rst/quickstart.html">A ReStructuredText Primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst/alternatives.html">A Record of reStructuredText Syntax Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst/problems.html">Problems With StructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/definitions.html">reStructuredText Standard Definition Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/directives.html">reStructuredText Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/introduction.html">An Introduction to reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/mathematics.html"><span class="sectnum">1</span> LaTeX syntax for mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/restructuredtext.html">reStructuredText Markup Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/roles.html">reStructuredText Interpreted Text Roles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">sandbox</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../sandbox/README.html">Sandbox 自述</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="docutils-to-do-list">
+<h1><a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a> To Do List<a class="headerlink" href="#docutils-to-do-list" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>David Goodger (with input from many); open to all Docutils
+developers</p>
+</dd>
+<dt class="field-even">Contact</dt>
+<dd class="field-even"><p><a class="reference external" href="mailto:docutils-develop%40lists.sourceforge.net">docutils-develop<span>@</span>lists<span>.</span>sourceforge<span>.</span>net</a></p>
+</dd>
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>$Date$</p>
+</dd>
+<dt class="field-even">Revision</dt>
+<dd class="field-even"><p>$Revision$</p>
+</dd>
+<dt class="field-odd">Copyright</dt>
+<dd class="field-odd"><p>This document has been placed in the public domain.</p>
+</dd>
+</dl>
+<div class="contents topic" id="id1">
+<p class="topic-title">目录</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#docutils-to-do-list" id="id32">Docutils To Do List</a></p>
+<ul>
+<li><p><a class="reference internal" href="#minimum-requirements-for-python-standard-library-candidacy" id="id33">Minimum Requirements for Python Standard Library Candidacy</a></p></li>
+<li><p><a class="reference internal" href="#repository" id="id34">Repository</a></p></li>
+<li><p><a class="reference internal" href="#general" id="id35">General</a></p>
+<ul>
+<li><p><a class="reference internal" href="#object-numbering-and-object-references" id="id36">object numbering and object references</a></p></li>
+<li><p><a class="reference internal" href="#meta-node" id="id37">&lt;meta&gt; node</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#documentation" id="id38">Documentation</a></p>
+<ul>
+<li><p><a class="reference internal" href="#user-docs" id="id39">User Docs</a></p></li>
+<li><p><a class="reference internal" href="#developer-docs" id="id40">Developer Docs</a></p></li>
+<li><p><a class="reference internal" href="#how-tos" id="id41">How-Tos</a></p></li>
+<li><p><a class="reference internal" href="#peps" id="id42">PEPs</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#python-source-reader" id="id43">Python Source Reader</a></p></li>
+<li><p><a class="reference internal" href="#restructuredtext-parser" id="id44">reStructuredText Parser</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id9" id="id45">Bugs</a></p></li>
+<li><p><a class="reference internal" href="#misc" id="id46">Misc</a></p></li>
+<li><p><a class="reference internal" href="#adaptable-file-extensions" id="id47">Adaptable file extensions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#questions" id="id48">Questions</a></p></li>
+<li><p><a class="reference internal" href="#proposals" id="id49">Proposals</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#math-markup" id="id50">Math Markup</a></p>
+<ul>
+<li><p><a class="reference internal" href="#alternative-input-formats" id="id51">alternative input formats</a></p></li>
+<li><p><a class="reference internal" href="#latex-output" id="id52">LaTeX output</a></p></li>
+<li><p><a class="reference internal" href="#html-output" id="id53">HTML output</a></p></li>
+<li><p><a class="reference internal" href="#openoffice-output" id="id54">OpenOffice output</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#directives" id="id55">Directives</a></p></li>
+<li><p><a class="reference internal" href="#interpreted-text" id="id56">Interpreted Text</a></p></li>
+<li><p><a class="reference internal" href="#doctree-pruning" id="id57">Doctree pruning</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#unimplemented-transforms" id="id58">Unimplemented Transforms</a></p></li>
+<li><p><a class="reference internal" href="#html-writer" id="id59">HTML Writer</a></p></li>
+<li><p><a class="reference internal" href="#pep-html-writer" id="id60">PEP/HTML Writer</a></p></li>
+<li><p><a class="reference internal" href="#s5-html-writer" id="id61">S5/HTML Writer</a></p></li>
+<li><p><a class="reference internal" href="#epub-html-writer" id="id62">Epub/HTML Writer</a></p></li>
+<li><p><a class="reference internal" href="#latex-writer" id="id63">LaTeX writer</a></p>
+<ul>
+<li><p><a class="reference internal" href="#bug-fixes" id="id64">Bug fixes</a></p></li>
+<li><p><a class="reference internal" href="#generate-clean-and-configurable-latex-source" id="id65">Generate clean and configurable LaTeX source</a></p>
+<ul>
+<li><p><a class="reference internal" href="#configurable-placement-of-figure-and-table-floats" id="id66">Configurable placement of figure and table floats</a></p></li>
+<li><p><a class="reference internal" href="#footnotes" id="id67">Footnotes</a></p></li>
+<li><p><a class="reference internal" href="#other-latex-constructs-and-packages-instead-of-re-implementations" id="id68">Other LaTeX constructs and packages instead of re-implementations</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#default-layout" id="id69">Default layout</a></p>
+<ul>
+<li><p><a class="reference internal" href="#tables" id="id70">Tables</a></p></li>
+<li><p><a class="reference internal" href="#image-and-figure-directives" id="id71">Image and figure directives</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#missing-features" id="id72">Missing features</a></p>
+<ul>
+<li><p><a class="reference internal" href="#unicode-to-latex" id="id73">Unicode to LaTeX</a></p></li>
+<li><p><a class="reference internal" href="#xetex-writer" id="id74">XeTeX writer</a></p></li>
+<li><p><a class="reference internal" href="#problematic-urls" id="id75">problematic URLs</a></p></li>
+<li><p><a class="reference internal" href="#add-stylesheet-option" id="id76">add-stylesheet option</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#front-end-tools" id="id77">Front-End Tools</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Priority items are marked with “@” symbols.  The more @s, the higher
+the priority.  Items in question form (containing “?”) are ideas which
+require more thought and debate; they are potential to-do’s.</p>
+<p>Many of these items are awaiting champions.  If you see something
+you’d like to tackle, please do!  If there’s something you’d like to
+see done but are unable to implement it yourself, please consider
+donating to Docutils: <a class="reference external" href="http://sourceforge.net/donate/index.php?group_id=38414"><img alt="Support the Docutils project!" class="align-middle" src="http://images.sourceforge.net/images/project-support.jpg" style="width: 88px; height: 32px;"/></a></p>
+<p>Please see also the <a class="reference external" href="../../BUGS.html">Bugs</a> document for a list of bugs in Docutils.</p>
+<section id="minimum-requirements-for-python-standard-library-candidacy">
+<h2><a class="toc-backref" href="#id33">Minimum Requirements for Python Standard Library Candidacy</a><a class="headerlink" href="#minimum-requirements-for-python-standard-library-candidacy" title="永久链接至标题">¶</a></h2>
+<p>Below are action items that must be added and issues that must be
+addressed before Docutils can be considered suitable to be proposed
+for inclusion in the Python standard library.</p>
+<p>Many of these are now handled by <a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a></p>
+<ul class="simple">
+<li><p>Support for <a class="reference internal" href="#document-splitting">document splitting</a>.  May require some major code
+rework.</p></li>
+<li><p>Support for subdocuments (see <a class="reference internal" href="#large-documents">large documents</a>).</p></li>
+<li><p><a class="reference internal" href="#object-numbering-and-object-references">Object numbering and object references</a>.</p></li>
+<li><p><a class="reference internal" href="#nested-inline-markup">Nested inline markup</a>.</p></li>
+<li><p><a class="reference internal" href="#python-source-reader">Python Source Reader</a>.</p></li>
+<li><p>The HTML writer needs to be rewritten (or a second HTML writer
+added) to allow for custom classes, and for arbitrary splitting
+(stack-based?).</p></li>
+<li><p><a class="reference internal" href="#documentation">Documentation</a> of the architecture.  Other docs too.</p></li>
+<li><p>Plugin support.</p></li>
+<li><p>Suitability for <a class="reference external" href="http://docutils.sf.net/sandbox/README.html#documenting-python">Python module documentation</a>.</p></li>
+</ul>
+</section>
+<section id="repository">
+<h2><a class="toc-backref" href="#id34">Repository</a><a class="headerlink" href="#repository" title="永久链接至标题">¶</a></h2>
+<p>Move to a Git repository.</p>
+<ul>
+<li><p>This is a long standing <a class="reference external" href="https://sourceforge.net/p/docutils/feature-requests/58/">feature request</a>
+(with pointers to Sphinx issues and discussion).</p>
+</li>
+<li><p>From a <a class="reference external" href="https://sourceforge.net/p/docutils/mailman/message/31878077/">post by David Goodger</a></p>
+<blockquote>
+<div><p>An absolute requirement, for me, is that such a change be complete.
+We can’t lose any data or have to refer to the old system as an
+“archive”. So all the SVN history, all branches, and the full sandbox
+need to be converted at the same time.</p>
+</div></blockquote>
+</li>
+</ul>
+<p>Convert with <a class="reference external" href="http://www.catb.org/esr/reposurgeon/">reposurgeon</a>?</p>
+<blockquote>
+<div><p>If you are doing a full import rather than gatewaying, reposurgeon is
+probably what you want. It has been tested against a lot of large, old,
+nasty repositories and is thus known to be robust in the presence of
+repository malformations (a property regularly checked by a test suite
+that is a rogue’s gallery of Subversion botches).</p>
+<p class="attribution">—<a class="reference external" href="https://git.wiki.kernel.org/index.php/Interfaces,_frontends,_and_tools#Subversion">Git Wiki</a></p>
+</div></blockquote>
+</section>
+<section id="general">
+<h2><a class="toc-backref" href="#id35">General</a><a class="headerlink" href="#general" title="永久链接至标题">¶</a></h2>
+<ul>
+<li><p>Encoding of command line arguments can only be guessed:</p>
+<ul>
+<li><p>try UTF-8/strict first, then try the locale’s encoding with
+strict error handling, then ASCII/replace?</p>
+<p>UTF-8 is almost 100% safe to try first; false positives are rare,
+The locale’s encoding with strict error handling may be a
+reasonable compromise, but any error would indicate that the
+locale’s encoding is inappropriate.  The only safe fallback is
+ASCII/replace.</p>
+</li>
+<li><p>Do not decode argv before option parsing but individual string
+values?</p>
+<dl class="option-list">
+<dt><kbd><span class="option">+1</span></kbd></dt>
+<dd><p>Allows for separate command-line vs. filesystem encodings,
+respectively to keep file names encoded.</p>
+</dd>
+<dt><kbd><span class="option">+1</span></kbd></dt>
+<dd><p>Allows to configure command-line encoding in a config file,</p>
+</dd>
+<dt><kbd><span class="option">-1</span></kbd></dt>
+<dd><p>More complicated.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Cf. &lt;<a class="reference external" href="http://thread.gmane.org/gmane.text.docutils.user/2890/focus=2957">http://thread.gmane.org/gmane.text.docutils.user/2890/focus=2957</a>&gt;.</p>
+</li>
+<li><p>Improve handling on Windows:</p>
+<ul class="simple">
+<li><p>Get graphical installer.</p></li>
+<li><p>Make rst2html.py an .exe file using py2exe.</p></li>
+</ul>
+</li>
+<li><p id="gui">The user interface is very difficult to use for most Windows users;
+you can’t really expect them to use the command line.  We need some
+kind of GUI that can launch rst2html.py, and save the HTML output to
+a file, and launch a browser.  What’s important is that we get
+settings to work with the GUI.  So we need some way to dynamically
+generate a list of settings for the GUI.  The current settings_spec
+for OptionParser doesn’t seem to be usable for this for the
+following reasons:</p>
+<ul class="simple">
+<li><p>It’s biased toward the command line – there are <em>two</em> options for
+one boolean setting.</p></li>
+<li><p>You cannot have both a one-line description and a longer
+description for tooltips/help-texts.</p></li>
+<li><p>It doesn’t provide hints for the input type.  You cannot easily
+infer the type of a setting from its validator, because any
+component can add new validators.  In fact, it may be necessary to
+have both a hint about the input type (e.g. string) and a
+validator (valid ID), or it may be necessary to have a different
+set of choices for the CLI (1, INFO, 2, …) and for the GUI
+(INFO, WARNING, …).</p></li>
+<li><p>It’s coupled to the OptionParser.  We want to be able to change
+the underlying system without breaking everything.</p></li>
+<li><p>It’s a bunch of primitive structures.  We want an extensible (thus
+object-oriented) interface.</p></li>
+</ul>
+<p>So we probably need to create a class for storing all the settings,
+and auto-generate the OptionParser data from that.</p>
+<p>I talked to Stephan Deibel about getting Docutils integrated into
+Wing IDE.  He said it’s possible, and he’d be willing to help.
+There’s a scripting interface to Wing, which we’d use.  We can
+dynamically generate a list of preferences and not worry too much
+about the rendering (from what I understood); Wing’s whole GUI is
+dynamic anyway.  The interface could be made usable for other GUIs.
+For example, we could try to get option support for DocFactory.  //
+FW</p>
+</li>
+<li><p>Allow different report levels for STDERR and system_messages inside
+the document?</p></li>
+<li><p>Change the docutils-update script (in sandbox/infrastructure), to
+support arbitrary branch snapshots.</p></li>
+<li><p>Move some general-interest sandboxes out of individuals’
+directories, into subprojects?</p></li>
+<li><p>Add option for file (and URL) access restriction to make Docutils
+usable in Wikis and similar applications.</p>
+<p>2005-03-21: added <code class="docutils literal notranslate"><span class="pre">file_insertion_enabled</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">raw_enabled</span></code>
+settings.  These partially solve the problem, allowing or disabling
+<strong>all</strong> file accesses, but not limited access.</p>
+</li>
+<li><p><a class="reference external" href="../user/config.html">Configuration</a> file handling needs discussion:</p>
+<ul class="simple">
+<li><p>There should be some error checking on the contents of config
+files.  How much checking should be done?  How loudly should
+Docutils complain if it encounters an error/problem?</p></li>
+<li><p>Docutils doesn’t complain when it doesn’t find a configuration
+file supplied with the <code class="docutils literal notranslate"><span class="pre">--config</span></code> option.  Should it?  (If yes,
+error or warning?)</p></li>
+</ul>
+</li>
+<li><p>Internationalization:</p>
+<ul>
+<li><p>I18n needs refactoring, the language dictionaries are difficult to
+maintain.  Maybe have a look at gettext or similar tools.</p>
+<p>(This would make a nice Google Summer of Code project)</p>
+</li>
+<li><p>Language modules: in accented languages it may be useful to have
+both accented and unaccented entries in the
+<code class="docutils literal notranslate"><span class="pre">bibliographic_fields</span></code> mapping for versatility.</p></li>
+<li><p>Add a “–strict-language” option &amp; setting: no English fallback
+for language-dependent features.</p>
+<p>Make this the default for output (as opposed to input)?
+Throw an error with a helpful message, e.g.</p>
+<blockquote>
+<div><p>Default “contents” title for language %s missing, please specify
+an explicit title.</p>
+</div></blockquote>
+<p>or</p>
+<blockquote>
+<div><p>“attention” title for language %s missing, please use a generic
+admonition with explicit title.</p>
+</div></blockquote>
+</li>
+<li><p>Add internationalization to <span class="target" id="footer-boilerplate-text">footer boilerplate text</span> (resulting
+from “–generator”, “–source-link”, and “–date” etc.), allowing
+translations.</p></li>
+</ul>
+</li>
+<li><p>Add validation?  See <a class="reference external" href="http://pytrex.sourceforge.net">http://pytrex.sourceforge.net</a>, RELAX NG, pyRXP.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">docutils.readers.get_reader_class</span></code> (&amp; <code class="docutils literal notranslate"><span class="pre">parsers</span></code> &amp;
+<code class="docutils literal notranslate"><span class="pre">writers</span></code> too), should we be importing “standalone” or
+“docutils.readers.standalone”?  (This would avoid importing
+top-level modules if the module name is not in docutils/readers.
+Potential nastiness.)</p></li>
+<li><p>Perhaps store a <span class="target" id="name-to-id-mapping-file">name-to-id mapping file</span>?  This could be stored
+permanently, read by subsequent processing runs, and updated with
+new entries.  (“Persistent ID mapping”?)</p></li>
+<li><p>Perhaps the <code class="docutils literal notranslate"><span class="pre">Component.supports</span></code> method should deal with
+individual features (“meta” etc.) instead of formats (“html” etc.)?
+Currently, only the <a class="reference internal" href="#meta-node">&lt;meta&gt; node</a> requires the framework.</p>
+<p>Do we need it at all?  Or rather let the writers just ignore some
+nodes (like we already do for “class” values)?</p>
+<p>The current implementation of the framework also leads to bug
+<a class="reference external" href="https://sourceforge.net/p/docutils/bugs/241/">bug #241</a> “doctree-based publishing != publish_string”.
+The “components.Filter” transform is run by publish_doctree(). When
+filtering based on the output format, it should be run by
+publish_from_doctree() instead because only then the writer is
+known.</p>
+<p>So we need to either remove or fix the framework.</p>
+</li>
+<li><p>Think about <span class="target" id="large-documents">large documents</span> made up of multiple subdocument
+files.  Issues: continuity (<a class="reference internal" href="#persistent-sequences">persistent sequences</a> above),
+cross-references (<a class="reference internal" href="#name-to-id-mapping-file">name-to-id mapping file</a> above and <a class="reference internal" href="#targets-in-other-documents">targets in
+other documents</a> below), splitting (<a class="reference internal" href="#document-splitting">document splitting</a> below).</p>
+<p>When writing a book, the author probably wants to split it up into
+files, perhaps one per chapter (but perhaps even more detailed).
+However, we’d like to be able to have references from one chapter to
+another, and have continuous numbering (pages and chapters, as
+applicable).  Of course, none of this is implemented yet.  There has
+been some thought put into some aspects; see <a class="reference external" href="../ref/rst/directives.html#including-an-external-document-fragment">the “include”
+directive</a> and the <a class="reference internal" href="#reference-merging">Reference Merging</a> transform below.</p>
+<p>When I was working with SGML in Japan, we had a system where there
+was a top-level coordinating file, book.sgml, which contained the
+top-level structure of a book: the &lt;book&gt; element, containing the
+book &lt;title&gt; and empty component elements (&lt;preface&gt;, &lt;chapter&gt;,
+&lt;appendix&gt;, etc.), each with filename attributes pointing to the
+actual source for the component.  Something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">book</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"bk01"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Title</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Book</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">preface</span> <span class="n">inrefid</span><span class="o">=</span><span class="s2">"pr01"</span><span class="o">&gt;&lt;/</span><span class="n">preface</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">chapter</span> <span class="n">inrefid</span><span class="o">=</span><span class="s2">"ch01"</span><span class="o">&gt;&lt;/</span><span class="n">chapter</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">chapter</span> <span class="n">inrefid</span><span class="o">=</span><span class="s2">"ch02"</span><span class="o">&gt;&lt;/</span><span class="n">chapter</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">chapter</span> <span class="n">inrefid</span><span class="o">=</span><span class="s2">"ch03"</span><span class="o">&gt;&lt;/</span><span class="n">chapter</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">appendix</span> <span class="n">inrefid</span><span class="o">=</span><span class="s2">"ap01"</span><span class="o">&gt;&lt;/</span><span class="n">appendix</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">book</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>(The “inrefid” attribute stood for “insertion reference ID”.)</p>
+<p>The processing system would process each component separately, but
+it would recognize and use the book file to coordinate chapter and
+page numbering, and keep a persistent ID to (title, page number)
+mapping database for cross-references.  Docutils could use a similar
+system for large-scale, multipart documents.</p>
+<p>Aahz’s idea:</p>
+<blockquote>
+<div><p>First the ToC:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">ToC</span><span class="o">-</span><span class="nb">list</span><span class="p">::</span>
+    <span class="n">Introduction</span><span class="o">.</span><span class="n">txt</span>
+    <span class="n">Objects</span><span class="o">.</span><span class="n">txt</span>
+    <span class="n">Data</span><span class="o">.</span><span class="n">txt</span>
+    <span class="n">Control</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Then a sample use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. include:: ToC.txt
+
+As I said earlier in chapter :chapter:`Objects.txt`, the
+reference count gets increased every time a binding is made.
+</pre></div>
+</div>
+<p>Which produces:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">As</span> <span class="n">I</span> <span class="n">said</span> <span class="n">earlier</span> <span class="ow">in</span> <span class="n">chapter</span> <span class="mi">2</span><span class="p">,</span> <span class="n">the</span>
+<span class="n">reference</span> <span class="n">count</span> <span class="n">gets</span> <span class="n">increased</span> <span class="n">every</span> <span class="n">time</span> <span class="n">a</span> <span class="n">binding</span> <span class="ow">is</span> <span class="n">made</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>The ToC in this form doesn’t even need to be references to actual
+reST documents; I’m simply doing it that way for a minimum of
+future-proofing, in case I do want to add the ability to pick up
+references within external chapters.</p>
+</div></blockquote>
+<p>Perhaps, instead of ToC (which would overload the “contents”
+directive concept already in use), we could use “manifest”.  A
+“manifest” directive might associate local reference names with
+files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">manifest</span><span class="p">::</span>
+   <span class="n">intro</span><span class="p">:</span> <span class="n">Introduction</span><span class="o">.</span><span class="n">txt</span>
+   <span class="n">objects</span><span class="p">:</span> <span class="n">Objects</span><span class="o">.</span><span class="n">txt</span>
+   <span class="n">data</span><span class="p">:</span> <span class="n">Data</span><span class="o">.</span><span class="n">txt</span>
+   <span class="n">control</span><span class="p">:</span> <span class="n">Control</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Then the sample becomes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. include:: manifest.txt
+
+As I said earlier in chapter :chapter:`objects`, the
+reference count gets increased every time a binding is made.
+</pre></div>
+</div>
+</li>
+<li><p>Add support for <span class="target" id="multiple-output-files">multiple output files</span> and <span class="target" id="generic-data-handling">generic data
+handling</span>:</p>
+<p>It should be possible for a component to <strong>emit or reference</strong> data
+to be either <strong>included or referenced</strong> in the output document.
+Examples of such data are stylesheets or images.</p>
+<p>For this, we need a “data” object which stores the data either
+inline or by referring to a file.  The Docutils framework is
+responsible for either:</p>
+<ul class="simple">
+<li><p>storing the data in the appropriate location (e.g. in the
+directory of the output file, or in a user-specified directory)
+and providing the paths of the stored files to the writer, <em>or</em></p></li>
+<li><p>providing the data itself to the writer so that it can be embedded
+in the output document.</p></li>
+</ul>
+<p>This approach decouples data handling from the data source (which
+can either be embedded or referenced) and the destination (which can
+either be embedded or referenced as well).</p>
+<p>See &lt;<a class="reference external" href="http://article.gmane.org/gmane.text.docutils.devel/3631">http://article.gmane.org/gmane.text.docutils.devel/3631</a>&gt;.</p>
+</li>
+<li><p>Add testing for Docutils’ front end tools?</p></li>
+<li><p>Publisher: “Ordinary setup” shouldn’t require specific ordering; at
+the very least, there ought to be error checking higher up in the
+call chain.  [Aahz]</p>
+<p><code class="docutils literal notranslate"><span class="pre">Publisher.get_settings</span></code> requires that all components be set up
+before it’s called.  Perhaps the I/O <em>objects</em> shouldn’t be set, but
+I/O <em>classes</em>.  Then options are set up (<code class="docutils literal notranslate"><span class="pre">.set_options</span></code>), and
+<code class="docutils literal notranslate"><span class="pre">Publisher.set_io</span></code> (or equivalent code) is called with source &amp;
+destination paths, creating the I/O objects.</p>
+<p>Perhaps I/O objects shouldn’t be instantiated until required.  For
+split output, the Writer may be called multiple times, once for each
+doctree, and each doctree should have a separate Output object (with
+a different path).  Is the “Builder” pattern applicable here?</p>
+</li>
+<li><p>Perhaps I/O objects should become full-fledged components (i.e.
+subclasses of <code class="docutils literal notranslate"><span class="pre">docutils.Component</span></code>, as are Readers, Parsers, and
+Writers now), and thus have associated option/setting specs and
+transforms.</p></li>
+<li><p>Multiple file I/O suggestion from Michael Hudson: use a file-like
+object or something you can iterate over to get file-like objects.</p></li>
+<li><p>Add an “–input-language” option &amp; setting?  Specify a different
+language module for input (bibliographic fields, directives) than
+for output.  The “–language” option would set both input &amp; output
+languages.</p></li>
+<li><p>Auto-generate reference tables for language-dependent features?
+Could be generated from the source modules.  A special command-line
+option could be added to Docutils front ends to do this.  (Idea from
+Engelbert Gruber.)</p></li>
+<li><p>Enable feedback of some kind from internal decisions, such as
+reporting the successful input encoding.  Modify runtime settings?
+System message?  Simple stderr output?</p></li>
+<li><p>Rationalize Writer settings (HTML/LaTeX/PEP) – share settings.</p></li>
+<li><p>Add an “–include file” command-line option (config setting too?),
+equivalent to “.. include:: file” as the first line of the doc text?
+Especially useful for character entity sets, text transform specs,
+boilerplate, etc.</p></li>
+<li><p>Support “include” as embedded inline-compatible directive in substitution
+definitions, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="o">|</span><span class="n">version</span><span class="o">|</span> <span class="n">include</span><span class="p">::</span> <span class="n">version</span><span class="o">.</span><span class="n">txt</span>
+
+<span class="n">This</span> <span class="n">document</span> <span class="n">describes</span> <span class="n">version</span> <span class="o">|</span><span class="n">version</span><span class="o">|</span> <span class="n">of</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>(cf. Grzegorz Adam Hankiewicz’s post from 2014-10-01 in docutils-devel)</p>
+</li>
+<li><p>Add an <code class="docutils literal notranslate"><span class="pre">:optional:</span> <span class="pre">&lt;replacement</span> <span class="pre">text&gt;</span></code> option to the “include”
+directive? This would not throw an error for a missing file, instead a
+warning is given and <code class="docutils literal notranslate"><span class="pre">&lt;replacement</span> <span class="pre">text&gt;</span></code> is used instead. It would be
+the responsibility of the author to ensure the missing file does not lead
+to problems later in the document.</p>
+<p>Use cases:</p>
+<ul>
+<li><p>Standard rST syntax to replace Sphinx’s “literalinclude”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. include:: blah.cpp
+   :literal:
+   :optional: file ``blah.cpp`` not found
+</pre></div>
+</div>
+</li>
+<li><p>Variable content taken from a file, e.g.</p>
+<p>version.txt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="o">|</span><span class="n">version</span><span class="o">|</span> <span class="n">replace</span><span class="p">::</span> <span class="mf">3.1</span>
+</pre></div>
+</div>
+<p>optionally used as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">include</span><span class="p">::</span> <span class="n">version</span><span class="o">.</span><span class="n">txt</span>
+   <span class="p">:</span><span class="n">optional</span><span class="p">:</span> <span class="o">..</span> <span class="o">|</span><span class="n">version</span><span class="o">|</span> <span class="n">replace</span><span class="p">::</span> <span class="n">unknown</span>
+
+<span class="n">This</span> <span class="n">document</span> <span class="n">describes</span> <span class="n">version</span> <span class="o">|</span><span class="n">version</span><span class="o">|</span> <span class="n">of</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>(cf. Grzegorz Adam Hankiewicz’s post from 2014-10-01 in docutils-devel)</p>
+</li>
+</ul>
+</li>
+<li><p>Parameterize the Reporter object or class?  See the <a class="reference external" href="http://thread.gmane.org/gmane.text.docutils.user/1112">2004-02-18
+“rest checking and source path”</a> thread.</p>
+</li>
+<li><p>Add a “disable_transforms” setting? Would allow for easy syntax
+checking. Where (“null” writer, generic, parser(s), docutils-cli.py)?
+Cf. the <a class="reference external" href="http://thread.gmane.org/gmane.text.docutils.user/1112">2004-02-18 “rest checking and source path”</a> thread.</p></li>
+<li><p>Add a generic meta-stylesheet mechanism?  An external file could
+associate style names (“class” attributes) with specific elements.
+Could be generalized to arbitrary output attributes; useful for HTML
+&amp; XMLs.  Aahz implemented something like this in
+sandbox/aahz/Effective/EffMap.py.</p></li>
+<li><p id="classes-for-table-cells">William Dode suggested that table cells be assigned “class”
+attributes by columns, so that stylesheets can affect text
+alignment.  Unfortunately, there doesn’t seem to be a way (in HTML
+at least) to leverage the “colspec” elements (HTML “col” tags) by
+adding classes to them.  The resulting HTML is very verbose:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">td</span> <span class="n">class</span><span class="o">=</span><span class="s2">"col1"</span><span class="o">&gt;</span><span class="mi">111</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">td</span> <span class="n">class</span><span class="o">=</span><span class="s2">"col2"</span><span class="o">&gt;</span><span class="mi">222</span><span class="o">&lt;/</span><span class="n">td</span><span class="o">&gt;</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>At the very least, it should be an option.  People who don’t use it
+shouldn’t be penalized by increases in their HTML file sizes.</p>
+<p>Table rows could also be assigned classes (like odd/even).  That
+would be easier to implement.</p>
+<p>How should it be implemented?</p>
+<ul class="simple">
+<li><p>There could be writer options (column classes &amp; row classes) with
+standard values.</p></li>
+<li><p>The table directive could grow some options.  Something like
+“:cell-classes: col1 col2 col3” (either must match the number of
+columns, or repeat to fill?)  and “:row-classes: odd even” (repeat
+to fill; body rows only, or header rows too?).</p></li>
+</ul>
+<p>Probably per-table directive options are best.  The “class” values
+could be used by any writer, and applying such classes to all tables
+in a document with writer options is too broad.</p>
+<p>See also the <a class="reference external" href="https://pythonhosted.org/cloud_sptheme/lib/cloud_sptheme.ext.table_styling.html">table_styling Sphinx extension</a> which defines</p>
+<dl class="field-list simple">
+<dt class="field-odd">widths</dt>
+<dd class="field-odd"><p>also in Docutils core (but different implementation)</p>
+</dd>
+<dt class="field-even">column-alignment</dt>
+<dd class="field-even"><p>Sets per-column text alignment</p>
+</dd>
+<dt class="field-odd">column-wrapping</dt>
+<dd class="field-odd"><p>Sets per-column text wrapping</p>
+</dd>
+<dt class="field-even">column-dividers</dt>
+<dd class="field-even"><p>Add dividers between columns</p>
+</dd>
+<dt class="field-odd">column-classes</dt>
+<dd class="field-odd"><p>Add per-column css classes.</p>
+</dd>
+<dt class="field-even">header-columns</dt>
+<dd class="field-even"><p>Specify number of “stub” columns</p>
+</dd>
+</dl>
+</li>
+<li><p>Add file-specific settings support to config files, like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">file</span> <span class="n">index</span><span class="o">.</span><span class="n">txt</span><span class="p">]</span>
+<span class="n">compact</span><span class="o">-</span><span class="n">lists</span><span class="p">:</span> <span class="n">no</span>
+</pre></div>
+</div>
+<p>Is this even possible?  Should the criterion be the name of the
+input file or the output file?  Alternative (more explicit) syntax:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">source_file</span> <span class="n">index</span><span class="o">.</span><span class="n">txt</span><span class="p">]</span>
+<span class="o">...</span>
+
+<span class="p">[</span><span class="n">dest_file</span> <span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="p">]</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Or rather allow settings configuration from the rst source file
+(see <a class="reference internal" href="#misc-settings">misc.settings</a> directive)?</p>
+</li>
+<li><p>The “validator” support added to OptionParser is very similar to
+“<a class="reference external" href="http://code.enthought.com/traits/">traits</a>” in <a class="reference external" href="http://www.scipy.org/">SciPy</a>.  Perhaps something could be done with them?
+(Had I known about traits when I was implementing docutils.frontend,
+I may have used them instead of rolling my own.)</p>
+</li>
+<li><p>tools/buildhtml.py: Extend the –prune option (“prune” config
+setting) to accept file names (generic path) in addition to
+directories (e.g. –prune=docs/user/rst/cheatsheet.txt, which should
+<em>not</em> be converted to HTML).</p></li>
+<li><p>Add support for <span class="target" id="plugins">plugins</span>.</p></li>
+<li><p><span class="target" id="config-directories">Config directories</span>: Currently, ~/.docutils, ./docutils.conf/, &amp;
+/etc/docutils.conf are read as <a class="reference external" href="../user/config.html">configuration</a> files.  Proposal: allow
+~/.docutils to be a a configuration <em>directory</em>, along with
+/etc/docutils/ and ./docutils.conf/.  Within these directories,
+check for config.txt files.  We can also have subdirectories here,
+for plugins, S5 themes, components (readers/writers/parsers) etc.</p>
+<p>Docutils will continue to support configuration files for backwards
+compatibility.</p>
+</li>
+<li><p>Add support for document decorations other than headers &amp; footers?
+For example, top/bottom/side navigation bars for web pages.  Generic
+decorations?</p>
+<p>Seems like a bad idea as long as it isn’t independent from the output
+format (for example, navigation bars are only useful for web pages).</p>
+</li>
+<li><p>docutils_update: Check for a <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> in a directory, and run
+<code class="docutils literal notranslate"><span class="pre">make</span></code> if found?  This would allow for variant processing on
+specific source files, such as running rst2s5.py instead of
+rst2html.py.</p></li>
+<li><p>Add a “disable table of contents” setting?  The S5 writer could set
+it as a default.  Rationale:</p>
+<blockquote>
+<div><p>The <code class="docutils literal notranslate"><span class="pre">contents</span></code> (table of contents) directive must not be used
+[in S5/HTML documents].  It changes the CSS class of headings
+and they won’t show up correctly in the screen presentation.</p>
+<p class="attribution">—<a class="reference external" href="../user/slide-shows.html">Easy Slide Shows With reStructuredText &amp; S5</a></p>
+</div></blockquote>
+<p>Analogue to the <code class="docutils literal notranslate"><span class="pre">sectnum_xform</span></code> setting, it could be used by the
+latex writer to switch to a LaTeX generated ToC (currently, the latex
+writer calls it “use_latex_toc”).</p>
+</li>
+</ul>
+<section id="object-numbering-and-object-references">
+<h3><a class="toc-backref" href="#id36">object numbering and object references</a><a class="headerlink" href="#object-numbering-and-object-references" title="永久链接至标题">¶</a></h3>
+<p>For equations, tables &amp; figures.</p>
+<p>These would be the equivalent of DocBook’s “formal” elements.</p>
+<p>In LaTeX, automatic counters are implemented for sections, equations and
+floats (figures, tables) (configurable via stylesheets or in the
+latex-preamble). Objects can be given <a class="reference external" href="../ref/rst/restructuredtext.html#reference-names">reference names</a> with the
+<code class="docutils literal notranslate"><span class="pre">\label{&lt;refname}</span></code> command, <code class="docutils literal notranslate"><span class="pre">\ref{&lt;refname&gt;}</span></code> inserts the
+corresponding number.</p>
+<p>No such mechanism exists in HTML.</p>
+<ul>
+<li><p>We need <span class="target" id="persistent-sequences">persistent sequences</span>, similar to chapter and footnote
+numbers. See <a class="reference external" href="http://xml.openoffice.org/">OpenOffice.org XML</a> “fields”.</p>
+<ul class="simple">
+<li><p>Should the sequences be automatic or manual (user-specifyable)?</p></li>
+</ul>
+</li>
+<li><p>It is already possible to give <a class="reference external" href="../ref/rst/restructuredtext.html#reference-names">reference names</a> to objects via
+internal hyperlink targets or the “name” directive option:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">_figure</span> <span class="n">name</span><span class="p">:</span>
+
+<span class="o">..</span> <span class="n">figure</span><span class="p">::</span> <span class="n">image</span><span class="o">.</span><span class="n">png</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">figure</span><span class="p">::</span> <span class="n">image</span><span class="o">.</span><span class="n">png</span>
+   <span class="p">:</span><span class="n">name</span><span class="p">:</span> <span class="n">figure</span> <span class="n">name</span>
+</pre></div>
+</div>
+<p>Improve the mapping of “phrase references” to IDs/labels with Literal
+transcription (i.e. ü -&gt; ue, ß -&gt; ss, å -&gt; aa) instead of just
+stripping the accents and other non-ASCII chars. See also the feature
+request <a class="reference external" href="https://sourceforge.net/p/docutils/feature-requests/66/">allow more characters when transforming “names” to “ids”</a>.</p>
+<p>A “table” directive has been implemented, supporting table titles.</p>
+<p>Perhaps the name could derive from the title/caption?</p>
+</li>
+<li><p>We need syntax for object references.  Cf. <a class="reference external" href="http://xml.openoffice.org/">OpenOffice.org XML</a>
+“reference fields”:</p>
+<ul>
+<li><p>Parameterized substitutions are too complicated
+(cf. <cite>or not to do</cite>: <a class="reference external" href="rst/alternatives.html#object-references">object references</a>)</p></li>
+<li><p>An interpreted text approach is simpler and better:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>See Figure :ref:`figure name` and Equation :ref:`eq:identity`.
+</pre></div>
+</div>
+</li>
+<li><p>“equation”, “figure”, and “page” roles could generate appropriate
+boilerplate text:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>See :figure:`figure name` on :page:`figure name`.
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="#interpreted-text">Interpreted Text</a> below.</p>
+<p>Reference boilerplate could be specified in the document
+(defaulting to nothing):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">fignum</span><span class="p">::</span>
+   <span class="p">:</span><span class="n">prefix</span><span class="o">-</span><span class="n">ref</span><span class="p">:</span> <span class="s2">"Figure "</span>
+   <span class="p">:</span><span class="n">prefix</span><span class="o">-</span><span class="n">caption</span><span class="p">:</span> <span class="s2">"Fig. "</span>
+   <span class="p">:</span><span class="n">suffix</span><span class="o">-</span><span class="n">caption</span><span class="p">:</span> <span class="p">:</span>
+</pre></div>
+</div>
+<p>The position of the role (prefix or suffix) could also be utilized</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>See also the <a class="reference external" href="http://www.loria.fr/~rougier/coding/article/rst2html.py">Modified rst2html</a>
+by Nicolas Rougier for a sample implementation.</p>
+</section>
+<section id="meta-node">
+<h3><a class="toc-backref" href="#id37">&lt;meta&gt; node</a><a class="headerlink" href="#meta-node" title="永久链接至标题">¶</a></h3>
+<p>Up to 0.17, &lt;meta&gt; nodes are non-standard (not part of the Docutils
+document tree specification).</p>
+<p>The “Filter” transform removes “meta” nodes from the doctree unless the
+output format is “html” (rsp. “html”, “latex”, or “odt” since 0.17).</p>
+<dl class="simple">
+<dt>Suggestion:</dt><dd><p>Make “meta” a generic directive and &lt;meta&gt; nodes standard nodes that
+are kept in the doctree. Allow writers to ignore &lt;meta&gt; nodes.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="documentation">
+<h2><a class="toc-backref" href="#id38">Documentation</a><a class="headerlink" href="#documentation" title="永久链接至标题">¶</a></h2>
+<section id="user-docs">
+<h3><a class="toc-backref" href="#id39">User Docs</a><a class="headerlink" href="#user-docs" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>Add a FAQ entry about using Docutils (with reStructuredText) on a
+server and that it’s terribly slow.  See the first paragraphs in
+&lt;<a class="reference external" href="http://article.gmane.org/gmane.text.docutils.user/1584">http://article.gmane.org/gmane.text.docutils.user/1584</a>&gt;.</p></li>
+<li><p>Add document about what Docutils has previously been used for
+(web/use-cases.txt?).</p></li>
+<li><p>Improve index in docs/user/config.txt.</p></li>
+</ul>
+</section>
+<section id="developer-docs">
+<h3><a class="toc-backref" href="#id40">Developer Docs</a><a class="headerlink" href="#developer-docs" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>Complete <a class="reference external" href="../api/runtime-settings.html">Docutils Runtime Settings</a>.</p></li>
+<li><p>Improve the internal module documentation (docstrings in the code).
+Specific deficiencies listed below.</p>
+<ul>
+<li><p>docutils.parsers.rst.states.State.build_table: data structure
+required (including StringList).</p></li>
+<li><p>docutils.parsers.rst.states: more complete documentation of parser
+internals.</p></li>
+</ul>
+</li>
+<li><p>docs/ref/doctree.txt: DTD element structural relationships,
+semantics, and attributes.  In progress; element descriptions to be
+completed.</p></li>
+<li><p>Document the <code class="docutils literal notranslate"><span class="pre">pending</span></code> elements, how they’re generated and what
+they do.</p></li>
+<li><p>Document the <a class="reference external" href="../ref/transforms.html">transforms</a> (perhaps in docstrings?): how they’re used,
+what they do, dependencies &amp; order considerations.</p></li>
+<li><p>Document the HTML classes used by html4css1.py.</p></li>
+<li><p>Write an overview of the Docutils architecture, as an introduction
+for developers.  What connects to what, why, and how.  Either update
+PEP 258 (see <a class="reference internal" href="#peps">PEPs</a> below) or as a separate doc.</p></li>
+<li><p>Give information about unit tests.  Maybe as a howto?</p></li>
+<li><p>Document the docutils.nodes APIs.</p></li>
+<li><p>Complete the docs/api/publisher.txt docs.</p></li>
+</ul>
+</section>
+<section id="how-tos">
+<h3><a class="toc-backref" href="#id41">How-Tos</a><a class="headerlink" href="#how-tos" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>Creating Docutils Writers</p></li>
+<li><p>Creating Docutils Readers</p></li>
+<li><p>Creating Docutils <a class="reference external" href="../ref/transforms.html">Transforms</a></p></li>
+<li><p>Creating Docutils Parsers</p></li>
+<li><p>Using Docutils as a Library</p></li>
+</ul>
+</section>
+<section id="peps">
+<h3><a class="toc-backref" href="#id42">PEPs</a><a class="headerlink" href="#peps" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>Complete PEP 258 Docutils Design Specification.</p>
+<ul>
+<li><p>Fill in the blanks in API details.</p></li>
+<li><p>Specify the nodes.py internal data structure implementation?</p>
+<blockquote>
+<div><p>[Tibs:] Eventually we need to have direct documentation in
+there on how it all hangs together - the DTD is not enough
+(indeed, is it still meant to be correct?  [Yes, it is.
+–DG]).</p>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p>Rework PEP 257, separating style from spec from tools, wrt Docutils?
+See Doc-SIG from 2001-06-19/20.</p></li>
+</ul>
+</section>
+</section>
+<section id="python-source-reader">
+<h2><a class="toc-backref" href="#id43">Python Source Reader</a><a class="headerlink" href="#python-source-reader" title="永久链接至标题">¶</a></h2>
+<p>General:</p>
+<ul class="simple">
+<li><p>Analyze Tony Ibbs’ PySource code.</p></li>
+<li><p>Analyze Doug Hellmann’s HappyDoc project.</p></li>
+<li><p>Investigate how POD handles literate programming.</p></li>
+<li><p>Take the best ideas and integrate them into Docutils.</p></li>
+</ul>
+<p>Miscellaneous ideas:</p>
+<ul>
+<li><p>Ask Python-dev for opinions (GvR for a pronouncement) on special
+variables (__author__, __version__, etc.): convenience vs. namespace
+pollution.  Ask opinions on whether or not Docutils should recognize
+&amp; use them.</p></li>
+<li><p>If we can detect that a comment block begins with <code class="docutils literal notranslate"><span class="pre">##</span></code>, a la
+JavaDoc, it might be useful to indicate interspersed section headers
+&amp; explanatory text in a module.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">"""Module docstring."""</span>
+
+<span class="c1">##</span>
+<span class="c1"># Constants</span>
+<span class="c1"># =========</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1">##</span>
+<span class="c1"># Exception Classes</span>
+<span class="c1"># =================</span>
+
+<span class="k">class</span> <span class="nc">MyException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span> <span class="k">pass</span>
+
+<span class="c1"># etc.</span>
+</pre></div>
+</div>
+</li>
+<li><p>Should standalone strings also become (module/class) docstrings?
+Under what conditions?  We want to prevent arbitrary strings from
+becoming docstrings of prior attribute assignments etc.  Assume
+that there must be no blank lines between attributes and attribute
+docstrings?  (Use lineno of NEWLINE token.)</p>
+<p>Triple-quotes are sometimes used for multi-line comments (such as
+commenting out blocks of code).  How to reconcile?</p>
+</li>
+<li><p>HappyDoc’s idea of using comment blocks when there’s no docstring
+may be useful to get around the conflict between <a class="reference external" href="../peps/pep-0258.html#additional-docstrings">additional
+docstrings</a> and <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">__future__</span> <span class="pre">import</span></code> for module docstrings.
+A module could begin like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># :Author: Me</span>
+<span class="c1"># :Copyright: whatever</span>
+
+<span class="sd">"""This is the public module docstring (``__doc__``)."""</span>
+
+<span class="c1"># More docs, in comments.</span>
+<span class="c1"># All comments at the beginning of a module could be</span>
+<span class="c1"># accumulated as docstrings.</span>
+<span class="c1"># We can't have another docstring here, because of the</span>
+<span class="c1"># ``__future__`` statement.</span>
+
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+</pre></div>
+</div>
+<p>Using the JavaDoc convention of a doc-comment block beginning with
+<code class="docutils literal notranslate"><span class="pre">##</span></code> is useful though.  It allows doc-comments and implementation
+comments.</p>
+</li>
+<li><p>HappyDoc uses an initial comment block to set “parser configuration
+values”.  Do the same thing for Docutils, to set runtime settings on
+a per-module basis?  I.e.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Docutils:setting=value</span>
+</pre></div>
+</div>
+<p>Could be used to turn on/off function parameter comment recognition
+&amp; other marginal features.  Could be used as a general mechanism to
+augment config files and command-line options (but which takes
+precedence?).</p>
+</li>
+<li><p>Multi-file output should be divisible at arbitrary level.</p></li>
+<li><p>Support all forms of <code class="docutils literal notranslate"><span class="pre">import</span></code> statements:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module</span></code>: listed as “module”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">module</span> <span class="pre">as</span> <span class="pre">alias</span></code>: “alias (module)”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module</span> <span class="pre">import</span> <span class="pre">identifier</span></code>: “identifier (from module)”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module</span> <span class="pre">import</span> <span class="pre">identifier</span> <span class="pre">as</span> <span class="pre">alias</span></code>: “alias (identifier
+from module)”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">module</span> <span class="pre">import</span> <span class="pre">*</span></code>: “all identifiers (<code class="docutils literal notranslate"><span class="pre">*</span></code>) from module”</p></li>
+</ul>
+</li>
+<li><p>Have links to colorized Python source files from API docs?  And
+vice-versa: backlinks from the colorized source files to the API
+docs!</p></li>
+<li><p>In summaries, use the first <em>sentence</em> of a docstring if the first
+line is not followed by a blank line.</p></li>
+</ul>
+</section>
+<section id="restructuredtext-parser">
+<h2><a class="toc-backref" href="#id44">reStructuredText Parser</a><a class="headerlink" href="#restructuredtext-parser" title="永久链接至标题">¶</a></h2>
+<p>Also see the <a class="reference external" href="rst/alternatives.html#or-not-to-do">… Or Not To Do?</a> list.</p>
+<section id="id9">
+<h3><a class="toc-backref" href="#id45">Bugs</a><a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>A container directive with <code class="docutils literal notranslate"><span class="pre">:class:</span></code> option gets the spurious
+class value “class”.</p></li>
+</ul>
+</section>
+<section id="misc">
+<h3><a class="toc-backref" href="#id46">Misc</a><a class="headerlink" href="#misc" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>Another list problem:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">foo</span>
+      <span class="o">*</span> <span class="n">bar</span>
+      <span class="o">*</span> <span class="n">baz</span>
+</pre></div>
+</div>
+<p>This ends up as a definition list.  This is more of a usability
+issue.</p>
+</li>
+<li><p>This case is probably meant to be a nested list, but it ends up as a
+list inside a block-quote without an error message:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">foo</span>
+
+ <span class="o">-</span> <span class="n">bar</span>
+</pre></div>
+</div>
+<p>It should probably just be an error.</p>
+<p>The problem with this is that you don’t notice easily in HTML that
+it’s not a nested list but a block-quote – there’s not much of a
+visual difference.</p>
+</li>
+<li><p>Treat enumerated lists that are not arabic and consist of only one
+item in a single line as ordinary paragraphs.  See
+&lt;<a class="reference external" href="http://article.gmane.org/gmane.text.docutils.user/2635">http://article.gmane.org/gmane.text.docutils.user/2635</a>&gt;.</p></li>
+<li><p>The citation syntax could use some improvements.  See
+&lt;<a class="reference external" href="http://thread.gmane.org/gmane.text.docutils.user/2499">http://thread.gmane.org/gmane.text.docutils.user/2499</a>&gt; (and the
+sub-thread at
+&lt;<a class="reference external" href="http://thread.gmane.org/gmane.text.docutils.user/2499/focus=3028">http://thread.gmane.org/gmane.text.docutils.user/2499/focus=3028</a>&gt;,
+and the follow-ups at
+&lt;<a class="reference external" href="http://thread.gmane.org/gmane.text.docutils.user/3087">http://thread.gmane.org/gmane.text.docutils.user/3087</a>&gt;,
+&lt;<a class="reference external" href="http://thread.gmane.org/gmane.text.docutils.user/3110">http://thread.gmane.org/gmane.text.docutils.user/3110</a>&gt;,
+&lt;<a class="reference external" href="http://thread.gmane.org/gmane.text.docutils.user/3114">http://thread.gmane.org/gmane.text.docutils.user/3114</a>&gt;),
+&lt;<a class="reference external" href="http://thread.gmane.org/gmane.text.docutils.user/2443">http://thread.gmane.org/gmane.text.docutils.user/2443</a>&gt;,
+&lt;<a class="reference external" href="http://thread.gmane.org/gmane.text.docutils.user/2715">http://thread.gmane.org/gmane.text.docutils.user/2715</a>&gt;,
+&lt;<a class="reference external" href="http://thread.gmane.org/gmane.text.docutils.user/3027">http://thread.gmane.org/gmane.text.docutils.user/3027</a>&gt;,
+&lt;<a class="reference external" href="http://thread.gmane.org/gmane.text.docutils.user/3120">http://thread.gmane.org/gmane.text.docutils.user/3120</a>&gt;,
+&lt;<a class="reference external" href="http://thread.gmane.org/gmane.text.docutils.user/3253">http://thread.gmane.org/gmane.text.docutils.user/3253</a>&gt;.</p></li>
+<li><p>The current list-recognition logic has too many false positives, as
+in</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Aorta</span>
+<span class="o">*</span> <span class="n">V</span><span class="o">.</span> <span class="n">cava</span> <span class="n">superior</span>
+<span class="o">*</span> <span class="n">V</span><span class="o">.</span> <span class="n">cava</span> <span class="n">inferior</span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">V.</span></code> is recognized as an enumerator, which leads to
+confusion.  We need to find a solution that resolves such problems
+without complicating the spec to much.</p>
+<p>See &lt;<a class="reference external" href="http://thread.gmane.org/gmane.text.docutils.user/2524">http://thread.gmane.org/gmane.text.docutils.user/2524</a>&gt;.</p>
+</li>
+<li><p>Add indirect links via citation references &amp; footnote references.
+Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`Goodger (2005)`_ is helpful.
+
+.. _Goodger (2005): [goodger2005]_
+.. [goodger2005] citation text
+</pre></div>
+</div>
+<p>See &lt;<a class="reference external" href="http://thread.gmane.org/gmane.text.docutils.user/2499">http://thread.gmane.org/gmane.text.docutils.user/2499</a>&gt;.</p>
+</li>
+<li><p>Complain about bad URI characters
+(<a class="reference external" href="http://article.gmane.org/gmane.text.docutils.user/2046">http://article.gmane.org/gmane.text.docutils.user/2046</a>) and
+disallow internal whitespace
+(<a class="reference external" href="http://article.gmane.org/gmane.text.docutils.user/2214">http://article.gmane.org/gmane.text.docutils.user/2214</a>).</p></li>
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">info</span></code>-level system messages for unnecessarily
+backslash-escaped characters (as in <code class="docutils literal notranslate"><span class="pre">"\something"</span></code>, rendered as
+“something”) to allow checking for errors which silently slipped
+through.</p></li>
+<li><p>Add (functional) tests for untested roles.</p></li>
+<li><p>Add test for “:figwidth: image” option of “figure” directive.  (Test
+code needs to check if PIL is available on the system.)</p></li>
+<li><p>Add support for CJK double-width whitespace (indentation) &amp;
+punctuation characters (markup; e.g. double-width “*”, “-”, “+”)?</p></li>
+<li><p>Add motivation sections for constructs in spec.</p></li>
+<li><p>Support generic hyperlink references to <span class="target" id="targets-in-other-documents">targets in other
+documents</span>?  Not in an HTML-centric way, though (it’s trivial to say
+<code class="docutils literal notranslate"><span class="pre">http://www.example.com/doc#name</span></code>, and useless in non-HTML
+contexts).  XLink/XPointer?  <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">baseref::</span></code>?  See Doc-SIG
+2001-08-10.</p></li>
+<li><p>Implement the header row separator modification to table.el.  (Wrote
+to Takaaki Ota &amp; the table.el mailing list on 2001-08-12, suggesting
+support for “=====” header rows.  On 2001-08-17 he replied, saying
+he’d put it on his to-do list, but “don’t hold your breath”.)</p></li>
+<li><p>Fix the parser’s indentation handling to conform with the stricter
+definition in the spec.  (Explicit markup blocks should be strict or
+forgiving?)</p>
+</li>
+<li><p>Make the parser modular.  Allow syntax constructs to be added or
+disabled at run-time.  Subclassing is probably not enough because it
+makes it difficult to apply multiple extensions.</p></li>
+<li><p>Generalize the “doctest block” construct (which is overly
+Python-centric) to other interactive sessions?  “Doctest block”
+could be renamed to “I/O block” or “interactive block”, and each of
+these could also be recognized as such by the parser:</p>
+<ul>
+<li><p>Shell sessions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat example1.txt
+A block beginning with a "$ " prompt is interpreted as a shell
+session interactive block.  As with Doctest blocks, the
+interactive block ends with the first blank line, and wouldn't
+have to be indented.
+</pre></div>
+</div>
+</li>
+<li><p>Root shell sessions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># cat example2.txt</span>
+<span class="n">A</span> <span class="n">block</span> <span class="n">beginning</span> <span class="k">with</span> <span class="n">a</span> <span class="s2">"# "</span> <span class="n">prompt</span> <span class="ow">is</span> <span class="n">interpreted</span> <span class="k">as</span> <span class="n">a</span> <span class="n">root</span>
+<span class="n">shell</span> <span class="n">session</span> <span class="p">(</span><span class="n">the</span> <span class="n">user</span> <span class="ow">is</span> <span class="ow">or</span> <span class="n">has</span> <span class="n">to</span> <span class="n">be</span> <span class="n">logged</span> <span class="ow">in</span> <span class="k">as</span> <span class="n">root</span><span class="p">)</span>
+<span class="n">interactive</span> <span class="n">block</span><span class="o">.</span>  <span class="n">Again</span><span class="p">,</span> <span class="n">the</span> <span class="n">block</span> <span class="n">ends</span> <span class="k">with</span> <span class="n">a</span> <span class="n">blank</span> <span class="n">line</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Other standard (and unambiguous) interactive session prompts could
+easily be added (such as “&gt; ” for WinDOS).</p>
+<p>Tony Ibbs spoke out against this idea (2002-06-14 Doc-SIG thread
+“docutils feedback”).</p>
+</li>
+<li><p>Add support for pragma (syntax-altering) directives.</p>
+<p>Some pragma directives could be local-scope unless explicitly
+specified as global/pragma using “:global:” options.</p>
+</li>
+<li><p>Support whitespace in angle-bracketed standalone URLs according to
+Appendix E (“Recommendations for Delimiting URI in Context”) of <a class="reference external" href="http://www.rfc-editor.org/rfc/rfc2396.txt">RFC
+2396</a>.</p>
+</li>
+<li><p>Use the vertical spacing of the source text to determine the
+corresponding vertical spacing of the output?</p></li>
+<li><p>[From Mark Nodine]  For cells in simple tables that comprise a
+single line, the justification can be inferred according to the
+following rules:</p>
+<ol class="arabic simple">
+<li><p>If the text begins at the leftmost column of the cell,
+then left justification, ELSE</p></li>
+<li><p>If the text begins at the rightmost column of the cell,
+then right justification, ELSE</p></li>
+<li><p>Center justification.</p></li>
+</ol>
+<p>The onus is on the author to make the text unambiguous by adding
+blank columns as necessary.  There should be a parser setting to
+turn off justification-recognition (normally on would be fine).</p>
+<p>Decimal justification?</p>
+<p>All this shouldn’t be done automatically.  Only when it’s requested
+by the user, e.g. with something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">table</span><span class="p">::</span>
+   <span class="p">:</span><span class="n">auto</span><span class="o">-</span><span class="n">indent</span><span class="p">:</span>
+
+   <span class="p">(</span><span class="n">Table</span> <span class="n">goes</span> <span class="n">here</span><span class="o">.</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Otherwise it will break existing documents.</p>
+</li>
+<li><p>Generate a warning or info message for paragraphs which should have
+been lists, like this one:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">line</span> <span class="n">one</span>
+<span class="mf">3.</span> <span class="n">line</span> <span class="n">two</span>
+</pre></div>
+</div>
+</li>
+<li><p>Generalize the “target-notes” directive into a command-line option
+somehow?  See docutils-develop 2003-02-13.</p></li>
+<li><p>Allow a “::”-only paragraph (first line, actually) to introduce a
+<span class="target" id="literal-block-without-a-blank-line">literal block without a blank line</span>?  (Idea from Paul Moore.)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">::</span>
+    <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">literal</span> <span class="n">block</span>
+</pre></div>
+</div>
+<p>Is indentation enough to make the separation between a paragraph
+which contains just a <code class="docutils literal notranslate"><span class="pre">::</span></code> and the literal text unambiguous?
+(There’s one problem with this concession: If one wants a definition
+list item which defines the term “::”, we’d have to escape it.)  It
+would only be reasonable to apply it to “::”-only paragraphs though.
+I think the blank line is visually necessary if there’s text before
+the “::”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">paragraph</span> <span class="n">needs</span> <span class="n">separation</span>
+<span class="kn">from</span> <span class="nn">the</span> <span class="n">literal</span> <span class="n">block</span> <span class="n">following</span><span class="p">::</span>
+    <span class="n">This</span> <span class="n">doesn</span><span class="s1">'t look right.</span>
+</pre></div>
+</div>
+</li>
+<li><p>Add new syntax for <span class="target" id="nested-inline-markup">nested inline markup</span>?  Or extend the parser to
+parse nested inline markup somehow?  See the <a class="reference external" href="rst/alternatives.html#nested-inline-markup">collected notes</a>.</p></li>
+<li><p>Drop the backticks from embedded URIs with omitted reference text?
+Should the angle brackets be kept in the output or not?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">file_name</span><span class="o">&gt;</span><span class="n">_</span>
+</pre></div>
+</div>
+<p>Probably not worth the trouble.</p>
+</li>
+<li><p>How about a syntax for alternative hyperlink behavior, such as “open
+in a new window” (as in HTML’s <code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">target="_blank"&gt;</span></code>)?</p>
+<p>The MoinMoin wiki uses a caret (“^”) at the beginning of the URL
+(“^” is not a legal URI character).  That could work for both inline
+and explicit targets:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The `reference docs &lt;^url&gt;`__ may be handy.
+
+.. _name: ^url
+</pre></div>
+</div>
+<p>This may be too specific to HTML.  It hasn’t been requested very
+often either.</p>
+</li>
+<li><p>Add an option to add URI schemes at runtime.</p></li>
+<li><p><span class="target" id="segmented-lists">Segmented lists</span>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span> <span class="n">segment</span> <span class="p">:</span> <span class="n">segment</span> <span class="p">:</span> <span class="n">segment</span>
+<span class="p">:</span> <span class="n">segment</span> <span class="p">:</span> <span class="n">segment</span> <span class="p">:</span> <span class="n">very</span> <span class="n">long</span>
+  <span class="n">segment</span>
+<span class="p">:</span> <span class="n">segment</span> <span class="p">:</span> <span class="n">segment</span> <span class="p">:</span> <span class="n">segment</span>
+</pre></div>
+</div>
+<p>The initial colon (“:”) can be thought of as a type of bullet</p>
+<p>We could even have segment titles:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">::</span> <span class="n">title</span>  <span class="p">:</span> <span class="n">title</span>   <span class="p">:</span> <span class="n">title</span>
+<span class="p">:</span> <span class="n">segment</span> <span class="p">:</span> <span class="n">segment</span> <span class="p">:</span> <span class="n">segment</span>
+<span class="p">:</span> <span class="n">segment</span> <span class="p">:</span> <span class="n">segment</span> <span class="p">:</span> <span class="n">segment</span>
+</pre></div>
+</div>
+<p>This would correspond well to DocBook’s SegmentedList.  Output could
+be tabular or “name: value” pairs, as described in DocBook’s docs.</p>
+</li>
+<li><p>Enable grid <span class="target" id="tables-inside-xml-comments">tables inside XML comments</span>, where “<code class="docutils literal notranslate"><span class="pre">--</span></code>” ends comments.</p>
+<p>Implementation possibilities:</p>
+<ol class="arabic simple">
+<li><p>Make the table syntax characters into “table” directive options.
+This is the most flexible but most difficult, and we probably
+don’t need that much flexibility.</p></li>
+<li><p>Substitute “~” for “-” with a specialized directive option
+(e.g. “:tildes:”).</p></li>
+<li><p>Make the standard table syntax recognize “~” as well as “-”, even
+without a directive option.  Individual tables would have to be
+internally consistent.</p></li>
+<li><p>Allow Unicode box characters for table markup
+(<a class="reference external" href="http://sourceforge.net/p/docutils/feature-requests/6">feature request [6]</a>)</p></li>
+</ol>
+<p>Directive options are preferable to configuration settings, because
+tables are document-specific.  A pragma directive would be another
+approach, to set the syntax once for a whole document.</p>
+<p>Unicode box character markup would kill two birds with one stone.</p>
+<p>In the meantime, the <a class="reference external" href="../ref/rst/directives.html#list-table">list-table</a> directive is a good replacement for
+grid tables inside XML comments.</p>
+</li>
+<li><p>Generalize docinfo contents (bibliographic fields): remove specific
+fields, and have only a single generic “field”?</p></li>
+<li><p><span class="target" id="line-numbers">Line numbers</span> and “source” in system messages:</p>
+<ul>
+<li><p>Add “source” and “line” keyword arguments to all Reporter calls?
+This would require passing source/line arguments along all
+intermediate functions (where currently only <cite>line</cite> is used).</p>
+<p>Or rather specify “line” only if actually needed?</p>
+<p>Currently, <cite>document.reporter</cite> uses a state machine instance to
+determine the “source” and “line” info from
+<cite>statemachine.input_lines</cite> if not given explicitly. Except for
+special cases, the “line” argument is not needed because,
+<cite>document.statemachine</cite> keeps record of the current line number.</p>
+</li>
+<li><p>For system messages generated after the parsing is completed (i.e. by
+transforms or the writer) “line” info must be present in the doctree
+elements.</p>
+<p>Elements’ .line assignments should be checked.  (Assign to .source
+too?  Add a set_info method?  To what?)</p>
+<p>The “source” (and line number in the source) can either be added
+explicitly to the elements or determined from the “raw” line
+number by <cite>document.statemachine.get_source_and_line</cite>.</p>
+</li>
+<li><p>Some line numbers in elements are not being set properly
+(explicitly), just implicitly/automatically.  See rev. 1.74 of
+docutils/parsers/rst/states.py for an example of how to set.</p></li>
+<li><p>The line numbers of definition list items are wrong:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rst2pseudoxml.py --expose-internal-attribute line
+1
+  2
+  3
+
+5
+  6
+  7
+
+&lt;document source="&lt;stdin&gt;"&gt;
+    &lt;definition_list&gt;
+        &lt;definition_list_item internal:line="3"&gt;
+            &lt;term&gt;
+                1
+            &lt;definition&gt;
+                &lt;paragraph internal:line="2"&gt;
+                    2
+                    3
+        &lt;definition_list_item internal:line="6"&gt;
+            &lt;term&gt;
+                5
+            &lt;definition&gt;
+                &lt;paragraph internal:line="6"&gt;
+                    6
+                    7
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p id="none-source">Quite a few nodes are getting a “None” source attribute as well.  In
+particular, see the bodies of definition lists.</p>
+</li>
+</ul>
+</section>
+<section id="adaptable-file-extensions">
+<h3><a class="toc-backref" href="#id47">Adaptable file extensions</a><a class="headerlink" href="#adaptable-file-extensions" title="永久链接至标题">¶</a></h3>
+<section id="questions">
+<h4><a class="toc-backref" href="#id48">Questions</a><a class="headerlink" href="#questions" title="永久链接至标题">¶</a></h4>
+<p>Should Docutils support adaptable file extensions in hyperlinks?</p>
+<blockquote>
+<div><p>In the rST source, sister documents are “.txt” files. If we’re
+generating HTML, then “.html” is appropriate; if PDF, then “.pdf”;
+etc.</p>
+</div></blockquote>
+<p>Handle documents only, or objects (images, etc.) also?</p>
+<blockquote>
+<div><p>Different output formats support different sets of image formats (HTML
+supports “.svg” but not “.pdf”, pdfLaTeX supports “.pdf” but not “.svg”,
+LaTeX supports only “.eps”).</p>
+<p>This is less urgent 2020 than 2004, as <cite>pdflatex</cite> and <cite>lualatex</cite> are
+now standard and support most image formats. Also, a wrapper like
+<a class="reference external" href="https://pypi.org/project/rubber/">rubber</a> that provides on-the-fly image conversion depends on the
+“wrong” extension in the LaTeX source.</p>
+</div></blockquote>
+<p>At what point should the extensions be substituted?</p>
+<blockquote>
+<div><dl>
+<dt><a class="reference external" href="../ref/transforms.html">Transforms</a>:</dt><dd><p>Fits well in the <a class="reference external" href="../peps/pep-0258.html#id24">Reader → Transformer → Writer</a> processing framework.</p>
+<ul class="simple">
+<li><p>Filename/URL extension replacement can be done walking over the
+Document tree transforming the document tree from a valid state
+to another valid state.</p></li>
+<li><p>Writer-specific configuration is still possible in the
+respective sections of the <a class="reference external" href="../user/config.html">configuration</a> file.</p></li>
+</ul>
+</dd>
+<dt>Pre- or post-processing:</dt><dd><p>Can be implemented independent of Docutils – keeps Docutils simple.</p>
+<blockquote>
+<div><p>… those who need more sophisticated filename extension
+tweaking can simply use regular expressions, which isn’t too
+difficult due to the determinability of the writers.  So there
+is no need to add a complex filename-extension-handling feature
+to Docutils.</p>
+<p class="attribution">—<a class="reference external" href="https://sourceforge.net/p/docutils/mailman/message/6918089/">Lea Wiemann in docutils-users 2004-06-04</a></p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="proposals">
+<h4><a class="toc-backref" href="#id49">Proposals</a><a class="headerlink" href="#proposals" title="永久链接至标题">¶</a></h4>
+<p>How about using “.*” to indicate “choose the most appropriate filename
+extension”?  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">_Another</span> <span class="n">Document</span><span class="p">:</span> <span class="n">another</span><span class="o">.*</span>
+</pre></div>
+</div>
+<ul>
+<li><p>My point about using <code class="docutils literal notranslate"><span class="pre">.*</span></code> is that any other mechanism inside reST
+leads to too many ambiguities in reading reST documents; at least
+with <code class="docutils literal notranslate"><span class="pre">.*</span></code> it’s clear that some kind of substitution is going on.</p>
+<p>— Aahz</p>
+</li>
+<li><p>What is to be done for output formats that don’t <em>have</em> hyperlinks?
+For example, LaTeX targeted at print.  Hyperlinks may be “called
+out”, as footnotes with explicit URLs.  (Don’t convert the links.)</p>
+<p>But then there’s also LaTeX targeted at PDFs, which <em>can</em> have
+links.  Perhaps a runtime setting for “*” could explicitly provide
+the extension, defaulting to the output file’s extension.</p>
+</li>
+<li><p>If this handles images also, how to differentiate between document
+and image links?  Element context (within “image”)?  Which image
+extension to use for which document format? For HTML output, there
+is no reliable way of determining which extension to use (svg, png,
+jpg, jpeg, gif, …).</p>
+<p>Should the system check for existing files?  No, not practical (the
+image files may be not available when the document is processed to HTML).</p>
+<p>Mailing list threads: <a class="reference external" href="https://sourceforge.net/p/docutils/mailman/docutils-users/thread/40BAA4B7.5020801%40python.org/#msg6918066">Images in both HTML and LaTeX</a> (especially
+<a class="reference external" href="https://sourceforge.net/p/docutils/mailman/message/6918089/">this summary of Lea’s objections</a>).</p>
+</li>
+</ul>
+<p>Chris Liechti suggests a new <code class="docutils literal notranslate"><span class="pre">:link:</span></code> role in <a class="reference external" href="https://sourceforge.net/p/docutils/mailman/message/6919484/">more-universal
+links?</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  .. role:: link(rewrite)
+     :transform: .txt|.html
+
+and then to use it::
+
+  for more information see :link:`README.txt`
+
+it would be useful if it supported an additional option
+``:format: html`` so that separate rules for each format can be
+defined. (like the "raw" role)
+</pre></div>
+</div>
+<p>Idea from Jim Fulton: an external lookup table of targets:</p>
+<blockquote>
+<div><p>I would like to specify the extension (e.g. .txt) [in the
+source, rather than <code class="docutils literal notranslate"><span class="pre">filename.*</span></code>], but tell the converter to
+change references to the files anticipating that the files will
+be converted too.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">_Another</span> <span class="n">Document</span><span class="p">:</span> <span class="n">another</span><span class="o">.</span><span class="n">txt</span>
+
+<span class="n">rst2html</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">convert</span><span class="o">-</span><span class="n">links</span> <span class="s2">"another.txt bar.txt"</span> <span class="n">foo</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>That is, name the files for which extensions should be converted.</p>
+<p>Note that I want to refer to original files in the original text
+(another.txt rather than another.*) because I want the
+unconverted text to stand on its own.</p>
+<p>Note that in most cases, people will be able to use globs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2html</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">convert</span><span class="o">-</span><span class="n">link</span><span class="o">-</span><span class="n">extensions</span><span class="o">-</span><span class="k">for</span> <span class="s2">"`echo *.txt`"</span> <span class="n">foo</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>It might be nice to be able to use multiple arguments, as in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2html</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">convert</span><span class="o">-</span><span class="n">link</span><span class="o">-</span><span class="n">extensions</span><span class="o">-</span><span class="k">for</span> <span class="o">*.</span><span class="n">txt</span> <span class="o">--</span> <span class="n">foo</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>&gt; Handle documents only, or objects (images, etc.) also?</p>
+<p>No, documents only, but there really is no need for guesswork.
+Just get the file names as command-line arguments.  EIBTI
+[explicit is better than implicit].</p>
+</div></blockquote>
+<p>In <a class="reference external" href="https://sourceforge.net/p/docutils/patches/169/">Patch #169</a> <cite>Hyperlink extension rewriting</cite>, John L. Clark
+suggests command line options that map to-be-changed file extensions, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2html</span> <span class="o">--</span><span class="nb">map</span><span class="o">-</span><span class="n">extension</span> <span class="n">rst</span> <span class="n">html</span> <span class="o">--</span><span class="nb">map</span><span class="o">-</span><span class="n">extension</span> <span class="n">jpg</span> <span class="n">png</span> \
+   <span class="nb">input</span><span class="o">-</span><span class="n">filename</span><span class="o">.</span><span class="n">rst</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Specifying the mapping as regular expressions would make this
+approach more generic and easier to implement (use <code class="docutils literal notranslate"><span class="pre">re.replace</span></code>
+and refer to the “re” module’s documentation instead of coding and
+documenting a home-grown extraction and mapping procedure).</p>
+</div></blockquote>
+</section>
+</section>
+<section id="math-markup">
+<h3><a class="toc-backref" href="#id50">Math Markup</a><a class="headerlink" href="#math-markup" title="永久链接至标题">¶</a></h3>
+<p>Since Docutils 0.8, a “math” role and directive using LaTeX math
+syntax as input format is part of reStructuredText.</p>
+<p>Open issues:</p>
+<ul class="simple">
+<li><p>Use a “Transform” for math format conversions as extensively discussed in
+the “math directive issues” thread in May 2008
+(<a class="reference external" href="http://osdir.com/ml/text.docutils.devel/2008-05/threads.html">http://osdir.com/ml/text.docutils.devel/2008-05/threads.html</a>)?</p></li>
+<li><p>Generic <a class="reference external" href="../user/config.html#math-output">math-output setting</a> (currently specific to HTML).
+(List of math-output preferences?)</p></li>
+<li><p>Try to be compatible with <a class="reference external" href="http://sphinx.pocoo.org/ext/math.html">Math support in Sphinx</a>?</p>
+<ul>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">:label:</span></code> option selects a label for the equation, by which it
+can be cross-referenced, and causes an equation number to be issued.
+In Docutils, the option <code class="docutils literal notranslate"><span class="pre">:name:</span></code> sets the label.
+Equation numbering is not implemented yet.</p></li>
+<li><p>Option <code class="docutils literal notranslate"><span class="pre">:nowrap:</span></code> prevents wrapping of the given math in a
+math environment (you have to specify the math environment in the
+content).</p></li>
+</ul>
+</li>
+<li><p>Equation numbering and references. (see the section on
+<cite>object numbering and object references</cite> for equations,
+formal tables, and images.)</p></li>
+</ul>
+<section id="alternative-input-formats">
+<h4><a class="toc-backref" href="#id51">alternative input formats</a><a class="headerlink" href="#alternative-input-formats" title="永久链接至标题">¶</a></h4>
+<p>Use a directive option to specify an alternative input format, e.g. (but not
+limited to):</p>
+<dl>
+<dt><a class="reference external" href="http://www.w3.org/TR/MathML2/">MathML</a></dt><dd><p>Not for hand-written code but maybe useful when pasted in (or included
+from a file)</p>
+<p>For an overview of MathML implementations and tests, see, e.g.,
+the <a class="reference external" href="http://www.mathweb.org/wiki/MathML">mathweb wiki</a> or the <a class="reference external" href="http://wiki.contextgarden.net/MathML">ConTeXT MathML page</a>.</p>
+<p>A MathML to LaTeX XSLT sheet:
+<a class="reference external" href="https://github.com/davidcarlisle/web-xslt/tree/master/pmml2tex">https://github.com/davidcarlisle/web-xslt/tree/master/pmml2tex</a></p>
+</dd>
+<dt><a class="reference external" href="http://www1.chapman.edu/~jipsen/mathml/asciimath.html">ASCIIMath</a></dt><dd><p>Simple, ASCII based math input language (see also <a class="reference external" href="http://www.wjagray.co.uk/maths/ASCIIMathTutorial.html">ASCIIMath tutorial</a>).</p>
+<ul>
+<li><p>The Python module <a class="reference external" href="http://pypi.python.org/pypi/asciimathml/">ASCIIMathML</a> translates a string with ASCIIMath into a
+MathML tree. Used, e.g., by <a class="reference external" href="http://fletcherpenney.net/multimarkdown/">MultiMarkdown</a>.</p>
+<p>A more comprehensive implementation is <a class="reference external" href="http://sourceforge.net/projects/asciimathpython/">ASCIIMathPython</a> by
+Paul Trembley (also used in his sandbox projects).</p>
+</li>
+<li><p>For conversion to LaTeX, there is</p>
+<ul class="simple">
+<li><p>a JavaScript script at
+<a class="reference external" href="http://dlippman.imathas.com/asciimathtex/ASCIIMath2TeX.js">http://dlippman.imathas.com/asciimathtex/ASCIIMath2TeX.js</a></p></li>
+<li><p>The javascript <cite>asciimath-to-latex</cite> AsciiMath to LaTex converter at
+the node package manager
+<a class="reference external" href="https://www.npmjs.com/package/asciimath-to-latex">https://www.npmjs.com/package/asciimath-to-latex</a>
+and at GitHub <a class="reference external" href="https://github.com/tylerlong/asciimath-to-latex">https://github.com/tylerlong/asciimath-to-latex</a></p></li>
+<li><p>a javascript and a PHP converter script at GitHub
+<a class="reference external" href="https://github.com/asciimath/asciimathml/tree/master/asciimath-based">https://github.com/asciimath/asciimathml/tree/master/asciimath-based</a></p></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt><a class="reference external" href="http://www.unicode.org/notes/tn28/">Unicode Nearly Plain Text Encoding of Mathematics</a></dt><dd><p>format for lightly marked-up representation of mathematical
+expressions in Unicode.</p>
+<p>(Unicode Technical Note. Sole responsibility for its contents rests
+with the author(s). Publication does not imply any endorsement by
+the Unicode Consortium.)</p>
+</dd>
+<dt>itex</dt><dd><p>See <a class="reference external" href="http://article.gmane.org/gmane.text.docutils.user/118">the culmination of a relevant discussion in 2003</a>.</p>
+</dd>
+</dl>
+</section>
+<section id="latex-output">
+<h4><a class="toc-backref" href="#id52">LaTeX output</a><a class="headerlink" href="#latex-output" title="永久链接至标题">¶</a></h4>
+<p>Which equation environments should be supported by the math directive?</p>
+<ul>
+<li><p>one line:</p>
+<ul class="simple">
+<li><p>numbered: <cite>equation</cite></p></li>
+<li><p>unnumbered: <cite>equation*</cite></p></li>
+</ul>
+</li>
+<li><p>multiline (test for <code class="docutils literal notranslate"><span class="pre">\\</span></code> outside of a nested environment
+(e.g. <cite>array</cite> or <cite>cases</cite>)</p>
+<ul>
+<li><p>numbered: <cite>align</cite> (number every line)</p>
+<p>(To give one common number to all lines, put them in a <cite>split</cite>
+environment. Docutils then places it in an <cite>equation</cite> environment.)</p>
+</li>
+<li><p>unnumbered: <cite>align*</cite></p></li>
+<li><p>Sphinx math also supports <cite>gather</cite> (checking for blank lines in
+the content). Docutils puts content blocks separated by blank
+lines in separate math-block doctree nodes. (The only difference of
+<cite>gather</cite> to two consecutive “normal” environments seems to be that
+page-breaks between the two are prevented.)</p></li>
+</ul>
+</li>
+</ul>
+<p>See <a class="reference external" href="http://www.math.uiuc.edu/~hildebr/tex/displays.html">http://www.math.uiuc.edu/~hildebr/tex/displays.html</a>.</p>
+</section>
+<section id="html-output">
+<h4><a class="toc-backref" href="#id53">HTML output</a><a class="headerlink" href="#html-output" title="永久链接至标题">¶</a></h4>
+<p>There is no native math support in HTML.
+For supported math output variants see the <a class="reference external" href="../user/config.html#math-output">math-output setting</a>.
+Add more/better alternatives?</p>
+<dl>
+<dt><a class="reference external" href="http://www.w3.org/TR/MathML2/">MathML</a></dt><dd><p>Converters from LaTeX to MathML include</p>
+<ul>
+<li><p><a class="reference external" href="http://hutchinson.belmont.ma.us/tth/mml/">TtM</a> (C), <code class="docutils literal notranslate"><span class="pre">--math-output=MathML</span> <span class="pre">ttm</span></code>, undocumented, may be removed.</p>
+<p>No “matrix”, “align” and  “cases” environments.</p>
+</li>
+<li><p><a class="reference external" href="http://www.mathtoweb.com/">MathToWeb</a> (Java)</p></li>
+<li><p><a class="reference external" href="http://www.tug.org/applications/tex4ht/mn.html">TeX4ht</a> (TeX based)</p></li>
+<li><p><a class="reference external" href="http://golem.ph.utexas.edu/~distler/blog/itex2MMLcommands.html">itex</a> (also <a class="reference external" href="http://msevior.livejournal.com/26377.html">used in Abiword</a>)</p></li>
+<li><p><a class="reference external" href="http://www.gold-saucer.org/mathml/greasemonkey/dist/display-latex">Steve’s LATEX-to-MathML translator</a>
+(‘mini-language’, javascript, Python)</p></li>
+<li><p><a class="reference external" href="https://github.com/mathjax/MathJax-node">MathJax for Node</a></p></li>
+<li><p>Write a new converter? E.g. based on:</p>
+<ul class="simple">
+<li><p>a generic tokenizer (see e.g. a <a class="reference external" href="http://code.activestate.com/recipes/252124-latex-codec/">latex-codec recipe</a>,
+<a class="reference external" href="http://mirror.ctan.org/biblio/bibtex/utils/mab2bib/latex.py">updated latex-codec</a>, )</p></li>
+<li><p>the Unicode-Char &lt;-&gt; LaTeX mappings database <a class="reference external" href="http://milde.users.sourceforge.net/LUCR/Math/">unimathsymbols</a></p></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>HTML/CSS</dt><dd><p>format math in standard HTML enhanced by CSS rules
+(<a class="reference external" href="http://www.cs.tut.fi/~jkorpela/math/">Overview</a>, <a class="reference external" href="http://www.zipcon.net/~swhite/docs/math/math.html">Examples and experiments</a>).
+The <code class="docutils literal notranslate"><span class="pre">math-output=html</span></code> option uses the converter from <a class="reference external" href="http://elyxer.nongnu.org/">eLyXer</a>
+(included with Docutils).</p>
+<p>Alternatives: LaTeX-math to HTML/CSS converters include</p>
+<ul class="simple">
+<li><p><a class="reference external" href="ttp://hutchinson.belmont.ma.us/tth/index.html">TtH</a> (C)</p></li>
+<li><p><a class="reference external" href="http://para.inria.fr/~maranget/hevea/">Hevea</a> (Objective Caml)</p></li>
+<li><p><a class="reference external" href="https://github.com/mathjax/MathJax-node">MathJax for Node</a></p></li>
+</ul>
+</dd>
+<dt>images</dt><dd><p>(PNG or SVG) like e.g. Wikipedia.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://dvisvgm.sourceforge.net/">dvisvgm</a></p></li>
+<li><p>the pure-python MathML-&gt;SVG converter <a class="reference external" href="http://www.grigoriev.ru/svgmath/">SVGMath</a>)</p></li>
+<li><p><a class="reference external" href="https://github.com/mathjax/MathJax-node">MathJax for Node</a></p></li>
+</ul>
+</dd>
+<dt>client side JavaScript conversion</dt><dd><p>Use TeX notation in the web page and JavaScript in the displaying browser.
+(implemented as <a class="reference external" href="../user/config.html#math-output">math-output setting</a> “mathjax”).</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://mathscribe.com/author/jqmath.html">jqMath</a> (faster and lighter than <a class="reference external" href="http://www.mathjax.org/">MathJax</a>)</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="openoffice-output">
+<h4><a class="toc-backref" href="#id54">OpenOffice output</a><a class="headerlink" href="#openoffice-output" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>The <a class="reference external" href="http://www.oasis-open.org/standards#opendocumentv1.1">OpenDocument standard</a> version 1.1 says:</p>
+<blockquote>
+<div><p>Mathematical content is represented by MathML 2.0</p>
+</div></blockquote>
+<p>However, putting MathML into an ODP file seems tricky as these
+(maybe outdated) links suppose:
+<a class="reference external" href="http://idippedut.dk/post/2008/01/25/Do-your-math-ODF-and-MathML.aspx">http://idippedut.dk/post/2008/01/25/Do-your-math-ODF-and-MathML.aspx</a>
+<a class="reference external" href="http://idippedut.dk/post/2008/03/03/Now-I-get-it-ODF-and-MathML.aspx">http://idippedut.dk/post/2008/03/03/Now-I-get-it-ODF-and-MathML.aspx</a></p>
+</li>
+<li><p><a class="reference external" href="http://ooolatex.sourceforge.net/">OOoLaTeX</a>:  “a set of macros designed to bring the power of LaTeX
+into OpenOffice.”</p>
+</li>
+</ul>
+</section>
+</section>
+<section id="directives">
+<h3><a class="toc-backref" href="#id55">Directives</a><a class="headerlink" href="#directives" title="永久链接至标题">¶</a></h3>
+<p>Directives below are often referred to as “module.directive”, the
+directive function.  The “module.” is not part of the directive name
+when used in a document.</p>
+<ul>
+<li><p>Allow for field lists in list tables.  See
+&lt;<a class="reference external" href="http://thread.gmane.org/gmane.text.docutils.devel/3392">http://thread.gmane.org/gmane.text.docutils.devel/3392</a>&gt;.</p></li>
+<li><p id="unify-tables">Unify table implementations and unify options of table directives
+(<a class="reference external" href="http://article.gmane.org/gmane.text.docutils.user/1857">http://article.gmane.org/gmane.text.docutils.user/1857</a>).</p>
+</li>
+<li><p>Allow directives to be added at run-time?</p></li>
+<li><p>Use the language module for directive option names?</p></li>
+<li><p>Add “substitution_only” and “substitution_ok” function attributes,
+and automate context checking?</p></li>
+<li><p>Implement options or features on existing directives:</p>
+<ul>
+<li><p>All directives that produce titled elements should grow implicit
+reference names based on the titles.</p></li>
+<li><p>Allow the <span class="target" id="trim">:trim:</span> option for all directives when they occur in a
+substitution definition, not only the <a class="reference external" href="../ref/rst/directives.html#unicode-character-codes">unicode</a> directive.</p>
+</li>
+<li><p>Add the “class” option to the <a class="reference external" href="../ref/rst/directives.html#unicode-character-codes">unicode</a> directive.  For example, you
+might want to get characters or strings with borders around them.</p></li>
+<li><p><span class="target" id="images-figure">images.figure</span>: “title” and “number”, to indicate a formal
+figure?</p></li>
+<li><p><span class="target" id="parts-sectnum">parts.sectnum</span>: “local”?, “refnum”</p>
+<p>A “local” option could enable numbering for sections from a
+certain point down, and sections in the rest of the document are
+not numbered.  For example, a reference section of a manual might
+be numbered, but not the rest.  OTOH, an all-or-nothing approach
+would probably be enough.</p>
+<p>The “sectnum” directive should be usable multiple times in a
+single document.  For example, in a long document with “chapter”
+and “appendix” sections, there could be a second “sectnum” before
+the first appendix, changing the sequence used (from 1,2,3… to
+A,B,C…).  This is where the “local” concept comes in.  This part
+of the implementation can be left for later.</p>
+<p>A “refnum” option (better name?) would insert reference names
+(targets) consisting of the reference number.  Then a URL could be
+of the form <code class="docutils literal notranslate"><span class="pre">http://host/document.html#2.5</span></code> (or “2-5”?).  Allow
+internal references by number?  Allow name-based <em>and</em>
+number-based ids at the same time, or only one or the other (which
+would the table of contents use)?  Usage issue: altering the
+section structure of a document could render hyperlinks invalid.</p>
+</li>
+<li><p><span class="target" id="parts-contents">parts.contents</span>: Add a “suppress” or “prune” option?  It would
+suppress contents display for sections in a branch from that point
+down.  Or a new directive, like “prune-contents”?</p>
+<p>Add an option to include topics in the TOC?  Another for sidebars?
+The “topic” directive could have a “contents” option, or the
+“contents” directive” could have an “include-topics” option.  See
+docutils-develop 2003-01-29.</p>
+</li>
+<li><p><span class="target" id="parts-header">parts.header</span> &amp; <span class="target" id="parts-footer">parts.footer</span>: Support multiple, named headers
+&amp; footers?  For example, separate headers &amp; footers for odd, even,
+and the first page of a document.</p>
+<p>This may be too specific to output formats which have a notion of
+“pages”.</p>
+</li>
+<li><p><span class="target" id="misc-class">misc.class</span>:</p>
+<ul class="simple">
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">:parent:</span></code> option for setting the parent’s class
+(<a class="reference external" href="http://article.gmane.org/gmane.text.docutils.devel/3165">http://article.gmane.org/gmane.text.docutils.devel/3165</a>).</p></li>
+</ul>
+</li>
+<li><p><span class="target" id="misc-include">misc.include</span>:</p>
+<ul>
+<li><p>Option to label lines?</p></li>
+<li><p>How about an environment variable, say RSTINCLUDEPATH or
+RSTPATH, for standard includes (as in <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">include::</span> <span class="pre">&lt;name&gt;</span></code>)?
+This could be combined with a setting/option to allow
+user-defined include directories.</p></li>
+<li><p>Add support for inclusion by URL?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">include</span><span class="p">::</span>
+   <span class="p">:</span><span class="n">url</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">inclusion</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Strip blank lines from begin and end of a literal included file or
+file section. This would correspond to the way a literal block is
+handled.</p>
+<p>As nodes.literal_block expects (and we have) the text as a string
+(rather than a list of lines), using a regexp seems the way.</p>
+</li>
+</ul>
+</li>
+<li><p><span class="target" id="misc-raw">misc.raw</span>: add a “destination” option to the “raw” directive?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">raw</span><span class="p">::</span> <span class="n">html</span>
+   <span class="p">:</span><span class="n">destination</span><span class="p">:</span> <span class="n">head</span>
+
+   <span class="o">&lt;</span><span class="n">link</span> <span class="o">...&gt;</span>
+</pre></div>
+</div>
+<p>It needs thought &amp; discussion though, to come up with a consistent
+set of destination labels and consistent behavior.</p>
+<p>And placing HTML code inside the &lt;head&gt; element of an HTML
+document is rather the job of a templating system.</p>
+</li>
+<li><p><span class="target" id="body-sidebar">body.sidebar</span>: Allow internal section structure?  Adornment
+styles would be independent of the main document.</p>
+<p>That is really complicated, however, and the document model
+greatly benefits from its simplicity.</p>
+</li>
+</ul>
+</li>
+<li><p>Implement directives.  Each of the list items below begins with an
+identifier of the form, “module_name.directive_function_name”.  The
+directive name itself could be the same as the
+directive_function_name, or it could differ.</p>
+<ul>
+<li><p><span class="target" id="html-imagemap">html.imagemap</span></p>
+<p>It has the disadvantage that it’s only easily implementable for
+HTML, so it’s specific to one output format.</p>
+<p>(For non-HTML writers, the imagemap would have to be replaced with
+the image only.)</p>
+</li>
+<li><p><span class="target" id="parts-endnotes">parts.endnotes</span> (or “footnotes”): See <a class="reference internal" href="#footnote-citation-gathering">Footnote &amp; Citation Gathering</a>.</p></li>
+<li><p><span class="target" id="parts-citations">parts.citations</span>: See <a class="reference internal" href="#footnote-citation-gathering">Footnote &amp; Citation Gathering</a>.</p></li>
+<li><p><span class="target" id="misc-language">misc.language</span>: Specify (= change) the language of a document at
+parse time?</p>
+<ul class="simple">
+<li><p>The <a class="reference internal" href="#misc-settings">misc.settings</a> directive suggested below offers a more generic
+approach.</p></li>
+<li><p>The language of document parts can be indicated by the “special class
+value” <code class="docutils literal notranslate"><span class="pre">"language-"</span></code> + <a class="reference external" href="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</a> language code. Class arguments to
+the title are attached to the document’s base node - hence titled
+documents can be given a different language at parse time. However,
+“language by class attribute” does not change parsing (localized
+directives etc.), only supporting writers.</p></li>
+</ul>
+</li>
+<li><p><span class="target" id="misc-settings">misc.settings</span>: Set any(?) Docutils runtime setting from within
+a document?  Needs much thought and discussion.</p>
+<p>Security concerns need to be taken into account (it shouldn’t be
+possible to enable <code class="docutils literal notranslate"><span class="pre">file_insertion_enabled</span></code> from within a
+document), and settings that only would have taken effect before
+the directive (like <code class="docutils literal notranslate"><span class="pre">tab-width</span></code>) shouldn’t be accessible either.</p>
+<p>See this sub-thread:
+&lt;<a class="reference external" href="http://thread.gmane.org/gmane.text.docutils.user/3620/focus=3649">http://thread.gmane.org/gmane.text.docutils.user/3620/focus=3649</a>&gt;</p>
+</li>
+<li><p><span class="target" id="misc-gather">misc.gather</span>: Gather (move, or copy) all instances of a specific
+element.  A generalization of the <a class="reference internal" href="#footnote-citation-gathering">Footnote &amp; Citation Gathering</a>
+ideas.</p></li>
+<li><p>Add a custom “directive” directive, equivalent to “role”?  For
+example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">directive</span><span class="p">::</span> <span class="n">incr</span>
+
+   <span class="o">..</span> <span class="n">class</span><span class="p">::</span> <span class="n">incremental</span>
+
+<span class="o">..</span> <span class="n">incr</span><span class="p">::</span>
+
+<span class="s2">"``.. incr::``"</span> <span class="n">above</span> <span class="ow">is</span> <span class="n">equivalent</span> <span class="n">to</span> <span class="s2">"``.. class:: incremental``"</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Another example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">directive</span><span class="p">::</span> <span class="n">printed</span><span class="o">-</span><span class="n">links</span>
+
+   <span class="o">..</span> <span class="n">topic</span><span class="p">::</span> <span class="n">Links</span>
+      <span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="nb">print</span><span class="o">-</span><span class="n">block</span>
+
+      <span class="o">..</span> <span class="n">target</span><span class="o">-</span><span class="n">notes</span><span class="p">::</span>
+         <span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="nb">print</span><span class="o">-</span><span class="n">inline</span>
+</pre></div>
+</div>
+<p>This acts like macros.  The directive contents will have to be
+evaluated when referenced, not when defined.</p>
+<ul class="simple">
+<li><p>Needs a better name?  “Macro”, “substitution”?</p></li>
+<li><p>What to do with directive arguments &amp; options when the
+macro/directive is referenced?</p></li>
+</ul>
+</li>
+<li><p>Make the meaning of block quotes overridable?  Only a 1-shot
+though; doesn’t solve the general problem.</p></li>
+<li><p><span class="target" id="conditional-directives">conditional directives</span>:</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>See also the implementation in <a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a>.</p>
+</div>
+<p>Docutils already has the ability to say “use this content for
+Writer X” via the “raw” directive. It also does have the ability
+to say “use this content for any Writer other than X” via the
+“strip-elements with class” config value.  However, using “raw”
+input just to select a special writer is inconvenient in many
+cases.
+It wouldn’t be difficult to get more straightforward support, though.</p>
+<p>My first idea would be to add a set of conditional directives.
+Let’s call them “writer-is” and “writer-is-not” for discussion
+purposes (don’t worry about implementation details).  We might
+have:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">writer</span><span class="o">-</span><span class="ow">is</span><span class="p">::</span> <span class="n">text</span><span class="o">-</span><span class="n">only</span>
+
+   <span class="p">::</span>
+
+       <span class="o">+----------+</span>
+       <span class="o">|</span>   <span class="n">SNMP</span>   <span class="o">|</span>
+       <span class="o">+----------+</span>
+       <span class="o">|</span>   <span class="n">UDP</span>    <span class="o">|</span>
+       <span class="o">+----------+</span>
+       <span class="o">|</span>    <span class="n">IP</span>    <span class="o">|</span>
+       <span class="o">+----------+</span>
+       <span class="o">|</span> <span class="n">Ethernet</span> <span class="o">|</span>
+       <span class="o">+----------+</span>
+
+<span class="o">..</span> <span class="n">writer</span><span class="o">-</span><span class="ow">is</span><span class="p">::</span> <span class="n">pdf</span>
+
+   <span class="o">..</span> <span class="n">figure</span><span class="p">::</span> <span class="n">protocol_stack</span><span class="o">.</span><span class="n">eps</span>
+
+<span class="o">..</span> <span class="n">writer</span><span class="o">-</span><span class="ow">is</span><span class="o">-</span><span class="ow">not</span><span class="p">::</span> <span class="n">text</span><span class="o">-</span><span class="n">only</span> <span class="n">pdf</span>
+
+   <span class="o">..</span> <span class="n">figure</span><span class="p">::</span> <span class="n">protocol_stack</span><span class="o">.</span><span class="n">png</span>
+</pre></div>
+</div>
+<p>This could be an interface to the Filter transform
+(docutils.transforms.components.Filter).</p>
+<p>The ideas in the <a class="reference internal" href="#adaptable-file-extensions">adaptable file extensions</a> section above may
+also be applicable here.</p>
+<p>SVG’s “switch” statement may provide inspiration.</p>
+<p>Here’s an example of a directive that could produce multiple
+outputs (<em>both</em> raw troff pass-through <em>and</em> a GIF, for example)
+and allow the Writer to select.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">eqn</span><span class="p">::</span>
+
+   <span class="o">.</span><span class="n">EQ</span>
+   <span class="n">delim</span> <span class="o">%%</span>
+   <span class="o">.</span><span class="n">EN</span>
+   <span class="o">%</span><span class="nb">sum</span> <span class="kn">from</span> <span class="nn">i</span><span class="o">=</span><span class="n">o</span> <span class="n">to</span> <span class="n">inf</span> <span class="n">c</span> <span class="n">sup</span> <span class="n">i</span><span class="o">~=~</span><span class="n">lim</span> <span class="kn">from</span> <span class="p">{</span><span class="n">m</span> <span class="o">-&gt;</span> <span class="n">inf</span><span class="p">}</span>
+   <span class="nb">sum</span> <span class="kn">from</span> <span class="nn">i</span><span class="o">=</span><span class="mi">0</span> <span class="n">to</span> <span class="n">m</span> <span class="n">sup</span> <span class="n">i</span><span class="o">%</span>
+   <span class="o">.</span><span class="n">EQ</span>
+   <span class="n">delim</span> <span class="n">off</span>
+   <span class="o">.</span><span class="n">EN</span>
+</pre></div>
+</div>
+</li>
+<li><p><span class="target" id="body-example">body.example</span>: Examples; suggested by Simon Hefti.  Semantics as
+per Docbook’s “example”; admonition-style, numbered, reference,
+with a caption/title.</p></li>
+<li><p><span class="target" id="body-index">body.index</span>: Index targets.</p>
+<p>See <a class="reference external" href="./rst/alternatives.html#index-entries-indexes">Index Entries &amp; Indexes</a>.</p>
+</li>
+<li><p><span class="target" id="body-literal">body.literal</span>: Literal block, possibly “formal” (see <a class="reference internal" href="#object-numbering-and-object-references">object
+numbering and object references</a> above).  Possible options:</p>
+<ul>
+<li><p>“highlight” a range of lines</p></li>
+<li><p>include only a specified range of lines</p></li>
+<li><p>“number” or “line-numbers”? (since 0.9 available with “code” directive)</p></li>
+<li><p>“styled” could indicate that the directive should check for
+style comments at the end of lines to indicate styling or
+markup.</p>
+<p>Specific derivatives (i.e., a “python-interactive” directive)
+could interpret style based on cues, like the “&gt;&gt;&gt; ” prompt and
+“input()”/”raw_input()” calls.</p>
+</li>
+</ul>
+<p>See docutils-users 2003-03-03.</p>
+</li>
+<li><p><span class="target" id="body-listing">body.listing</span>: Code listing with title (to be numbered
+eventually), equivalent of “figure” and “table” directives.</p></li>
+<li><p><span class="target" id="pysource-usage">pysource.usage</span>: Extract a usage message from the program,
+either by running it at the command line with a <code class="docutils literal notranslate"><span class="pre">--help</span></code> option
+or through an exposed API.  [Suggestion for Optik.]</p></li>
+<li><p><span class="target" id="body-float">body.float</span>: Generic float that can be used for figures, tables,
+code listings, flowcharts, …</p>
+<p>There is a Sphinx extension by Ignacio Fernández Galván &lt;<a class="reference external" href="mailto:jellby%40gmail.com">jellby<span>@</span>gmail<span>.</span>com</a>&gt;</p>
+<blockquote>
+<div><blockquote>
+<div><p>I implemented something for generic floats in sphinx, and submitted a
+pull request that is still waiting:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="nb">float</span><span class="p">::</span>
+   <span class="p">:</span><span class="nb">type</span><span class="p">:</span> <span class="n">figure</span>
+   <span class="p">:</span><span class="n">caption</span><span class="p">:</span> <span class="n">My</span> <span class="n">caption</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><a class="reference external" href="https://github.com/sphinx-doc/sphinx/pull/1858">https://github.com/sphinx-doc/sphinx/pull/1858</a></p>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="interpreted-text">
+<h3><a class="toc-backref" href="#id56">Interpreted Text</a><a class="headerlink" href="#interpreted-text" title="永久链接至标题">¶</a></h3>
+<p>Interpreted text is entirely a reStructuredText markup construct, a
+way to get around built-in limitations of the medium.  Some roles are
+intended to introduce new doctree elements, such as “title-reference”.
+Others are merely convenience features, like “RFC”.</p>
+<p>All supported interpreted text roles must already be known to the
+Parser when they are encountered in a document.  Whether pre-defined
+in core/client code, or in the document, doesn’t matter; the roles
+just need to have already been declared.  Adding a new role may
+involve adding a new element to the DTD and may require extensive
+support, therefore such additions should be well thought-out.  There
+should be a limited number of roles.</p>
+<p>The only place where no limit is placed on variation is at the start,
+at the Reader/Parser interface.  Transforms are inserted by the Reader
+into the Transformer’s queue, where non-standard elements are
+converted.  Once past the Transformer, no variation from the standard
+Docutils doctree is possible.</p>
+<p>An example is the Python Source Reader, which will use interpreted
+text extensively.  The default role will be “Python identifier”, which
+will be further interpreted by namespace context into &lt;class&gt;,
+&lt;method&gt;, &lt;module&gt;, &lt;attribute&gt;, etc. elements (see pysource.dtd),
+which will be transformed into standard hyperlink references, which
+will be processed by the various Writers.  No Writer will need to have
+any knowledge of the Python-Reader origin of these elements.</p>
+<ul>
+<li><p>Add explicit interpreted text roles for the rest of the implicit
+inline markup constructs: named-reference, anonymous-reference,
+footnote-reference, citation-reference, substitution-reference,
+target, uri-reference (&amp; synonyms).</p></li>
+<li><p>Add directives for each role as well?  This would allow indirect
+nested markup:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>This text contains |nested inline markup|.
+
+.. |nested inline markup| emphasis::
+
+   nested ``inline`` markup
+</pre></div>
+</div>
+</li>
+<li><p>Implement roles:</p>
+<ul>
+<li><p>“<span class="target" id="raw-wrapped">raw-wrapped</span>” (or “<span class="target" id="raw-wrap">raw-wrap</span>”): Base role to wrap raw text
+around role contents.</p>
+<p>For example, the following reStructuredText source …</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. role:: red(raw-formatting)
+   :prefix:
+       :html: &lt;font color="red"&gt;
+       :latex: {\color{red}
+   :suffix:
+       :html: &lt;/font&gt;
+       :latex: }
+
+colored :red:`text`
+</pre></div>
+</div>
+<p>… will yield the following document fragment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">paragraph</span><span class="o">&gt;</span>
+    <span class="n">colored</span>
+    <span class="o">&lt;</span><span class="n">inline</span> <span class="n">classes</span><span class="o">=</span><span class="s2">"red"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">raw</span> <span class="nb">format</span><span class="o">=</span><span class="s2">"html"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">font</span> <span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">raw</span> <span class="nb">format</span><span class="o">=</span><span class="s2">"latex"</span><span class="o">&gt;</span>
+            <span class="p">{</span>\<span class="n">color</span><span class="p">{</span><span class="n">red</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="n">inline</span> <span class="n">classes</span><span class="o">=</span><span class="s2">"red"</span><span class="o">&gt;</span>
+            <span class="n">text</span>
+        <span class="o">&lt;</span><span class="n">raw</span> <span class="nb">format</span><span class="o">=</span><span class="s2">"html"</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="n">font</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">raw</span> <span class="nb">format</span><span class="o">=</span><span class="s2">"latex"</span><span class="o">&gt;</span>
+            <span class="p">}</span>
+</pre></div>
+</div>
+<p>Possibly without the intermediate “inline” node.</p>
+</li>
+<li><p><span class="target" id="acronym-and-abbreviation">“acronym” and “abbreviation”</span>: Associate the full text with a
+short form.  Jason Diamond’s description:</p>
+<blockquote>
+<div><p>I want to translate <code class="docutils literal notranslate"><span class="pre">`reST`:acronym:</span></code> into <code class="docutils literal notranslate"><span class="pre">&lt;acronym</span>
+<span class="pre">title='reStructuredText'&gt;reST&lt;/acronym&gt;</span></code>.  The value of the
+title attribute has to be defined out-of-band since you can’t
+parameterize interpreted text.  Right now I have them in a
+separate file but I’m experimenting with creating a directive
+that will use some form of reST syntax to let you define them.</p>
+</div></blockquote>
+<p>Should Docutils complain about undefined acronyms or
+abbreviations?</p>
+<p>What to do if there are multiple definitions?  How to
+differentiate between CSS (Content Scrambling System) and CSS
+(Cascading Style Sheets) in a single document?  David Priest
+responds,</p>
+<blockquote>
+<div><p>The short answer is: you don’t.  Anyone who did such a thing
+would be writing very poor documentation indeed.  (Though I
+note that <a class="reference external" href="rst/alternatives.html#parameterized-interpreted-text">somewhere else in the docs</a>, there’s mention of
+allowing replacement text to be associated with the
+abbreviation.  That takes care of the duplicate
+acronyms/abbreviations problem, though a writer would be
+foolish to ever need it.)</p>
+</div></blockquote>
+<p>How to define the full text?  Possibilities:</p>
+<ol class="arabic">
+<li><p>With a directive and a definition list?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">acronyms</span><span class="p">::</span>
+
+   <span class="n">reST</span>
+       <span class="n">reStructuredText</span>
+   <span class="n">DPS</span>
+       <span class="n">Docstring</span> <span class="n">Processing</span> <span class="n">System</span>
+</pre></div>
+</div>
+<p>Would this list remain in the document as a glossary, or would
+it simply build an internal lookup table?  A “glossary”
+directive could be used to make the intention clear.
+Acronyms/abbreviations and glossaries could work together.</p>
+<p>Then again, a glossary could be formed by gathering individual
+definitions from around the document.</p>
+</li>
+<li><p>Some kind of <a class="reference external" href="rst/alternatives.html#parameterized-interpreted-text">inline parameter syntax</a>?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`reST &lt;reStructuredText&gt;`:acronym: is `WYSIWYG &lt;what you
+see is what you get&gt;`:acronym: plaintext markup.
+</pre></div>
+</div>
+</li>
+<li><p>A combination of 1 &amp; 2?</p>
+<p>The multiple definitions issue could be handled by establishing
+rules of priority.  For example, directive-based lookup tables
+have highest priority, followed by the first inline definition.
+Multiple definitions in directive-based lookup tables would
+trigger warnings, similar to the rules of <a class="reference external" href="../ref/rst/restructuredtext.html#implicit-hyperlink-targets">implicit hyperlink
+targets</a>.</p>
+</li>
+<li><p>Using substitutions?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="o">|</span><span class="n">reST</span><span class="o">|</span> <span class="n">acronym</span><span class="p">::</span> <span class="n">reST</span>
+   <span class="p">:</span><span class="n">text</span><span class="p">:</span> <span class="n">reStructuredText</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>What do we do for other formats than HTML which do not support
+tool tips?  Put the full text in parentheses?</p>
+</li>
+<li><p>“figure”, “table”, “listing”, “chapter”, “page”, etc: See <a class="reference internal" href="#object-numbering-and-object-references">object
+numbering and object references</a> above.</p></li>
+<li><p>“glossary-term”: This would establish a link to a glossary.  It
+would require an associated “glossary-entry” directive, whose
+contents could be a definition list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">glossary</span><span class="o">-</span><span class="n">entry</span><span class="p">::</span>
+
+   <span class="n">term1</span>
+       <span class="n">definition1</span>
+   <span class="n">term2</span>
+       <span class="n">definition2</span>
+</pre></div>
+</div>
+<p>This would allow entries to be defined anywhere in the document,
+and collected (via a “glossary” directive perhaps) at one point.</p>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="doctree-pruning">
+<h3><a class="toc-backref" href="#id57">Doctree pruning</a><a class="headerlink" href="#doctree-pruning" title="永久链接至标题">¶</a></h3>
+<p>[DG 2017-01-02: These are not definitive to-dos, just one developer’s
+opinion. Added 2009-10-13 by Günter Milde, in r6178.]
+[Updated by GM 2017-02-04]</p>
+<p>The number of doctree nodes can be reduced by “normalizing” some related
+nodes. This makes the document model and the writers somewhat simpler.</p>
+<ul>
+<li><p>The “doctest” element can be replaced by literal blocks with a class
+attribute (similar to the “code” directive output).
+The syntax shall be left in reST.</p>
+<p>[DG 2017-01-02:] +0.</p>
+<dl>
+<dt>Discussion</dt><dd><p>The syntax could be left in reST (for a set period of time?).</p>
+<p>[DG 2017-01-02:] The syntax must be left in reST, practically
+forever. Removing it would introduce a huge backwards
+incompatibility. Any syntax removal must be preceded by a thorough
+review and planning, including a deprecation warning process. My
+opinion: it’s not worth it.</p>
+</dd>
+</dl>
+</li>
+<li><p>“Normalize” special admonitions (note, hint, warning, …) during parsing
+(similar to <span class="target" id="transforms-writer-aux-admonitions">transforms.writer_aux.Admonitions</span>). There is no need to
+keep them as distinct elements in the doctree specification.</p>
+<p>[DG 2017-01-02:] -1: &lt;note&gt;{body}&lt;/&gt; is much more concise and
+expressive than &lt;admonition&gt;&lt;title&gt;Note&lt;/&gt;{body}&lt;/&gt;, and the title
+translation can be put off until much later in the process.</p>
+<p>[GM 2017-02-04]:</p>
+<dl class="simple">
+<dt>-0 for &lt;admonition class=note&gt;&lt;title&gt;Note&lt;/&gt;… instead of &lt;note&gt;:</dt><dd><p>a document is rarely printed/used as doctree or XML.</p>
+</dd>
+<dt>+1 reduce the complexity of the doctree</dt><dd><p>(there is no 1:1 rST syntax element &lt;-&gt; doctree node mapping anyway).</p>
+</dd>
+<dt>+2 every writer needs 9 visit_*/depart_* method pairs to handle the 9</dt><dd><p>subtypes of an admonition, i.e. we could but also remove 36 redundant
+methods (HTML, LaTeX, Manpage, ODF).</p>
+</dd>
+</dl>
+<p>-1 the most unfortunately named of these directives will survive. <a class="footnote-reference brackets" href="#id26" id="id25">1</a></p>
+<blockquote>
+<div><dl class="footnote brackets">
+<dt class="label" id="id26"><span class="brackets"><a class="fn-backref" href="#id25">1</a></span></dt>
+<dd><p>with “biblical touch” and hard to translate:</p>
+<dl class="field-list">
+<dt class="field-odd">admonition</dt>
+<dd class="field-odd"><div class="line-block">
+<div class="line">Ermahnung; Verweis; Warnung; Rüge</div>
+<div class="line">(exhortation; censure; warning; reprimand, rebuke)</div>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<p>Keep the special admonition directives in reStructuredText syntax.</p>
+<p>[DG 2017-01-02:] We must definitely keep the syntax. Removing it
+would introduce a huge backwards incompatibility.</p>
+</li>
+</ul>
+</section>
+</section>
+<section id="unimplemented-transforms">
+<h2><a class="toc-backref" href="#id58">Unimplemented Transforms</a><a class="headerlink" href="#unimplemented-transforms" title="永久链接至标题">¶</a></h2>
+<ul>
+<li><p><span class="target" id="footnote-citation-gathering">Footnote &amp; Citation Gathering</span></p>
+<p>Collect and move footnotes &amp; citations to the end of a document or the
+place of a “footnotes” or “citations” directive
+(see <cite>&lt;./ref/rst/directives.html&gt;_</cite>)</p>
+<dl>
+<dt>Footnotes:</dt><dd><p>Collect all footnotes that are referenced in the document before the
+directive (and after an eventually preceding <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">footnotes::</span></code>
+directive) and insert at this place.</p>
+<p>Allows “endnotes” at a configurable place.</p>
+</dd>
+<dt>Citations:</dt><dd><p>Collect citations that are referenced …</p>
+<p>Citations can be:</p>
+<ol class="loweralpha simple">
+<li><p>defined in the document as citation elements</p></li>
+<li><p>auto-generated from entries in a bibliographic database.</p>
+<ul class="simple">
+<li><p>based on <a class="reference external" href="http://code.google.com/p/bibstuff/">bibstuff</a>?</p></li>
+<li><p>also have a look at</p>
+<ul>
+<li><p><a class="reference external" href="http://www.cs.cornell.edu/people/egs/crosstex/">CrossTeX</a>, a backwards-compatible, improved bibtex
+re-implementation in Python (including HTML export).
+(development stalled since 2 years)</p></li>
+<li><p><a class="reference external" href="http://pybtex.sourceforge.net/">Pybtex</a>,a drop-in replacement for BibTeX written in Python.</p>
+<ul>
+<li><p>BibTeX styles &amp; (experimental) pythonic style API.</p></li>
+<li><p>Database in BibTeX, BibTeXML and YAML formats.</p></li>
+<li><p>full Unicode support.</p></li>
+<li><p>Write to TeX, HTML and plain text.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="http://e6h.org/%7Eegh/hg/zotero-plain/">Zotero plain</a>
+supports Zotero databases and <a class="reference external" href="http://www.citationstyles.org/">CSL</a> styles with Docutils with an
+<code class="docutils literal notranslate"><span class="pre">xcite</span></code> role.</p></li>
+<li><p><a class="reference external" href="http://sphinxcontrib-bibtex.readthedocs.org/">sphinxcontrib-bibtex</a> Sphinx extension with “bibliography”
+directive and “cite” role supporting BibTeX databases.</p></li>
+<li><p><a class="reference external" href="http://www.loria.fr/~rougier/coding/article/rst2html.py">Modified rst2html</a> by
+Nicolas Rougier.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ul class="simple">
+<li><p>Automatically insert a “References” heading?</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<ul>
+<li><p><span class="target" id="reference-merging">Reference Merging</span></p>
+<p>When merging two or more subdocuments (such as docstrings),
+conflicting references may need to be resolved.  There may be:</p>
+<ul class="simple">
+<li><p>duplicate reference and/or substitution names that need to be made
+unique; and/or</p></li>
+<li><p>duplicate footnote numbers that need to be renumbered.</p></li>
+</ul>
+<p>Should this be done before or after reference-resolving transforms
+are applied?  What about references from within one subdocument to
+inside another?</p>
+</li>
+<li><p><span class="target" id="document-splitting">Document Splitting</span></p>
+<p>If the processed document is written to multiple files (possibly in
+a directory tree), it will need to be split up.  Internal references
+will have to be adjusted.</p>
+<p>(HTML only?  Initially, yes.  Eventually, anything should be
+splittable.)</p>
+<p>Ideas:</p>
+<ul>
+<li><p>Insert a “destination” attribute into the root element of each
+split-out document, containing the path/filename.  The Output
+object or Writer will recognize this attribute and split out the
+files accordingly.  Must allow for common headers &amp; footers,
+prev/next, breadcrumbs, etc.</p></li>
+<li><p>Transform a single-root document into a document containing
+multiple subdocuments, recursively.  The content model of the
+“document” element would have to change to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;!ELEMENT document
+    ( (title, subtitle?)?,
+      decoration?,
+      (docinfo, transition?)?,
+      %structure.model;,
+      document* )&gt;
+</pre></div>
+</div>
+<p>(I.e., add the last line – 0 or more document elements.)</p>
+<p>Let’s look at the case of hierarchical (directories and files)
+HTML output.  Each document element containing further document
+elements would correspond to a directory (with an index.html file
+for the content preceding the subdocuments).  Each document
+element containing no subdocuments (i.e., structure model elements
+only) corresponds to a concrete file with no directory.</p>
+<p>The natural transform would be to map sections to subdocuments,
+but possibly only a given number of levels deep.</p>
+</li>
+</ul>
+</li>
+<li><p><span class="target" id="navigation">Navigation</span></p>
+<p>If a document is split up, each segment will need navigation links:
+parent, children (small TOC), previous (preorder), next (preorder).
+Part of <a class="reference internal" href="#document-splitting">Document Splitting</a>?</p>
+</li>
+<li><p><span class="target" id="list-of-system-messages">List of System Messages</span></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">system_message</span></code> elements are inserted into the document tree,
+adjacent to the problems themselves where possible.  Some (those
+generated post-parse) are kept until later, in
+<code class="docutils literal notranslate"><span class="pre">document.messages</span></code>, and added as a special final section,
+“Docutils System Messages”.</p>
+<p>Docutils could be made to generate hyperlinks to all known
+system_messages and add them to the document, perhaps to the end of
+the “Docutils System Messages” section.</p>
+<p>Fred L. Drake, Jr. wrote:</p>
+<blockquote>
+<div><p>I’d like to propose that both parse- and transformation-time
+messages are included in the “Docutils System Messages” section.
+If there are no objections, I can make the change.</p>
+</div></blockquote>
+<p>The advantage of the current way of doing things is that parse-time
+system messages don’t require a transform; they’re already in the
+document.  This is valuable for testing (unit tests,
+tools/quicktest.py).  So if we do decide to make a change, I think
+the insertion of parse-time system messages ought to remain as-is
+and the Messages transform ought to move all parse-time system
+messages (remove from their originally inserted positions, insert in
+System Messages section).</p>
+</li>
+<li><p><span class="target" id="index-generation">Index Generation</span></p></li>
+</ul>
+</section>
+<section id="html-writer">
+<h2><a class="toc-backref" href="#id59">HTML Writer</a><a class="headerlink" href="#html-writer" title="永久链接至标题">¶</a></h2>
+<ul>
+<li><p>Make the <span class="target" id="list-compacting">list compacting</span> logic more generic: For example, allow
+for literal blocks or line blocks inside of compact list items.</p>
+<p>This is not implementable as long as list compacting is done by
+omitting <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;</span></code> tags.  List compacting would need to be done by
+adjusting CSS margins instead.</p>
+<dl class="field-list">
+<dt class="field-odd">2015-04-02</dt>
+<dd class="field-odd"><p>The new html writer no longer strips &lt;p&gt; tags but adds the
+class value <code class="docutils literal notranslate"><span class="pre">simple</span></code> to the list.
+Formatting is done by CSS — configurable by a custom style
+sheet.</p>
+<p>Auto-compactization can be overridden by the <code class="docutils literal notranslate"><span class="pre">open</span></code> vs.
+<code class="docutils literal notranslate"><span class="pre">compact</span></code> class arguments.</p>
+</dd>
+</dl>
+</li>
+<li><p>Idea for field-list rendering: hanging indent:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Field</span> <span class="n">name</span> <span class="p">(</span><span class="n">bold</span><span class="p">):</span> <span class="n">First</span> <span class="n">paragraph</span> <span class="n">of</span> <span class="n">field</span> <span class="n">body</span> <span class="n">begins</span>
+    <span class="k">with</span> <span class="n">the</span> <span class="n">field</span> <span class="n">name</span> <span class="n">inline</span><span class="o">.</span>
+
+    <span class="n">If</span> <span class="n">the</span> <span class="n">first</span> <span class="n">item</span> <span class="n">of</span> <span class="n">a</span> <span class="n">field</span> <span class="n">body</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">paragraph</span><span class="p">,</span>
+    <span class="n">it</span> <span class="n">would</span> <span class="n">begin</span> <span class="n">on</span> <span class="n">the</span> <span class="n">following</span> <span class="n">line</span><span class="o">.</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">2015-04-02</dt>
+<dd class="field-odd"><p>The new html writer writes field-lists as definition lists
+with class <code class="docutils literal notranslate"><span class="pre">field-list</span></code>.
+Formatting is done by CSS — configurable by a custom style
+sheet. The default style sheet has some examples, including a
+run-in field-list style.</p>
+</dd>
+</dl>
+</li>
+<li><p>Add more support for &lt;link&gt; elements, especially for navigation
+bars.</p>
+<p>The framework does not have a notion of document relationships, so
+probably <a class="reference internal" href="#misc-raw">raw.destination</a> should be used.</p>
+<p>We’ll have framework support for document relationships when support
+for <a class="reference internal" href="#multiple-output-files">multiple output files</a> is added.  The HTML writer could
+automatically generate &lt;link&gt; elements then.</p>
+</li>
+<li><p>Base list compaction on the spacing of source list?  Would require
+parser support.  (Idea: fantasai, 16 Dec 2002, doc-sig.)</p></li>
+<li><p>Add a tool tip (“title” attribute?) to footnote back-links
+identifying them as such.  Text in Docutils language module.</p></li>
+</ul>
+</section>
+<section id="pep-html-writer">
+<h2><a class="toc-backref" href="#id60">PEP/HTML Writer</a><a class="headerlink" href="#pep-html-writer" title="永久链接至标题">¶</a></h2>
+<ul>
+<li><p>Remove the generic style information (duplicated from html4css1.css)
+from pep.css to avoid redundancy.</p>
+<p>Set <code class="docutils literal notranslate"><span class="pre">stylesheet-path</span></code> to “html4css.css,pep.css” and the
+<code class="docutils literal notranslate"><span class="pre">stylesheet-dirs</span></code> accordingly instead. (See the xhtml11 writer for an
+example.)</p>
+</li>
+</ul>
+</section>
+<section id="s5-html-writer">
+<h2><a class="toc-backref" href="#id61">S5/HTML Writer</a><a class="headerlink" href="#s5-html-writer" title="永久链接至标题">¶</a></h2>
+<ul>
+<li><p>Add a way to begin an untitled slide.</p></li>
+<li><p>Add a way to begin a new slide, continuation, using the same title
+as the previous slide?  (Unnecessary?)  You need that if you have a
+lot of items in one section which don’t fit on one slide.</p>
+<p>Maybe either this item or the previous one can be realized using
+transitions.</p>
+</li>
+<li><p>Have a timeout on incremental items, so the colour goes away after 1
+second.</p></li>
+<li><p>Add an empty, black last slide (optionally).  Currently the handling
+of the last slide is not very nice, it re-cycles through the
+incremental items on the last slide if you hit space-bar after the
+last item.</p></li>
+<li><p>Add a command-line option to disable advance-on-click.</p></li>
+<li><p>Add a speaker’s master document, which would contain a small version
+of the slide text with speaker’s notes interspersed.  The master
+document could use <code class="docutils literal notranslate"><span class="pre">target="whatever"</span></code> to direct links to a
+separate window on a second monitor (e.g., a projector).</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>This item and the following items are partially
+accomplished by the S5 1.2 code (currently in alpha), which has
+not yet been integrated into Docutils.</p>
+</div>
+</li>
+<li><p>Speaker’s notes – how to intersperse?  Could use reST comments
+(“..”), but make them visible in the speaker’s master document.  If
+structure is necessary, we could use a “comment” directive (to avoid
+nonsensical DTD changes, the “comment” directive could produce an
+untitled topic element).</p>
+<p>The speaker’s notes could (should?) be separate from S5’s handout
+content.</p>
+</li>
+<li><p>The speaker’s master document could use frames for easy navigation:
+TOC on the left, content on the right.</p>
+<ul class="simple">
+<li><p>It would be nice if clicking in the TOC frame simultaneously
+linked to both the speaker’s notes frame and to the slide window,
+synchronizing both.  Needs JavaScript?</p></li>
+<li><p>TOC would have to be tightly formatted – minimal indentation.</p></li>
+<li><p>TOC auto-generated, as in the PEP Reader.  (What if there already
+is a “contents” directive in the document?)</p></li>
+<li><p>There could be another frame on the left (top-left or bottom-left)
+containing a single “Next” link, always pointing to the next slide
+(synchronized, of course).  Also “Previous” link?  FF/Rew go to
+the beginning of the next/current parent section?  First/Last
+also?  Tape-player-style buttons like <code class="docutils literal notranslate"><span class="pre">|&lt;&lt;</span>  <span class="pre">&lt;&lt;</span>  <span class="pre">&lt;</span>  <span class="pre">&gt;</span>  <span class="pre">&gt;&gt;</span>  <span class="pre">&gt;&gt;|</span></code>?</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="epub-html-writer">
+<h2><a class="toc-backref" href="#id62">Epub/HTML Writer</a><a class="headerlink" href="#epub-html-writer" title="永久链接至标题">¶</a></h2>
+<p>Add epub as an output format.</p>
+<blockquote>
+<div><p>epub is an open file format for ebooks based on HTML, specified by the
+<a class="reference external" href="http://www.idpf.org/">International Digital Publishing Forum</a>. Thus, documents in epub
+format are suited to be read with <a class="reference external" href="http://en.wikipedia.org/wiki/List_of_e-book_readers">electronic reading devices</a>.</p>
+</div></blockquote>
+<p>Pack the output of a HTML writer and supporting files (e.g. images)
+into one single epub document.</p>
+<p>There are <a class="reference external" href="../user/links.html#ePub">links to two 3rd party ePub writers</a> in the Docutils link list.
+Test and consider moving the better one into the docutils core.</p>
+</section>
+<section id="latex-writer">
+<h2><a class="toc-backref" href="#id63">LaTeX writer</a><a class="headerlink" href="#latex-writer" title="永久链接至标题">¶</a></h2>
+<p>Also see the <a class="reference external" href="../user/latex.html#problems">Problems</a> section in the <a class="reference external" href="../user/latex.html">latex writer documentation</a>.</p>
+<section id="bug-fixes">
+<h3><a class="toc-backref" href="#id64">Bug fixes</a><a class="headerlink" href="#bug-fixes" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>Too deeply nested lists fail: generate a warning and provide
+a workaround.</p>
+<p>2017-02-09 this is fixed for enumeration in 0.13.1</p>
+<p>for others, cf. sandbox/latex-variants/tests/rst-levels.txt</p>
+</li>
+<li><p>File names of included graphics (see also <cite>grffile</cite> package).</p></li>
+<li><p>Paragraph following field-list or table in compound is indented.</p>
+<p>This is a problem with the current DUfieldlist definition and with the
+use of “longtable” for tables. See <a class="reference internal" href="#other-latex-constructs-and-packages-instead-of-re-implementations">other LaTeX constructs and packages
+instead of re-implementations</a> for alternatives.</p>
+</li>
+</ul>
+</section>
+<section id="generate-clean-and-configurable-latex-source">
+<h3><a class="toc-backref" href="#id65">Generate clean and configurable LaTeX source</a><a class="headerlink" href="#generate-clean-and-configurable-latex-source" title="永久链接至标题">¶</a></h3>
+<p>Which packages do we want to use?</p>
+<ul>
+<li><p>base and “recommended” packages</p>
+<p>(packages that should be in a “reasonably sized and reasonably modern
+LaTeX installation like the <cite>texlive-latex-recommended</cite> Debian package,
+say):</p>
+</li>
+<li><p>No “fancy” or “exotic” requirements.</p></li>
+<li><p>pointers to advanced packages and their use in the <a class="reference external" href="../user/latex.html">latex writer
+documentation</a>.</p></li>
+</ul>
+<section id="configurable-placement-of-figure-and-table-floats">
+<h4><a class="toc-backref" href="#id66">Configurable placement of figure and table floats</a><a class="headerlink" href="#configurable-placement-of-figure-and-table-floats" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>Special class argument to individually place figures?</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">figure</span><span class="p">::</span> <span class="n">foo</span><span class="o">.</span><span class="n">pdf</span>
+   <span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="n">place</span><span class="o">-</span><span class="n">here</span><span class="o">-</span><span class="k">if</span><span class="o">-</span><span class="n">possible</span> <span class="n">place</span><span class="o">-</span><span class="n">top</span> <span class="n">place</span><span class="o">-</span><span class="n">bottom</span>
+</pre></div>
+</div>
+<p>would be written as <code class="docutils literal notranslate"><span class="pre">\figure[htb]{...}</span></code> with
+the optional args:</p>
+<dl class="field-list simple">
+<dt class="field-odd">H</dt>
+<dd class="field-odd"><p>place-here</p>
+</dd>
+<dt class="field-even">h</dt>
+<dd class="field-even"><p>place-here-if-possible</p>
+</dd>
+<dt class="field-odd">t</dt>
+<dd class="field-odd"><p>place-top</p>
+</dd>
+<dt class="field-even">b</dt>
+<dd class="field-even"><p>place-bottom</p>
+</dd>
+<dt class="field-odd">p</dt>
+<dd class="field-odd"><p>place-on-extra-page</p>
+</dd>
+</dl>
+<p>Alternative: class value = “place-” + optional arg, e.g. <code class="docutils literal notranslate"><span class="pre">:class:</span>
+<span class="pre">place-htb</span></code>.</p>
+</li>
+</ul>
+</section>
+<section id="footnotes">
+<h4><a class="toc-backref" href="#id67">Footnotes</a><a class="headerlink" href="#footnotes" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>True footnotes with LaTeX auto-numbering (as option <code class="docutils literal notranslate"><span class="pre">--latex-footnotes</span></code>)
+(also for target-footnotes):
+Write <code class="docutils literal notranslate"><span class="pre">\footnote{&lt;footnote</span> <span class="pre">content&gt;}</span></code> at the place of the
+<code class="docutils literal notranslate"><span class="pre">&lt;footnote_reference&gt;</span></code> node.</p></li>
+<li><p>Open questions:</p>
+<ul>
+<li><p>Load <a class="reference external" href="https://www.ctan.org/pkg/hyperref">hyperref</a> with option “hyperfootnotes” and/or
+package <a class="reference external" href="https://www.ctan.org/pkg/footnotebackref">footnotebackref</a> or leave this to the user?</p></li>
+<li><p>Consider cases where LaTeX does not support footnotes
+(inside <a class="reference external" href="http://www.tex.ac.uk/cgi-bin/texfaq2html?label=footintab">tables</a>, <a class="reference external" href="http://www.tex.ac.uk/cgi-bin/texfaq2html?label=ftnsect">headings</a>, caption, …).
+Use <a class="reference external" href="https://www.ctan.org/pkg/ftnxtra">ftnxtra</a>, <a class="reference external" href="https://www.ctan.org/pkg/tabularx">tabularx</a>, <a class="reference external" href="https://www.ctan.org/pkg/tabulary">tabulary</a>, <a class="reference external" href="https://www.ctan.org/pkg/longtable">longtable</a>?</p>
+</li>
+<li><p>Consider <a class="reference external" href="http://www.tex.ac.uk/cgi-bin/texfaq2html?label=multfoot">multiple footnote refs to common footnote text</a>.</p>
+<p>KOMA-script classes and the KOMA <a class="reference external" href="https://www.ctan.org/pkg/longtable">scrextend</a> package provide
+<code class="docutils literal notranslate"><span class="pre">\footref</span></code> that can be used for additional references to a
+<code class="docutils literal notranslate"><span class="pre">\label</span></code>-ed footnote. Since 2021-05-01, <code class="docutils literal notranslate"><span class="pre">\footref</span></code> is provided
+by the LaTeX core, too.</p>
+</li>
+<li><p>Consider numbered vs. symbolic footnotes.</p></li>
+</ul>
+</li>
+<li><p>document customization (links to how-to and packages)</p></li>
+</ul>
+</section>
+<section id="other-latex-constructs-and-packages-instead-of-re-implementations">
+<h4><a class="toc-backref" href="#id68">Other LaTeX constructs and packages instead of re-implementations</a><a class="headerlink" href="#other-latex-constructs-and-packages-instead-of-re-implementations" title="永久链接至标题">¶</a></h4>
+<ul class="simple">
+<li><p>Check the generated source with package <cite>nag</cite>.</p></li>
+<li><p><a class="reference external" href="https://www.ctan.org/pkg/enumitem">enumitem</a> (texlive-latex-extra) for field-lists?</p></li>
+</ul>
+</section>
+</section>
+<section id="default-layout">
+<h3><a class="toc-backref" href="#id69">Default layout</a><a class="headerlink" href="#default-layout" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>Use italic instead of slanted for titlereference?</p></li>
+<li><p>Start a new paragraph after lists (as currently)
+or continue (no blank line in source, no parindent in output)?</p>
+<p>Overriding:</p>
+<ul class="simple">
+<li><p>continue if the <a class="reference external" href="../ref/rst/directives.html#compound-paragraph">compound paragraph</a> directive is used (as currently),
+or</p></li>
+<li><p>force a new paragraph with an empty comment.</p></li>
+</ul>
+</li>
+<li><p>Sidebar handling (environment with <cite>framed</cite>, <cite>marginnote</cite>, <cite>wrapfig</cite>,
+…)?</p></li>
+<li><p>Use optionlist for docinfo?</p></li>
+<li><p>Keep literal-blocks together on a page, avoid pagebreaks.</p>
+<p>Failed experiments up to now: samepage, minipage, pagebreak 1 to 4 before
+the block.</p>
+<p>Should be possible with <code class="docutils literal notranslate"><span class="pre">--literal-block-env==lstlistings</span></code> and some
+configuration…</p>
+</li>
+<li><p>More space between title and subtitle?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span>  \\ <span class="o">%</span> <span class="n">subtitle</span><span class="o">%</span>
+<span class="o">+</span>  \\<span class="p">[</span><span class="mf">0.5</span><span class="n">em</span><span class="p">]</span> <span class="o">%</span> <span class="n">subtitle</span><span class="o">%</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<section id="tables">
+<h4><a class="toc-backref" href="#id70">Tables</a><a class="headerlink" href="#tables" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>Improve/simplify logic to set the column width in the output.</p>
+<ul class="simple">
+<li><p>Assumed reST line length for table width setting configurable, or</p></li>
+<li><p>use <cite>ltxtable</cite> (a combination of <cite>tabularx</cite> (auto-width) and
+<cite>longtable</cite> (page breaks)), or</p></li>
+<li><p>use tabularx column type <code class="docutils literal notranslate"><span class="pre">X</span></code> and let LaTeX decide width, or</p></li>
+<li><p>use <a class="reference external" href="https://www.ctan.org/pkg/tabulary">tabulary</a>?</p></li>
+</ul>
+</li>
+<li><p>From comp.text.tex (13. 4. 2011):</p>
+<blockquote>
+<div><p>When using fixed width columns, you should ensure that the total
+width does not exceed linewidth: if the first column is p{6cm}
+the second one should be p{dimexprlinewidth-6cm-4tabcolsep}
+because the glue tabcolsep is added twice at every column edge.
+You may also consider to set tabcolsep to a different value…</p>
+</div></blockquote>
+</li>
+<li><p>csv-tables do not have a colwidth.</p></li>
+<li><p>Add more classes or options, e.g. for</p>
+<ul class="simple">
+<li><p>horizontal alignment and rules.</p></li>
+<li><p>long table vs. tabular (see next item).</p></li>
+</ul>
+</li>
+<li><p>Use tabular instead of longtable for tables in legends or generally
+inside a float?</p>
+<p>Alternatively, default to tabular and use longtable only if specified
+by config setting or class argument (analogue to booktable)?</p>
+</li>
+<li><p>Table heads and footer for longtable (firstpage lastpage ..)?</p></li>
+<li><p>In tools.txt the option tables right column, there should be some more
+spacing between the description and the next paragraph “Default:”.</p></li>
+<li><p>Paragraph separation in tables is hairy.
+see <a class="reference external" href="http://www.tex.ac.uk/cgi-bin/texfaq2html?label=struttab">http://www.tex.ac.uk/cgi-bin/texfaq2html?label=struttab</a></p>
+<ul class="simple">
+<li><p>The strut solution did not work.</p></li>
+<li><p>setting extrarowheight added ad top of row not between paragraphs in
+a cell. ALTHOUGH i set it to 2pt because, text is too close to the topline.</p></li>
+<li><p>baselineskip/stretch does not help.</p></li>
+</ul>
+</li>
+<li><p>Should there be two hlines after table head and on table end?</p></li>
+<li><p>Place titled tables in a float (‘table’ environment)?</p>
+<p>The ‘table’, ‘csv-table’, and ‘list-table’ directives support an (optional)
+table title. In analogy to the ‘figure’ directive this should map to a
+table float.</p>
+</li>
+</ul>
+</section>
+<section id="image-and-figure-directives">
+<h4><a class="toc-backref" href="#id71">Image and figure directives</a><a class="headerlink" href="#image-and-figure-directives" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>compare the test case in:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="../../test/functional/input/data/standard.txt">../../test/functional/input/data/standard.txt</a></p></li>
+<li><p><a class="reference external" href="../../test/functional/expected/standalone_rst_html4css1.html">../../test/functional/expected/standalone_rst_html4css1.html</a></p></li>
+<li><p><a class="reference external" href="../../test/functional/expected/standalone_rst_latex.tex">../../test/functional/expected/standalone_rst_latex.tex</a></p></li>
+</ul>
+</li>
+<li><p>The default CSS styling for HTML output (plain.css, default.css) lets
+text following a right- or left-aligned image float to the side of the
+image/figure.</p>
+<ul class="simple">
+<li><p>Use this default also for LaTeX?</p></li>
+<li><p>Wrap text around figures/images with class argument “wrap”
+(like the odt writer)?</p></li>
+</ul>
+<p>Use <cite>wrapfig</cite> (or other recommended) package.</p>
+</li>
+<li><p>support more graphic formats (especially SVG, the only standard
+vector format for HTML)</p></li>
+</ul>
+</section>
+</section>
+<section id="missing-features">
+<h3><a class="toc-backref" href="#id72">Missing features</a><a class="headerlink" href="#missing-features" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>support “figwidth” argument for figures.</p>
+<p>As the ‘figwidth’ argument is still ignored and the “natural width” of
+a figure in LaTeX is 100 % of the text width, setting the ‘align’
+argument has currently no effect on the LaTeX output.</p>
+</li>
+<li><p>Multiple author entries in docinfo (same thing as in html).</p></li>
+<li><p>Consider supporting the “compact” option and class argument (from
+rst2html) as some lists look better compact and others need the space.</p></li>
+<li><p>Better citation support
+(see <a class="reference internal" href="#footnote-citation-gathering">Footnote &amp; Citation Gathering</a>).</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">use-latex-citations</span></code> is used, a bibliography is inserted right at the
+end of the document.</p>
+<p>Put in place of the to-be-implemented “citations” directive
+(see <a class="reference internal" href="#footnote-citation-gathering">Footnote &amp; Citation Gathering</a>).</p>
+</li>
+</ul>
+<section id="unicode-to-latex">
+<h4><a class="toc-backref" href="#id73">Unicode to LaTeX</a><a class="headerlink" href="#unicode-to-latex" title="永久链接至标题">¶</a></h4>
+<p>The <a class="reference external" href="http://www.lyx.org">LyX</a> document processor has a comprehensive
+Unicode to LaTeX conversion feature with a file called <code class="docutils literal notranslate"><span class="pre">unicodesymbols</span></code>
+that lists LaTeX counterparts for a wide range of Unicode characters.</p>
+<ul class="simple">
+<li><p>Use this in the LaTeXTranslator?
+Think of copyright issues!</p></li>
+<li><p>The “ucs” package has many translations in …doc/latex/ucs/config/</p></li>
+<li><p>The <a class="reference external" href="http://code.google.com/p/bibstuff/">bibstuff</a> tool ships a <cite>latex_codec</cite> Python module!</p></li>
+</ul>
+</section>
+<section id="xetex-writer">
+<h4><a class="toc-backref" href="#id74">XeTeX writer</a><a class="headerlink" href="#xetex-writer" title="永久链接至标题">¶</a></h4>
+<ul class="simple">
+<li><p>Glyphs missing in the font are left out in the PDF without warning
+(e.g. ⇔ left-right double arrow in the functional test output).</p></li>
+<li><p>Disable word-wrap (hyphenation) in literal text locally with
+<code class="docutils literal notranslate"><span class="pre">providecommand{\nohyphenation}{\addfontfeatures{HyphenChar=None}}</span></code>?</p></li>
+</ul>
+</section>
+<section id="problematic-urls">
+<h4><a class="toc-backref" href="#id75">problematic URLs</a><a class="headerlink" href="#problematic-urls" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>^^ LaTeX’s special syntax for characters results in “strange” replacements
+(both with href and url).</p>
+<p><a class="reference external" href="../strange^^name">file with ^^</a>:
+<a class="reference external" href="../strange^^name">../strange^^name</a></p>
+</li>
+<li><p>Unbalanced braces, { or }, will fail (both with href and url):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`file with { &lt;../strange{name&gt;`__
+`&lt;../strange{name&gt;`__
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Currently, a warning is written to the error output stream.</p>
+<p>For correct printing, we can</p>
+<ul>
+<li><p>use the href command with “normal” escaped name argument, or</p></li>
+<li><p>define a url-command in the preamble</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">urldef</span><span class="p">{</span>\<span class="n">fragileURLi</span><span class="p">}</span>\<span class="n">nolinkurl</span><span class="p">{</span><span class="n">myself</span><span class="o">%</span><span class="n">node</span><span class="nd">@gateway</span><span class="o">.</span><span class="n">net</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>but need to find a way to insert it as href argument.</p>
+<p>The following fails:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">href</span><span class="p">{</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">w3</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">XML</span><span class="o">/</span><span class="n">Schema</span><span class="o">^^</span><span class="n">dev</span><span class="p">}{</span>\<span class="n">fragileURLi</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Use %-replacement like <a class="reference external" href="http://nowhere/url_with%28parens%29">http://nowhere/url_with%28parens%29</a> ?</p>
+<p>-&gt; does not work for file paths (with pdflatex and xpdf).</p>
+</section>
+<section id="add-stylesheet-option">
+<h4><a class="toc-backref" href="#id76">add-stylesheet option</a><a class="headerlink" href="#add-stylesheet-option" title="永久链接至标题">¶</a></h4>
+<p>From <a class="reference external" href="http://article.gmane.org/gmane.text.docutils.devel/3429/">http://article.gmane.org/gmane.text.docutils.devel/3429/</a></p>
+<p>The problem is that since we have a default value, we have to
+differentiate between adding another stylesheet and replacing the
+default.  I suggest that the existing –stylesheet &amp; –stylesheet-path
+options keep their semantics to replace the existing settings.  We
+could introduce new –add-stylesheet &amp; –add-stylesheet-path options,
+which accumulate; further –stylesheet/–stylesheet-path options would
+clear these lists.  The stylesheet or stylesheet_path setting (only
+one may be set), plus the added_stylesheets and added_stylesheet_paths
+settings, describe the combined styles.</p>
+<p>For example, this run will have only one custom stylesheet:</p>
+<blockquote>
+<div><p>rstpep2html.py –stylesheet-path custom.css …</p>
+</div></blockquote>
+<p>This run will use the default stylesheet, and the custom one:</p>
+<blockquote>
+<div><p>rstpep2html.py –add-stylesheet-path custom.css …</p>
+</div></blockquote>
+<p>This run will use the default stylesheet, a custom local stylesheet,
+and an external stylesheet:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>rstpep2html.py –add-stylesheet-path custom.css </dt><dd><p>–add-stylesheet <a class="reference external" href="http://www.example.org/external.css">http://www.example.org/external.css</a> …</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>This run will use only the second custom stylesheet:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>rstpep2html.py –add-stylesheet-path custom.css </dt><dd><p>–stylesheet-path second.css …</p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+</section>
+</section>
+<section id="front-end-tools">
+<h2><a class="toc-backref" href="#id77">Front-End Tools</a><a class="headerlink" href="#front-end-tools" title="永久链接至标题">¶</a></h2>
+<ul>
+<li><p>What about if we don’t know which Reader and/or Writer we are
+going to use?  If the Reader/Writer is specified on the
+command-line?</p>
+<p>The <a class="reference internal" href="#dynamic">dynamic</a> front end <code class="docutils literal notranslate"><span class="pre">tools/docutils-cli.py</span></code> (new in 0.17) is an
+implementation of concept d) below. It uses 2-stage argument parsing
+via the <cite>argparse</cite> module’s <a class="reference external" href="https://docs.python.org/3/library/argparse.html#partial-parsing">partial parsing</a>. It still needs some
+polishing.</p>
+<p>Perhaps have different types of front ends:</p>
+<ol class="loweralpha simple">
+<li><p><span class="target" id="fully-qualified">Fully qualified</span>: Reader and Writer are hard-coded into the
+front end (e.g. <code class="docutils literal notranslate"><span class="pre">pep2html</span> <span class="pre">[options]</span></code>, <code class="docutils literal notranslate"><span class="pre">pysource2pdf</span>
+<span class="pre">[options]</span></code>).</p></li>
+<li><p><span class="target" id="partially-qualified">Partially qualified</span>: Reader is hard-coded, and the Writer is
+specified a sub-command (e.g. <code class="docutils literal notranslate"><span class="pre">pep2</span> <span class="pre">html</span> <span class="pre">[options]</span></code>,
+<code class="docutils literal notranslate"><span class="pre">pysource2</span> <span class="pre">pdf</span> <span class="pre">[options]</span></code>).  The Writer is known before option
+processing happens, allowing the OptionParser to be built
+dynamically.  Alternatively, the Writer could be hard-coded and
+the Reader specified as a sub-command (e.g. <code class="docutils literal notranslate"><span class="pre">htmlfrom</span> <span class="pre">pep</span>
+<span class="pre">[options]</span></code>).</p></li>
+<li><p><span class="target" id="unqualified">Unqualified</span>: Reader and Writer are specified as subcommands
+(e.g. <code class="docutils literal notranslate"><span class="pre">publish</span> <span class="pre">pep</span> <span class="pre">html</span> <span class="pre">[options]</span></code>, <code class="docutils literal notranslate"><span class="pre">publish</span> <span class="pre">pysource</span> <span class="pre">pdf</span>
+<span class="pre">[options]</span></code>).  A single front end would be sufficient, but
+probably only useful for testing purposes.</p></li>
+<li><p><span class="target" id="dynamic">Dynamic</span>: Reader and/or Writer are specified by options, with
+defaults if unspecified (e.g. <code class="docutils literal notranslate"><span class="pre">publish</span> <span class="pre">--writer</span> <span class="pre">manpage</span>
+<span class="pre">[options]</span></code>).</p></li>
+</ol>
+<p>Allow common options before subcommands, as in CVS?  Or group all
+options together?  In the case of the <a class="reference internal" href="#fully-qualified">fully qualified</a>
+front ends, all the options will have to be grouped together
+anyway, so there’s no advantage (we can’t use it to avoid
+conflicts) to splitting common and component-specific options
+apart.</p>
+</li>
+<li><p>Parameterize help text &amp; defaults somehow?  Perhaps a callback?  Or
+initialize <code class="docutils literal notranslate"><span class="pre">settings_spec</span></code> in <code class="docutils literal notranslate"><span class="pre">__init__</span></code> or <code class="docutils literal notranslate"><span class="pre">init_options</span></code>?</p></li>
+<li><p>Disable common options that don’t apply?
+(This should now be easier with <code class="docutils literal notranslate"><span class="pre">frontend.filter_settings_spec</span></code>.)</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">--section-numbering</span></code> command line option.  The “sectnum”
+directive should override the <code class="docutils literal notranslate"><span class="pre">--no-section-numbering</span></code> command
+line option then.</p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="website.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Docutils Web Site</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="testing.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Docutils Testing</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, xinetzone |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
+            <a class="muted-link" href="../../../_sources/docutils/docs/dev/todo.txt"
+               rel="nofollow">
+              显示源代码
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            目录
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Docutils To Do List</a><ul>
+<li><a class="reference internal" href="#minimum-requirements-for-python-standard-library-candidacy">Minimum Requirements for Python Standard Library Candidacy</a></li>
+<li><a class="reference internal" href="#repository">Repository</a></li>
+<li><a class="reference internal" href="#general">General</a><ul>
+<li><a class="reference internal" href="#object-numbering-and-object-references">object numbering and object references</a></li>
+<li><a class="reference internal" href="#meta-node">&lt;meta&gt; node</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#documentation">Documentation</a><ul>
+<li><a class="reference internal" href="#user-docs">User Docs</a></li>
+<li><a class="reference internal" href="#developer-docs">Developer Docs</a></li>
+<li><a class="reference internal" href="#how-tos">How-Tos</a></li>
+<li><a class="reference internal" href="#peps">PEPs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#python-source-reader">Python Source Reader</a></li>
+<li><a class="reference internal" href="#restructuredtext-parser">reStructuredText Parser</a><ul>
+<li><a class="reference internal" href="#id9">Bugs</a></li>
+<li><a class="reference internal" href="#misc">Misc</a></li>
+<li><a class="reference internal" href="#adaptable-file-extensions">Adaptable file extensions</a><ul>
+<li><a class="reference internal" href="#questions">Questions</a></li>
+<li><a class="reference internal" href="#proposals">Proposals</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#math-markup">Math Markup</a><ul>
+<li><a class="reference internal" href="#alternative-input-formats">alternative input formats</a></li>
+<li><a class="reference internal" href="#latex-output">LaTeX output</a></li>
+<li><a class="reference internal" href="#html-output">HTML output</a></li>
+<li><a class="reference internal" href="#openoffice-output">OpenOffice output</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#directives">Directives</a></li>
+<li><a class="reference internal" href="#interpreted-text">Interpreted Text</a></li>
+<li><a class="reference internal" href="#doctree-pruning">Doctree pruning</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#unimplemented-transforms">Unimplemented Transforms</a></li>
+<li><a class="reference internal" href="#html-writer">HTML Writer</a></li>
+<li><a class="reference internal" href="#pep-html-writer">PEP/HTML Writer</a></li>
+<li><a class="reference internal" href="#s5-html-writer">S5/HTML Writer</a></li>
+<li><a class="reference internal" href="#epub-html-writer">Epub/HTML Writer</a></li>
+<li><a class="reference internal" href="#latex-writer">LaTeX writer</a><ul>
+<li><a class="reference internal" href="#bug-fixes">Bug fixes</a></li>
+<li><a class="reference internal" href="#generate-clean-and-configurable-latex-source">Generate clean and configurable LaTeX source</a><ul>
+<li><a class="reference internal" href="#configurable-placement-of-figure-and-table-floats">Configurable placement of figure and table floats</a></li>
+<li><a class="reference internal" href="#footnotes">Footnotes</a></li>
+<li><a class="reference internal" href="#other-latex-constructs-and-packages-instead-of-re-implementations">Other LaTeX constructs and packages instead of re-implementations</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#default-layout">Default layout</a><ul>
+<li><a class="reference internal" href="#tables">Tables</a></li>
+<li><a class="reference internal" href="#image-and-figure-directives">Image and figure directives</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#missing-features">Missing features</a><ul>
+<li><a class="reference internal" href="#unicode-to-latex">Unicode to LaTeX</a></li>
+<li><a class="reference internal" href="#xetex-writer">XeTeX writer</a></li>
+<li><a class="reference internal" href="#problematic-urls">problematic URLs</a></li>
+<li><a class="reference internal" href="#add-stylesheet-option">add-stylesheet option</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#front-end-tools">Front-End Tools</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/scripts/main.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    </body>
+</html>

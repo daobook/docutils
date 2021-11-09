@@ -1,0 +1,1476 @@
+<!doctype html>
+<html class="no-js" lang="zh_CN">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="Docutils History" href="HISTORY.html" /><link rel="prev" title="Copying Docutils" href="COPYING.html" />
+
+    <meta name="generator" content="sphinx-4.2.0, furo 2021.10.09"/>
+        <title>1 Docutils FAQ (Frequently Asked Questions) - docutils 0.0.1 文档</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">docutils 0.0.1 文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">docutils 0.0.1 文档</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">概述</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/index.html">Docutils: Documentation Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/mirror/setext.html">Setext 文档镜像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/index.html">Docutils Project Documentation Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">user</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/config.html">Docutils Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/emacs.html">Emacs Support for reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/html.html">Docutils HTML writers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/latex.html"><span class="sectnum">1</span> Generating LaTeX with Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/links.html">Docutils Link List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/mailing-lists.html">Docutils Mailing Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/manpage.html">manpage writer for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/odt.html"><span class="sectnum">1</span> Odt Writer for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/smartquotes.html">Smart Quotes for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/tools.html">Docutils Front-End Tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">api</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/api/cmdline-tool.html">Inside A Docutils Command-Line Front-End Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/api/publisher.html">The Docutils Publisher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/api/runtime-settings.html">Docutils Runtime Settings</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">dev</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/distributing.html">Docutils Distributor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/enthought-plan.html"><span class="sectnum">1</span> Plan for Enthought API Documentation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/enthought-rfp.html"><span class="sectnum">1</span> Enthought API Documentation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/hacking.html">Docutils Hacker’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/policies.html">Docutils Project Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/pysource.html">Python Source Reader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/release.html">Docutils Release Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/repository.html">The Docutils Version Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/semantics.html">Docstring Semantics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/testing.html">Docutils Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/todo.html">Docutils To Do List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/website.html">Docutils Web Site</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">howto</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/howto/html-stylesheets.html">Writing HTML (CSS) Stylesheets for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/howto/i18n.html">Docutils Internationalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/howto/rst-directives.html">Creating reStructuredText Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/howto/rst-roles.html">Creating reStructuredText Interpreted Text Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/howto/security.html">Deploying Docutils Securely</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">peps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html">Rejection Notice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#road-map-to-the-docstring-peps">Road Map to the Docstring PEPs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#project-web-site">Project Web Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0257.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0257.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0257.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0257.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0257.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0257.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html">Rejection Notice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html#project-web-site">Project Web Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#benefits">Benefits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#goals">Goals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#docstring-significant-features">Docstring-Significant Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#questions-answers">Questions &amp; Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#references-footnotes">References &amp; Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#acknowledgements">Acknowledgements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ref</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/doctree.html">The Docutils Document Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/transforms.html">Docutils Transforms</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">docutils other</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="BUGS.html">Docutils Bugs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="COPYING.html">Copying Docutils</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#"><span class="sectnum">1</span> Docutils FAQ (Frequently Asked Questions)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HISTORY.html">Docutils History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html">Docutils 0.18.1b.dev 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RELEASE-NOTES.html">Docutils Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="THANKS.html">Acknowledgements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">reStructuredText</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/rst.html"></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/rst/cheatsheet.html">The reStructuredText Cheat Sheet: Syntax Reminders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/rst/quickstart.html">A ReStructuredText Primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/rst/alternatives.html">A Record of reStructuredText Syntax Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/rst/problems.html">Problems With StructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/rst/definitions.html">reStructuredText Standard Definition Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/rst/directives.html">reStructuredText Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/rst/introduction.html">An Introduction to reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/rst/mathematics.html"><span class="sectnum">1</span> LaTeX syntax for mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/rst/restructuredtext.html">reStructuredText Markup Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/rst/roles.html">reStructuredText Interpreted Text Roles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">sandbox</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sandbox/README.html">Sandbox 自述</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="docutils-faq-frequently-asked-questions">
+<h1><a class="toc-backref" href="#id24"><span class="sectnum">1</span> Docutils FAQ (Frequently Asked Questions)</a><a class="headerlink" href="#docutils-faq-frequently-asked-questions" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>$Date$</p>
+</dd>
+<dt class="field-even">Revision</dt>
+<dd class="field-even"><p>$Revision$</p>
+</dd>
+<dt class="field-odd">Web site</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docutils.sourceforge.io/">https://docutils.sourceforge.io/</a></p>
+</dd>
+<dt class="field-even">Copyright</dt>
+<dd class="field-even"><p>This document has been placed in the public domain.</p>
+</dd>
+</dl>
+<div class="contents topic" id="id1">
+<p class="topic-title">目录</p>
+<ul class="auto-toc simple">
+<li><p><a class="reference internal" href="#docutils-faq-frequently-asked-questions" id="id24"><span class="sectnum">1</span> Docutils FAQ (Frequently Asked Questions)</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#docutils" id="id25"><span class="sectnum">1.1</span> Docutils</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#what-is-docutils" id="id26"><span class="sectnum">1.1.1</span> What is Docutils?</a></p></li>
+<li><p><a class="reference internal" href="#why-is-it-called-docutils" id="id27"><span class="sectnum">1.1.2</span> Why is it called “Docutils”?</a></p></li>
+<li><p><a class="reference internal" href="#is-there-a-gui-authoring-environment-for-docutils" id="id28"><span class="sectnum">1.1.3</span> Is there a GUI authoring environment for Docutils?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-the-status-of-the-docutils-project" id="id29"><span class="sectnum">1.1.4</span> What is the status of the Docutils project?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-the-docutils-project-release-policy" id="id30"><span class="sectnum">1.1.5</span> What is the Docutils project release policy?</a></p></li>
+<li><p><a class="reference internal" href="#how-can-i-get-a-new-feature-into-docutils" id="id31"><span class="sectnum">1.1.6</span> How can I get a new feature into Docutils?</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#restructuredtext" id="id32"><span class="sectnum">1.2</span> reStructuredText</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#what-is-restructuredtext" id="id33"><span class="sectnum">1.2.1</span> What is reStructuredText?</a></p></li>
+<li><p><a class="reference internal" href="#why-is-it-called-restructuredtext" id="id34"><span class="sectnum">1.2.2</span> Why is it called “reStructuredText”?</a></p></li>
+<li><p><a class="reference internal" href="#what-s-the-standard-abbreviation-for-restructuredtext" id="id35"><span class="sectnum">1.2.3</span> What’s the standard abbreviation for “reStructuredText”?</a></p></li>
+<li><p><a class="reference internal" href="#what-s-the-standard-filename-extension-for-a-restructuredtext-file" id="id36"><span class="sectnum">1.2.4</span> What’s the standard filename extension for a reStructuredText file?</a></p></li>
+<li><p><a class="reference internal" href="#are-there-any-restructuredtext-editor-extensions" id="id37"><span class="sectnum">1.2.5</span> Are there any reStructuredText editor extensions?</a></p></li>
+<li><p><a class="reference internal" href="#how-can-i-indicate-the-document-title-subtitle" id="id38"><span class="sectnum">1.2.6</span> How can I indicate the document title?  Subtitle?</a></p></li>
+<li><p><a class="reference internal" href="#how-can-i-represent-esoteric-characters-e-g-character-entities-in-a-document" id="id39"><span class="sectnum">1.2.7</span> How can I represent esoteric characters (e.g. character entities) in a document?</a></p></li>
+<li><p><a class="reference internal" href="#how-can-i-generate-backticks-using-a-scandinavian-keyboard" id="id40"><span class="sectnum">1.2.8</span> How can I generate backticks using a Scandinavian keyboard?</a></p></li>
+<li><p><a class="reference internal" href="#are-there-any-tools-for-html-xml-to-restructuredtext-round-tripping" id="id41"><span class="sectnum">1.2.9</span> Are there any tools for HTML/XML-to-reStructuredText?  (Round-tripping)</a></p></li>
+<li><p><a class="reference internal" href="#are-there-any-wikis-that-use-restructuredtext-syntax" id="id42"><span class="sectnum">1.2.10</span> Are there any Wikis that use reStructuredText syntax?</a></p></li>
+<li><p><a class="reference internal" href="#are-there-any-weblog-blog-projects-that-use-restructuredtext-syntax" id="id43"><span class="sectnum">1.2.11</span> Are there any Weblog (Blog) projects that use reStructuredText syntax?</a></p></li>
+<li><p><a class="reference internal" href="#how-should-i-mark-up-lists" id="id44"><span class="sectnum">1.2.12</span> How should I mark up lists?</a></p></li>
+<li><p><a class="reference internal" href="#could-lists-be-indented-without-generating-block-quotes" id="id45"><span class="sectnum">1.2.13</span> Could lists be indented without generating block quotes?</a></p></li>
+<li><p><a class="reference internal" href="#could-the-requirement-for-blank-lines-around-lists-be-relaxed" id="id46"><span class="sectnum">1.2.14</span> Could the requirement for blank lines around lists be relaxed?</a></p></li>
+<li><p><a class="reference internal" href="#how-can-i-include-mathematical-equations-in-documents" id="id47"><span class="sectnum">1.2.15</span> How can I include mathematical equations in documents?</a></p></li>
+<li><p><a class="reference internal" href="#is-nested-inline-markup-possible" id="id48"><span class="sectnum">1.2.16</span> Is nested inline markup possible?</a></p></li>
+<li><p><a class="reference internal" href="#how-to-indicate-a-line-break-or-a-significant-newline" id="id49"><span class="sectnum">1.2.17</span> How to indicate a line break or a significant newline?</a></p></li>
+<li><p><a class="reference internal" href="#a-url-containing-asterisks-doesn-t-work-what-to-do" id="id50"><span class="sectnum">1.2.18</span> A URL containing asterisks doesn’t work.  What to do?</a></p></li>
+<li><p><a class="reference internal" href="#how-can-i-make-a-literal-block-with-some-formatting" id="id51"><span class="sectnum">1.2.19</span> How can I make a literal block with <em>some</em> formatting?</a></p></li>
+<li><p><a class="reference internal" href="#can-restructuredtext-be-used-for-web-or-generic-templating" id="id52"><span class="sectnum">1.2.20</span> Can reStructuredText be used for web or generic templating?</a></p></li>
+<li><p><a class="reference internal" href="#how-can-i-mark-up-a-faq-or-other-list-of-questions-answers" id="id53"><span class="sectnum">1.2.21</span> How can I mark up a FAQ or other list of questions &amp; answers?</a></p></li>
+<li><p><a class="reference internal" href="#can-i-produce-documents-in-right-to-left-languages" id="id54"><span class="sectnum">1.2.22</span> Can I produce documents in right-to-left languages?</a></p></li>
+<li><p><a class="reference internal" href="#what-s-the-official-mime-type-for-restructuredtext-data" id="id55"><span class="sectnum">1.2.23</span> What’s the official MIME type for reStructuredText data?</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#html-writer" id="id56"><span class="sectnum">1.3</span> HTML Writer</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#what-is-the-status-of-the-html-writer" id="id57"><span class="sectnum">1.3.1</span> What is the status of the HTML Writer?</a></p></li>
+<li><p><a class="reference internal" href="#what-browsers-are-supported" id="id58"><span class="sectnum">1.3.2</span> What browsers are supported?</a></p></li>
+<li><p><a class="reference internal" href="#unexpected-results-from-tools-rst2html-py-h1-h1-instead-of-h1-h2-why" id="id59"><span class="sectnum">1.3.3</span> Unexpected results from tools/rst2html.py: H1, H1 instead of H1, H2.  Why?</a></p></li>
+<li><p><a class="reference internal" href="#how-are-lists-formatted-in-html" id="id60"><span class="sectnum">1.3.4</span> How are lists formatted in HTML?</a></p></li>
+<li><p><a class="reference internal" href="#why-do-enumerated-lists-only-use-numbers-no-letters-or-roman-numerals" id="id61"><span class="sectnum">1.3.5</span> Why do enumerated lists only use numbers (no letters or roman numerals)?</a></p></li>
+<li><p><a class="reference internal" href="#there-appear-to-be-garbage-characters-in-the-html-what-s-up" id="id62"><span class="sectnum">1.3.6</span> There appear to be garbage characters in the HTML.  What’s up?</a></p></li>
+<li><p><a class="reference internal" href="#how-can-i-retrieve-the-body-of-the-html-document" id="id63"><span class="sectnum">1.3.7</span> How can I retrieve the body of the HTML document?</a></p></li>
+<li><p><a class="reference internal" href="#why-is-the-docutils-xhtml-served-as-content-type-text-html" id="id64"><span class="sectnum">1.3.8</span> Why is the Docutils XHTML served as “Content-type: text/html”?</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#python-source-reader" id="id65"><span class="sectnum">1.4</span> Python Source Reader</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#can-i-use-docutils-for-python-auto-documentation" id="id66"><span class="sectnum">1.4.1</span> Can I use Docutils for Python auto-documentation?</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#miscellaneous" id="id67"><span class="sectnum">1.5</span> Miscellaneous</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#is-the-docutils-document-model-based-on-any-existing-xml-models" id="id68"><span class="sectnum">1.5.1</span> Is the Docutils document model based on any existing XML models?</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>This is a work in progress.  If you are reading a local copy, the
+<a class="reference external" href="https://docutils.sourceforge.io/FAQ.html">master copy</a> might be newer.  This document uses are relative links;
+if they don’t work, please use the <a class="reference external" href="https://docutils.sourceforge.io/FAQ.html">master copy</a>.</p>
+<p>Please feel free to ask questions and/or provide answers; send email
+to the <a class="reference external" href="docs/user/mailing-lists.html#docutils-users">Docutils-users</a> mailing list.  Project members should feel
+free to edit the source text file directly.</p>
+<section id="docutils">
+<h2><a class="toc-backref" href="#id25"><span class="sectnum">1.1</span> Docutils</a><a class="headerlink" href="#docutils" title="永久链接至标题">¶</a></h2>
+<section id="what-is-docutils">
+<h3><a class="toc-backref" href="#id26"><span class="sectnum">1.1.1</span> What is Docutils?</a><a class="headerlink" href="#what-is-docutils" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://docutils.sourceforge.io/">Docutils</a> is a system for processing plaintext documentation into
+useful formats, such as HTML, XML, and LaTeX.  It supports multiple
+types of input, such as standalone files, <a class="reference external" href="http://www.python.org/peps/pep-0012.html">PEPs (Python Enhancement
+Proposals)</a>, and string input. Client code may add other input types,
+e.g. <a class="reference external" href="http://sphinx.pocoo.org/index.html">Sphinx</a> comes with an extension to extract inline documentation
+from Python modules and packages.</p>
+<p>The Docutils distribution consists of:</p>
+<ul class="simple">
+<li><p>a library (the “docutils” package), which <a class="reference external" href="docs/api/publisher.html">can be used by client
+code</a>;</p></li>
+<li><p>several <a class="reference external" href="docs/user/tools.html">front-end tools</a> (such as <code class="docutils literal notranslate"><span class="pre">rst2html.py</span></code>, which converts
+reStructuredText input into HTML output);</p></li>
+<li><p>a <a class="reference external" href="docs/dev/testing.html">test suite</a>; and</p></li>
+<li><p><a class="reference external" href="docs/index.html">documentation</a>.</p></li>
+</ul>
+<p>For an overview of the Docutils project implementation, see <a class="reference external" href="http://www.python.org/peps/pep-0258.html">PEP
+258</a>, “Docutils Design Specification”.</p>
+<p>Docutils is implemented in <a class="reference external" href="http://www.python.org/">Python</a>.</p>
+</section>
+<section id="why-is-it-called-docutils">
+<h3><a class="toc-backref" href="#id27"><span class="sectnum">1.1.2</span> Why is it called “Docutils”?</a><a class="headerlink" href="#why-is-it-called-docutils" title="永久链接至标题">¶</a></h3>
+<p>Docutils is short for “Python Documentation Utilities”.  The name
+“Docutils” was inspired by “Distutils”, the Python Distribution
+Utilities architected by Greg Ward, a component of Python’s standard
+library.</p>
+<p>The earliest known use of the term “docutils” in a Python context was
+a <a class="reference external" href="http://mail.python.org/pipermail/doc-sig/1999-December/000878.html">fleeting reference</a> in a message by Fred Drake on 1999-12-02 in
+the Python Doc-SIG mailing list.  It was suggested <a class="reference external" href="http://mail.python.org/pipermail/doc-sig/2000-November/001252.html">as a project
+name</a> on 2000-11-27 on Doc-SIG, again by Fred Drake, in response to
+a question from Tony “Tibs” Ibbs: “What do we want to <em>call</em> this
+thing?”.  This was shortly after David Goodger first <a class="reference external" href="http://mail.python.org/pipermail/doc-sig/2000-November/001239.html">announced
+reStructuredText</a> on Doc-SIG.</p>
+<p>Tibs used the name “Docutils” for <a class="reference external" href="http://homepage.ntlworld.com/tibsnjoan/docutils/STpy.html">his effort</a> “to document what the
+Python docutils package should support, with a particular emphasis on
+documentation strings”.  Tibs joined the current project (and its
+predecessors) and graciously donated the name.</p>
+<p>For more history of reStructuredText and the Docutils project, see <a class="reference external" href="docs/ref/rst/introduction.html">An
+Introduction to reStructuredText</a>.</p>
+<p>Please note that the name is “Docutils”, not “DocUtils” or “Doc-Utils”
+or any other variation.  It is pronounced as in “DOCumentation
+UTILitieS”, with emphasis on the first syllable.</p>
+</section>
+<section id="is-there-a-gui-authoring-environment-for-docutils">
+<h3><a class="toc-backref" href="#id28"><span class="sectnum">1.1.3</span> Is there a GUI authoring environment for Docutils?</a><a class="headerlink" href="#is-there-a-gui-authoring-environment-for-docutils" title="永久链接至标题">¶</a></h3>
+<p>See the links to <a class="reference external" href="docs/user/links.html#editors">editors</a> supporting reStructuredText.</p>
+</section>
+<section id="what-is-the-status-of-the-docutils-project">
+<h3><a class="toc-backref" href="#id29"><span class="sectnum">1.1.4</span> What is the status of the Docutils project?</a><a class="headerlink" href="#what-is-the-status-of-the-docutils-project" title="永久链接至标题">¶</a></h3>
+<p>Docutils is mainly stable, with documented APIs and architecture
+subject to change after announcement and a transition period.</p>
+<p>We fix bugs as they are reported.  This means the code from the
+<a class="reference external" href="docs/dev/repository.html">repository</a> (or the <a class="reference external" href="https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/">snapshots</a>) is the most stable as well as the most
+featureful most of the time.</p>
+</section>
+<section id="what-is-the-docutils-project-release-policy">
+<h3><a class="toc-backref" href="#id30"><span class="sectnum">1.1.5</span> What is the Docutils project release policy?</a><a class="headerlink" href="#what-is-the-docutils-project-release-policy" title="永久链接至标题">¶</a></h3>
+<p>Besides the regular <a class="reference external" href="https://pypi.org/project/docutils/#history">releases</a>, we provide automatically-generated
+<a class="reference external" href="https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/">snapshots</a> which always contain the latest code from the <a class="reference external" href="docs/dev/repository.html">repository</a>.
+As the project matures, we may formalize on a
+stable/development-branch scheme, but we’re not using anything like
+that yet.</p>
+</section>
+<section id="how-can-i-get-a-new-feature-into-docutils">
+<h3><a class="toc-backref" href="#id31"><span class="sectnum">1.1.6</span> How can I get a new feature into Docutils?</a><a class="headerlink" href="#how-can-i-get-a-new-feature-into-docutils" title="永久链接至标题">¶</a></h3>
+<p>Present your idea at the <a class="reference external" href="docs/user/mailing-lists.html#docutils-develop">docutils-develop</a> mailing list
+or file a ticket at Docutils’ <a class="reference external" href="http://sourceforge.net/p/docutils/feature-requests/">feature request tracker</a>.</p>
+<p>See the <a class="reference external" href="docs/dev/policies.html#how-to-get-a-new-feature-into-docutils">Docutils Policies</a> for a more detailed answer.</p>
+</section>
+</section>
+<section id="restructuredtext">
+<h2><a class="toc-backref" href="#id32"><span class="sectnum">1.2</span> reStructuredText</a><a class="headerlink" href="#restructuredtext" title="永久链接至标题">¶</a></h2>
+<section id="what-is-restructuredtext">
+<h3><a class="toc-backref" href="#id33"><span class="sectnum">1.2.1</span> What is reStructuredText?</a><a class="headerlink" href="#what-is-restructuredtext" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="https://docutils.sourceforge.io/rst.html">reStructuredText</a> is an easy-to-read, what-you-see-is-what-you-get
+plaintext markup syntax and parser system.  The reStructuredText
+parser is a component of <a class="reference external" href="https://docutils.sourceforge.io/">Docutils</a>.  reStructuredText is a revision
+and reinterpretation of the <a class="reference external" href="http://dev.zope.org/Members/jim/StructuredTextWiki/FrontPage/">StructuredText</a> and <a class="reference external" href="https://docutils.sourceforge.io/mirror/setext.html">Setext</a> lightweight
+markup systems.</p>
+<p>If you are reading this on the web, you can see for yourself.  <a class="reference external" href="FAQ.txt">The
+source for this FAQ</a> is written in reStructuredText; open
+it in another window and compare them side by side.</p>
+<p><a class="reference external" href="docs/user/rst/quickstart.html">A ReStructuredText Primer</a> and the <a class="reference external" href="docs/user/rst/quickref.html">Quick reStructuredText</a> user
+reference are a good place to start.  The <a class="reference external" href="docs/ref/rst/restructuredtext.html">reStructuredText Markup
+Specification</a> is a detailed technical specification.</p>
+</section>
+<section id="why-is-it-called-restructuredtext">
+<h3><a class="toc-backref" href="#id34"><span class="sectnum">1.2.2</span> Why is it called “reStructuredText”?</a><a class="headerlink" href="#why-is-it-called-restructuredtext" title="永久链接至标题">¶</a></h3>
+<p>The name came from a combination of “StructuredText”, one of
+reStructuredText’s predecessors, with “re”: “revised”, “reworked”, and
+“reinterpreted”, and as in the <code class="docutils literal notranslate"><span class="pre">re.py</span></code> regular expression module.
+For a detailed history of reStructuredText and the Docutils project,
+see <a class="reference external" href="docs/ref/rst/introduction.html">An Introduction to reStructuredText</a>.</p>
+<p>“reStructuredText” is <strong>ONE</strong> word, <em>not two!</em></p>
+</section>
+<section id="what-s-the-standard-abbreviation-for-restructuredtext">
+<h3><a class="toc-backref" href="#id35"><span class="sectnum">1.2.3</span> What’s the standard abbreviation for “reStructuredText”?</a><a class="headerlink" href="#what-s-the-standard-abbreviation-for-restructuredtext" title="永久链接至标题">¶</a></h3>
+<p>“RST” and “ReST” (or “reST”) are both acceptable.  Care should be
+taken with capitalization, to avoid confusion with “<a class="reference external" href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a>”, an
+acronym for “Representational State Transfer”.</p>
+<p>The abbreviations “reSTX” and “rSTX”/”rstx” should <strong>not</strong> be used;
+they overemphasize reStructuredText’s predecessor, Zope’s
+StructuredText.</p>
+</section>
+<section id="what-s-the-standard-filename-extension-for-a-restructuredtext-file">
+<h3><a class="toc-backref" href="#id36"><span class="sectnum">1.2.4</span> What’s the standard filename extension for a reStructuredText file?</a><a class="headerlink" href="#what-s-the-standard-filename-extension-for-a-restructuredtext-file" title="永久链接至标题">¶</a></h3>
+<p>It’s “.txt”.  Some people would like to use “.rest” or “.rst” or
+“.restx”, but why bother?  ReStructuredText source files are meant to
+be readable as plaintext, and most operating systems already associate
+“.txt” with text files.  Using a specialized filename extension would
+require that users alter their OS settings, which is something that
+many users will not be willing or able to do.</p>
+<p>Also see <a class="reference internal" href="#what-s-the-official-mime-type-for-restructuredtext-data">What’s the official MIME type for reStructuredText data?</a></p>
+</section>
+<section id="are-there-any-restructuredtext-editor-extensions">
+<h3><a class="toc-backref" href="#id37"><span class="sectnum">1.2.5</span> Are there any reStructuredText editor extensions?</a><a class="headerlink" href="#are-there-any-restructuredtext-editor-extensions" title="永久链接至标题">¶</a></h3>
+<p>See the list of <a class="reference external" href="docs/user/links.html#editors">editors</a> supporting reStructuredText.</p>
+</section>
+<section id="how-can-i-indicate-the-document-title-subtitle">
+<h3><a class="toc-backref" href="#id38"><span class="sectnum">1.2.6</span> How can I indicate the document title?  Subtitle?</a><a class="headerlink" href="#how-can-i-indicate-the-document-title-subtitle" title="永久链接至标题">¶</a></h3>
+<p>A uniquely-adorned section title at the beginning of a document is
+treated specially, as the document title.  Similarly, a
+uniquely-adorned section title immediately after the document title
+becomes the document subtitle.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">Document</span> <span class="n">Title</span>
+<span class="o">==========================</span>
+
+<span class="n">This</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">Document</span> <span class="n">Subtitle</span>
+<span class="o">-----------------------------</span>
+
+<span class="n">Here</span><span class="s1">'s an ordinary paragraph.</span>
+</pre></div>
+</div>
+<p>Counterexample:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Here</span><span class="s1">'s an ordinary paragraph.</span>
+
+<span class="n">This</span> <span class="ow">is</span> <span class="o">*</span><span class="ow">not</span><span class="o">*</span> <span class="n">a</span> <span class="n">Document</span> <span class="n">Title</span>
+<span class="o">==============================</span>
+
+<span class="n">The</span> <span class="s2">"ordinary paragraph"</span> <span class="n">above</span> <span class="n">the</span> <span class="n">section</span> <span class="n">title</span>
+<span class="n">prevents</span> <span class="n">it</span> <span class="kn">from</span> <span class="nn">becoming</span> <span class="n">the</span> <span class="n">document</span> <span class="n">title</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Another counterexample:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">the</span> <span class="n">Document</span> <span class="n">Title</span><span class="p">,</span>  <span class="n">because</span><span class="o">...</span>
+<span class="o">===========================================</span>
+
+<span class="n">Here</span><span class="s1">'s an ordinary paragraph.</span>
+
+<span class="o">...</span> <span class="n">the</span> <span class="n">title</span> <span class="n">adornment</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">unique</span>
+<span class="o">=====================================</span>
+
+<span class="n">Another</span> <span class="n">ordinary</span> <span class="n">paragraph</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="how-can-i-represent-esoteric-characters-e-g-character-entities-in-a-document">
+<h3><a class="toc-backref" href="#id39"><span class="sectnum">1.2.7</span> How can I represent esoteric characters (e.g. character entities) in a document?</a><a class="headerlink" href="#how-can-i-represent-esoteric-characters-e-g-character-entities-in-a-document" title="永久链接至标题">¶</a></h3>
+<p>For example, say you want an em-dash (XML character entity &amp;mdash;,
+Unicode character U+2014) in your document: use a real em-dash.
+Insert concrete characters (e.g. type a <em>real</em> em-dash) into your
+input file, using whatever encoding suits your application, and tell
+Docutils the input encoding.  Docutils uses Unicode internally, so the
+em-dash character is a real em-dash internally.</p>
+<p>Emacs users should refer to the <a class="reference external" href="tools/editors/emacs/README.html">Emacs Support for reStructuredText</a>
+document.  Tips for other editors are welcome.</p>
+<p>ReStructuredText has no character entity subsystem; it doesn’t know
+anything about XML charents.  To Docutils, “&amp;mdash;” in input text is
+7 discrete characters; no interpretation happens.  When writing HTML,
+the “&amp;” is converted to “&amp;amp;”, so in the raw output you’d see
+“&amp;amp;mdash;”.  There’s no difference in interpretation for text
+inside or outside inline literals or literal blocks – there’s no
+character entity interpretation in either case.</p>
+<p>If you can’t use a Unicode-compatible encoding and must rely on 7-bit
+ASCII, there is a workaround.  New in Docutils 0.3.10 is a set of
+<a class="reference external" href="docs/ref/rst/definitions.html">Standard Substitution Definition Sets</a>, which provide equivalents of
+XML &amp; HTML character entity sets as substitution definitions.  For
+example, the Japanese yen currency symbol can be used as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. include:: &lt;xhtml1-lat1.txt&gt;
+
+|yen| 600 for a complete meal?  That's cheap!
+</pre></div>
+</div>
+<p>Thanks to David Priest for the original idea.</p>
+<p>If you insist on using XML-style charents, you’ll have to implement a
+pre-processing system to convert to UTF-8 or something.  That
+introduces complications though; you can no longer <em>write</em> about
+charents naturally; instead of writing “&amp;mdash;” you’d have to write
+“&amp;amp;mdash;”.</p>
+<p>For the common case of long dashes, you might also want to insert the
+following substitution definitions into your document (both of them are
+using the “<a class="reference external" href="docs/ref/rst/directives.html#unicode-character-codes">unicode</a>” directive):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="o">|--|</span> <span class="n">unicode</span><span class="p">::</span> <span class="n">U</span><span class="o">+</span><span class="mi">2013</span>   <span class="o">..</span> <span class="n">en</span> <span class="n">dash</span>
+<span class="o">..</span> <span class="o">|---|</span> <span class="n">unicode</span><span class="p">::</span> <span class="n">U</span><span class="o">+</span><span class="mi">2014</span>  <span class="o">..</span> <span class="n">em</span> <span class="n">dash</span><span class="p">,</span> <span class="n">trimming</span> <span class="n">surrounding</span> <span class="n">whitespace</span>
+   <span class="p">:</span><span class="n">trim</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>Now you can write dashes using pure ASCII: “<code class="docutils literal notranslate"><span class="pre">foo</span> <span class="pre">|--|</span> <span class="pre">bar;</span> <span class="pre">foo</span> <span class="pre">|---|</span>
+<span class="pre">bar</span></code>”, rendered as “foo – bar; foo—bar”.
+The <code class="docutils literal notranslate"><span class="pre">:trim:</span></code> option for
+the em dash is necessary because you cannot write “<code class="docutils literal notranslate"><span class="pre">foo|---|bar</span></code>”;
+thus you need to add spaces (”<code class="docutils literal notranslate"><span class="pre">foo</span> <span class="pre">|---|</span> <span class="pre">bar</span></code>”) and advise the
+reStructuredText parser to trim the spaces.</p>
+</section>
+<section id="how-can-i-generate-backticks-using-a-scandinavian-keyboard">
+<h3><a class="toc-backref" href="#id40"><span class="sectnum">1.2.8</span> How can I generate backticks using a Scandinavian keyboard?</a><a class="headerlink" href="#how-can-i-generate-backticks-using-a-scandinavian-keyboard" title="永久链接至标题">¶</a></h3>
+<p>The use of backticks in reStructuredText is a bit awkward with
+Scandinavian keyboards, where the backtick is a “dead” key.  To get
+one ` character one must press SHIFT-` + SPACE.</p>
+<p>Unfortunately, with all the variations out there, there’s no way to
+please everyone.  For Scandinavian programmers and technical writers,
+this is not limited to reStructuredText but affects many languages and
+environments.</p>
+<p>Possible solutions include</p>
+<ul>
+<li><p>If you have to input a lot of backticks, simply type one in the
+normal/awkward way, select it, copy and then paste the rest (CTRL-V
+is a lot faster than SHIFT-` + SPACE).</p></li>
+<li><p>Use keyboard macros.</p></li>
+<li><p>Remap the keyboard.  The Scandinavian keyboard layout is awkward for
+other programming/technical characters too; for example, []{}
+etc. are a bit awkward compared to US keyboards.</p>
+<p>According to Axel Kollmorgen,</p>
+<blockquote>
+<div><p>Under Windows, you can use the <a class="reference external" href="http://www.microsoft.com/globaldev/tools/msklc.mspx">Microsoft Keyboard Layout Creator</a> to easily
+map the backtick key to a real backtick (no dead key). took me
+five minutes to load my default (german) keyboard layout, untick
+“Dead Key?” from the backtick key properties (“in all shift
+states”), “build dll and setup package”, install the generated
+.msi, and add my custom keyboard layout via Control Panel &gt;
+Regional and Language Options &gt; Languages &gt; Details &gt; Add
+Keyboard layout (and setting it as default “when you start your
+computer”).</p>
+</div></blockquote>
+</li>
+<li><p>Use a virtual/screen keyboard or character palette, such as:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://keyboard.lab.co.il/">Web-based keyboards</a> (IE only
+unfortunately).</p></li>
+<li><p>Windows: <a class="reference external" href="http://www.lakefolks.org/cnt/">Click-N-Type</a>.</p></li>
+<li><p>Mac OS X: the Character Palette can store a set of favorite
+characters for easy input.  Open System Preferences,
+International, Input Menu tab, enable “Show input menu in menu
+bar”, and be sure that Character Palette is enabled in the list.</p></li>
+</ul>
+</li>
+</ul>
+<p>If anyone knows of other/better solutions, please <a class="reference external" href="docs/user/mailing-lists.html#docutils-users">let us know</a>.</p>
+</section>
+<section id="are-there-any-tools-for-html-xml-to-restructuredtext-round-tripping">
+<h3><a class="toc-backref" href="#id41"><span class="sectnum">1.2.9</span> Are there any tools for HTML/XML-to-reStructuredText?  (Round-tripping)</a><a class="headerlink" href="#are-there-any-tools-for-html-xml-to-restructuredtext-round-tripping" title="永久链接至标题">¶</a></h3>
+<p>People have tossed the idea around, and some implementations of
+reStructuredText-generating tools can be found in the <a class="reference external" href="docs/user/links.html">Docutils Link
+List</a>.</p>
+<p>There’s no reason why reStructuredText should not be round-trippable
+to/from XML; any technicalities which prevent round-tripping would be
+considered bugs.  Whitespace would not be identical, but paragraphs
+shouldn’t suffer.  The tricky parts would be the smaller details, like
+links and IDs and other bookkeeping.</p>
+<p>For HTML, true round-tripping may not be possible.  Even adding lots
+of extra “class” attributes may not be enough.  A “simple HTML” to RST
+filter is possible – for some definition of “simple HTML” – but HTML
+is used as dumb formatting so much that such a filter may not be
+particularly useful.  An 80/20 approach should work though: build a
+tool that does 80% of the work automatically, leaving the other 20%
+for manual tweaks.</p>
+</section>
+<section id="are-there-any-wikis-that-use-restructuredtext-syntax">
+<h3><a class="toc-backref" href="#id42"><span class="sectnum">1.2.10</span> Are there any Wikis that use reStructuredText syntax?</a><a class="headerlink" href="#are-there-any-wikis-that-use-restructuredtext-syntax" title="永久链接至标题">¶</a></h3>
+<p>There are several, with various degrees of completeness.  With no
+implied endorsement or recommendation, and in no particular order:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://docutils.sf.net/sandbox/ianb/wiki/Wiki.py">Ian Bicking’s experimental code</a></p></li>
+<li><p><a class="reference external" href="http://moinmoin.wikiwikiweb.de/">MoinMoin</a> has some support;
+<a class="reference external" href="http://moinmoin.wikiwikiweb.de/RestSample">here’s a sample</a></p></li>
+<li><p>Zope-based <a class="reference external" href="http://zwiki.org/">Zwiki</a></p></li>
+<li><p>Zope3-based Zwiki (in the Zope 3 source tree as
+<code class="docutils literal notranslate"><span class="pre">zope.products.zwiki</span></code>)</p></li>
+<li><p><a class="reference external" href="http://mithrandr.moria.org/code/stikiwiki/">StikiWiki</a></p></li>
+<li><p><a class="reference external" href="http://trac.edgewall.com//">Trac</a> <a class="reference external" href="http://trac.edgewall.com//wiki/WikiRestructuredText">supports using
+reStructuredText</a> as
+an alternative to wiki markup. This includes support for <a class="reference external" href="http://trac.edgewall.com//wiki/TracLinks">TracLinks</a> from within
+RST text via a custom RST reference-directive or, even easier, an
+interpreted text role ‘trac’</p></li>
+</ul>
+<p>Please <a class="reference external" href="docs/user/mailing-lists.html#docutils-users">let us know</a> of any other reStructuredText Wikis.</p>
+</section>
+<section id="are-there-any-weblog-blog-projects-that-use-restructuredtext-syntax">
+<h3><a class="toc-backref" href="#id43"><span class="sectnum">1.2.11</span> Are there any Weblog (Blog) projects that use reStructuredText syntax?</a><a class="headerlink" href="#are-there-any-weblog-blog-projects-that-use-restructuredtext-syntax" title="永久链接至标题">¶</a></h3>
+<p>With no implied endorsement or recommendation, and in no particular
+order:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.voidspace.org.uk/python/firedrop2/">Firedrop</a></p></li>
+<li><p><a class="reference external" href="http://pyblosxom.sourceforge.net/">PyBloxsom</a></p></li>
+<li><p><a class="reference external" href="http://lino.sourceforge.net/webman.html">Lino WebMan</a></p></li>
+<li><p><a class="reference external" href="http://blog.getpelican.com/">Pelican</a>
+(also  listed <a class="reference external" href="http://pypi.python.org/pypi/pelican">on PyPi</a>)</p></li>
+</ul>
+<p>Please <a class="reference external" href="docs/user/mailing-lists.html#docutils-users">let us know</a> of any other reStructuredText Blogs.</p>
+</section>
+<section id="how-should-i-mark-up-lists">
+<span id="can-lists-be-indented-without-generating-block-quotes"></span><h3><a class="toc-backref" href="#id44"><span class="sectnum">1.2.12</span> How should I mark up lists?</a><a class="headerlink" href="#how-should-i-mark-up-lists" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="docs/ref/rst/restructuredtext.html#bullet-lists">Bullet</a> &amp; <a class="reference external" href="docs/ref/rst/restructuredtext.html#enumerated-lists">enumerated</a> list markup is very intuitive but there are 2
+points that must be noted:</p>
+<ol class="arabic">
+<li><p>Lists should <strong>not</strong> be indented.  This is correct:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">paragraph</span>
+
+<span class="o">*</span> <span class="nb">list</span> <span class="n">item</span> <span class="mi">1</span>
+
+  <span class="o">*</span> <span class="n">nested</span> <span class="n">item</span> <span class="mf">1.1</span>
+  <span class="o">*</span> <span class="n">nested</span> <span class="n">item</span> <span class="mf">1.2</span>
+
+<span class="o">*</span> <span class="nb">list</span> <span class="n">item</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>while this is probably incorrect:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">paragraph</span>
+
+  <span class="o">*</span> <span class="nb">list</span> <span class="n">item</span> <span class="mi">1</span>
+
+      <span class="o">*</span> <span class="n">nested</span> <span class="n">item</span> <span class="mf">1.1</span>
+      <span class="o">*</span> <span class="n">nested</span> <span class="n">item</span> <span class="mf">1.2</span>
+
+  <span class="o">*</span> <span class="nb">list</span> <span class="n">item</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>The extra indentation (of the list containing items 1.1 and 1.2) is
+recognized as a block quote.  This is usually not what you mean and
+it causes the list in the output to be indented too much.</p>
+</li>
+<li><p>There <strong>must</strong> be blank lines around list items, except between
+items of the same level, where blank lines are optional.  The
+example above shows this.</p></li>
+</ol>
+<p>Note that formatting of the <em>output</em> is independent of the input, and
+is decided by the writer and the stylesheet.  For instance, lists
+<em>are</em> indented in HTML output by default.  See <a class="reference internal" href="#how-are-lists-formatted-in-html">How are lists
+formatted in HTML?</a> for details.</p>
+</section>
+<section id="could-lists-be-indented-without-generating-block-quotes">
+<h3><a class="toc-backref" href="#id45"><span class="sectnum">1.2.13</span> Could lists be indented without generating block quotes?</a><a class="headerlink" href="#could-lists-be-indented-without-generating-block-quotes" title="永久链接至标题">¶</a></h3>
+<p>Some people like to write lists with indentation but don’t intend a
+blockquote context.  There has been a lot of discussion about allowing
+this in reStructuredText, but there are some issues that would need to
+be resolved before it could be implemented.  There is a summary of the
+issues and pointers to the discussions in <a class="reference external" href="docs/dev/todo.html#indented-lists">the to-do list</a>.</p>
+</section>
+<section id="could-the-requirement-for-blank-lines-around-lists-be-relaxed">
+<h3><a class="toc-backref" href="#id46"><span class="sectnum">1.2.14</span> Could the requirement for blank lines around lists be relaxed?</a><a class="headerlink" href="#could-the-requirement-for-blank-lines-around-lists-be-relaxed" title="永久链接至标题">¶</a></h3>
+<p>Short answer: no.</p>
+<p>In reStructuredText, it would be impossible to unambiguously mark up
+and parse lists without blank lines before and after.  Deeply nested
+lists may look ugly with so many blank lines, but it’s a price we pay
+for unambiguous markup.  Some other plaintext markup systems do not
+require blank lines in nested lists, but they have to compromise
+somehow, either accepting ambiguity or requiring extra complexity.
+For example, <a class="reference external" href="http://epydoc.sf.net/epytext.html#list">Epytext</a> does
+not require blank lines around lists, but it does require that lists
+be indented and that ambiguous cases be escaped.</p>
+</section>
+<section id="how-can-i-include-mathematical-equations-in-documents">
+<h3><a class="toc-backref" href="#id47"><span class="sectnum">1.2.15</span> How can I include mathematical equations in documents?</a><a class="headerlink" href="#how-can-i-include-mathematical-equations-in-documents" title="永久链接至标题">¶</a></h3>
+<p>Use the <a class="reference external" href="docs/ref/rst/directives.html#math">math directive</a> and <a class="reference external" href="docs/ref/rst/roles.html#math">math role</a>, available since Docutils 0.8.</p>
+</section>
+<section id="is-nested-inline-markup-possible">
+<h3><a class="toc-backref" href="#id48"><span class="sectnum">1.2.16</span> Is nested inline markup possible?</a><a class="headerlink" href="#is-nested-inline-markup-possible" title="永久链接至标题">¶</a></h3>
+<p>Not currently, no.  It’s on the <a class="reference external" href="docs/dev/todo.html#nested-inline-markup">to-do list</a> (<a class="reference external" href="docs/dev/rst/alternatives.html#nested-inline-markup">details here</a>), and
+hopefully will be part of the reStructuredText parser soon.  At that
+time, markup like this will become possible:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Here is some *emphasized text containing a `hyperlink`_ and
+``inline literals``*.
+</pre></div>
+</div>
+<p>There are workarounds, but they are either convoluted or ugly or both.
+They are not recommended.</p>
+<ul>
+<li><p>Inline markup can be combined with hyperlinks using <a class="reference external" href="docs/ref/rst/restructuredtext.html#substitution-definitions">substitution
+definitions</a> and <a class="reference external" href="docs/ref/rst/restructuredtext.html#substitution-references">references</a> with the <a class="reference external" href="docs/ref/rst/directives.html#replace">“replace” directive</a>.
+For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Here</span> <span class="ow">is</span> <span class="n">an</span> <span class="o">|</span><span class="n">emphasized</span> <span class="n">hyperlink</span><span class="o">|</span><span class="n">_</span><span class="o">.</span>
+
+<span class="o">..</span> <span class="o">|</span><span class="n">emphasized</span> <span class="n">hyperlink</span><span class="o">|</span> <span class="n">replace</span><span class="p">::</span> <span class="o">*</span><span class="n">emphasized</span> <span class="n">hyperlink</span><span class="o">*</span>
+<span class="o">..</span> <span class="n">_emphasized</span> <span class="n">hyperlink</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">org</span>
+</pre></div>
+</div>
+<p>It is not possible for just a portion of the replacement text to be
+a hyperlink; it’s the entire replacement text or nothing.</p>
+</li>
+<li><p>The <a class="reference external" href="docs/ref/rst/directives.html#raw">“raw” directive</a> can be used to insert raw HTML into HTML
+output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Here</span> <span class="ow">is</span> <span class="n">some</span> <span class="o">|</span><span class="n">stuff</span><span class="o">|.</span>
+
+<span class="o">..</span> <span class="o">|</span><span class="n">stuff</span><span class="o">|</span> <span class="n">raw</span><span class="p">::</span> <span class="n">html</span>
+
+   <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">emphasized</span> <span class="n">text</span> <span class="n">containing</span> <span class="n">a</span>
+   <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">"http://example.org"</span><span class="o">&gt;</span><span class="n">hyperlink</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="ow">and</span>
+   <span class="o">&lt;</span><span class="n">tt</span><span class="o">&gt;</span><span class="n">inline</span> <span class="n">literals</span><span class="o">&lt;/</span><span class="n">tt</span><span class="o">&gt;&lt;/</span><span class="n">em</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Raw LaTeX is supported for LaTeX output, etc.</p>
+</li>
+</ul>
+</section>
+<section id="how-to-indicate-a-line-break-or-a-significant-newline">
+<h3><a class="toc-backref" href="#id49"><span class="sectnum">1.2.17</span> How to indicate a line break or a significant newline?</a><a class="headerlink" href="#how-to-indicate-a-line-break-or-a-significant-newline" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="docs/ref/rst/restructuredtext.html#line-blocks">Line blocks</a> are designed for address blocks, verse, and other
+cases where line breaks are significant and must be preserved.  Unlike
+literal blocks, the typeface is not changed, and inline markup is
+recognized.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>| A one, two, a one two three four
+|
+| Half a bee, philosophically,
+|     must, *ipso facto*, half not be.
+| But half the bee has got to be,
+|     *vis a vis* its entity.  D'you see?
+|
+| But can a bee be said to be
+|     or not to be an entire bee,
+|         when half the bee is not a bee,
+|             due to some ancient injury?
+|
+| Singing...
+</pre></div>
+</div>
+<p>Here’s a workaround for manually inserting explicit line breaks in
+HTML output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="o">|</span><span class="n">br</span><span class="o">|</span> <span class="n">raw</span><span class="p">::</span> <span class="n">html</span>
+
+   <span class="o">&lt;</span><span class="n">br</span> <span class="o">/&gt;</span>
+
+<span class="n">I</span> <span class="n">want</span> <span class="n">to</span> <span class="k">break</span> <span class="n">this</span> <span class="n">line</span> <span class="n">here</span><span class="p">:</span> <span class="o">|</span><span class="n">br</span><span class="o">|</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">after</span> <span class="n">the</span> <span class="k">break</span><span class="o">.</span>
+
+<span class="n">If</span> <span class="n">the</span> <span class="n">extra</span> <span class="n">whitespace</span> <span class="n">bothers</span> <span class="n">you</span><span class="p">,</span> <span class="o">|</span><span class="n">br</span><span class="o">|</span>\ <span class="n">backslash</span><span class="o">-</span><span class="n">escape</span> <span class="n">it</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="a-url-containing-asterisks-doesn-t-work-what-to-do">
+<h3><a class="toc-backref" href="#id50"><span class="sectnum">1.2.18</span> A URL containing asterisks doesn’t work.  What to do?</a><a class="headerlink" href="#a-url-containing-asterisks-doesn-t-work-what-to-do" title="永久链接至标题">¶</a></h3>
+<p>Asterisks are valid URL characters (see <span class="target" id="index-0"></span><a class="rfc reference external" href="https://tools.ietf.org/html/rfc2396.html"><strong>RFC 2396</strong></a>), sometimes used
+in URLs.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">cvs</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">viewcvs</span><span class="o">.</span><span class="n">py</span><span class="o">/*</span><span class="n">checkout</span><span class="o">*/</span><span class="n">module</span><span class="o">/</span><span class="n">file</span>
+</pre></div>
+</div>
+<p>Unfortunately, the parser thinks the asterisks are indicating
+emphasis.  The slashes serve as delineating punctuation, allowing the
+asterisks to be recognized as markup.  The example above is separated
+by the parser into a truncated URL, an emphasized word, and some
+regular text:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">cvs</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">viewcvs</span><span class="o">.</span><span class="n">py</span><span class="o">/</span>
+<span class="o">*</span><span class="n">checkout</span><span class="o">*</span>
+<span class="o">/</span><span class="n">module</span><span class="o">/</span><span class="n">file</span>
+</pre></div>
+</div>
+<p>To turn off markup recognition, use a backslash to escape at least the
+first asterisk, like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">cvs</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">viewcvs</span><span class="o">.</span><span class="n">py</span><span class="o">/</span>\<span class="o">*</span><span class="n">checkout</span><span class="o">*/</span><span class="n">module</span><span class="o">/</span><span class="n">file</span>
+</pre></div>
+</div>
+<p>Escaping the second asterisk doesn’t hurt, but it isn’t necessary.</p>
+</section>
+<section id="how-can-i-make-a-literal-block-with-some-formatting">
+<h3><a class="toc-backref" href="#id51"><span class="sectnum">1.2.19</span> How can I make a literal block with <em>some</em> formatting?</a><a class="headerlink" href="#how-can-i-make-a-literal-block-with-some-formatting" title="永久链接至标题">¶</a></h3>
+<p>Use the <a class="reference external" href="docs/ref/rst/directives.html#parsed-literal">parsed-literal</a> directive.</p>
+<p>Scenario: a document contains some source code, which calls for a
+literal block to preserve linebreaks and whitespace.  But part of the
+source code should be formatted, for example as emphasis or as a
+hyperlink.  This calls for a <em>parsed</em> literal block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">parsed</span><span class="o">-</span><span class="n">literal</span><span class="p">::</span>
+
+   <span class="nb">print</span> <span class="s2">"Hello world!"</span>  <span class="c1"># *tricky* code [1]_</span>
+</pre></div>
+</div>
+<p>The emphasis (<code class="docutils literal notranslate"><span class="pre">*tricky*</span></code>) and footnote reference (<code class="docutils literal notranslate"><span class="pre">[1]_</span></code>) will be
+parsed.</p>
+</section>
+<section id="can-restructuredtext-be-used-for-web-or-generic-templating">
+<h3><a class="toc-backref" href="#id52"><span class="sectnum">1.2.20</span> Can reStructuredText be used for web or generic templating?</a><a class="headerlink" href="#can-restructuredtext-be-used-for-web-or-generic-templating" title="永久链接至标题">¶</a></h3>
+<p>Docutils and reStructuredText can be used with or as a component of a
+templating system, but they do not themselves include templating
+functionality.  Templating should simply be left to dedicated
+templating systems.  Users can choose a templating system to apply to
+their reStructuredText documents as best serves their interests.</p>
+<p>There are many good templating systems for Python (<a class="reference external" href="http://ht2html.sourceforge.net/">ht2html</a>, <a class="reference external" href="http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/52305">YAPTU</a>,
+<a class="reference external" href="http://www.mems-exchange.org/software/quixote/">Quixote</a>’s PTL, <a class="reference external" href="http://www.cheetahtemplate.org/">Cheetah</a>, etc.; see this non-exhaustive list of <a class="reference external" href="http://webware.sourceforge.net/Papers/Templates/">some
+other templating systems</a>), and many more for other languages, each
+with different approaches.  We invite you to try several and find one
+you like.  If you adapt it to use Docutils/reStructuredText, please
+consider contributing the code to Docutils or <a class="reference external" href="docs/user/mailing-lists.html#docutils-users">let us know</a> and we’ll
+keep a list here.</p>
+<p>One reST-specific web templating system is <a class="reference external" href="http://www.voidspace.org.uk/python/rest2web">rest2web</a>, a tool for
+automatically building websites, or parts of websites.</p>
+</section>
+<section id="how-can-i-mark-up-a-faq-or-other-list-of-questions-answers">
+<h3><a class="toc-backref" href="#id53"><span class="sectnum">1.2.21</span> How can I mark up a FAQ or other list of questions &amp; answers?</a><a class="headerlink" href="#how-can-i-mark-up-a-faq-or-other-list-of-questions-answers" title="永久链接至标题">¶</a></h3>
+<p>There is no specific syntax for FAQs and Q&amp;A lists.  Here are two
+options:</p>
+<ol class="arabic">
+<li><p>For a FAQ (Frequently Asked Questions, usually with answers), a
+convenient way to mark up the questions is as section titles, with
+the answer(s) as section content.  This document is marked up in
+this way.</p>
+<p>The advantages of using section titles for questions are: sections
+can be numbered automatically, and a table of contents can be
+generated automatically.  One limitation of this format is that
+questions must fit on one line (section titles may not wrap, in the
+source text).  For very long questions, the title may be a summary
+of the question, with the full question in the section body.</p>
+</li>
+<li><p>Field lists work well as Q&amp;A lists:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:Q: What kind of questions can we
+    put here?
+
+:A: Any kind we like!
+</pre></div>
+</div>
+<p>In order to separate questions, lists can be used:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="field-list simple">
+<dt class="field-odd">Q</dt>
+<dd class="field-odd"><p>What kind of question can we
+put here?</p>
+</dd>
+<dt class="field-even">A</dt>
+<dd class="field-even"><p>Any kind we like!</p>
+</dd>
+</dl>
+</li>
+<li><dl class="field-list simple">
+<dt class="field-odd">Q</dt>
+<dd class="field-odd"><p>How many answers can a question have?</p>
+</dd>
+<dt class="field-even">A</dt>
+<dd class="field-even"><p>It can have one,</p>
+</dd>
+<dt class="field-odd">A</dt>
+<dd class="field-odd"><p>or more.</p>
+</dd>
+<dt class="field-even">A3</dt>
+<dd class="field-even"><p>Answers can be numbered like this.</p>
+</dd>
+<dt class="field-odd">A</dt>
+<dd class="field-odd"><ol class="arabic simple">
+<li><p>Or like this.</p></li>
+<li><p>We’re flexible!</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+<p>If you don’t want to number or otherwise mark questions, you can
+use an empty comment between individual field lists to separate
+them:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:Q: First question?
+:A: Answer.
+
+..
+
+:Q: Second question?
+:A: Answer.
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="can-i-produce-documents-in-right-to-left-languages">
+<span id="bidi"></span><h3><a class="toc-backref" href="#id54"><span class="sectnum">1.2.22</span> Can I produce documents in right-to-left languages?</a><a class="headerlink" href="#can-i-produce-documents-in-right-to-left-languages" title="永久链接至标题">¶</a></h3>
+<p>Languages written from right to left, such as Arabic and Hebrew, must
+be reordered according to the <a class="reference external" href="http://www.unicode.org/reports/tr9/">Unicode Bidi Algorithm</a>.  This
+requires support from the editor and special markup in the output
+format.</p>
+<p>The source format of reStructuredText is relatively bidi-friendly:
+most constructs are denoted by punctuation without intrusion of
+English and when you must write in English, it’s usually on a separate
+line.  So any editor that auto-detects direction per-line (like gedit
+or <a class="reference external" href="http://www.typo.co.il/~mooffie/geresh/">geresh</a>) will suffice.</p>
+<p>Moreover, it’s possible to <a class="reference external" href="docs/howto/i18n.html">translate</a> all reStructuredText keywords.
+Docutils 0.17 includes translations for Arab, Hebrew, and
+Persian/Farsi.  This should allow reasonable use of editors limited to
+a single base direction for the whole document (like Notepad, Vim and
+text boxes in Firefox).</p>
+<p>The second problem is bidi markup of the output.  There is an almost
+transparent implicit solution for HTML:</p>
+<ul class="simple">
+<li><p>Grab <a class="reference external" href="http://cben-hacks.sourceforge.net/bidi/hibidi.py">http://cben-hacks.sourceforge.net/bidi/hibidi.py</a> and
+<a class="reference external" href="http://cben-hacks.sourceforge.net/bidi/rst2html_hibidi.py">http://cben-hacks.sourceforge.net/bidi/rst2html_hibidi.py</a>.
+Put them both in the same directory and make them executable.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">rst2html_hibidi.py</span></code> instead of <code class="docutils literal notranslate"><span class="pre">rst2html.py</span></code>.</p></li>
+<li><p>It infers dir attributes in the HTML from the text.  It does it
+hierachically, giving much better results than usual.  You can still
+use LRM/RLM and LRE/RLE/PDF control codes to help it.</p>
+<ul>
+<li><p>If you want the gory details: See the full <a class="reference external" href="http://cben-hacks.sf.net/bidi/hibidi.html">theory</a>, and note the
+incomplete <a class="reference external" href="http://cben-hacks.sf.net/bidi/hibidi.html#practice">practice</a> (this is still a partial implementation - but
+sufficient for most needs).</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>There is also an explicit way to set directions through CSS and
+classes in the HTML:</p>
+<ul>
+<li><p>Copy <code class="docutils literal notranslate"><span class="pre">default.css</span></code> to a new file and add relevant parts of the
+following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/* Use these two if the main document direction is RTL */
+body { direction: rtl; }
+div.sidebar { float: left !important; }
+
+/* The next 3 rules are very useful in documents containing pieces
+of code in english */
+/* Use this if you all your literal blocks (::) are LTR */
+pre {direction: ltr; unicode-bidi: embed; }
+/* Use this if you all your inline literals (``) are LTR */
+tt {direction: ltr; unicode-bidi: embed; }
+/* Use this if you all your interpreted text (`) is LTR */
+cite {direction: ltr; unicode-bidi: embed; }
+
+/* Allow manual direction override by class directive and roles */
+.rtl { direction: rtl; }
+.ltr { direction: ltr; }
+</pre></div>
+</div>
+</li>
+<li><p>Select this new stylesheet with <code class="docutils literal notranslate"><span class="pre">--stylesheet=&lt;file&gt;</span></code> or the
+<a class="reference external" href="docs/user/config.html#stylesheet">stylesheet</a> setting.</p></li>
+<li><p>Now if you need to override the direction of some element (from a
+paragraph to a whole section), write:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">class</span><span class="p">::</span> <span class="n">rtl</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">class</span><span class="p">::</span> <span class="n">ltr</span>
+</pre></div>
+</div>
+<p>before it (see the <a class="reference external" href="docs/ref/rst/directives.txt#class">class</a> directive for details).</p>
+</li>
+<li><p>To change the direction of some inline text fragment, you can use
+RLE/LRE/PDF control characters, or write <code class="docutils literal notranslate"><span class="pre">:rtl:`RTL</span> <span class="pre">text`</span></code> /
+<code class="docutils literal notranslate"><span class="pre">:ltr:`RTL</span> <span class="pre">text`</span></code>.  To use the latter syntax, you must write this
+once at the beginning of your document:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">role</span><span class="p">::</span> <span class="n">ltr</span>
+<span class="o">..</span> <span class="n">role</span><span class="p">::</span> <span class="n">rtl</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>LaTeX is quite hard to implement (it doesn’t support the bidi
+algorithm, so all direction changes - even numbers in RTL text - must
+be explicitly marked).  Other formats are more-or-less easy.</p>
+<p>If you have any questions/problems/bugs related to bidi with docutils,
+ask <a class="reference external" href="mailto:cben%40users.sf.net">Beni Cherniavsky</a> directly or the <a class="reference external" href="docs/user/mailing-lists.html#docutils-users">Docutils-users</a> mailing
+list.</p>
+</section>
+<section id="what-s-the-official-mime-type-for-restructuredtext-data">
+<h3><a class="toc-backref" href="#id55"><span class="sectnum">1.2.23</span> What’s the official MIME type for reStructuredText data?</a><a class="headerlink" href="#what-s-the-official-mime-type-for-restructuredtext-data" title="永久链接至标题">¶</a></h3>
+<p>While there is no registered MIME type for reStructuredText, the
+“official unofficial” standard MIME type is “text/x-rst”. <a class="footnote-reference brackets" href="#id21" id="id20">1</a>  This was
+invented for the build system for PEPs (Python Enhancement Proposals),
+and it’s used by the python.org web site build system.</p>
+<p>Also see <a class="reference internal" href="#what-s-the-standard-filename-extension-for-a-restructuredtext-file">What’s the standard filename extension for a
+reStructuredText file?</a></p>
+<dl class="footnote brackets">
+<dt class="label" id="id21"><span class="brackets"><a class="fn-backref" href="#id20">1</a></span></dt>
+<dd><p>The “x-” prefix means it’s an unregistered MIME type.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="html-writer">
+<h2><a class="toc-backref" href="#id56"><span class="sectnum">1.3</span> HTML Writer</a><a class="headerlink" href="#html-writer" title="永久链接至标题">¶</a></h2>
+<section id="what-is-the-status-of-the-html-writer">
+<h3><a class="toc-backref" href="#id57"><span class="sectnum">1.3.1</span> What is the status of the HTML Writer?</a><a class="headerlink" href="#what-is-the-status-of-the-html-writer" title="永久链接至标题">¶</a></h3>
+<p>The default HTML Writer module, <code class="docutils literal notranslate"><span class="pre">docutils/writers/html4css1.py</span></code>, is
+a proof-of-concept reference implementation.  While it is a complete
+implementation, some aspects of the HTML it produces may be outdated or
+incompatible with older browsers or specialized applications (such as
+web templating).</p>
+<p>For the full selection see <a class="reference external" href="docs/user/html.html">Docutils HTML writers</a></p>
+</section>
+<section id="what-browsers-are-supported">
+<h3><a class="toc-backref" href="#id58"><span class="sectnum">1.3.2</span> What browsers are supported?</a><a class="headerlink" href="#what-browsers-are-supported" title="永久链接至标题">¶</a></h3>
+<p>No specific browser is targeted; all modern graphical browsers should
+work.  Some older browsers, text-only browsers, and browsers without
+full CSS support are known to produce inferior results.  Firefox,
+Safari, Opera, Chrome, Edge, and MS Internet Explorer (version 5.0 and up)
+are known to give good results.  Reports of experiences with other
+browsers are welcome.</p>
+</section>
+<section id="unexpected-results-from-tools-rst2html-py-h1-h1-instead-of-h1-h2-why">
+<h3><a class="toc-backref" href="#id59"><span class="sectnum">1.3.3</span> Unexpected results from tools/rst2html.py: H1, H1 instead of H1, H2.  Why?</a><a class="headerlink" href="#unexpected-results-from-tools-rst2html-py-h1-h1-instead-of-h1-h2-why" title="永久链接至标题">¶</a></h3>
+<p>Here’s the question in full:</p>
+<blockquote>
+<div><p>I have this text:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Heading 1
+=========
+
+All my life, I wanted to be H1.
+
+Heading 1.1
+-----------
+
+But along came H1, and so shouldn't I be H2?
+No!  I'm H1!
+
+Heading 1.1.1
+*************
+
+Yeah, imagine me, I'm stuck at H3!  No?!?
+</pre></div>
+</div>
+<p>When I run it through tools/rst2html.py, I get unexpected results
+(below).  I was expecting H1, H2, then H3; instead, I get H1, H1,
+H2:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="o">&lt;</span><span class="n">html</span> <span class="n">lang</span><span class="o">=</span><span class="s2">"en"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="o">...</span>
+<span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Heading</span> <span class="mi">1</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">"document"</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"heading-1"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">h1</span> <span class="n">class</span><span class="o">=</span><span class="s2">"title"</span><span class="o">&gt;</span><span class="n">Heading</span> <span class="mi">1</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>                <span class="o">&lt;--</span> <span class="n">first</span> <span class="n">H1</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">All</span> <span class="n">my</span> <span class="n">life</span><span class="p">,</span> <span class="n">I</span> <span class="n">wanted</span> <span class="n">to</span> <span class="n">be</span> <span class="n">H1</span><span class="o">.&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">"section"</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"heading-1-1"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">name</span><span class="o">=</span><span class="s2">"heading-1-1"</span><span class="o">&gt;</span><span class="n">Heading</span> <span class="mf">1.1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>        <span class="o">&lt;--</span> <span class="n">H1</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">But</span> <span class="n">along</span> <span class="n">came</span> <span class="n">H1</span><span class="p">,</span> <span class="ow">and</span> <span class="n">so</span> <span class="n">now</span> <span class="n">I</span> <span class="n">must</span> <span class="n">be</span> <span class="n">H2</span><span class="o">.&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">"section"</span> <span class="nb">id</span><span class="o">=</span><span class="s2">"heading-1-1-1"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">name</span><span class="o">=</span><span class="s2">"heading-1-1-1"</span><span class="o">&gt;</span><span class="n">Heading</span> <span class="mf">1.1.1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">Yeah</span><span class="p">,</span> <span class="n">imagine</span> <span class="n">me</span><span class="p">,</span> <span class="n">I</span><span class="s1">'m stuck at H3!&lt;/p&gt;</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>What gives?</p>
+</div></blockquote>
+<p>Check the “class” attribute on the H1 tags, and you will see a
+difference.  The first H1 is actually <code class="docutils literal notranslate"><span class="pre">&lt;h1</span> <span class="pre">class="title"&gt;</span></code>; this is
+the document title, and the default stylesheet renders it centered.
+There can also be an <code class="docutils literal notranslate"><span class="pre">&lt;h2</span> <span class="pre">class="subtitle"&gt;</span></code> for the document
+subtitle.</p>
+<p>If there’s only one highest-level section title at the beginning of a
+document, it is treated specially, as the document title.  (Similarly, a
+lone second-highest-level section title may become the document
+subtitle.)  See <a class="reference internal" href="#how-can-i-indicate-the-document-title-subtitle">How can I indicate the document title?  Subtitle?</a> for
+details.  Rather than use a plain H1 for the document title, we use <code class="docutils literal notranslate"><span class="pre">&lt;h1</span>
+<span class="pre">class="title"&gt;</span></code> so that we can use H1 again within the document.  Why
+do we do this?  HTML only has H1-H6, so by making H1 do double duty, we
+effectively reserve these tags to provide 6 levels of heading beyond the
+single document title.</p>
+<p>With “html4css1”, HTML is being used for dumb formatting for nothing
+but final display. A stylesheet <em>is required</em>, and one is provided;
+see <a class="reference external" href="docs/user/html.html">Docutils HTML writers</a>.  Of course, you’re
+welcome to roll your own.  The default stylesheet provides rules to
+format <code class="docutils literal notranslate"><span class="pre">&lt;h1</span> <span class="pre">class="title"&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;h2</span> <span class="pre">class="subtitle"&gt;</span></code>
+differently from ordinary <code class="docutils literal notranslate"><span class="pre">&lt;h1&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;h2&gt;</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">h1</span><span class="o">.</span><span class="n">title</span> <span class="p">{</span>
+  <span class="n">text</span><span class="o">-</span><span class="n">align</span><span class="p">:</span> <span class="n">center</span> <span class="p">}</span>
+
+<span class="n">h2</span><span class="o">.</span><span class="n">subtitle</span> <span class="p">{</span>
+  <span class="n">text</span><span class="o">-</span><span class="n">align</span><span class="p">:</span> <span class="n">center</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>If you don’t want the top section heading to be interpreted as a
+title at all, disable the <a class="reference external" href="docs/user/config.html#doctitle-xform">doctitle_xform</a> setting
+(<code class="docutils literal notranslate"><span class="pre">--no-doc-title</span></code> option).  This will interpret your document
+differently from the standard settings, which might not be a good
+idea.  If you don’t like the reuse of the H1 in the HTML output, you
+can tweak the <a class="reference external" href="docs/user/config.html#initial-header-level">initial_header_level</a> setting
+(<code class="docutils literal notranslate"><span class="pre">--initial-header-level</span></code> option) – but unless you match its value
+to your specific document, you might end up with bad HTML (e.g. H3
+without H2).</p>
+<p>(Thanks to Mark McEahern for the question and much of the answer.)</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>For the html5 writer, <a class="reference external" href="docs/user/config.html#initial-header-level">initial_header_level</a> defaults to
+<code class="docutils literal notranslate"><span class="pre">2</span></code> because this is what the <a class="reference external" href="https://www.w3.org/TR/html53/sections.html#headings-and-sections">HTML5 standard</a> expects as
+start value for headings nested in &lt;section&gt; elements.</p>
+</div>
+</section>
+<section id="how-are-lists-formatted-in-html">
+<h3><a class="toc-backref" href="#id60"><span class="sectnum">1.3.4</span> How are lists formatted in HTML?</a><a class="headerlink" href="#how-are-lists-formatted-in-html" title="永久链接至标题">¶</a></h3>
+<p>If list formatting looks strange, first check that you understand
+<a class="reference internal" href="#how-should-i-mark-up-lists">list markup</a>.</p>
+<ul>
+<li><p>By default, HTML browsers indent lists relative to their context.
+This follows a long tradition in browsers (but isn’t so established
+in print).  If you don’t like it, you should change the stylesheet.</p>
+<p>This is different from how lists look in reStructuredText source.
+Extra indentation in the source indicates a blockquote, resulting in
+too much indentation in the browser.</p>
+</li>
+<li><p>A list item can contain multiple paragraphs etc.  In complex cases
+list items are separated by vertical space.  By default this spacing
+is omitted in “simple” lists.  A list is simple if every item
+contains a simple paragraph and/or a “simple” nested list.  For
+example:</p>
+<blockquote>
+<div><ul>
+<li><p>text</p>
+<ul class="simple">
+<li><p>simple</p>
+<ul>
+<li><p>simple</p></li>
+<li><p>simple</p></li>
+</ul>
+</li>
+<li><p>simple</p></li>
+</ul>
+<p>text after a nested list</p>
+</li>
+<li><p>multiple</p>
+<p>paragraphs</p>
+</li>
+</ul>
+</div></blockquote>
+<p>In this example the nested lists are simple (and should appear
+compacted) but the outer list is not.</p>
+<p>If you want all lists to have equal spacing, disable the
+<a class="reference external" href="docs/user/config.html#compact-lists">compact_lists</a> setting (<code class="docutils literal notranslate"><span class="pre">--no-compact-lists</span></code> option).  The
+precise spacing can be controlled in the stylesheet.</p>
+<p>Note again that this is not exactly WYSIWYG: it partially resembles
+the rules about blank lines being optional between list items in
+reStructuredText – but adding/removing optional blank lines does
+not affect spacing in the output!  It’s a feature, not a bug: you
+write it as you like but the output is styled consistently.</p>
+</li>
+</ul>
+</section>
+<section id="why-do-enumerated-lists-only-use-numbers-no-letters-or-roman-numerals">
+<h3><a class="toc-backref" href="#id61"><span class="sectnum">1.3.5</span> Why do enumerated lists only use numbers (no letters or roman numerals)?</a><a class="headerlink" href="#why-do-enumerated-lists-only-use-numbers-no-letters-or-roman-numerals" title="永久链接至标题">¶</a></h3>
+<p>The rendering of enumerators (the numbers or letters acting as list
+markers) is completely governed by the stylesheet, so either the
+browser can’t find the stylesheet (try enabling the
+<a class="reference external" href="docs/user/config.html#embed-stylesheet">embed_stylesheet</a> setting [<code class="docutils literal notranslate"><span class="pre">--embed-stylesheet</span></code> option]), or the
+browser can’t understand it (try a not too old Firefox, Chrome, Opera,
+Safari, Edge, or even MSIE).</p>
+</section>
+<section id="there-appear-to-be-garbage-characters-in-the-html-what-s-up">
+<h3><a class="toc-backref" href="#id62"><span class="sectnum">1.3.6</span> There appear to be garbage characters in the HTML.  What’s up?</a><a class="headerlink" href="#there-appear-to-be-garbage-characters-in-the-html-what-s-up" title="永久链接至标题">¶</a></h3>
+<p>What you’re seeing is most probably not garbage, but the result of a
+mismatch between the actual encoding of the HTML output and the
+encoding your browser is expecting.  Your browser is misinterpreting
+the HTML data, which is encoded text.  A discussion of text encodings
+is beyond the scope of this FAQ; see one or more of these documents
+for more info:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.cl.cam.ac.uk/~mgk25/unicode.html">UTF-8 and Unicode FAQ for Unix/Linux</a></p></li>
+<li><p>Chapters 3 and 4 of <a class="reference external" href="http://www.debian.org/doc/manuals/intro-i18n/">Introduction to i18n [Internationalization]</a></p></li>
+<li><p><a class="reference external" href="http://www.reportlab.com/i18n/python_unicode_tutorial.html">Python Unicode Tutorial</a></p></li>
+<li><p><a class="reference external" href="http://effbot.org/zone/unicode-objects.htm">Python Unicode Objects: Some Observations on Working With Non-ASCII
+Character Sets</a></p></li>
+</ul>
+<p>The common case is with the default output encoding (UTF-8), when
+either numbered sections are used (via the “<a class="reference external" href="docs/ref/rst/directives.html#sectnum">sectnum</a>” directive) or
+symbol-footnotes.  3 non-breaking spaces are inserted in each numbered
+section title, between the generated number and the title text.  Most
+footnote symbols are not available in ASCII, nor are non-breaking
+spaces.  When encoded with UTF-8 and viewed with ordinary ASCII tools,
+these characters will appear to be multi-character garbage.</p>
+<p>You may have an decoding problem in your browser (or editor, etc.).
+The encoding of the output is set to “utf-8”, but your browser isn’t
+recognizing that.  You can either try to fix your browser (enable
+“UTF-8 character set”, sometimes called “Unicode”), or choose a
+different encoding for the HTML output.  You can also try
+<code class="docutils literal notranslate"><span class="pre">--output-encoding=ascii:xmlcharrefreplace</span></code> for HTML or XML, but not
+applicable to non-XMLish outputs (if using runtime
+settings/configuration files, use <code class="docutils literal notranslate"><span class="pre">output_encoding=ascii</span></code> and
+<code class="docutils literal notranslate"><span class="pre">output_encoding_error_handler=xmlcharrefreplace</span></code>).</p>
+<p>If you’re generating document fragments, the “Content-Type” metadata
+(between the HTML <code class="docutils literal notranslate"><span class="pre">&lt;head&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;/head&gt;</span></code> tags) must agree with the
+encoding of the rest of the document.  For UTF-8, it should be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">meta</span> <span class="n">http</span><span class="o">-</span><span class="n">equiv</span><span class="o">=</span><span class="s2">"Content-Type"</span> <span class="n">content</span><span class="o">=</span><span class="s2">"text/html; charset=utf-8"</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>Also, Docutils normally generates an XML declaration as the first line
+of the output.  It must also match the document encoding.  For UTF-8:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+</pre></div>
+</div>
+</section>
+<section id="how-can-i-retrieve-the-body-of-the-html-document">
+<h3><a class="toc-backref" href="#id63"><span class="sectnum">1.3.7</span> How can I retrieve the body of the HTML document?</a><a class="headerlink" href="#how-can-i-retrieve-the-body-of-the-html-document" title="永久链接至标题">¶</a></h3>
+<p>(This is usually needed when using Docutils in conjunction with a
+templating system.)</p>
+<p>You can use the <a class="reference external" href="docs/api/publisher.html#publish-parts">docutils.core.publish_parts()</a> function, which
+returns a dictionary containing an ‘<a class="reference external" href="docs/api/publisher.html#html-body">html_body</a>’ entry.</p>
+</section>
+<section id="why-is-the-docutils-xhtml-served-as-content-type-text-html">
+<h3><a class="toc-backref" href="#id64"><span class="sectnum">1.3.8</span> Why is the Docutils XHTML served as “Content-type: text/html”?</a><a class="headerlink" href="#why-is-the-docutils-xhtml-served-as-content-type-text-html" title="永久链接至标题">¶</a></h3>
+<p>Full question:</p>
+<blockquote>
+<div><p>Docutils’ HTML output looks like XHTML and is advertised as such:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xht ml1/DTD/xhtml1-transitional.dtd"&gt;
+</pre></div>
+</div>
+<p>But this is followed by:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">meta</span> <span class="n">http</span><span class="o">-</span><span class="n">equiv</span><span class="o">=</span><span class="s2">"Content-Type"</span> <span class="n">content</span><span class="o">=</span><span class="s2">"text/html; charset=utf-8"</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>Shouldn’t this be “application/xhtml+xml” instead of “text/html”?</p>
+</div></blockquote>
+<p>Short answer: if we didn’t serve XHTML as “text/html” (which is a
+perfectly valid thing to do), it couldn’t be viewed in Internet
+Explorer.</p>
+<p>Long answer: In a perfect web, the Docutils XHTML output would be 100%
+strict XHTML.  But it’s not a perfect web, and a major source of
+imperfection is Internet Explorer.  When the “html4css1”
+writer was created, IE represented the overwhelming majority of web
+browsers “in the wild”.
+The behaviour is kept for backwards compatibility while
+modern, semantic HTML output is available with the “html5” writer.</p>
+<p>(Thanks to Martin F. Krafft, Robert Kern, Michael Foord, and Alan
+G. Isaac.)</p>
+</section>
+</section>
+<section id="python-source-reader">
+<h2><a class="toc-backref" href="#id65"><span class="sectnum">1.4</span> Python Source Reader</a><a class="headerlink" href="#python-source-reader" title="永久链接至标题">¶</a></h2>
+<section id="can-i-use-docutils-for-python-auto-documentation">
+<h3><a class="toc-backref" href="#id66"><span class="sectnum">1.4.1</span> Can I use Docutils for Python auto-documentation?</a><a class="headerlink" href="#can-i-use-docutils-for-python-auto-documentation" title="永久链接至标题">¶</a></h3>
+<p>Yes, in conjunction with other projects.</p>
+<p>The <a class="reference external" href="http://sphinx.pocoo.org/index.html">Sphinx</a> documentation generator includes an autodoc module.</p>
+<p>Version 2.0 of Ed Loper’s <a class="reference external" href="http://epydoc.sourceforge.net/">Epydoc</a>
+supports reStructuredText-format docstrings for HTML output.  Docutils
+0.3 or newer is required.  Development of a Docutils-specific
+auto-documentation tool will continue.  Epydoc works by importing
+Python modules to be documented, whereas the Docutils-specific tool,
+described above, will parse modules without importing them (as with
+<a class="reference external" href="http://happydoc.sourceforge.net/">HappyDoc</a>, which doesn’t support
+reStructuredText).</p>
+<p>The advantages of parsing over importing are security and flexibility;
+the disadvantage is complexity/difficulty.</p>
+<ul class="simple">
+<li><p>Security: untrusted code that shouldn’t be executed can be parsed;
+importing a module executes its top-level code.</p></li>
+<li><p>Flexibility: comments and unofficial docstrings (those not supported
+by Python syntax) can only be processed by parsing.</p></li>
+<li><p>Complexity/difficulty: it’s a lot harder to parse and analyze a
+module than it is to <code class="docutils literal notranslate"><span class="pre">import</span></code> and analyze one.</p></li>
+</ul>
+<p>For more details, please see “Docstring Extraction Rules” in <a class="reference external" href="http://www.python.org/peps/pep-0258.html">PEP
+258</a>, item 3 (“How”).</p>
+</section>
+</section>
+<section id="miscellaneous">
+<h2><a class="toc-backref" href="#id67"><span class="sectnum">1.5</span> Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="永久链接至标题">¶</a></h2>
+<section id="is-the-docutils-document-model-based-on-any-existing-xml-models">
+<h3><a class="toc-backref" href="#id68"><span class="sectnum">1.5.1</span> Is the Docutils document model based on any existing XML models?</a><a class="headerlink" href="#is-the-docutils-document-model-based-on-any-existing-xml-models" title="永久链接至标题">¶</a></h3>
+<p>Not directly, no.  It borrows bits from DocBook, HTML, and others.  I
+(David Goodger) have designed several document models over the years,
+and have my own biases.  The Docutils document model is designed for
+simplicity and extensibility, and has been influenced by the needs of
+the reStructuredText markup.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="HISTORY.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Docutils History</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="COPYING.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Copying Docutils</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, xinetzone |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
+            <a class="muted-link" href="../_sources/docutils/FAQ.txt"
+               rel="nofollow">
+              显示源代码
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            目录
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><span class="sectnum">1</span> Docutils FAQ (Frequently Asked Questions)</a><ul>
+<li><a class="reference internal" href="#docutils"><span class="sectnum">1.1</span> Docutils</a><ul>
+<li><a class="reference internal" href="#what-is-docutils"><span class="sectnum">1.1.1</span> What is Docutils?</a></li>
+<li><a class="reference internal" href="#why-is-it-called-docutils"><span class="sectnum">1.1.2</span> Why is it called “Docutils”?</a></li>
+<li><a class="reference internal" href="#is-there-a-gui-authoring-environment-for-docutils"><span class="sectnum">1.1.3</span> Is there a GUI authoring environment for Docutils?</a></li>
+<li><a class="reference internal" href="#what-is-the-status-of-the-docutils-project"><span class="sectnum">1.1.4</span> What is the status of the Docutils project?</a></li>
+<li><a class="reference internal" href="#what-is-the-docutils-project-release-policy"><span class="sectnum">1.1.5</span> What is the Docutils project release policy?</a></li>
+<li><a class="reference internal" href="#how-can-i-get-a-new-feature-into-docutils"><span class="sectnum">1.1.6</span> How can I get a new feature into Docutils?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#restructuredtext"><span class="sectnum">1.2</span> reStructuredText</a><ul>
+<li><a class="reference internal" href="#what-is-restructuredtext"><span class="sectnum">1.2.1</span> What is reStructuredText?</a></li>
+<li><a class="reference internal" href="#why-is-it-called-restructuredtext"><span class="sectnum">1.2.2</span> Why is it called “reStructuredText”?</a></li>
+<li><a class="reference internal" href="#what-s-the-standard-abbreviation-for-restructuredtext"><span class="sectnum">1.2.3</span> What’s the standard abbreviation for “reStructuredText”?</a></li>
+<li><a class="reference internal" href="#what-s-the-standard-filename-extension-for-a-restructuredtext-file"><span class="sectnum">1.2.4</span> What’s the standard filename extension for a reStructuredText file?</a></li>
+<li><a class="reference internal" href="#are-there-any-restructuredtext-editor-extensions"><span class="sectnum">1.2.5</span> Are there any reStructuredText editor extensions?</a></li>
+<li><a class="reference internal" href="#how-can-i-indicate-the-document-title-subtitle"><span class="sectnum">1.2.6</span> How can I indicate the document title?  Subtitle?</a></li>
+<li><a class="reference internal" href="#how-can-i-represent-esoteric-characters-e-g-character-entities-in-a-document"><span class="sectnum">1.2.7</span> How can I represent esoteric characters (e.g. character entities) in a document?</a></li>
+<li><a class="reference internal" href="#how-can-i-generate-backticks-using-a-scandinavian-keyboard"><span class="sectnum">1.2.8</span> How can I generate backticks using a Scandinavian keyboard?</a></li>
+<li><a class="reference internal" href="#are-there-any-tools-for-html-xml-to-restructuredtext-round-tripping"><span class="sectnum">1.2.9</span> Are there any tools for HTML/XML-to-reStructuredText?  (Round-tripping)</a></li>
+<li><a class="reference internal" href="#are-there-any-wikis-that-use-restructuredtext-syntax"><span class="sectnum">1.2.10</span> Are there any Wikis that use reStructuredText syntax?</a></li>
+<li><a class="reference internal" href="#are-there-any-weblog-blog-projects-that-use-restructuredtext-syntax"><span class="sectnum">1.2.11</span> Are there any Weblog (Blog) projects that use reStructuredText syntax?</a></li>
+<li><a class="reference internal" href="#how-should-i-mark-up-lists"><span class="sectnum">1.2.12</span> How should I mark up lists?</a></li>
+<li><a class="reference internal" href="#could-lists-be-indented-without-generating-block-quotes"><span class="sectnum">1.2.13</span> Could lists be indented without generating block quotes?</a></li>
+<li><a class="reference internal" href="#could-the-requirement-for-blank-lines-around-lists-be-relaxed"><span class="sectnum">1.2.14</span> Could the requirement for blank lines around lists be relaxed?</a></li>
+<li><a class="reference internal" href="#how-can-i-include-mathematical-equations-in-documents"><span class="sectnum">1.2.15</span> How can I include mathematical equations in documents?</a></li>
+<li><a class="reference internal" href="#is-nested-inline-markup-possible"><span class="sectnum">1.2.16</span> Is nested inline markup possible?</a></li>
+<li><a class="reference internal" href="#how-to-indicate-a-line-break-or-a-significant-newline"><span class="sectnum">1.2.17</span> How to indicate a line break or a significant newline?</a></li>
+<li><a class="reference internal" href="#a-url-containing-asterisks-doesn-t-work-what-to-do"><span class="sectnum">1.2.18</span> A URL containing asterisks doesn’t work.  What to do?</a></li>
+<li><a class="reference internal" href="#how-can-i-make-a-literal-block-with-some-formatting"><span class="sectnum">1.2.19</span> How can I make a literal block with <em>some</em> formatting?</a></li>
+<li><a class="reference internal" href="#can-restructuredtext-be-used-for-web-or-generic-templating"><span class="sectnum">1.2.20</span> Can reStructuredText be used for web or generic templating?</a></li>
+<li><a class="reference internal" href="#how-can-i-mark-up-a-faq-or-other-list-of-questions-answers"><span class="sectnum">1.2.21</span> How can I mark up a FAQ or other list of questions &amp; answers?</a></li>
+<li><a class="reference internal" href="#can-i-produce-documents-in-right-to-left-languages"><span class="sectnum">1.2.22</span> Can I produce documents in right-to-left languages?</a></li>
+<li><a class="reference internal" href="#what-s-the-official-mime-type-for-restructuredtext-data"><span class="sectnum">1.2.23</span> What’s the official MIME type for reStructuredText data?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#html-writer"><span class="sectnum">1.3</span> HTML Writer</a><ul>
+<li><a class="reference internal" href="#what-is-the-status-of-the-html-writer"><span class="sectnum">1.3.1</span> What is the status of the HTML Writer?</a></li>
+<li><a class="reference internal" href="#what-browsers-are-supported"><span class="sectnum">1.3.2</span> What browsers are supported?</a></li>
+<li><a class="reference internal" href="#unexpected-results-from-tools-rst2html-py-h1-h1-instead-of-h1-h2-why"><span class="sectnum">1.3.3</span> Unexpected results from tools/rst2html.py: H1, H1 instead of H1, H2.  Why?</a></li>
+<li><a class="reference internal" href="#how-are-lists-formatted-in-html"><span class="sectnum">1.3.4</span> How are lists formatted in HTML?</a></li>
+<li><a class="reference internal" href="#why-do-enumerated-lists-only-use-numbers-no-letters-or-roman-numerals"><span class="sectnum">1.3.5</span> Why do enumerated lists only use numbers (no letters or roman numerals)?</a></li>
+<li><a class="reference internal" href="#there-appear-to-be-garbage-characters-in-the-html-what-s-up"><span class="sectnum">1.3.6</span> There appear to be garbage characters in the HTML.  What’s up?</a></li>
+<li><a class="reference internal" href="#how-can-i-retrieve-the-body-of-the-html-document"><span class="sectnum">1.3.7</span> How can I retrieve the body of the HTML document?</a></li>
+<li><a class="reference internal" href="#why-is-the-docutils-xhtml-served-as-content-type-text-html"><span class="sectnum">1.3.8</span> Why is the Docutils XHTML served as “Content-type: text/html”?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#python-source-reader"><span class="sectnum">1.4</span> Python Source Reader</a><ul>
+<li><a class="reference internal" href="#can-i-use-docutils-for-python-auto-documentation"><span class="sectnum">1.4.1</span> Can I use Docutils for Python auto-documentation?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#miscellaneous"><span class="sectnum">1.5</span> Miscellaneous</a><ul>
+<li><a class="reference internal" href="#is-the-docutils-document-model-based-on-any-existing-xml-models"><span class="sectnum">1.5.1</span> Is the Docutils document model based on any existing XML models?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/main.js"></script>
+    <script src="../_static/translations.js"></script>
+    </body>
+</html>

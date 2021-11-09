@@ -1,0 +1,629 @@
+<!doctype html>
+<html class="no-js" lang="zh_CN">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="Copying Docutils" href="COPYING.html" /><link rel="prev" title="Docutils Transforms" href="docs/ref/transforms.html" />
+
+    <meta name="generator" content="sphinx-4.2.0, furo 2021.10.09"/>
+        <title>Docutils Bugs - docutils 0.0.1 文档</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">docutils 0.0.1 文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">docutils 0.0.1 文档</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">概述</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/index.html">Docutils: Documentation Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/mirror/setext.html">Setext 文档镜像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/index.html">Docutils Project Documentation Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">user</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/config.html">Docutils Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/emacs.html">Emacs Support for reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/html.html">Docutils HTML writers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/latex.html"><span class="sectnum">1</span> Generating LaTeX with Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/links.html">Docutils Link List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/mailing-lists.html">Docutils Mailing Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/manpage.html">manpage writer for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/odt.html"><span class="sectnum">1</span> Odt Writer for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/smartquotes.html">Smart Quotes for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/tools.html">Docutils Front-End Tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">api</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/api/cmdline-tool.html">Inside A Docutils Command-Line Front-End Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/api/publisher.html">The Docutils Publisher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/api/runtime-settings.html">Docutils Runtime Settings</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">dev</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/distributing.html">Docutils Distributor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/enthought-plan.html"><span class="sectnum">1</span> Plan for Enthought API Documentation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/enthought-rfp.html"><span class="sectnum">1</span> Enthought API Documentation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/hacking.html">Docutils Hacker’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/policies.html">Docutils Project Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/pysource.html">Python Source Reader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/release.html">Docutils Release Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/repository.html">The Docutils Version Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/semantics.html">Docstring Semantics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/testing.html">Docutils Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/todo.html">Docutils To Do List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/website.html">Docutils Web Site</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">howto</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/howto/html-stylesheets.html">Writing HTML (CSS) Stylesheets for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/howto/i18n.html">Docutils Internationalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/howto/rst-directives.html">Creating reStructuredText Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/howto/rst-roles.html">Creating reStructuredText Interpreted Text Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/howto/security.html">Deploying Docutils Securely</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">peps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html">Rejection Notice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#road-map-to-the-docstring-peps">Road Map to the Docstring PEPs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#project-web-site">Project Web Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0257.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0257.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0257.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0257.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0257.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0257.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html">Rejection Notice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html#project-web-site">Project Web Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#benefits">Benefits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#goals">Goals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#docstring-significant-features">Docstring-Significant Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#questions-answers">Questions &amp; Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#references-footnotes">References &amp; Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#acknowledgements">Acknowledgements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ref</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/doctree.html">The Docutils Document Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/transforms.html">Docutils Transforms</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">docutils other</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Docutils Bugs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="COPYING.html">Copying Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html"><span class="sectnum">1</span> Docutils FAQ (Frequently Asked Questions)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HISTORY.html">Docutils History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html">Docutils 0.18.1b.dev 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RELEASE-NOTES.html">Docutils Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="THANKS.html">Acknowledgements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">reStructuredText</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/rst.html"></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/rst/cheatsheet.html">The reStructuredText Cheat Sheet: Syntax Reminders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/rst/quickstart.html">A ReStructuredText Primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/rst/alternatives.html">A Record of reStructuredText Syntax Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/rst/problems.html">Problems With StructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/rst/definitions.html">reStructuredText Standard Definition Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/rst/directives.html">reStructuredText Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/rst/introduction.html">An Introduction to reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/rst/mathematics.html"><span class="sectnum">1</span> LaTeX syntax for mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/rst/restructuredtext.html">reStructuredText Markup Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/rst/roles.html">reStructuredText Interpreted Text Roles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">sandbox</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sandbox/README.html">Sandbox 自述</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="docutils-bugs">
+<h1><a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a> Bugs<a class="headerlink" href="#docutils-bugs" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>David Goodger; open to all Docutils developers</p>
+</dd>
+<dt class="field-even">Contact</dt>
+<dd class="field-even"><p><a class="reference external" href="mailto:goodger%40python.org">goodger<span>@</span>python<span>.</span>org</a></p>
+</dd>
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>$Date$</p>
+</dd>
+<dt class="field-even">Revision</dt>
+<dd class="field-even"><p>$Revision$</p>
+</dd>
+<dt class="field-odd">Copyright</dt>
+<dd class="field-odd"><p>This document has been placed in the public domain.</p>
+</dd>
+</dl>
+<p>Bugs in Docutils?!?  Yes, we do have a few.  Some are old-timers that
+tend to stay in the shadows and don’t bother anybody.  Once in a while
+new bugs are born.  From time to time some bugs (new and old) crawl
+out into the light and must be dealt with.  Icky.</p>
+<p>This document describes how to report a bug, and lists known bugs.</p>
+<div class="contents topic" id="id1">
+<p class="topic-title">目录</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#docutils-bugs" id="id6">Docutils Bugs</a></p>
+<ul>
+<li><p><a class="reference internal" href="#how-to-report-a-bug" id="id7">How To Report A Bug</a></p></li>
+<li><p><a class="reference internal" href="#known-bugs" id="id8">Known Bugs</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="how-to-report-a-bug">
+<h2><a class="toc-backref" href="#id7">How To Report A Bug</a><a class="headerlink" href="#how-to-report-a-bug" title="永久链接至标题">¶</a></h2>
+<p>If you think you’ve discovered a bug, please read through these
+guidelines before reporting it.</p>
+<p>First, make sure it’s a new bug:</p>
+<ul>
+<li><p>Please check the list of <a class="reference internal" href="#known-bugs">known bugs</a> below and the <a class="reference external" href="http://sourceforge.net/p/docutils/bugs/">SourceForge
+Bug Tracker</a> to see if it has already been reported.</p></li>
+<li><p>Are you using the very latest version of Docutils?  The bug may have
+already been fixed.  Please get the latest version of Docutils from
+the <a class="reference external" href="docs/dev/repository.html">repository</a> or from the current <a class="reference external" href="http://docutils.sourceforge.net/#download">snapshot</a> and check again.  Even
+if your bug has not been fixed, others probably have, and you’re
+better off with the most up-to-date code.</p>
+<p>If you don’t have time to check the latest snapshot, please report
+the bug anyway.  We’d rather tell you that it’s already fixed than
+miss reports of unfixed bugs.</p>
+</li>
+<li><p>If Docutils does not behave the way you expect, look in the
+<a class="reference external" href="docs/">documentation</a> (don’t forget the <a class="reference external" href="FAQ.html">FAQ</a>!) and <a class="reference external" href="http://docutils.sf.net/#mailing-lists">mailing list archives</a>
+for evidence that it should behave the way you expect.</p></li>
+</ul>
+<p>If you’re not sure, please ask on the <a class="reference external" href="docs/user/mailing-lists.html#docutils-users">Docutils-users</a> mailing list
+first.</p>
+<hr class="docutils"/>
+<p>If it’s a new bug, the most important thing you can do is to write a
+simple description and a recipe that reproduces the bug.  Try to
+create a <a class="reference internal" href="#minimal-example">minimal example</a> that demonstrates the bug.  The easier you
+make it to understand and track down the bug, the more likely a fix
+will be.</p>
+<aside class="sidebar">
+<p class="sidebar-title">minimal example</p>
+<p>A <cite>minimal working example</cite> is a complete example which is as as small and
+simple as possible. It should be complete and working, so that</p>
+<ul class="simple">
+<li><p>you cannot accidentally omit information important to diagnosing
+the problem and</p></li>
+<li><p>the person responding can just copy-and-paste the code to try it out.</p></li>
+</ul>
+<p>To construct an example which is as small as possible, the rule
+quite simple: <em>remove/leave out anything which is not necessary</em>.</p>
+<p>See also: <a class="reference external" href="http://www.minimalbeispiel.de/mini-en.html">What is a minimal working example?</a>, <a class="reference external" href="http://www.tex.ac.uk/cgi-bin/texfaq2html?label=minxampl">LaTeX FAQ</a></p>
+</aside>
+<p>Now you’re ready to write the bug report.  Please include:</p>
+<ul class="simple">
+<li><p>A clear description of the bug.  Describe how you expected Docutils
+to behave, and contrast that with how it actually behaved.  While
+the bug may seem obvious to you, it may not be so obvious to someone
+else, so it’s best to avoid a guessing game.</p></li>
+<li><p>A complete description of the environment in which you reproduced
+the bug:</p>
+<ul>
+<li><p>Your operating system &amp; version.</p></li>
+<li><p>The version of Python (<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-V</span></code>).</p></li>
+<li><p>The version of Docutils (use the “-V” option to most Docutils
+front-end tools).</p></li>
+<li><p>Any private modifications you made to Docutils.</p></li>
+<li><p>Anything else that could possibly be relevant.  Err on the side
+of too much information, rather than too little.</p></li>
+</ul>
+</li>
+<li><p>A literal transcript of the <em>exact</em> command you ran, and the <em>exact</em>
+output.  Use the “–traceback” option to get a complete picture.</p></li>
+<li><p>The exact input and output files.  Create a <a class="reference internal" href="#minimal-example">minimal example</a>
+of the failing behaviour — it is better to attach complete files
+to your bug report than to include just a summary or excerpt.</p></li>
+<li><p>If you also want to include speculation as to the cause, and even a
+patch to fix the bug, that would be great!</p></li>
+</ul>
+<p>The best place to send your bug report is to the <a class="reference external" href="http://sourceforge.net/p/docutils/bugs/">SourceForge Bug
+Tracker</a>.  That way, it won’t be misplaced or forgotten.  In fact, an
+open bug report on SourceForge is a constant irritant that begs to be
+squashed.</p>
+<p>Thank you!</p>
+<p>(This section was inspired by the <a class="reference external" href="http://subversion.tigris.org/">Subversion project’s</a> <a class="reference external" href="http://svn.collab.net/viewcvs/svn/trunk/BUGS?view=markup">BUGS</a>
+file.)</p>
+</section>
+<section id="known-bugs">
+<h2><a class="toc-backref" href="#id8">Known Bugs</a><a class="headerlink" href="#known-bugs" title="永久链接至标题">¶</a></h2>
+<p>Also see the <a class="reference external" href="http://sourceforge.net/p/docutils/bugs/">SourceForge Bug Tracker</a>.</p>
+<ul>
+<li><p id="error-reporting">Calling rst2s5.py with a non-existent theme (<code class="docutils literal notranslate"><span class="pre">--theme</span>
+<span class="pre">does_not_exist</span></code>)
+causes exceptions.  Such errors should be handled more gracefully.</p>
+</li>
+<li><p>The “stylesheet” setting (a URL, to be used verbatim) should be
+allowed to be combined with “embed_stylesheet”.  The stylesheet data
+should be read in using urllib.  There was an assumption that a
+stylesheet to be embedded should exist as a file on the local
+system, and only the “stylesheet_path” setting should be used.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">utils.relative_path()</span></code> sometimes returns absolute <span class="target" id="paths-on-windows">paths on
+Windows</span> (like <code class="docutils literal notranslate"><span class="pre">C:/test/foo.css</span></code>) where it could have chosen a
+relative path.</p>
+<p>Furthermore, absolute pathnames are inserted verbatim, like
+<code class="docutils literal notranslate"><span class="pre">href="C:/test/foo.css"</span></code> instead of
+<code class="docutils literal notranslate"><span class="pre">href="file:///C:/test/foo.css"</span></code>.</p>
+</li>
+<li><p>Footnote label “5” should be “4” when processing the following
+input:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ref</span> <span class="p">[</span><span class="c1">#abc]_ [#]_ [1]_ [#4]_</span>
+
+<span class="o">..</span> <span class="p">[</span><span class="c1">#abc] footnote</span>
+<span class="o">..</span> <span class="p">[</span><span class="c1">#] two</span>
+<span class="o">..</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">one</span>
+<span class="o">..</span> <span class="p">[</span><span class="c1">#4] four</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">document</span> <span class="n">source</span><span class="o">=</span><span class="s2">"&lt;stdin&gt;"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">paragraph</span><span class="o">&gt;</span>
+        <span class="n">ref</span>
+        <span class="o">&lt;</span><span class="n">footnote_reference</span> <span class="n">auto</span><span class="o">=</span><span class="s2">"1"</span> <span class="n">ids</span><span class="o">=</span><span class="s2">"id1"</span> <span class="n">refid</span><span class="o">=</span><span class="s2">"abc"</span><span class="o">&gt;</span>
+            <span class="mi">2</span>
+
+        <span class="o">&lt;</span><span class="n">footnote_reference</span> <span class="n">auto</span><span class="o">=</span><span class="s2">"1"</span> <span class="n">ids</span><span class="o">=</span><span class="s2">"id2"</span> <span class="n">refid</span><span class="o">=</span><span class="s2">"id5"</span><span class="o">&gt;</span>
+            <span class="mi">3</span>
+
+        <span class="o">&lt;</span><span class="n">footnote_reference</span> <span class="n">ids</span><span class="o">=</span><span class="s2">"id3"</span> <span class="n">refid</span><span class="o">=</span><span class="s2">"id6"</span><span class="o">&gt;</span>
+            <span class="mi">1</span>
+
+        <span class="o">&lt;</span><span class="n">footnote_reference</span> <span class="n">auto</span><span class="o">=</span><span class="s2">"1"</span> <span class="n">ids</span><span class="o">=</span><span class="s2">"id4"</span> <span class="n">refid</span><span class="o">=</span><span class="s2">"id7"</span><span class="o">&gt;</span>
+            <span class="mi">5</span>
+    <span class="o">&lt;</span><span class="n">footnote</span> <span class="n">auto</span><span class="o">=</span><span class="s2">"1"</span> <span class="n">backrefs</span><span class="o">=</span><span class="s2">"id1"</span> <span class="n">ids</span><span class="o">=</span><span class="s2">"abc"</span> <span class="n">names</span><span class="o">=</span><span class="s2">"abc"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">label</span><span class="o">&gt;</span>
+            <span class="mi">2</span>
+        <span class="o">&lt;</span><span class="n">paragraph</span><span class="o">&gt;</span>
+            <span class="n">footnote</span>
+    <span class="o">&lt;</span><span class="n">footnote</span> <span class="n">auto</span><span class="o">=</span><span class="s2">"1"</span> <span class="n">backrefs</span><span class="o">=</span><span class="s2">"id2"</span> <span class="n">ids</span><span class="o">=</span><span class="s2">"id5"</span> <span class="n">names</span><span class="o">=</span><span class="s2">"3"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">label</span><span class="o">&gt;</span>
+            <span class="mi">3</span>
+        <span class="o">&lt;</span><span class="n">paragraph</span><span class="o">&gt;</span>
+            <span class="n">two</span>
+    <span class="o">&lt;</span><span class="n">footnote</span> <span class="n">backrefs</span><span class="o">=</span><span class="s2">"id3"</span> <span class="n">ids</span><span class="o">=</span><span class="s2">"id6"</span> <span class="n">names</span><span class="o">=</span><span class="s2">"1"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">label</span><span class="o">&gt;</span>
+            <span class="mi">1</span>
+        <span class="o">&lt;</span><span class="n">paragraph</span><span class="o">&gt;</span>
+            <span class="n">one</span>
+    <span class="o">&lt;</span><span class="n">footnote</span> <span class="n">auto</span><span class="o">=</span><span class="s2">"1"</span> <span class="n">backrefs</span><span class="o">=</span><span class="s2">"id4"</span> <span class="n">ids</span><span class="o">=</span><span class="s2">"id7"</span> <span class="n">names</span><span class="o">=</span><span class="s2">"4"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">label</span><span class="o">&gt;</span>
+            <span class="mi">5</span>
+        <span class="o">&lt;</span><span class="n">paragraph</span><span class="o">&gt;</span>
+            <span class="n">four</span>
+</pre></div>
+</div>
+</li>
+<li><p>IDs are based on names.  Explicit hyperlink targets have priority
+over implicit targets.  But if an explicit target comes after an
+implicit target with the same name, the ID of the first (implicit)
+target remains based on the implicit name.  Since HTML fragment
+identifiers are based on the IDs, the first target keeps the name.
+For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">contents</span><span class="p">::</span>
+
+<span class="n">Section</span>
+<span class="o">=======</span>
+
+<span class="o">..</span> <span class="n">_contents</span><span class="p">:</span>
+
+<span class="n">Subsection</span>
+<span class="o">----------</span>
+
+<span class="n">text</span> <span class="k">with</span> <span class="n">a</span> <span class="n">reference</span> <span class="n">to</span> <span class="n">contents_</span> <span class="ow">and</span> <span class="n">section_</span>
+
+<span class="o">..</span> <span class="n">_section</span><span class="p">:</span>
+
+<span class="n">This</span> <span class="n">paragraph</span> <span class="ow">is</span> <span class="n">explicitly</span> <span class="n">targeted</span> <span class="k">with</span> <span class="n">the</span> <span class="n">name</span> <span class="s2">"section"</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>When processed to HTML, the 2 internal hyperlinks (to “contents” &amp;
+“section”) will work fine, but hyperlinks from outside the document
+using <code class="docutils literal notranslate"><span class="pre">href="...#contents"</span></code> and <code class="docutils literal notranslate"><span class="pre">href="...#section"</span></code> won’t work.
+Such external links will connect to the implicit targets (table of
+contents and “Section” title) instead of the explicit targets
+(“Subsection” title and last paragraph).</p>
+<p>Hyperlink targets with duplicate names should be assigned new IDs
+unrelated to the target names (i.e., “id”-prefix serial IDs).</p>
+</li>
+<li><p>The “contents” ID of the local table of contents in
+<code class="docutils literal notranslate"><span class="pre">test/functional/expected/standalone_rst_pseudoxml.txt</span></code> is lost in
+the HTML output at
+<code class="docutils literal notranslate"><span class="pre">test/functional/expected/standalone_rst_html4css1.html</span></code>.</p></li>
+<li><p><span class="target" id="blank-first-columns">Blank first columns</span> in simple tables with explicit row separators
+silently swallow their input.  They should at least produce system
+error messages.  But, with explicit row separators, the meaning is
+unambiguous and ought to be supported:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">==============</span>  <span class="o">==========</span>
+<span class="n">Table</span> <span class="k">with</span> <span class="n">row</span>  <span class="n">separators</span>
+<span class="o">==============</span>  <span class="o">==========</span>
+                <span class="ow">and</span> <span class="n">blank</span>
+<span class="o">--------------</span>  <span class="o">----------</span>
+                <span class="n">entries</span>
+<span class="o">--------------</span>  <span class="o">----------</span>
+                <span class="ow">in</span> <span class="n">first</span>
+<span class="o">--------------</span>  <span class="o">----------</span>
+                <span class="n">columns</span><span class="o">.</span>
+<span class="o">==============</span>  <span class="o">==========</span>
+</pre></div>
+</div>
+<p>Added a commented-out test case to
+test/test_parsers/test_rst/test_SimpleTableParser.py.</p>
+</li>
+<li><p><span class="target" id="footnote-references-with-hyperlink-targets">Footnote references with hyperlink targets</span> cause a possibly
+invalid node tree and make the HTML writer crash:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rst2pseudoxml.py
+[1]_
+
+.. _1: URI
+&lt;document source="&lt;stdin&gt;"&gt;
+    &lt;paragraph&gt;
+        &lt;footnote_reference ids="id1" refuri="URI"&gt;
+            1
+    &lt;target ids="id2" names="1" refuri="URI"&gt;
+</pre></div>
+</div>
+</li>
+<li><p>Anonymous references have “name” attributes.  Should they?  Are they
+used?  See <code class="docutils literal notranslate"><span class="pre">test/test_parsers/test_rst/test_inline_markup.py</span></code>.</p></li>
+<li><p>&lt;reference&gt; elements have a “name” attribute, not “names”.  The
+attribute should be “names”; this is an inconsistency.</p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="COPYING.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Copying Docutils</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="docs/ref/transforms.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Docutils Transforms</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, xinetzone |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
+            <a class="muted-link" href="../_sources/docutils/BUGS.txt"
+               rel="nofollow">
+              显示源代码
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            目录
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Docutils Bugs</a><ul>
+<li><a class="reference internal" href="#how-to-report-a-bug">How To Report A Bug</a></li>
+<li><a class="reference internal" href="#known-bugs">Known Bugs</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/main.js"></script>
+    <script src="../_static/translations.js"></script>
+    </body>
+</html>

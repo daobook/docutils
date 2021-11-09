@@ -1,0 +1,2546 @@
+<!doctype html>
+<html class="no-js" lang="zh_CN">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+<link rel="index" title="索引" href="../../../genindex.html" /><link rel="search" title="搜索" href="../../../search.html" /><link rel="next" title="Docutils Link List" href="links.html" /><link rel="prev" title="Docutils HTML writers" href="html.html" />
+
+    <meta name="generator" content="sphinx-4.2.0, furo 2021.10.09"/>
+        <title>1 Generating LaTeX with Docutils - docutils 0.0.1 文档</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">docutils 0.0.1 文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">docutils 0.0.1 文档</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">概述</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/index.html">Docutils: Documentation Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/mirror/setext.html">Setext 文档镜像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Docutils Project Documentation Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">user</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="config.html">Docutils Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emacs.html">Emacs Support for reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="html.html">Docutils HTML writers</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#"><span class="sectnum">1</span> Generating LaTeX with Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="links.html">Docutils Link List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailing-lists.html">Docutils Mailing Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manpage.html">manpage writer for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odt.html"><span class="sectnum">1</span> Odt Writer for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smartquotes.html">Smart Quotes for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Docutils Front-End Tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">api</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/cmdline-tool.html">Inside A Docutils Command-Line Front-End Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/publisher.html">The Docutils Publisher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/runtime-settings.html">Docutils Runtime Settings</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">dev</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dev/distributing.html">Docutils Distributor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/enthought-plan.html"><span class="sectnum">1</span> Plan for Enthought API Documentation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/enthought-rfp.html"><span class="sectnum">1</span> Enthought API Documentation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/hacking.html">Docutils Hacker’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/policies.html">Docutils Project Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/pysource.html">Python Source Reader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/release.html">Docutils Release Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/repository.html">The Docutils Version Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/semantics.html">Docstring Semantics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/testing.html">Docutils Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/todo.html">Docutils To Do List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/website.html">Docutils Web Site</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">howto</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/html-stylesheets.html">Writing HTML (CSS) Stylesheets for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/i18n.html">Docutils Internationalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/rst-directives.html">Creating reStructuredText Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/rst-roles.html">Creating reStructuredText Interpreted Text Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/security.html">Deploying Docutils Securely</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">peps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html">Rejection Notice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#road-map-to-the-docstring-peps">Road Map to the Docstring PEPs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#project-web-site">Project Web Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html">Rejection Notice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#project-web-site">Project Web Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#benefits">Benefits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#goals">Goals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#docstring-significant-features">Docstring-Significant Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#questions-answers">Questions &amp; Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#references-footnotes">References &amp; Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#acknowledgements">Acknowledgements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ref</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ref/doctree.html">The Docutils Document Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/transforms.html">Docutils Transforms</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">docutils other</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../BUGS.html">Docutils Bugs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../COPYING.html">Copying Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../FAQ.html"><span class="sectnum">1</span> Docutils FAQ (Frequently Asked Questions)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../HISTORY.html">Docutils History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Docutils 0.18.1b.dev 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../RELEASE-NOTES.html">Docutils Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../THANKS.html">Acknowledgements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">reStructuredText</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/rst.html"></a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst/cheatsheet.html">The reStructuredText Cheat Sheet: Syntax Reminders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst/quickstart.html">A ReStructuredText Primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/rst/alternatives.html">A Record of reStructuredText Syntax Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/rst/problems.html">Problems With StructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/definitions.html">reStructuredText Standard Definition Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/directives.html">reStructuredText Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/introduction.html">An Introduction to reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/mathematics.html"><span class="sectnum">1</span> LaTeX syntax for mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/restructuredtext.html">reStructuredText Markup Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/roles.html">reStructuredText Interpreted Text Roles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">sandbox</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../sandbox/README.html">Sandbox 自述</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="generating-latex-with-docutils">
+<h1><a class="toc-backref" href="#id37"><span class="sectnum">1</span> Generating LaTeX with Docutils</a><a class="headerlink" href="#generating-latex-with-docutils" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>Engelbert Gruber, Günter Milde</p>
+</dd>
+<dt class="field-even">Contact</dt>
+<dd class="field-even"><p><a class="reference external" href="mailto:docutils-develop%40lists.sourceforge.net">docutils-develop<span>@</span>lists<span>.</span>sourceforge<span>.</span>net</a></p>
+</dd>
+<dt class="field-odd">Revision</dt>
+<dd class="field-odd"><p>$Revision$</p>
+</dd>
+<dt class="field-even">Date</dt>
+<dd class="field-even"><p>$Date$</p>
+</dd>
+<dt class="field-odd">Copyright</dt>
+<dd class="field-odd"><p>This document has been placed in the public domain.</p>
+</dd>
+<dt class="field-even">Abstract</dt>
+<dd class="field-even"><p>This document covers topics specific to Docutils’ <a class="reference internal" href="#latex">LaTeX</a> export.</p>
+</dd>
+</dl>
+<div class="contents topic" id="id1">
+<p class="topic-title">目录</p>
+<ul class="auto-toc simple">
+<li><p><a class="reference internal" href="#generating-latex-with-docutils" id="id37"><span class="sectnum">1</span> Generating LaTeX with Docutils</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#latex" id="id38"><span class="sectnum">1.1</span> LaTeX</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#latex-document-classes-and-packages" id="id39"><span class="sectnum">1.1.1</span> LaTeX document classes and packages</a></p></li>
+<li><p><a class="reference internal" href="#docutils-specific-latex-macros" id="id40"><span class="sectnum">1.1.2</span> Docutils specific LaTeX macros</a></p></li>
+<li><p><a class="reference internal" href="#length-units" id="id41"><span class="sectnum">1.1.3</span> Length units</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#pdf-generation" id="id42"><span class="sectnum">1.2</span> PDF generation</a></p></li>
+<li><p><a class="reference internal" href="#configuration" id="id43"><span class="sectnum">1.3</span> Configuration</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#options-settings" id="id44"><span class="sectnum">1.3.1</span> Options/Settings</a></p></li>
+<li><p><a class="reference internal" href="#classes" id="id45"><span class="sectnum">1.3.2</span> Classes</a></p></li>
+<li><p><a class="reference internal" href="#latex-code" id="id46"><span class="sectnum">1.3.3</span> LaTeX code</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#style-sheets" id="id47"><span class="sectnum">1.3.3.1</span> Style sheets</a></p></li>
+<li><p><a class="reference internal" href="#latex-preamble" id="id48"><span class="sectnum">1.3.3.2</span> LaTeX preamble</a></p></li>
+<li><p><a class="reference internal" href="#templates" id="id49"><span class="sectnum">1.3.3.3</span> Templates</a></p></li>
+<li><p><a class="reference internal" href="#raw-latex" id="id50"><span class="sectnum">1.3.3.4</span> Raw LaTeX</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#how-to-configure-the" id="id51"><span class="sectnum">1.4</span> How to configure the …</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#admonitions" id="id52"><span class="sectnum">1.4.1</span> admonitions</a></p></li>
+<li><p><a class="reference internal" href="#custom-interpreted-text-roles" id="id53"><span class="sectnum">1.4.2</span> custom interpreted text roles</a></p></li>
+<li><p><a class="reference internal" href="#definition-lists" id="id54"><span class="sectnum">1.4.3</span> definition lists</a></p></li>
+<li><p><a class="reference internal" href="#document-class" id="id55"><span class="sectnum">1.4.4</span> document class</a></p></li>
+<li><p><a class="reference internal" href="#document-info" id="id56"><span class="sectnum">1.4.5</span> document info</a></p></li>
+<li><p><a class="reference internal" href="#document-title" id="id57"><span class="sectnum">1.4.6</span> document title</a></p></li>
+<li><p><a class="reference internal" href="#field-lists" id="id58"><span class="sectnum">1.4.7</span> field lists</a></p></li>
+<li><p><a class="reference internal" href="#figure-and-table-captions" id="id59"><span class="sectnum">1.4.8</span> figure and table captions</a></p></li>
+<li><p><a class="reference internal" href="#figure-placement" id="id60"><span class="sectnum">1.4.9</span> figure placement</a></p></li>
+<li><p><a class="reference internal" href="#font" id="id61"><span class="sectnum">1.4.10</span> font</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#choice-of-suitable-fonts" id="id62"><span class="sectnum">1.4.10.1</span> choice of suitable fonts</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#font-encoding" id="id63"><span class="sectnum">1.4.11</span> font encoding</a></p></li>
+<li><p><a class="reference internal" href="#font-size" id="id64"><span class="sectnum">1.4.12</span> font size</a></p></li>
+<li><p><a class="reference internal" href="#footnotes" id="id65"><span class="sectnum">1.4.13</span> footnotes</a></p></li>
+<li><p><a class="reference internal" href="#hyphenation" id="id66"><span class="sectnum">1.4.14</span> hyphenation</a></p></li>
+<li><p><a class="reference internal" href="#hyperlinks" id="id67"><span class="sectnum">1.4.15</span> hyperlinks</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#disable-hyperlinks" id="id68"><span class="sectnum">1.4.15.1</span> disable hyperlinks</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#line-blocks" id="id69"><span class="sectnum">1.4.16</span> line blocks</a></p></li>
+<li><p><a class="reference internal" href="#line-spacing" id="id70"><span class="sectnum">1.4.17</span> line spacing</a></p></li>
+<li><p><a class="reference internal" href="#literal-blocks" id="id71"><span class="sectnum">1.4.18</span> literal blocks</a></p></li>
+<li><p><a class="reference internal" href="#lists" id="id72"><span class="sectnum">1.4.19</span> lists</a></p></li>
+<li><p><a class="reference internal" href="#list-of-figures-tables" id="id73"><span class="sectnum">1.4.20</span> list of figures/tables</a></p></li>
+<li><p><a class="reference internal" href="#option-list" id="id74"><span class="sectnum">1.4.21</span> option list</a></p></li>
+<li><p><a class="reference internal" href="#page-breaks" id="id75"><span class="sectnum">1.4.22</span> page breaks</a></p></li>
+<li><p><a class="reference internal" href="#page-layout" id="id76"><span class="sectnum">1.4.23</span> page layout</a></p></li>
+<li><p><a class="reference internal" href="#page-headers-and-footers" id="id77"><span class="sectnum">1.4.24</span> page headers and footers</a></p></li>
+<li><p><a class="reference internal" href="#page-numbering" id="id78"><span class="sectnum">1.4.25</span> page numbering</a></p></li>
+<li><p><a class="reference internal" href="#paper-size" id="id79"><span class="sectnum">1.4.26</span> paper size</a></p></li>
+<li><p><a class="reference internal" href="#paragraph-indent" id="id80"><span class="sectnum">1.4.27</span> paragraph indent</a></p></li>
+<li><p><a class="reference internal" href="#rubric" id="id81"><span class="sectnum">1.4.28</span> rubric</a></p></li>
+<li><p><a class="reference internal" href="#section-headings" id="id82"><span class="sectnum">1.4.29</span> section headings</a></p></li>
+<li><p><a class="reference internal" href="#section-numbering" id="id83"><span class="sectnum">1.4.30</span> section numbering</a></p></li>
+<li><p><a class="reference internal" href="#sidebar" id="id84"><span class="sectnum">1.4.31</span> sidebar</a></p></li>
+<li><p><a class="reference internal" href="#size-of-a-pixel" id="id85"><span class="sectnum">1.4.32</span> size of a pixel</a></p></li>
+<li><p><a class="reference internal" href="#table-style" id="id86"><span class="sectnum">1.4.33</span> table style</a></p></li>
+<li><p><a class="reference internal" href="#table-of-contents" id="id87"><span class="sectnum">1.4.34</span> table of contents</a></p></li>
+<li><p><a class="reference internal" href="#title-reference-role" id="id88"><span class="sectnum">1.4.35</span> title reference role</a></p></li>
+<li><p><a class="reference internal" href="#titles" id="id89"><span class="sectnum">1.4.36</span> titles</a></p></li>
+<li><p><a class="reference internal" href="#text-encoding" id="id90"><span class="sectnum">1.4.37</span> text encoding</a></p></li>
+<li><p><a class="reference internal" href="#topic-element" id="id91"><span class="sectnum">1.4.38</span> topic element</a></p></li>
+<li><p><a class="reference internal" href="#transition-element" id="id92"><span class="sectnum">1.4.39</span> transition element</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#changes" id="id93"><span class="sectnum">1.5</span> Changes</a></p></li>
+<li><p><a class="reference internal" href="#problems" id="id94"><span class="sectnum">1.6</span> Problems</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#troubleshooting" id="id95"><span class="sectnum">1.6.1</span> Troubleshooting</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#bad-looking-pdf-output" id="id96"><span class="sectnum">1.6.1.1</span> Bad looking PDF output</a></p></li>
+<li><p><a class="reference internal" href="#footnote-mark-and-text-at-different-pages" id="id97"><span class="sectnum">1.6.1.2</span> footnote mark and text at different pages</a></p></li>
+<li><p><a class="reference internal" href="#non-breaking-hyperlinks" id="id98"><span class="sectnum">1.6.1.3</span> non-breaking hyperlinks</a></p></li>
+<li><p><a class="reference internal" href="#glyph-not-defined-in-pd1-encoding" id="id99"><span class="sectnum">1.6.1.4</span> Glyph not defined in PD1 encoding</a></p></li>
+<li><p><a class="reference internal" href="#image-inclusion" id="id100"><span class="sectnum">1.6.1.5</span> image inclusion</a></p></li>
+<li><p><a class="reference internal" href="#why-are-my-images-too-big" id="id101"><span class="sectnum">1.6.1.6</span> Why are my images too big?</a></p></li>
+<li><p><a class="reference internal" href="#error-illegal-unit-px" id="id102"><span class="sectnum">1.6.1.7</span> Error <code class="docutils literal notranslate"><span class="pre">illegal</span> <span class="pre">unit</span> <span class="pre">px</span></code></a></p></li>
+<li><p><a class="reference internal" href="#error-symbol-textcurrency-not-provided" id="id103"><span class="sectnum">1.6.1.8</span> Error <code class="docutils literal notranslate"><span class="pre">Symbol</span> <span class="pre">\textcurrency</span> <span class="pre">not</span> <span class="pre">provided</span></code> …</a></p></li>
+<li><p><a class="reference internal" href="#search-and-text-extraction" id="id104"><span class="sectnum">1.6.1.9</span> Search and text extraction</a></p></li>
+<li><p><a class="reference internal" href="#unicode-box-drawing-and-block-characters" id="id105"><span class="sectnum">1.6.1.10</span> Unicode box drawing and block characters</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#bugs-and-open-issues" id="id106"><span class="sectnum">1.6.2</span> Bugs and open issues</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#footnotes-and-citations" id="id107"><span class="sectnum">1.6.2.1</span> Footnotes and citations</a></p></li>
+<li><p><a class="reference internal" href="#tables" id="id108"><span class="sectnum">1.6.2.2</span> Tables</a></p></li>
+<li><p><a class="reference internal" href="#id35" id="id109"><span class="sectnum">1.6.2.3</span> Figures</a></p></li>
+<li><p><a class="reference internal" href="#miscellaneous" id="id110"><span class="sectnum">1.6.2.4</span> Miscellaneous</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="latex">
+<h2><a class="toc-backref" href="#id38"><span class="sectnum">1.1</span> LaTeX</a><a class="headerlink" href="#latex" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="http://www.latex-project.org/">LaTeX</a>, is a document preparation system for high-quality typesetting. It
+is most often used for medium-to-large technical or scientific documents but
+it can be used for almost any form of publishing. There exists a wide
+selection of <a class="reference external" href="http://www.latex-project.org/guides/">LaTeX Documentation on the net</a> and <a class="reference external" href="http://www.latex-project.org/guides/books.html">books on LaTeX and
+related topics</a>. For an introduction to LaTeX see, e.g., <a class="reference external" href="http://www.latex-project.org/guides/usrguide.pdf">LaTeX2e for
+authors</a>.</p>
+<section id="latex-document-classes-and-packages">
+<span id="latex-packages"></span><h3><a class="toc-backref" href="#id39"><span class="sectnum">1.1.1</span> LaTeX document classes and packages</a><a class="headerlink" href="#latex-document-classes-and-packages" title="永久链接至标题">¶</a></h3>
+<p>Unlike HTML with CSS, LaTeX uses one common language for markup and style
+definitions. Separation of content and style is realized by collecting style
+definitions in LaTeX classes and packages, or the
+<a class="reference internal" href="#latex-preamble">document preamble</a>.</p>
+<p>LaTeX document classes and packages (similar to Python modules or C
+libraries) provide means to extend or modify the LaTeX language by
+redefining macros or providing new ones.</p>
+<p>Using the <a class="reference internal" href="#document-class">document class</a> and <a class="reference internal" href="#style-sheet">style sheet</a> configuration options, you
+can select from a <em>huge</em> selection of classes and packages (standard as well
+as user contributed) coming with your TeX distribution or available at
+<a class="reference external" href="http://www.ctan.org">CTAN</a> as well as custom style sheets.</p>
+</section>
+<section id="docutils-specific-latex-macros">
+<h3><a class="toc-backref" href="#id40"><span class="sectnum">1.1.2</span> Docutils specific LaTeX macros</a><a class="headerlink" href="#docutils-specific-latex-macros" title="永久链接至标题">¶</a></h3>
+<p>Some Docutils objects have no LaTeX counterpart, they will be typeset
+using a Docutils specific LaTeX <em>macro</em> (command, environment, or
+length) to allow customization. By convention, special macros use the
+prefix <code class="docutils literal notranslate"><span class="pre">\DU</span></code><a class="footnote-reference brackets" href="#id4" id="id3">1</a>.</p>
+<p>The <a class="reference external" href="https://ctan.org/pkg/docutils">docutils.sty</a> LaTeX package providing required definitions is
+part of Docutils ≥ 0.17 and available on CTAN since 2020-09-04.
+The generated LaTeX documents should be kept processable by a standard LaTeX
+installation. Therefore fallback definitions are included after the <a class="reference internal" href="#custom-style-sheets">custom
+style sheets</a>, if a macro is required in the document and
+the <a class="reference external" href="config.html#stylesheet-latex-writers">stylesheet</a> setting does not include “docutils”.</p>
+<ul class="simple">
+<li><p>Custom <a class="reference internal" href="#style-sheets">style sheets</a> can define alternative implementations with
+<code class="docutils literal notranslate"><span class="pre">\newcommand</span></code>, <code class="docutils literal notranslate"><span class="pre">\newenvironment</span></code>, and <code class="docutils literal notranslate"><span class="pre">\newlength</span></code> followed by
+<code class="docutils literal notranslate"><span class="pre">\setlength</span></code>.</p></li>
+<li><p>Definitions with <a class="reference internal" href="#raw-latex">raw LaTeX</a> are part of the document body. Use
+<code class="docutils literal notranslate"><span class="pre">\def</span></code>, <code class="docutils literal notranslate"><span class="pre">\renewcommand</span></code> or <code class="docutils literal notranslate"><span class="pre">\renewenvironment</span></code>, and <code class="docutils literal notranslate"><span class="pre">\setlength</span></code>.</p></li>
+</ul>
+<p>See the test output <a class="reference external" href="https://sf.net/p/docutils/code/HEAD/tree/trunk/docutils/test/functional/expected/standalone_rst_latex.tex?format=raw">standalone_rst_latex.tex</a> for an example of the fallback
+definitions and their use in the document.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
+<dd><p>DU for Documentation Utilities = Docutils</p>
+</dd>
+</dl>
+</section>
+<section id="length-units">
+<h3><a class="toc-backref" href="#id41"><span class="sectnum">1.1.3</span> Length units</a><a class="headerlink" href="#length-units" title="永久链接至标题">¶</a></h3>
+<p>LaTeX supports all <a class="reference external" href="../ref/rst/restructuredtext.html#length-units">length units</a> defined for Docutils plus the
+following less common units:</p>
+<dl class="field-list simple">
+<dt class="field-odd">pt</dt>
+<dd class="field-odd"><p>typewriter’s (or LaTeX) point (1 pt = 1/72.27 in)</p>
+</dd>
+<dt class="field-even">dd</dt>
+<dd class="field-even"><p>didôt (1 dd = 1238/1157 pt)</p>
+</dd>
+<dt class="field-odd">cc</dt>
+<dd class="field-odd"><p>cîcero (1 cc = 12 dd)</p>
+</dd>
+<dt class="field-even">sp</dt>
+<dd class="field-even"><p>scaled point (1sp = 1/65536pt)</p>
+</dd>
+</dl>
+<div class="admonition attention">
+<p class="admonition-title">注意</p>
+<p>Different definitions of the unit “pt”!</p>
+<ul>
+<li><p>In Docutils (as well as CSS) the unit symbol “pt” denotes the
+<cite>Postscript point</cite> or <cite>DTP point</cite>.</p></li>
+<li><p>LaTeX uses “pt” for the <cite>LaTeX point</cite>, which is unknown to Docutils and
+0.3 % smaller.</p></li>
+<li><p>The <cite>DTP point</cite> is available in LaTeX as “bp” (big point):</p>
+<blockquote>
+<div><p>1 pt = 1/72.25 in &lt; 1 bp  = 1/72 in</p>
+</div></blockquote>
+</li>
+</ul>
+<p>Lengths specified in the document with unit “pt” will be given the
+unit “bp” in the LaTeX source.</p>
+<p>In <a class="reference internal" href="#raw-latex">raw LaTeX</a> and <a class="reference internal" href="#custom-style-sheets">custom style sheets</a>, the <cite>DTP point</cite> must be
+specified as “bp”, while “pt” is interpreted as <cite>LaTeX point</cite>.</p>
+</div>
+<p>The default length unit (added by Docutils to length specifications
+without unit) is the “DTP point”.</p>
+</section>
+</section>
+<section id="pdf-generation">
+<h2><a class="toc-backref" href="#id42"><span class="sectnum">1.2</span> PDF generation</a><a class="headerlink" href="#pdf-generation" title="永久链接至标题">¶</a></h2>
+<p>In most cases, LaTeX code is not the desired end-format of the document.
+LaTeX offers many ways to generate PDF documents from the LaTeX
+source, including:</p>
+<dl class="simple">
+<dt><span class="target" id="pdflatex">pdflatex</span></dt><dd><p>Generates a PDF document directly from the LaTeX file.
+Export your document with the <span class="target" id="latex2e-writer">LaTeX2e writer</span> (writer
+name “<code class="docutils literal notranslate"><span class="pre">latex</span></code>”, frontend tool <a class="reference external" href="tools.html#rst2latex-py">rst2latex.py</a>).</p>
+</dd>
+<dt><span class="target" id="xelatex">xelatex</span> or <span class="target" id="lualatex">lualatex</span></dt><dd><p>The <a class="reference external" href="http://tug.org/xetex/">XeTeX</a> and <a class="reference external" href="http://luatex.org/">LuaTeX</a> engines work with input files in UTF-8 encoding
+and system fonts. Export your document with the <span class="target" id="xelatex-writer">XeLaTeX writer</span> (writer
+name “<code class="docutils literal notranslate"><span class="pre">xetex</span></code>”, frontend tool <a class="reference external" href="tools.html#rst2xetex-py">rst2xetex.py</a>).</p>
+</dd>
+</dl>
+<p>You may need to call latex two or three times to get internal references
+correct.</p>
+<dl class="simple">
+<dt><span class="target" id="rubber">rubber</span></dt><dd><p>The <a class="reference external" href="https://gitlab.com/latex-rubber/rubber/">Rubber</a> wrapper for LaTeX and friends can be used to automatically
+run all programs the required number of times and delete “spurious” files.
+This includes processing bibliographic references or indices, as well as
+compilation or conversion of figures.</p>
+</dd>
+</dl>
+</section>
+<section id="configuration">
+<h2><a class="toc-backref" href="#id43"><span class="sectnum">1.3</span> Configuration</a><a class="headerlink" href="#configuration" title="永久链接至标题">¶</a></h2>
+<div class="contents local topic" id="id7">
+<ul class="auto-toc simple">
+<li><p><a class="reference internal" href="#options-settings" id="id111"><span class="sectnum">1.3.1</span> Options/Settings</a></p></li>
+<li><p><a class="reference internal" href="#classes" id="id112"><span class="sectnum">1.3.2</span> Classes</a></p></li>
+<li><p><a class="reference internal" href="#latex-code" id="id113"><span class="sectnum">1.3.3</span> LaTeX code</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#style-sheets" id="id114"><span class="sectnum">1.3.3.1</span> Style sheets</a></p></li>
+<li><p><a class="reference internal" href="#latex-preamble" id="id115"><span class="sectnum">1.3.3.2</span> LaTeX preamble</a></p></li>
+<li><p><a class="reference internal" href="#templates" id="id116"><span class="sectnum">1.3.3.3</span> Templates</a></p></li>
+<li><p><a class="reference internal" href="#raw-latex" id="id117"><span class="sectnum">1.3.3.4</span> Raw LaTeX</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="options-settings">
+<span id="option"></span><h3><a class="toc-backref" href="#id111"><span class="sectnum">1.3.1</span> Options/Settings</a><a class="headerlink" href="#options-settings" title="永久链接至标题">¶</a></h3>
+<p>Options can be specified as</p>
+<ul class="simple">
+<li><p>command-line options, or</p></li>
+<li><p>configuration settings.</p></li>
+</ul>
+<p>Run <code class="docutils literal notranslate"><span class="pre">rst2latex.py</span> <span class="pre">--help</span></code> to get a list of available options;
+see <a class="reference external" href="config.html">Docutils Configuration</a> for details.</p>
+</section>
+<section id="classes">
+<h3><a class="toc-backref" href="#id112"><span class="sectnum">1.3.2</span> Classes</a><a class="headerlink" href="#classes" title="永久链接至标题">¶</a></h3>
+<p>The <a class="reference external" href="../ref/doctree.html#classes">“classes” attribute</a> is one of the common attributes, shared by all
+Docutils elements.
+In HTML, the common use is to provide selection criteria for style rules in
+CSS stylesheets. As there is no comparable framework for LaTeX, Docutils
+emulates some of this behaviour via <a class="reference internal" href="#docutils-specific-latex-macros">Docutils specific LaTeX macros</a>.
+Due to LaTeX limitations, class arguments are ignored for
+some elements (e.g. a <a class="reference internal" href="#rubric">rubric</a>).</p>
+<dl class="simple">
+<dt><em>Inline elements</em></dt><dd><p>are handled via the <code class="docutils literal notranslate"><span class="pre">\DUrole{}</span></code> macro that calls the optional styling
+command <code class="docutils literal notranslate"><span class="pre">\DUrole«classargument»</span></code> with one argument (the role content).
+See <a class="reference internal" href="#custom-interpreted-text-roles">custom interpreted text roles</a>.</p>
+</dd>
+<dt><em>Block level elements</em></dt><dd><p>are wrapped in “class environments”:
+<code class="docutils literal notranslate"><span class="pre">\begin{DUclass}</span></code> calls the optional styling command
+<code class="docutils literal notranslate"><span class="pre">\DUCLASS«classargument»{}</span></code>, <code class="docutils literal notranslate"><span class="pre">\end{DUclass}</span></code> tries
+<code class="docutils literal notranslate"><span class="pre">\endDUCLASS«classargument»</span></code>.</p>
+</dd>
+</dl>
+<p>Customization is done by defining matching macros or environments.</p>
+<dl>
+<dt>Example 1:</dt><dd><p>Use small caps font inside elements with class value “custom”.</p>
+<dl>
+<dt><em>Inline elements</em></dt><dd><p>The LaTeX function <code class="docutils literal notranslate"><span class="pre">\textsc</span></code> sets the argument in small caps:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">DUrolecustom</span><span class="p">}[</span><span class="mi">1</span><span class="p">]{</span>\<span class="n">textsc</span><span class="p">{</span><span class="c1">#1}}</span>
+</pre></div>
+</div>
+</dd>
+<dt><em>Block-level elements</em></dt><dd><p>The LaTeX directive (macro without argument) <code class="docutils literal notranslate"><span class="pre">\scshape</span></code> switches to
+the small caps font. Its effect is confined to the wrapper <code class="docutils literal notranslate"><span class="pre">DUclass</span></code>
+environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newcommand</span><span class="o">*</span><span class="p">{</span>\<span class="n">DUCLASScustom</span><span class="p">}{</span>\<span class="n">scshape</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd>
+<dt>Example 2:</dt><dd><p>It is even possible to locally redefine other LaTeX macros, e.g. to
+turn bullet lists with class value “enumerateitems” into enumerated
+lists:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newcommand</span><span class="o">*</span><span class="p">{</span>\<span class="n">DUCLASSenumerateitems</span><span class="p">}{</span><span class="o">%</span>
+  \<span class="n">renewenvironment</span><span class="p">{</span><span class="n">itemize</span><span class="p">}{</span>\<span class="n">begin</span><span class="p">{</span><span class="nb">enumerate</span><span class="p">}}</span><span class="o">%</span>
+                            <span class="p">{</span>\<span class="n">end</span><span class="p">{</span><span class="nb">enumerate</span><span class="p">}}</span><span class="o">%</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul>
+<li><p>Class arguments may contain numbers and hyphens, which need special
+treatment in LaTeX command names (see <a class="reference external" href="../ref/rst/directives.html#class">class directive</a>). The commands
+<code class="docutils literal notranslate"><span class="pre">\csname</span></code> and <code class="docutils literal notranslate"><span class="pre">\endcsname</span></code> or the special command <code class="docutils literal notranslate"><span class="pre">\@namedef</span></code> can
+help with the definition of corresponding macros or environments, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">expandafter</span>\<span class="n">newcommand</span>\<span class="n">csname</span> <span class="n">gg1</span>\<span class="n">endcsname</span><span class="p">{</span><span class="n">Definition</span> <span class="n">of</span> <span class="n">gg1</span><span class="o">.</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\makeatletter
+\@namedef{DUCLASSadmonition-test}{…}
+\makeatother
+</pre></div>
+</div>
+</li>
+<li><p>Elements can have multiple class arguments. In contrast to HTML/CSS, the
+order of the class arguments cannot be ignored in LaTeX</p></li>
+<li><p>Class handling differs for some elements and class values:</p>
+<ul class="simple">
+<li><p>Class argument values starting with <code class="docutils literal notranslate"><span class="pre">align-</span></code> are transformed to
+“align” argument values. Class argument values starting with
+<code class="docutils literal notranslate"><span class="pre">language-</span></code> set the elements language property.</p></li>
+<li><p>The table element recognizes some special class values. See section
+<a class="reference internal" href="#table-style">table style</a>.</p></li>
+<li><p>If the <a class="reference external" href="config.html#legacy-class-functions">legacy-class-functions</a> setting is True, the special macros
+<code class="docutils literal notranslate"><span class="pre">\DUadmonition</span></code> and <code class="docutils literal notranslate"><span class="pre">\DUtitle</span></code> are written with a comma separated
+list of class values as optional argument.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="latex-code">
+<h3><a class="toc-backref" href="#id113"><span class="sectnum">1.3.3</span> LaTeX code</a><a class="headerlink" href="#latex-code" title="永久链接至标题">¶</a></h3>
+<p>Custom LaTeX code can be placed in <a class="reference internal" href="#style-sheets">style sheets</a>, the
+<a class="reference internal" href="#latex-preamble">LaTeX preamble</a>, the document body (<a class="reference internal" href="#raw-latex">raw LaTeX</a>), or custom <a class="reference internal" href="#templates">templates</a>.</p>
+<p>The functional tests that come with Docutils, can serve as example.</p>
+<dl class="simple">
+<dt>input:</dt><dd><p><a class="reference external" href="https://sf.net/p/docutils/code/HEAD/tree/trunk/docutils/test/functional/input/standalone_rst_latex.txt">standalone_rst_latex.txt</a> (includes files from <a class="reference external" href="https://sf.net/p/docutils/code/HEAD/tree/trunk/docutils/test/functional/input/data">tests/functional/input/data</a>)</p>
+</dd>
+<dt>expected output:</dt><dd><p><a class="reference external" href="https://sf.net/p/docutils/code/HEAD/tree/trunk/docutils/test/functional/expected/standalone_rst_latex.tex?format=raw">standalone_rst_latex.tex</a></p>
+</dd>
+</dl>
+<section id="style-sheets">
+<span id="custom-style-sheets"></span><span id="style-sheet"></span><h4><a class="toc-backref" href="#id114"><span class="sectnum">1.3.3.1</span> Style sheets</a><a class="headerlink" href="#style-sheets" title="永久链接至标题">¶</a></h4>
+<p>A common way of LaTeX customization is the preparation of custom style
+sheets, either as simple files with LaTeX code snippets or as home-made
+<a class="reference internal" href="#latex-packages">LaTeX packages</a> (see the <a class="reference external" href="http://mirrors.ctan.org/macros/latex/base/clsguide.pdf">clsguide</a> for an introduction on LaTeX
+package writing).</p>
+<dl>
+<dt>Options:</dt><dd><p><a class="reference external" href="config.html#stylesheet-latex-writers">stylesheet</a></p>
+<p>It is possible to specify multiple style sheets and mix <a class="reference internal" href="#latex-packages">LaTeX
+packages</a> with custom style sheets.</p>
+</dd>
+</dl>
+<p>You cannot specify package options with the <a class="reference external" href="config.html#stylesheet-latex-writers">stylesheet</a> setting. If
+you need to pass options to the package, use the <code class="docutils literal notranslate"><span class="pre">\usepackage</span></code>
+command in the <a class="reference internal" href="#latex-preamble">LaTeX preamble</a> or a custom style sheet.</p>
+<dl>
+<dt>Example 1:</dt><dd><p>Select Latin Modern fonts with the <cite>lmodern</cite> package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">stylesheet</span><span class="o">=</span><span class="n">lmodern</span>
+</pre></div>
+</div>
+</dd>
+<dt>Example 2:</dt><dd><p>Use the <cite>preamble.tex</cite> home-made custom style sheet together with
+the package <cite>kerkis</cite> (Bookman fonts):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">stylesheet</span><span class="o">=</span><span class="n">kerkis</span><span class="p">,</span><span class="n">preamble</span><span class="o">.</span><span class="n">tex</span>
+</pre></div>
+</div>
+</dd>
+<dt>Example 3:</dt><dd><p>Select Palatino fonts with old-style numbers and true small-caps
+with the LaTeX command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">[</span><span class="n">osf</span><span class="p">,</span><span class="n">sc</span><span class="p">]{</span><span class="n">mathpazo</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>in the <a class="reference internal" href="#latex-preamble">LaTeX preamble</a> or <a class="reference internal" href="#custom-style-sheets">custom style sheets</a>.</p>
+</dd>
+<dt>Stylesheet Repository</dt><dd><p>There is a <a class="reference external" href="../../../sandbox/stylesheets/">repository of user-contributed style sheets</a> in the
+Docutils <a class="reference external" href="../../../sandbox/">Sandbox</a>.</p>
+</dd>
+</dl>
+</section>
+<section id="latex-preamble">
+<h4><a class="toc-backref" href="#id115"><span class="sectnum">1.3.3.2</span> LaTeX preamble</a><a class="headerlink" href="#latex-preamble" title="永久链接至标题">¶</a></h4>
+<p>Configuration by LaTeX code in the document preamble is also possible
+without a separate stylesheet. This way, packages can be loaded with
+options or commands re-defined without the need to create a separate
+file (new in Docutils 0.7).</p>
+<dl>
+<dt>Option:</dt><dd><p><a class="reference external" href="config.html#latex-preamble">latex-preamble</a></p>
+</dd>
+<dt>Default:</dt><dd><p>used for <a class="reference internal" href="#font-setup">font setup</a></p>
+</dd>
+<dt>Example:</dt><dd><p>To use the better looking <code class="docutils literal notranslate"><span class="pre">txtt</span></code> font for monospaced text define the
+<a class="reference external" href="config.html#latex-preamble">latex-preamble</a> setting in a configuration file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">latex</span><span class="o">-</span><span class="n">preamble</span><span class="p">:</span> \<span class="n">renewcommand</span><span class="p">{</span>\<span class="n">ttdefault</span><span class="p">}{</span><span class="n">txtt</span><span class="p">}</span>
+                \<span class="n">usepackage</span><span class="p">{</span><span class="n">mathptmx</span><span class="p">}</span>          <span class="o">%</span> <span class="n">Times</span>
+                \<span class="n">usepackage</span><span class="p">[</span><span class="n">scaled</span><span class="o">=</span><span class="mf">.92</span><span class="p">]{</span><span class="n">helvet</span><span class="p">}</span>  <span class="o">%</span> <span class="n">Helvetica</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="templates">
+<h4><a class="toc-backref" href="#id116"><span class="sectnum">1.3.3.3</span> Templates</a><a class="headerlink" href="#templates" title="永久链接至标题">¶</a></h4>
+<p>Some customizations require commands at places other than the insertion
+point of stylesheets or depend on the deletion/replacement of parts of the
+document. This can be done via a custom template. See the <a class="reference external" href="../api/publisher.html">publisher
+documentation</a> for a description of the document parts available in a
+template file.</p>
+<dl class="simple">
+<dt>Option:</dt><dd><p><a class="reference external" href="config.html#template-latex-writers">template</a></p>
+</dd>
+</dl>
+<p>In addition to the ‘default.tex’ template, the latex writer directory
+contains the alternatives ‘titlepage.tex’ (separate title page) and
+‘titlingpage.tex’” (separate title page with the <a class="reference external" href="http://ctan.org/pkg/memoir">memoir</a>
+<a class="reference internal" href="#document-class">document class</a>).</p>
+<dl>
+<dt>Example:</dt><dd><p>Print a title page including docinfo, dedication, and abstract:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">template</span><span class="o">=</span><span class="n">titlepage</span><span class="o">.</span><span class="n">tex</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="raw-latex">
+<h4><a class="toc-backref" href="#id117"><span class="sectnum">1.3.3.4</span> Raw LaTeX</a><a class="headerlink" href="#raw-latex" title="永久链接至标题">¶</a></h4>
+<p>By means of the <a class="reference external" href="../ref/rst/directives.html#raw">raw directive</a> or a derived <a class="reference internal" href="#custom-role">custom role</a>, one can
+give commands directly to LaTeX. These can be both, styling as well as
+printing commands.</p>
+<dl>
+<dt>Example:</dt><dd><p>Math formula:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">raw</span><span class="p">::</span> <span class="n">latex</span>
+
+   \<span class="p">[</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">3</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="n">a</span> <span class="o">+</span> <span class="mi">3</span><span class="n">xa</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">a</span><span class="o">^</span><span class="mi">3</span><span class="p">,</span>\<span class="p">]</span>
+</pre></div>
+</div>
+<p>(Drawback: the formula will be invisible in other output formats. Better
+use the <a class="reference external" href="../ref/rst/directives.html#math">math directive</a>)</p>
+</dd>
+</dl>
+<p>Most LaTeX code examples also work as raw LaTeX inside the document.
+An exception are commands that need to be given in the document
+preamble (e.g. package loading with <code class="docutils literal notranslate"><span class="pre">\usepackage</span></code>, which can be
+achieved with the <code class="docutils literal notranslate"><span class="pre">--style-sheet</span></code> or <code class="docutils literal notranslate"><span class="pre">--latex-preamble</span></code> command
+line options instead). Remember to use <em>re-defining</em> commands for
+customizing <a class="reference internal" href="#docutils-specific-latex-macros">Docutils specific LaTeX macros</a> with raw LaTeX.</p>
+<dl>
+<dt>Example:</dt><dd><p>Define the transition command as page break:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">raw</span><span class="p">::</span> <span class="n">latex</span>
+
+  \<span class="n">renewcommand</span><span class="o">*</span><span class="p">{</span>\<span class="n">DUtransition</span><span class="p">}{</span>\<span class="n">pagebreak</span><span class="p">[</span><span class="mi">4</span><span class="p">]}</span>
+</pre></div>
+</div>
+</dd>
+<dt>See also:</dt><dd><ul class="simple">
+<li><p>Defining a macro for a <a class="reference internal" href="#custom-role">custom role</a>.</p></li>
+<li><p>Forcing <a class="reference internal" href="#page-breaks">page breaks</a>.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+<section id="how-to-configure-the">
+<h2><a class="toc-backref" href="#id51"><span class="sectnum">1.4</span> How to configure the …</a><a class="headerlink" href="#how-to-configure-the" title="永久链接至标题">¶</a></h2>
+<section id="admonitions">
+<h3><a class="toc-backref" href="#id52"><span class="sectnum">1.4.1</span> admonitions</a><a class="headerlink" href="#admonitions" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="../ref/rst/directives.html#admonitions">Admonitions</a> are specially marked “topics” that can appear anywhere an
+ordinary body element can.</p>
+<dl>
+<dt>Environment:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">DUadmonition</span></code></p>
+<p>(Command <code class="docutils literal notranslate"><span class="pre">\DUadmonition</span></code> with <a class="reference external" href="config.html#legacy-class-functions">legacy-class-functions</a>.)</p>
+</dd>
+<dt>Default:</dt><dd><p>Typeset in a frame (90 % of text width).</p>
+</dd>
+</dl>
+<p>The admonition title is typeset with the <code class="docutils literal notranslate"><span class="pre">\DUtitle</span></code> command (see <a class="reference internal" href="#titles">titles</a>).</p>
+<dl>
+<dt>Example 1:</dt><dd><p>A lighter layout without the frame:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newenvironment</span><span class="p">{</span><span class="n">DUadmonition</span><span class="p">}</span><span class="o">%</span>
+  <span class="p">{</span>\<span class="n">begin</span><span class="p">{</span><span class="n">quote</span><span class="p">}}</span>
+  <span class="p">{</span>\<span class="n">end</span><span class="p">{</span><span class="n">quote</span><span class="p">}}</span>
+</pre></div>
+</div>
+</dd>
+<dt>Example 2:</dt><dd><p>Print all admonitions in the margin:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">environ</span><span class="p">}</span>
+\<span class="n">NewEnviron</span><span class="p">{</span><span class="n">DUadmonition</span><span class="p">}{</span>\<span class="n">marginpar</span><span class="p">{</span>\<span class="n">BODY</span><span class="p">}}</span>
+</pre></div>
+</div>
+</dd>
+<dt>Example 3:</dt><dd><p>Use the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">note::</span></code> admonition for a margin note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">environ</span><span class="p">}</span>
+\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">DUCLASSnote</span><span class="p">}{</span><span class="o">%</span>
+  \<span class="n">RenewEnviron</span><span class="p">{</span><span class="n">DUadmonition</span><span class="p">}{</span>\<span class="n">marginpar</span><span class="p">{</span>\<span class="n">BODY</span><span class="p">}}</span><span class="o">%</span>
+  \<span class="n">renewcommand</span><span class="p">{</span>\<span class="n">DUtitle</span><span class="p">}[</span><span class="mi">1</span><span class="p">]{}</span><span class="o">%</span> <span class="n">suppress</span> <span class="n">title</span> <span class="p">(</span><span class="s2">"Note"</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition caution">
+<p class="admonition-title">小心</p>
+<p>Make sure there is enough space in the margin.
+<code class="docutils literal notranslate"><span class="pre">\marginpar</span></code> fails in some places or with some content. See also the
+<a class="reference external" href="http://ctan.org/pkg/environ">environ</a> and <a class="reference external" href="http://ctan.org/pkg/marginnote">marginnote</a> packages.</p>
+</div>
+</section>
+<section id="custom-interpreted-text-roles">
+<span id="custom-role"></span><h3><a class="toc-backref" href="#id53"><span class="sectnum">1.4.2</span> custom interpreted text roles</a><a class="headerlink" href="#custom-interpreted-text-roles" title="永久链接至标题">¶</a></h3>
+<p>The rst <a class="reference external" href="../ref/rst/directives.html#role">role directive</a> allows defining custom <a class="reference external" href="../ref/rst/roles.html">text roles</a> that mark
+parts of inline text (spans) with class arguments (see section <a class="reference internal" href="#classes">classes</a>).</p>
+<dl>
+<dt>Commands:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">\DUrole</span></code>: dispatcher command</p>
+<p><code class="docutils literal notranslate"><span class="pre">\DUrole«classargument»</span></code>: optional styling command with 1 argument (the
+role content).</p>
+</dd>
+<dt>Default:</dt><dd><p>The default definition of <code class="docutils literal notranslate"><span class="pre">\DUrole{«classargument»}{}</span></code> calls the macro
+named <code class="docutils literal notranslate"><span class="pre">\DUrole«classargument»{}</span></code> if it is defined and silently ignores
+this class argument if not.</p>
+</dd>
+<dt>Example 1:</dt><dd><p>Typeset text in small caps:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. role:: smallcaps
+
+:smallcaps:`Fourier` transformation
+</pre></div>
+</div>
+<p>This is transformed to the LaTeX code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">DUrole</span><span class="p">{</span><span class="n">smallcaps</span><span class="p">}{</span><span class="n">Fourier</span><span class="p">}</span> <span class="n">transformation</span>
+</pre></div>
+</div>
+<p>The definition</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">DUrolesmallcaps</span><span class="p">}{</span>\<span class="n">textsc</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>as <a class="reference internal" href="#raw-latex">raw LaTeX</a> or in the custom <a class="reference internal" href="#style-sheet">style sheet</a> will give the expected
+result (if the text <a class="reference internal" href="#font">font</a> supports small caps).</p>
+</dd>
+<dt>Example 2:</dt><dd><p>Subscript text in normal size and <em>italic</em> shape:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">role</span><span class="p">::</span> <span class="n">sub</span><span class="p">(</span><span class="n">subscript</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As “sub” inherits from the standard “subscript” role, the LaTeX macro
+only needs to set the size and shape:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">DUrolesub</span><span class="p">}{</span>\<span class="n">normalsize</span>\<span class="n">itshape</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+<dt>Example 3:</dt><dd><p>A role with several classes and a converted class name:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">role</span><span class="p">::</span> <span class="n">custom4</span>
+   <span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="n">argI</span> <span class="n">argII</span> <span class="n">arg_3</span>
+</pre></div>
+</div>
+<p>is translated to the nested commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">DUrole</span><span class="p">{</span><span class="n">argi</span><span class="p">}{</span>\<span class="n">DUrole</span><span class="p">{</span><span class="n">argii</span><span class="p">}{</span>\<span class="n">DUrole</span><span class="p">{</span><span class="n">arg</span><span class="o">-</span><span class="mi">3</span><span class="p">}{</span><span class="o">&lt;</span><span class="n">content</span><span class="o">&gt;</span><span class="p">}}}</span>
+</pre></div>
+</div>
+<p>With the definitions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">DUroleargi</span><span class="p">}[</span><span class="mi">1</span><span class="p">]{</span>\<span class="n">textsc</span><span class="p">}</span>
+\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">DUroleargii</span><span class="p">}[</span><span class="mi">1</span><span class="p">]{{</span>\<span class="n">large</span> <span class="c1">#1}}</span>
+\<span class="n">makeatletter</span>
+\<span class="nd">@namedef</span><span class="p">{</span><span class="n">DUrolearg</span><span class="o">-</span><span class="mi">3</span><span class="p">}{</span>\<span class="n">textbf</span><span class="p">}</span>
+\<span class="n">makeatother</span>
+</pre></div>
+</div>
+<p>in a <a class="reference internal" href="#style-sheet">style sheet</a><a class="footnote-reference brackets" href="#id11" id="id10">2</a> or as <a class="reference internal" href="#raw-latex">raw LaTeX</a> in the document source,
+text styled with <code class="docutils literal notranslate"><span class="pre">:custom4:`large</span> <span class="pre">bold</span> <span class="pre">small-caps`</span></code> will be typeset
+accordingly.</p>
+</dd>
+</dl>
+<dl class="footnote brackets">
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id10">2</a></span></dt>
+<dd><p>Leave out the <code class="docutils literal notranslate"><span class="pre">\makeatletter</span></code> - <code class="docutils literal notranslate"><span class="pre">\makeatother</span></code> pair if the style
+sheet is a LaTeX package (<code class="docutils literal notranslate"><span class="pre">*.sty</span></code>).</p>
+</dd>
+</dl>
+</section>
+<section id="definition-lists">
+<h3><a class="toc-backref" href="#id54"><span class="sectnum">1.4.3</span> definition lists</a><a class="headerlink" href="#definition-lists" title="永久链接至标题">¶</a></h3>
+<p>ReStructuredText <a class="reference external" href="../ref/rst/restructuredtext.html#definition-lists">definition lists</a> correspond to HTML <code class="docutils literal notranslate"><span class="pre">&lt;dl&gt;</span></code> list
+objects.</p>
+<dl>
+<dt>Environment:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">description</span></code>: LaTeX standard environment</p>
+</dd>
+<dt>Command:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">\descriptionlabel</span></code>: styling macro for the description term</p>
+</dd>
+<dt>Default:</dt><dd><p>bold label text, hanging indent</p>
+</dd>
+<dt>Example:</dt><dd><p>A non-bold label can be achieved with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">renewcommand</span>\<span class="n">descriptionlabel</span><span class="p">[</span><span class="mi">1</span><span class="p">]{</span>\<span class="n">hspace</span>\<span class="n">labelsep</span> \<span class="n">normalfont</span> <span class="c1">#1}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="document-class">
+<h3><a class="toc-backref" href="#id55"><span class="sectnum">1.4.4</span> document class</a><a class="headerlink" href="#document-class" title="永久链接至标题">¶</a></h3>
+<p>There are hundreds of LaTeX document classes installed by modern
+LaTeX distributions, provided by publishers, or available at <a class="reference external" href="http://www.ctan.org">CTAN</a>.</p>
+<dl class="simple">
+<dt>Popular document classes:</dt><dd><ul class="simple">
+<li><p>article, report, book: standard document classes</p></li>
+<li><p>scrartcl, scrrprt, scrbook: <a class="reference external" href="http://ctan.org/pkg/koma-script">KOMA-script</a> classes</p></li>
+<li><p><a class="reference external" href="http://ctan.org/pkg/memoir">memoir</a>: highly configurable class for larger documents</p></li>
+</ul>
+</dd>
+<dt>Option:</dt><dd><p><a class="reference external" href="config.html#documentclass">documentclass</a></p>
+</dd>
+</dl>
+</section>
+<section id="document-info">
+<h3><a class="toc-backref" href="#id56"><span class="sectnum">1.4.5</span> document info</a><a class="headerlink" href="#document-info" title="永久链接至标题">¶</a></h3>
+<p>Content of the <a class="reference external" href="../ref/rst/restructuredtext.html#bibliographic-fields">bibliographic fields</a> at the top of a document.
+By default, docinfo items are typeset as a table.</p>
+<dl>
+<dt>Options:</dt><dd><p><a class="reference external" href="config.html#use-latex-docinfo">use-latex-docinfo</a>, <a class="reference external" href="config.html#use-latex-abstract">use-latex-abstract</a></p>
+</dd>
+<dt>Length:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">\DUdocinfowidth</span></code>: the width for the <cite>docinfo</cite> table.</p>
+</dd>
+<dt>Default:</dt><dd><p>90 % of text width: <code class="docutils literal notranslate"><span class="pre">0.9\textwidth</span></code></p>
+</dd>
+<dt>Example:</dt><dd><p>set to 70 % of text width:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newlength</span><span class="p">{</span>\<span class="n">DUdocinfowidth</span><span class="p">}</span>
+\<span class="n">setlength</span><span class="p">{</span>\<span class="n">DUdocinfowidth</span><span class="p">}{</span><span class="mf">0.7</span>\<span class="n">textwidth</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="document-title">
+<h3><a class="toc-backref" href="#id57"><span class="sectnum">1.4.6</span> document title</a><a class="headerlink" href="#document-title" title="永久链接至标题">¶</a></h3>
+<p>A lone top-level section title is (usually) transformed to the document title
+(see <a class="reference external" href="rst/quickref.html#section-structure">section structure</a>).</p>
+<p>The format of the document title is defined by the <a class="reference internal" href="#document-class">document class</a>. The
+“article” document class uses an in-page title and the “report” and “book”
+classes write a separate title page. See the <a class="reference external" href="http://www.tex.ac.uk/faq">TeX FAQ</a> on how to customize
+the <a class="reference external" href="http://www.tex.ac.uk/cgi-bin/texfaq2html?label=titlsty">style of document titles</a>.</p>
+<p>The default title page shows only title and subtitle, date and author
+are shown in the <a class="reference internal" href="#document-info">document info</a> table.</p>
+<dl>
+<dt>Options:</dt><dd><p><a class="reference external" href="config.html#use-latex-docinfo">use-latex-docinfo</a></p>
+<p><code class="docutils literal notranslate"><span class="pre">--template=titlepage.tex</span></code> Put docinfo and abstract into the title page.
+A separate title page is used also with the “abstract” document class.</p>
+</dd>
+</dl>
+</section>
+<section id="field-lists">
+<h3><a class="toc-backref" href="#id58"><span class="sectnum">1.4.7</span> field lists</a><a class="headerlink" href="#field-lists" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="../ref/rst/restructuredtext.html#field-lists">Field lists</a> may be used as generic two-column table constructs in
+documents.</p>
+<dl>
+<dt>Environment:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">DUfieldlist</span></code></p>
+</dd>
+<dt>Default:</dt><dd><p>Indented description list.</p>
+</dd>
+<dt>Example:</dt><dd><p>Use a description list customized with <a class="reference external" href="http://ctan.org/pkg/enumitem">enumitem</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">enumitem</span><span class="p">}</span>
+\<span class="n">newenvironment</span><span class="p">{</span><span class="n">DUfieldlist</span><span class="p">}</span><span class="o">%</span>
+  <span class="p">{</span>\<span class="n">description</span><span class="p">[</span><span class="n">font</span><span class="o">=</span><span class="p">,</span><span class="n">style</span><span class="o">=</span><span class="n">sameline</span><span class="p">,</span><span class="n">leftmargin</span><span class="o">=</span><span class="mi">8</span><span class="n">em</span><span class="p">]}</span>
+  <span class="p">{</span>\<span class="n">enddescription</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <a class="reference external" href="http://ctan.org/pkg/koma-script">KOMA-script</a> classes provide a similar environment under the name
+<cite>labeling</cite>.</p>
+</dd>
+</dl>
+</section>
+<section id="figure-and-table-captions">
+<h3><a class="toc-backref" href="#id59"><span class="sectnum">1.4.8</span> figure and table captions</a><a class="headerlink" href="#figure-and-table-captions" title="永久链接至标题">¶</a></h3>
+<p>The <a class="reference external" href="http://ctan.org/pkg/caption">caption</a> package provides many ways to customise the captions in
+floating environments like figure and table.</p>
+<p>The <a class="reference external" href="http://ctan.org/pkg/chngcntr">chngcntr</a> package helps to configure the numbering of figure and table
+caption numberings.</p>
+<p>Some document classes (e.g. <a class="reference external" href="http://ctan.org/pkg/koma-script">KOMA-script</a>) provide additional configuration.
+Also see the related <a class="reference external" href="http://www.tex.ac.uk/cgi-bin/texfaq2html?label=running-nos">LaTeX FAQ entry</a></p>
+<dl>
+<dt>Example</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">caption</span><span class="p">}</span>
+\<span class="n">captionsetup</span><span class="p">{</span><span class="n">justification</span><span class="o">=</span><span class="n">raggedleft</span><span class="p">,</span><span class="n">singlelinecheck</span><span class="o">=</span><span class="n">false</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="figure-placement">
+<h3><a class="toc-backref" href="#id60"><span class="sectnum">1.4.9</span> figure placement</a><a class="headerlink" href="#figure-placement" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="../ref/rst/directives.html#figure">Figures</a> might be typeset at the place of definition (default) or “float”
+to a suitable place at the top or bottom of a page. This is implemented
+using the <a class="reference external" href="http://ctan.org/pkg/float">float</a> package.</p>
+<dl class="simple">
+<dt>Command:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">\floatplacement</span></code></p>
+</dd>
+</dl>
+<p>The placement setting is valid from the point of definition until the next
+<code class="docutils literal notranslate"><span class="pre">\floatplacement</span></code> command or the end of the document. See <a class="reference external" href="http://mirrors.ctan.org/macros/latex/contrib/float/float.pdf">float.pdf</a> for
+details.</p>
+<dl>
+<dt>Default:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">\floatplacement{figure}{H}</span></code> (here definitely). This corresponds most
+closely to the source and HTML placement (principle of least surprise).</p>
+</dd>
+<dt>Example 1:</dt><dd><p>In a custom <a class="reference internal" href="#style-sheet">style sheet</a>, set the default to let LaTeX find a suitable
+place for figure floats:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="nb">float</span><span class="p">}</span>
+\<span class="n">floatplacement</span><span class="p">{</span><span class="n">figure</span><span class="p">}{</span><span class="n">htbp</span><span class="p">}</span> <span class="o">%</span> <span class="n">here</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">extra</span><span class="o">-</span><span class="n">page</span>
+</pre></div>
+</div>
+</dd>
+<dt>Example 2:</dt><dd><p>To move all following figures to the top or bottom of the page write in
+the document source:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">raw</span><span class="p">::</span> <span class="n">latex</span>
+
+    \<span class="n">floatplacement</span><span class="p">{</span><span class="n">figure</span><span class="p">}{</span><span class="n">tb</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="font">
+<span id="font-setup"></span><h3><a class="toc-backref" href="#id61"><span class="sectnum">1.4.10</span> font</a><a class="headerlink" href="#font" title="永久链接至标题">¶</a></h3>
+<p>The selected text font influences the <em>look</em>, the <em>feel</em>,
+and the <em>readability</em> of the document (cf.
+<a class="reference external" href="http://www.csarven.ca/web-typography">http://www.csarven.ca/web-typography</a>).
+Selecting a suitable font also solves the problem with <a class="reference internal" href="#bad-looking-pdf-output">bad looking
+PDF output</a>.</p>
+<p>Font selection is one of the main differences between LaTeX and XeTeX/LuaTeX:</p>
+<dl class="simple">
+<dt>LaTeX</dt><dd><p>cannot use the fonts of the operating system directly but needs
+specially installed fonts with additional supporting files.</p>
+</dd>
+<dt>XeTeX/LuaTeX</dt><dd><p>can use system fonts and provides access to the full feature set of
+modern <a class="reference external" href="http://en.wikipedia.org/wiki/OpenType">OpenType</a> fonts.</p>
+</dd>
+</dl>
+<p>The default font setup is done in the <a class="reference external" href="config.html#latex-preamble">latex-preamble</a>:</p>
+<dl>
+<dt>LaTeX</dt><dd><p><a class="reference external" href="http://en.wikipedia.org/wiki/PDF#Standard_Type_1_Fonts">PDF standard fonts</a> (Times, Helvetica, Courier)</p>
+</dd>
+<dt>XeTeX/LuaTeX</dt><dd><p><a class="reference external" href="http://www.linuxlibertine.org">Linux Libertine</a>, a free, high quality alternative to Times with a
+wide coverage of glyphs, styles, and OpenType features.</p>
+<p>Despite its name, Linux Libertine can be used on any operating
+system that can handle OpenType fonts.</p>
+</dd>
+</dl>
+<p>Alternative fonts can be selected by</p>
+<dl>
+<dt>LaTeX</dt><dd><ol class="loweralpha simple">
+<li><p>specifying the corresponding LaTeX package(s) as argument to the
+<a class="reference external" href="config.html#stylesheet-latex-writers">stylesheet</a> <a class="reference internal" href="#option">option</a> or with the <code class="docutils literal notranslate"><span class="pre">\usepackage</span></code> LaTeX command.</p>
+<ul class="simple">
+<li><p>packages can be combined,</p></li>
+<li><p>passing options to a package is only possible in a <a class="reference internal" href="#style-sheet">style sheet</a>
+or the <a class="reference internal" href="#latex-preamble">LaTeX preamble</a>.</p></li>
+</ul>
+</li>
+<li><p>changing the font-default macros <code class="docutils literal notranslate"><span class="pre">\rmdefault</span></code>, <code class="docutils literal notranslate"><span class="pre">\sfdefault</span></code>
+and/or <code class="docutils literal notranslate"><span class="pre">\ttdefault</span></code> in a custom <a class="reference internal" href="#style-sheet">style sheet</a>, the <a class="reference internal" href="#latex-preamble">LaTeX
+preamble</a> or <a class="reference internal" href="#raw-latex">raw LaTeX</a>.</p></li>
+</ol>
+<dl>
+<dt>Example 1:</dt><dd><p>Use <a class="reference external" href="http://ctan.org/pkg/lm">Latin Modern</a>. <a class="reference internal" href="#latex-code">LaTeX code</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">lmodern</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Command line argument:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">stylesheet</span><span class="o">=</span><span class="n">lmodern</span>
+</pre></div>
+</div>
+</dd>
+<dt>Example 2:</dt><dd><p>The <span class="target" id="times-helvetica-courier">Times/Helvetica/Courier</span> <a class="reference external" href="http://en.wikipedia.org/wiki/PDF#Standard_Type_1_Fonts">PDF standard fonts</a> are
+selected by the LaTeX code <a class="footnote-reference brackets" href="#id17" id="id16">3</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">mathptmx</span><span class="p">}</span>            <span class="o">%</span> <span class="n">Times</span> <span class="k">for</span> <span class="n">serif</span> <span class="ow">and</span> <span class="n">math</span>
+\<span class="n">usepackage</span><span class="p">[</span><span class="n">scaled</span><span class="o">=</span><span class="mf">.90</span><span class="p">]{</span><span class="n">helvet</span><span class="p">}</span>  <span class="o">%</span> <span class="n">downscaled</span> <span class="n">Helvetica</span> <span class="k">for</span> <span class="n">sans</span> <span class="n">serif</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">courier</span><span class="p">}</span>             <span class="o">%</span> <span class="n">Courier</span> <span class="k">for</span> <span class="n">teletype</span> <span class="p">(</span><span class="n">mono</span><span class="o">-</span><span class="n">space</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Since Docutils 0.7, this is the default value of the
+<a class="reference external" href="config.html#latex-preamble">latex-preamble</a> option.</p>
+</dd>
+</dl>
+<dl class="footnote brackets">
+<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id16">3</a></span></dt>
+<dd><p>When generating PDF-files from LaTeX, the <a class="reference external" href="http://en.wikipedia.org/wiki/PDF#Standard_Type_1_Fonts">PDF standard
+fonts</a> do not need to be embedded in the document. While this
+results in smaller files, the actually used fonts on screen and in
+print might differ! (For details see, e.g., the <a class="reference external" href="http://www.tex.ac.uk/tex-archive/help/Catalogue/entries/testflow.html">testflow</a> package
+documentation.)</p>
+</dd>
+</dl>
+<dl>
+<dt>Example 3:</dt><dd><p>Use the teletype font from the <a class="reference external" href="http://ctan.org/pkg/txfonts">txfonts</a> package. As there is no
+package for this, we re-define the font macro with the <a class="reference internal" href="#latex-code">LaTeX code</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">renewcommand</span><span class="p">{</span>\<span class="n">ttdefault</span><span class="p">}{</span><span class="n">txtt</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd>
+<dt>XeTeX/LuaTeX</dt><dd><p>using the macros of the <a class="reference external" href="http://ctan.org/pkg/fontspec">fontspec</a> package. Use some font-viewer or
+-manager (e.g. <a class="reference external" href="http://fontmatrix.net/">fontmatrix</a>) to find out the correct names of the
+fonts on your system.</p>
+<dl>
+<dt>Example:</dt><dd><p><a class="reference external" href="http://dejavu-fonts.org/">DejaVu</a>, very wide coverage, screen optimized. As this font
+runs wide, add <code class="docutils literal notranslate"><span class="pre">DIV=10</span></code> to the <a class="reference external" href="config.html#documentoptions">documentoptions</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">setmainfont</span><span class="p">{</span><span class="n">DejaVu</span> <span class="n">Serif</span><span class="p">}</span>
+\<span class="n">setsansfont</span><span class="p">{</span><span class="n">DejaVu</span> <span class="n">Sans</span><span class="p">}</span>
+\<span class="n">setmonofont</span><span class="p">[</span><span class="n">HyphenChar</span><span class="o">=</span><span class="kc">None</span><span class="p">]{</span><span class="n">DejaVu</span> <span class="n">Sans</span> <span class="n">Mono</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+<section id="choice-of-suitable-fonts">
+<h4><a class="toc-backref" href="#id62"><span class="sectnum">1.4.10.1</span> choice of suitable fonts</a><a class="headerlink" href="#choice-of-suitable-fonts" title="永久链接至标题">¶</a></h4>
+<p>High quality free fonts suitable for use with XeTeX/LuaTeX are, e.g., listed
+at <a class="reference external" href="http://typophile.com/node/18207">Good Libre Fonts</a>, <a class="reference external" href="http://www.alvit.de/blog/article/20-best-license-free-official-fonts">25 Best Free Quality Fonts</a> and the update
+<a class="reference external" href="http://www.smashingmagazine.com/2006/10/11/17-more-free-quality-fonts/">19 More Free Quality Fonts</a>.</p>
+<p>The <a class="reference external" href="http://www.tug.dk/FontCatalogue/">LaTeX Font Catalogue</a> provides information and examples for a wide
+range of fonts available for use with LaTeX. Here is just a selection:</p>
+<ol class="loweralpha">
+<li><p>The <a class="reference external" href="http://ctan.org/pkg/lm">Latin Modern</a> (LM) fonts are extended outline versions of the
+standard TeX font Computer Modern (CM).</p>
+<dl class="option-list">
+<dt><kbd><span class="option">+1</span></kbd></dt>
+<dd><p>simple invocation:  <code class="docutils literal notranslate"><span class="pre">--stylesheet=lmodern</span></code></p>
+</dd>
+<dt><kbd><span class="option">+1</span></kbd></dt>
+<dd><p>keeps the traditional TeX “look and feel”:</p>
+<dl class="option-list">
+<dt><kbd><span class="option">+1</span></kbd></dt>
+<dd><p>generally accepted as high quality CM replacement,</p>
+</dd>
+<dt><kbd><span class="option">+1</span></kbd></dt>
+<dd><p>comprehensive math support,</p>
+</dd>
+<dt><kbd><span class="option">+1</span></kbd></dt>
+<dd><p>including optical sizes,</p>
+</dd>
+<dt><kbd><span class="option">+1</span></kbd></dt>
+<dd><p>compatible with extensions made to match CM,</p>
+</dd>
+<dt><kbd><span class="option">-1</span></kbd></dt>
+<dd><p>modern types are hard to read at low (screen) resolutions.</p>
+</dd>
+</dl>
+</dd>
+<dt><kbd><span class="option">-1</span></kbd></dt>
+<dd><p>not part of a minimal standard TeX installation</p>
+</dd>
+</dl>
+</li>
+<li><p><a class="reference external" href="http://ctan.org/pkg/cm-super">CM-Super</a> is another outline CM replacement.</p>
+<dl class="option-list">
+<dt><kbd><span class="option">+1</span></kbd></dt>
+<dd><p>simple invocation: modern LaTeX distributions use CM-Super
+automatically instead of CM if it is installed.</p>
+</dd>
+<dt><kbd><span class="option">-1</span></kbd></dt>
+<dd><p>said to be of inferior quality compared to LM.</p>
+</dd>
+<dt><kbd><span class="option">-1</span></kbd></dt>
+<dd><p>not part of a minimal standard TeX installation,
+bigger download size than Latin Modern (64 MB).</p>
+</dd>
+</dl>
+</li>
+<li><p><a class="reference external" href="http://ctan.org/pkg/bera">Bera</a> (Bitstream Vera)</p>
+<dl class="option-list">
+<dt><kbd><span class="option">+1</span></kbd></dt>
+<dd><p>simple invocation:  <code class="docutils literal notranslate"><span class="pre">--stylesheet=bera</span></code></p>
+</dd>
+<dt><kbd><span class="option">+1</span></kbd></dt>
+<dd><p>optimized for on-screen viewing with goot hinting</p>
+</dd>
+<dt><kbd><span class="option">-1</span></kbd></dt>
+<dd><p>not part of a minimal standard TeX installation</p>
+</dd>
+</dl>
+</li>
+<li><p><a class="reference external" href="http://ctan.org/pkg/psnfss">PSNFSS</a> Postscript fonts</p>
+<dl class="option-list">
+<dt><kbd><span class="option">+1</span></kbd></dt>
+<dd><p>part of every standard TeX installation</p>
+</dd>
+<dt><kbd><span class="option">+1</span></kbd></dt>
+<dd><p>smaller PDF/Postscript document size if standard fonts are not
+embedded</p>
+</dd>
+<dt><kbd><span class="option">-1</span></kbd></dt>
+<dd><p>restricted set of glyphs in the free versions <a class="footnote-reference brackets" href="#id20" id="id19">4</a></p>
+</dd>
+<dt><kbd><span class="option">-1</span></kbd></dt>
+<dd><p>different fonts for roman, sans-serif and typewriter fonts.</p>
+</dd>
+<dt><kbd><span class="option">-1</span></kbd></dt>
+<dd><p>invocation somewhat more complex, as several packages are
+required for a complete font set, sometimes including package
+options.</p>
+</dd>
+</dl>
+<p>Roman (serif) PSNFSS fonts:</p>
+<dl>
+<dt>Bookman</dt><dd><p>good legibility but very wide.</p>
+</dd>
+<dt>Charter</dt><dd><p>bread-and-butter type optimized for printing on low-resolution
+printers</p>
+</dd>
+<dt>New Century Schoolbook</dt><dd><p>good legibility but very wide.</p>
+</dd>
+<dt>Palatino</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">+1</span></kbd></dt>
+<dd><p>recommended by font experts</p>
+</dd>
+<dt><kbd><span class="option">+1</span></kbd></dt>
+<dd><p>good LaTeX support including matching math fonts, small caps,
+old-style figures</p>
+</dd>
+<dt><kbd><span class="option">-1</span></kbd></dt>
+<dd><p>bad rendering in xpdf viewer (auto-hinting leads to different
+x-hight for different characters at some magnifications)
+(this is fixed in recent versions).</p>
+</dd>
+</dl>
+</dd>
+<dt>Times</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">+1</span></kbd></dt>
+<dd><p>the serif <a class="reference external" href="http://en.wikipedia.org/wiki/PDF#Standard_Type_1_Fonts">PDF Standard Font</a>,</p>
+</dd>
+<dt><kbd><span class="option">-1</span></kbd></dt>
+<dd><p>overused and quite narrow (devised for multi-column layouts).</p>
+</dd>
+</dl>
+</dd>
+<dt>Utopia</dt><dd><p>recommended by font experts</p>
+</dd>
+</dl>
+<div class="table-wrapper"><table class="docutils align-default" id="id36">
+<caption><span class="caption-text">Font packages for standard Postscript fonts
+         (cf. <a class="reference external" href="http://mirrors.ctan.org/macros/latex/required/psnfss/psnfss2e.pdf">Using common Postscript fonts with LaTeX</a>)</span><a class="headerlink" href="#id36" title="永久链接至表格">¶</a></caption>
+<colgroup>
+<col style="width: 16%"/>
+<col style="width: 21%"/>
+<col style="width: 23%"/>
+<col style="width: 23%"/>
+<col style="width: 16%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Package</p></th>
+<th class="head"><p>Roman</p></th>
+<th class="head"><p>Sans Serif</p></th>
+<th class="head"><p>Typewriter</p></th>
+<th class="head"><p>Math</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>(none)</p></td>
+<td><p>CM Roman</p></td>
+<td><p>CM Sans Serif</p></td>
+<td><p>CM Typewriter</p></td>
+<td><p>CM Math</p></td>
+</tr>
+<tr class="row-odd"><td><p>mathpazo</p></td>
+<td><p>Palatino</p></td>
+<td></td>
+<td></td>
+<td><p>Palatino</p></td>
+</tr>
+<tr class="row-even"><td><p>mathptmx</p></td>
+<td><p>Times</p></td>
+<td></td>
+<td></td>
+<td><p>Times</p></td>
+</tr>
+<tr class="row-odd"><td><p>helvet</p></td>
+<td></td>
+<td><p>Helvetica</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>avant</p></td>
+<td></td>
+<td><p>Avant Garde</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>courier</p></td>
+<td></td>
+<td></td>
+<td><p>Courier</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>chancery</p></td>
+<td><p>Zapf
+Chancery</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>bookman</p></td>
+<td><p>Bookman</p></td>
+<td><p>Avant Garde</p></td>
+<td><p>Courier</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>newcent</p></td>
+<td><p>New Century
+Schoolbook</p></td>
+<td><p>Avant Garde</p></td>
+<td><p>Courier</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>charter</p></td>
+<td><p>Charter</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>utopia</p></td>
+<td><p>Utopia</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>fourier</p></td>
+<td><p>Utopia</p></td>
+<td></td>
+<td></td>
+<td><p>Fourier</p></td>
+</tr>
+</tbody>
+</table></div>
+</li>
+</ol>
+<dl class="footnote brackets">
+<dt class="label" id="id20"><span class="brackets"><a class="fn-backref" href="#id19">4</a></span></dt>
+<dd><p>Extended versions of the standard Postscript fonts including
+accented chars, as well as real small-caps
+and old-style numbers are available with the <a class="reference external" href="http://www.gust.org.pl/projects/e-foundry/tex-gyre">TeX Gyre</a> bundle
+which is part of, e.g., <a class="reference external" href="http://tug.org/texlive/">TeX Live</a>.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="font-encoding">
+<h3><a class="toc-backref" href="#id63"><span class="sectnum">1.4.11</span> font encoding</a><a class="headerlink" href="#font-encoding" title="永久链接至标题">¶</a></h3>
+<p>LaTeX font encodings are described in detail in the <a class="reference external" href="http://mirrors.ctan.org/macros/latex/base/encguide.pdf">encguide</a> which is
+part of the LaTeX base documentation.</p>
+<dl>
+<dt>Option:</dt><dd><p><a class="reference external" href="config.html#font-encoding">font-encoding</a></p>
+</dd>
+<dt>Default:</dt><dd><p>“T1”</p>
+</dd>
+<dt>Example 1:</dt><dd><p>Use the (obsolete) LaTeX default encoding “OT1”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">font</span><span class="o">-</span><span class="n">encoding</span><span class="o">=</span><span class="n">OT1</span>
+</pre></div>
+</div>
+<p>or (without loading the <a class="reference external" href="http://ctan.org/pkg/fontenc">fontenc</a> package):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">font</span><span class="o">-</span><span class="n">encoding</span><span class="o">=</span><span class="s2">""</span>
+</pre></div>
+</div>
+<p>This will improve the look on screen with the default Computer Modern
+fonts at the expense of problems with <a class="reference internal" href="#search-and-text-extraction">search and text extraction</a>
+The recommended way is to select a T1-encoded “Type 1” (vector)
+font, for example <a class="reference external" href="http://ctan.org/pkg/lm">Latin Modern</a></p>
+</dd>
+<dt>Example 2:</dt><dd><p>Support for characters in the Unicode blocks Latin, Latin-1 Supplement,
+and Greek together with a T1-encoded “Type 1” (vector) font, for example
+<a class="reference external" href="http://ctan.org/pkg/lm">Latin Modern</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">font</span><span class="o">-</span><span class="n">encoding</span><span class="o">=</span><span class="n">LGR</span><span class="p">,</span><span class="n">T1</span> <span class="o">--</span><span class="n">stylesheet</span><span class="o">=</span><span class="n">lmodern</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="font-size">
+<h3><a class="toc-backref" href="#id64"><span class="sectnum">1.4.12</span> font size</a><a class="headerlink" href="#font-size" title="永久链接至标题">¶</a></h3>
+<p>Add font size in points to the document options, e.g.
+<code class="docutils literal notranslate"><span class="pre">--documentoptions=12</span></code>, use e.g. the document classes provided by
+<a class="reference external" href="http://ctan.org/pkg/extsizes">extsizes</a> for values other than [10,11,12].</p>
+</section>
+<section id="footnotes">
+<h3><a class="toc-backref" href="#id65"><span class="sectnum">1.4.13</span> footnotes</a><a class="headerlink" href="#footnotes" title="永久链接至标题">¶</a></h3>
+<p>By default, footnotes are set with Docutils-specific wrappers around
+the standard <code class="docutils literal notranslate"><span class="pre">\footnotemark</span></code> and <code class="docutils literal notranslate"><span class="pre">\footnotetext</span></code> commands.  You
+can configure the footnote layout similar to standard LaTeX footnotes
+in a custom <a class="reference internal" href="#style-sheet">style sheet</a> or the <a class="reference internal" href="#latex-preamble">LaTeX preamble</a>.</p>
+<p>Further configuration is possible by alternative definitions of
+<code class="docutils literal notranslate"><span class="pre">\DUfootnotemark</span></code> and <code class="docutils literal notranslate"><span class="pre">\DUfootnotetext</span></code></p>
+<dl>
+<dt>Example 1:</dt><dd><p>Set footnote text with a hanging indent.</p>
+<ul>
+<li><p>This is the default with <a class="reference external" href="http://ctan.org/pkg/koma-script">KOMA-script</a> classes, e.g:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">documentclass</span><span class="o">=</span><span class="n">scrartcl</span>
+</pre></div>
+</div>
+<p>(for further configuration, see the <a class="reference external" href="http://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguien.pdf">KOMA-script Guide</a>),</p>
+</li>
+<li><p>with package <a class="reference external" href="http://ctan.org/pkg/footmisc">footmisc</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">[</span><span class="n">hang</span><span class="p">]{</span><span class="n">footmisc</span><span class="p">}</span>
+\<span class="n">setlength</span><span class="p">{</span>\<span class="n">footnotemargin</span><span class="p">}{</span><span class="mi">0</span><span class="n">em</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>(play with the <code class="docutils literal notranslate"><span class="pre">\footnotemargin</span></code> setting),</p>
+</li>
+<li><p>redefine <code class="docutils literal notranslate"><span class="pre">\DUfootnotetext</span></code> inserting <cite>hangindent</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">DUfootnotetext</span><span class="p">}[</span><span class="mi">4</span><span class="p">]{</span><span class="o">%</span>
+  \<span class="n">begingroup</span><span class="o">%</span>
+  \<span class="n">renewcommand</span><span class="p">{</span>\<span class="n">thefootnote</span><span class="p">}{</span><span class="o">%</span>
+    \<span class="n">protect</span>\<span class="n">raisebox</span><span class="p">{</span><span class="mi">1</span><span class="n">em</span><span class="p">}{</span>\<span class="n">protect</span>\<span class="n">hypertarget</span><span class="p">{</span><span class="c1">#1}{}}%</span>
+    \<span class="n">protect</span>\<span class="n">hyperlink</span><span class="p">{</span><span class="c1">#2}{#3}}%</span>
+    \<span class="n">footnotetext</span><span class="p">{</span>\<span class="n">hangindent</span><span class="o">=</span><span class="mi">2</span><span class="n">em</span> <span class="c1">#4}%</span>
+  \<span class="n">endgroup</span><span class="o">%</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>(adapt the <code class="docutils literal notranslate"><span class="pre">\hangindent</span></code> value).</p>
+</li>
+</ul>
+</dd>
+<dt>Example 2:</dt><dd><p>Footnote marks in normal font size, not superscript:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">scrextend</span><span class="p">}</span> <span class="o">%</span> <span class="ow">not</span> <span class="n">required</span> <span class="k">with</span> <span class="n">KOMA</span><span class="o">-</span><span class="n">script</span> <span class="n">document</span> <span class="n">classes</span>
+\<span class="n">deffootnote</span><span class="p">{</span><span class="mi">1</span><span class="n">em</span><span class="p">}{</span><span class="mi">1</span><span class="n">em</span><span class="p">}{</span>\<span class="n">thefootnotemark</span>\ <span class="p">}</span>
+</pre></div>
+</div>
+<p>(See the <a class="reference external" href="http://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguien.pdf">KOMA-script Guide</a> for details and other options.)</p>
+</dd>
+<dt>Example 3:</dt><dd><p>Place the footnote text where it appears in the source document (instead
+of at the page bottom). This can be used to get the effect of endnotes
+(needs the <a class="reference external" href="http://ctan.org/pkg/hanging">hanging</a> package):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">hanging</span><span class="p">}</span>
+\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">DUfootnotetext</span><span class="p">}[</span><span class="mi">4</span><span class="p">]{</span><span class="o">%</span>
+  \<span class="n">par</span>\<span class="n">noindent</span>\<span class="n">raisebox</span><span class="p">{</span><span class="mi">1</span><span class="n">em</span><span class="p">}{</span>\<span class="n">hypertarget</span><span class="p">{</span><span class="c1">#1}{}}%</span>
+  \<span class="n">hyperlink</span><span class="p">{</span><span class="c1">#2}{#3}%</span>
+  \<span class="n">hangpara</span><span class="p">{</span>\<span class="n">parindent</span><span class="p">}{</span><span class="mi">1</span><span class="p">}</span><span class="c1">#4%</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="hyphenation">
+<h3><a class="toc-backref" href="#id66"><span class="sectnum">1.4.14</span> hyphenation</a><a class="headerlink" href="#hyphenation" title="永久链接至标题">¶</a></h3>
+<p>The amount of hyphenation is influenced by <code class="docutils literal notranslate"><span class="pre">\hyphenpenalty</span></code>, setting it to
+10000 almost prevents hyphenation. As this produces lines with more space
+between words one should increase Latex’s <code class="docutils literal notranslate"><span class="pre">\tolerance</span></code> for this.</p>
+<dl>
+<dt>Example:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">hyphenpenalty</span><span class="o">=</span><span class="mi">5000</span>
+\<span class="n">tolerance</span><span class="o">=</span><span class="mi">1000</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="hyperlinks">
+<h3><a class="toc-backref" href="#id67"><span class="sectnum">1.4.15</span> hyperlinks</a><a class="headerlink" href="#hyperlinks" title="永久链接至标题">¶</a></h3>
+<dl class="simple">
+<dt>Options:</dt><dd><p><a class="reference external" href="config.html#hyperlink-color">hyperlink-color</a>, <a class="reference external" href="config.html#hyperref-options">hyperref-options</a></p>
+</dd>
+</dl>
+<p>Hyperlinks are realized using the <a class="reference external" href="http://ctan.org/pkg/hyperref">hyperref</a> package. As it re-defines many
+standard LaTeX macros, this package is loaded last, <em>after</em> the style
+sheets.</p>
+<p>However, you can load hyperref before a package that requires its
+presence in a <a class="reference internal" href="#style-sheet">style sheet</a> or the <a class="reference internal" href="#latex-preamble">LaTeX preamble</a> (see example
+below). This will ignore options set with <a class="reference external" href="config.html#hyperlink-color">hyperlink-color</a> and
+<a class="reference external" href="config.html#hyperref-options">hyperref-options</a>.</p>
+<p>URLs are typeset with the “url” package (loaded implicitly by “hyperref”).
+The font of URLs can be defined with the <code class="docutils literal notranslate"><span class="pre">\urlstyle</span></code> command. Valid
+arguments are</p>
+<dl class="field-list simple">
+<dt class="field-odd">same</dt>
+<dd class="field-odd"><p>normal text font, Docutils default,</p>
+</dd>
+<dt class="field-even">tt</dt>
+<dd class="field-even"><p>teletype (monospaced), LaTeX default,</p>
+</dd>
+<dt class="field-odd">rm</dt>
+<dd class="field-odd"><p>roman,</p>
+</dd>
+<dt class="field-even">sf</dt>
+<dd class="field-even"><p>sans serif</p>
+</dd>
+</dl>
+<dl>
+<dt>Example:</dt><dd><p>Custom loading of the hyperref package also switches to
+the LaTeX default (monospaced fonts for URLs). Reset to use the text
+font:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">[</span><span class="n">unicode</span><span class="p">,</span><span class="n">colorlinks</span><span class="o">=</span><span class="n">true</span><span class="p">,</span><span class="n">linkcolor</span><span class="o">=</span><span class="n">green</span><span class="p">]{</span><span class="n">hyperref</span><span class="p">}</span>
+\<span class="n">urlstyle</span><span class="p">{</span><span class="n">same</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>See also <a class="reference internal" href="#non-breaking-hyperlinks">non-breaking hyperlinks</a>.</p>
+<section id="disable-hyperlinks">
+<h4><a class="toc-backref" href="#id68"><span class="sectnum">1.4.15.1</span> disable hyperlinks</a><a class="headerlink" href="#disable-hyperlinks" title="永久链接至标题">¶</a></h4>
+<p>To suppress the hyper-linking completely (e.g. for printing or to
+avoid clashes with other packages), set <a class="reference external" href="config.html#hyperref-options">hyperref-options</a> to “draft”
+or load the “nohyperref” package that comes with the “hyperref”
+bundle.</p>
+<dl class="simple">
+<dt>Option:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">--hyperref-options=draft</span></code></p>
+</dd>
+</dl>
+<p><a class="reference internal" href="#latex-code">LaTeX code</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">nohyperref</span><span class="p">,</span><span class="n">url</span><span class="p">}</span>
+\<span class="n">urlstyle</span><span class="p">{</span><span class="n">same</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="line-blocks">
+<h3><a class="toc-backref" href="#id69"><span class="sectnum">1.4.16</span> line blocks</a><a class="headerlink" href="#line-blocks" title="永久链接至标题">¶</a></h3>
+<p>In <a class="reference external" href="../ref/rst/restructuredtext.html#line-blocks">line blocks</a>, newlines and leading whitespace are respected.</p>
+<dl>
+<dt>Environment:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">DUlineblock</span></code>: special list environment for line blocks</p>
+</dd>
+<dt>Length:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">\DUlineblockindent</span></code>: indentation of indented lineblock parts.</p>
+</dd>
+<dt>Default:</dt><dd><p>2.5 times the font height: <code class="docutils literal notranslate"><span class="pre">2.5em</span></code></p>
+</dd>
+<dt>Example:</dt><dd><p>set to the paragraph indentation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newlength</span><span class="p">{</span>\<span class="n">DUlineblockindent</span><span class="p">}</span>
+\<span class="n">setlength</span><span class="p">{</span>\<span class="n">DUlineblockindent</span><span class="p">}{</span>\<span class="n">parindent</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="line-spacing">
+<h3><a class="toc-backref" href="#id70"><span class="sectnum">1.4.17</span> line spacing</a><a class="headerlink" href="#line-spacing" title="永久链接至标题">¶</a></h3>
+<dl>
+<dt>Commands:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">\linespread</span></code>: for small adjustments</p>
+<p><code class="docutils literal notranslate"><span class="pre">\singlespacing</span></code>, <code class="docutils literal notranslate"><span class="pre">\onehalfspacing</span></code>, and <code class="docutils literal notranslate"><span class="pre">\doublespacing</span></code>: from
+package <cite>setspace</cite></p>
+</dd>
+<dt>Example 1:</dt><dd><p>Get document wide double spacing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">setspace</span><span class="p">}</span>
+\<span class="n">doublespacing</span>
+</pre></div>
+</div>
+</dd>
+<dt>Example 2:</dt><dd><p>Increase line spacing by five percent for better readability:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">linespread</span><span class="p">{</span><span class="mf">1.05</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="literal-blocks">
+<h3><a class="toc-backref" href="#id71"><span class="sectnum">1.4.18</span> literal blocks</a><a class="headerlink" href="#literal-blocks" title="永久链接至标题">¶</a></h3>
+<p>No markup processing is done within a <a class="reference external" href="../ref/rst/restructuredtext.html#literal-blocks">literal block</a>. It is left as-is,
+and is typically rendered in a monospaced typeface</p>
+<dl class="simple">
+<dt>Option:</dt><dd><p><a class="reference external" href="config.html#literal-block-env">literal-block-env</a></p>
+</dd>
+</dl>
+<p>Example:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">--literal-block-env=lstlisting</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">lstlisting</span></code> environment is highly configurable (as documented in
+<a class="reference external" href="http://mirrors.ctan.org/macros/latex/contrib/listings/listings.pdf">listings.pdf</a>) and provides syntax highlight for many programming languages,
+for instance</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">renewcommand</span><span class="p">{</span>\<span class="n">ttdefault</span><span class="p">}{</span><span class="n">txtt</span><span class="p">}</span>
+\<span class="n">lstset</span><span class="p">{</span><span class="n">language</span><span class="o">=</span><span class="n">Python</span><span class="p">,</span> <span class="n">morekeywords</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">]{</span><span class="k">yield</span><span class="p">}}</span>
+\<span class="n">lstloadlanguages</span><span class="p">{</span><span class="n">Python</span><span class="p">}</span>
+\<span class="n">lstset</span><span class="p">{</span>
+  <span class="n">basicstyle</span><span class="o">=</span>\<span class="n">ttfamily</span><span class="p">,</span>
+  <span class="n">keywordstyle</span><span class="o">=</span>\<span class="n">bfseries</span><span class="p">,</span>
+  <span class="n">commentstyle</span><span class="o">=</span>\<span class="n">rmfamily</span>\<span class="n">itshape</span><span class="p">,</span>
+  <span class="n">stringstyle</span><span class="o">=</span>\<span class="n">slshape</span><span class="p">,</span>
+<span class="p">}</span>
+\<span class="n">lstset</span><span class="p">{</span><span class="n">showstringspaces</span><span class="o">=</span><span class="n">false</span><span class="p">}</span>
+\<span class="n">lstset</span><span class="p">{</span><span class="n">columns</span><span class="o">=</span><span class="n">fullflexible</span><span class="p">,</span>
+     <span class="n">basewidth</span><span class="o">=</span><span class="p">{</span><span class="mf">0.5</span><span class="n">em</span><span class="p">,</span><span class="mf">0.4</span><span class="n">em</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>and to get LaTeX syntax highlight for a code block with “listings”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">lstloadlanguages</span><span class="p">{[</span><span class="n">LaTeX</span><span class="p">]</span><span class="n">TeX</span><span class="p">}</span> <span class="o">%</span>  <span class="n">comma</span> <span class="n">separated</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">languages</span>
+\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">DUCLASSlatex</span><span class="p">}{</span>\<span class="n">lstset</span><span class="p">{</span><span class="n">language</span><span class="o">=</span><span class="p">[</span><span class="n">LaTeX</span><span class="p">]</span><span class="n">TeX</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>The indentation of literal blocks can be reset with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">lstset</span><span class="p">{</span><span class="n">resetmargins</span><span class="o">=</span><span class="n">true</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>and/or configured with e. g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">lstset</span><span class="p">{</span><span class="n">xleftmargin</span><span class="o">=-</span><span class="mi">2</span><span class="n">em</span><span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="lists">
+<h3><a class="toc-backref" href="#id72"><span class="sectnum">1.4.19</span> lists</a><a class="headerlink" href="#lists" title="永久链接至标题">¶</a></h3>
+<p>Remove extra vertical whitespace between items of bullet lists and
+enumerated lists.</p>
+<dl>
+<dt>Example:</dt><dd><p>Pass the class argument “compact” to the list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">class</span><span class="p">::</span> <span class="n">compact</span>
+
+<span class="o">*</span> <span class="n">first</span> <span class="n">item</span>
+<span class="o">*</span> <span class="n">second</span> <span class="n">item</span>
+</pre></div>
+</div>
+<p>The following lines for the <a class="reference internal" href="#latex-preamble">LaTeX preamble</a> use the <a class="reference external" href="http://ctan.org/pkg/enumitem">enumitem</a> package to
+remove spacing from all lists with class argument “compact”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">enumitem</span><span class="p">}</span>
+\<span class="n">newcommand</span><span class="o">*</span><span class="p">{</span>\<span class="n">DUCLASScompact</span><span class="p">}{</span>\<span class="n">setlist</span><span class="p">{</span><span class="n">noitemsep</span><span class="p">}}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="list-of-figures-tables">
+<h3><a class="toc-backref" href="#id73"><span class="sectnum">1.4.20</span> list of figures/tables</a><a class="headerlink" href="#list-of-figures-tables" title="永久链接至标题">¶</a></h3>
+<p>Docutils does not support lists of figures or tables.</p>
+<p>However, with LaTeX, they can be generated using <a class="reference internal" href="#raw-latex">raw LaTeX</a> in the
+document source.</p>
+<dl>
+<dt>Commands:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">\listoffigures</span></code>: a list of figures</p>
+<p><code class="docutils literal notranslate"><span class="pre">\listoftables</span></code>: a list of tables</p>
+</dd>
+<dt>Example:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">raw</span><span class="p">::</span> <span class="n">latex</span>
+
+   \<span class="n">listoffigures</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="option-list">
+<h3><a class="toc-backref" href="#id74"><span class="sectnum">1.4.21</span> option list</a><a class="headerlink" href="#option-list" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="../ref/rst/restructuredtext.html#option-lists">Option lists</a> are two-column lists of command-line options and
+descriptions, documenting a program’s options.</p>
+<dl>
+<dt>Environment:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">DUoptionlist</span></code>: environment for option lists,</p>
+</dd>
+<dt>Command:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">\DUoptionlistlabel</span></code>: set appearance of the options</p>
+</dd>
+<dt>Example:</dt><dd><p>set command options with a bold monospace font:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">DUoptionlistlabel</span><span class="p">}{</span>\<span class="n">texttt</span><span class="p">{</span>\<span class="n">textbf</span><span class="p">{</span><span class="c1">#1}} \hfill}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="page-breaks">
+<h3><a class="toc-backref" href="#id75"><span class="sectnum">1.4.22</span> page breaks</a><a class="headerlink" href="#page-breaks" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>Page breaks before top-level sections are the default with a
+documentclass that provides “chapters”, e.g.  “book”, “memoir” or
+“scrbook”.</p></li>
+<li><p>Redefining the section or section* command in a
+style sheet is possible too.</p></li>
+<li><p><a class="reference internal" href="#raw-latex">Raw LaTeX</a> or a <a class="reference internal" href="#custom-role">custom role</a> can be used.</p></li>
+<li><p>The transition element can be re-defined to produce a page break,</p></li>
+</ul>
+<dl>
+<dt>Commands</dt><dd><p><code class="docutils literal notranslate"><span class="pre">\newpage</span></code>:  hard pagebreak at exactly this position</p>
+<p><code class="docutils literal notranslate"><span class="pre">\pagebreak[2]</span></code>: recommended page break after line end (precedence 1…4)</p>
+</dd>
+<dt>Example:</dt><dd><p>Define the transition command as page break with the <a class="reference internal" href="#latex-code">LaTeX code</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newcommand</span><span class="o">*</span><span class="p">{</span>\<span class="n">DUtransition</span><span class="p">}{</span>\<span class="n">pagebreak</span><span class="p">[</span><span class="mi">4</span><span class="p">]}</span>
+</pre></div>
+</div>
+<p>(use <code class="docutils literal notranslate"><span class="pre">\renewcommand</span></code> with <a class="reference internal" href="#raw-latex">raw LaTeX</a>).</p>
+</dd>
+</dl>
+</section>
+<section id="page-layout">
+<h3><a class="toc-backref" href="#id76"><span class="sectnum">1.4.23</span> page layout</a><a class="headerlink" href="#page-layout" title="永久链接至标题">¶</a></h3>
+<p>By default, paper size and margin settings are determined by the document
+class.</p>
+<p>The following packages help to configure the page layout:</p>
+<ol class="loweralpha">
+<li><p>The <a class="reference external" href="http://ctan.org/pkg/typearea">typearea</a> package (part of the <a class="reference external" href="http://ctan.org/pkg/koma-script">KOMA-script</a> bundle) calculates a
+<em>good</em> page layout (based on rules and recommendations of typography
+experts).</p>
+<p>See the <a class="reference external" href="http://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguien.pdf">KOMA-Script Guide</a> for details on what is a <em>good</em> layout and
+how this is achieved.</p>
+</li>
+<li><p>The <a class="reference external" href="http://ctan.org/pkg/geometry">geometry</a> package is recommended if you have to follow guidelines
+with fixed values for the margins.
+For details see the <a class="reference external" href="http://mirrors.ctan.org/macros/latex/contrib/geometry/geometry.pdf">geometry manual</a>.</p></li>
+</ol>
+<dl>
+<dt>Example 1:</dt><dd><p>Let <cite>typearea</cite> determine the type area with <code class="docutils literal notranslate"><span class="pre">DIV=calc</span></code> in the
+documentoptions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">documentoptions</span><span class="o">=</span><span class="s1">'a4paper,DIV=calc'</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">DIV</span></code> option can also be specified, like <code class="docutils literal notranslate"><span class="pre">DIV=10</span></code>. It defines how
+“crowded” a page will be: larger values mean larger text area (at the
+expense of readability).</p>
+</dd>
+<dt>Example 2:</dt><dd><p><a class="reference internal" href="#latex-code">LaTeX code</a> to set margins with the <a class="reference external" href="http://ctan.org/pkg/geometry">geometry</a> package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">geometry</span><span class="p">}</span>
+\<span class="n">geometry</span><span class="p">{</span><span class="n">hmargin</span><span class="o">=</span><span class="p">{</span><span class="mi">3</span><span class="n">cm</span><span class="p">,</span><span class="mf">0.8</span><span class="ow">in</span><span class="p">},</span><span class="n">height</span><span class="o">=</span><span class="mi">8</span><span class="ow">in</span><span class="p">}</span>
+\<span class="n">geometry</span><span class="p">{</span><span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="ow">in</span><span class="p">}</span><span class="o">.</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="page-headers-and-footers">
+<h3><a class="toc-backref" href="#id77"><span class="sectnum">1.4.24</span> page headers and footers</a><a class="headerlink" href="#page-headers-and-footers" title="永久链接至标题">¶</a></h3>
+<p>With the <a class="reference external" href="http://www.ctan.org/pkg/fancyhdr">fancyhdr</a> package or the <a class="reference external" href="http://ctan.org/pkg/koma-script">KOMA-script</a> classes, you can define
+custom page head- and foot-lines.</p>
+<p>The <a class="reference external" href="../ref/rst/directives.html#header">“header” and “footer” directives</a> save their content in the macros
+<code class="docutils literal notranslate"><span class="pre">\DUheader</span></code> rsp. <code class="docutils literal notranslate"><span class="pre">\DUfooter</span></code>. The macros can be used in LaTeX code and
+will be replaced by LaTeX with the content of the directives.</p>
+<dl>
+<dt>Example:</dt><dd><p><a class="reference internal" href="#latex-code">LaTeX code</a> to place left-aligned “header” and “footer” on every
+page with <a class="reference external" href="http://www.ctan.org/pkg/fancyhdr">fancyhdr</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">fancyhdr</span><span class="p">}</span>
+\<span class="n">fancyhead</span><span class="p">[</span><span class="n">L</span><span class="p">]{</span>\<span class="n">DUheader</span><span class="p">}</span>
+\<span class="n">fancyfoot</span><span class="p">{}</span> <span class="o">%</span> <span class="n">reset</span>
+\<span class="n">fancyfoot</span><span class="p">[</span><span class="n">L</span><span class="p">]{</span>\<span class="n">DUfooter</span><span class="p">}</span>
+\<span class="n">pagestyle</span><span class="p">{</span><span class="n">fancy</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="page-numbering">
+<h3><a class="toc-backref" href="#id78"><span class="sectnum">1.4.25</span> page numbering</a><a class="headerlink" href="#page-numbering" title="永久链接至标题">¶</a></h3>
+<dl>
+<dt>Example:</dt><dd><p>Number pages by chapter (using the <a class="reference external" href="http://ctan.org/pkg/chappg">chappg</a> package):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">chappg</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="http://mirrors.ctan.org/macros/latex/contrib/chappg/chappg.pdf">chappg documentation</a> for details.</p>
+</dd>
+</dl>
+</section>
+<section id="paper-size">
+<h3><a class="toc-backref" href="#id79"><span class="sectnum">1.4.26</span> paper size</a><a class="headerlink" href="#paper-size" title="永久链接至标题">¶</a></h3>
+<p>Paper geometry can be changed using <code class="docutils literal notranslate"><span class="pre">--documentoptions</span></code> or with the
+<a class="reference external" href="http://ctan.org/pkg/geometry">geometry</a> package.</p>
+<p><a class="reference internal" href="#latex-code">LaTeX code</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">geometry</span><span class="p">}</span>
+\<span class="n">geometry</span><span class="p">{</span><span class="n">OPTIONLIST</span><span class="p">}</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Default:</dt><dd><p>a4paper</p>
+</dd>
+</dl>
+<p>Some possibilities:</p>
+<ul class="simple">
+<li><p>a4paper, b3paper, letterpaper, executivepaper, legalpaper</p></li>
+<li><p>landscape, portrait, twoside.</p></li>
+</ul>
+<dl>
+<dt>Example:</dt><dd><p>Choose A5 pager in landscape orientation with command line argument:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">documentoptions</span><span class="o">=</span><span class="n">a5paper</span><span class="p">,</span><span class="n">landscape</span>
+</pre></div>
+</div>
+<p>The same with LaTeX commands in the <a class="reference internal" href="#style-sheet">style sheet</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">geometry</span><span class="p">}</span>
+\<span class="n">geometry</span><span class="p">{</span><span class="n">a5paper</span><span class="p">,</span><span class="n">landscape</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>For details see the <a class="reference external" href="http://mirrors.ctan.org/macros/latex/contrib/geometry/geometry.pdf">geometry manual</a>.</p>
+</dd>
+</dl>
+</section>
+<section id="paragraph-indent">
+<h3><a class="toc-backref" href="#id80"><span class="sectnum">1.4.27</span> paragraph indent</a><a class="headerlink" href="#paragraph-indent" title="永久链接至标题">¶</a></h3>
+<dl>
+<dt>Default (in most document classes):</dt><dd><p>Indent the first line in a paragraph unless it is the first line of a
+chapter, section, subsection, or subsubsection.</p>
+</dd>
+<dt>Example 1:</dt><dd><p>To set paragraph indentation to zero but add a vertical space between
+load the <cite>parskip</cite> package with the command line argument:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">stylesheet</span><span class="o">=</span><span class="n">parskip</span>
+</pre></div>
+</div>
+<p>or in a custom <a class="reference internal" href="#style-sheet">style sheet</a> with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">parskip</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+<dt>Example 2:</dt><dd><p>To suppress the indentation of a specific paragraph, you may give it the
+class “noindent” with, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">class</span><span class="p">::</span> <span class="n">noindent</span>
+
+<span class="n">This</span> <span class="n">paragraph</span> <span class="n">should</span> <span class="ow">not</span> <span class="n">be</span> <span class="n">indented</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>and define the <a class="reference internal" href="#custom-role">custom role</a> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">DUrolenoindent</span><span class="p">}[</span><span class="mi">1</span><span class="p">]{</span>\<span class="n">noindent</span> <span class="c1">#1}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="rubric">
+<h3><a class="toc-backref" href="#id81"><span class="sectnum">1.4.28</span> rubric</a><a class="headerlink" href="#rubric" title="永久链接至标题">¶</a></h3>
+<p>A <a class="reference external" href="../ref/rst/directives.html#rubric">rubric</a> is like an informal heading that doesn’t correspond to the
+document’s structure.</p>
+<dl>
+<dt>Command:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">\DUrubric</span></code></p>
+</dd>
+<dt>Default:</dt><dd><p>subsubsection style (unnumbered), italic</p>
+</dd>
+<dt>Example1:</dt><dd><p>Set centred and red:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newcommand</span><span class="o">*</span><span class="p">{</span>\<span class="n">DUrubric</span><span class="p">}[</span><span class="mi">1</span><span class="p">]{</span><span class="o">%</span>
+   \<span class="n">subsubsection</span><span class="o">*</span><span class="p">{</span>\<span class="n">centerline</span><span class="p">{</span>\<span class="n">color</span><span class="p">{</span><span class="n">red</span><span class="p">}</span><span class="c1">#1}}}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>Class attribute values are ignored because the “<a class="reference internal" href="#classes">classes</a> wrapper”
+interferes with LaTeX’s formatting (spacing/indentation) of text following
+a section heading. Consider using a <a class="reference internal" href="#topic-element">topic element</a> or a <a class="reference external" href="../ref/rst/directives.html#container">container</a>.</p>
+</div>
+</section>
+<section id="section-headings">
+<h3><a class="toc-backref" href="#id82"><span class="sectnum">1.4.29</span> section headings</a><a class="headerlink" href="#section-headings" title="永久链接至标题">¶</a></h3>
+<p>Options: <a class="reference external" href="config.html#documentclass">documentclass</a>, <a class="reference external" href="config.html#use-part-section">use-part-section</a></p>
+<p>Section headings are converted into LaTeX macros according to their level,
+the document class and the value of the <a class="reference external" href="config.html#use-part-section">use-part-section</a> setting:</p>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 8%"/>
+<col style="width: 21%"/>
+<col style="width: 29%"/>
+<col style="width: 21%"/>
+<col style="width: 22%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Level</p></th>
+<th class="head"><p>article</p></th>
+<th class="head"><p>article with part</p></th>
+<th class="head"><p>book <a class="footnote-reference brackets" href="#id27" id="id26">5</a></p></th>
+<th class="head"><p>book with part</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>section</p></td>
+<td><p>part</p></td>
+<td><p>chapter</p></td>
+<td><p>part</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>subsection</p></td>
+<td><p>section</p></td>
+<td><p>section</p></td>
+<td><p>chapter</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>subsubsection</p></td>
+<td><p>subsection</p></td>
+<td><p>subsection</p></td>
+<td><p>section</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>paragraph</p></td>
+<td><p>subsubsection</p></td>
+<td><p>subsubsection</p></td>
+<td><p>subsection</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>subparagraph</p></td>
+<td><p>paragraph</p></td>
+<td><p>paragraph</p></td>
+<td><p>subsubsection</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>DUtitle</p></td>
+<td><p>subparagraph</p></td>
+<td><p>subparagraph</p></td>
+<td><p>paragraph</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>DUtitle</p></td>
+<td><p>DUtitle</p></td>
+<td><p>DUtitle</p></td>
+<td><p>subparagraph</p></td>
+</tr>
+</tbody>
+</table></div>
+<dl class="footnote brackets">
+<dt class="label" id="id27"><span class="brackets"><a class="fn-backref" href="#id26">5</a></span></dt>
+<dd><p>One of the document classes ‘book’, ‘memoir’, ‘report ‘scrbook’,
+or ‘scrreprt’.</p>
+</dd>
+</dl>
+</section>
+<section id="section-numbering">
+<h3><a class="toc-backref" href="#id83"><span class="sectnum">1.4.30</span> section numbering</a><a class="headerlink" href="#section-numbering" title="永久链接至标题">¶</a></h3>
+<p>Sections are numbered if there is a <a class="reference external" href="../ref/rst/directives.html#sectnum">sectnum directive</a> in the document.</p>
+<dl class="simple">
+<dt>Option: <a class="reference external" href="config.html#sectnum-xform">sectnum_xform</a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">--section-numbering</span></code>, <code class="docutils literal notranslate"><span class="pre">--no-section-numbering</span></code></p>
+</dd>
+</dl>
+<p>If <a class="reference external" href="config.html#sectnum-xform">sectnum_xform</a> is False, section numbers are generated by LaTeX. In this
+case the “prefix” and “suffix” arguments of the <a class="reference external" href="../ref/rst/directives.html#sectnum">sectnum directive</a> are
+ignored. The section number style is determined by the <a class="reference internal" href="#document-class">document class</a>
+and can be configured in a LaTeX <a class="reference internal" href="#style-sheet">style sheet</a>, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">setcounter</span><span class="p">{</span><span class="n">secnumdepth</span><span class="p">}{</span><span class="mi">5</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>The LaTeX name is ‘secnumdepth’ (without ‘t’).</p>
+</div>
+</section>
+<section id="sidebar">
+<h3><a class="toc-backref" href="#id84"><span class="sectnum">1.4.31</span> sidebar</a><a class="headerlink" href="#sidebar" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="http://docutils.sf.net/docutils/docs/ref/rst/directives.html#sidebar">Sidebars</a> are like miniature, parallel documents that occur inside other
+documents, providing related or reference material. They can be likened to
+super-footnotes; their content is outside of the flow of the document’s main
+text.</p>
+<dl>
+<dt>Command:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">DUsidebar</span></code></p>
+</dd>
+<dt>Default:</dt><dd><p>Box with grey background.</p>
+</dd>
+<dt>Example:</dt><dd><p>Use margin notes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">DUsidebar</span><span class="p">}[</span><span class="mi">1</span><span class="p">]{</span>\<span class="n">marginpar</span><span class="p">{</span>\<span class="n">flushleft</span> <span class="c1">#1}}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Make sure the margin is wide enough to hold the note.</p></li>
+<li><p>This fails with some constructs inside the <cite>side bar</cite> and where
+marginpar cannot be used, e.g., inside floats, footnotes, or in frames
+made with the framed package (see <a class="reference external" href="http://ctan.org/pkg/marginnote">marginnote</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="size-of-a-pixel">
+<h3><a class="toc-backref" href="#id85"><span class="sectnum">1.4.32</span> size of a pixel</a><a class="headerlink" href="#size-of-a-pixel" title="永久链接至标题">¶</a></h3>
+<p>The <em>physical size</em> of a pixel depends on the resolution of the output
+device and is usually specified in <em>dots per inch</em> (DPI).</p>
+<p>The <em>length unit</em> “px” is defined by the output format. For LaTeX, it is
+<a class="reference external" href="http://tex.stackexchange.com/questions/41370/what-are-the-possible-dimensions-sizes-units-latex-understands">defined in pdfTeX and LuaTeX</a> (the <cite>xetex</cite> writer emulates this
+definition).</p>
+<dl>
+<dt>Default:</dt><dd><p>72 DPI, i.e. 1 px = 1/72 in. <a class="footnote-reference brackets" href="#id30" id="id29">6</a></p>
+</dd>
+<dt>Example:</dt><dd><p>Set the value to match the CSS definition
+with the <a class="reference internal" href="#latex-code">LaTeX code</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">pdfpxdimen</span><span class="o">=</span><span class="mi">1</span><span class="ow">in</span>
+\<span class="n">divide</span>\<span class="n">pdfpxdimen</span> <span class="n">by</span> <span class="mi">96</span> <span class="o">%</span> <span class="mi">1</span><span class="o">/</span><span class="mi">96</span> <span class="n">inch</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="footnote brackets">
+<dt class="label" id="id30"><span class="brackets"><a class="fn-backref" href="#id29">6</a></span></dt>
+<dd><p>The <a class="reference external" href="http://www.w3.org/TR/css-values-3/#px">CSS length unit ``px``</a> defaults to 1/96 inch.</p>
+</dd>
+</dl>
+</section>
+<section id="table-style">
+<h3><a class="toc-backref" href="#id86"><span class="sectnum">1.4.33</span> table style</a><a class="headerlink" href="#table-style" title="永久链接至标题">¶</a></h3>
+<p>A pre-configured <em>table style</em> can be globally selected via the <a class="reference external" href="config.html#table-style-latex-writers">table_style</a>
+setting or set for individual tables via a <a class="reference external" href="../ref/rst/directives.html#class">class directive</a> or the class
+option of the <a class="reference external" href="../ref/rst/directives.html#table">table directive</a>.</p>
+<p>Supported values:</p>
+<dl>
+<dt>standard</dt><dd><p>Borders around all cells.</p>
+</dd>
+<dt>booktabs</dt><dd><p>A line above and below the table and one after the head.</p>
+</dd>
+<dt>borderless</dt><dd><p>No borders.</p>
+</dd>
+<dt>colwidths-auto</dt><dd><p>Column width determination by LaTeX.
+Overridden by the <a class="reference external" href="../ref/rst/directives.html#table">table directive</a>’s “widths” option.</p>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p><code class="docutils literal notranslate"><span class="pre">colwidths-auto</span></code> is only suited for tables with simple cell content.</p>
+<p>LaTeX puts the content of auto-sized columns on one line (merging
+paragraphs) and may fail with complex content.</p>
+</div>
+</dd>
+</dl>
+<p>By default, <em>column widths</em> are computed from the source column widths.
+The <a class="reference external" href="config.html#legacy-column-widths">legacy_column_widths</a> setting selects the conversion algorithm.
+Custom column widths can be set with the “widths” option of the <a class="reference external" href="../ref/rst/directives.html#table">table
+directive</a>.</p>
+<p>See also the section on problems with <a class="reference internal" href="#tables">tables</a> below.</p>
+</section>
+<section id="table-of-contents">
+<h3><a class="toc-backref" href="#id87"><span class="sectnum">1.4.34</span> table of contents</a><a class="headerlink" href="#table-of-contents" title="永久链接至标题">¶</a></h3>
+<p>A <a class="reference external" href="../ref/rst/directives.html#contents">contents directive</a> is replaced by a table of contents (ToC).</p>
+<dl class="simple">
+<dt>Option: <a class="reference external" href="config.html#use-latex-toc">use-latex-toc</a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">--use-latex-toc</span></code>, <code class="docutils literal notranslate"><span class="pre">--use-docutils-toc</span></code></p>
+</dd>
+</dl>
+<p>With use-latex-toc (default since release 0.6):</p>
+<ul>
+<li><p>The ToC is generated by LaTeX (via the <code class="docutils literal notranslate"><span class="pre">\tableofcontents</span></code> command).</p>
+<p>The layout depends on the chosen document class and can be configured in
+a custom <a class="reference internal" href="#style-sheet">style sheet</a> (see e.g. the <a class="reference external" href="http://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguien.pdf">KOMA-Script Guide</a> for the
+<a class="reference external" href="http://ctan.org/pkg/koma-script">KOMA-script</a> classes).</p>
+</li>
+<li><p>The depth of the ToC and PDF-bookmarks can be configured</p>
+<ul class="simple">
+<li><p>with the “depth” argument of the <a class="reference external" href="../ref/rst/directives.html#contents">contents directive</a>, or</p></li>
+<li><p>in a style sheet with e.g. <code class="docutils literal notranslate"><span class="pre">\setcounter{tocdepth}{5}</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Local ToCs are done with the <a class="reference external" href="http://ctan.org/pkg/minitoc">minitoc</a> package. See the <a class="reference external" href="http://mirrors.ctan.org/macros/latex/contrib/minitoc/minitoc.pdf">minitoc
+documentation</a> for the numerous configuration options.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>Minitoc supports local ToCs only at “part” and top section level
+(“chapter” or “section”). Local <cite>contents</cite> directives at lower levels
+are ignored (a warning is issued).</p>
+<p>This is an intended feature of the <a class="reference external" href="http://ctan.org/pkg/minitoc">minitoc</a> package. If you really
+require local ToCs at lower level, turn off the <a class="reference external" href="config.html#use-latex-toc">use-latex-toc</a> option.</p>
+</div>
+</section>
+<section id="title-reference-role">
+<h3><a class="toc-backref" href="#id88"><span class="sectnum">1.4.35</span> title reference role</a><a class="headerlink" href="#title-reference-role" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="../ref/rst/roles.html#title-reference">Title reference</a> is the default <a class="reference external" href="../ref/rst/directives.html#setting-the-default-interpreted-text-role">default role</a> for <a class="reference external" href="../ref/rst/restructuredtext.html#interpreted-text">interpreted text</a>.</p>
+<dl>
+<dt>Command:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">\DUroletitlereference</span></code></p>
+</dd>
+<dt>Default:</dt><dd><p>use slanted font (<code class="docutils literal notranslate"><span class="pre">\textsl</span></code>)</p>
+</dd>
+<dt>Example:</dt><dd><p>set title references with a bold monospace font:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">DUroletitlereference</span><span class="p">}[</span><span class="mi">1</span><span class="p">]{</span>\<span class="n">texttt</span><span class="p">{</span>\<span class="n">textbf</span><span class="p">{</span><span class="c1">#1}}}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="titles">
+<h3><a class="toc-backref" href="#id89"><span class="sectnum">1.4.36</span> titles</a><a class="headerlink" href="#titles" title="永久链接至标题">¶</a></h3>
+<p>The titles of <a class="reference internal" href="#admonitions">admonitions</a>, <a class="reference internal" href="#sidebar">sidebar</a>, and <a class="reference internal" href="#topic-element">topic element</a> use
+the <code class="docutils literal notranslate"><span class="pre">\DUtitle</span></code> command.</p>
+<dl>
+<dt>Example 1:</dt><dd><p>a centered and somewhat larger title for topcis:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newcommand</span><span class="o">*</span><span class="p">{</span>\<span class="n">DUCLASStopic</span><span class="p">}{</span>
+  \<span class="n">renewcommand</span><span class="o">*</span><span class="p">{</span>\<span class="n">DUtitle</span><span class="p">}[</span><span class="mi">1</span><span class="p">]{</span>\<span class="n">subsection</span><span class="o">*</span><span class="p">{</span>\<span class="n">centering</span> <span class="c1">#1}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+<dt>Example 2:</dt><dd><p>a right-pointing hand as title for the “attention” directive:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">pifont</span><span class="p">}</span>
+\<span class="n">newcommand</span><span class="o">*</span><span class="p">{</span>\<span class="n">DUCLASSattention</span><span class="p">}{</span>
+  \<span class="n">renewcommand</span><span class="o">*</span><span class="p">{</span>\<span class="n">DUtitle</span><span class="p">}[</span><span class="mi">1</span><span class="p">]{</span>\<span class="n">ding</span><span class="p">{</span><span class="mi">43</span><span class="p">}}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The title argument is “swallowed” by the command.
+To have both, hand and title use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">{</span><span class="n">pifont</span><span class="p">}</span>
+\<span class="n">newcommand</span><span class="o">*</span><span class="p">{</span>\<span class="n">DUCLASSattention</span><span class="p">}{</span>
+  \<span class="n">newcommand</span><span class="o">*</span><span class="p">{</span>\<span class="n">DUtitle</span><span class="p">}[</span><span class="mi">1</span><span class="p">]{</span>\<span class="n">ding</span><span class="p">{</span><span class="mi">43</span><span class="p">}</span> <span class="c1">#1}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="text-encoding">
+<h3><a class="toc-backref" href="#id90"><span class="sectnum">1.4.37</span> text encoding</a><a class="headerlink" href="#text-encoding" title="永久链接至标题">¶</a></h3>
+<p>The encoding of the LaTeX source file is Docutils’ <em>output</em> encoding
+but LaTeX’ <em>input</em> encoding.</p>
+<dl>
+<dt>Option: <a class="reference external" href="config.html#output-encoding">output-encoding</a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">--output-encoding=OUTPUT-ENCODING</span></code></p>
+</dd>
+<dt>Default:</dt><dd><p>“utf8”</p>
+</dd>
+<dt>Example:</dt><dd><p>Encode the LaTeX source file with the ISO <cite>latin-1</cite> (west european)
+8-bit encoding (the default in Docutils versions up to 0.6.):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">output</span><span class="o">-</span><span class="n">encoding</span><span class="o">=</span><span class="n">latin</span><span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+</dd>
+<dt>Note:</dt><dd><p>LaTeX comes with two options for UTF-8 support,</p>
+<dl class="field-list simple">
+<dt class="field-odd">utf8</dt>
+<dd class="field-odd"><p>by the standard <a class="reference external" href="http://ctan.org/pkg/inputenc">inputenc</a> package with only limited coverage
+(mainly accented characters).</p>
+</dd>
+<dt class="field-even">utf8x</dt>
+<dd class="field-even"><p>supported by the <a class="reference external" href="http://ctan.org/pkg/unicode">ucs</a> package covers a wider range of Unicode
+characters than does “utf8”.  It is, however, a non-standard
+extension and no longer developed.</p>
+</dd>
+</dl>
+<p>Currently (in version 0.6), “utf8” is used if the output-encoding is
+any of “utf_8”, “U8”, “UTF”, or “utf8”.</p>
+</dd>
+</dl>
+</section>
+<section id="topic-element">
+<h3><a class="toc-backref" href="#id91"><span class="sectnum">1.4.38</span> topic element</a><a class="headerlink" href="#topic-element" title="永久链接至标题">¶</a></h3>
+<p>A <a class="reference external" href="../ref/rst/directives.html#topic">topic</a> is like a block quote with a title, or a self-contained section
+with no subsections. Topics and rubrics can be used at places where a
+<a class="reference external" href="../ref/rst/restructuredtext.html#sections">section title</a> is not allowed (e.g. inside a directive).</p>
+<dl>
+<dt>Example:</dt><dd><p>Use a standard paragraph for a topic:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">DUCLASStopic</span><span class="p">}{</span><span class="o">%</span>
+  \<span class="n">renewenvironment</span><span class="p">{</span><span class="n">quote</span><span class="p">}{}{}</span><span class="o">%</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="transition-element">
+<h3><a class="toc-backref" href="#id92"><span class="sectnum">1.4.39</span> transition element</a><a class="headerlink" href="#transition-element" title="永久链接至标题">¶</a></h3>
+<p><a class="reference external" href="http://docutils.sf.net/docutils/docs/ref/rst/restructuredtext.html#transitions">Transitions</a> are commonly seen in novels and short fiction, as a gap
+spanning one or more lines, marking text divisions or signaling changes in
+subject, time, point of view, or emphasis.</p>
+<dl>
+<dt>Command:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">\DUtransition</span></code></p>
+</dd>
+<dt>Default:</dt><dd><p>A horizontal line, 1/3 of text width</p>
+</dd>
+<dt>Example 1:</dt><dd><p>Use three stars:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newcommand</span><span class="o">*</span><span class="p">{</span>\<span class="n">DUtransition</span><span class="p">}{</span>\<span class="n">centering</span><span class="p">{}</span><span class="o">*</span>\<span class="n">quad</span><span class="o">*</span>\<span class="n">quad</span><span class="o">*</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Alternatively use the more elaborated version in <a class="reference external" href="../../../sandbox/stylesheets/transition-stars.sty">transition-stars.sty</a>.</p>
+</dd>
+<dt>Example 2:</dt><dd><p>If paragraphs are separated by indentation, you can simply use a vertical
+space:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">newcommand</span><span class="o">*</span><span class="p">{</span>\<span class="n">DUtransition</span><span class="p">}{</span>\<span class="n">vspace</span><span class="p">{</span><span class="mi">2</span><span class="n">ex</span><span class="p">}}</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+</section>
+<section id="changes">
+<h2><a class="toc-backref" href="#id93"><span class="sectnum">1.5</span> Changes</a><a class="headerlink" href="#changes" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>The Docutils <a class="reference external" href="../../HISTORY.html">HISTORY</a> lists all changes during the history of docutils.
+Important changes are summarized in the <a class="reference external" href="../../RELEASE-NOTES.html">RELEASE-NOTES</a>.</p></li>
+</ul>
+</section>
+<section id="problems">
+<h2><a class="toc-backref" href="#id94"><span class="sectnum">1.6</span> Problems</a><a class="headerlink" href="#problems" title="永久链接至标题">¶</a></h2>
+<section id="troubleshooting">
+<h3><a class="toc-backref" href="#id95"><span class="sectnum">1.6.1</span> Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="永久链接至标题">¶</a></h3>
+<section id="bad-looking-pdf-output">
+<h4><a class="toc-backref" href="#id96"><span class="sectnum">1.6.1.1</span> Bad looking PDF output</a><a class="headerlink" href="#bad-looking-pdf-output" title="永久链接至标题">¶</a></h4>
+<blockquote>
+<div><p>What I am looking for when I try Docutils is if the PDF files I can get
+are of high quality. Unfortunately that never is the case.</p>
+<p>So am I just stupid or is there a way to get really high quality pdf from
+Docutils?</p>
+</div></blockquote>
+<p>Make sure the default font is not a bitmap font.</p>
+<p>There is <a class="reference external" href="http://ctan.org/pkg/lm">Latin Modern</a> if you like the look of the standard font on paper,
+but want nice pdf. Or select something else like Times, Palatino, … via
+configuration <a class="reference internal" href="#options-settings">options/settings</a>. See <a class="reference internal" href="#font">font</a> and <a class="reference external" href="config.html#font-encoding">font-encoding</a>.</p>
+</section>
+<section id="footnote-mark-and-text-at-different-pages">
+<h4><a class="toc-backref" href="#id97"><span class="sectnum">1.6.1.2</span> footnote mark and text at different pages</a><a class="headerlink" href="#footnote-mark-and-text-at-different-pages" title="永久链接至标题">¶</a></h4>
+<p>Docutils stores the footnote text in a separate node, at the position where
+it is specified in the input document. With the default settings, the
+footnote is put at the bottom of the page where the footnote text is located,
+maybe far away from the footnote mark (see e.g. <a class="reference external" href="rst/demo.txt">rst/demo.txt</a>).</p>
+<p>To get footnote mark and text at the same page, keep footnote mark and
+footnote text close together.</p>
+</section>
+<section id="non-breaking-hyperlinks">
+<h4><a class="toc-backref" href="#id98"><span class="sectnum">1.6.1.3</span> non-breaking hyperlinks</a><a class="headerlink" href="#non-breaking-hyperlinks" title="永久链接至标题">¶</a></h4>
+<p>If you convert with <code class="docutils literal notranslate"><span class="pre">latex</span></code> (as opposed to <code class="docutils literal notranslate"><span class="pre">pdflatex</span></code>), hyperlinks will
+not wrap and sometimes stick into the margin.</p>
+<dl>
+<dt>Wrong:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">usepackage</span><span class="p">[</span><span class="n">breaklinks</span><span class="o">=</span><span class="n">true</span><span class="p">]{</span><span class="n">hyperref</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>“breaklinks” is an internal option that indicates whether the chosen
+driver can handle split links. (It might work to <em>disable</em> link breaking.)</p>
+</dd>
+<dt>Right:</dt><dd><p>Use one of the following:</p>
+<ol class="loweralpha simple">
+<li><p>compile with <a class="reference internal" href="#pdflatex">pdflatex</a>,</p></li>
+<li><p>use the package <a class="reference external" href="http://ctan.org/pkg/breakurl">breakurl</a>,</p></li>
+<li><p>(for printout) <a class="reference internal" href="#disable-hyperlinks">disable hyperlinks</a> using the package “nohyperref”.</p></li>
+</ol>
+</dd>
+</dl>
+<p>See also the <a class="reference external" href="http://www.tex.ac.uk/cgi-bin/texfaq2html?label=breaklinks">Link text doesn’t break at end line</a> LaTeX FAQ entry.</p>
+</section>
+<section id="glyph-not-defined-in-pd1-encoding">
+<h4><a class="toc-backref" href="#id99"><span class="sectnum">1.6.1.4</span> Glyph not defined in PD1 encoding</a><a class="headerlink" href="#glyph-not-defined-in-pd1-encoding" title="永久链接至标题">¶</a></h4>
+<p>If a section title or other link contains non-Latin (e.g. Cyrillic)
+characters, the LaTeX log contains lots of warnings like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\CYRZ' on input line 6.
+...
+</pre></div>
+</div>
+<p>This can be solved with the “unicode” <a class="reference external" href="config.html#stylesheet-latex-writers">hyperref_option</a> setting:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">--</span><span class="n">hyperref</span><span class="o">-</span><span class="n">option</span><span class="o">=</span><span class="n">unicode</span>
+</pre></div>
+</div>
+<p>(works also with non-unicode input/output encoding (e.g. “koi8r” or
+“latin1”). Newer versions of hyperref default to “unicode=true”.</p>
+</section>
+<section id="image-inclusion">
+<h4><a class="toc-backref" href="#id100"><span class="sectnum">1.6.1.5</span> image inclusion</a><a class="headerlink" href="#image-inclusion" title="永久链接至标题">¶</a></h4>
+<p><a class="reference external" href="../ref/rst/directives.html#images">Images</a> are included in LaTeX with the help of the <cite>graphicx</cite> package. The
+supported file formats depend on the used driver:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#pdflatex">pdflatex</a>, lualatex, and <a class="reference internal" href="#xelatex">xelatex</a> work with PNG, JPG, or PDF,
+but <strong>not EPS</strong>.</p></li>
+<li><p>Standard <a class="reference internal" href="#latex">latex</a> can include <strong>only EPS</strong> graphics, no other format.</p></li>
+<li><p>latex + dvipdfmx works with EPS and JPG (add ‘dvipdfmx’ to the
+<a class="reference external" href="config.html#documentoptions">documentoptions</a> or <a class="reference external" href="config.html#graphicx-option">graphicx-option</a> setting
+and ‘bmpsize’ to the <a class="reference external" href="config.html#stylesheet-latex-writers">stylesheet</a> setting).</p></li>
+</ul>
+<p>If PDF-image inclusion in PDF files fails, specifying
+<code class="docutils literal notranslate"><span class="pre">--graphicx-option=pdftex</span></code> might help.</p>
+<p>For details see <a class="reference external" href="http://mirrors.ctan.org/macros/latex/required/graphics/grfguide.pdf">grfguide.pdf</a>.</p>
+<p>The <a class="reference internal" href="#rubber">Rubber</a> wrapper can be used for automatic image conversion.</p>
+<p>Docutils expects an URI as pointer to the image file. The latex writer
+transforms this URI to a local path. By default, LaTeX does not accept
+spaces and more than one dot in the filename. If using “traditional”
+filenames is not an option, adding <a class="reference external" href="http://ctan.org/pkg/grffile">grffile</a> to the <a class="reference internal" href="#style-sheets">style sheets</a>
+can help.</p>
+</section>
+<section id="why-are-my-images-too-big">
+<h4><a class="toc-backref" href="#id101"><span class="sectnum">1.6.1.6</span> Why are my images too big?</a><a class="headerlink" href="#why-are-my-images-too-big" title="永久链接至标题">¶</a></h4>
+<p>HTML-browsers use the actual screen resolution (usually around
+100 DPI).</p>
+<p>The CSS specification suggests:</p>
+<blockquote>
+<div><p>It is recommended that the reference pixel be the visual angle of one
+pixel on a device with a pixel density of 96 DPI and a distance from the
+reader of an arm’s length.</p>
+<p class="attribution">—<a class="reference external" href="http://www.w3.org/TR/CSS2/syndata.html#length-units">http://www.w3.org/TR/CSS2/syndata.html#length-units</a></p>
+</div></blockquote>
+<p>This is why pixmap images without size specification or objects with a size
+specified in <code class="docutils literal notranslate"><span class="pre">px</span></code> tend to come too large in the PDF.</p>
+<dl class="simple">
+<dt>Solution:</dt><dd><p>Specify the image size in fixed units (<code class="docutils literal notranslate"><span class="pre">pt</span></code>, <code class="docutils literal notranslate"><span class="pre">cm</span></code>, <code class="docutils literal notranslate"><span class="pre">in</span></code>) or
+configure the <a class="reference internal" href="#size-of-a-pixel">size of a pixel</a> (length unit px).</p>
+</dd>
+</dl>
+</section>
+<section id="error-illegal-unit-px">
+<h4><a class="toc-backref" href="#id102"><span class="sectnum">1.6.1.7</span> Error <code class="docutils literal notranslate"><span class="pre">illegal</span> <span class="pre">unit</span> <span class="pre">px</span></code></a><a class="headerlink" href="#error-illegal-unit-px" title="永久链接至标题">¶</a></h4>
+<p>If you convert the LaTeX source with a legacy program, you might get this
+error.</p>
+<p>The unit “px” was introduced by the <cite>pdfTeX</cite> converter on 2005-02-04.
+<cite>pdfTeX</cite> is used also for conversion into DVI format in all modern LaTeX
+distributions (since ca. 2006).</p>
+<p>If updating LaTeX is not an option, just remove the “px” from the length
+specification. HTML/CSS will default to “px” while the <cite>latexe2</cite> writer
+will add the fallback unit “bp”.</p>
+</section>
+<section id="error-symbol-textcurrency-not-provided">
+<h4><a class="toc-backref" href="#id103"><span class="sectnum">1.6.1.8</span> Error <code class="docutils literal notranslate"><span class="pre">Symbol</span> <span class="pre">\textcurrency</span> <span class="pre">not</span> <span class="pre">provided</span></code> …</a><a class="headerlink" href="#error-symbol-textcurrency-not-provided" title="永久链接至标题">¶</a></h4>
+<p>The currency sign (\u00a4) is not supported by all fonts (some have
+an Euro sign at its place). You might see an error like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>! Package textcomp Error: Symbol \textcurrency not provided by
+(textcomp)                font family ptm in TS1 encoding.
+(textcomp)                Default family used instead.
+</pre></div>
+</div>
+<p>(which in case of font family “ptm” is a false positive). Add either</p>
+<dl class="field-list simple">
+<dt class="field-odd">warn</dt>
+<dd class="field-odd"><p>turn the error in a warning, use the default symbol (bitmap), or</p>
+</dd>
+<dt class="field-even">force,almostfull</dt>
+<dd class="field-even"><p>use the symbol provided by the font at the users
+risk,</p>
+</dd>
+</dl>
+<p>to the document options or use a different font package.</p>
+</section>
+<section id="search-and-text-extraction">
+<h4><a class="toc-backref" href="#id104"><span class="sectnum">1.6.1.9</span> Search and text extraction</a><a class="headerlink" href="#search-and-text-extraction" title="永久链接至标题">¶</a></h4>
+<p>Search for text that contains characters outside the ASCII range (e.g.
+umlauts) might fail.  See <a class="reference internal" href="#font">font</a> and <a class="reference internal" href="#font-encoding">font encoding</a> (as well as
+<a class="reference external" href="http://www.tex.ac.uk/cgi-bin/texfaq2html?label=srchpdf">Searching PDF files</a> for background information).</p>
+<p>It may help to load the <cite>cmap</cite> package (via <a class="reference internal" href="#style-sheets">style sheets</a> or the custom
+<a class="reference internal" href="#latex-preamble">LaTeX preamble</a> (see also <a class="reference external" href="https://tex.stackexchange.com/questions/64409/proper-use-of-cmap-and-mmap">Proper use of cmap and mmmap</a>).</p>
+</section>
+<section id="unicode-box-drawing-and-block-characters">
+<h4><a class="toc-backref" href="#id105"><span class="sectnum">1.6.1.10</span> Unicode box drawing and block characters</a><a class="headerlink" href="#unicode-box-drawing-and-block-characters" title="永久链接至标题">¶</a></h4>
+<p>The easiest solution is to use <a class="reference internal" href="#xelatex">xelatex</a> for <a class="reference internal" href="#pdf-generation">PDF generation</a>.</p>
+<p>With “traditional” TeX engines (e.g. <a class="reference internal" href="#pdflatex">pdflatex</a>):</p>
+<ul class="simple">
+<li><p>Generate LaTeX code with <a class="reference external" href="config.html#output-encoding">output-encoding</a> “utf-8”.</p></li>
+<li><p>Add the <a class="reference external" href="http://ctan.org/pkg/pmboxdraw">pmboxdraw</a> package to the <a class="reference internal" href="#style-sheets">style sheets</a>.
+(For shaded boxes also add the <cite>color</cite> package.)</p></li>
+</ul>
+<p>Unfortunately, this defines only a subset of the characters
+(see <a class="reference external" href="http://mirrors.ctan.org/macros/latex/contrib/pmboxdraw/pmboxdraw.pdf">pmboxdraw.pdf</a> for a list).</p>
+</section>
+</section>
+<section id="bugs-and-open-issues">
+<h3><a class="toc-backref" href="#id106"><span class="sectnum">1.6.2</span> Bugs and open issues</a><a class="headerlink" href="#bugs-and-open-issues" title="永久链接至标题">¶</a></h3>
+<p>Open to be fixed or open to discussion.</p>
+<p>See also the entries in the <a class="reference external" href="../dev/todo.html#latex-writer">Docutils TODO list</a>,
+the <a class="reference external" href="../../BUGS.html">BUGS</a> documentation and the <a class="reference external" href="https://sourceforge.net/p/docutils/bugs/">SourceForge Bug Tracker</a>.</p>
+<section id="footnotes-and-citations">
+<h4><a class="toc-backref" href="#id107"><span class="sectnum">1.6.2.1</span> Footnotes and citations</a><a class="headerlink" href="#footnotes-and-citations" title="永久链接至标题">¶</a></h4>
+<p>Initially both were implemented using figure floats, because hyperlinking
+back and forth seemed to be impossible. Later the <cite>figure</cite> directive was
+added that puts images into figure floats.</p>
+<p>This results in footnotes, citations, and figures possibly being mixed at
+page foot.</p>
+<dl class="simple">
+<dt>Workaround:</dt><dd><p>Select citation handling with the <a class="reference external" href="config.html#use-latex-citations">use_latex_citations</a> option.</p>
+</dd>
+</dl>
+<p>If <code class="docutils literal notranslate"><span class="pre">use-latex-citations</span></code> is used, a bibliography is inserted right at
+the end of the document. <em>This should be customizable</em>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">use-latex-citations</span></code> is used adjacent citation references (separated
+only by a single space or a newline) are combined to a single citation
+group, i.e. <code class="docutils literal notranslate"><span class="pre">[cite1]_</span> <span class="pre">[cite2]_</span></code> results in <code class="docutils literal notranslate"><span class="pre">\cite{cite1,cite2}</span></code>.
+The appearance in the output can be configured in a <a class="reference internal" href="#style-sheet">style sheet</a>.</p>
+</section>
+<section id="tables">
+<h4><a class="toc-backref" href="#id108"><span class="sectnum">1.6.2.2</span> Tables</a><a class="headerlink" href="#tables" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p>Too wide tables (cf. <a class="reference external" href="https://sourceforge.net/p/docutils/bugs/422/">bug #422</a>):</p>
+<p>Try the <a class="reference external" href="config.html#legacy-column-widths">new_column_widths</a> algorithm or use the <a class="reference external" href="../ref/rst/directives.html#table">“widths” option</a> to
+manually set the table column widths.</p>
+</li>
+<li><p>Table cells with both multirow and multicolumn are currently not possible.</p></li>
+</ul>
+</section>
+<section id="id35">
+<h4><a class="toc-backref" href="#id109"><span class="sectnum">1.6.2.3</span> Figures</a><a class="headerlink" href="#id35" title="永久链接至标题">¶</a></h4>
+<ul class="simple">
+<li><p>Figures are always as wide as the containing text. The “figwidth” argument
+is currently not supported. As a consequence, the “align” argument has no
+effect.</p></li>
+<li><p>Wrapping text around figures is currently not supported. (Requires the
+<a class="reference external" href="http://ctan.org/pkg/wrapfig">wrapfig</a> package.)</p></li>
+</ul>
+</section>
+<section id="miscellaneous">
+<h4><a class="toc-backref" href="#id110"><span class="sectnum">1.6.2.4</span> Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="永久链接至标题">¶</a></h4>
+<ul class="simple">
+<li><p>Pdfbookmark level 4 (and greater) does not work (might be settable but
+complicated).</p></li>
+<li><p>Hyperlinks are not hyphenated; this leads to bad spacing. See
+docs/user/rst/demo.txt 2.14 directives.</p></li>
+<li><p>Pagestyle headings does not work, when sections are starred. Use LaTeX for
+the section numbering with the <a class="reference internal" href="#options-settings">options/settings</a>
+<code class="docutils literal notranslate"><span class="pre">--no-section-numbers</span></code> (command line) or <code class="docutils literal notranslate"><span class="pre">sectnum_xform:</span> <span class="pre">False</span></code>
+(config file).</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="links.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Docutils Link List</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="html.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Docutils HTML writers</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, xinetzone |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
+            <a class="muted-link" href="../../../_sources/docutils/docs/user/latex.txt"
+               rel="nofollow">
+              显示源代码
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            目录
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><span class="sectnum">1</span> Generating LaTeX with Docutils</a><ul>
+<li><a class="reference internal" href="#latex"><span class="sectnum">1.1</span> LaTeX</a><ul>
+<li><a class="reference internal" href="#latex-document-classes-and-packages"><span class="sectnum">1.1.1</span> LaTeX document classes and packages</a></li>
+<li><a class="reference internal" href="#docutils-specific-latex-macros"><span class="sectnum">1.1.2</span> Docutils specific LaTeX macros</a></li>
+<li><a class="reference internal" href="#length-units"><span class="sectnum">1.1.3</span> Length units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pdf-generation"><span class="sectnum">1.2</span> PDF generation</a></li>
+<li><a class="reference internal" href="#configuration"><span class="sectnum">1.3</span> Configuration</a><ul>
+<li><a class="reference internal" href="#options-settings"><span class="sectnum">1.3.1</span> Options/Settings</a></li>
+<li><a class="reference internal" href="#classes"><span class="sectnum">1.3.2</span> Classes</a></li>
+<li><a class="reference internal" href="#latex-code"><span class="sectnum">1.3.3</span> LaTeX code</a><ul>
+<li><a class="reference internal" href="#style-sheets"><span class="sectnum">1.3.3.1</span> Style sheets</a></li>
+<li><a class="reference internal" href="#latex-preamble"><span class="sectnum">1.3.3.2</span> LaTeX preamble</a></li>
+<li><a class="reference internal" href="#templates"><span class="sectnum">1.3.3.3</span> Templates</a></li>
+<li><a class="reference internal" href="#raw-latex"><span class="sectnum">1.3.3.4</span> Raw LaTeX</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#how-to-configure-the"><span class="sectnum">1.4</span> How to configure the …</a><ul>
+<li><a class="reference internal" href="#admonitions"><span class="sectnum">1.4.1</span> admonitions</a></li>
+<li><a class="reference internal" href="#custom-interpreted-text-roles"><span class="sectnum">1.4.2</span> custom interpreted text roles</a></li>
+<li><a class="reference internal" href="#definition-lists"><span class="sectnum">1.4.3</span> definition lists</a></li>
+<li><a class="reference internal" href="#document-class"><span class="sectnum">1.4.4</span> document class</a></li>
+<li><a class="reference internal" href="#document-info"><span class="sectnum">1.4.5</span> document info</a></li>
+<li><a class="reference internal" href="#document-title"><span class="sectnum">1.4.6</span> document title</a></li>
+<li><a class="reference internal" href="#field-lists"><span class="sectnum">1.4.7</span> field lists</a></li>
+<li><a class="reference internal" href="#figure-and-table-captions"><span class="sectnum">1.4.8</span> figure and table captions</a></li>
+<li><a class="reference internal" href="#figure-placement"><span class="sectnum">1.4.9</span> figure placement</a></li>
+<li><a class="reference internal" href="#font"><span class="sectnum">1.4.10</span> font</a><ul>
+<li><a class="reference internal" href="#choice-of-suitable-fonts"><span class="sectnum">1.4.10.1</span> choice of suitable fonts</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#font-encoding"><span class="sectnum">1.4.11</span> font encoding</a></li>
+<li><a class="reference internal" href="#font-size"><span class="sectnum">1.4.12</span> font size</a></li>
+<li><a class="reference internal" href="#footnotes"><span class="sectnum">1.4.13</span> footnotes</a></li>
+<li><a class="reference internal" href="#hyphenation"><span class="sectnum">1.4.14</span> hyphenation</a></li>
+<li><a class="reference internal" href="#hyperlinks"><span class="sectnum">1.4.15</span> hyperlinks</a><ul>
+<li><a class="reference internal" href="#disable-hyperlinks"><span class="sectnum">1.4.15.1</span> disable hyperlinks</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#line-blocks"><span class="sectnum">1.4.16</span> line blocks</a></li>
+<li><a class="reference internal" href="#line-spacing"><span class="sectnum">1.4.17</span> line spacing</a></li>
+<li><a class="reference internal" href="#literal-blocks"><span class="sectnum">1.4.18</span> literal blocks</a></li>
+<li><a class="reference internal" href="#lists"><span class="sectnum">1.4.19</span> lists</a></li>
+<li><a class="reference internal" href="#list-of-figures-tables"><span class="sectnum">1.4.20</span> list of figures/tables</a></li>
+<li><a class="reference internal" href="#option-list"><span class="sectnum">1.4.21</span> option list</a></li>
+<li><a class="reference internal" href="#page-breaks"><span class="sectnum">1.4.22</span> page breaks</a></li>
+<li><a class="reference internal" href="#page-layout"><span class="sectnum">1.4.23</span> page layout</a></li>
+<li><a class="reference internal" href="#page-headers-and-footers"><span class="sectnum">1.4.24</span> page headers and footers</a></li>
+<li><a class="reference internal" href="#page-numbering"><span class="sectnum">1.4.25</span> page numbering</a></li>
+<li><a class="reference internal" href="#paper-size"><span class="sectnum">1.4.26</span> paper size</a></li>
+<li><a class="reference internal" href="#paragraph-indent"><span class="sectnum">1.4.27</span> paragraph indent</a></li>
+<li><a class="reference internal" href="#rubric"><span class="sectnum">1.4.28</span> rubric</a></li>
+<li><a class="reference internal" href="#section-headings"><span class="sectnum">1.4.29</span> section headings</a></li>
+<li><a class="reference internal" href="#section-numbering"><span class="sectnum">1.4.30</span> section numbering</a></li>
+<li><a class="reference internal" href="#sidebar"><span class="sectnum">1.4.31</span> sidebar</a></li>
+<li><a class="reference internal" href="#size-of-a-pixel"><span class="sectnum">1.4.32</span> size of a pixel</a></li>
+<li><a class="reference internal" href="#table-style"><span class="sectnum">1.4.33</span> table style</a></li>
+<li><a class="reference internal" href="#table-of-contents"><span class="sectnum">1.4.34</span> table of contents</a></li>
+<li><a class="reference internal" href="#title-reference-role"><span class="sectnum">1.4.35</span> title reference role</a></li>
+<li><a class="reference internal" href="#titles"><span class="sectnum">1.4.36</span> titles</a></li>
+<li><a class="reference internal" href="#text-encoding"><span class="sectnum">1.4.37</span> text encoding</a></li>
+<li><a class="reference internal" href="#topic-element"><span class="sectnum">1.4.38</span> topic element</a></li>
+<li><a class="reference internal" href="#transition-element"><span class="sectnum">1.4.39</span> transition element</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#changes"><span class="sectnum">1.5</span> Changes</a></li>
+<li><a class="reference internal" href="#problems"><span class="sectnum">1.6</span> Problems</a><ul>
+<li><a class="reference internal" href="#troubleshooting"><span class="sectnum">1.6.1</span> Troubleshooting</a><ul>
+<li><a class="reference internal" href="#bad-looking-pdf-output"><span class="sectnum">1.6.1.1</span> Bad looking PDF output</a></li>
+<li><a class="reference internal" href="#footnote-mark-and-text-at-different-pages"><span class="sectnum">1.6.1.2</span> footnote mark and text at different pages</a></li>
+<li><a class="reference internal" href="#non-breaking-hyperlinks"><span class="sectnum">1.6.1.3</span> non-breaking hyperlinks</a></li>
+<li><a class="reference internal" href="#glyph-not-defined-in-pd1-encoding"><span class="sectnum">1.6.1.4</span> Glyph not defined in PD1 encoding</a></li>
+<li><a class="reference internal" href="#image-inclusion"><span class="sectnum">1.6.1.5</span> image inclusion</a></li>
+<li><a class="reference internal" href="#why-are-my-images-too-big"><span class="sectnum">1.6.1.6</span> Why are my images too big?</a></li>
+<li><a class="reference internal" href="#error-illegal-unit-px"><span class="sectnum">1.6.1.7</span> Error <code class="docutils literal notranslate"><span class="pre">illegal</span> <span class="pre">unit</span> <span class="pre">px</span></code></a></li>
+<li><a class="reference internal" href="#error-symbol-textcurrency-not-provided"><span class="sectnum">1.6.1.8</span> Error <code class="docutils literal notranslate"><span class="pre">Symbol</span> <span class="pre">\textcurrency</span> <span class="pre">not</span> <span class="pre">provided</span></code> …</a></li>
+<li><a class="reference internal" href="#search-and-text-extraction"><span class="sectnum">1.6.1.9</span> Search and text extraction</a></li>
+<li><a class="reference internal" href="#unicode-box-drawing-and-block-characters"><span class="sectnum">1.6.1.10</span> Unicode box drawing and block characters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bugs-and-open-issues"><span class="sectnum">1.6.2</span> Bugs and open issues</a><ul>
+<li><a class="reference internal" href="#footnotes-and-citations"><span class="sectnum">1.6.2.1</span> Footnotes and citations</a></li>
+<li><a class="reference internal" href="#tables"><span class="sectnum">1.6.2.2</span> Tables</a></li>
+<li><a class="reference internal" href="#id35"><span class="sectnum">1.6.2.3</span> Figures</a></li>
+<li><a class="reference internal" href="#miscellaneous"><span class="sectnum">1.6.2.4</span> Miscellaneous</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/scripts/main.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    </body>
+</html>

@@ -1,0 +1,1093 @@
+<!doctype html>
+<html class="no-js" lang="zh_CN">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+<link rel="index" title="索引" href="../../../genindex.html" /><link rel="search" title="搜索" href="../../../search.html" /><link rel="next" title="Inside A Docutils Command-Line Front-End Tool" href="../api/cmdline-tool.html" /><link rel="prev" title="Smart Quotes for Docutils" href="smartquotes.html" />
+
+    <meta name="generator" content="sphinx-4.2.0, furo 2021.10.09"/>
+        <title>Docutils Front-End Tools - docutils 0.0.1 文档</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">docutils 0.0.1 文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">docutils 0.0.1 文档</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">概述</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/index.html">Docutils: Documentation Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/mirror/setext.html">Setext 文档镜像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Docutils Project Documentation Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">user</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="config.html">Docutils Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emacs.html">Emacs Support for reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="html.html">Docutils HTML writers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="latex.html"><span class="sectnum">1</span> Generating LaTeX with Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="links.html">Docutils Link List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailing-lists.html">Docutils Mailing Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manpage.html">manpage writer for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odt.html"><span class="sectnum">1</span> Odt Writer for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smartquotes.html">Smart Quotes for Docutils</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Docutils Front-End Tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">api</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/cmdline-tool.html">Inside A Docutils Command-Line Front-End Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/publisher.html">The Docutils Publisher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/runtime-settings.html">Docutils Runtime Settings</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">dev</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dev/distributing.html">Docutils Distributor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/enthought-plan.html"><span class="sectnum">1</span> Plan for Enthought API Documentation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/enthought-rfp.html"><span class="sectnum">1</span> Enthought API Documentation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/hacking.html">Docutils Hacker’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/policies.html">Docutils Project Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/pysource.html">Python Source Reader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/release.html">Docutils Release Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/repository.html">The Docutils Version Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/semantics.html">Docstring Semantics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/testing.html">Docutils Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/todo.html">Docutils To Do List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/website.html">Docutils Web Site</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">howto</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/html-stylesheets.html">Writing HTML (CSS) Stylesheets for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/i18n.html">Docutils Internationalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/rst-directives.html">Creating reStructuredText Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/rst-roles.html">Creating reStructuredText Interpreted Text Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/security.html">Deploying Docutils Securely</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">peps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html">Rejection Notice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#road-map-to-the-docstring-peps">Road Map to the Docstring PEPs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#project-web-site">Project Web Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html">Rejection Notice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#project-web-site">Project Web Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#benefits">Benefits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#goals">Goals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#docstring-significant-features">Docstring-Significant Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#questions-answers">Questions &amp; Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#references-footnotes">References &amp; Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#acknowledgements">Acknowledgements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ref</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ref/doctree.html">The Docutils Document Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/transforms.html">Docutils Transforms</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">docutils other</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../BUGS.html">Docutils Bugs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../COPYING.html">Copying Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../FAQ.html"><span class="sectnum">1</span> Docutils FAQ (Frequently Asked Questions)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../HISTORY.html">Docutils History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Docutils 0.18.1b.dev 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../RELEASE-NOTES.html">Docutils Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../THANKS.html">Acknowledgements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">reStructuredText</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/rst.html"></a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst/cheatsheet.html">The reStructuredText Cheat Sheet: Syntax Reminders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst/quickstart.html">A ReStructuredText Primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/rst/alternatives.html">A Record of reStructuredText Syntax Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/rst/problems.html">Problems With StructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/definitions.html">reStructuredText Standard Definition Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/directives.html">reStructuredText Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/introduction.html">An Introduction to reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/mathematics.html"><span class="sectnum">1</span> LaTeX syntax for mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/restructuredtext.html">reStructuredText Markup Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/roles.html">reStructuredText Interpreted Text Roles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">sandbox</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../sandbox/README.html">Sandbox 自述</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="docutils-front-end-tools">
+<h1><a class="toc-backref" href="#id4">Docutils Front-End Tools</a><a class="headerlink" href="#docutils-front-end-tools" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>David Goodger</p>
+</dd>
+<dt class="field-even">Contact</dt>
+<dd class="field-even"><p><a class="reference external" href="mailto:docutils-develop%40lists.sourceforge.net">docutils-develop<span>@</span>lists<span>.</span>sourceforge<span>.</span>net</a></p>
+</dd>
+<dt class="field-odd">Revision</dt>
+<dd class="field-odd"><p>$Revision$</p>
+</dd>
+<dt class="field-even">Date</dt>
+<dd class="field-even"><p>$Date$</p>
+</dd>
+<dt class="field-odd">Copyright</dt>
+<dd class="field-odd"><p>This document has been placed in the public domain.</p>
+</dd>
+</dl>
+<div class="contents topic" id="id1">
+<p class="topic-title">目录</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#docutils-front-end-tools" id="id4">Docutils Front-End Tools</a></p>
+<ul>
+<li><p><a class="reference internal" href="#introduction" id="id5">Introduction</a></p>
+<ul>
+<li><p><a class="reference internal" href="#getting-help" id="id6">Getting Help</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#the-tools" id="id7">The Tools</a></p>
+<ul>
+<li><p><a class="reference internal" href="#generic-command-line-front-end" id="id8">Generic Command Line Front End</a></p>
+<ul>
+<li><p><a class="reference internal" href="#docutils-cli-py" id="id9">docutils-cli.py</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#html-generating-tools" id="id10">HTML-Generating Tools</a></p>
+<ul>
+<li><p><a class="reference internal" href="#buildhtml-py" id="id11">buildhtml.py</a></p></li>
+<li><p><a class="reference internal" href="#rst2html-py" id="id12">rst2html.py</a></p></li>
+<li><p><a class="reference internal" href="#rst2html4-py" id="id13">rst2html4.py</a></p>
+<ul>
+<li><p><a class="reference internal" href="#stylesheets" id="id14">Stylesheets</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#rst2html5-py" id="id15">rst2html5.py</a></p></li>
+<li><p><a class="reference internal" href="#rstpep2html-py" id="id16">rstpep2html.py</a></p></li>
+<li><p><a class="reference internal" href="#rst2s5-py" id="id17">rst2s5.py</a></p>
+<ul>
+<li><p><a class="reference internal" href="#themes" id="id18">Themes</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#latex-generating-tools" id="id19">LaTeX-Generating Tools</a></p>
+<ul>
+<li><p><a class="reference internal" href="#rst2latex-py" id="id20">rst2latex.py</a></p></li>
+<li><p><a class="reference internal" href="#rst2xetex-py" id="id21">rst2xetex.py</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#man-page-generating-tools" id="id22">Man-Page-Generating Tools</a></p>
+<ul>
+<li><p><a class="reference internal" href="#rst2man-py" id="id23">rst2man.py</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#odf-openoffice-generating-tools" id="id24">ODF/OpenOffice-Generating Tools</a></p>
+<ul>
+<li><p><a class="reference internal" href="#rst2odt-py" id="id25">rst2odt.py</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#restructuredtext-generating-tools" id="id26">reStructuredText-Generating Tools</a></p></li>
+<li><p><a class="reference internal" href="#xml-generating-tools" id="id27">XML-Generating Tools</a></p>
+<ul>
+<li><p><a class="reference internal" href="#rst2xml-py" id="id28">rst2xml.py</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#testing-debugging-tools" id="id29">Testing/Debugging Tools</a></p>
+<ul>
+<li><p><a class="reference internal" href="#rst2pseudoxml-py" id="id30">rst2pseudoxml.py</a></p></li>
+<li><p><a class="reference internal" href="#quicktest-py" id="id31">quicktest.py</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#customization" id="id32">Customization</a></p>
+<ul>
+<li><p><a class="reference internal" href="#command-line-options" id="id33">Command-Line Options</a></p></li>
+<li><p><a class="reference internal" href="#configuration-files" id="id34">Configuration Files</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id5">Introduction</a><a class="headerlink" href="#introduction" title="永久链接至标题">¶</a></h2>
+<p>Once the Docutils package is unpacked, you will discover a “<code class="docutils literal notranslate"><span class="pre">tools</span></code>”
+directory containing several front ends for common Docutils
+processing.
+In addition to the all-purpose program <a class="reference internal" href="#docutils-cli-py">docutils-cli.py</a>, Docutils has
+many small front ends, each specialized for a specific “Reader” (which
+knows how to interpret a file in context), a “Parser” (which
+understands the syntax of the text), and a “Writer” (which knows how
+to generate a specific data format).</p>
+<p>Most front ends have common options and the same command-line usage
+pattern:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">toolname</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">source</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">destination</span><span class="o">&gt;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>(The exceptions are <a class="reference internal" href="#buildhtml-py">buildhtml.py</a> and <a class="reference internal" href="#rstpep2html-py">rstpep2html.py</a>.)  See
+<a class="reference internal" href="#rst2html-py">rst2html.py</a> for concrete examples.  Each tool has a “<code class="docutils literal notranslate"><span class="pre">--help</span></code>”
+option which lists the <a class="reference internal" href="#command-line-options">command-line options</a> and arguments it
+supports.  Processing can also be customized with <a class="reference internal" href="#configuration-files">configuration
+files</a>.</p>
+<p>The two arguments, “source” and “destination”, are optional.  If only
+one argument (source) is specified, the standard output (stdout) is
+used for the destination.  If no arguments are specified, the standard
+input (stdin) is used for the source.</p>
+<section id="getting-help">
+<h3><a class="toc-backref" href="#id6">Getting Help</a><a class="headerlink" href="#getting-help" title="永久链接至标题">¶</a></h3>
+<p>First, try the “<code class="docutils literal notranslate"><span class="pre">--help</span></code>” option each front-end tool has.</p>
+<p>Command line options and their corresponding configuration file entries
+are detailed in <a class="reference external" href="config.html">Docutils Configuration</a>.</p>
+<p>Users who have questions or need assistance with Docutils or
+reStructuredText should post a message to the <a class="reference external" href="mailing-lists.html#docutils-users">Docutils-users</a> mailing
+list.</p>
+</section>
+</section>
+<section id="the-tools">
+<h2><a class="toc-backref" href="#id7">The Tools</a><a class="headerlink" href="#the-tools" title="永久链接至标题">¶</a></h2>
+<section id="generic-command-line-front-end">
+<h3><a class="toc-backref" href="#id8">Generic Command Line Front End</a><a class="headerlink" href="#generic-command-line-front-end" title="永久链接至标题">¶</a></h3>
+<section id="docutils-cli-py">
+<h4><a class="toc-backref" href="#id9">docutils-cli.py</a><a class="headerlink" href="#docutils-cli-py" title="永久链接至标题">¶</a></h4>
+<dl class="field-list simple">
+<dt class="field-odd">Readers</dt>
+<dd class="field-odd"><p>Standalone, PEP</p>
+</dd>
+<dt class="field-even">Parser</dt>
+<dd class="field-even"><p>reStructuredText, Markdown (reCommonMark)</p>
+</dd>
+<dt class="field-odd">Writers</dt>
+<dd class="field-odd"><p><a class="reference external" href="html.html#html">html</a>, <a class="reference external" href="html.html#html4css1">html4css1</a>, <a class="reference external" href="html.html#html5-polyglot">html5</a>, <a class="reference external" href="latex.html">latex</a>, <a class="reference external" href="manpage.html">manpage</a>,
+<a class="reference external" href="odt.html">odt</a>, <a class="reference external" href="html.html#pep-html">pep_html</a>, <a class="reference internal" href="#pseudo-xml">pseudo-xml</a>, <a class="reference external" href="html.html#s5-html">s5_html</a>, <a class="reference internal" href="#xelatex">xelatex</a>, <a class="reference internal" href="#xml">xml</a>,</p>
+</dd>
+</dl>
+<p>The <code class="docutils literal notranslate"><span class="pre">docutils-cli.py</span></code> front allows combining reader, parser, and
+writer components.</p>
+<p>For example, to process a <a class="reference external" href="https://www.markdownguide.org/">Markdown</a> file “<code class="docutils literal notranslate"><span class="pre">test.md</span></code>” into
+<a class="reference internal" href="#pseudo-xml">Pseudo-XML</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docutils_</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">parser</span><span class="o">=</span><span class="n">markdown</span> <span class="o">--</span><span class="n">writer</span><span class="o">=</span><span class="n">pseudoxml</span> <span class="n">test</span><span class="o">.</span><span class="n">md</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="html-generating-tools">
+<h3><a class="toc-backref" href="#id10">HTML-Generating Tools</a><a class="headerlink" href="#html-generating-tools" title="永久链接至标题">¶</a></h3>
+<section id="buildhtml-py">
+<h4><a class="toc-backref" href="#id11">buildhtml.py</a><a class="headerlink" href="#buildhtml-py" title="永久链接至标题">¶</a></h4>
+<dl class="field-list simple">
+<dt class="field-odd">Readers</dt>
+<dd class="field-odd"><p>Standalone, PEP</p>
+</dd>
+<dt class="field-even">Parser</dt>
+<dd class="field-even"><p>reStructuredText</p>
+</dd>
+<dt class="field-odd">Writers</dt>
+<dd class="field-odd"><p><a class="reference external" href="html.html#html">html</a>, <a class="reference external" href="html.html#html5-polyglot">html5</a>, <a class="reference external" href="html.html#pep-html">pep_html</a></p>
+</dd>
+</dl>
+<p>Use <code class="docutils literal notranslate"><span class="pre">buildhtml.py</span></code> to generate <code class="docutils literal notranslate"><span class="pre">*.html</span></code> from all the <code class="docutils literal notranslate"><span class="pre">*.txt</span></code> files
+(including PEPs) in each &lt;directory&gt; given, and their subdirectories
+too.  (Use the <code class="docutils literal notranslate"><span class="pre">--local</span></code> option to skip subdirectories.)</p>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">buildhtml</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">directory</span><span class="o">&gt;</span> <span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>After unpacking the Docutils package, the following shell commands
+will generate HTML for all included documentation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">docutils</span><span class="o">/</span><span class="n">tools</span>
+<span class="n">buildhtml</span><span class="o">.</span><span class="n">py</span> <span class="o">..</span>
+</pre></div>
+</div>
+<p>For official releases, the directory may be called “docutils-X.Y”,
+where “X.Y” is the release version.  Alternatively:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">docutils</span>
+<span class="n">tools</span><span class="o">/</span><span class="n">buildhtml</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">config</span><span class="o">=</span><span class="n">tools</span><span class="o">/</span><span class="n">docutils</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
+<p>The current directory (and all subdirectories) is chosen by default if
+no directory is named.  Some files may generate system messages
+(docs/user/rst/demo.txt contains intentional errors); use the
+<code class="docutils literal notranslate"><span class="pre">--quiet</span></code> option to suppress all warnings.  The <code class="docutils literal notranslate"><span class="pre">--config</span></code> option
+ensures that the correct settings are in place (a <code class="docutils literal notranslate"><span class="pre">docutils.conf</span></code>
+<a class="reference external" href="configurationfiles">configuration file</a> in the current directory is picked up
+automatically).  Command-line options may be used to override config
+file settings or replace them altogether.</p>
+</section>
+<section id="rst2html-py">
+<h4><a class="toc-backref" href="#id12">rst2html.py</a><a class="headerlink" href="#rst2html-py" title="永久链接至标题">¶</a></h4>
+<dl class="field-list simple">
+<dt class="field-odd">Reader</dt>
+<dd class="field-odd"><p>Standalone</p>
+</dd>
+<dt class="field-even">Parser</dt>
+<dd class="field-even"><p>reStructuredText</p>
+</dd>
+<dt class="field-odd">Writer</dt>
+<dd class="field-odd"><p><a class="reference external" href="html.html#html">html</a></p>
+</dd>
+</dl>
+<p><cite>rst2html.py</cite> is the front-end for the default Docutils HTML writer.
+The default writer may change with the development of HTML, browsers,
+Docutils, and the web. Currently, it is <a class="reference external" href="html.html#html4css1">html4css1</a>.</p>
+<ul class="simple">
+<li><p>Use <cite>rst2html.py</cite>, if you want the output to be up-to-date automatically.</p></li>
+<li><p>Use a specific front end, if you depend on stability of the
+generated HTML code, e.g. because you use a custom style sheet or
+post-processing that may break otherwise.</p></li>
+</ul>
+</section>
+<section id="rst2html4-py">
+<h4><a class="toc-backref" href="#id13">rst2html4.py</a><a class="headerlink" href="#rst2html4-py" title="永久链接至标题">¶</a></h4>
+<dl class="field-list simple">
+<dt class="field-odd">Reader</dt>
+<dd class="field-odd"><p>Standalone</p>
+</dd>
+<dt class="field-even">Parser</dt>
+<dd class="field-even"><p>reStructuredText</p>
+</dd>
+<dt class="field-odd">Writer</dt>
+<dd class="field-odd"><p><a class="reference external" href="html.html#html4css1">html4css1</a></p>
+</dd>
+</dl>
+<p>The <code class="docutils literal notranslate"><span class="pre">rst2html4.py</span></code> front end reads standalone reStructuredText source
+files and produces <a class="reference external" href="http://www.w3.org/TR/xhtml1/">XHTML 1.0 Transitional</a> output.
+A CSS stylesheet is required for proper rendering; a simple but
+complete stylesheet is installed and used by default (see <a class="reference internal" href="#stylesheets">Stylesheets</a>
+below).</p>
+<p>For example, to process a reStructuredText file “<code class="docutils literal notranslate"><span class="pre">test.txt</span></code>” into
+HTML:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2html</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span> <span class="n">test</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+<p>Now open the “<code class="docutils literal notranslate"><span class="pre">test.html</span></code>” file in your favorite browser to see the
+results.  To get a footer with a link to the source file, date &amp; time
+of processing, and links to the Docutils project, add some options:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2html</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">stg</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span> <span class="n">test</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+<section id="stylesheets">
+<h5><a class="toc-backref" href="#id14">Stylesheets</a><a class="headerlink" href="#stylesheets" title="永久链接至标题">¶</a></h5>
+<p><code class="docutils literal notranslate"><span class="pre">rst2html.py</span></code> inserts into the generated HTML a cascading stylesheet
+(or a link to a stylesheet, when passing the “<code class="docutils literal notranslate"><span class="pre">--link-stylesheet</span></code>”
+option).  A stylesheet is required for proper rendering.  The default
+stylesheet (<code class="docutils literal notranslate"><span class="pre">docutils/writers/html4css1/html4css1.css</span></code>, located in
+the installation directory) is provided for basic use.  To use
+different stylesheet(s), specify the stylesheets’ location(s)
+as comma-separated list with the “<code class="docutils literal notranslate"><span class="pre">--stylesheet</span></code>” (for a URL)
+or “<code class="docutils literal notranslate"><span class="pre">--stylesheet-path</span></code>” (for a local file) command-line option,
+or with <a class="reference external" href="configurationfiles">configuration file</a> settings (e.g. <code class="docutils literal notranslate"><span class="pre">./docutils.conf</span></code>
+or <code class="docutils literal notranslate"><span class="pre">~/.docutils</span></code>).  To experiment with styles, please see the
+<a class="reference external" href="../howto/html-stylesheets.html">guide to writing HTML (CSS) stylesheets for Docutils</a>.</p>
+</section>
+</section>
+<section id="rst2html5-py">
+<h4><a class="toc-backref" href="#id15">rst2html5.py</a><a class="headerlink" href="#rst2html5-py" title="永久链接至标题">¶</a></h4>
+<dl class="field-list simple">
+<dt class="field-odd">Reader</dt>
+<dd class="field-odd"><p>Standalone</p>
+</dd>
+<dt class="field-even">Parser</dt>
+<dd class="field-even"><p>reStructuredText</p>
+</dd>
+<dt class="field-odd">Writer</dt>
+<dd class="field-odd"><p><a class="reference external" href="html.html#html5-polyglot">html5</a></p>
+</dd>
+</dl>
+<p>The <code class="docutils literal notranslate"><span class="pre">rst2html5.py</span></code> front end reads standalone reStructuredText source
+files and produces <a class="reference external" href="http://www.w3.org/TR/html5/">HTML 5</a> output.
+Correct rendering of elements not directly supported by HTML depends on a
+CSS style sheet. The provided style sheets <code class="docutils literal notranslate"><span class="pre">minimal.css</span></code> and <code class="docutils literal notranslate"><span class="pre">plain.css</span></code>
+define required and optional styling rules respectively.</p>
+</section>
+<section id="rstpep2html-py">
+<h4><a class="toc-backref" href="#id16">rstpep2html.py</a><a class="headerlink" href="#rstpep2html-py" title="永久链接至标题">¶</a></h4>
+<dl class="field-list simple">
+<dt class="field-odd">Reader</dt>
+<dd class="field-odd"><p>PEP</p>
+</dd>
+<dt class="field-even">Parser</dt>
+<dd class="field-even"><p>reStructuredText</p>
+</dd>
+<dt class="field-odd">Writer</dt>
+<dd class="field-odd"><p><a class="reference external" href="html.html#pep-html">pep_html</a></p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">rstpep2html.py</span></code> reads a new-style PEP (marked up with reStructuredText)
+and produces <a class="reference external" href="http://www.w3.org/TR/xhtml1/">XHTML 1.0 Transitional</a>.  It requires a template file and a
+stylesheet.  By default, it makes use of a “<code class="docutils literal notranslate"><span class="pre">pep-html-template</span></code>” file and
+the “<code class="docutils literal notranslate"><span class="pre">pep.css</span></code>” stylesheet (both in the <code class="docutils literal notranslate"><span class="pre">docutils/writers/pep_html/</span></code>
+directory), but these can be overridden by command-line options or
+configuration files.</p>
+<p>For example, to process a PEP into HTML:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">path</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">docutils</span><span class="o">&gt;/</span><span class="n">docs</span><span class="o">/</span><span class="n">peps</span>
+<span class="n">rstpep2html</span><span class="o">.</span><span class="n">py</span> <span class="n">pep</span><span class="o">-</span><span class="mf">0287.</span><span class="n">txt</span> <span class="n">pep</span><span class="o">-</span><span class="mf">0287.</span><span class="n">html</span>
+</pre></div>
+</div>
+</section>
+<section id="rst2s5-py">
+<h4><a class="toc-backref" href="#id17">rst2s5.py</a><a class="headerlink" href="#rst2s5-py" title="永久链接至标题">¶</a></h4>
+<dl class="field-list simple">
+<dt class="field-odd">Reader</dt>
+<dd class="field-odd"><p>Standalone</p>
+</dd>
+<dt class="field-even">Parser</dt>
+<dd class="field-even"><p>reStructuredText</p>
+</dd>
+<dt class="field-odd">Writer</dt>
+<dd class="field-odd"><p><a class="reference external" href="html.html#s5-html">s5_html</a></p>
+</dd>
+</dl>
+<p>The <code class="docutils literal notranslate"><span class="pre">rst2s5.py</span></code> front end reads standalone reStructuredText source
+files and produces (X)HTML output compatible with <a class="reference external" href="http://meyerweb.com/eric/tools/s5/">S5</a>, the “Simple
+Standards-based Slide Show System” by Eric Meyer.  A theme is required
+for proper rendering; several are distributed with Docutils and others
+are available; see <a class="reference internal" href="#themes">Themes</a> below.</p>
+<p>For example, to process a reStructuredText file “<code class="docutils literal notranslate"><span class="pre">slides.txt</span></code>” into
+S5/HTML:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2s5</span><span class="o">.</span><span class="n">py</span> <span class="n">slides</span><span class="o">.</span><span class="n">txt</span> <span class="n">slides</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+<p>Now open the “<code class="docutils literal notranslate"><span class="pre">slides.html</span></code>” file in your favorite browser, switch
+to full-screen mode, and enjoy the results.</p>
+<section id="themes">
+<h5><a class="toc-backref" href="#id18">Themes</a><a class="headerlink" href="#themes" title="永久链接至标题">¶</a></h5>
+<p>Each S5 theme consists of a directory containing several files:
+stylesheets, JavaScript, and graphics.  These are copied into a
+<code class="docutils literal notranslate"><span class="pre">ui/&lt;theme&gt;</span></code> directory beside the generated HTML.  A theme is chosen
+using the “<code class="docutils literal notranslate"><span class="pre">--theme</span></code>” option (for themes that come with Docutils) or
+the “<code class="docutils literal notranslate"><span class="pre">--theme-url</span></code>” option (for themes anywhere).  For example, the
+“medium-black” theme can be specified as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2s5</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">theme</span> <span class="n">medium</span><span class="o">-</span><span class="n">black</span> <span class="n">slides</span><span class="o">.</span><span class="n">txt</span> <span class="n">slides</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+<p>The theme will be copied to the <code class="docutils literal notranslate"><span class="pre">ui/medium-black</span></code> directory.</p>
+<p>Several themes are included with Docutils:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">default</span></code></dt><dd><p>This is a simplified version of S5’s default theme.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Main content</dt>
+<dd class="field-odd"><p>black serif text on a white background</p>
+</dd>
+<dt class="field-even">Text capacity</dt>
+<dd class="field-even"><p>about 13 lines</p>
+</dd>
+<dt class="field-odd">Headers</dt>
+<dd class="field-odd"><p>light blue, bold sans-serif text on a dark blue
+background; titles are limited to one line</p>
+</dd>
+<dt class="field-even">Footers</dt>
+<dd class="field-even"><p>small, gray, bold sans-serif text on a dark blue
+background</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">small-white</span></code></dt><dd><p>(Small text on a white background.)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Main content</dt>
+<dd class="field-odd"><p>black serif text on a white background</p>
+</dd>
+<dt class="field-even">Text capacity</dt>
+<dd class="field-even"><p>about 15 lines</p>
+</dd>
+<dt class="field-odd">Headers</dt>
+<dd class="field-odd"><p>black, bold sans-serif text on a white background;
+titles wrap</p>
+</dd>
+<dt class="field-even">Footers</dt>
+<dd class="field-even"><p>small, dark gray, bold sans-serif text on a white
+background</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">small-black</span></code></dt><dd><dl class="field-list simple">
+<dt class="field-odd">Main content</dt>
+<dd class="field-odd"><p>white serif text on a black background</p>
+</dd>
+<dt class="field-even">Text capacity</dt>
+<dd class="field-even"><p>about 15 lines</p>
+</dd>
+<dt class="field-odd">Headers</dt>
+<dd class="field-odd"><p>white, bold sans-serif text on a black background;
+titles wrap</p>
+</dd>
+<dt class="field-even">Footers</dt>
+<dd class="field-even"><p>small, light gray, bold sans-serif text on a black
+background</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">medium-white</span></code></dt><dd><dl class="field-list simple">
+<dt class="field-odd">Main content</dt>
+<dd class="field-odd"><p>black serif text on a white background</p>
+</dd>
+<dt class="field-even">Text capacity</dt>
+<dd class="field-even"><p>about 9 lines</p>
+</dd>
+<dt class="field-odd">Headers</dt>
+<dd class="field-odd"><p>black, bold sans-serif text on a white background;
+titles wrap</p>
+</dd>
+<dt class="field-even">Footers</dt>
+<dd class="field-even"><p>small, dark gray, bold sans-serif text on a white
+background</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">medium-black</span></code></dt><dd><dl class="field-list simple">
+<dt class="field-odd">Main content</dt>
+<dd class="field-odd"><p>white serif text on a black background</p>
+</dd>
+<dt class="field-even">Text capacity</dt>
+<dd class="field-even"><p>about 9 lines</p>
+</dd>
+<dt class="field-odd">Headers</dt>
+<dd class="field-odd"><p>white, bold sans-serif text on a black background;
+titles wrap</p>
+</dd>
+<dt class="field-even">Footers</dt>
+<dd class="field-even"><p>small, light gray, bold sans-serif text on a black
+background</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">big-white</span></code></dt><dd><dl class="field-list simple">
+<dt class="field-odd">Main content</dt>
+<dd class="field-odd"><p>black, bold sans-serif text on a white background</p>
+</dd>
+<dt class="field-even">Text capacity</dt>
+<dd class="field-even"><p>about 5 lines</p>
+</dd>
+<dt class="field-odd">Headers</dt>
+<dd class="field-odd"><p>black, bold sans-serif text on a white background;
+titles wrap</p>
+</dd>
+<dt class="field-even">Footers</dt>
+<dd class="field-even"><p>not displayed</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">big-black</span></code></dt><dd><dl class="field-list simple">
+<dt class="field-odd">Main content</dt>
+<dd class="field-odd"><p>white, bold sans-serif text on a black background</p>
+</dd>
+<dt class="field-even">Text capacity</dt>
+<dd class="field-even"><p>about 5 lines</p>
+</dd>
+<dt class="field-odd">Headers</dt>
+<dd class="field-odd"><p>white, bold sans-serif text on a black background;
+titles wrap</p>
+</dd>
+<dt class="field-even">Footers</dt>
+<dd class="field-even"><p>not displayed</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>If a theme directory contains a file named <code class="docutils literal notranslate"><span class="pre">__base__</span></code>, the name of
+the theme’s base theme will be read from it.  Files are accumulated
+from the named theme, any base themes, and the “default” theme (which
+is the implicit base of all themes).</p>
+<p>For details, please see <a class="reference external" href="slide-shows.html">Easy Slide Shows With reStructuredText &amp;
+S5</a>.</p>
+</section>
+</section>
+</section>
+<section id="latex-generating-tools">
+<h3><a class="toc-backref" href="#id19">LaTeX-Generating Tools</a><a class="headerlink" href="#latex-generating-tools" title="永久链接至标题">¶</a></h3>
+<section id="rst2latex-py">
+<h4><a class="toc-backref" href="#id20">rst2latex.py</a><a class="headerlink" href="#rst2latex-py" title="永久链接至标题">¶</a></h4>
+<dl class="field-list simple">
+<dt class="field-odd">Reader</dt>
+<dd class="field-odd"><p>Standalone</p>
+</dd>
+<dt class="field-even">Parser</dt>
+<dd class="field-even"><p>reStructuredText</p>
+</dd>
+<dt class="field-odd">Writer</dt>
+<dd class="field-odd"><p>latex2e</p>
+</dd>
+</dl>
+<p>The <code class="docutils literal notranslate"><span class="pre">rst2latex.py</span></code> front end reads standalone reStructuredText
+source files and produces <a class="reference external" href="https://en.wikipedia.org/wiki/LaTeX">LaTeX</a> output. For example, to process a
+reStructuredText file “<code class="docutils literal notranslate"><span class="pre">test.txt</span></code>” into LaTeX:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2latex</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span> <span class="n">test</span><span class="o">.</span><span class="n">tex</span>
+</pre></div>
+</div>
+<p>The output file “<code class="docutils literal notranslate"><span class="pre">test.tex</span></code>” should then be processed with <code class="docutils literal notranslate"><span class="pre">latex</span></code>
+or <code class="docutils literal notranslate"><span class="pre">pdflatex</span></code> to get a document in DVI, PostScript or PDF format for
+printing or on-screen viewing.</p>
+<p>For details see <a class="reference external" href="latex.html">Generating LaTeX with Docutils</a>.</p>
+</section>
+<section id="rst2xetex-py">
+<h4><a class="toc-backref" href="#id21">rst2xetex.py</a><a class="headerlink" href="#rst2xetex-py" title="永久链接至标题">¶</a></h4>
+<dl class="field-list simple">
+<dt class="field-odd">Reader</dt>
+<dd class="field-odd"><p>Standalone</p>
+</dd>
+<dt class="field-even">Parser</dt>
+<dd class="field-even"><p>reStructuredText</p>
+</dd>
+<dt class="field-odd">Writer</dt>
+<dd class="field-odd"><p><span class="target" id="xelatex">xelatex</span></p>
+</dd>
+</dl>
+<p>The <code class="docutils literal notranslate"><span class="pre">rst2xetex.py</span></code> front end reads standalone reStructuredText source
+files and produces <cite>LaTeX</cite> output for processing with unicode-aware
+TeX engines (<a class="reference external" href="https://en.wikipedia.org/wiki/LuaTeX">LuaTeX</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/XeTeX">XeTeX</a>). For example, to process a
+reStructuredText file “<code class="docutils literal notranslate"><span class="pre">test.txt</span></code>” into LaTeX:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2xetex</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span> <span class="n">test</span><span class="o">.</span><span class="n">tex</span>
+</pre></div>
+</div>
+<p>The output file “<code class="docutils literal notranslate"><span class="pre">test.tex</span></code>” should then be processed with <code class="docutils literal notranslate"><span class="pre">xelatex</span></code> or
+<code class="docutils literal notranslate"><span class="pre">lualatex</span></code> to get a document in PDF format for printing or on-screen
+viewing.</p>
+<p>For details see <a class="reference external" href="latex.html">Generating LaTeX with Docutils</a>.</p>
+</section>
+</section>
+<section id="man-page-generating-tools">
+<h3><a class="toc-backref" href="#id22">Man-Page-Generating Tools</a><a class="headerlink" href="#man-page-generating-tools" title="永久链接至标题">¶</a></h3>
+<section id="rst2man-py">
+<h4><a class="toc-backref" href="#id23">rst2man.py</a><a class="headerlink" href="#rst2man-py" title="永久链接至标题">¶</a></h4>
+<dl class="field-list simple">
+<dt class="field-odd">Reader</dt>
+<dd class="field-odd"><p>Standalone</p>
+</dd>
+<dt class="field-even">Parser</dt>
+<dd class="field-even"><p>reStructuredText</p>
+</dd>
+<dt class="field-odd">Writer</dt>
+<dd class="field-odd"><p><a class="reference external" href="manpage.html">manpage</a></p>
+</dd>
+</dl>
+<p>The <code class="docutils literal notranslate"><span class="pre">rst2man.py</span></code> front end reads standalone reStructuredText source
+files and produces <a class="reference external" href="https://troff.org/">troff</a> sources for Unix man pages.</p>
+</section>
+</section>
+<section id="odf-openoffice-generating-tools">
+<h3><a class="toc-backref" href="#id24">ODF/OpenOffice-Generating Tools</a><a class="headerlink" href="#odf-openoffice-generating-tools" title="永久链接至标题">¶</a></h3>
+<section id="rst2odt-py">
+<h4><a class="toc-backref" href="#id25">rst2odt.py</a><a class="headerlink" href="#rst2odt-py" title="永久链接至标题">¶</a></h4>
+<dl class="field-list simple">
+<dt class="field-odd">Reader</dt>
+<dd class="field-odd"><p>Standalone</p>
+</dd>
+<dt class="field-even">Parser</dt>
+<dd class="field-even"><p>reStructuredText</p>
+</dd>
+<dt class="field-odd">Writer</dt>
+<dd class="field-odd"><p>ODF/odt</p>
+</dd>
+</dl>
+<p>The <code class="docutils literal notranslate"><span class="pre">rst2odt.py</span></code> front end reads standalone reStructuredText
+source files and produces ODF/.odt files that can be read, edited,
+printed, etc with OpenOffice <code class="docutils literal notranslate"><span class="pre">oowriter</span></code> or LibreOffice.
+(<a class="reference external" href="http://www.openoffice.org/">http://www.openoffice.org/</a>).  A stylesheet file is required.  A
+stylesheet file is an OpenOffice .odt file containing definitions
+of the styles required for <code class="docutils literal notranslate"><span class="pre">rst2odt.py</span></code>.  You can learn more
+about how to use <code class="docutils literal notranslate"><span class="pre">rst2odt.py</span></code>, the styles used <code class="docutils literal notranslate"><span class="pre">rst2odt.py</span></code>,
+etc from <a class="reference external" href="odt.html">Odt Writer for Docutils</a>.</p>
+</section>
+</section>
+<section id="restructuredtext-generating-tools">
+<h3><a class="toc-backref" href="#id26">reStructuredText-Generating Tools</a><a class="headerlink" href="#restructuredtext-generating-tools" title="永久链接至标题">¶</a></h3>
+<p>Currently, there is no reStructuredText writer in Docutils and therefore
+an <code class="docutils literal notranslate"><span class="pre">rst2rst.py</span></code> tool is still missing.</p>
+<p>To generate reStructuredText documents with Docutils, you can use
+the XML (Docutils native) writer and the <a class="reference external" href="../../../sandbox/xml2rst">xml2rst</a> processor.</p>
+</section>
+<section id="xml-generating-tools">
+<h3><a class="toc-backref" href="#id27">XML-Generating Tools</a><a class="headerlink" href="#xml-generating-tools" title="永久链接至标题">¶</a></h3>
+<section id="rst2xml-py">
+<h4><a class="toc-backref" href="#id28">rst2xml.py</a><a class="headerlink" href="#rst2xml-py" title="永久链接至标题">¶</a></h4>
+<dl class="field-list simple">
+<dt class="field-odd">Reader</dt>
+<dd class="field-odd"><p>Standalone</p>
+</dd>
+<dt class="field-even">Parser</dt>
+<dd class="field-even"><p>reStructuredText</p>
+</dd>
+<dt class="field-odd">Writer</dt>
+<dd class="field-odd"><p><span class="target" id="xml">XML</span> (Docutils native)</p>
+</dd>
+</dl>
+<p>The <code class="docutils literal notranslate"><span class="pre">rst2xml.py</span></code> front end produces Docutils-native XML output.
+This can be transformed with standard XML tools such as XSLT
+processors into arbitrary final forms. An example is the <a class="reference external" href="../../../sandbox/xml2rst">xml2rst</a> processor
+in the Docutils sandbox.</p>
+</section>
+</section>
+<section id="testing-debugging-tools">
+<h3><a class="toc-backref" href="#id29">Testing/Debugging Tools</a><a class="headerlink" href="#testing-debugging-tools" title="永久链接至标题">¶</a></h3>
+<section id="rst2pseudoxml-py">
+<h4><a class="toc-backref" href="#id30">rst2pseudoxml.py</a><a class="headerlink" href="#rst2pseudoxml-py" title="永久链接至标题">¶</a></h4>
+<dl class="field-list simple">
+<dt class="field-odd">Reader</dt>
+<dd class="field-odd"><p>Standalone</p>
+</dd>
+<dt class="field-even">Parser</dt>
+<dd class="field-even"><p>reStructuredText</p>
+</dd>
+<dt class="field-odd">Writer</dt>
+<dd class="field-odd"><p><span class="target" id="pseudo-xml">Pseudo-XML</span></p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">rst2pseudoxml.py</span></code> is used for debugging the Docutils “Reader to
+Transform to Writer” pipeline.  It produces a compact pretty-printed
+“pseudo-XML”, where nesting is indicated by indentation (no end-tags).
+External attributes for all elements are output, and internal
+attributes for any leftover “pending” elements are also given.</p>
+</section>
+<section id="quicktest-py">
+<h4><a class="toc-backref" href="#id31">quicktest.py</a><a class="headerlink" href="#quicktest-py" title="永久链接至标题">¶</a></h4>
+<dl class="field-list simple">
+<dt class="field-odd">Reader</dt>
+<dd class="field-odd"><p>N/A</p>
+</dd>
+<dt class="field-even">Parser</dt>
+<dd class="field-even"><p>reStructuredText</p>
+</dd>
+<dt class="field-odd">Writer</dt>
+<dd class="field-odd"><p>N/A</p>
+</dd>
+</dl>
+<p>The <code class="docutils literal notranslate"><span class="pre">quicktest.py</span></code> tool is used for testing the reStructuredText
+parser.  It does not use a Docutils Reader or Writer or the standard
+Docutils command-line options.  Rather, it does its own I/O and calls
+the parser directly.  No transforms are applied to the parsed
+document.  Various forms output are possible:</p>
+<ul class="simple">
+<li><p>Pretty-printed pseudo-XML (default)</p></li>
+<li><p>Test data (Python list of input and pseudo-XML output strings;
+useful for creating new test cases)</p></li>
+<li><p>Pretty-printed native XML</p></li>
+<li><p>Raw native XML (with or without a stylesheet reference)</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="customization">
+<h2><a class="toc-backref" href="#id32">Customization</a><a class="headerlink" href="#customization" title="永久链接至标题">¶</a></h2>
+<section id="command-line-options">
+<h3><a class="toc-backref" href="#id33">Command-Line Options</a><a class="headerlink" href="#command-line-options" title="永久链接至标题">¶</a></h3>
+<p>Command-line options are intended for one-off customization.
+They take priority over configuration file settings.</p>
+<p>Use the “–help” option on each of the front ends to list the
+command-line options it supports.</p>
+</section>
+<section id="configuration-files">
+<h3><a class="toc-backref" href="#id34">Configuration Files</a><a class="headerlink" href="#configuration-files" title="永久链接至标题">¶</a></h3>
+<p>Configuration files are used for persistent customization; they can be
+set once and take effect every time you use a front-end tool.</p>
+<p>Command-line options and their corresponding configuration file entry
+names are listed in the <a class="reference external" href="config.html">Docutils Configuration</a> document.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../api/cmdline-tool.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Inside A Docutils Command-Line Front-End Tool</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="smartquotes.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Smart Quotes for Docutils</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, xinetzone |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
+            <a class="muted-link" href="../../../_sources/docutils/docs/user/tools.txt"
+               rel="nofollow">
+              显示源代码
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            目录
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Docutils Front-End Tools</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#getting-help">Getting Help</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-tools">The Tools</a><ul>
+<li><a class="reference internal" href="#generic-command-line-front-end">Generic Command Line Front End</a><ul>
+<li><a class="reference internal" href="#docutils-cli-py">docutils-cli.py</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#html-generating-tools">HTML-Generating Tools</a><ul>
+<li><a class="reference internal" href="#buildhtml-py">buildhtml.py</a></li>
+<li><a class="reference internal" href="#rst2html-py">rst2html.py</a></li>
+<li><a class="reference internal" href="#rst2html4-py">rst2html4.py</a><ul>
+<li><a class="reference internal" href="#stylesheets">Stylesheets</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rst2html5-py">rst2html5.py</a></li>
+<li><a class="reference internal" href="#rstpep2html-py">rstpep2html.py</a></li>
+<li><a class="reference internal" href="#rst2s5-py">rst2s5.py</a><ul>
+<li><a class="reference internal" href="#themes">Themes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#latex-generating-tools">LaTeX-Generating Tools</a><ul>
+<li><a class="reference internal" href="#rst2latex-py">rst2latex.py</a></li>
+<li><a class="reference internal" href="#rst2xetex-py">rst2xetex.py</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#man-page-generating-tools">Man-Page-Generating Tools</a><ul>
+<li><a class="reference internal" href="#rst2man-py">rst2man.py</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#odf-openoffice-generating-tools">ODF/OpenOffice-Generating Tools</a><ul>
+<li><a class="reference internal" href="#rst2odt-py">rst2odt.py</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#restructuredtext-generating-tools">reStructuredText-Generating Tools</a></li>
+<li><a class="reference internal" href="#xml-generating-tools">XML-Generating Tools</a><ul>
+<li><a class="reference internal" href="#rst2xml-py">rst2xml.py</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#testing-debugging-tools">Testing/Debugging Tools</a><ul>
+<li><a class="reference internal" href="#rst2pseudoxml-py">rst2pseudoxml.py</a></li>
+<li><a class="reference internal" href="#quicktest-py">quicktest.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customization">Customization</a><ul>
+<li><a class="reference internal" href="#command-line-options">Command-Line Options</a></li>
+<li><a class="reference internal" href="#configuration-files">Configuration Files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/scripts/main.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    </body>
+</html>

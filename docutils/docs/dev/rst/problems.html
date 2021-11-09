@@ -1,0 +1,1214 @@
+<!doctype html>
+<html class="no-js" lang="zh_CN">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+<link rel="index" title="索引" href="../../../../genindex.html" /><link rel="search" title="搜索" href="../../../../search.html" /><link rel="next" title="reStructuredText Standard Definition Files" href="../../ref/rst/definitions.html" /><link rel="prev" title="A Record of reStructuredText Syntax Alternatives" href="alternatives.html" />
+
+    <meta name="generator" content="sphinx-4.2.0, furo 2021.10.09"/>
+        <title>Problems With StructuredText - docutils 0.0.1 文档</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">docutils 0.0.1 文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">docutils 0.0.1 文档</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">概述</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../web/index.html">Docutils: Documentation Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../web/mirror/setext.html">Setext 文档镜像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Docutils Project Documentation Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">user</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../user/config.html">Docutils Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/emacs.html">Emacs Support for reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/html.html">Docutils HTML writers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/latex.html"><span class="sectnum">1</span> Generating LaTeX with Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/links.html">Docutils Link List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/mailing-lists.html">Docutils Mailing Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/manpage.html">manpage writer for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/odt.html"><span class="sectnum">1</span> Odt Writer for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/smartquotes.html">Smart Quotes for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/tools.html">Docutils Front-End Tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">api</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/cmdline-tool.html">Inside A Docutils Command-Line Front-End Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/publisher.html">The Docutils Publisher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/runtime-settings.html">Docutils Runtime Settings</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">dev</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../distributing.html">Docutils Distributor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enthought-plan.html"><span class="sectnum">1</span> Plan for Enthought API Documentation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enthought-rfp.html"><span class="sectnum">1</span> Enthought API Documentation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hacking.html">Docutils Hacker’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies.html">Docutils Project Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pysource.html">Python Source Reader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release.html">Docutils Release Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../repository.html">The Docutils Version Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../semantics.html">Docstring Semantics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">Docutils Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">Docutils To Do List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../website.html">Docutils Web Site</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">howto</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/html-stylesheets.html">Writing HTML (CSS) Stylesheets for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/i18n.html">Docutils Internationalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/rst-directives.html">Creating reStructuredText Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/rst-roles.html">Creating reStructuredText Interpreted Text Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/security.html">Deploying Docutils Securely</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">peps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0256.html">Rejection Notice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0256.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0256.html#road-map-to-the-docstring-peps">Road Map to the Docstring PEPs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0256.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0256.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0256.html#project-web-site">Project Web Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0256.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0256.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0256.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0257.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0257.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0257.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0257.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0257.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0257.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0258.html">Rejection Notice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0258.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0258.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0258.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0258.html#project-web-site">Project Web Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0258.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0258.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0287.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0287.html#benefits">Benefits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0287.html#goals">Goals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0287.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0287.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0287.html#docstring-significant-features">Docstring-Significant Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0287.html#questions-answers">Questions &amp; Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0287.html#references-footnotes">References &amp; Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0287.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../peps/pep-0287.html#acknowledgements">Acknowledgements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ref</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../ref/doctree.html">The Docutils Document Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ref/transforms.html">Docutils Transforms</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">docutils other</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../BUGS.html">Docutils Bugs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../COPYING.html">Copying Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../FAQ.html"><span class="sectnum">1</span> Docutils FAQ (Frequently Asked Questions)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../HISTORY.html">Docutils History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../README.html">Docutils 0.18.1b.dev 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../RELEASE-NOTES.html">Docutils Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../THANKS.html">Acknowledgements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">reStructuredText</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../web/rst.html"></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/rst/cheatsheet.html">The reStructuredText Cheat Sheet: Syntax Reminders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/rst/quickstart.html">A ReStructuredText Primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alternatives.html">A Record of reStructuredText Syntax Alternatives</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Problems With StructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ref/rst/definitions.html">reStructuredText Standard Definition Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ref/rst/directives.html">reStructuredText Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ref/rst/introduction.html">An Introduction to reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ref/rst/mathematics.html"><span class="sectnum">1</span> LaTeX syntax for mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ref/rst/restructuredtext.html">reStructuredText Markup Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ref/rst/roles.html">reStructuredText Interpreted Text Roles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">sandbox</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../sandbox/README.html">Sandbox 自述</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="problems-with-structuredtext">
+<h1><a class="toc-backref" href="#id4">Problems With StructuredText</a><a class="headerlink" href="#problems-with-structuredtext" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>David Goodger</p>
+</dd>
+<dt class="field-even">Contact</dt>
+<dd class="field-even"><p><a class="reference external" href="mailto:docutils-develop%40lists.sourceforge.net">docutils-develop<span>@</span>lists<span>.</span>sourceforge<span>.</span>net</a></p>
+</dd>
+<dt class="field-odd">Revision</dt>
+<dd class="field-odd"><p>$Revision$</p>
+</dd>
+<dt class="field-even">Date</dt>
+<dd class="field-even"><p>$Date$</p>
+</dd>
+<dt class="field-odd">Copyright</dt>
+<dd class="field-odd"><p>This document has been placed in the public domain.</p>
+</dd>
+</dl>
+<p>There are several problems, unresolved issues, and areas of
+controversy within <a class="reference external" href="http://www.zope.org/DevHome/Members/jim/StructuredTextWiki/FrontPage">StructuredText</a> (Classic and Next Generation).  In
+order to resolve all these issues, this analysis brings all of the
+issues out into the open, enumerates all the alternatives, and
+proposes solutions to be incorporated into the <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>
+specification.</p>
+<div class="contents topic" id="id1">
+<p class="topic-title">目录</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#problems-with-structuredtext" id="id4">Problems With StructuredText</a></p>
+<ul>
+<li><p><a class="reference internal" href="#formal-specification" id="id5">Formal Specification</a></p></li>
+<li><p><a class="reference internal" href="#understanding-and-extending-the-code" id="id6">Understanding and Extending the Code</a></p></li>
+<li><p><a class="reference internal" href="#section-structure-via-indentation" id="id7">Section Structure via Indentation</a></p></li>
+<li><p><a class="reference internal" href="#character-escaping-mechanism" id="id8">Character Escaping Mechanism</a></p></li>
+<li><p><a class="reference internal" href="#blank-lines-in-lists" id="id9">Blank Lines in Lists</a></p></li>
+<li><p><a class="reference internal" href="#bullet-list-markup" id="id10">Bullet List Markup</a></p></li>
+<li><p><a class="reference internal" href="#enumerated-list-markup" id="id11">Enumerated List Markup</a></p></li>
+<li><p><a class="reference internal" href="#definition-list-markup" id="id12">Definition List Markup</a></p></li>
+<li><p><a class="reference internal" href="#literal-blocks" id="id13">Literal Blocks</a></p></li>
+<li><p><a class="reference internal" href="#tables" id="id14">Tables</a></p></li>
+<li><p><a class="reference internal" href="#delimitation-of-inline-markup" id="id15">Delimitation of Inline Markup</a></p></li>
+<li><p><a class="reference internal" href="#underlining" id="id16">Underlining</a></p></li>
+<li><p><a class="reference internal" href="#inline-literals" id="id17">Inline Literals</a></p></li>
+<li><p><a class="reference internal" href="#hyperlinks" id="id18">Hyperlinks</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="formal-specification">
+<h2><a class="toc-backref" href="#id5">Formal Specification</a><a class="headerlink" href="#formal-specification" title="永久链接至标题">¶</a></h2>
+<p>The description in the original StructuredText.py has been criticized
+for being vague.  For practical purposes, “the code <em>is</em> the spec.”
+Tony Ibbs has been working on deducing a <a class="reference external" href="http://homepage.ntlworld.com/tibsnjoan/docutils/STNG-format.html">detailed description</a> from
+the documentation and code of <a class="reference external" href="http://www.zope.org/DevHome/Members/jim/StructuredTextWiki/StructuredTextNG">StructuredTextNG</a>.  Edward Loper’s
+<a class="reference external" href="http://www.cis.upenn.edu/~edloper/pydoc/stminus.html">STMinus</a> is another attempt to formalize a spec.</p>
+<p>For this kind of a project, the specification should always precede
+the code.  Otherwise, the markup is a moving target which can never be
+adopted as a standard.  Of course, a specification may be revised
+during lifetime of the code, but without a spec there is no visible
+control and thus no confidence.</p>
+</section>
+<section id="understanding-and-extending-the-code">
+<h2><a class="toc-backref" href="#id6">Understanding and Extending the Code</a><a class="headerlink" href="#understanding-and-extending-the-code" title="永久链接至标题">¶</a></h2>
+<p>The original <a class="reference external" href="http://www.zope.org/DevHome/Members/jim/StructuredTextWiki/FrontPage">StructuredText</a> is a dense mass of sparsely commented
+code and inscrutable regular expressions.  It was not designed to be
+extended and is very difficult to understand.  <a class="reference external" href="http://www.zope.org/DevHome/Members/jim/StructuredTextWiki/StructuredTextNG">StructuredTextNG</a> has
+been designed to allow input (syntax) and output extensions, but its
+documentation (both internal [comments &amp; docstrings], and external) is
+inadequate for the complexity of the code itself.</p>
+<p>For reStructuredText to become truly useful, perhaps even part of
+Python’s standard library, it must have clear, understandable
+documentation and implementation code.  For the implementation of
+reStructuredText to be taken seriously, it must be a sterling example
+of the potential of docstrings; the implementation must practice what
+the specification preaches.</p>
+</section>
+<section id="section-structure-via-indentation">
+<h2><a class="toc-backref" href="#id7">Section Structure via Indentation</a><a class="headerlink" href="#section-structure-via-indentation" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a> required that body text be indented by 2 spaces.  The original
+<a class="reference external" href="http://www.zope.org/DevHome/Members/jim/StructuredTextWiki/FrontPage">StructuredText</a> and <a class="reference external" href="http://www.zope.org/DevHome/Members/jim/StructuredTextWiki/StructuredTextNG">StructuredTextNG</a> require that section structure
+be indicated through indentation, as “inspired by Python”.  For
+certain structures with a very limited, local extent (such as lists,
+block quotes, and literal blocks), indentation naturally indicates
+structure or hierarchy.  For sections (which may have a very large
+extent), structure via indentation is unnecessary, unnatural and
+ambiguous.  Rather, the syntax of the section title <em>itself</em> should
+indicate that it is a section title.</p>
+<p>The original StructuredText states that “A single-line paragraph whose
+immediately succeeding paragraphs are lower level is treated as a
+header.” Requiring indentation in this way is:</p>
+<ul class="simple">
+<li><p>Unnecessary.  The vast majority of docstrings and standalone
+documents will have no more than one level of section structure.
+Requiring indentation for such docstrings is unnecessary and
+irritating.</p></li>
+<li><p>Unnatural.  Most published works use title style (type size, face,
+weight, and position) and/or section/subsection numbering rather
+than indentation to indicate hierarchy.  This is a tradition with a
+very long history.</p></li>
+<li><p>Ambiguous.  A StructuredText header is indistinguishable from a
+one-line paragraph followed by a block quote (precluding the use of
+block quotes).  Enumerated section titles are ambiguous (is it a
+header? is it a list item?).  Some additional adornment must be
+required to confirm the line’s role as a title, both to a parser and
+to the human reader of the source text.</p></li>
+</ul>
+<p>Python’s use of significant whitespace is a wonderful (if not
+original) innovation, however requiring indentation in ordinary
+written text is hypergeneralization.</p>
+<p><a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> indicates section structure through title adornment
+style (as exemplified by this document).  This is far more natural.
+In fact, it is already in widespread use in plain text documents,
+including in Python’s standard distribution (such as the toplevel
+<a class="reference external" href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/~checkout~/python/python/dist/src/README">README</a> file).</p>
+</section>
+<section id="character-escaping-mechanism">
+<h2><a class="toc-backref" href="#id8">Character Escaping Mechanism</a><a class="headerlink" href="#character-escaping-mechanism" title="永久链接至标题">¶</a></h2>
+<p>No matter what characters are chosen for markup, some day someone will
+want to write documentation <em>about</em> that markup or using markup
+characters in a non-markup context.  Therefore, any complete markup
+language must have an escaping or encoding mechanism.  For a
+lightweight markup system, encoding mechanisms like SGML/XML’s ‘&amp;ast;’
+are out.  So an escaping mechanism is in.  However, with carefully
+chosen markup, it should be necessary to use the escaping mechanism
+only infrequently.</p>
+<p><a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> needs an escaping mechanism: a way to treat
+markup-significant characters as the characters themselves.  Currently
+there is no such mechanism (although ZWiki uses ‘!’).  What are the
+candidates?</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">!</span></code>
+(<a class="reference external" href="http://www.zope.org/DevHome/Members/jim/StructuredTextWiki/NGEscaping">http://www.zope.org/DevHome/Members/jim/StructuredTextWiki/NGEscaping</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">~</span></code></p></li>
+<li><p>doubling of characters</p></li>
+</ol>
+<p>The best choice for this is the backslash (<code class="docutils literal notranslate"><span class="pre">\</span></code>).  It’s “the single
+most popular escaping character in the world!”, therefore familiar and
+unsurprising.  Since characters only need to be escaped under special
+circumstances, which are typically those explaining technical
+programming issues, the use of the backslash is natural and
+understandable.  Python docstrings can be raw (prefixed with an ‘r’,
+as in ‘r””’), which would obviate the need for gratuitous doubling-up
+of backslashes.</p>
+<p>(On 2001-03-29 on the Doc-SIG mailing list, GvR endorsed backslash
+escapes, saying, “‘nuff said.  Backslash it is.” Although neither
+legally binding nor irrevocable nor any kind of guarantee of anything,
+it is a good sign.)</p>
+<p>The rule would be: An unescaped backslash followed by any markup
+character escapes the character.  The escaped character represents the
+character itself, and is prevented from playing a role in any markup
+interpretation.  The backslash is removed from the output.  A literal
+backslash is represented by an “escaped backslash,” two backslashes in
+a row.</p>
+<p>A carefully constructed set of recognition rules for inline markup
+will obviate the need for backslash-escapes in almost all cases; see
+<a class="reference internal" href="#delimitation-of-inline-markup">Delimitation of Inline Markup</a> below.</p>
+<p>When an expression (requiring backslashes and other characters used
+for markup) becomes too complicated and therefore unreadable, a
+literal block may be used instead.  Inside literal blocks, no markup
+is recognized, therefore backslashes (for the purpose of escaping
+markup) become unnecessary.</p>
+<p>We could allow backslashes preceding non-markup characters to remain
+in the output.  This would make describing regular expressions and
+other uses of backslashes easier.  However, this would complicate the
+markup rules and would be confusing.</p>
+</section>
+<section id="blank-lines-in-lists">
+<h2><a class="toc-backref" href="#id9">Blank Lines in Lists</a><a class="headerlink" href="#blank-lines-in-lists" title="永久链接至标题">¶</a></h2>
+<p>Oft-requested in Doc-SIG (the earliest reference is dated 1996-08-13)
+is the ability to write lists without requiring blank lines between
+items.  In docstrings, space is at a premium.  Authors want to convey
+their API or usage information in as compact a form as possible.
+<a class="reference external" href="http://www.zope.org/DevHome/Members/jim/StructuredTextWiki/FrontPage">StructuredText</a> requires blank lines between all body elements,
+including list items, even when boundaries are obvious from the markup
+itself.</p>
+<p>In reStructuredText, blank lines are optional between list items.
+However, in order to eliminate ambiguity, a blank line is required
+before the first list item and after the last.  Nested lists also
+require blank lines before the list start and after the list end.</p>
+</section>
+<section id="bullet-list-markup">
+<h2><a class="toc-backref" href="#id10">Bullet List Markup</a><a class="headerlink" href="#bullet-list-markup" title="永久链接至标题">¶</a></h2>
+<p><a class="reference external" href="http://www.zope.org/DevHome/Members/jim/StructuredTextWiki/FrontPage">StructuredText</a> includes ‘o’ as a bullet character.  This is dangerous
+and counter to the language-independent nature of the markup.  There
+are many languages in which ‘o’ is a word.  For example, in Spanish:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Llamame</span> <span class="n">a</span> <span class="n">la</span> <span class="n">casa</span>
+<span class="n">o</span> <span class="n">al</span> <span class="n">trabajo</span><span class="o">.</span>
+
+<span class="p">(</span><span class="n">Call</span> <span class="n">me</span> <span class="n">at</span> <span class="n">home</span> <span class="ow">or</span> <span class="n">at</span> <span class="n">work</span><span class="o">.</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And in Japanese (when romanized):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Senshuu</span> <span class="n">no</span> <span class="n">doyoubi</span> <span class="n">ni</span> <span class="n">tegami</span>
+<span class="n">o</span> <span class="n">kakimashita</span><span class="o">.</span>
+
+<span class="p">([</span><span class="n">I</span><span class="p">]</span> <span class="n">wrote</span> <span class="n">a</span> <span class="n">letter</span> <span class="n">on</span> <span class="n">Saturday</span> <span class="n">last</span> <span class="n">week</span><span class="o">.</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If a paragraph containing an ‘o’ word wraps such that the ‘o’ is the
+first text on a line, or if a paragraph begins with such a word, it
+could be misinterpreted as a bullet list.</p>
+<p>In <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>, ‘o’ is not used as a bullet character.  ‘-‘,
+‘*’, and ‘+’ are the possible bullet characters.</p>
+</section>
+<section id="enumerated-list-markup">
+<h2><a class="toc-backref" href="#id11">Enumerated List Markup</a><a class="headerlink" href="#enumerated-list-markup" title="永久链接至标题">¶</a></h2>
+<p>StructuredText enumerated lists are allowed to begin with numbers and
+letters followed by a period or right-parenthesis, then whitespace.
+This has surprising consequences for writing styles.  For example,
+this is recognized as an enumerated list item by StructuredText:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Mr</span><span class="o">.</span> <span class="n">Creosote</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>People will write enumerated lists in all different ways.  It is folly
+to try to come up with the “perfect” format for an enumerated list,
+and limit the docstring parser’s recognition to that one format only.</p>
+<p>Rather, the parser should recognize a variety of enumerator styles.
+It is also recommended that the enumerator of the first list item be
+ordinal-1 (‘1’, ‘A’, ‘a’, ‘I’, or ‘i’), as output formats may not be
+able to begin a list at an arbitrary enumeration.</p>
+<p>An initial idea was to require two or more consistent enumerated list
+items in a row.  This idea proved impractical and was dropped.  In
+practice, the presence of a proper enumerator is enough to reliably
+recognize an enumerated list item; any ambiguities are reported by the
+parser.  Here’s the original idea for posterity:</p>
+<blockquote>
+<div><p>The parser should recognize a variety of enumerator styles, mark
+each block as a potential enumerated list item (PELI), and
+interpret the enumerators of adjacent PELIs to decide whether they
+make up a consistent enumerated list.</p>
+<p>If a PELI is labeled with a “1.”, and is immediately followed by a
+PELI labeled with a “2.”, we’ve got an enumerated list.  Or “(A)”
+followed by “(B)”.  Or “i)” followed by “ii)”, etc.  The chances
+of accidentally recognizing two adjacent and consistently labeled
+PELIs, are acceptably small.</p>
+<p>For an enumerated list to be recognized, the following must be
+true:</p>
+<ul class="simple">
+<li><p>the list must consist of multiple adjacent list items (2 or
+more)</p></li>
+<li><p>the enumerators must all have the same format</p></li>
+<li><p>the enumerators must be sequential</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="definition-list-markup">
+<h2><a class="toc-backref" href="#id12">Definition List Markup</a><a class="headerlink" href="#definition-list-markup" title="永久链接至标题">¶</a></h2>
+<p>StructuredText uses ‘ – ‘ (whitespace, two hyphens, whitespace) on
+the first line of a paragraph to indicate a definition list item.  The
+‘ – ‘ serves to separate the term (on the left) from the definition
+(on the right).</p>
+<p>Many people use ‘ – ‘ as an em-dash in their text, conflicting with
+the StructuredText usage.  Although the Chicago Manual of Style says
+that spaces should not be used around an em-dash, Peter Funk pointed
+out that this is standard usage in German (according to the Duden, the
+official German reference), and possibly in other languages as well.
+The widespread use of ‘ – ‘ precludes its use for definition lists;
+it would violate the “unsurprising” criterion.</p>
+<p>A simpler, and at least equally visually distinctive construct
+(proposed by Guido van Rossum, who incidentally is a frequent user of
+‘ – ‘) would do just as well:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">term</span> <span class="mi">1</span>
+    <span class="n">Definition</span><span class="o">.</span>
+
+<span class="n">term</span> <span class="mi">2</span>
+    <span class="n">Definition</span> <span class="mi">2</span><span class="p">,</span> <span class="n">paragraph</span> <span class="mf">1.</span>
+
+    <span class="n">Definition</span> <span class="mi">2</span><span class="p">,</span> <span class="n">paragraph</span> <span class="mf">2.</span>
+</pre></div>
+</div>
+<p>A reStructuredText definition list item consists of a term and a
+definition.  A term is a simple one-line paragraph.  A definition is a
+block indented relative to the term, and may contain multiple
+paragraphs and other body elements.  No blank line precedes a
+definition (this distinguishes definition lists from block quotes).</p>
+</section>
+<section id="literal-blocks">
+<h2><a class="toc-backref" href="#id13">Literal Blocks</a><a class="headerlink" href="#literal-blocks" title="永久链接至标题">¶</a></h2>
+<p>The <a class="reference external" href="http://www.zope.org/DevHome/Members/jim/StructuredTextWiki/FrontPage">StructuredText</a> specification has literal blocks indicated by
+‘example’, ‘examples’, or ‘::’ ending the preceding paragraph.  STNG
+only recognizes ‘::’; ‘example’/’examples’ are not implemented.  This
+is good; it fixes an unnecessary language dependency.  The problem is
+what to do with the sometimes- unwanted ‘::’.</p>
+<p>In <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> ‘::’ at the end of a paragraph indicates that
+subsequent <em>indented</em> blocks are treated as literal text.  No further
+markup interpretation is done within literal blocks (not even
+backslash-escapes).  If the ‘::’ is preceded by whitespace, ‘::’ is
+omitted from the output; if ‘::’ was the sole content of a paragraph,
+the entire paragraph is removed (no ‘empty’ paragraph remains).  If
+‘::’ is preceded by a non-whitespace character, ‘::’ is replaced by
+‘:’ (i.e., the extra colon is removed).</p>
+<p>Thus, a section could begin with a literal block as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Section</span> <span class="n">Title</span>
+<span class="o">-------------</span>
+
+<span class="p">::</span>
+
+    <span class="nb">print</span> <span class="s2">"this is example literal"</span>
+</pre></div>
+</div>
+</section>
+<section id="tables">
+<h2><a class="toc-backref" href="#id14">Tables</a><a class="headerlink" href="#tables" title="永久链接至标题">¶</a></h2>
+<p>The table markup scheme in classic StructuredText was horrible.  Its
+omission from StructuredTextNG is welcome, and its markup will not be
+repeated here.  However, tables themselves are useful in
+documentation.  Alternatives:</p>
+<ol class="arabic">
+<li><p>This format is the most natural and obvious.  It was independently
+invented (no great feat of creation!), and later found to be the
+format supported by the <a class="reference external" href="http://table.sourceforge.net/">Emacs table mode</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+------------+------------+------------+--------------+</span>
+<span class="o">|</span>  <span class="n">Header</span> <span class="mi">1</span>  <span class="o">|</span>  <span class="n">Header</span> <span class="mi">2</span>  <span class="o">|</span>  <span class="n">Header</span> <span class="mi">3</span>  <span class="o">|</span>  <span class="n">Header</span> <span class="mi">4</span>    <span class="o">|</span>
+<span class="o">+============+============+============+==============+</span>
+<span class="o">|</span>  <span class="n">Column</span> <span class="mi">1</span>  <span class="o">|</span>  <span class="n">Column</span> <span class="mi">2</span>  <span class="o">|</span> <span class="n">Column</span> <span class="mi">3</span> <span class="o">&amp;</span> <span class="mi">4</span> <span class="n">span</span> <span class="p">(</span><span class="n">Row</span> <span class="mi">1</span><span class="p">)</span> <span class="o">|</span>
+<span class="o">+------------+------------+------------+--------------+</span>
+<span class="o">|</span>    <span class="n">Column</span> <span class="mi">1</span> <span class="o">&amp;</span> <span class="mi">2</span> <span class="n">span</span>    <span class="o">|</span>  <span class="n">Column</span> <span class="mi">3</span>  <span class="o">|</span> <span class="o">-</span> <span class="n">Column</span> <span class="mi">4</span>   <span class="o">|</span>
+<span class="o">+------------+------------+------------+</span> <span class="o">-</span> <span class="n">Row</span> <span class="mi">2</span> <span class="o">&amp;</span> <span class="mi">3</span>  <span class="o">|</span>
+<span class="o">|</span>      <span class="mi">1</span>     <span class="o">|</span>      <span class="mi">2</span>     <span class="o">|</span>      <span class="mi">3</span>     <span class="o">|</span> <span class="o">-</span> <span class="n">span</span>       <span class="o">|</span>
+<span class="o">+------------+------------+------------+--------------+</span>
+</pre></div>
+</div>
+<p>Tables are described with a visual outline made up of the
+characters ‘-’, ‘=’, ‘|’, and ‘+’:</p>
+<ul class="simple">
+<li><p>The hyphen (‘-’) is used for horizontal lines (row separators).</p></li>
+<li><p>The equals sign (‘=’) is optionally used as a header separator
+(as of version 1.5.24, this is not supported by the Emacs table
+mode).</p></li>
+<li><p>The vertical bar (‘|’) is used for for vertical lines (column
+separators).</p></li>
+<li><p>The plus sign (‘+’) is used for intersections of horizontal and
+vertical lines.</p></li>
+</ul>
+<p>Row and column spans are possible simply by omitting the column or
+row separators, respectively.  The header row separator must be
+complete; in other words, a header cell may not span into the table
+body.  Each cell contains body elements, and may have multiple
+paragraphs, lists, etc.  Initial spaces for a left margin are
+allowed; the first line of text in a cell determines its left
+margin.</p>
+</li>
+<li><p>Below is a simpler table structure.  It may be better suited to
+manual input than alternative #1, but there is no Emacs editing
+mode available.  One disadvantage is that it resembles section
+titles; a one-column table would look exactly like section &amp;
+subsection titles.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">============</span> <span class="o">============</span> <span class="o">============</span> <span class="o">==============</span>
+  <span class="n">Header</span> <span class="mi">1</span>     <span class="n">Header</span> <span class="mi">2</span>     <span class="n">Header</span> <span class="mi">3</span>     <span class="n">Header</span> <span class="mi">4</span>
+<span class="o">============</span> <span class="o">============</span> <span class="o">============</span> <span class="o">==============</span>
+  <span class="n">Column</span> <span class="mi">1</span>     <span class="n">Column</span> <span class="mi">2</span>    <span class="n">Column</span> <span class="mi">3</span> <span class="o">&amp;</span> <span class="mi">4</span> <span class="n">span</span> <span class="p">(</span><span class="n">Row</span> <span class="mi">1</span><span class="p">)</span>
+<span class="o">------------</span> <span class="o">------------</span> <span class="o">---------------------------</span>
+    <span class="n">Column</span> <span class="mi">1</span> <span class="o">&amp;</span> <span class="mi">2</span> <span class="n">span</span>       <span class="n">Column</span> <span class="mi">3</span>    <span class="o">-</span> <span class="n">Column</span> <span class="mi">4</span>
+<span class="o">-------------------------</span> <span class="o">------------</span>  <span class="o">-</span> <span class="n">Row</span> <span class="mi">2</span> <span class="o">&amp;</span> <span class="mi">3</span>
+      <span class="mi">1</span>            <span class="mi">2</span>            <span class="mi">3</span>       <span class="o">-</span> <span class="n">span</span>
+<span class="o">============</span> <span class="o">============</span> <span class="o">============</span> <span class="o">==============</span>
+</pre></div>
+</div>
+<p>The table begins with a top border of equals signs with a space at
+each column boundary (regardless of spans).  Each row is
+underlined.  Internal row separators are underlines of ‘-’, with
+spaces at column boundaries.  The last of the optional head rows is
+underlined with ‘=’, again with spaces at column boundaries.
+Column spans have no spaces in their underline.  Row spans simply
+lack an underline at the row boundary.  The bottom boundary of the
+table consists of ‘=’ underlines.  A blank line is required
+following a table.</p>
+</li>
+<li><p>A minimalist alternative is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">====</span>  <span class="o">=====</span>  <span class="o">========</span>  <span class="o">========</span>  <span class="o">=======</span>  <span class="o">====</span>  <span class="o">=====</span>  <span class="o">=====</span>
+<span class="n">Old</span> <span class="n">State</span>    <span class="n">Input</span>     <span class="n">Action</span>             <span class="n">New</span> <span class="n">State</span>    <span class="n">Notes</span>
+<span class="o">-----------</span>  <span class="o">--------</span>  <span class="o">-----------------</span>  <span class="o">-----------</span>
+<span class="n">ids</span>   <span class="n">types</span>  <span class="n">new</span> <span class="nb">type</span>  <span class="n">sys</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span>  <span class="n">dupname</span>  <span class="n">ids</span>   <span class="n">types</span>
+<span class="o">====</span>  <span class="o">=====</span>  <span class="o">========</span>  <span class="o">========</span>  <span class="o">=======</span>  <span class="o">====</span>  <span class="o">=====</span>  <span class="o">=====</span>
+<span class="o">--</span>    <span class="o">--</span>     <span class="n">explicit</span>  <span class="o">--</span>        <span class="o">--</span>       <span class="n">new</span>   <span class="kc">True</span>
+<span class="o">--</span>    <span class="o">--</span>     <span class="n">implicit</span>  <span class="o">--</span>        <span class="o">--</span>       <span class="n">new</span>   <span class="kc">False</span>
+<span class="kc">None</span>  <span class="kc">False</span>  <span class="n">explicit</span>  <span class="o">--</span>        <span class="o">--</span>       <span class="n">new</span>   <span class="kc">True</span>
+<span class="n">old</span>   <span class="kc">False</span>  <span class="n">explicit</span>  <span class="n">implicit</span>  <span class="n">old</span>      <span class="n">new</span>   <span class="kc">True</span>
+<span class="kc">None</span>  <span class="kc">True</span>   <span class="n">explicit</span>  <span class="n">explicit</span>  <span class="n">new</span>      <span class="kc">None</span>  <span class="kc">True</span>
+<span class="n">old</span>   <span class="kc">True</span>   <span class="n">explicit</span>  <span class="n">explicit</span>  <span class="n">new</span><span class="p">,</span><span class="n">old</span>  <span class="kc">None</span>  <span class="kc">True</span>   <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="kc">None</span>  <span class="kc">False</span>  <span class="n">implicit</span>  <span class="n">implicit</span>  <span class="n">new</span>      <span class="kc">None</span>  <span class="kc">False</span>
+<span class="n">old</span>   <span class="kc">False</span>  <span class="n">implicit</span>  <span class="n">implicit</span>  <span class="n">new</span><span class="p">,</span><span class="n">old</span>  <span class="kc">None</span>  <span class="kc">False</span>
+<span class="kc">None</span>  <span class="kc">True</span>   <span class="n">implicit</span>  <span class="n">implicit</span>  <span class="n">new</span>      <span class="kc">None</span>  <span class="kc">True</span>
+<span class="n">old</span>   <span class="kc">True</span>   <span class="n">implicit</span>  <span class="n">implicit</span>  <span class="n">new</span>      <span class="n">old</span>   <span class="kc">True</span>
+<span class="o">====</span>  <span class="o">=====</span>  <span class="o">========</span>  <span class="o">========</span>  <span class="o">=======</span>  <span class="o">====</span>  <span class="o">=====</span>  <span class="o">=====</span>
+</pre></div>
+</div>
+<p>The table begins with a top border of equals signs with one or more
+spaces at each column boundary (regardless of spans).  There must
+be at least two columns in the table (to differentiate it from
+section headers).  Each line starts a new row.  The rightmost
+column is unbounded; text may continue past the edge of the table.
+Each row/line must contain spaces at column boundaries, except for
+explicit column spans.  Underlines of ‘-’ can be used to indicate
+column spans, but should be used sparingly if at all.  Lines
+containing column span underlines may not contain any other text.
+The last of the optional head rows is underlined with ‘=’, again
+with spaces at column boundaries.  The bottom boundary of the table
+consists of ‘=’ underlines.  A blank line is required following a
+table.</p>
+<p>This table sums up the features.  Using all the features in such a
+small space is not pretty though:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">========</span>  <span class="o">========</span>  <span class="o">========</span>
+          <span class="n">Header</span> <span class="mi">2</span> <span class="o">&amp;</span> <span class="mi">3</span> <span class="n">Span</span>
+          <span class="o">------------------</span>
+<span class="n">Header</span> <span class="mi">1</span>  <span class="n">Header</span> <span class="mi">2</span>  <span class="n">Header</span> <span class="mi">3</span>
+<span class="o">========</span>  <span class="o">========</span>  <span class="o">========</span>
+<span class="n">Each</span>      <span class="n">line</span> <span class="ow">is</span>   <span class="n">a</span> <span class="n">new</span> <span class="n">row</span><span class="o">.</span>
+<span class="n">Each</span> <span class="n">row</span>  <span class="n">consists</span>  <span class="n">of</span> <span class="n">one</span> <span class="n">line</span> <span class="n">only</span><span class="o">.</span>
+<span class="n">Row</span>       <span class="n">spans</span>     <span class="n">are</span> <span class="ow">not</span> <span class="n">possible</span><span class="o">.</span>
+<span class="n">The</span> <span class="n">last</span>  <span class="n">column</span>    <span class="n">may</span> <span class="n">spill</span> <span class="n">over</span> <span class="n">to</span> <span class="n">the</span> <span class="n">right</span><span class="o">.</span>
+<span class="n">Column</span> <span class="n">spans</span> <span class="n">are</span> <span class="n">possible</span> <span class="k">with</span> <span class="n">an</span> <span class="n">underline</span> <span class="n">joining</span> <span class="n">columns</span><span class="o">.</span>
+<span class="o">----------------------------</span>
+<span class="n">The</span> <span class="n">span</span>  <span class="ow">is</span>        <span class="n">limited</span> <span class="n">to</span> <span class="n">the</span> <span class="n">row</span> <span class="n">above</span> <span class="n">the</span> <span class="n">underline</span><span class="o">.</span>
+<span class="o">========</span>  <span class="o">========</span>  <span class="o">========</span>
+</pre></div>
+</div>
+</li>
+<li><p>As a variation of alternative 3, bullet list syntax in the first
+column could be used to indicate row starts.  Multi-line rows are
+possible, but row spans are not.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=====</span> <span class="o">=====</span>
+<span class="n">col</span> <span class="mi">1</span> <span class="n">col</span> <span class="mi">2</span>
+<span class="o">=====</span> <span class="o">=====</span>
+<span class="o">-</span> <span class="mi">1</span>   <span class="n">Second</span> <span class="n">column</span> <span class="n">of</span> <span class="n">row</span> <span class="mf">1.</span>
+<span class="o">-</span> <span class="mi">2</span>   <span class="n">Second</span> <span class="n">column</span> <span class="n">of</span> <span class="n">row</span> <span class="mf">2.</span>
+      <span class="n">Second</span> <span class="n">line</span> <span class="n">of</span> <span class="n">paragraph</span><span class="o">.</span>
+<span class="o">-</span> <span class="mi">3</span>   <span class="n">Second</span> <span class="n">column</span> <span class="n">of</span> <span class="n">row</span> <span class="mf">3.</span>
+
+      <span class="n">Second</span> <span class="n">paragraph</span> <span class="n">of</span> <span class="n">row</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="n">column</span> <span class="mi">2</span>
+<span class="o">=====</span> <span class="o">=====</span>
+</pre></div>
+</div>
+<p>Column spans would be indicated on the line after the last line of
+the row.  To indicate a real bullet list within a first-column
+cell, simply nest the bullets.</p>
+</li>
+<li><p>In a further variation, we could simply assume that whitespace in
+the first column implies a multi-line row; the text in other
+columns is continuation text.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=====</span> <span class="o">=====</span>
+<span class="n">col</span> <span class="mi">1</span> <span class="n">col</span> <span class="mi">2</span>
+<span class="o">=====</span> <span class="o">=====</span>
+<span class="mi">1</span>     <span class="n">Second</span> <span class="n">column</span> <span class="n">of</span> <span class="n">row</span> <span class="mf">1.</span>
+<span class="mi">2</span>     <span class="n">Second</span> <span class="n">column</span> <span class="n">of</span> <span class="n">row</span> <span class="mf">2.</span>
+      <span class="n">Second</span> <span class="n">line</span> <span class="n">of</span> <span class="n">paragraph</span><span class="o">.</span>
+<span class="mi">3</span>     <span class="n">Second</span> <span class="n">column</span> <span class="n">of</span> <span class="n">row</span> <span class="mf">3.</span>
+
+      <span class="n">Second</span> <span class="n">paragraph</span> <span class="n">of</span> <span class="n">row</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="n">column</span> <span class="mi">2</span>
+<span class="o">=====</span> <span class="o">=====</span>
+</pre></div>
+</div>
+<p>Limitations of this approach:</p>
+<ul class="simple">
+<li><p>Cells in the first column are limited to one line of text.</p></li>
+<li><p>Cells in the first column <em>must</em> contain some text; blank cells
+would lead to a misinterpretation.  An empty comment (“..”) is
+sufficient.</p></li>
+</ul>
+</li>
+<li><p>Combining alternative 3 and 4, a bullet list in the first column
+could mean multi-line rows, and no bullet list means single-line
+rows only.</p></li>
+</ol>
+<p>Alternatives 1 and 5 has been adopted by reStructuredText.</p>
+</section>
+<section id="delimitation-of-inline-markup">
+<h2><a class="toc-backref" href="#id15">Delimitation of Inline Markup</a><a class="headerlink" href="#delimitation-of-inline-markup" title="永久链接至标题">¶</a></h2>
+<p>StructuredText specifies that inline markup must begin with
+whitespace, precluding such constructs as parenthesized or quoted
+emphatic text:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">"**What?**"</span> <span class="n">she</span> <span class="n">cried</span><span class="o">.</span>  <span class="p">(</span><span class="o">*</span><span class="n">exit</span> <span class="n">stage</span> <span class="n">left</span><span class="o">*</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <a class="reference external" href="../../ref/rst/restructuredtext.html">reStructuredText markup specification</a> allows for such
+constructs and disambiguates inline markup through a set of
+recognition rules.  These recognition rules define the context of
+markup start-strings and end-strings, allowing markup characters to be
+used in most non-markup contexts without a problem (or a backslash).
+So we can say, “Use asterisks (*) around words or phrases to
+<em>emphasisze</em> them.” The ‘(*)’ will not be recognized as markup.  This
+reduces the need for markup escaping to the point where an escape
+character is <em>almost</em> (but not quite!) unnecessary.</p>
+</section>
+<section id="underlining">
+<h2><a class="toc-backref" href="#id16">Underlining</a><a class="headerlink" href="#underlining" title="永久链接至标题">¶</a></h2>
+<p>StructuredText uses ‘_text_’ to indicate underlining.  To quote David
+Ascher in his 2000-01-21 Doc-SIG mailing list post, “Docstring
+grammar: a very revised proposal”:</p>
+<blockquote>
+<div><p>The tagging of underlined text with _’s is suboptimal.  Underlines
+shouldn’t be used from a typographic perspective (underlines were
+designed to be used in manuscripts to communicate to the
+typesetter that the text should be italicized – no well-typeset
+book ever uses underlines), and conflict with double-underscored
+Python variable names (__init__ and the like), which would get
+truncated and underlined when that effect is not desired.  Note
+that while <em>complete</em> markup would prevent that truncation
+(‘__init__’), I think of docstring markups much like I think of
+type annotations – they should be optional and above all do no
+harm.  In this case the underline markup does harm.</p>
+</div></blockquote>
+<p>Underlining is not part of the reStructuredText specification.</p>
+</section>
+<section id="inline-literals">
+<h2><a class="toc-backref" href="#id17">Inline Literals</a><a class="headerlink" href="#inline-literals" title="永久链接至标题">¶</a></h2>
+<p>StructuredText’s markup for inline literals (text left as-is,
+verbatim, usually in a monospaced font; as in HTML &lt;TT&gt;) is single
+quotes (‘literals’).  The problem with single quotes is that they are
+too often used for other purposes:</p>
+<ul>
+<li><p>Apostrophes: “Don’t blame me, ‘cause it ain’t mine, it’s Chris’.”;</p></li>
+<li><p>Quoting text:</p>
+<blockquote>
+<div><p>First Bruce: “Well Bruce, I heard the prime minister use it.
+‘S’hot enough to boil a monkey’s bum in ‘ere your Majesty,’ he
+said, and she smiled quietly to herself.”</p>
+</div></blockquote>
+<p>In the UK, single quotes are used for dialogue in published works.</p>
+</li>
+<li><p>String literals: s = ‘’</p></li>
+</ul>
+<p>Alternatives:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">'text'</span>    \<span class="s1">'text</span><span class="se">\'</span><span class="s1">    ''text''    "text"    </span><span class="se">\"</span><span class="s1">text</span><span class="se">\"</span><span class="s1">    ""text""</span>
+<span class="c1">#text#     @text@      `text`     ^text^    ``text''    ``text``</span>
+</pre></div>
+</div>
+<p>The examples below contain inline literals, quoted text, and
+apostrophes.  Each example should evaluate to the following HTML:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Some &lt;TT&gt;code&lt;/TT&gt;, with a 'quote', "double", ain't it grand?
+Does &lt;TT&gt;a[b] = 'c' + "d" + `2^3`&lt;/TT&gt; work?
+
+0. Some code, with a quote, double, ain't it grand?
+   Does a[b] = 'c' + "d" + `2^3` work?
+1. Some 'code', with a \'quote\', "double", ain\'t it grand?
+   Does 'a[b] = \'c\' + "d" + `2^3`' work?
+2. Some \'code\', with a 'quote', "double", ain't it grand?
+   Does \'a[b] = 'c' + "d" + `2^3`\' work?
+3. Some ''code'', with a 'quote', "double", ain't it grand?
+   Does ''a[b] = 'c' + "d" + `2^3`'' work?
+4. Some "code", with a 'quote', \"double\", ain't it grand?
+   Does "a[b] = 'c' + "d" + `2^3`" work?
+5. Some \"code\", with a 'quote', "double", ain't it grand?
+   Does \"a[b] = 'c' + "d" + `2^3`\" work?
+6. Some ""code"", with a 'quote', "double", ain't it grand?
+   Does ""a[b] = 'c' + "d" + `2^3`"" work?
+7. Some #code#, with a 'quote', "double", ain't it grand?
+   Does #a[b] = 'c' + "d" + `2^3`# work?
+8. Some @code@, with a 'quote', "double", ain't it grand?
+   Does @a[b] = 'c' + "d" + `2^3`@ work?
+9. Some `code`, with a 'quote', "double", ain't it grand?
+   Does `a[b] = 'c' + "d" + \`2^3\`` work?
+10. Some ^code^, with a 'quote', "double", ain't it grand?
+    Does ^a[b] = 'c' + "d" + `2\^3`^ work?
+11. Some ``code'', with a 'quote', "double", ain't it grand?
+    Does ``a[b] = 'c' + "d" + `2^3`'' work?
+12. Some ``code``, with a 'quote', "double", ain't it grand?
+    Does ``a[b] = 'c' + "d" + `2^3\``` work?
+</pre></div>
+</div>
+<p>Backquotes (#9 &amp; #12) are the best choice.  They are unobtrusive and
+relatviely rarely used (more rarely than ‘ or “, anyhow).  Backquotes
+have the connotation of ‘quotes’, which other options (like carets,
+#10) don’t.</p>
+<p>Analogously with <code class="docutils literal notranslate"><span class="pre">*emph*</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">**strong**</span></code>, double-backquotes (#12)
+could be used for inline literals.  If single-backquotes are used for
+‘interpreted text’ (context-sensitive domain-specific descriptive
+markup) such as function name hyperlinks in Python docstrings, then
+double-backquotes could be used for absolute-literals, wherein no
+processing whatsoever takes place.  An advantage of double-backquotes
+would be that backslash-escaping would no longer be necessary for
+embedded single-backquotes; however, embedded double-backquotes (in an
+end-string context) would be illegal.  See <a class="reference external" href="alternatives.html#backquotes-in-phrase-links">Backquotes in
+Phrase-Links</a> in <a class="reference external" href="alternatives.html">Record of reStructuredText Syntax Alternatives</a>.</p>
+<p>Alternative choices are carets (#10) and TeX-style quotes (#11).  For
+examples of TeX-style quoting, see
+<a class="reference external" href="http://www.zope.org/Members/jim/StructuredTextWiki/CustomizingTheDocumentProcessor">http://www.zope.org/Members/jim/StructuredTextWiki/CustomizingTheDocumentProcessor</a>.</p>
+<p>Some existing uses of backquotes:</p>
+<ol class="arabic simple">
+<li><p>As a synonym for repr() in Python.</p></li>
+<li><p>For command-interpolation in shell scripts.</p></li>
+<li><p>Used as open-quotes in TeX code (and carried over into plaintext
+by TeXies).</p></li>
+</ol>
+<p>The inline markup start-string and end-string recognition rules
+defined by the <a class="reference external" href="../../ref/rst/restructuredtext.html">reStructuredText markup specification</a> would allow
+all of these cases inside inline literals, with very few exceptions.
+As a fallback, literal blocks could handle all cases.</p>
+<p>Outside of inline literals, the above uses of backquotes would require
+backslash-escaping.  However, these are all prime examples of text
+that should be marked up with inline literals.</p>
+<p>If either backquotes or straight single-quotes are used as markup,
+TeX-quotes are too troublesome to support, so no special-casing of
+TeX-quotes should be done (at least at first).  If TeX-quotes have to
+be used outside of literals, a single backslash-escaped would suffice:
+``TeX quote’’.  Ugly, true, but very infrequently used.</p>
+<p>Using literal blocks is a fallback option which removes the need for
+backslash-escaping:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>like this::
+
+    Here, we can do ``absolutely'' anything `'`'\|/|\ we like!
+</pre></div>
+</div>
+<p>No mechanism for inline literals is perfect, just as no escaping
+mechanism is perfect.  No matter what we use, complicated inline
+expressions involving the inline literal quote and/or the backslash
+will end up looking ugly.  We can only choose the least often ugly
+option.</p>
+<p>reStructuredText will use double backquotes for inline literals, and
+single backqoutes for interpreted text.</p>
+</section>
+<section id="hyperlinks">
+<h2><a class="toc-backref" href="#id18">Hyperlinks</a><a class="headerlink" href="#hyperlinks" title="永久链接至标题">¶</a></h2>
+<p>There are three forms of hyperlink currently in <a class="reference external" href="http://www.zope.org/DevHome/Members/jim/StructuredTextWiki/FrontPage">StructuredText</a>:</p>
+<ol class="arabic">
+<li><p>(Absolute &amp; relative URIs.)  Text enclosed by double quotes
+followed by a colon, a URI, and concluded by punctuation plus white
+space, or just white space, is treated as a hyperlink:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">"Python"</span><span class="p">:</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">org</span><span class="o">/</span>
+</pre></div>
+</div>
+</li>
+<li><p>(Absolute URIs only.)  Text enclosed by double quotes followed by a
+comma, one or more spaces, an absolute URI and concluded by
+punctuation plus white space, or just white space, is treated as a
+hyperlink:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">"mail me"</span><span class="p">,</span> <span class="n">mailto</span><span class="p">:</span><span class="n">me</span><span class="nd">@mail</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+</li>
+<li><p>(Endnotes.)  Text enclosed by brackets link to an endnote at the
+end of the document: at the beginning of the line, two dots, a
+space, and the same text in brackets, followed by the end note
+itself:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Please</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">the</span> <span class="n">fine</span> <span class="n">manual</span> <span class="p">[</span><span class="n">GVR2001</span><span class="p">]</span><span class="o">.</span>
+
+<span class="o">..</span> <span class="p">[</span><span class="n">GVR2001</span><span class="p">]</span> <span class="n">Python</span> <span class="n">Documentation</span><span class="p">,</span> <span class="n">Release</span> <span class="mf">2.1</span><span class="p">,</span> <span class="n">van</span> <span class="n">Rossum</span><span class="p">,</span>
+   <span class="n">Drake</span><span class="p">,</span> <span class="n">et</span> <span class="n">al</span><span class="o">.</span><span class="p">,</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">doc</span><span class="o">/</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The problem with forms 1 and 2 is that they are neither intuitive nor
+unobtrusive (they break design goals 5 &amp; 2).  They overload
+double-quotes, which are too often used in ordinary text (potentially
+breaking design goal 4).  The brackets in form 3 are also too common
+in ordinary text (such as [nested] asides and Python lists like [12]).</p>
+<p>Alternatives:</p>
+<ol class="arabic">
+<li><p>Have no special markup for hyperlinks.</p></li>
+<li><ol class="upperalpha">
+<li><p>Interpret and mark up hyperlinks as any contiguous text
+containing ‘://’ or ‘:…@’ (absolute URI) or ‘@’ (email
+address) after an alphanumeric word.  To de-emphasize the URI,
+simply enclose it in parentheses:</p>
+<blockquote>
+<div><p>Python (<a class="reference external" href="http://www.python.org/">http://www.python.org/</a>)</p>
+</div></blockquote>
+</li>
+<li><p>Leave special hyperlink markup as a domain-specific extension.
+Hyperlinks in ordinary reStructuredText documents would be
+required to be standalone (i.e. the URI text inline in the
+document text).  Processed hyperlinks (where the URI text is
+hidden behind the link) are important enough to warrant syntax.</p></li>
+</ol>
+</li>
+<li><p>The original <a class="reference external" href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a> introduced a mechanism of indirect hyperlinks.
+A source link word (‘hot word’) in the text was given a trailing
+underscore:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Here</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">text</span> <span class="k">with</span> <span class="n">a</span> <span class="n">hyperlink_</span> <span class="n">built</span> <span class="ow">in</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>The hyperlink itself appeared at the end of the document on a line
+by itself, beginning with two dots, a space, the link word with a
+leading underscore, whitespace, and the URI itself:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">_hyperlink</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="mf">.123</span><span class="o">.</span><span class="n">xyz</span>
+</pre></div>
+</div>
+<p>Setext used <code class="docutils literal notranslate"><span class="pre">underscores_instead_of_spaces_</span></code> for phrase links.</p>
+</li>
+</ol>
+<p>With some modification, alternative 3 best satisfies the design goals.
+It has the advantage of being readable and relatively unobtrusive.
+Since each source link must match up to a target, the odd variable
+ending in an underscore can be spared being marked up (although it
+should generate a “no such link target” warning).  The only
+disadvantage is that phrase-links aren’t possible without some
+obtrusive syntax.</p>
+<p>We could achieve phrase-links if we enclose the link text:</p>
+<ol class="arabic">
+<li><p>in double quotes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">"like this"</span><span class="n">_</span>
+</pre></div>
+</div>
+</li>
+<li><p>in brackets:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">like</span> <span class="n">this</span><span class="p">]</span><span class="n">_</span>
+</pre></div>
+</div>
+</li>
+<li><p>or in backquotes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`like this`_
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Each gives us somewhat obtrusive markup, but that is unavoidable.  The
+bracketed syntax (#2) is reminiscent of links on many web pages
+(intuitive), although it is somewhat obtrusive.  Alternative #3 is
+much less obtrusive, and is consistent with interpreted text: the
+trailing underscore indicates the interpretation of the phrase, as a
+hyperlink.  #3 also disambiguates hyperlinks from footnote references.
+Alternative #3 wins.</p>
+<p>The same trailing underscore markup can also be used for footnote and
+citation references, removing the problem with ordinary bracketed text
+and Python lists:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Please</span> <span class="n">refer</span> <span class="n">to</span> <span class="n">the</span> <span class="n">fine</span> <span class="n">manual</span> <span class="p">[</span><span class="n">GVR2000</span><span class="p">]</span><span class="n">_</span><span class="o">.</span>
+
+<span class="o">..</span> <span class="p">[</span><span class="n">GVR2000</span><span class="p">]</span> <span class="n">Python</span> <span class="n">Documentation</span><span class="p">,</span> <span class="n">van</span> <span class="n">Rossum</span><span class="p">,</span> <span class="n">Drake</span><span class="p">,</span> <span class="n">et</span> <span class="n">al</span><span class="o">.</span><span class="p">,</span>
+   <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">doc</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>The two-dots-and-a-space syntax was generalized by Setext for
+comments, which are removed from the (visible) processed output.
+reStructuredText uses this syntax for comments, footnotes, and link
+target, collectively termed “explicit markup”.  For link targets, in
+order to eliminate ambiguity with comments and footnotes,
+reStructuredText specifies that a colon always follow the link target
+word/phrase.  The colon denotes ‘maps to’.  There is no reason to
+restrict target links to the end of the document; they could just as
+easily be interspersed.</p>
+<p>Internal hyperlinks (links from one point to another within a single
+document) can be expressed by a source link as before, and a target
+link with a colon but no URI.  In effect, these targets ‘map to’ the
+element immediately following.</p>
+<p>As an added bonus, we now have a perfect candidate for
+reStructuredText directives, a simple extension mechanism: explicit
+markup containing a single word followed by two colons and whitespace.
+The interpretation of subsequent data on the directive line or
+following is directive-dependent.</p>
+<p>To summarize:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. This is a comment.
+
+.. The line below is an example of a directive.
+.. version:: 1
+
+This is a footnote [1]_.
+
+This internal hyperlink will take us to the footnotes_ area below.
+
+Here is a one-word_ external hyperlink.
+
+Here is `a hyperlink phrase`_.
+
+.. _footnotes:
+.. [1] Footnote text goes here.
+
+.. external hyperlink target mappings:
+.. _one-word: http://www.123.xyz
+.. _a hyperlink phrase: http://www.123.xyz
+</pre></div>
+</div>
+<p>The presence or absence of a colon after the target link
+differentiates an indirect hyperlink from a footnote, respectively.  A
+footnote requires brackets.  Backquotes around a target link word or
+phrase are required if the phrase contains a colon, optional
+otherwise.</p>
+<p>Below are examples using no markup, the two StructuredText hypertext
+styles, and the reStructuredText hypertext style.  Each example
+contains an indirect link, a direct link, a footnote/endnote, and
+bracketed text.  In HTML, each example should evaluate to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">P</span><span class="o">&gt;</span><span class="n">A</span> <span class="o">&lt;</span><span class="n">A</span> <span class="n">HREF</span><span class="o">=</span><span class="s2">"http://spam.org"</span><span class="o">&gt;</span><span class="n">URI</span><span class="o">&lt;/</span><span class="n">A</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">see</span> <span class="o">&lt;</span><span class="n">A</span> <span class="n">HREF</span><span class="o">=</span><span class="s2">"#eggs2000"</span><span class="o">&gt;</span>
+<span class="p">[</span><span class="n">eggs2000</span><span class="p">]</span><span class="o">&lt;/</span><span class="n">A</span><span class="o">&gt;</span> <span class="p">(</span><span class="ow">in</span> <span class="n">Bacon</span> <span class="p">[</span><span class="n">Publisher</span><span class="p">])</span><span class="o">.</span>  <span class="n">Also</span> <span class="n">see</span>
+<span class="o">&lt;</span><span class="n">A</span> <span class="n">HREF</span><span class="o">=</span><span class="s2">"http://eggs.org"</span><span class="o">&gt;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">eggs</span><span class="o">.</span><span class="n">org</span><span class="o">&lt;/</span><span class="n">A</span><span class="o">&gt;.&lt;/</span><span class="n">P</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">P</span><span class="o">&gt;&lt;</span><span class="n">A</span> <span class="n">NAME</span><span class="o">=</span><span class="s2">"eggs2000"</span><span class="o">&gt;</span><span class="p">[</span><span class="n">eggs2000</span><span class="p">]</span><span class="o">&lt;/</span><span class="n">A</span><span class="o">&gt;</span> <span class="s2">"Spam, Spam, Spam, Eggs,</span>
+<span class="n">Bacon</span><span class="p">,</span> <span class="ow">and</span> <span class="n">Spam</span><span class="s2">"&lt;/P&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p>No markup:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">URI</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">spam</span><span class="o">.</span><span class="n">org</span><span class="p">,</span> <span class="n">see</span> <span class="n">eggs2000</span> <span class="p">(</span><span class="ow">in</span> <span class="n">Bacon</span> <span class="p">[</span><span class="n">Publisher</span><span class="p">])</span><span class="o">.</span>
+<span class="n">Also</span> <span class="n">see</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">eggs</span><span class="o">.</span><span class="n">org</span><span class="o">.</span>
+
+<span class="n">eggs2000</span> <span class="s2">"Spam, Spam, Spam, Eggs, Bacon, and Spam"</span>
+</pre></div>
+</div>
+</li>
+<li><p>StructuredText absolute/relative URI syntax
+(“text”:<a class="reference external" href="http://www.url.org">http://www.url.org</a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="s2">"URI"</span><span class="p">:</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">spam</span><span class="o">.</span><span class="n">org</span><span class="p">,</span> <span class="n">see</span> <span class="p">[</span><span class="n">eggs2000</span><span class="p">]</span> <span class="p">(</span><span class="ow">in</span> <span class="n">Bacon</span> <span class="p">[</span><span class="n">Publisher</span><span class="p">])</span><span class="o">.</span>
+<span class="n">Also</span> <span class="n">see</span> <span class="s2">"http://eggs.org"</span><span class="p">:</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">eggs</span><span class="o">.</span><span class="n">org</span><span class="o">.</span>
+
+<span class="o">..</span> <span class="p">[</span><span class="n">eggs2000</span><span class="p">]</span> <span class="s2">"Spam, Spam, Spam, Eggs, Bacon, and Spam"</span>
+</pre></div>
+</div>
+<p>Note that StructuredText does not recognize standalone URIs,
+forcing doubling up as shown in the second line of the example
+above.</p>
+</li>
+<li><p>StructuredText absolute-only URI syntax
+(“text”, <a class="reference external" href="mailto:you%40your.com">mailto:you<span>@</span>your<span>.</span>com</a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="s2">"URI"</span><span class="p">,</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">spam</span><span class="o">.</span><span class="n">org</span><span class="p">,</span> <span class="n">see</span> <span class="p">[</span><span class="n">eggs2000</span><span class="p">]</span> <span class="p">(</span><span class="ow">in</span> <span class="n">Bacon</span>
+<span class="p">[</span><span class="n">Publisher</span><span class="p">])</span><span class="o">.</span>  <span class="n">Also</span> <span class="n">see</span> <span class="s2">"http://eggs.org"</span><span class="p">,</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">eggs</span><span class="o">.</span><span class="n">org</span><span class="o">.</span>
+
+<span class="o">..</span> <span class="p">[</span><span class="n">eggs2000</span><span class="p">]</span> <span class="s2">"Spam, Spam, Spam, Eggs, Bacon, and Spam"</span>
+</pre></div>
+</div>
+</li>
+<li><p>reStructuredText syntax:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">4.</span> <span class="n">A</span> <span class="n">URI_</span><span class="p">,</span> <span class="n">see</span> <span class="p">[</span><span class="n">eggs2000</span><span class="p">]</span><span class="n">_</span> <span class="p">(</span><span class="ow">in</span> <span class="n">Bacon</span> <span class="p">[</span><span class="n">Publisher</span><span class="p">])</span><span class="o">.</span>
+   <span class="n">Also</span> <span class="n">see</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">eggs</span><span class="o">.</span><span class="n">org</span><span class="o">.</span>
+
+   <span class="o">..</span> <span class="n">_URI</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">/</span><span class="n">spam</span><span class="o">.</span><span class="n">org</span>
+   <span class="o">..</span> <span class="p">[</span><span class="n">eggs2000</span><span class="p">]</span> <span class="s2">"Spam, Spam, Spam, Eggs, Bacon, and Spam"</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The bracketed text ‘[Publisher]’ may be problematic with
+StructuredText (syntax 2 &amp; 3).</p>
+<p>reStructuredText’s syntax (#4) is definitely the most readable.  The
+text is separated from the link URI and the footnote, resulting in
+cleanly readable text.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../../ref/rst/definitions.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">reStructuredText Standard Definition Files</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="alternatives.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">A Record of reStructuredText Syntax Alternatives</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, xinetzone |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
+            <a class="muted-link" href="../../../../_sources/docutils/docs/dev/rst/problems.txt"
+               rel="nofollow">
+              显示源代码
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            目录
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Problems With StructuredText</a><ul>
+<li><a class="reference internal" href="#formal-specification">Formal Specification</a></li>
+<li><a class="reference internal" href="#understanding-and-extending-the-code">Understanding and Extending the Code</a></li>
+<li><a class="reference internal" href="#section-structure-via-indentation">Section Structure via Indentation</a></li>
+<li><a class="reference internal" href="#character-escaping-mechanism">Character Escaping Mechanism</a></li>
+<li><a class="reference internal" href="#blank-lines-in-lists">Blank Lines in Lists</a></li>
+<li><a class="reference internal" href="#bullet-list-markup">Bullet List Markup</a></li>
+<li><a class="reference internal" href="#enumerated-list-markup">Enumerated List Markup</a></li>
+<li><a class="reference internal" href="#definition-list-markup">Definition List Markup</a></li>
+<li><a class="reference internal" href="#literal-blocks">Literal Blocks</a></li>
+<li><a class="reference internal" href="#tables">Tables</a></li>
+<li><a class="reference internal" href="#delimitation-of-inline-markup">Delimitation of Inline Markup</a></li>
+<li><a class="reference internal" href="#underlining">Underlining</a></li>
+<li><a class="reference internal" href="#inline-literals">Inline Literals</a></li>
+<li><a class="reference internal" href="#hyperlinks">Hyperlinks</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/scripts/main.js"></script>
+    <script src="../../../../_static/translations.js"></script>
+    </body>
+</html>

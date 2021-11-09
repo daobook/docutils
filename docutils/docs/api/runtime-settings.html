@@ -1,0 +1,559 @@
+<!doctype html>
+<html class="no-js" lang="zh_CN">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+<link rel="index" title="索引" href="../../../genindex.html" /><link rel="search" title="搜索" href="../../../search.html" /><link rel="next" title="Docutils Distributor’s Guide" href="../dev/distributing.html" /><link rel="prev" title="The Docutils Publisher" href="publisher.html" />
+
+    <meta name="generator" content="sphinx-4.2.0, furo 2021.10.09"/>
+        <title>Docutils Runtime Settings - docutils 0.0.1 文档</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">docutils 0.0.1 文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">docutils 0.0.1 文档</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">概述</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/index.html">Docutils: Documentation Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/mirror/setext.html">Setext 文档镜像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Docutils Project Documentation Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">user</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user/config.html">Docutils Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/emacs.html">Emacs Support for reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/html.html">Docutils HTML writers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/latex.html"><span class="sectnum">1</span> Generating LaTeX with Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/links.html">Docutils Link List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/mailing-lists.html">Docutils Mailing Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/manpage.html">manpage writer for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/odt.html"><span class="sectnum">1</span> Odt Writer for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/smartquotes.html">Smart Quotes for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/tools.html">Docutils Front-End Tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">api</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="cmdline-tool.html">Inside A Docutils Command-Line Front-End Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="publisher.html">The Docutils Publisher</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Docutils Runtime Settings</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">dev</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dev/distributing.html">Docutils Distributor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/enthought-plan.html"><span class="sectnum">1</span> Plan for Enthought API Documentation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/enthought-rfp.html"><span class="sectnum">1</span> Enthought API Documentation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/hacking.html">Docutils Hacker’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/policies.html">Docutils Project Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/pysource.html">Python Source Reader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/release.html">Docutils Release Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/repository.html">The Docutils Version Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/semantics.html">Docstring Semantics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/testing.html">Docutils Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/todo.html">Docutils To Do List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/website.html">Docutils Web Site</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">howto</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/html-stylesheets.html">Writing HTML (CSS) Stylesheets for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/i18n.html">Docutils Internationalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/rst-directives.html">Creating reStructuredText Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/rst-roles.html">Creating reStructuredText Interpreted Text Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/security.html">Deploying Docutils Securely</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">peps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html">Rejection Notice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#road-map-to-the-docstring-peps">Road Map to the Docstring PEPs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#project-web-site">Project Web Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html">Rejection Notice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#project-web-site">Project Web Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#benefits">Benefits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#goals">Goals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#docstring-significant-features">Docstring-Significant Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#questions-answers">Questions &amp; Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#references-footnotes">References &amp; Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#acknowledgements">Acknowledgements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ref</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ref/doctree.html">The Docutils Document Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/transforms.html">Docutils Transforms</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">docutils other</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../BUGS.html">Docutils Bugs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../COPYING.html">Copying Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../FAQ.html"><span class="sectnum">1</span> Docutils FAQ (Frequently Asked Questions)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../HISTORY.html">Docutils History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Docutils 0.18.1b.dev 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../RELEASE-NOTES.html">Docutils Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../THANKS.html">Acknowledgements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">reStructuredText</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/rst.html"></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/rst/cheatsheet.html">The reStructuredText Cheat Sheet: Syntax Reminders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/rst/quickstart.html">A ReStructuredText Primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/rst/alternatives.html">A Record of reStructuredText Syntax Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/rst/problems.html">Problems With StructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/definitions.html">reStructuredText Standard Definition Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/directives.html">reStructuredText Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/introduction.html">An Introduction to reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/mathematics.html"><span class="sectnum">1</span> LaTeX syntax for mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/restructuredtext.html">reStructuredText Markup Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/roles.html">reStructuredText Interpreted Text Roles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">sandbox</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../sandbox/README.html">Sandbox 自述</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="docutils-runtime-settings">
+<h1><a class="toc-backref" href="#id2">Docutils Runtime Settings</a><a class="headerlink" href="#docutils-runtime-settings" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>David Goodger</p>
+</dd>
+<dt class="field-even">Contact</dt>
+<dd class="field-even"><p><a class="reference external" href="mailto:docutils-develop%40lists.sourceforge.net">docutils-develop<span>@</span>lists<span>.</span>sourceforge<span>.</span>net</a></p>
+</dd>
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>$Date$</p>
+</dd>
+<dt class="field-even">Revision</dt>
+<dd class="field-even"><p>$Revision$</p>
+</dd>
+<dt class="field-odd">Copyright</dt>
+<dd class="field-odd"><p>This document has been placed in the public domain.</p>
+</dd>
+</dl>
+<div class="contents topic" id="id1">
+<p class="topic-title">目录</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#docutils-runtime-settings" id="id2">Docutils Runtime Settings</a></p>
+<ul>
+<li><p><a class="reference internal" href="#introduction" id="id3">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#runtime-settings-processing-for-command-line-tools" id="id4">Runtime Settings Processing for Command-Line Tools</a></p></li>
+<li><p><a class="reference internal" href="#runtime-settings-processing-from-applications" id="id5">Runtime Settings Processing From Applications</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id3">Introduction</a><a class="headerlink" href="#introduction" title="永久链接至标题">¶</a></h2>
+<p>Docutils runtime settings are assembled from several sources:
+component settings specifications, application settings
+specifications, configuration files, and command-line options.
+Docutils overlays default and explicitly specified values from these
+sources such that settings behave the way we want and expect them to
+behave.</p>
+<p>To understand how Docutils deals with runtime settings, the attributes
+and parameters involved must first be understood.  Begin with the the
+docstrings of the attributes of the <code class="docutils literal notranslate"><span class="pre">docutils.SettingsSpec</span></code> base
+class (in the <code class="docutils literal notranslate"><span class="pre">docutils/__init__.py</span></code> module):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">settings_spec</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">settings_defaults</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">settings_default_overrides</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">relative_path_settings</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config_section</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config_section_dependencies</span></code></p></li>
+</ul>
+<p>Next, several <span class="target" id="convenience-function-parameters">convenience function parameters</span> are also significant
+(described in the <code class="docutils literal notranslate"><span class="pre">docutils.core.publish_programmatically</span></code> function
+docstring):</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">settings</span></code> parameter is a runtime settings
+(<code class="docutils literal notranslate"><span class="pre">docutils.frontend.Values</span></code>) object which, if present, is assumed
+to be complete (it must include all runtime settings).  Also, if the
+<code class="docutils literal notranslate"><span class="pre">settings</span></code> parameter is present, no further runtime settings
+processing is done.  In other words, the other parameters, described
+below, will have no effect.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">settings_spec</span></code>, a <cite>docutils.SettingsSpec</cite> subclass or object, is
+treated like a fourth component (after the Parser, Reader, and
+Writer).  In other words, it’s the settings specification for the
+“Application” itself.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">settings_overrides</span></code> is a dictionary which will override the
+defaults of the components (from their settings specs).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config_section</span></code> specifies the name of an application-specific
+configuration file section.</p></li>
+</ul>
+</section>
+<section id="runtime-settings-processing-for-command-line-tools">
+<span id="command-line-tools"></span><h2><a class="toc-backref" href="#id4">Runtime Settings Processing for Command-Line Tools</a><a class="headerlink" href="#runtime-settings-processing-for-command-line-tools" title="永久链接至标题">¶</a></h2>
+<p>Following along with the actual code is recommended.  The
+<code class="docutils literal notranslate"><span class="pre">docutils/__init__.py</span></code>, <code class="docutils literal notranslate"><span class="pre">docutils/core.py</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">docutils.frontend.py</span></code> modules are described.</p>
+<ol class="arabic">
+<li><p>A command-line front-end tool imports and calls
+<code class="docutils literal notranslate"><span class="pre">docutils.core.publish_cmdline</span></code>.  The relevant <a class="reference internal" href="#convenience-function-parameters">convenience
+function parameters</a> are described above.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docutils.core.publish_cmdline</span></code> initializes a
+<code class="docutils literal notranslate"><span class="pre">docutils.core.Publisher</span></code> object, then calls its <code class="docutils literal notranslate"><span class="pre">publish</span></code>
+method.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">docutils.core.Publisher</span></code> object’s <code class="docutils literal notranslate"><span class="pre">publish</span></code> method checks
+its <code class="docutils literal notranslate"><span class="pre">settings</span></code> attribute to see if it’s defined.  If it is, no
+further runtime settings processing is done.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">settings</span></code> is not defined, <code class="docutils literal notranslate"><span class="pre">self.process_command_line</span></code> is
+called with the following relevant arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">settings_spec</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config_section</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">settings_overrides</span></code> (in the form of excess keyword
+arguments, collected in the <code class="docutils literal notranslate"><span class="pre">defaults</span></code> parameter)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.process_command_line</span></code> calls <code class="docutils literal notranslate"><span class="pre">self.setup_option_parser</span></code>,
+passing <code class="docutils literal notranslate"><span class="pre">settings_spec</span></code>, <code class="docutils literal notranslate"><span class="pre">config_section</span></code>, and <code class="docutils literal notranslate"><span class="pre">defaults</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.setup_option_parser</span></code> checks its <code class="docutils literal notranslate"><span class="pre">config_section</span></code>
+parameter; if defined, it adds that config file section to
+<code class="docutils literal notranslate"><span class="pre">settings_spec</span></code> (or to a new, empty <code class="docutils literal notranslate"><span class="pre">docutils.SettingsSpec</span></code>
+object), replacing anything defined earlier.  (See <a class="reference external" href="../user/config.html">Docutils
+Configuration Files</a> for details.)  Then it instantiates a new
+<code class="docutils literal notranslate"><span class="pre">docutils.frontend.OptionParser</span></code> object, passing the following
+relevant arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">components</span></code>: A tuple of <code class="docutils literal notranslate"><span class="pre">docutils.SettingsSpec</span></code> objects,
+<code class="docutils literal notranslate"><span class="pre">(self.parser,</span> <span class="pre">self.reader,</span> <span class="pre">self.writer,</span> <span class="pre">settings_spec)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">defaults</span></code> (originally from <code class="docutils literal notranslate"><span class="pre">settings_overrides</span></code>)</p></li>
+</ul>
+</li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">docutils.frontend.OptionParser</span></code> object’s <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method
+calls <code class="docutils literal notranslate"><span class="pre">self.populate_from_components</span></code> with <code class="docutils literal notranslate"><span class="pre">self.components</span></code>,
+which consists of <code class="docutils literal notranslate"><span class="pre">self</span></code> prepended to the <code class="docutils literal notranslate"><span class="pre">components</span></code> tuple it
+received.  <code class="docutils literal notranslate"><span class="pre">self</span></code> (<code class="docutils literal notranslate"><span class="pre">docutils.frontend.OptionParser</span></code>) defines
+general Docutils settings.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">self.populate_from_components</span></code>, for each component passed,
+<code class="docutils literal notranslate"><span class="pre">component.settings_spec</span></code> is processed and
+<code class="docutils literal notranslate"><span class="pre">component.settings_defaults</span></code> is applied.  Then, for each
+component, <code class="docutils literal notranslate"><span class="pre">component.settings_default_overrides</span></code> is applied.
+This two-loop process ensures that
+<code class="docutils literal notranslate"><span class="pre">component.settings_default_overrides</span></code> can override the default
+settings of any other component.</p></li>
+<li><p>Back in <code class="docutils literal notranslate"><span class="pre">docutils.frontend.OptionParser.__init__</span></code>, the
+<code class="docutils literal notranslate"><span class="pre">defaults</span></code> parameter (derived from the <code class="docutils literal notranslate"><span class="pre">settings_overrides</span></code>
+parameter of <code class="docutils literal notranslate"><span class="pre">docutils.core.Publisher.publish</span></code>) is overlaid over
+<code class="docutils literal notranslate"><span class="pre">self.defaults</span></code>.  So <code class="docutils literal notranslate"><span class="pre">settings_overrides</span></code> has priority over all
+<code class="docutils literal notranslate"><span class="pre">SettingsSpec</span></code> data.</p></li>
+<li><p>Next, <code class="docutils literal notranslate"><span class="pre">docutils.frontend.OptionParser.__init__</span></code> checks if
+configuration files are enabled (its <code class="docutils literal notranslate"><span class="pre">read_config_files</span></code>
+parameter is true, and <code class="docutils literal notranslate"><span class="pre">self.defaults['_disable_config']</span></code> is
+false).  If they are enabled (and normally, they are),
+<code class="docutils literal notranslate"><span class="pre">self.get_standard_config_settings</span></code> is called.  This reads the
+<a class="reference external" href="../user/config.html">docutils configuration files</a>, and returns a dictionary of
+settings.  This is then overlaid on <code class="docutils literal notranslate"><span class="pre">self.defaults</span></code>.  So
+configuration file settings have priority over all software-defined
+defaults.</p></li>
+<li><p>Back in the <code class="docutils literal notranslate"><span class="pre">docutils.core.Publisher</span></code> object,
+<code class="docutils literal notranslate"><span class="pre">self.setup_option_parser</span></code> returns the <code class="docutils literal notranslate"><span class="pre">option_parser</span></code> object
+to its caller, <code class="docutils literal notranslate"><span class="pre">self.process_command_line</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.process_command_line</span></code> calls <code class="docutils literal notranslate"><span class="pre">option_parser.parse_args</span></code>,
+which parses all command line options and returns a
+<code class="docutils literal notranslate"><span class="pre">docutils.frontend.Values</span></code> object.  This is assigned to the
+<code class="docutils literal notranslate"><span class="pre">docutils.core.Publisher</span></code> object’s <code class="docutils literal notranslate"><span class="pre">self.settings</span></code>.  So
+command-line options have priority over configuration file
+settings.</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">option_parser.parse_args</span></code> is called, the source and
+destination command-line arguments are also parsed, and assigned
+to the <code class="docutils literal notranslate"><span class="pre">_source</span></code> and <code class="docutils literal notranslate"><span class="pre">_destination</span></code> attributes of what becomes
+the <code class="docutils literal notranslate"><span class="pre">docutils.core.Publisher</span></code> object’s <code class="docutils literal notranslate"><span class="pre">self.settings</span></code>.</p>
+</li>
+<li><p>From <code class="docutils literal notranslate"><span class="pre">docutils.core.Publisher.publish</span></code>, <code class="docutils literal notranslate"><span class="pre">self.set_io</span></code> is
+called with no arguments.  If either <code class="docutils literal notranslate"><span class="pre">self.source</span></code> or
+<code class="docutils literal notranslate"><span class="pre">self.destination</span></code> are not set, the corresponding
+<code class="docutils literal notranslate"><span class="pre">self.set_source</span></code> and <code class="docutils literal notranslate"><span class="pre">self.set_destination</span></code> are called,
+effectively with no arguments.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.set_source</span></code> checks for a <code class="docutils literal notranslate"><span class="pre">source_path</span></code> parameter, and if
+there is none (which is the case for command-line use), it is
+taken from <code class="docutils literal notranslate"><span class="pre">self.settings._source</span></code>.  <code class="docutils literal notranslate"><span class="pre">self.source</span></code> is set by
+instantiating a <code class="docutils literal notranslate"><span class="pre">self.source_class</span></code> object.  For command-line
+front-end tools, the default <code class="docutils literal notranslate"><span class="pre">self.source_class</span></code> is used,
+<code class="docutils literal notranslate"><span class="pre">docutils.io.FileInput</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self.set_destination</span></code> does the same job for the destination
+that <code class="docutils literal notranslate"><span class="pre">self.set_source</span></code> does for the source (the default
+<code class="docutils literal notranslate"><span class="pre">self.destination_class</span></code> is <code class="docutils literal notranslate"><span class="pre">docutils.io.FileOutput</span></code>).</p></li>
+</ol>
+</section>
+<section id="runtime-settings-processing-from-applications">
+<h2><a class="toc-backref" href="#id5">Runtime Settings Processing From Applications</a><a class="headerlink" href="#runtime-settings-processing-from-applications" title="永久链接至标题">¶</a></h2>
+<p>Applications process runtime settings in a different way than
+<a class="reference internal" href="#command-line-tools">command-line tools</a> do.  Instead of calling <code class="docutils literal notranslate"><span class="pre">publish_cmdline</span></code>, the
+application calls one of <code class="docutils literal notranslate"><span class="pre">publish_file</span></code>, <code class="docutils literal notranslate"><span class="pre">publish_string</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">publish_parts</span></code>.  These in turn call <code class="docutils literal notranslate"><span class="pre">publish_programmatically</span></code>,
+which implements a generic programmatic interface.  Although an
+application may also call <code class="docutils literal notranslate"><span class="pre">publish_programmatically</span></code> directly, it is
+not recommended (if it does seem to be necessary, please write to the
+<a class="reference external" href="../user/mailing-lists.html#docutils-develop">Docutils-develop</a> mailing list).</p>
+<p><code class="docutils literal notranslate"><span class="pre">publish_programmatically</span></code> accepts the same <a class="reference internal" href="#convenience-function-parameters">convenience function
+parameters</a> as <code class="docutils literal notranslate"><span class="pre">publish_cmdline</span></code>.  Where things differ is that
+programmatic use does no command-line processing.  Instead of calling
+<code class="docutils literal notranslate"><span class="pre">docutils.Publisher.process_command_line</span></code> (as <code class="docutils literal notranslate"><span class="pre">publish_cmdline</span></code>
+does, via <code class="docutils literal notranslate"><span class="pre">docutils.Publisher.publish</span></code>),
+<code class="docutils literal notranslate"><span class="pre">docutils.Publisher.process_programmatic_settings</span></code> is called to set
+up the runtime settings.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../dev/distributing.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Docutils Distributor’s Guide</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="publisher.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">The Docutils Publisher</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, xinetzone |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
+            <a class="muted-link" href="../../../_sources/docutils/docs/api/runtime-settings.txt"
+               rel="nofollow">
+              显示源代码
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            目录
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Docutils Runtime Settings</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#runtime-settings-processing-for-command-line-tools">Runtime Settings Processing for Command-Line Tools</a></li>
+<li><a class="reference internal" href="#runtime-settings-processing-from-applications">Runtime Settings Processing From Applications</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/scripts/main.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    </body>
+</html>

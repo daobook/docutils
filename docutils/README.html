@@ -1,0 +1,669 @@
+<!doctype html>
+<html class="no-js" lang="zh_CN">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+<link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="Docutils Release Notes" href="RELEASE-NOTES.html" /><link rel="prev" title="Docutils History" href="HISTORY.html" />
+
+    <meta name="generator" content="sphinx-4.2.0, furo 2021.10.09"/>
+        <title>Docutils 0.18.1b.dev 自述 - docutils 0.0.1 文档</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">docutils 0.0.1 文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">docutils 0.0.1 文档</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">概述</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/index.html">Docutils: Documentation Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/mirror/setext.html">Setext 文档镜像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/index.html">Docutils Project Documentation Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">user</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/config.html">Docutils Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/emacs.html">Emacs Support for reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/html.html">Docutils HTML writers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/latex.html"><span class="sectnum">1</span> Generating LaTeX with Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/links.html">Docutils Link List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/mailing-lists.html">Docutils Mailing Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/manpage.html">manpage writer for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/odt.html"><span class="sectnum">1</span> Odt Writer for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/smartquotes.html">Smart Quotes for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/tools.html">Docutils Front-End Tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">api</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/api/cmdline-tool.html">Inside A Docutils Command-Line Front-End Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/api/publisher.html">The Docutils Publisher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/api/runtime-settings.html">Docutils Runtime Settings</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">dev</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/distributing.html">Docutils Distributor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/enthought-plan.html"><span class="sectnum">1</span> Plan for Enthought API Documentation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/enthought-rfp.html"><span class="sectnum">1</span> Enthought API Documentation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/hacking.html">Docutils Hacker’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/policies.html">Docutils Project Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/pysource.html">Python Source Reader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/release.html">Docutils Release Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/repository.html">The Docutils Version Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/semantics.html">Docstring Semantics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/testing.html">Docutils Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/todo.html">Docutils To Do List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/website.html">Docutils Web Site</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">howto</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/howto/html-stylesheets.html">Writing HTML (CSS) Stylesheets for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/howto/i18n.html">Docutils Internationalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/howto/rst-directives.html">Creating reStructuredText Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/howto/rst-roles.html">Creating reStructuredText Interpreted Text Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/howto/security.html">Deploying Docutils Securely</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">peps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html">Rejection Notice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#road-map-to-the-docstring-peps">Road Map to the Docstring PEPs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#project-web-site">Project Web Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0256.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0257.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0257.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0257.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0257.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0257.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0257.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html">Rejection Notice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html#project-web-site">Project Web Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0258.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#benefits">Benefits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#goals">Goals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#docstring-significant-features">Docstring-Significant Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#questions-answers">Questions &amp; Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#references-footnotes">References &amp; Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/peps/pep-0287.html#acknowledgements">Acknowledgements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ref</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/doctree.html">The Docutils Document Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/transforms.html">Docutils Transforms</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">docutils other</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="BUGS.html">Docutils Bugs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="COPYING.html">Copying Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html"><span class="sectnum">1</span> Docutils FAQ (Frequently Asked Questions)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HISTORY.html">Docutils History</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Docutils 0.18.1b.dev 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RELEASE-NOTES.html">Docutils Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="THANKS.html">Acknowledgements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">reStructuredText</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../web/rst.html"></a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/rst/cheatsheet.html">The reStructuredText Cheat Sheet: Syntax Reminders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/user/rst/quickstart.html">A ReStructuredText Primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/rst/alternatives.html">A Record of reStructuredText Syntax Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/dev/rst/problems.html">Problems With StructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/rst/definitions.html">reStructuredText Standard Definition Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/rst/directives.html">reStructuredText Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/rst/introduction.html">An Introduction to reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/rst/mathematics.html"><span class="sectnum">1</span> LaTeX syntax for mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/rst/restructuredtext.html">reStructuredText Markup Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/ref/rst/roles.html">reStructuredText Interpreted Text Roles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">sandbox</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sandbox/README.html">Sandbox 自述</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="readme-docutils-0-18-1b-dev">
+<h1><a class="toc-backref" href="#id7">Docutils 0.18.1b.dev 自述</a><a class="headerlink" href="#readme-docutils-0-18-1b-dev" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>David Goodger</p>
+</dd>
+<dt class="field-even">Contact</dt>
+<dd class="field-even"><p><a class="reference external" href="mailto:goodger%40python.org">goodger<span>@</span>python<span>.</span>org</a></p>
+</dd>
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>$Date$</p>
+</dd>
+<dt class="field-even">Web site</dt>
+<dd class="field-even"><p><a class="reference external" href="http://docutils.sourceforge.net/">http://docutils.sourceforge.net/</a></p>
+</dd>
+<dt class="field-odd">Copyright</dt>
+<dd class="field-odd"><p>This document has been placed in the public domain.</p>
+</dd>
+</dl>
+<div class="contents topic" id="id1">
+<p class="topic-title">目录</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#readme-docutils-0-18-1b-dev" id="id7">Docutils 0.18.1b.dev 自述</a></p>
+<ul>
+<li><p><a class="reference internal" href="#quick-start" id="id8">快速上手</a></p></li>
+<li><p><a class="reference internal" href="#purpose" id="id9">目标</a></p></li>
+<li><p><a class="reference internal" href="#requirements" id="id10">需求</a></p>
+<ul>
+<li><p><a class="reference internal" href="#recommendations" id="id11">建议</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#development-version" id="id12">开发版本</a></p></li>
+<li><p><a class="reference internal" href="#installation" id="id13">安装</a></p>
+<ul>
+<li><p><a class="reference internal" href="#gnu-linux-bsds-unix-mac-os-x-etc" id="id14">GNU/Linux, BSDs, Unix, Mac OS X 等。</a></p></li>
+<li><p><a class="reference internal" href="#windows" id="id15">Windows</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#usage" id="id16">用法</a></p></li>
+<li><p><a class="reference internal" href="#project-files-directories" id="id17">项目文件和目录</a></p></li>
+<li><p><a class="reference internal" href="#converting-the-documentation" id="id18">转换文档</a></p></li>
+<li><p><a class="reference internal" href="#running-the-test-suite" id="id19">运行测试套件</a></p></li>
+<li><p><a class="reference internal" href="#getting-help" id="id20">得到帮助</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="quick-start">
+<h2><a class="toc-backref" href="#id8">快速上手</a><a class="headerlink" href="#quick-start" title="永久链接至标题">¶</a></h2>
+<p>这是给那些想要快速上手和运行的人。</p>
+<ol class="arabic">
+<li><p>Docutils requires Python, available from
+<a class="reference external" href="http://www.python.org/">http://www.python.org/</a>.</p>
+<p>详情请参阅下面的 <a class="reference internal" href="#requirements">需求</a> 。</p>
+</li>
+<li><p>使用 <a class="reference external" href="https://pypi.org/project/pip/">pip</a> 从 PyPI 安装最新的稳定版本</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">docutils</span>
+</pre></div>
+</div>
+<p>要安装预发行版，附加选项 <code class="docutils literal notranslate"><span class="pre">--pre</span></code>。要安装 <a class="reference internal" href="#development-version">开发版本</a>，请遵循下面 <a class="reference internal" href="#installation">安装</a> 部分中的说明。</p>
+</li>
+<li><p>使用 <a class="reference external" href="docs/user/tools.html">front-end scripts</a>  转换 reStructuredText 文档。可以尝试</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2html</span><span class="o">.</span><span class="n">py</span> <span class="n">FAQ</span><span class="o">.</span><span class="n">txt</span> <span class="n">FAQ</span><span class="o">.</span><span class="n">html</span>         <span class="p">(</span><span class="n">Unix</span><span class="p">)</span>
+<span class="n">python</span> <span class="n">tools</span><span class="o">/</span><span class="n">rst2html</span><span class="o">.</span><span class="n">py</span> <span class="n">FAQ</span><span class="o">.</span><span class="n">txt</span> <span class="n">FAQ</span><span class="o">.</span><span class="n">html</span>  <span class="p">(</span><span class="n">Windows</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>阅读 <a class="reference internal" href="#usage">用法</a> 了解细节。</p>
+</li>
+</ol>
+</section>
+<section id="purpose">
+<h2><a class="toc-backref" href="#id9">目标</a><a class="headerlink" href="#purpose" title="永久链接至标题">¶</a></h2>
+<p>Docutils 项目的目标是创建一组工具，用于将纯文本文档处理成有用的格式，如 HTML、LaTeX、troff（手册页）、OpenOffice 和本地 XML。已经实施了对以下来源的支持：</p>
+<ul class="simple">
+<li><p>独立的文件。</p></li>
+<li><p><a class="reference external" href="http://www.python.org/peps/pep-0012.html">PEPs (Python Enhancement Proposals)</a>.</p></li>
+</ul>
+<p>计划支持以下资源：</p>
+<ul class="simple">
+<li><p>来自 Python 模块和包的内联文档，使用命名空间上下文提取</p></li>
+<li><p>Email （RFC-822 标题，引用的摘录，签名，MIME 部分）</p></li>
+<li><p>Wikis 与“维基链接”的全局参考查找</p></li>
+<li><p>复合文档，例如多个章节文件合并到一本书中。</p></li>
+<li><p>和其他发现的。</p></li>
+</ul>
+</section>
+<section id="requirements">
+<h2><a class="toc-backref" href="#id10">需求</a><a class="headerlink" href="#requirements" title="永久链接至标题">¶</a></h2>
+<p>要运行代码，必须安装 <a class="reference external" href="http://www.python.org/.">Python</a>。</p>
+<ul class="simple">
+<li><p>Docutils 0.16 及更高版本原生支持 Python 2.7 和3.5+。<a class="footnote-reference brackets" href="#to3" id="id2">1</a></p></li>
+<li><p>Docutils 0.14 放弃了对 2.4, 2.5, 3.1 和 3.2 的支持。</p></li>
+<li><p>Docutils 0.10 放弃了对 Python 2.3 的支持。</p></li>
+<li><p>从 0.6 版本开始，Docutils 就与 Python 3 兼容。<a class="footnote-reference brackets" href="#to3" id="id3">1</a></p></li>
+<li><p>对于 Docutils 0.5, Python 2.2.1+ 是必需的。</p></li>
+<li><p>在 Docutils 0.4 之前，Python 2.1 是必需的。</p></li>
+</ul>
+<dl class="footnote brackets">
+<dt class="label" id="to3"><span class="brackets">1</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id3">2</a>)</span></dt>
+<dd><p>直到 0.15 版本，Doctils 代码库都是使用 2to3 工具“按需”翻译的。</p>
+</dd>
+</dl>
+<section id="recommendations">
+<h3><a class="toc-backref" href="#id11">建议</a><a class="headerlink" href="#recommendations" title="永久链接至标题">¶</a></h3>
+<p>如果安装了 Docutils，它会使用以下软件包来增强功能：</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#installation">安装</a> ：安装通常使用 <a class="reference external" href="https://pypi.org/project/pip/">pip</a> 或 <a class="reference external" href="https://pypi.org/project/setuptools/">setuptools</a> 完成。</p></li>
+<li><p>PIL（<a class="reference external" href="http://www.pythonware.com/products/pil/">Python Imaging Library</a>）用于一些图像操作。</p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/Pygments/">Pygments</a> 包提供了“代码”指令和角色的语法高亮显示。</p></li>
+<li><p><a class="reference external" href="https://github.com/rtfd/recommonmark">recommonmark</a> 解析器用于解析 Markdown 格式的输入。</p></li>
+</ul>
+<p><a class="reference external" href="docs/user/links">Docutils 链接列表</a> 记录了 Docutils 和 reStructuredText 用户可能会觉得有用的项目。</p>
+</section>
+</section>
+<section id="development-version">
+<h2><a class="toc-backref" href="#id12">开发版本</a><a class="headerlink" href="#development-version" title="永久链接至标题">¶</a></h2>
+<p>虽然我们试图遵循“早发布和经常发布”的政策，但新功能还是经常添加。由于 <a class="reference external" href="docs/dev/repository.html">存储库</a> 中的代码通常处于无 bug 状态，所以我们建议使用当前快照或工作副本。</p>
+<p>要获得 <span class="target" id="snapshot">snapshot</span>，请转到代码页并单击下载 snapshot 按钮：</p>
+<ul class="simple">
+<li><p>Docutils 代码、文档、前端工具和测试：<a class="reference external" href="https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/">https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/</a></p></li>
+<li><p>Sandbox （实验性的贡献代码）：<a class="reference external" href="https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/sandbox/">https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/sandbox/</a></p></li>
+</ul>
+<p>要跟上最新的开发，请定期下载快照的新副本或使用 <a class="reference external" href="docs/dev/repository.html#checking-out-the-repository">Docutils 代码库的工作副本</a>。</p>
+<p>继续下面的 <a class="reference internal" href="#installation">安装</a> 说明。</p>
+</section>
+<section id="installation">
+<h2><a class="toc-backref" href="#id13">安装</a><a class="headerlink" href="#installation" title="永久链接至标题">¶</a></h2>
+<p>从源代码安装 Docutils 的步骤：</p>
+<ul>
+<li><p>进入包含 <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> 文件的目录：</p>
+<p><a class="reference internal" href="#snapshot">snapshot</a> 必须首先解压到临时目录中（而不是直接解压到 Python 的 <code class="docutils literal notranslate"><span class="pre">site-packages</span></code> 中）。</p>
+</li>
+<li><p>运行 <code class="docutils literal notranslate"><span class="pre">setup.py</span> <span class="pre">install</span></code> <a class="footnote-reference brackets" href="#setup-requires-setuptools" id="id5">2</a>。在 Windows 系统下，双击 <code class="docutils literal notranslate"><span class="pre">install.py</span></code> 可能就足够了。</p></li>
+</ul>
+<dl class="footnote brackets">
+<dt class="label" id="setup-requires-setuptools"><span class="brackets"><a class="fn-backref" href="#id5">2</a></span></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">setup.py</span></code> 需要 <a class="reference external" href="https://pypi.org/project/setuptools/">setuptools</a> 包。手动安装请参见 <a class="reference external" href="docs/dev/policies.html#setting-up-for-docutils-development">为 Docutils 的开发进行设置</a> 中的选项。</p>
+</dd>
+</dl>
+<p>可选步骤：</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#running-the-test-suite">运行测试套件</a></p></li>
+<li><p><a class="reference internal" href="#converting-the-documentation">转换文档</a></p></li>
+</ul>
+<p>下面是特定于操作系统的安装说明。</p>
+<section id="gnu-linux-bsds-unix-mac-os-x-etc">
+<h3><a class="toc-backref" href="#id14">GNU/Linux, BSDs, Unix, Mac OS X 等。</a><a class="headerlink" href="#gnu-linux-bsds-unix-mac-os-x-etc" title="永久链接至标题">¶</a></h3>
+<ol class="arabic">
+<li><p>打开一个 shell。</p></li>
+<li><p>进入包含 <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> 的目录</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">archive_directory_path</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>安装包（您可能需要 root 权限来完成此步骤）:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">su</span>
+<span class="p">(</span><span class="n">enter</span> <span class="n">admin</span> <span class="n">password</span><span class="p">)</span>
+<span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>如果 python 可执行文件不在你的路径上，你必须指定完整的路径，比如 <code class="docutils literal notranslate"><span class="pre">/usr/local/bin/python</span></code>。</p>
+<p>要安装特定的 Python 版本，请在 setup 调用中使用该版本，例如</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span><span class="mf">.7</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>要针对不同的 Python 版本进行安装，请对每个所需的版本重复步骤3。最后安装的版本将在 <code class="docutils literal notranslate"><span class="pre">rst2*.py</span></code> 包装器脚本的 <a class="reference external" href="http://en.wikipedia.org/wiki/Shebang_%28Unix%29">shebang 行</a> 中使用。</p>
+</li>
+</ol>
+</section>
+<section id="windows">
+<h3><a class="toc-backref" href="#id15">Windows</a><a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h3>
+<p>只要双击 <code class="docutils literal notranslate"><span class="pre">install.py</span></code>。如果这不起作用，尝试以下方法：</p>
+<ol class="arabic">
+<li><p>打开一个 DOS 盒子（命令 Shell, MS-DOS 提示符，或者现在人们叫它什么）。</p></li>
+<li><p>进入通过扩展归档文件创建的目录</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">archive_directory_path</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>安装包</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">path_to_python</span><span class="o">.</span><span class="n">exe</span><span class="o">&gt;</span>\<span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>To install for a specific python version, specify the Python
+executable for this version.</p>
+<p>要针对不同的 Python 版本进行安装，请对每个所需的版本重复步骤3。</p>
+</li>
+</ol>
+</section>
+</section>
+<section id="usage">
+<h2><a class="toc-backref" href="#id16">用法</a><a class="headerlink" href="#usage" title="永久链接至标题">¶</a></h2>
+<p>在未打包的“tools”子目录中有许多前端工具。在 Unix 下安装将复制放在 PATH 中。您可能想从“rst2html.py”前端工具开始。大多数工具最多接受两个参数，源路径和目标路径，STDIN 和 STDOUT 是默认值。在前端工具中使用 <code class="docutils literal notranslate"><span class="pre">--help</span></code> 选项获取选项和参数的详细信息。阅读 <a class="reference external" href="docs/user/tools.html">Docutils Front-End Tools</a> 的全部文档。</p>
+<p>软件包的模块在不断地增长和发展。<code class="docutils literal notranslate"><span class="pre">docutils.statemachine</span></code> 模块是可以独立使用的。它包含大量的内联文档（当然是以 reStructuredText 格式）。</p>
+<p>欢迎贡献！</p>
+</section>
+<section id="project-files-directories">
+<h2><a class="toc-backref" href="#id17">项目文件和目录</a><a class="headerlink" href="#project-files-directories" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><code class="file docutils literal notranslate"><span class="pre">README</span></code>：你当前正在阅读的</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">COPYING</span></code>：公共域（Public Domain，简称 PD）奉献和非公共域文件的版权细节（大多数是 PD）。</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">FAQ</span></code>：常见问题（带答案！）</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">RELEASE-NOTES</span></code>：最近版本中主要变化的摘要。</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">HISTORY</span></code>：详细的更改日志，用于当前和所有以前的项目版本。</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">BUGS</span></code>：已知的错误，以及如何报告错误。</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">THANKS</span></code>：贡献者名单。</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">setup.py</span></code>：安装脚本。请参阅下面的“安装”。</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">install.py</span></code>：快速和纯净的安装脚本。只要运行它。但是，对于任何类型的定制或帮助，都必须使用 <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docutils/</span></code>：项目源目录，作为 Python 包安装。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs/</span></code>：项目文档目录。请阅读 <code class="docutils literal notranslate"><span class="pre">docs/index</span></code> 获取概述。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs/user</span></code>：项目用户文档目录。包括下列文件：</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs/user/tools</span></code>：Docutils 前端工具</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs/user/latex</span></code>：Docutils LaTeX 写作</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs/user/rst/quickstart</span></code>：ReStructuredText 快速上手</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">docs/user/rst/quickref.html</span></code>: ReStructuredText 快速上手（仅针对 HTML）</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs/ref</span></code>：项目参考目录。<code class="docutils literal notranslate"><span class="pre">docs/ref/rst/restructuredtext.txt</span></code> 是 reStructuredText 参考文献。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">licenses</span></code>：包含非公共域文件的许可文件副本的目录。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tools</span></code>：Docutils 前端工具的目录。阅读 <code class="docutils literal notranslate"><span class="pre">docs/user/tools.txt</span></code> 了解更多信息。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">test</span></code>：单元测试。不需要使用该软件，但如果你打算修改它，它是非常有用的。阅读下面的 <a class="reference internal" href="#running-the-test-suite">运行测试套件</a>。</p></li>
+</ul>
+</section>
+<section id="converting-the-documentation">
+<h2><a class="toc-backref" href="#id18">转换文档</a><a class="headerlink" href="#converting-the-documentation" title="永久链接至标题">¶</a></h2>
+<p>解压并安装 Docutils 包后，以下 shell 命令将为所有包含的文档生成 HTML</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">archive_directory_path</span><span class="o">&gt;/</span><span class="n">tools</span>
+<span class="o">./</span><span class="n">buildhtml</span><span class="o">.</span><span class="n">py</span> <span class="o">../</span>
+</pre></div>
+</div>
+<p>Windows 系统，输入</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">archive_directory_path</span><span class="o">&gt;</span>\<span class="n">tools</span>
+<span class="n">python</span> <span class="n">buildhtml</span><span class="o">.</span><span class="n">py</span> <span class="o">..</span>
+</pre></div>
+</div>
+<p>对于 snapshots，<code class="docutils literal notranslate"><span class="pre">&lt;archive_directory_path&gt;</span></code> 的最终目录名是“docutils”。对于正式版本，该目录可能被称为“docutils-X.Y.Z”，这里 “X.Y.Z” 是发布版本。另外</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">archive_directory_path</span><span class="o">&gt;</span>
+<span class="n">tools</span><span class="o">/</span><span class="n">buildhtml</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">config</span><span class="o">=</span><span class="n">tools</span><span class="o">/</span><span class="n">docutils</span><span class="o">.</span><span class="n">conf</span>          <span class="p">(</span><span class="n">Unix</span><span class="p">)</span>
+<span class="n">python</span> <span class="n">tools</span>\<span class="n">buildhtml</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">config</span><span class="o">=</span><span class="n">tools</span>\<span class="n">docutils</span><span class="o">.</span><span class="n">conf</span>   <span class="p">(</span><span class="n">Windows</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>有些文件可能会生成系统消息（警告和错误）。<code class="docutils literal notranslate"><span class="pre">docs/user/rst/demo.txt</span></code> 文件（在归档目录下）包含5个故意错误。（他们测试错误报告机制！）</p>
+</section>
+<section id="running-the-test-suite">
+<h2><a class="toc-backref" href="#id19">运行测试套件</a><a class="headerlink" href="#running-the-test-suite" title="永久链接至标题">¶</a></h2>
+<p>测试套件被记录在 <a class="reference external" href="http://docutils.sourceforge.net/docs/dev/testing.html">Docutils Testing</a> （docs/dev/testing.txt）中。</p>
+<p>要运行整个测试套件，打开一个 shell 并使用以下命令</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">archive_directory_path</span><span class="o">&gt;/</span><span class="n">test</span>
+<span class="o">./</span><span class="n">alltests</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Windows 中，输入:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">archive_directory_path</span><span class="o">&gt;</span>\<span class="n">test</span>
+<span class="n">python</span> <span class="n">alltests</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>你会看到一条长长的周期线，每个测试一个周期，然后是一个总结，像这样</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ran</span> <span class="mi">1111</span> <span class="n">tests</span> <span class="ow">in</span> <span class="mf">24.653</span><span class="n">s</span>
+
+<span class="n">OK</span>
+<span class="n">Elapsed</span> <span class="n">time</span><span class="p">:</span> <span class="mf">26.189</span> <span class="n">seconds</span>
+</pre></div>
+</div>
+<p>测试的数量将随着时间的推移而增长，报告的时间将取决于运行测试的计算机。这两个时间之间的差异表示设置测试(导入模块、创建数据结构等)所需的时间。</p>
+<p>如果任何测试失败，请 <a class="reference external" href="mailto:docutils-users%40lists.sourceforge.net?subject=Test%20suite%20failure">打开错误报告</a> 或 <a class="reference external" href="http://sourceforge.net/p/docutils/bugs/">发送电子邮件</a>  （请参阅 <a class="reference external" href="BUGS.html">Bugs</a> ）。请包括所有相关输出、有关操作系统、Python 版本和 Docutils 版本的信息。要查看 Docutils 版本，使用 <code class="docutils literal notranslate"><span class="pre">rst2*</span></code> 前端或 <code class="docutils literal notranslate"><span class="pre">tools/quicktest.py</span></code> 中的 <code class="docutils literal notranslate"><span class="pre">--version</span></code> 选项，例如</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">../</span><span class="n">tools</span>
+<span class="o">./</span><span class="n">quicktest</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>Windows 用户键入这些命令</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">..</span>\<span class="n">tools</span>
+<span class="n">python</span> <span class="n">quicktest</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+</section>
+<section id="getting-help">
+<h2><a class="toc-backref" href="#id20">得到帮助</a><a class="headerlink" href="#getting-help" title="永久链接至标题">¶</a></h2>
+<p>如果您对 Docutils 或 reStructuredText 有疑问或需要帮助，请向 <a class="reference external" href="docs/user/mailing-lists.html#docutils-users">Docutils-users</a> 邮件列表发送消息。</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="RELEASE-NOTES.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Docutils Release Notes</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="HISTORY.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Docutils History</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, xinetzone |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
+            <a class="muted-link" href="../_sources/docutils/README.txt"
+               rel="nofollow">
+              显示源代码
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            目录
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Docutils 0.18.1b.dev 自述</a><ul>
+<li><a class="reference internal" href="#quick-start">快速上手</a></li>
+<li><a class="reference internal" href="#purpose">目标</a></li>
+<li><a class="reference internal" href="#requirements">需求</a><ul>
+<li><a class="reference internal" href="#recommendations">建议</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#development-version">开发版本</a></li>
+<li><a class="reference internal" href="#installation">安装</a><ul>
+<li><a class="reference internal" href="#gnu-linux-bsds-unix-mac-os-x-etc">GNU/Linux, BSDs, Unix, Mac OS X 等。</a></li>
+<li><a class="reference internal" href="#windows">Windows</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#usage">用法</a></li>
+<li><a class="reference internal" href="#project-files-directories">项目文件和目录</a></li>
+<li><a class="reference internal" href="#converting-the-documentation">转换文档</a></li>
+<li><a class="reference internal" href="#running-the-test-suite">运行测试套件</a></li>
+<li><a class="reference internal" href="#getting-help">得到帮助</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/main.js"></script>
+    <script src="../_static/translations.js"></script>
+    </body>
+</html>

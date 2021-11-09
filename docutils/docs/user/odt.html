@@ -1,0 +1,1522 @@
+<!doctype html>
+<html class="no-js" lang="zh_CN">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+<link rel="index" title="索引" href="../../../genindex.html" /><link rel="search" title="搜索" href="../../../search.html" /><link rel="next" title="Smart Quotes for Docutils" href="smartquotes.html" /><link rel="prev" title="manpage writer for Docutils" href="manpage.html" />
+
+    <meta name="generator" content="sphinx-4.2.0, furo 2021.10.09"/>
+        <title>1 Odt Writer for Docutils - docutils 0.0.1 文档</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">docutils 0.0.1 文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">docutils 0.0.1 文档</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder=搜索 name="q" aria-label="搜索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">概述</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/index.html">Docutils: Documentation Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/mirror/setext.html">Setext 文档镜像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Docutils Project Documentation Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">user</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="config.html">Docutils Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emacs.html">Emacs Support for reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="html.html">Docutils HTML writers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="latex.html"><span class="sectnum">1</span> Generating LaTeX with Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="links.html">Docutils Link List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mailing-lists.html">Docutils Mailing Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manpage.html">manpage writer for Docutils</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#"><span class="sectnum">1</span> Odt Writer for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smartquotes.html">Smart Quotes for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Docutils Front-End Tools</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">api</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/cmdline-tool.html">Inside A Docutils Command-Line Front-End Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/publisher.html">The Docutils Publisher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/runtime-settings.html">Docutils Runtime Settings</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">dev</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dev/distributing.html">Docutils Distributor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/enthought-plan.html"><span class="sectnum">1</span> Plan for Enthought API Documentation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/enthought-rfp.html"><span class="sectnum">1</span> Enthought API Documentation Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/hacking.html">Docutils Hacker’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/policies.html">Docutils Project Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/pysource.html">Python Source Reader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/release.html">Docutils Release Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/repository.html">The Docutils Version Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/semantics.html">Docstring Semantics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/testing.html">Docutils Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/todo.html">Docutils To Do List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/website.html">Docutils Web Site</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">howto</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../howto/html-stylesheets.html">Writing HTML (CSS) Stylesheets for Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/i18n.html">Docutils Internationalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/rst-directives.html">Creating reStructuredText Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/rst-roles.html">Creating reStructuredText Interpreted Text Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howto/security.html">Deploying Docutils Securely</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">peps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html">Rejection Notice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#road-map-to-the-docstring-peps">Road Map to the Docstring PEPs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#project-web-site">Project Web Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0256.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0257.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html">Rejection Notice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#abstract">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#references-and-footnotes">References and Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#project-web-site">Project Web Site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0258.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#benefits">Benefits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#goals">Goals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#rationale">Rationale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#specification">Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#docstring-significant-features">Docstring-Significant Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#questions-answers">Questions &amp; Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#references-footnotes">References &amp; Footnotes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#copyright">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../peps/pep-0287.html#acknowledgements">Acknowledgements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ref</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ref/doctree.html">The Docutils Document Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/transforms.html">Docutils Transforms</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">docutils other</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../BUGS.html">Docutils Bugs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../COPYING.html">Copying Docutils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../FAQ.html"><span class="sectnum">1</span> Docutils FAQ (Frequently Asked Questions)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../HISTORY.html">Docutils History</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Docutils 0.18.1b.dev 自述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../RELEASE-NOTES.html">Docutils Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../THANKS.html">Acknowledgements</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">reStructuredText</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/rst.html"></a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst/cheatsheet.html">The reStructuredText Cheat Sheet: Syntax Reminders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst/quickstart.html">A ReStructuredText Primer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/rst/alternatives.html">A Record of reStructuredText Syntax Alternatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dev/rst/problems.html">Problems With StructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/definitions.html">reStructuredText Standard Definition Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/directives.html">reStructuredText Directives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/introduction.html">An Introduction to reStructuredText</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/mathematics.html"><span class="sectnum">1</span> LaTeX syntax for mathematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/restructuredtext.html">reStructuredText Markup Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ref/rst/roles.html">reStructuredText Interpreted Text Roles</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">sandbox</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../sandbox/README.html">Sandbox 自述</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="odt-writer-for-docutils">
+<h1><a class="toc-backref" href="#id2"><span class="sectnum">1</span> Odt Writer for Docutils</a><a class="headerlink" href="#odt-writer-for-docutils" title="永久链接至标题">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>Dave Kuhlman</p>
+</dd>
+<dt class="field-even">Contact</dt>
+<dd class="field-even"><p><a class="reference external" href="mailto:docutils-develop%40lists.sourceforge.net">docutils-develop<span>@</span>lists<span>.</span>sourceforge<span>.</span>net</a></p>
+</dd>
+<dt class="field-odd">Revision</dt>
+<dd class="field-odd"><p>$Revision$</p>
+</dd>
+<dt class="field-even">Date</dt>
+<dd class="field-even"><p>$Date$</p>
+</dd>
+<dt class="field-odd">Copyright</dt>
+<dd class="field-odd"><p>This document has been placed in the public domain.</p>
+</dd>
+<dt class="field-even">abstract</dt>
+<dd class="field-even"><p>This document describes the Docutils odtwriter
+(rst2odt.py).</p>
+</dd>
+</dl>
+<div class="contents topic" id="id1">
+<p class="topic-title">目录</p>
+<ul class="auto-toc simple">
+<li><p><a class="reference internal" href="#odt-writer-for-docutils" id="id2"><span class="sectnum">1</span> Odt Writer for Docutils</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#introduction" id="id3"><span class="sectnum">1.1</span> Introduction</a></p></li>
+<li><p><a class="reference internal" href="#requirements" id="id4"><span class="sectnum">1.2</span> Requirements</a></p></li>
+<li><p><a class="reference internal" href="#how-to-use-it" id="id5"><span class="sectnum">1.3</span> How to Use It</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#configuration-file" id="id6"><span class="sectnum">1.3.1</span> Configuration file</a></p></li>
+<li><p><a class="reference internal" href="#command-line-options" id="id7"><span class="sectnum">1.3.2</span> Command line options</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#styles-and-classes" id="id8"><span class="sectnum">1.4</span> Styles and Classes</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#styles-used-by-odtwriter" id="id9"><span class="sectnum">1.4.1</span> Styles used by odtwriter</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#paragraph-styles" id="id10"><span class="sectnum">1.4.1.1</span> Paragraph styles</a></p></li>
+<li><p><a class="reference internal" href="#character-styles" id="id11"><span class="sectnum">1.4.1.2</span> Character styles</a></p></li>
+<li><p><a class="reference internal" href="#list-styles" id="id12"><span class="sectnum">1.4.1.3</span> List styles</a></p></li>
+<li><p><a class="reference internal" href="#admonition-styles" id="id13"><span class="sectnum">1.4.1.4</span> Admonition styles</a></p></li>
+<li><p><a class="reference internal" href="#rubric-style" id="id14"><span class="sectnum">1.4.1.5</span> Rubric style</a></p></li>
+<li><p><a class="reference internal" href="#table-styles" id="id15"><span class="sectnum">1.4.1.6</span> Table styles</a></p></li>
+<li><p><a class="reference internal" href="#line-block-styles" id="id16"><span class="sectnum">1.4.1.7</span> Line block styles</a></p></li>
+<li><p><a class="reference internal" href="#footnote-and-citation-styles" id="id17"><span class="sectnum">1.4.1.8</span> Footnote and citation styles</a></p></li>
+<li><p><a class="reference internal" href="#heading-and-title-styles" id="id18"><span class="sectnum">1.4.1.9</span> Heading and title styles</a></p></li>
+<li><p><a class="reference internal" href="#image-and-figure-styles" id="id19"><span class="sectnum">1.4.1.10</span> Image and figure styles</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#defining-and-using-a-custom-stylesheet" id="id20"><span class="sectnum">1.4.2</span> Defining and using a custom stylesheet</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#why-custom-stylesheets" id="id21"><span class="sectnum">1.4.2.1</span> Why custom stylesheets</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#defining-and-using-custom-style-names" id="id22"><span class="sectnum">1.4.3</span> Defining and using custom style names</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#why-custom-style-names" id="id23"><span class="sectnum">1.4.3.1</span> Why custom style names</a></p></li>
+<li><p><a class="reference internal" href="#how-to-use-custom-style-names" id="id24"><span class="sectnum">1.4.3.2</span> How to use custom style names</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#classes" id="id25"><span class="sectnum">1.4.4</span> Classes</a></p></li>
+<li><p><a class="reference internal" href="#roles" id="id26"><span class="sectnum">1.4.5</span> Roles</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#hints-and-suggestions-and-features" id="id27"><span class="sectnum">1.5</span> Hints and Suggestions and Features</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#table-of-contents" id="id28"><span class="sectnum">1.5.1</span> Table of contents</a></p></li>
+<li><p><a class="reference internal" href="#syntax-highlighting" id="id29"><span class="sectnum">1.5.2</span> Syntax highlighting</a></p></li>
+<li><p><a class="reference internal" href="#the-container-directive" id="id30"><span class="sectnum">1.5.3</span> The container directive</a></p></li>
+<li><p><a class="reference internal" href="#the-table-directive" id="id31"><span class="sectnum">1.5.4</span> The table directive</a></p></li>
+<li><p><a class="reference internal" href="#footnotes-and-citations" id="id32"><span class="sectnum">1.5.5</span> Footnotes and citations</a></p></li>
+<li><p><a class="reference internal" href="#images-and-figures" id="id33"><span class="sectnum">1.5.6</span> Images and figures</a></p></li>
+<li><p><a class="reference internal" href="#the-raw-directive" id="id34"><span class="sectnum">1.5.7</span> The raw directive</a></p></li>
+<li><p><a class="reference internal" href="#the-meta-directive" id="id35"><span class="sectnum">1.5.8</span> The meta directive</a></p></li>
+<li><p><a class="reference internal" href="#footnote-references-inside-footnotes" id="id36"><span class="sectnum">1.5.9</span> Footnote references inside footnotes</a></p></li>
+<li><p><a class="reference internal" href="#page-size" id="id37"><span class="sectnum">1.5.10</span> Page size</a></p></li>
+<li><p><a class="reference internal" href="#custom-header-footers-inserting-page-numbers-date-time-etc" id="id38"><span class="sectnum">1.5.11</span> Custom header/footers: inserting page numbers, date, time, etc</a></p>
+<ul class="auto-toc">
+<li><p><a class="reference internal" href="#field-specifiers" id="id39"><span class="sectnum">1.5.11.1</span> Field specifiers</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#credits" id="id40"><span class="sectnum">1.6</span> Credits</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id3"><span class="sectnum">1.1</span> Introduction</a><a class="headerlink" href="#introduction" title="永久链接至标题">¶</a></h2>
+<p>What it does – <code class="docutils literal notranslate"><span class="pre">rst2odt.py</span></code> translates reST
+(reStructuredText) into a Open Document Format <code class="docutils literal notranslate"><span class="pre">.odt</span></code> file.  You
+can learn more about the ODF format here:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office">OASIS Open Document Format for Office Applications
+(OpenDocument) TC</a></p></li>
+<li><p><a class="reference external" href="http://en.wikipedia.org/wiki/OpenDocument">Open Document at Wikipedia</a></p></li>
+</ul>
+<p>You should be able to open documents (.odt files) generated with
+<code class="docutils literal notranslate"><span class="pre">rst2odt.py</span></code> in <code class="docutils literal notranslate"><span class="pre">OpenOffice/oowriter</span></code>.</p>
+<p>You can learn more about Docutils and reST here: <a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a></p>
+</section>
+<section id="requirements">
+<h2><a class="toc-backref" href="#id4"><span class="sectnum">1.2</span> Requirements</a><a class="headerlink" href="#requirements" title="永久链接至标题">¶</a></h2>
+<p>In addition to the Docutils standard requirements, <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code>
+requires:</p>
+<ul class="simple">
+<li><p>Optional – <a class="reference external" href="http://pygments.pocoo.org/">Pygments</a> is required if you want syntax
+highlighting of code in literal blocks.  See section <a class="reference internal" href="#syntax-highlighting">Syntax
+highlighting</a>.</p></li>
+<li><p>Optional – <a class="reference external" href="https://en.wikipedia.org/wiki/Python_Imaging_Library">Python Imaging Library</a> (PIL) is required if on an
+image or figure directive, you specify <code class="docutils literal notranslate"><span class="pre">scale</span></code> but not <code class="docutils literal notranslate"><span class="pre">width</span></code>
+and <code class="docutils literal notranslate"><span class="pre">height</span></code>.  See section <a class="reference internal" href="#images-and-figures">Images and figures</a>.</p></li>
+</ul>
+</section>
+<section id="how-to-use-it">
+<h2><a class="toc-backref" href="#id5"><span class="sectnum">1.3</span> How to Use It</a><a class="headerlink" href="#how-to-use-it" title="永久链接至标题">¶</a></h2>
+<p>Run it from the command line as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rst2odt.py myinput.txt myoutput.odt
+</pre></div>
+</div>
+<p>To see usage information and to learn about command line options
+that you can use, run the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rst2odt.py --help
+</pre></div>
+</div>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rst2odt.py -s -g python_comments.txt python_comments.odt
+
+$ rst2odt.py --source-url=odtwriter.txt --generator \
+    --stylesheet=/myconfigs/styles.odt odtwriter.txt odtwriter.odt
+</pre></div>
+</div>
+<section id="configuration-file">
+<h3><a class="toc-backref" href="#id6"><span class="sectnum">1.3.1</span> Configuration file</a><a class="headerlink" href="#configuration-file" title="永久链接至标题">¶</a></h3>
+<p>The options described below can also be set in a configuration file.
+Use section <code class="docutils literal notranslate"><span class="pre">[odf_odt</span> <span class="pre">writer]</span></code> to set options specific to the
+<code class="docutils literal notranslate"><span class="pre">odtwriter</span></code>.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">odf_odt</span> <span class="n">writer</span><span class="p">]</span>
+<span class="n">stylesheet</span><span class="p">:</span> <span class="n">styles1</span><span class="o">.</span><span class="n">odt</span>
+</pre></div>
+</div>
+<p>See the “Docutils Configuration” document for more information on
+Docutils configuration files, including locations which are
+searched.</p>
+</section>
+<section id="command-line-options">
+<h3><a class="toc-backref" href="#id7"><span class="sectnum">1.3.2</span> Command line options</a><a class="headerlink" href="#command-line-options" title="永久链接至标题">¶</a></h3>
+<p>The following command line options are specific to <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code>:</p>
+<dl class="option-list">
+<dt><kbd><span class="option">--stylesheet=<var>&lt;URL&gt;</var></span></kbd></dt>
+<dd><p>Specify a stylesheet URL, used verbatim.
+Default: writers/odf_odt/styles.odt in the
+installation directory.</p>
+</dd>
+<dt><kbd><span class="option">--odf-config-file=<var>&lt;file&gt;</var></span></kbd></dt>
+<dd><p>Specify a configuration/mapping file relative to the
+current working directory for additional ODF options.
+In particular, this file may contain a section named
+“Formats” that maps default style names to names to be
+used in the resulting output file allowing for
+adhering to external standards. For more info and the
+format of the configuration/mapping file, see the
+odtwriter doc.</p>
+</dd>
+<dt><kbd><span class="option">--cloak-email-addresses</span></kbd></dt>
+<dd><p>Obfuscate email addresses to confuse harvesters while
+still keeping email links usable with standards-
+compliant browsers.</p>
+</dd>
+<dt><kbd><span class="option">--no-cloak-email-addresses</span></kbd></dt>
+<dd><p>Do not obfuscate email addresses.</p>
+</dd>
+<dt><kbd><span class="option">--table-border-thickness=<var>TABLE_BORDER_THICKNESS</var></span></kbd></dt>
+<dd><p>Specify the thickness of table borders in thousands of
+a cm.  Default is 35.</p>
+</dd>
+<dt><kbd><span class="option">--add-syntax-highlighting</span></kbd></dt>
+<dd><p>Add syntax highlighting in literal code blocks.</p>
+</dd>
+<dt><kbd><span class="option">--no-syntax-highlighting</span></kbd></dt>
+<dd><p>Do not add syntax highlighting in literal code blocks.
+(default)</p>
+</dd>
+<dt><kbd><span class="option">--create-sections</span></kbd></dt>
+<dd><p>Create sections for headers.  (default)</p>
+</dd>
+<dt><kbd><span class="option">--no-sections</span></kbd></dt>
+<dd><p>Do not create sections for headers.</p>
+</dd>
+<dt><kbd><span class="option">--create-links</span></kbd></dt>
+<dd><p>Create links.</p>
+</dd>
+<dt><kbd><span class="option">--no-links</span></kbd></dt>
+<dd><p>Do not create links.  (default)</p>
+</dd>
+<dt><kbd><span class="option">--endnotes-end-doc</span></kbd></dt>
+<dd><p>Generate endnotes at end of document, not footnotes at
+bottom of page.</p>
+</dd>
+<dt><kbd><span class="option">--no-endnotes-end-doc</span></kbd></dt>
+<dd><p>Generate footnotes at bottom of page, not endnotes at
+end of document. (default)</p>
+</dd>
+<dt><kbd><span class="option">--generate-list-toc</span></kbd></dt>
+<dd><p>Generate a bullet list table of contents, not an
+ODF/<code class="docutils literal notranslate"><span class="pre">oowriter</span></code> table of contents.</p>
+</dd>
+<dt><kbd><span class="option">--generate-oowriter-toc</span></kbd></dt>
+<dd><p>Generate an ODF/<code class="docutils literal notranslate"><span class="pre">oowriter</span></code> table of contents,
+not a bullet list.  (default) <strong>Note:</strong>
+<code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> is not able to determine page
+numbers, so you will need to open the
+generated document in <code class="docutils literal notranslate"><span class="pre">oowriter</span></code>, then
+right-click on the table of contents and
+select “Update” to insert page numbers.</p>
+</dd>
+<dt><kbd><span class="option">--custom-odt-header=<var>CUSTOM_HEADER</var></span></kbd></dt>
+<dd><p>Specify the contents of an custom header line.  See
+odf_odt writer documentation for details about special
+field character sequences.  See section
+<a class="reference internal" href="#custom-header-footers-inserting-page-numbers-date-time-etc">Custom header/footers: inserting page numbers, date, time, etc</a>
+for details</p>
+</dd>
+<dt><kbd><span class="option">--custom-odt-footer=<var>CUSTOM_FOOTER</var></span></kbd></dt>
+<dd><p>Specify the contents of an custom footer line.  See
+odf_odt writer documentation for details about special
+field character sequences.  See section
+<a class="reference internal" href="#custom-header-footers-inserting-page-numbers-date-time-etc">Custom header/footers: inserting page numbers, date, time, etc</a>
+for details</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="styles-and-classes">
+<h2><a class="toc-backref" href="#id8"><span class="sectnum">1.4</span> Styles and Classes</a><a class="headerlink" href="#styles-and-classes" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> uses a number of styles that are defined in
+<code class="docutils literal notranslate"><span class="pre">styles.xml</span></code> in the default <code class="docutils literal notranslate"><span class="pre">styles.odt</span></code>.  This section
+describes those styles.</p>
+<p>Note that with the <code class="docutils literal notranslate"><span class="pre">--stylesheet</span></code> command line option, you can
+use either <code class="docutils literal notranslate"><span class="pre">styles.odt</span></code> or <code class="docutils literal notranslate"><span class="pre">styles.xml</span></code>, as described below.
+Use of <code class="docutils literal notranslate"><span class="pre">styles.odt</span></code> is recommended over <code class="docutils literal notranslate"><span class="pre">styles.xml</span></code>.</p>
+<p>You can modify the look of documents generated by <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> in
+several ways:</p>
+<ul>
+<li><p>Open (a copy of) <code class="docutils literal notranslate"><span class="pre">styles.odt</span></code> in <code class="docutils literal notranslate"><span class="pre">OpenOffice/oowriter</span></code> and
+modify the style you wish to change. Now, save this document,
+then generate your documents using this modified copy of
+<code class="docutils literal notranslate"><span class="pre">styles.odt</span></code>.</p>
+<p>In my version of <code class="docutils literal notranslate"><span class="pre">oowriter</span></code>, to modify styles, either (1)
+press F11 or (2) use menu item “Format/Styles and Formatting”,
+then right-click on the relevant style and select “Modify”.
+Modify the style, then save your document.</p>
+</li>
+<li><p>Open a document generated by <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> in <cite>oowriter`</cite>.  Now,
+edit the style you are interested in modifying.  Now, you
+can extract the styles.xml file from your document and either
+(1) use this as your default styles file or (2) copy and paste
+the relevant style definition into your styles.xml.</p></li>
+<li><p>Extract <code class="docutils literal notranslate"><span class="pre">styles.xml</span></code> from <code class="docutils literal notranslate"><span class="pre">styles.odt</span></code> using your favorite
+<code class="docutils literal notranslate"><span class="pre">zip/unzip</span></code> tool.  Then modify <code class="docutils literal notranslate"><span class="pre">styles.xml</span></code> with a text
+editor.  Now re-zip it back into your own <code class="docutils literal notranslate"><span class="pre">styles.odt</span></code>, or use
+it directly by specifying it with the <code class="docutils literal notranslate"><span class="pre">--stylesheet</span></code> command
+line option.  <strong>Hint:</strong> If you intend to extract <code class="docutils literal notranslate"><span class="pre">styles.xml</span></code>
+from an <code class="docutils literal notranslate"><span class="pre">.odt</span></code> file (and then “re-zip” it), you should turn off
+XML optimization/compression in <code class="docutils literal notranslate"><span class="pre">oowriter</span></code>.  In order to this
+in <code class="docutils literal notranslate"><span class="pre">oowriter</span></code>, use Tools –&gt; Options…  –&gt; Load-Save –&gt;
+General and turn off “Size optimization for XML format”.</p></li>
+<li><p>Open an empty (or new) document in <code class="docutils literal notranslate"><span class="pre">oowriter</span></code>.  Define all of
+the styles described in this section.  Then, use that document (a
+.odt file) as your stylesheet.  <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> will extract the
+<code class="docutils literal notranslate"><span class="pre">styles.xml</span></code> file from that document and insert it into the
+output document.</p></li>
+<li><p>Some combination of the above.</p></li>
+</ul>
+<section id="styles-used-by-odtwriter">
+<h3><a class="toc-backref" href="#id9"><span class="sectnum">1.4.1</span> Styles used by odtwriter</a><a class="headerlink" href="#styles-used-by-odtwriter" title="永久链接至标题">¶</a></h3>
+<p>This section describes the styles used by <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code>.</p>
+<p>Note that we do not describe the “look” of these styles.  That can
+be easily changed by using <code class="docutils literal notranslate"><span class="pre">oowriter</span></code> to edit the document
+<code class="docutils literal notranslate"><span class="pre">styles.odt</span></code> (or a copy of it), and modifying any of the styles
+described here.</p>
+<p>To change the definition and appearance of these styles, open
+<code class="docutils literal notranslate"><span class="pre">styles.odt</span></code> in <code class="docutils literal notranslate"><span class="pre">oowriter</span></code> and open the Styles and Formatting
+window by using the following menu item:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Format</span> <span class="o">--&gt;</span> <span class="n">Styles</span> <span class="ow">and</span> <span class="n">Formatting</span>
+</pre></div>
+</div>
+<p>Then, click on the Paragraph Styles button or the Character Styles
+button at the top of the Styles and Formatting window.  You may
+also need to select “All Styles” from the drop-down selection list
+at the bottom of the Styles and Formatting window in order to see
+the styles used by <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code>.</p>
+<p>Notice that you can make a copy of file <code class="docutils literal notranslate"><span class="pre">styles.odt</span></code>, modify it
+using <code class="docutils literal notranslate"><span class="pre">oowriter</span></code>, and then use your copy with the
+<code class="docutils literal notranslate"><span class="pre">--stylesheet=&lt;file&gt;</span></code> command line option.  Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rst2odt.py --stylesheet=mystyles.odt test2.txt test2.odt
+</pre></div>
+</div>
+<section id="paragraph-styles">
+<h4><a class="toc-backref" href="#id10"><span class="sectnum">1.4.1.1</span> Paragraph styles</a><a class="headerlink" href="#paragraph-styles" title="永久链接至标题">¶</a></h4>
+<dl class="simple">
+<dt>rststyle-attribution</dt><dd><p>The style for attributions, for example, the attribution in a
+<code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">epigraph::</span></code> directive.  Derived from
+<code class="docutils literal notranslate"><span class="pre">rststyle-blockquote</span></code>.</p>
+</dd>
+<dt>rststyle-blockindent</dt><dd><p>An indented block.</p>
+</dd>
+<dt>rststyle-blockquote</dt><dd><p>A block quote.</p>
+</dd>
+<dt>rststyle-blockquote-bulletitem</dt><dd><p>The style for bullet list items inside block quote.</p>
+</dd>
+<dt>rststyle-blockquote-enumitem</dt><dd><p>The style for enumerated list items inside block quote.</p>
+</dd>
+<dt>rststyle-bodyindent</dt><dd><p>An indented block.</p>
+</dd>
+<dt>rststyle-bulletitem</dt><dd><p>An item in an bullet list.</p>
+</dd>
+<dt>rststyle-caption</dt><dd><p>The caption in a figure or image.  Also see
+<code class="docutils literal notranslate"><span class="pre">rststyle-legend</span></code>.</p>
+</dd>
+<dt>rststyle-codeblock</dt><dd><p>Literal code blocks – A block of example code.  Created with
+double colon (“::”) followed by an indented block or with the
+<code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">parsed-literal::</span></code> directive.  Derived from the
+<code class="docutils literal notranslate"><span class="pre">Preformatted</span> <span class="pre">Text</span></code> style in <code class="docutils literal notranslate"><span class="pre">oowriter</span></code>.</p>
+</dd>
+<dt>rststyle-enumitem</dt><dd><p>An item in an enumerated list.</p>
+</dd>
+<dt>rststyle-epigraph</dt><dd><p>The style for epigraphs, for example, the body of an
+<code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">epigraph::</span></code> directive.  Derived from
+<code class="docutils literal notranslate"><span class="pre">rststyle-blockquote</span></code>.</p>
+</dd>
+<dt>rststyle-epigraph-bulletitem</dt><dd><p>The style for bullet list items inside epigraphs.</p>
+</dd>
+<dt>rststyle-epigraph-enumitem</dt><dd><p>The style for enumerated list items inside epigraphs.</p>
+</dd>
+<dt>rststyle-footer</dt><dd><p>The style for footers.  The footer content originates from the
+<code class="docutils literal notranslate"><span class="pre">..footer::</span></code> directive and in response to the command line
+flags for generator (<code class="docutils literal notranslate"><span class="pre">--generator</span></code>), date/time generated
+(<code class="docutils literal notranslate"><span class="pre">--date</span></code> and <code class="docutils literal notranslate"><span class="pre">--time</span></code>), and view source link
+(<code class="docutils literal notranslate"><span class="pre">--source-link</span></code> and <code class="docutils literal notranslate"><span class="pre">--source-url=URL</span></code>).</p>
+</dd>
+<dt>rststyle-header</dt><dd><p>The style for headers.  The header content originates from the
+<code class="docutils literal notranslate"><span class="pre">..header::</span></code> directive.</p>
+</dd>
+<dt>rststyle-highlights</dt><dd><p>The style for highlightss, for example, the body of an
+<code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">highlights::</span></code> directive.  Derived from
+<code class="docutils literal notranslate"><span class="pre">rststyle-blockquote</span></code>.</p>
+</dd>
+<dt>rststyle-highlights-bulletitem</dt><dd><p>The style for bullet list items inside highlights.</p>
+</dd>
+<dt>rststyle-highlights-enumitem</dt><dd><p>The style for enumerated list items inside highlights.</p>
+</dd>
+<dt>rststyle-horizontalline</dt><dd><p>A horizontal line, e.g. used for transitions.</p>
+</dd>
+<dt>rststyle-legend</dt><dd><p>The legend in a figure.  See the Docutils figure directive.  Also
+see <code class="docutils literal notranslate"><span class="pre">rststyle-caption</span></code>.</p>
+</dd>
+<dt>rststyle-table-title</dt><dd><p>The style for titles of tables.  See section <a class="reference internal" href="#the-table-directive">The table
+directive</a>.</p>
+</dd>
+<dt>rststyle-textbody</dt><dd><p>Normal text.  The style for paragraphs.  Derived from the <code class="docutils literal notranslate"><span class="pre">Text</span>
+<span class="pre">body</span></code> style in <code class="docutils literal notranslate"><span class="pre">oowriter</span></code>.</p>
+</dd>
+</dl>
+</section>
+<section id="character-styles">
+<h4><a class="toc-backref" href="#id11"><span class="sectnum">1.4.1.2</span> Character styles</a><a class="headerlink" href="#character-styles" title="永久链接至标题">¶</a></h4>
+<dl class="simple">
+<dt>rststyle-emphasis</dt><dd><p>Emphasis.  Normally rendered as italics.</p>
+</dd>
+<dt>rststyle-inlineliteral</dt><dd><p>An inline literal.</p>
+</dd>
+<dt>rststyle-strong</dt><dd><p>Strong emphasis.  Normally rendered as boldface.</p>
+</dd>
+<dt>rststyle-quotation</dt><dd><p>In-line quoted material.</p>
+</dd>
+<dt>rststyle-codeblock-classname</dt><dd><p>Syntax highlighting in literal code blocks – class names.</p>
+</dd>
+<dt>rststyle-codeblock-comment</dt><dd><p>Syntax highlighting in literal code blocks – comments.</p>
+</dd>
+<dt>rststyle-codeblock-functionname</dt><dd><p>Syntax highlighting in literal code blocks – function names.</p>
+</dd>
+<dt>rststyle-codeblock-keyword</dt><dd><p>Syntax highlighting in literal code blocks – Python language
+keywords.</p>
+</dd>
+<dt>rststyle-codeblock-name</dt><dd><p>Syntax highlighting in literal code blocks – other names, for
+example, variables.</p>
+</dd>
+<dt>rststyle-codeblock-number</dt><dd><p>Syntax highlighting in literal code blocks – literal numbers,
+including integers, floats, hex numbers, and octal numbers.</p>
+</dd>
+<dt>rststyle-codeblock-operator</dt><dd><p>Syntax highlighting in literal code blocks – Python operators.</p>
+</dd>
+<dt>rststyle-codeblock-string</dt><dd><p>Syntax highlighting in literal code blocks – literal strings.</p>
+</dd>
+</dl>
+</section>
+<section id="list-styles">
+<h4><a class="toc-backref" href="#id12"><span class="sectnum">1.4.1.3</span> List styles</a><a class="headerlink" href="#list-styles" title="永久链接至标题">¶</a></h4>
+<dl class="simple">
+<dt>rststyle-bulletlist</dt><dd><p>Bullet lists (but not in the table of contents)</p>
+</dd>
+<dt>rststyle-blockquote-bulletlist</dt><dd><p>Bullet lists in block quotes.</p>
+</dd>
+<dt>rststyle-blockquote-enumlist</dt><dd><p>Enumerated lists in block quotes.</p>
+</dd>
+<dt>rststyle-enumlist-arabic</dt><dd><p>Enumerated lists, arabic (but not in the table of contents)</p>
+</dd>
+<dt>rststyle-enumlist-loweralpha</dt><dd><p>Enumerated lists, lower alpha (but not in the table of contents)</p>
+</dd>
+<dt>rststyle-enumlist-lowerroman</dt><dd><p>Enumerated lists, lower roman (but not in the table of contents)</p>
+</dd>
+<dt>rststyle-enumlist-upperalpha</dt><dd><p>Enumerated lists, upper alpha (but not in the table of contents)</p>
+</dd>
+<dt>rststyle-enumlist-upperroman</dt><dd><p>Enumerated lists, upper roman (but not in the table of contents)</p>
+</dd>
+<dt>rststyle-epigraph-bulletlist</dt><dd><p>Bullet lists in epigraphs.  See the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">epigraph::</span></code>
+directive.</p>
+</dd>
+<dt>rststyle-epigraph-enumlist</dt><dd><p>Enumerated lists in epigraphs.  See the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">epigraph::</span></code>
+directive.</p>
+</dd>
+<dt>rststyle-highlights-bulletlist</dt><dd><p>Bullet lists in highlights blocks.  See the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">highlights::</span></code>
+directive.</p>
+</dd>
+<dt>rststyle-highlights-enumlist</dt><dd><p>Enumerated lists in highlights blocks.  See the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">highlights::</span></code>
+directive.</p>
+</dd>
+<dt>rststyle-tocbulletlist</dt><dd><p>Lists in the table of contents when section numbering is off.</p>
+</dd>
+<dt>rststyle-tocenumlist</dt><dd><p>Lists in the table of contents when section numbering is on.</p>
+</dd>
+</dl>
+</section>
+<section id="admonition-styles">
+<h4><a class="toc-backref" href="#id13"><span class="sectnum">1.4.1.4</span> Admonition styles</a><a class="headerlink" href="#admonition-styles" title="永久链接至标题">¶</a></h4>
+<dl class="simple">
+<dt>rststyle-admon-attention-hdr</dt><dd><p>The style for the attention admonition header/title.</p>
+</dd>
+<dt>rststyle-admon-attention-body</dt><dd><p>The style for the attention admonition body/paragraph.</p>
+</dd>
+<dt>rststyle-admon-caution-hdr</dt><dd><p>The style for the caution admonition header/title.</p>
+</dd>
+<dt>rststyle-admon-caution-body</dt><dd><p>The style for the caution admonition body/paragraph.</p>
+</dd>
+<dt>rststyle-admon-danger-hdr</dt><dd><p>The style for the  admonition header/title.</p>
+</dd>
+<dt>rststyle-admon-danger-body</dt><dd><p>The style for the danger admonition body/paragraph.</p>
+</dd>
+<dt>rststyle-admon-error-hdr</dt><dd><p>The style for the error admonition header/title.</p>
+</dd>
+<dt>rststyle-admon-error-body</dt><dd><p>The style for the error admonition body/paragraph.</p>
+</dd>
+<dt>rststyle-admon-hint-hdr</dt><dd><p>The style for the hint admonition header/title.</p>
+</dd>
+<dt>rststyle-admon-hint-body</dt><dd><p>The style for the hint admonition body/paragraph.</p>
+</dd>
+<dt>rststyle-admon-hint-hdr</dt><dd><p>The style for the hint admonition header/title.</p>
+</dd>
+<dt>rststyle-admon-hint-body</dt><dd><p>The style for the hint admonition body/paragraph.</p>
+</dd>
+<dt>rststyle-admon-important-hdr</dt><dd><p>The style for the important admonition header/title.</p>
+</dd>
+<dt>rststyle-admon-important-body</dt><dd><p>The style for the important admonition body/paragraph.</p>
+</dd>
+<dt>rststyle-admon-note-hdr</dt><dd><p>The style for the note admonition header/title.</p>
+</dd>
+<dt>rststyle-admon-note-hdr</dt><dd><p>The style for the note admonition header/title.</p>
+</dd>
+<dt>rststyle-admon-tip-body</dt><dd><p>The style for the tip admonition body/paragraph.</p>
+</dd>
+<dt>rststyle-admon-tip-hdr</dt><dd><p>The style for the tip admonition header/title.</p>
+</dd>
+<dt>rststyle-admon-warning-body</dt><dd><p>The style for the warning admonition body/paragraph.</p>
+</dd>
+<dt>rststyle-admon-warning-hdr</dt><dd><p>The style for the warning admonition header/title.</p>
+</dd>
+<dt>rststyle-admon-generic-body</dt><dd><p>The style for the generic admonition body/paragraph.</p>
+</dd>
+<dt>rststyle-admon-generic-hdr</dt><dd><p>The style for the generic admonition header/title.</p>
+</dd>
+</dl>
+</section>
+<section id="rubric-style">
+<h4><a class="toc-backref" href="#id14"><span class="sectnum">1.4.1.5</span> Rubric style</a><a class="headerlink" href="#rubric-style" title="永久链接至标题">¶</a></h4>
+<dl class="simple">
+<dt>rststyle-rubric</dt><dd><p>The style for the text in a rubric directive.</p>
+</dd>
+</dl>
+<p>The rubric directive recognizes a “class” option.  If entered,
+odtwriter uses the value of that option instead of the
+<code class="docutils literal notranslate"><span class="pre">rststyle-rubric</span></code> style.  Here is an example which which attaches
+the <code class="docutils literal notranslate"><span class="pre">rststyle-heading1</span></code> style to the generated rubric:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">rubric</span><span class="p">::</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">my</span> <span class="n">first</span> <span class="n">rubric</span>
+   <span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="n">rststyle</span><span class="o">-</span><span class="n">heading1</span>
+</pre></div>
+</div>
+</section>
+<section id="table-styles">
+<h4><a class="toc-backref" href="#id15"><span class="sectnum">1.4.1.6</span> Table styles</a><a class="headerlink" href="#table-styles" title="永久链接至标题">¶</a></h4>
+<p>A table style is generated by <code class="docutils literal notranslate"><span class="pre">oowriter</span></code> for each table that you
+create.  Therefore, <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> attempts to do something similar.
+These styles are created in the <code class="docutils literal notranslate"><span class="pre">content.xml</span></code> document in the
+generated <code class="docutils literal notranslate"><span class="pre">.odt</span></code> file.  These styles have names prefixed with
+“rststyle-table-“.</p>
+<p>There are two ways in which you can control the styles of your
+tables: one simple, the other a bit more complex, but more
+powerful.</p>
+<p>First, you can change the thickness of the borders of all tables
+generated in a document using the “–table-border-thickness”
+command line option.</p>
+<p>Second, you can control additional table properties and you can
+apply different styles to different tables within the same document
+by customizing and using tables in your stylesheet: <code class="docutils literal notranslate"><span class="pre">styles.odt</span></code>
+or whatever you name your copy of it using the –stylesheet command
+line option.  Then, follow these rules to apply a table style to
+the tables in your document:</p>
+<ul>
+<li><p>The default table style – Optionally, alter and customize the
+style applied by default to tables in your document by modifying
+table “rststyle-table-0” in your stylesheet (<code class="docutils literal notranslate"><span class="pre">styles.odt</span></code> or a
+copy).  Caution: Do not change the name of this table.</p></li>
+<li><p>User-created table styles – Add one or more new table styles to
+be applied selectively to tables in your document by doing the
+following:</p>
+<ol class="arabic">
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">oowriter</span></code>, add a table to your stylesheet and give it
+a name that starts with the prefix “rststyle-table-”, for
+example “rststyle-table-vegetabledata”.  Customize the table’s
+border thickness, border color, and table background color.</p></li>
+<li><p>In your reStructuredText document, apply your new table style
+to a specific table by placing the “..  class::” directive
+immediately before the table, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">class</span><span class="p">::</span> <span class="n">rststyle</span><span class="o">-</span><span class="n">table</span><span class="o">-</span><span class="n">vegetabledata</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+</ul>
+<p>The default table style will be applied to all tables for which you
+do not specify a style with the “..  class::” directive.</p>
+<p>Customize the table properties in <code class="docutils literal notranslate"><span class="pre">oowriter</span></code> using the table
+properties dialog for the table (style) that you wish to customize.</p>
+<p>Note that “–table-border-thickness” command line option overrides
+the border thickness specified in the stylesheet.</p>
+<p>The specific properties that you can control with this second
+method are the following:</p>
+<ul class="simple">
+<li><p>Border thickness and border color.</p></li>
+<li><p>Background color – When you change the background color of a
+table to be used as a style (in <code class="docutils literal notranslate"><span class="pre">styles.odt</span></code> or whatever you
+name it), make sure you change the background color for the
+<em>table</em> and <em>not</em> for a cell in the table.  <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> picks
+the background color from the table, not from a cell within the
+table.</p></li>
+</ul>
+</section>
+<section id="line-block-styles">
+<h4><a class="toc-backref" href="#id16"><span class="sectnum">1.4.1.7</span> Line block styles</a><a class="headerlink" href="#line-block-styles" title="永久链接至标题">¶</a></h4>
+<p>The line block styles wrap the various nested levels of line
+blocks.  There is one line block style for each indent level.</p>
+<dl class="simple">
+<dt>rststyle-lineblock1</dt><dd><p>Line block style for line block with no indent.</p>
+</dd>
+<dt>rststyle-lineblock2</dt><dd><p>Line block style for line block indented 1 level.</p>
+</dd>
+<dt>rststyle-lineblock3</dt><dd><p>Line block style for line block indented 2 levels.</p>
+</dd>
+<dt>rststyle-lineblock4</dt><dd><p>Line block style for line block indented 3 levels.</p>
+</dd>
+<dt>rststyle-lineblock5</dt><dd><p>Line block style for line block indented 4 levels.</p>
+</dd>
+<dt>rststyle-lineblock6</dt><dd><p>Line block style for line block indented 5 levels.</p>
+</dd>
+</dl>
+<p>Notes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> does not check for a maximum level of indents
+within line blocks.  Therefore, you can define additional line
+block styles for additional levels if you need them.  Define
+these styles with the names <code class="docutils literal notranslate"><span class="pre">rststyle-lineblock7</span></code>,
+<code class="docutils literal notranslate"><span class="pre">rststyle-lineblock8</span></code>, …</p></li>
+<li><p>Since the line block style is used to create indentation, a line
+block that is inside a block quote will use
+<code class="docutils literal notranslate"><span class="pre">rststyle-lineblock2</span></code> as its first level of indentation.</p></li>
+</ul>
+</section>
+<section id="footnote-and-citation-styles">
+<h4><a class="toc-backref" href="#id17"><span class="sectnum">1.4.1.8</span> Footnote and citation styles</a><a class="headerlink" href="#footnote-and-citation-styles" title="永久链接至标题">¶</a></h4>
+<dl class="simple">
+<dt>rststyle-footnote</dt><dd><p>The style for footnotes.  This style affects the footnote
+content, <em>not</em> the footnote reference in the body of the document.</p>
+</dd>
+<dt>rststyle-citation</dt><dd><p>The style for citations.  This style affects the citation
+content, <em>not</em> the citation reference in the body of the document.
+You might need to adjust the indentation in this style
+depending on the length of the label used in your citations.</p>
+</dd>
+</dl>
+</section>
+<section id="heading-and-title-styles">
+<h4><a class="toc-backref" href="#id18"><span class="sectnum">1.4.1.9</span> Heading and title styles</a><a class="headerlink" href="#heading-and-title-styles" title="永久链接至标题">¶</a></h4>
+<dl class="simple">
+<dt>rststyle-heading{1|2|3|4|5}</dt><dd><p>The styles for headings (section titles and sub-titles).  Five
+levels of sub-headings are provided: rststyle-heading1 through
+rststyle-heading5.</p>
+</dd>
+<dt>rststyle-title</dt><dd><p>The style for the document title.</p>
+</dd>
+<dt>rststyle-subtitle</dt><dd><p>The style for the document sub-title.</p>
+</dd>
+</dl>
+</section>
+<section id="image-and-figure-styles">
+<h4><a class="toc-backref" href="#id19"><span class="sectnum">1.4.1.10</span> Image and figure styles</a><a class="headerlink" href="#image-and-figure-styles" title="永久链接至标题">¶</a></h4>
+<dl class="simple">
+<dt>rststyle-image</dt><dd><p>The style applied to an image, either an image by itself or an
+image in a figure.</p>
+</dd>
+<dt>rststyle-figureframe</dt><dd><p>The style applied to a figure (actually to the frame that
+surrounds a figure).</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="defining-and-using-a-custom-stylesheet">
+<h3><a class="toc-backref" href="#id20"><span class="sectnum">1.4.2</span> Defining and using a custom stylesheet</a><a class="headerlink" href="#defining-and-using-a-custom-stylesheet" title="永久链接至标题">¶</a></h3>
+<p>You can create your own custom stylesheet.  Here is how:</p>
+<ol class="arabic simple">
+<li><p>Make a copy of <code class="docutils literal notranslate"><span class="pre">styles.odt</span></code>, which is in the distribution.</p></li>
+<li><p>Open your copy of <code class="docutils literal notranslate"><span class="pre">styles.odt</span></code> in <code class="docutils literal notranslate"><span class="pre">oowriter</span></code>.  Modify styles
+in that document.  Then, save it.</p></li>
+<li><p>When you run <code class="docutils literal notranslate"><span class="pre">rst2odt.py</span></code>, use the <code class="docutils literal notranslate"><span class="pre">--stylesheet</span></code> command
+line option to use your custom stylesheet.  Run <code class="docutils literal notranslate"><span class="pre">rst2odt.py</span>
+<span class="pre">--help</span></code> to learn more about these options.</p></li>
+</ol>
+<section id="why-custom-stylesheets">
+<h4><a class="toc-backref" href="#id21"><span class="sectnum">1.4.2.1</span> Why custom stylesheets</a><a class="headerlink" href="#why-custom-stylesheets" title="永久链接至标题">¶</a></h4>
+<p>Here are a few reasons and ideas:</p>
+<ul class="simple">
+<li><p>The page size is stored in the style sheet.  The default page
+size is <code class="docutils literal notranslate"><span class="pre">Letter</span></code>.  You can change the page size (for example,
+to <code class="docutils literal notranslate"><span class="pre">A4</span></code>) in your custom stylesheet by opening it in
+<code class="docutils literal notranslate"><span class="pre">oowriter</span></code>, then clicking on menu: <code class="docutils literal notranslate"><span class="pre">Format/Page...</span></code>, then
+clicking on the <code class="docutils literal notranslate"><span class="pre">Page</span></code> tab.</p></li>
+</ul>
+</section>
+</section>
+<section id="defining-and-using-custom-style-names">
+<h3><a class="toc-backref" href="#id22"><span class="sectnum">1.4.3</span> Defining and using custom style names</a><a class="headerlink" href="#defining-and-using-custom-style-names" title="永久链接至标题">¶</a></h3>
+<p>[Credits: Stefan Merten designed and implemented the custom style names
+capability.  Thank you, Stefan.]</p>
+<p>You can also instruct <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> to use style names of your own
+choice.</p>
+<section id="why-custom-style-names">
+<h4><a class="toc-backref" href="#id23"><span class="sectnum">1.4.3.1</span> Why custom style names</a><a class="headerlink" href="#why-custom-style-names" title="永久链接至标题">¶</a></h4>
+<p>Here are a few reasons and ideas:</p>
+<ul class="simple">
+<li><p>Suppose that your organization has a standard set of styles in
+OOo <code class="docutils literal notranslate"><span class="pre">oowriter</span></code> and suppose that the use of these styles is
+required. You would like to generate ODF documents from
+reST text files, and you want the generated documents to contain
+these styles.</p></li>
+<li><p>Suppose that your company or organization has a policy of using a
+certain MS Word template for some set of documents.  You would
+like to generate ODF documents that use these custom style names,
+so that you can export these documents from ODF <code class="docutils literal notranslate"><span class="pre">oowriter</span></code> to MS
+Word documents that use these style names.</p></li>
+<li><p>Suppose that your documents are written in a language other than
+English.  You would like the style names visible in the “Styles
+and Formatting” window in OOo <code class="docutils literal notranslate"><span class="pre">oowriter</span></code> (menu item
+<code class="docutils literal notranslate"><span class="pre">Format/Styles</span> <span class="pre">and</span> <span class="pre">Formatting</span></code>) to be understandable in the
+language of your users.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> maps single asterisks/stars (for example, *stuff*)
+to emphasis and double stars to strong.  You’d like to reverse
+these.  Or, you would like to generate headings level 3 and 4
+where headings level 1 and 2 would normally be produced.</p></li>
+</ul>
+</section>
+<section id="how-to-use-custom-style-names">
+<h4><a class="toc-backref" href="#id24"><span class="sectnum">1.4.3.2</span> How to use custom style names</a><a class="headerlink" href="#how-to-use-custom-style-names" title="永久链接至标题">¶</a></h4>
+<p>In order to define custom style names and to generate documents that
+contain them, do the following:</p>
+<ol class="arabic">
+<li><p>Create a configuration file containing a “Formats” section.  The
+configuration file obeys the file format supported by the Python
+ConfigParser module:
+<a class="reference external" href="http://docs.python.org/lib/module-ConfigParser.html">ConfigParser – Configuration file parser –
+http://docs.python.org/lib/module-ConfigParser.html</a>.</p></li>
+<li><p>In the “Formats” section of the configuration file, create one
+option (a name-value pair) for each custom style name that you
+wish to define.  The option name is the standard <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code>
+style name (without “rststyle-“), and the value is your custom
+style name.  Here is an example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Formats</span><span class="p">]</span>
+<span class="n">textbody</span><span class="p">:</span> <span class="n">mytextbody</span>
+<span class="n">bulletitem</span><span class="p">:</span> <span class="n">mybulletitem</span>
+<span class="n">heading1</span><span class="p">:</span> <span class="n">myheading1</span>
+    <span class="n">o</span>
+    <span class="n">o</span>
+    <span class="n">o</span>
+</pre></div>
+</div>
+</li>
+<li><p>Create a styles document that defines the styles generated by
+<code class="docutils literal notranslate"><span class="pre">odtwriter</span></code>.  You can create and edit the styles in OOo
+<code class="docutils literal notranslate"><span class="pre">oowriter</span></code>.  It may be helpful to begin by making a copy of the
+styles document that is part of the <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> distribution
+(<code class="docutils literal notranslate"><span class="pre">styles.odt</span></code>).</p></li>
+<li><p>When you run <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code>, specify the <code class="docutils literal notranslate"><span class="pre">--odf-config-file</span></code>
+option.  You might also want to specify your styles document
+using the <code class="docutils literal notranslate"><span class="pre">--stylesheet</span></code> option in order to include your
+custom style definitions.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rst2odt</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">odf</span><span class="o">-</span><span class="n">config</span><span class="o">-</span><span class="n">file</span><span class="o">=</span><span class="n">mymappingfile</span><span class="o">.</span><span class="n">ini</span> \
+  <span class="o">--</span><span class="n">stylesheet</span><span class="o">=</span><span class="n">mystyles</span><span class="o">.</span><span class="n">odt</span> <span class="n">mydoc</span><span class="o">.</span><span class="n">txt</span> <span class="n">mydoc</span><span class="o">.</span><span class="n">odt</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="classes">
+<h3><a class="toc-backref" href="#id25"><span class="sectnum">1.4.4</span> Classes</a><a class="headerlink" href="#classes" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> uses the following Docutils class to provide additional
+control of the generation of ODF content:</p>
+<ul>
+<li><p>Class <code class="docutils literal notranslate"><span class="pre">wrap</span></code> – Use this to cause the wrapping of text around
+an image.  The default is <em>not</em> to wrap text around images.
+Here is an example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">class</span><span class="p">::</span> <span class="n">wrap</span>
+<span class="o">..</span> <span class="n">image</span><span class="p">::</span> <span class="n">images</span><span class="o">/</span><span class="n">flower01</span><span class="o">.</span><span class="n">png</span>
+    <span class="p">:</span><span class="n">alt</span><span class="p">:</span> <span class="n">A</span> <span class="n">bright</span> <span class="n">yellow</span> <span class="n">flower</span>
+    <span class="p">:</span><span class="n">height</span><span class="p">:</span> <span class="mi">55</span>
+    <span class="p">:</span><span class="n">width</span><span class="p">:</span> <span class="mi">60</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="roles">
+<h3><a class="toc-backref" href="#id26"><span class="sectnum">1.4.5</span> Roles</a><a class="headerlink" href="#roles" title="永久链接至标题">¶</a></h3>
+<p>You can use a Docutils custom interpreted text role to attach a
+character style to an inline area of text.  This capability also
+enables you to attach a new character style (with a new name) that
+you define yourself.  Do this by defining your role in a stylesheet
+as a character style with “rststyle-” prefixed to your role name,
+then use the <code class="docutils literal notranslate"><span class="pre">role</span></code> directive and inline markup to apply your
+role.</p>
+<p>In order to use this capability, do the following:</p>
+<ul>
+<li><p>Define the character style for your custom role in a stylesheet
+(a copy of <code class="docutils literal notranslate"><span class="pre">styles.odt</span></code>) with the prefix “rststyle-“.
+Remember: (1) If the name of your custom role is “pretty”, then
+define a character style named “rststyle-pretty”.  (2) Define the
+style as a <em>character</em> style, and <em>not</em>, for example as a
+paragraph style.</p></li>
+<li><p>Declare your role in the source reStructuredText document in a
+<code class="docutils literal notranslate"><span class="pre">role</span></code> directive.  Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">role</span><span class="p">::</span> <span class="n">pretty</span>
+</pre></div>
+</div>
+</li>
+<li><p>Use inline markup to apply your role to text.  Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>We have :pretty:`very nice` apples.
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Here is another example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. role:: fancy
+
+Here is some :fancy:`pretty text` that looks fancy.
+</pre></div>
+</div>
+<p>For more on roles see:
+<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#custom-interpreted-text-roles">Custom Interpreted Text Roles –
+http://docutils.sourceforge.net/docs/ref/rst/directives.html#custom-interpreted-text-roles</a>.</p>
+<p><strong>Note:</strong> The ability to base a role on another existing role is
+<em>not</em> supported by <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code>.</p>
+</section>
+</section>
+<section id="hints-and-suggestions-and-features">
+<h2><a class="toc-backref" href="#id27"><span class="sectnum">1.5</span> Hints and Suggestions and Features</a><a class="headerlink" href="#hints-and-suggestions-and-features" title="永久链接至标题">¶</a></h2>
+<section id="table-of-contents">
+<h3><a class="toc-backref" href="#id28"><span class="sectnum">1.5.1</span> Table of contents</a><a class="headerlink" href="#table-of-contents" title="永久链接至标题">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">..contents::</span></code> directive causes <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> to generate
+either:</p>
+<ol class="arabic simple">
+<li><p>A static, outline style table of contents, if the
+<code class="docutils literal notranslate"><span class="pre">--generate-list-toc</span></code> command line option is specified, or</p></li>
+<li><p>An ODF/<code class="docutils literal notranslate"><span class="pre">oowriter</span></code> style table of contents containing
+dynamically updated page numbers and with the formatting control
+that <code class="docutils literal notranslate"><span class="pre">oowriter</span></code> gives you.  This is the default, or use the
+command line option <code class="docutils literal notranslate"><span class="pre">--generate-list-toc</span></code>.  <strong>Note:</strong>
+<code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> is not able to determine page numbers, so you will
+need to open the generated document in <code class="docutils literal notranslate"><span class="pre">oowriter</span></code>, then
+right-click on the table of contents and select “Update” to
+insert correct page numbers.</p></li>
+</ol>
+</section>
+<section id="syntax-highlighting">
+<h3><a class="toc-backref" href="#id29"><span class="sectnum">1.5.2</span> Syntax highlighting</a><a class="headerlink" href="#syntax-highlighting" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> can add syntax highlighting to code in code
+blocks.  In order to activate this, do all of the following:</p>
+<ol class="arabic">
+<li><p>Install <a class="reference external" href="http://pygments.pocoo.org/">Pygments</a> and …</p></li>
+<li><p>Use the command line option <code class="docutils literal notranslate"><span class="pre">--add-syntax-highlighting</span></code>.
+Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rst2odt.py --add-syntax-highlight test.txt test.odt
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The following styles are defined in styles.odt and are used for
+literal code blocks and syntax highlighting:</p>
+<ul class="simple">
+<li><p>Paragraph styles:</p>
+<ul>
+<li><p>rststyle-codeblock – The style for the code block as a whole.</p></li>
+</ul>
+</li>
+<li><p>Character styles:</p>
+<ul>
+<li><p>rststyle-codeblock-classname – class names.</p></li>
+<li><p>rststyle-codeblock-comment – comments.</p></li>
+<li><p>rststyle-codeblock-functionname – function names.</p></li>
+<li><p>rststyle-codeblock-keyword – Python language keywords.</p></li>
+<li><p>rststyle-codeblock-name – other names, for example,
+variables.</p></li>
+<li><p>rststyle-codeblock-number – literal numbers, including
+integers, floats, hex numbers, and octal numbers.</p></li>
+<li><p>rststyle-codeblock-operator – Python operators.</p></li>
+<li><p>rststyle-codeblock-string – literal strings.</p></li>
+</ul>
+</li>
+</ul>
+<p>Each of the above styles has a default appearance that is defined
+in <code class="docutils literal notranslate"><span class="pre">styles.odt</span></code>.  To change that definition and appearance, open
+<code class="docutils literal notranslate"><span class="pre">styles.odt</span></code> in <code class="docutils literal notranslate"><span class="pre">oowriter</span></code> and use menu item:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Format</span> <span class="o">--&gt;</span> <span class="n">Styles</span> <span class="ow">and</span> <span class="n">Formatting</span>
+</pre></div>
+</div>
+<p>Then, click on the Paragraph Styles button or the Character Styles
+button at the top of the Styles and Formatting window.  You may
+also need to select “All Styles” from the drop-down selection list
+at the bottom of the Styles and Formatting window.</p>
+</section>
+<section id="the-container-directive">
+<h3><a class="toc-backref" href="#id30"><span class="sectnum">1.5.3</span> The container directive</a><a class="headerlink" href="#the-container-directive" title="永久链接至标题">¶</a></h3>
+<p>There is limited support for the <code class="docutils literal notranslate"><span class="pre">container</span></code> directive.  The
+limitations and rules for the container directive are the following:</p>
+<ul class="simple">
+<li><p>Only the first class in the list of classes (arguments) is used.</p></li>
+<li><p>That class/style must be a paragraph style and not (for example) a
+character style.</p></li>
+<li><p>The style/class given to the container directive will have a
+“rststyle-” prefix in the odt file.</p></li>
+</ul>
+<p>So, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">container</span><span class="p">::</span> <span class="n">style</span><span class="o">-</span><span class="mi">1</span> <span class="n">style</span><span class="o">-</span><span class="mi">2</span> <span class="n">style</span><span class="o">-</span><span class="mi">3</span>
+
+    <span class="n">a</span> <span class="n">block</span> <span class="n">of</span> <span class="n">text</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Only <code class="docutils literal notranslate"><span class="pre">style-1</span></code> is used; <code class="docutils literal notranslate"><span class="pre">style-2</span></code> and <code class="docutils literal notranslate"><span class="pre">style-3</span></code> are ignored.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rststyle-style-1</span></code> must be defined.  It should be an existing,
+predefined style, or you should define it in your stylesheet
+(<code class="docutils literal notranslate"><span class="pre">styles.odt</span></code> or the argument to the <code class="docutils literal notranslate"><span class="pre">--stylesheet</span></code> command
+line option).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rststyle-style-1</span></code> must be a paragraph style.</p></li>
+</ul>
+<p>To define a paragraph style, use the following menu item in
+<code class="docutils literal notranslate"><span class="pre">oowriter</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Format</span> <span class="o">--&gt;</span> <span class="n">Styles</span> <span class="ow">and</span> <span class="n">Formatting</span>
+</pre></div>
+</div>
+<p>Then, click on the Paragraph Styles button.</p>
+<p>The following example attaches the <code class="docutils literal notranslate"><span class="pre">rststyle-heading2</span></code> style (a
+predefined style) to each paragraph/line in the container:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">container</span><span class="p">::</span> <span class="n">heading2</span>
+
+   <span class="n">Line</span> <span class="mi">1</span> <span class="n">of</span> <span class="n">container</span><span class="o">.</span>
+
+   <span class="n">Line</span> <span class="mi">2</span> <span class="n">of</span> <span class="n">container</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>More information on how to define a new style (for example, in your
+<code class="docutils literal notranslate"><span class="pre">styles.odt</span></code>) can be found in section
+<a class="reference internal" href="#defining-and-using-custom-style-names">Defining and using custom style names</a>.</p>
+</section>
+<section id="the-table-directive">
+<h3><a class="toc-backref" href="#id31"><span class="sectnum">1.5.4</span> The table directive</a><a class="headerlink" href="#the-table-directive" title="永久链接至标题">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">table</span></code> directive can be used to add a title to a table.
+Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">table</span><span class="p">::</span> <span class="n">A</span> <span class="n">little</span> <span class="n">test</span> <span class="n">table</span>
+
+    <span class="o">===========</span> <span class="o">=============</span>
+    <span class="n">Name</span>        <span class="n">Value</span>
+    <span class="o">===========</span> <span class="o">=============</span>
+    <span class="n">Dave</span>        <span class="n">Cute</span>
+    <span class="n">Mona</span>        <span class="n">Smart</span>
+    <span class="o">===========</span> <span class="o">=============</span>
+</pre></div>
+</div>
+<p>The above will insert the title “A little test table” at the top of the
+table.  You can modify the appearance of the title by modifying the
+paragraph style <code class="docutils literal notranslate"><span class="pre">rststyle-table-title</span></code>.</p>
+</section>
+<section id="footnotes-and-citations">
+<h3><a class="toc-backref" href="#id32"><span class="sectnum">1.5.5</span> Footnotes and citations</a><a class="headerlink" href="#footnotes-and-citations" title="永久链接至标题">¶</a></h3>
+<p>Footnotes and citations are supported.</p>
+<p>There are additional styles <code class="docutils literal notranslate"><span class="pre">rststyle-footnote</span></code> and
+<code class="docutils literal notranslate"><span class="pre">rststyle-citation</span></code> for footnotes and citations. See
+<a class="reference internal" href="#footnote-and-citation-styles">Footnote and citation styles</a>.</p>
+<p>You may need to modify the citation style to fit the length of your
+citation references.</p>
+<p>Endnotes – There are command line options that control whether
+<code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> creates endnotes instead of footnotes.  Endnotes
+appear at the end of the document instead of at the bottom of the
+page.  See flags <code class="docutils literal notranslate"><span class="pre">--endnotes-end-doc</span></code> and
+<code class="docutils literal notranslate"><span class="pre">--no-endnotes-end-doc</span></code> in section <a class="reference internal" href="#command-line-options">Command line options</a>.</p>
+</section>
+<section id="images-and-figures">
+<h3><a class="toc-backref" href="#id33"><span class="sectnum">1.5.6</span> Images and figures</a><a class="headerlink" href="#images-and-figures" title="永久链接至标题">¶</a></h3>
+<p>If on the image or the figure directive you provide the scale option
+but do not provide the width and height options, then <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code>
+will attempt to determine the size of the image using the <a class="reference external" href="https://en.wikipedia.org/wiki/Python_Imaging_Library">Python
+Imaging Library</a> (PIL).  If <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> cannot find and import
+Python Imaging Library, it will raise an exception.  If this
+ocurrs, you can fix it by doing one of the following:</p>
+<ul class="simple">
+<li><p>Install the Python Imaging Library or</p></li>
+<li><p>Remove the <code class="docutils literal notranslate"><span class="pre">scale</span></code> option or</p></li>
+<li><p>Add both the <code class="docutils literal notranslate"><span class="pre">width</span></code> and the <code class="docutils literal notranslate"><span class="pre">height</span></code> options.</p></li>
+</ul>
+<p>So, the rule is: if on any image or figure, you specify scale but
+not both width and height, you must install the <a class="reference external" href="https://en.wikipedia.org/wiki/Python_Imaging_Library">Python Imaging
+Library</a> library.</p>
+<p>For more information about PIL, see: <a class="reference external" href="https://en.wikipedia.org/wiki/Python_Imaging_Library">Python Imaging Library</a>.</p>
+</section>
+<section id="the-raw-directive">
+<h3><a class="toc-backref" href="#id34"><span class="sectnum">1.5.7</span> The raw directive</a><a class="headerlink" href="#the-raw-directive" title="永久链接至标题">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">raw</span></code> directive is supported.  Use output format type “odt”.</p>
+<p>You will need to be careful about the formatting of the raw
+content.  In particular, introduced whitespace might be a problem.</p>
+<p>In order to produce content for the raw directive for use by
+<code class="docutils literal notranslate"><span class="pre">odtwriter</span></code>, you might want to extract the file <code class="docutils literal notranslate"><span class="pre">content.xml</span></code>
+from a <code class="docutils literal notranslate"><span class="pre">.odt</span></code> file (using some Zip tool), and then clip, paste,
+and modify a selected bit of it.</p>
+<p>Here is an example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">raw</span><span class="p">::</span> <span class="n">odt</span>
+
+    <span class="o">&lt;</span><span class="n">text</span><span class="p">:</span><span class="n">p</span> <span class="n">text</span><span class="p">:</span><span class="n">style</span><span class="o">-</span><span class="n">name</span><span class="o">=</span><span class="s2">"rststyle-textbody"</span><span class="o">&gt;</span><span class="n">Determining</span>
+    <span class="o">&lt;</span><span class="n">text</span><span class="p">:</span><span class="n">span</span> <span class="n">text</span><span class="p">:</span><span class="n">style</span><span class="o">-</span><span class="n">name</span><span class="o">=</span><span class="s2">"rststyle-emphasis"</span><span class="o">&gt;</span><span class="n">which</span><span class="o">&lt;/</span><span class="n">text</span><span class="p">:</span><span class="n">span</span><span class="o">&gt;</span>
+    <span class="n">namespace</span> <span class="n">a</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">in</span> <span class="ow">is</span> <span class="n">static</span><span class="o">.</span>  <span class="n">It</span> <span class="n">can</span> <span class="n">be</span> <span class="n">determined</span> <span class="n">by</span> <span class="n">a</span>
+    <span class="n">lexical</span> <span class="n">scan</span> <span class="n">of</span> <span class="n">the</span> <span class="n">code</span><span class="o">.</span>  <span class="n">If</span> <span class="n">a</span> <span class="n">variable</span> <span class="ow">is</span> <span class="n">assigned</span> <span class="n">a</span> <span class="n">value</span>
+    <span class="o">&lt;</span><span class="n">text</span><span class="p">:</span><span class="n">span</span> <span class="n">text</span><span class="p">:</span><span class="n">style</span><span class="o">-</span><span class="n">name</span><span class="o">=</span><span class="s2">"rststyle-emphasis"</span><span class="o">&gt;</span><span class="n">anywhere</span><span class="o">&lt;/</span><span class="n">text</span><span class="p">:</span><span class="n">span</span><span class="o">&gt;</span>
+    <span class="ow">in</span> <span class="n">a</span> <span class="n">scope</span> <span class="p">(</span><span class="n">specifically</span> <span class="n">within</span> <span class="n">a</span> <span class="n">function</span> <span class="ow">or</span> <span class="n">method</span> <span class="n">body</span><span class="p">),</span>
+    <span class="n">then</span> <span class="n">that</span> <span class="n">variable</span> <span class="ow">is</span> <span class="n">local</span> <span class="n">to</span> <span class="n">that</span> <span class="n">scope</span><span class="o">.</span>  <span class="n">If</span> <span class="n">Python</span> <span class="n">does</span>
+    <span class="ow">not</span> <span class="n">find</span> <span class="n">a</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">local</span> <span class="n">scope</span><span class="p">,</span> <span class="n">then</span> <span class="n">it</span> <span class="n">looks</span> <span class="nb">next</span>
+    <span class="ow">in</span> <span class="n">the</span> <span class="k">global</span> <span class="n">scope</span> <span class="p">(</span><span class="n">also</span> <span class="n">sometimes</span> <span class="n">called</span> <span class="n">the</span> <span class="n">module</span> <span class="n">scope</span><span class="p">)</span>
+    <span class="ow">and</span> <span class="n">then</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">built</span><span class="o">-</span><span class="n">ins</span> <span class="n">scope</span><span class="o">.</span>  <span class="n">But</span><span class="p">,</span> <span class="n">the</span>
+    <span class="o">&lt;</span><span class="n">text</span><span class="p">:</span><span class="n">span</span> <span class="n">text</span><span class="p">:</span><span class="n">style</span><span class="o">-</span><span class="n">name</span><span class="o">=</span><span class="s2">"rststyle-inlineliteral"</span><span class="o">&gt;</span><span class="k">global</span><span class="o">&lt;/</span><span class="n">text</span><span class="p">:</span><span class="n">span</span><span class="o">&gt;</span>
+    <span class="n">statement</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">force</span> <span class="n">Python</span> <span class="n">to</span> <span class="n">find</span> <span class="ow">and</span> <span class="n">use</span> <span class="n">a</span> <span class="k">global</span>
+    <span class="n">variable</span> <span class="p">(</span><span class="n">a</span> <span class="n">variable</span> <span class="n">defined</span> <span class="n">at</span> <span class="n">top</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">module</span><span class="p">)</span> <span class="n">rather</span>
+    <span class="n">than</span> <span class="n">create</span> <span class="n">a</span> <span class="n">local</span> <span class="n">one</span><span class="o">.&lt;/</span><span class="n">text</span><span class="p">:</span><span class="n">p</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="the-meta-directive">
+<h3><a class="toc-backref" href="#id35"><span class="sectnum">1.5.8</span> The meta directive</a><a class="headerlink" href="#the-meta-directive" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> supports the <code class="docutils literal notranslate"><span class="pre">meta</span></code> directive.  “keywords”
+and “description” are set in their respective odt fields.
+Other meta fields are set as “Custom Properties”.
+Here is an example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">meta</span><span class="p">::</span>
+   <span class="p">:</span><span class="n">keywords</span><span class="p">:</span> <span class="n">reStructuredText</span><span class="p">,</span> <span class="n">docutils</span><span class="p">,</span> <span class="n">formatting</span>
+   <span class="p">:</span><span class="n">description</span> <span class="n">lang</span><span class="o">=</span><span class="n">en</span><span class="p">:</span> <span class="n">A</span> <span class="n">reST</span> <span class="n">document</span><span class="p">,</span> <span class="n">contains</span> <span class="n">formatted</span>
+       <span class="n">text</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">formatted</span> <span class="n">style</span><span class="o">.</span>
+   <span class="p">:</span><span class="n">custom_var</span><span class="p">:</span> <span class="n">Value</span>
+</pre></div>
+</div>
+<p>To see the results of the <code class="docutils literal notranslate"><span class="pre">meta</span></code> directive in <code class="docutils literal notranslate"><span class="pre">oowriter</span></code>,
+select menu item “File/Properties…”, then click on the
+“Description” tab (“keywords” and “description” fields) and the
+“Custom Properties” tab.</p>
+</section>
+<section id="footnote-references-inside-footnotes">
+<h3><a class="toc-backref" href="#id36"><span class="sectnum">1.5.9</span> Footnote references inside footnotes</a><a class="headerlink" href="#footnote-references-inside-footnotes" title="永久链接至标题">¶</a></h3>
+<p>Not supported.</p>
+<p>Get a grip.  Be serious.  Try a dose of reality.</p>
+<p><code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> ignores them.</p>
+<p>They cause <code class="docutils literal notranslate"><span class="pre">oowriter</span></code> to croak.</p>
+</section>
+<section id="page-size">
+<h3><a class="toc-backref" href="#id37"><span class="sectnum">1.5.10</span> Page size</a><a class="headerlink" href="#page-size" title="永久链接至标题">¶</a></h3>
+<p>The default page size, in documents generated by <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> is
+<code class="docutils literal notranslate"><span class="pre">Letter</span></code>.  You can change this (for example to <code class="docutils literal notranslate"><span class="pre">A4</span></code>) by using a
+custom stylesheet.  See <a class="reference internal" href="#defining-and-using-a-custom-stylesheet">Defining and using a custom stylesheet</a>
+for instructions on how to do this.</p>
+<p>On machines which support <code class="docutils literal notranslate"><span class="pre">paperconf</span></code>, <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> can insert
+the default page size for your locale.  In order for this to work,
+the following conditions must be met:</p>
+<ol class="arabic">
+<li><p>The program <code class="docutils literal notranslate"><span class="pre">paperconf</span></code> must be available on your system.
+<code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> uses <code class="docutils literal notranslate"><span class="pre">paperconf</span> <span class="pre">-s</span></code> to obtain the paper size.
+See <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">paperconf</span></code> for more information.</p></li>
+<li><p>The default page height and width must be removed from the
+<code class="docutils literal notranslate"><span class="pre">styles.odt</span></code> used to generate the document.  A Python script
+<code class="docutils literal notranslate"><span class="pre">rst2odt_prepstyles.py</span></code> is distributed with <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> and
+is installed in the <code class="docutils literal notranslate"><span class="pre">bin</span></code> directory.  You can remove the page
+height and width with something like the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rst2odt_prepstyles.py styles.odt
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>If you edit your stylesheet in <code class="docutils literal notranslate"><span class="pre">oowriter</span></code> and then
+save it, <code class="docutils literal notranslate"><span class="pre">oowriter</span></code> automatically inserts a page height and
+width in the styles for that (stylesheet) document.  If that is
+not the page size that you want and you want <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> to
+insert a default page size using <code class="docutils literal notranslate"><span class="pre">paperconf</span></code>, then you will
+need to strip the page size from your stylesheet each time you
+edit that stylesheet with <code class="docutils literal notranslate"><span class="pre">oowriter</span></code>.</p>
+</div>
+</section>
+<section id="custom-header-footers-inserting-page-numbers-date-time-etc">
+<h3><a class="toc-backref" href="#id38"><span class="sectnum">1.5.11</span> Custom header/footers: inserting page numbers, date, time, etc</a><a class="headerlink" href="#custom-header-footers-inserting-page-numbers-date-time-etc" title="永久链接至标题">¶</a></h3>
+<p>You can specify custom headers and footers for your document from
+the command line.  These headers and footers can be used to insert
+fields such as the page number, page count, date, time, etc.  See
+below for a complete list.</p>
+<p>To insert a custom header or footer, use the “–custom-odt-header”
+or “–custom-odt-footer” command line options.  For example, the
+following inserts a footer containing the page number and page
+count:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rst2odt.py --custom-odt-footer="Page %p% of %P%" f1.txt f1.odt
+</pre></div>
+</div>
+<section id="field-specifiers">
+<h4><a class="toc-backref" href="#id39"><span class="sectnum">1.5.11.1</span> Field specifiers</a><a class="headerlink" href="#field-specifiers" title="永久链接至标题">¶</a></h4>
+<p>You can use the following field specifiers to insert <code class="docutils literal notranslate"><span class="pre">oowriter</span></code>
+fields in your custom headers and footers:</p>
+<dl class="simple">
+<dt>%p%</dt><dd><p>The current page number.</p>
+</dd>
+<dt>%P%</dt><dd><p>The number of pages in the document.</p>
+</dd>
+<dt>%d1%</dt><dd><p>The current date in format 12/31/99.</p>
+</dd>
+<dt>%d2%</dt><dd><p>The current date in format 12/31/1999.</p>
+</dd>
+<dt>%d3%</dt><dd><p>The current date in format Dec 31, 1999.</p>
+</dd>
+<dt>%d4%</dt><dd><p>The current date in format December 31, 1999.</p>
+</dd>
+<dt>%d5%</dt><dd><p>The current date in format 1999-12-31.</p>
+</dd>
+<dt>%t1%</dt><dd><p>The current time in format 14:22.</p>
+</dd>
+<dt>%t2%</dt><dd><p>The current time in format 14:22:33.</p>
+</dd>
+<dt>%t3%</dt><dd><p>The current time in format 02:22 PM.</p>
+</dd>
+<dt>%t4%</dt><dd><p>The current time in format 02:22:33 PM.</p>
+</dd>
+<dt>%a%</dt><dd><p>The author of the document (actually the initial creator).</p>
+</dd>
+<dt>%t%</dt><dd><p>The document title.</p>
+</dd>
+<dt>%s%</dt><dd><p>The document subject.</p>
+</dd>
+</dl>
+<p><strong>Note:</strong> The use of the above field specifiers in the body of your
+reStructuredText document is <strong>not</strong> supported, because these
+specifiers are not standard across Docutils writers.</p>
+</section>
+</section>
+</section>
+<section id="credits">
+<h2><a class="toc-backref" href="#id40"><span class="sectnum">1.6</span> Credits</a><a class="headerlink" href="#credits" title="永久链接至标题">¶</a></h2>
+<p>Stefan Merten designed and implemented the custom style names
+capability.  Thank you, Stefan.</p>
+<p>Michael Schutte supports the Debian GNU/Linux distribution of
+<code class="docutils literal notranslate"><span class="pre">odtwriter</span></code>.  Thank you, Michael, for providing and supporting
+the Debian package.</p>
+<p>Michael Schutte implemented the fix that enables <code class="docutils literal notranslate"><span class="pre">odtwriter</span></code> to
+pick up the default paper size on platforms where the program
+<code class="docutils literal notranslate"><span class="pre">paperconf</span></code> is available.  Thank you.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="smartquotes.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Smart Quotes for Docutils</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="manpage.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">manpage writer for Docutils</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, xinetzone |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
+            <a class="muted-link" href="../../../_sources/docutils/docs/user/odt.txt"
+               rel="nofollow">
+              显示源代码
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            目录
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><span class="sectnum">1</span> Odt Writer for Docutils</a><ul>
+<li><a class="reference internal" href="#introduction"><span class="sectnum">1.1</span> Introduction</a></li>
+<li><a class="reference internal" href="#requirements"><span class="sectnum">1.2</span> Requirements</a></li>
+<li><a class="reference internal" href="#how-to-use-it"><span class="sectnum">1.3</span> How to Use It</a><ul>
+<li><a class="reference internal" href="#configuration-file"><span class="sectnum">1.3.1</span> Configuration file</a></li>
+<li><a class="reference internal" href="#command-line-options"><span class="sectnum">1.3.2</span> Command line options</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#styles-and-classes"><span class="sectnum">1.4</span> Styles and Classes</a><ul>
+<li><a class="reference internal" href="#styles-used-by-odtwriter"><span class="sectnum">1.4.1</span> Styles used by odtwriter</a><ul>
+<li><a class="reference internal" href="#paragraph-styles"><span class="sectnum">1.4.1.1</span> Paragraph styles</a></li>
+<li><a class="reference internal" href="#character-styles"><span class="sectnum">1.4.1.2</span> Character styles</a></li>
+<li><a class="reference internal" href="#list-styles"><span class="sectnum">1.4.1.3</span> List styles</a></li>
+<li><a class="reference internal" href="#admonition-styles"><span class="sectnum">1.4.1.4</span> Admonition styles</a></li>
+<li><a class="reference internal" href="#rubric-style"><span class="sectnum">1.4.1.5</span> Rubric style</a></li>
+<li><a class="reference internal" href="#table-styles"><span class="sectnum">1.4.1.6</span> Table styles</a></li>
+<li><a class="reference internal" href="#line-block-styles"><span class="sectnum">1.4.1.7</span> Line block styles</a></li>
+<li><a class="reference internal" href="#footnote-and-citation-styles"><span class="sectnum">1.4.1.8</span> Footnote and citation styles</a></li>
+<li><a class="reference internal" href="#heading-and-title-styles"><span class="sectnum">1.4.1.9</span> Heading and title styles</a></li>
+<li><a class="reference internal" href="#image-and-figure-styles"><span class="sectnum">1.4.1.10</span> Image and figure styles</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#defining-and-using-a-custom-stylesheet"><span class="sectnum">1.4.2</span> Defining and using a custom stylesheet</a><ul>
+<li><a class="reference internal" href="#why-custom-stylesheets"><span class="sectnum">1.4.2.1</span> Why custom stylesheets</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#defining-and-using-custom-style-names"><span class="sectnum">1.4.3</span> Defining and using custom style names</a><ul>
+<li><a class="reference internal" href="#why-custom-style-names"><span class="sectnum">1.4.3.1</span> Why custom style names</a></li>
+<li><a class="reference internal" href="#how-to-use-custom-style-names"><span class="sectnum">1.4.3.2</span> How to use custom style names</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#classes"><span class="sectnum">1.4.4</span> Classes</a></li>
+<li><a class="reference internal" href="#roles"><span class="sectnum">1.4.5</span> Roles</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hints-and-suggestions-and-features"><span class="sectnum">1.5</span> Hints and Suggestions and Features</a><ul>
+<li><a class="reference internal" href="#table-of-contents"><span class="sectnum">1.5.1</span> Table of contents</a></li>
+<li><a class="reference internal" href="#syntax-highlighting"><span class="sectnum">1.5.2</span> Syntax highlighting</a></li>
+<li><a class="reference internal" href="#the-container-directive"><span class="sectnum">1.5.3</span> The container directive</a></li>
+<li><a class="reference internal" href="#the-table-directive"><span class="sectnum">1.5.4</span> The table directive</a></li>
+<li><a class="reference internal" href="#footnotes-and-citations"><span class="sectnum">1.5.5</span> Footnotes and citations</a></li>
+<li><a class="reference internal" href="#images-and-figures"><span class="sectnum">1.5.6</span> Images and figures</a></li>
+<li><a class="reference internal" href="#the-raw-directive"><span class="sectnum">1.5.7</span> The raw directive</a></li>
+<li><a class="reference internal" href="#the-meta-directive"><span class="sectnum">1.5.8</span> The meta directive</a></li>
+<li><a class="reference internal" href="#footnote-references-inside-footnotes"><span class="sectnum">1.5.9</span> Footnote references inside footnotes</a></li>
+<li><a class="reference internal" href="#page-size"><span class="sectnum">1.5.10</span> Page size</a></li>
+<li><a class="reference internal" href="#custom-header-footers-inserting-page-numbers-date-time-etc"><span class="sectnum">1.5.11</span> Custom header/footers: inserting page numbers, date, time, etc</a><ul>
+<li><a class="reference internal" href="#field-specifiers"><span class="sectnum">1.5.11.1</span> Field specifiers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#credits"><span class="sectnum">1.6</span> Credits</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/scripts/main.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    </body>
+</html>
