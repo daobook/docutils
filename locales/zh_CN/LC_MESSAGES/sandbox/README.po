@@ -71,4 +71,3 @@ msgstr "完整的列表见 `sandbox/`_ 目录。"
 #: ../../sandbox/README.txt:39
 msgid "Some Sandbox projects, are also sorted into the `Docutils Link List`_."
 msgstr "一些沙盒项目，也被分到了 `Docutils 链接列表`_."
-
