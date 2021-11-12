@@ -16,6 +16,9 @@
 A parser for CommonMark MarkDown text using `recommonmark`__.
 
 __ https://pypi.org/project/recommonmark/
+
+This module is provisional:
+the API is not settled and may change with any minor Docutils version.
 """
 
 import docutils.parsers
@@ -46,8 +49,11 @@ except ImportError:
 
 if CommonMarkParser:
     class Parser(CommonMarkParser):
-        """MarkDown parser based on recommonmark."""
+        """MarkDown parser based on recommonmark.
         
+        This parser is provisional:
+        the API is not settled and may change with any minor Docutils version.
+        """
         supported = ('recommonmark', 'commonmark', 'markdown', 'md')
         config_section = 'recommonmark parser'
         config_section_dependencies = ('parsers',)
@@ -78,7 +84,7 @@ if CommonMarkParser:
             # ---------------
 
             # merge adjoining Text nodes:
-            for node in document.traverse(nodes.TextElement):
+            for node in document.findall(nodes.TextElement):
                 children = node.children
                 i = 0
                 while i+1 < len(children):
@@ -89,18 +95,18 @@ if CommonMarkParser:
                     else:
                         i += 1
 
-            # add "code" class argument to inline literal (code spans)
-            for node in document.traverse(lambda n: isinstance(n,
+            # add "code" class argument to literal elements (inline and block)
+            for node in document.findall(lambda n: isinstance(n,
                                     (nodes.literal, nodes.literal_block))):
                 node['classes'].append('code')
             # move "language" argument to classes
-            for node in document.traverse(nodes.literal_block):
+            for node in document.findall(nodes.literal_block):
                 if 'language' in node.attributes:
                     node['classes'].append(node['language'])
                     del node['language']
 
             # remove empty target nodes
-            for node in list(document.traverse(nodes.target)):
+            for node in list(document.findall(nodes.target)):
                 # remove empty name
                 node['names'] = [v for v in node['names'] if v]
                 if node.children or [v for v in node.attributes.values() if v]:
@@ -109,12 +115,12 @@ if CommonMarkParser:
 
             # replace raw nodes if raw is not allowed
             if not document.settings.raw_enabled:
-                for node in document.traverse(nodes.raw):
+                for node in document.findall(nodes.raw):
                     warning = document.reporter.warning('Raw content disabled.')
                     node.parent.replace(node, warning)
 
             # fix section nodes
-            for node in document.traverse(nodes.section):
+            for node in document.findall(nodes.section):
                 # remove spurious IDs (first may be from duplicate name)
                 if len(node['ids']) > 1:
                     node['ids'].pop()
@@ -132,7 +138,7 @@ if CommonMarkParser:
                         del node['level']
     
             # drop pending_xref (Sphinx cross reference extension)
-            for node in document.traverse(addnodes.pending_xref):
+            for node in document.findall(addnodes.pending_xref):
                 reference = node.children[0]
                 if 'name' not in reference:
                     reference['name'] = nodes.fully_normalize_name(
