@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../docutils/FAQ.txt:10
 msgid "Docutils FAQ (Frequently Asked Questions)"
-msgstr ""
+msgstr "Docutils 常见问题（Frequently Asked Questions）"
 
 #: ../../docutils/FAQ.txt
 msgid "Date"
@@ -64,6 +64,8 @@ msgid ""
 " copy`_ might be newer.  This document uses are relative links; if they "
 "don't work, please use the `master copy`_."
 msgstr ""
+"这是一项正在进行的工作。如果你阅读的是本地副本，那么 `master copy`_ 可能会更新。"
+"本文档使用的是相对链接；如果它们不起作用，请使用 `master copy`_ 。"
 
 #: ../../docutils/FAQ.txt:25
 msgid ""
@@ -71,6 +73,8 @@ msgid ""
 "the `Docutils-users`_ mailing list.  Project members should feel free to "
 "edit the source text file directly."
 msgstr ""
+"请随时提出问题和/或提供答案；发送电子邮件到 `Docutils-users`_ 邮件列表。"
+"项目成员应随时直接编辑源文本文件。"
 
 #: ../../docutils/FAQ.txt:36
 msgid "Docutils"
@@ -78,7 +82,7 @@ msgstr ""
 
 #: ../../docutils/FAQ.txt:39
 msgid "What is Docutils?"
-msgstr ""
+msgstr "什么是 Docutils？"
 
 #: ../../docutils/FAQ.txt:41
 msgid ""

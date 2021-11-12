@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: ../../_toc/info.rst:3
-msgid "项目基础"
+#: ../../_toc/user/rst.rst:3
+msgid "reStructuredText"
 msgstr ""
 
-#: ../../_toc/info.rst:5
-msgid "这些文档适用于所有 Docutils 涉众。它们被保存在 Docutils 项目目录的顶层 `docutils/`。"
+#: ../../_toc/user/rst.rst:13
+msgid "docutils/docs/user/rst/quickref.html docutils/docs/user/rst/demo"
 msgstr ""
 

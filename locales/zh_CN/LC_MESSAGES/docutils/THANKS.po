@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../docutils/THANKS.txt:4
 msgid "Acknowledgements"
-msgstr ""
+msgstr "致谢"
 
 #: ../../docutils/THANKS.txt
 msgid "Author"

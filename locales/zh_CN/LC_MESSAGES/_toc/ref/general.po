@@ -17,11 +17,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: ../../_toc/info.rst:3
-msgid "项目基础"
+#: ../../_toc/ref/general.rst:3
+msgid "Docutils 通用参考"
 msgstr ""
 
-#: ../../_toc/info.rst:5
-msgid "这些文档适用于所有 Docutils 涉众。它们被保存在 Docutils 项目目录的顶层 `docutils/`。"
+#: ../../_toc/ref/general.rst:12
+msgid "[Docutils Generic DTD](../../docutils/docs/ref/docutils.dtd)"
+msgstr ""
+
+#: ../../_toc/ref/general.rst:13
+msgid ""
+"[OASIS XML Exchange Table Model Declaration Module (CALS tables DTD "
+"module)](../../docutils/docs/ref/soextblx.dtd)"
 msgstr ""
 

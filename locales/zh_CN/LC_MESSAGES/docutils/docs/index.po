@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: docutils-doc \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"POT-Creation-Date: 2021-11-12 14:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,9 +66,7 @@ msgstr ""
 msgid ""
 "The latest working documents may be accessed individually below, or from "
 "the ``docs`` directory of the `Docutils distribution`_."
-msgstr ""
-"最新的工作文档可以在下面单独访问，"
-"或者从 `Docutils 分发版`_ 的 ``docs`` 目录中访问。"
+msgstr "最新的工作文档可以在下面单独访问，或者从 `Docutils 分发版`_ 的 ``docs`` 目录中访问。"
 
 #: ../../docutils/docs/index.txt:18
 msgid "目录"
@@ -88,31 +86,26 @@ msgid ""
 "some are developers (e.g. Python developers utilizing reStructuredText "
 "for docstrings in their source), many are not."
 msgstr ""
-"最终使用者：reStructuredText 和 Docutils 工具的用户。"
-"虽然有些是开发人员（例如 Python 开发人员在源代码中使用 reStructuredText 作为"
-"文档字符串)，但也有很多不是。"
+"最终使用者：reStructuredText 和 Docutils 工具的用户。虽然有些是开发人员（例如 Python 开发人员在源代码中使用 "
+"reStructuredText 作为文档字符串)，但也有很多不是。"
 
 #: ../../docutils/docs/index.txt:29
 msgid ""
 "Client-developers: developers using Docutils as a library, programmers "
 "developing *with* Docutils."
-msgstr ""
-"客户端开发人员：将 Docutils 作为库使用的开发人员，"
-"使用 Docutils 进行开发的程序员。"
+msgstr "客户端开发人员：将 Docutils 作为库使用的开发人员，使用 Docutils 进行开发的程序员。"
 
 #: ../../docutils/docs/index.txt:32
 msgid ""
 "Component-developers: those who implement application-specific "
 "components, directives, and/or roles, separately from Docutils."
-msgstr ""
-"组件开发人员：那些实现特定于应用程序的组件、指令和/或角色的人，与 Docutils 分开。"
+msgstr "组件开发人员：那些实现特定于应用程序的组件、指令和/或角色的人，与 Docutils 分开。"
 
 #: ../../docutils/docs/index.txt:35
 msgid ""
 "Core-developers: developers of the Docutils codebase and participants in "
 "the Docutils project community."
-msgstr ""
-"核心开发人员: Docutils 代码库的开发人员和 Docutils 项目社区的参与者。"
+msgstr "核心开发人员: Docutils 代码库的开发人员和 Docutils 项目社区的参与者。"
 
 #: ../../docutils/docs/index.txt:38
 msgid "Re-implementers: developers of alternate implementations of Docutils."
@@ -125,11 +118,7 @@ msgid ""
 "are also end-users.  Core-developers are also client-developers, and may "
 "also be component-developers in other projects.  Component-developers are"
 " also client-developers."
-msgstr ""
-"这些群体之间有很多重叠。大多数（也许是所有）核心开发人员、组件开发人员、"
-"客户端开发人员和再实现人员也是最终用户。"
-"核心开发人员也是客户端开发人员，也可能是其他项目中的组件开发人员。"
-"组件开发人员也是客户端开发人员。"
+msgstr "这些群体之间有很多重叠。大多数（也许是所有）核心开发人员、组件开发人员、客户端开发人员和再实现人员也是最终用户。核心开发人员也是客户端开发人员，也可能是其他项目中的组件开发人员。组件开发人员也是客户端开发人员。"
 
 #: ../../docutils/docs/index.txt:49
 msgid "Project Fundamentals"
@@ -139,8 +128,7 @@ msgstr "项目基础"
 msgid ""
 "These files are for all Docutils stakeholders.  They are kept at the top "
 "level of the Docutils project directory."
-msgstr ""
-"这些文件适用于所有 Docutils 涉众。它们被保存在 Docutils 项目目录的顶层。"
+msgstr "这些文件适用于所有 Docutils 涉众。它们被保存在 Docutils 项目目录的顶层。"
 
 #: ../../docutils/docs/index.txt
 msgid "README.txt_"
@@ -148,7 +136,7 @@ msgstr ""
 
 #: ../../docutils/docs/index.txt:54
 msgid "Project overview: quick-start, requirements, installation, and usage."
-msgstr "``user/``: 为最终用户提供的入门和教程材料"
+msgstr "项目概述：快速启动、需求、安装和使用。"
 
 #: ../../docutils/docs/index.txt
 msgid "COPYING.txt_"
@@ -166,8 +154,7 @@ msgstr ""
 msgid ""
 "Docutils Frequently Asked Questions.  If you have a question or issue, "
 "there's a good chance it's already answered here."
-msgstr ""
-"Docutils 常见问题。如果你有一个问题或议题，很有可能已经在这里得到了回答。"
+msgstr "Docutils 常见问题。如果你有一个问题或议题，很有可能已经在这里得到了回答。"
 
 #: ../../docutils/docs/index.txt
 msgid "BUGS.txt_"
@@ -208,43 +195,43 @@ msgstr "``user/``：最终用户的介绍和教程材料"
 #: ../../docutils/docs/index.txt:81 ../../docutils/docs/index.txt:120
 #: ../../docutils/docs/index.txt:212
 msgid "Docutils-general:"
-msgstr ""
+msgstr "Docutils 通用："
 
 #: ../../docutils/docs/index.txt:83
 msgid "`Docutils Front-End Tools <user/tools.html>`__"
-msgstr ""
+msgstr "`Docutils 前端工具 <user/tools.html>`__"
 
 #: ../../docutils/docs/index.txt:84
 msgid "`Docutils Configuration <user/config.html>`__"
-msgstr ""
+msgstr "`Docutils 配置 <user/config.html>`__"
 
 #: ../../docutils/docs/index.txt:85
 msgid "`Docutils Mailing Lists <user/mailing-lists.html>`__"
-msgstr ""
+msgstr "`Docutils 邮件列表 <user/mailing-lists.html>`__"
 
 #: ../../docutils/docs/index.txt:86
 msgid "`Docutils Link List <user/links.html>`__"
-msgstr ""
+msgstr "`Docutils 链接清单 <user/links.html>`__"
 
 #: ../../docutils/docs/index.txt:88
 msgid "Writer-specific:"
-msgstr ""
+msgstr "特定于写作:"
 
 #: ../../docutils/docs/index.txt:90
 msgid "`Docutils HTML writers <user/html.html>`__"
-msgstr ""
+msgstr "`Docutils HTML 编写者 <user/html.html>`__"
 
 #: ../../docutils/docs/index.txt:91
 msgid "`Easy Slide Shows With reStructuredText & S5 <user/slide-shows.html>`__"
-msgstr ""
+msgstr "`用 reStructuredText 轻松制作幻灯片 & S5 <user/slide-shows.html>`__"
 
 #: ../../docutils/docs/index.txt:92
 msgid "`Docutils LaTeX Writer <user/latex.html>`__"
-msgstr ""
+msgstr "`Docutils LaTeX 编写者 <user/latex.html>`__"
 
 #: ../../docutils/docs/index.txt:93
 msgid "`Docutils ODF/OpenOffice/odt Writer <user/odt.html>`__"
-msgstr ""
+msgstr "`Docutils ODF/OpenOffice/odt 编写者 <user/odt.html>`__"
 
 #: ../../docutils/docs/index.txt:95
 msgid "`reStructuredText <http://docutils.sourceforge.net/rst.html>`_:"
@@ -255,16 +242,20 @@ msgid ""
 "`A ReStructuredText Primer <user/rst/quickstart.html>`__ (see also the "
 "`text source <user/rst/quickstart.txt>`__)"
 msgstr ""
+"`ReStructuredText 初探 <user/rst/quickstart.html>`__ （也可以阅读`text source "
+"<user/rst/quickstart.txt>`__）"
 
 #: ../../docutils/docs/index.txt:99
 msgid "`Quick reStructuredText <user/rst/quickref.html>`__ (user reference)"
-msgstr ""
+msgstr "`快捷的 <user/rst/quickref.html>`__ （用户参考）"
 
 #: ../../docutils/docs/index.txt:100
 msgid ""
 "`reStructuredText Cheat Sheet <user/rst/cheatsheet.txt>`__ (text only; 1 "
 "page for syntax, 1 page directive & role reference)"
 msgstr ""
+"`reStructuredText 小抄 <user/rst/cheatsheet.txt>`__ （仅限文本；1 页为语法，1 "
+"页为指令和角色参考）"
 
 #: ../../docutils/docs/index.txt:102
 msgid ""
@@ -272,18 +263,20 @@ msgid ""
 "of most reStructuredText features; you can also have a look at the `text "
 "source <user/rst/demo.txt>`__)"
 msgstr ""
+"`reStructuredText 文档 <user/rst/demo.html>`_ （大多数 reStructuredText "
+"功能的演示；你也可以看一下 `文本源 <user/rst/demo.txt>`__）"
 
 #: ../../docutils/docs/index.txt:106
 msgid "Editor support:"
-msgstr ""
+msgstr "编辑器支持："
 
 #: ../../docutils/docs/index.txt:108
 msgid "`Emacs support for reStructuredText <user/emacs.html>`_"
-msgstr ""
+msgstr "`Emacs 对 reStructuredText 的支持 <user/emacs.html>`_"
 
 #: ../../docutils/docs/index.txt:114
 msgid "``ref/``: Reference Material for All Groups"
-msgstr ""
+msgstr "``ref/``：所有组的参考资料"
 
 #: ../../docutils/docs/index.txt:116
 msgid ""
@@ -291,30 +284,32 @@ msgid ""
 "they're mature and used by end-users and client-developers, they have "
 "become reference material.  Successful specs evolve into refs."
 msgstr ""
+"其中许多文件一开始是作为开发人员规范，但现在它们已经成熟并被最终用户和客户端开发人员使用，它们已经成为参考资料。成功的 specs 会演变成 "
+"refs。"
 
 #: ../../docutils/docs/index.txt:122
 msgid "`The Docutils Document Tree <ref/doctree.html>`__ (incomplete)"
-msgstr ""
+msgstr "`Docutils 文档树 <ref/doctree.html>`__ （不完整）。"
 
 #: ../../docutils/docs/index.txt:123
 msgid "`Docutils Transforms <ref/transforms.html>`__"
-msgstr ""
+msgstr "`文档转换 <ref/transforms.html>`__"
 
 #: ../../docutils/docs/index.txt:124
 msgid "`Docutils Generic DTD <ref/docutils.dtd>`__"
-msgstr ""
+msgstr "`Docutils 通用 DTD <ref/docutils.dtd>`__"
 
 #: ../../docutils/docs/index.txt:125
 msgid ""
 "`OASIS XML Exchange Table Model Declaration Module <ref/soextblx.dtd>`__ "
 "(CALS tables DTD module)"
-msgstr ""
+msgstr "`OASIS XML 交换表模型声明模块 <ref/soextblx.dtd>`__ （CALS表格DTD模块）"
 
 #: ../../docutils/docs/index.txt:128
 msgid ""
 "Although not in the \"ref\" directory, `PEP 258`_ is a must-read "
 "reference for any Docutils developer."
-msgstr ""
+msgstr "虽然不在 “ref” 目录中，但 `PEP 258`_ 是任何 Docutils 开发者的必读参考资料。"
 
 #: ../../docutils/docs/index.txt:131 ../../docutils/docs/index.txt:228
 msgid "reStructuredText_:"
@@ -491,7 +486,7 @@ msgid "`Python Source Reader <dev/pysource.html>`_ (incomplete)"
 msgstr ""
 
 #: ../../docutils/docs/index.txt:224
-msgid "`Docutils Python DTD <dev/pysource.dtd>`_ (experimental)"
+msgid "`Docutils Python DTD <dev/pysource.dtd>`_"
 msgstr ""
 
 #: ../../docutils/docs/index.txt:225
@@ -511,4 +506,7 @@ msgstr ""
 #: ../../docutils/docs/index.txt:232
 msgid "`Problems With StructuredText <dev/rst/problems.html>`__"
 msgstr ""
+
+#~ msgid "`Docutils Python DTD <dev/pysource.dtd>`_ (experimental)"
+#~ msgstr ""
 

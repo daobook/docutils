@@ -11,6 +11,10 @@ Requires: 256, 257
 Created: 31-May-2001
 Post-History: 13-Jun-2001
 
+#######################################
+PEP 258: Docutils Design Specification
+#######################################
+
 
 ================
 Rejection Notice

@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../docutils/COPYING.txt:3
 msgid "Copying Docutils"
-msgstr ""
+msgstr "Docutils 分发"
 
 #: ../../docutils/COPYING.txt
 msgid "Author"

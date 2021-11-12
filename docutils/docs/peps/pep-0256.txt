@@ -10,6 +10,9 @@ Content-Type: text/x-rst
 Created: 01-Jun-2001
 Post-History: 13-Jun-2001
 
+=================================================
+PEP 256: Docstring Processing System Framework
+=================================================
 
 Rejection Notice
 ================

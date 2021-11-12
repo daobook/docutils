@@ -76,7 +76,7 @@ msgstr "这是给那些想要快速上手和运行的人。"
 
 #: ../../docutils/README.txt:19
 msgid "Docutils requires Python, available from http://www.python.org/."
-msgstr " Docutils 需要 Python，可从 http://www.python.org/ 获取。"
+msgstr "Docutils 需要 Python，可从 http://www.python.org/ 获取。"
 
 #: ../../docutils/README.txt:22
 msgid "See Requirements_ below for details."

@@ -52,7 +52,7 @@ language = 'zh_CN'
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store',
                     'docutils/test', 'docutils/docutils',
                     'docutils/tools/**', 'docutils/licenses/**',
-                    'docutils/docs/user/slide-shows.txt',
+                    'docutils/docs/user/rst/quickref.html',
                     'docutils/docs/user/rst/demo.txt',
                     'requirements.txt', 'prest/**']
 
@@ -71,7 +71,7 @@ html_static_path = ['_static']
 
 source_suffix = {
     '.rst': 'restructuredtext',
-    '.txt': 'restructuredtext'
+    '.txt': 'restructuredtext',
 }
 
 locale_dirs = ['locales/']  # path is example but recommended.

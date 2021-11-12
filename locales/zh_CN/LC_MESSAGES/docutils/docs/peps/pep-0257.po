@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: docutils-doc \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-12 09:31+0800\n"
+"POT-Creation-Date: 2021-11-12 14:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,20 +28,24 @@ msgid ""
 msgstr ""
 
 #: ../../docutils/docs/peps/pep-0257.txt:15
+msgid "PEP 257: Docstring Conventions"
+msgstr ""
+
+#: ../../docutils/docs/peps/pep-0257.txt:18
 msgid "Abstract"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:17
+#: ../../docutils/docs/peps/pep-0257.txt:20
 msgid ""
 "This PEP documents the semantics and conventions associated with Python "
 "docstrings."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:22
+#: ../../docutils/docs/peps/pep-0257.txt:25
 msgid "Rationale"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:24
+#: ../../docutils/docs/peps/pep-0257.txt:27
 msgid ""
 "The aim of this PEP is to standardize the high-level structure of "
 "docstrings: what they should contain, and how to say it (without touching"
@@ -49,7 +53,7 @@ msgid ""
 "not laws or syntax."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:29
+#: ../../docutils/docs/peps/pep-0257.txt:32
 msgid ""
 "\"A universal convention supplies all of maintainability, clarity, "
 "consistency, and a foundation for good programming habits too. What it "
@@ -57,11 +61,11 @@ msgid ""
 "Python!\""
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:40
+#: ../../docutils/docs/peps/pep-0257.txt:43
 msgid "Tim Peters on comp.lang.python, 2001-06-16"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:36
+#: ../../docutils/docs/peps/pep-0257.txt:39
 msgid ""
 "If you violate these conventions, the worst you'll get is some dirty "
 "looks.  But some software (such as the Docutils_ docstring processing "
@@ -69,22 +73,22 @@ msgid ""
 "will get you the best results."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:43
+#: ../../docutils/docs/peps/pep-0257.txt:46
 msgid "Specification"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:46
+#: ../../docutils/docs/peps/pep-0257.txt:49
 msgid "What is a Docstring?"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:48
+#: ../../docutils/docs/peps/pep-0257.txt:51
 msgid ""
 "A docstring is a string literal that occurs as the first statement in a "
 "module, function, class, or method definition.  Such a docstring becomes "
 "the ``__doc__`` special attribute of that object."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:52
+#: ../../docutils/docs/peps/pep-0257.txt:55
 msgid ""
 "All modules should normally have docstrings, and all functions and "
 "classes exported by a module should also have docstrings.  Public methods"
@@ -93,7 +97,7 @@ msgid ""
 " file in the package directory."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:58
+#: ../../docutils/docs/peps/pep-0257.txt:61
 msgid ""
 "String literals occurring elsewhere in Python code may also act as "
 "documentation.  They are not recognized by the Python bytecode compiler "
@@ -102,30 +106,30 @@ msgid ""
 "software tools:"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:64
+#: ../../docutils/docs/peps/pep-0257.txt:67
 msgid ""
 "String literals occurring immediately after a simple assignment at the "
 "top level of a module, class, or ``__init__`` method are called "
 "\"attribute docstrings\"."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:68
+#: ../../docutils/docs/peps/pep-0257.txt:71
 msgid ""
 "String literals occurring immediately after another docstring are called "
 "\"additional docstrings\"."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:71
+#: ../../docutils/docs/peps/pep-0257.txt:74
 msgid ""
 "Please see PEP 258, \"Docutils Design Specification\" [2]_, for a "
 "detailed description of attribute and additional docstrings."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:74
+#: ../../docutils/docs/peps/pep-0257.txt:77
 msgid "XXX Mention docstrings of 2.2 properties."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:76
+#: ../../docutils/docs/peps/pep-0257.txt:79
 msgid ""
 "For consistency, always use ``\"\"\"triple double quotes\"\"\"`` around "
 "docstrings.  Use ``r\"\"\"raw triple double quotes\"\"\"`` if you use any"
@@ -133,55 +137,55 @@ msgid ""
 "``u\"\"\"Unicode triple-quoted strings\"\"\"``."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:81
+#: ../../docutils/docs/peps/pep-0257.txt:84
 msgid "There are two forms of docstrings: one-liners and multi-line docstrings."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:86
+#: ../../docutils/docs/peps/pep-0257.txt:89
 msgid "One-line Docstrings"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:88
+#: ../../docutils/docs/peps/pep-0257.txt:91
 msgid ""
 "One-liners are for really obvious cases.  They should really fit on one "
 "line.  For example::"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:97
+#: ../../docutils/docs/peps/pep-0257.txt:100
 msgid "Notes:"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:99
+#: ../../docutils/docs/peps/pep-0257.txt:102
 msgid ""
 "Triple quotes are used even though the string fits on one line. This "
 "makes it easy to later expand it."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:102
+#: ../../docutils/docs/peps/pep-0257.txt:105
 msgid ""
 "The closing quotes are on the same line as the opening quotes.  This "
 "looks better for one-liners."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:105
+#: ../../docutils/docs/peps/pep-0257.txt:108
 msgid "There's no blank line either before or after the docstring."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:107
+#: ../../docutils/docs/peps/pep-0257.txt:110
 msgid ""
 "The docstring is a phrase ending in a period.  It prescribes the function"
 " or method's effect as a command (\"Do this\", \"Return that\"), not as a"
 " description; e.g. don't write \"Returns the pathname ...\"."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:111
+#: ../../docutils/docs/peps/pep-0257.txt:114
 msgid ""
 "The one-line docstring should NOT be a \"signature\" reiterating the "
 "function/method parameters (which can be obtained by introspection). "
 "Don't do::"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:118
+#: ../../docutils/docs/peps/pep-0257.txt:121
 msgid ""
 "This type of docstring is only appropriate for C functions (such as "
 "built-ins), where introspection is not possible.  However, the nature of "
@@ -190,15 +194,15 @@ msgid ""
 "like::"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:127
+#: ../../docutils/docs/peps/pep-0257.txt:130
 msgid "(Of course \"Do X\" should be replaced by a useful description!)"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:131
+#: ../../docutils/docs/peps/pep-0257.txt:134
 msgid "Multi-line Docstrings"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:133
+#: ../../docutils/docs/peps/pep-0257.txt:136
 msgid ""
 "Multi-line docstrings consist of a summary line just like a one-line "
 "docstring, followed by a blank line, followed by a more elaborate "
@@ -209,7 +213,7 @@ msgid ""
 "indented the same as the quotes at its first line (see example below)."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:142
+#: ../../docutils/docs/peps/pep-0257.txt:145
 msgid ""
 "Insert a blank line before and after all docstrings (one-line or multi-"
 "line) that document a class -- generally speaking, the class's methods "
@@ -222,7 +226,7 @@ msgid ""
 "section, and precede it with a blank line."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:153
+#: ../../docutils/docs/peps/pep-0257.txt:156
 msgid ""
 "The docstring of a script (a stand-alone program) should be usable as its"
 " \"usage\" message, printed when the script is invoked with incorrect or "
@@ -234,7 +238,7 @@ msgid ""
 " options and arguments for the sophisticated user."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:162
+#: ../../docutils/docs/peps/pep-0257.txt:165
 msgid ""
 "The docstring for a module should generally list the classes, exceptions "
 "and functions (and any other objects) that are exported by the module, "
@@ -245,7 +249,7 @@ msgid ""
 "package."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:170
+#: ../../docutils/docs/peps/pep-0257.txt:173
 msgid ""
 "The docstring for a function or method should summarize its behavior and "
 "document its arguments, return value(s), side effects, exceptions raised,"
@@ -254,7 +258,7 @@ msgid ""
 "arguments are part of the interface."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:176
+#: ../../docutils/docs/peps/pep-0257.txt:179
 msgid ""
 "The docstring for a class should summarize its behavior and list the "
 "public methods and instance variables.  If the class is intended to be "
@@ -264,7 +268,7 @@ msgid ""
 "method.  Individual methods should be documented by their own docstring."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:184
+#: ../../docutils/docs/peps/pep-0257.txt:187
 msgid ""
 "If a class subclasses another class and its behavior is mostly inherited "
 "from that class, its docstring should mention this and summarize the "
@@ -274,7 +278,7 @@ msgid ""
 "the superclass method (in addition to its own behavior)."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:191
+#: ../../docutils/docs/peps/pep-0257.txt:194
 msgid ""
 "*Do not* use the Emacs convention of mentioning the arguments of "
 "functions or methods in upper case in running text.  Python is case "
@@ -283,7 +287,7 @@ msgid ""
 "list each argument on a separate line.  For example::"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:208
+#: ../../docutils/docs/peps/pep-0257.txt:211
 msgid ""
 "The BDFL [3]_ recommends inserting a blank line between the last "
 "paragraph in a multi-line docstring and its closing quotes, placing the "
@@ -291,11 +295,11 @@ msgid ""
 "paragraph`` command can be used on it."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:215
+#: ../../docutils/docs/peps/pep-0257.txt:218
 msgid "Handling Docstring Indentation"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:217
+#: ../../docutils/docs/peps/pep-0257.txt:220
 msgid ""
 "Docstring processing tools will strip a uniform amount of indentation "
 "from the second and further lines of the docstring, equal to the minimum "
@@ -306,65 +310,65 @@ msgid ""
 "and end of the docstring."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:225
+#: ../../docutils/docs/peps/pep-0257.txt:228
 msgid ""
 "Since code is much more precise than words, here is an implementation of "
 "the algorithm::"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:253
+#: ../../docutils/docs/peps/pep-0257.txt:256
 msgid ""
 "The docstring in this example contains two newline characters and is "
 "therefore 3 lines long.  The first and last lines are blank::"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:261
+#: ../../docutils/docs/peps/pep-0257.txt:264
 msgid "To illustrate::"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:270
+#: ../../docutils/docs/peps/pep-0257.txt:273
 msgid "Once trimmed, these docstrings are equivalent::"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:285
+#: ../../docutils/docs/peps/pep-0257.txt:288
 msgid "References and Footnotes"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:287
+#: ../../docutils/docs/peps/pep-0257.txt:290
 msgid ""
 "PEP 256, Docstring Processing System Framework, Goodger "
 "(http://www.python.org/peps/pep-0256.html)"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:290
+#: ../../docutils/docs/peps/pep-0257.txt:293
 msgid ""
 "PEP 258, Docutils Design Specification, Goodger "
 "(http://www.python.org/peps/pep-0258.html)"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:293
+#: ../../docutils/docs/peps/pep-0257.txt:296
 msgid "Guido van Rossum, Python's creator and Benevolent Dictator For Life."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:305
+#: ../../docutils/docs/peps/pep-0257.txt:308
 msgid "Copyright"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:307
+#: ../../docutils/docs/peps/pep-0257.txt:310
 msgid "This document has been placed in the public domain."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:311
+#: ../../docutils/docs/peps/pep-0257.txt:314
 msgid "Acknowledgements"
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:313
+#: ../../docutils/docs/peps/pep-0257.txt:316
 msgid ""
 "The \"Specification\" text comes mostly verbatim from the `Python Style "
 "Guide`_ essay by Guido van Rossum."
 msgstr ""
 
-#: ../../docutils/docs/peps/pep-0257.txt:316
+#: ../../docutils/docs/peps/pep-0257.txt:319
 msgid ""
 "This document borrows ideas from the archives of the Python Doc-SIG_. "
 "Thanks to all members past and present."

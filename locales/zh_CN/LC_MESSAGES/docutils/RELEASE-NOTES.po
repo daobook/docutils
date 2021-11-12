@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: docutils-doc \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"POT-Creation-Date: 2021-11-12 14:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../docutils/RELEASE-NOTES.txt:5
 msgid "Docutils Release Notes"
-msgstr ""
+msgstr "Docutils 发行说明"
 
 #: ../../docutils/RELEASE-NOTES.txt
 msgid "Contact"
@@ -172,71 +172,86 @@ msgid ""
 msgstr ""
 
 #: ../../docutils/RELEASE-NOTES.txt:87
-msgid "Release 0.18 (2021-10-26)"
+msgid "Release 0.18.1.dev"
 msgstr ""
 
 #: ../../docutils/RELEASE-NOTES.txt:91
 msgid "Docutils 0.18.x is the last version supporting Python 2.7, 3.5, and 3.6."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:94
-msgid "Output changes:"
-msgstr ""
-
-#: ../../docutils/RELEASE-NOTES.txt:108
-msgid "Identifiers:"
+#: ../../docutils/RELEASE-NOTES.txt:93
+msgid ""
+"nodes.Node.traverse() returns a list again to restore backwards "
+"compatibility (fixes bug #431). It is deprecated in favour of the new "
+"method nodes.Node.findall()."
 msgstr ""
 
 #: ../../docutils/RELEASE-NOTES.txt:97
+msgid "Small bugfixes (see HISTORY_)."
+msgstr ""
+
+#: ../../docutils/RELEASE-NOTES.txt:101
+msgid "Release 0.18 (2021-10-26)"
+msgstr ""
+
+#: ../../docutils/RELEASE-NOTES.txt:103
+msgid "Output changes:"
+msgstr ""
+
+#: ../../docutils/RELEASE-NOTES.txt:117
+msgid "Identifiers:"
+msgstr ""
+
+#: ../../docutils/RELEASE-NOTES.txt:106
 msgid ""
 "During `identifier normalization`_, leading number and hyphen characters "
 "are no longer stripped from a `reference name`_, if the id_prefix_ "
 "setting is non-empty."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:104
+#: ../../docutils/RELEASE-NOTES.txt:113
 msgid "Example:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:102
+#: ../../docutils/RELEASE-NOTES.txt:111
 msgid ""
 "with ``--id-prefix=\"DU-\"``, a section with title \"34. May\" currently "
 "gets the identifier key ``DU-may`` and after the change the identifier "
 "key ``DU-34-may``."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:106
+#: ../../docutils/RELEASE-NOTES.txt:115
 msgid ""
 "The default value for the auto_id_prefix_ setting changed to ``%``: \"use"
 " the tag name as prefix for auto-generated IDs\". Set auto_id_prefix_ to "
 "``id`` for unchanged auto-IDs."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:140
+#: ../../docutils/RELEASE-NOTES.txt:149
 msgid "HTML5:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:111
+#: ../../docutils/RELEASE-NOTES.txt:120
 msgid ""
 "Use the semantic tag <aside> for footnote text and citations, topics "
 "(except abstract and toc), admonitions, and system messages. Use <nav> "
 "for the Table of Contents."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:115
+#: ../../docutils/RELEASE-NOTES.txt:124
 msgid ""
 "Make \"auto\" table column widths the default: Only specify column "
 "widths, if the `\"widths\" option`_ is set and not \"auto\". The table-"
 "style__ setting \"colwidths-grid\" restores the current default."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:122
+#: ../../docutils/RELEASE-NOTES.txt:131
 msgid ""
 "Items of a definition list with class argument \"details\" are converted "
 "to `details disclosure elements`_. Example::"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:130
+#: ../../docutils/RELEASE-NOTES.txt:139
 msgid ""
 "Do not add \"compound-first\", \"compound-middle\", or \"compound-last\" "
 "to elements nested in a compound. Use child selector and \":first-"
@@ -244,74 +259,74 @@ msgid ""
 "\"backrefs\" instead of \"fn-backref\" for a span of back-references."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:136
+#: ../../docutils/RELEASE-NOTES.txt:145
 msgid ""
 "Write footnote brackets and field term colons to HTML, so that they are "
 "present also without CSS and when copying text."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:139
+#: ../../docutils/RELEASE-NOTES.txt:148
 msgid ""
 "Move space character between section number and heading into \"sectnum\" "
 "span."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:146
+#: ../../docutils/RELEASE-NOTES.txt:155
 msgid "math-output: html"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:143
+#: ../../docutils/RELEASE-NOTES.txt:152
 msgid ""
 "Support more commands, fix mapping of commands to Unicode characters. "
 "Scale variable sized operators and big delimiters with CSS. Don't use "
 "<tt> element (deprecated in HTML5). Use STIX fonts if available."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:150
+#: ../../docutils/RELEASE-NOTES.txt:159
 msgid "LaTeX:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:149
+#: ../../docutils/RELEASE-NOTES.txt:158
 msgid ""
 "`legacy_class_functions`_ setting default changed to \"False\", "
 "admonitions are now environments."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:152
+#: ../../docutils/RELEASE-NOTES.txt:161
 msgid "New standard Docutils doctree node: <meta__>."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:154
+#: ../../docutils/RELEASE-NOTES.txt:163
 msgid ""
 "New configuration settings: [latex writers] legacy_column_widths_ and "
 "[html5 writer] image_loading_."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:158
+#: ../../docutils/RELEASE-NOTES.txt:167
 msgid ""
 "Removed files: ``iepngfix.htc`` and ``blank.gif`` (IE 6 workaround for "
 "`s5_html`)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:161
+#: ../../docutils/RELEASE-NOTES.txt:170
 msgid ""
 "Removed sub-module: ``parsers.rst.directives.html`` (Meta directive moved"
 " to ``parsers.rst.directives.misc``.)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:165
+#: ../../docutils/RELEASE-NOTES.txt:174
 msgid ""
-"Removed function: ``utils.unique_combinations`` (obsoleted by "
-"``itertools.combinations``)."
+"Removed function: utils.unique_combinations() (obsoleted by "
+"itertools.combinations())."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:168
+#: ../../docutils/RELEASE-NOTES.txt:177
 msgid ""
 "Removed attribute: ``HTMLTranslator.topic_classes`` (check "
 "node.parent.classes instead)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:171
+#: ../../docutils/RELEASE-NOTES.txt:180
 msgid ""
 "Major refactoring and fixes/additions in "
 "``docutils/utils/math/math2html.py`` and "
@@ -319,291 +334,291 @@ msgid ""
 "cf. `LaTeX syntax for mathematics`_)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:176
-msgid "``nodes.Node.traverse()`` returns an iterator instead of a list."
+#: ../../docutils/RELEASE-NOTES.txt:185
+msgid "nodes.Node.traverse() returns an iterator instead of a list."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:178 ../../docutils/RELEASE-NOTES.txt:314
+#: ../../docutils/RELEASE-NOTES.txt:187 ../../docutils/RELEASE-NOTES.txt:323
 msgid "Various bugfixes and improvements (see HISTORY_)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:180
+#: ../../docutils/RELEASE-NOTES.txt:189
 msgid ""
 "Fix spelling errors in documentation and docstrings. Thanks to Dimitri "
 "Papadopoulos."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:195
+#: ../../docutils/RELEASE-NOTES.txt:204
 msgid "Release 0.17.1 (2021-04-16)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:197
+#: ../../docutils/RELEASE-NOTES.txt:206
 msgid "Bug fixes (for details see the Docutils `HISTORY`_)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:200
+#: ../../docutils/RELEASE-NOTES.txt:209
 msgid "Release 0.17 (2021-04-03)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:202
+#: ../../docutils/RELEASE-NOTES.txt:211
 msgid ""
 "Numerous bug fixes and improvements (for details see the Docutils "
 "`HISTORY`_)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:205
+#: ../../docutils/RELEASE-NOTES.txt:214
 msgid ""
 "Installing with ``setup.py`` now requires setuptools_. Alternatively, "
 "install with pip_."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:208
+#: ../../docutils/RELEASE-NOTES.txt:217
 msgid ""
 "The generic command line front end tool docutils-cli.py_ allows the free "
 "selection of reader, parser, and writer components."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:211
+#: ../../docutils/RELEASE-NOTES.txt:220
 msgid "Support Arabic language."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:213
+#: ../../docutils/RELEASE-NOTES.txt:222
 msgid ""
 "New, **experimental** wrapper to integrate the `recommonmark`__ Markdown "
 "parser for use with Docutils. Currently only tested with recommonmark "
 "version 0.4.0."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:219
+#: ../../docutils/RELEASE-NOTES.txt:228
 msgid "HTML5 writer:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:221
+#: ../../docutils/RELEASE-NOTES.txt:230
 msgid "New option embed_images_."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:223
+#: ../../docutils/RELEASE-NOTES.txt:232
 msgid "Use semantic tags (for details see the Docutils `HISTORY`_)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:225
+#: ../../docutils/RELEASE-NOTES.txt:234
 msgid ""
 "Change the `initial_header_level`_ setting's default to \"2\", as "
 "browsers use the `same style for <h1> and <h2> when nested in a "
 "section`__."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:228
+#: ../../docutils/RELEASE-NOTES.txt:237
 msgid "New optional style ``responsive.css``, adapts to different screen sizes."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:231
+#: ../../docutils/RELEASE-NOTES.txt:240
 msgid ""
 "Move non-essential styling from ``minimal.css`` to ``plain.css`` rsp. "
 "``responsive.css``."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:234
+#: ../../docutils/RELEASE-NOTES.txt:243
 msgid ""
 "Show code line numbers as pseudo-elements so they are skipped when "
 "copying the code block from the page."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:241 ../../docutils/RELEASE-NOTES.txt:287
+#: ../../docutils/RELEASE-NOTES.txt:250 ../../docutils/RELEASE-NOTES.txt:296
 msgid "LaTeX writer:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:243
+#: ../../docutils/RELEASE-NOTES.txt:252
 msgid "New configuration setting `legacy_class_functions`_."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:245
+#: ../../docutils/RELEASE-NOTES.txt:254
 msgid ""
 "The special value \"auto\" for the `graphicx_option`_ setting is no "
 "longer supported (it never worked for xetex/luatex)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:248
+#: ../../docutils/RELEASE-NOTES.txt:257
 msgid ""
 "`Styling commands`__ using the legacy ``\\docutilsrole`` prefix are now "
 "ignored. Use ``\\DUrole``."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:253
+#: ../../docutils/RELEASE-NOTES.txt:262
 msgid ""
 "Most helper commands and element definitions are now defined in the LaTeX"
 " package `docutils.sty`_ and only inserted in the document preamble if "
 "the stylesheet__ setting does not lists \"docutils\"."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:259
+#: ../../docutils/RELEASE-NOTES.txt:268
 msgid "Remove legacy LaTeX stylesheet ``docutils-05-compat.sty``."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:270
+#: ../../docutils/RELEASE-NOTES.txt:279
 msgid "Release 0.16 (2020-01-12)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:274
+#: ../../docutils/RELEASE-NOTES.txt:283
 msgid "Docutils 0.15.x is the last version supporting Python 2.6, 3.3 and 3.4."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:276
+#: ../../docutils/RELEASE-NOTES.txt:285
 msgid ""
 "Docutils 0.16.x supports Python 2.7 and Python >= 3.5 natively, without "
 "the use of the ``2to3`` tool."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:279 ../../docutils/RELEASE-NOTES.txt:328
-#: ../../docutils/RELEASE-NOTES.txt:599 ../../docutils/RELEASE-NOTES.txt:701
-#: ../../docutils/RELEASE-NOTES.txt:772 ../../docutils/RELEASE-NOTES.txt:831
+#: ../../docutils/RELEASE-NOTES.txt:288 ../../docutils/RELEASE-NOTES.txt:337
+#: ../../docutils/RELEASE-NOTES.txt:608 ../../docutils/RELEASE-NOTES.txt:710
+#: ../../docutils/RELEASE-NOTES.txt:781 ../../docutils/RELEASE-NOTES.txt:840
 msgid "reStructuredText:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:281
+#: ../../docutils/RELEASE-NOTES.txt:290
 msgid ""
 "Keep `backslash escapes`__ in the document tree. This allows, e.g., "
 "escaping of author-separators in `bibliographic fields`__."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:289
+#: ../../docutils/RELEASE-NOTES.txt:298
 msgid ""
 "Informal titles of type \"rubric\" default to bold-italic and left "
 "aligned."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:290
+#: ../../docutils/RELEASE-NOTES.txt:299
 msgid ""
 "Deprecate ``\\docutilsrole`` prefix for styling commands: use "
 "``\\DUrole`` instead."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:292
+#: ../../docutils/RELEASE-NOTES.txt:301
 msgid "Fix topic subtitle."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:293
+#: ../../docutils/RELEASE-NOTES.txt:302
 msgid "Add \"latex writers\" to the `config_section_dependencies`."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:294
+#: ../../docutils/RELEASE-NOTES.txt:303
 msgid ""
 "Ignore classes for `rubric` elements (class wrapper interferes with LaTeX"
 " formatting)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:297
+#: ../../docutils/RELEASE-NOTES.txt:306
 msgid "tools/buildhtml.py"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:299
+#: ../../docutils/RELEASE-NOTES.txt:308
 msgid ""
 "New option \"--html-writer\" allows to select \"html__\" (default), "
 "\"html4\" or \"html5\"."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:304 ../../docutils/RELEASE-NOTES.txt:491
+#: ../../docutils/RELEASE-NOTES.txt:313 ../../docutils/RELEASE-NOTES.txt:500
 msgid "docutils/io.py"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:306
+#: ../../docutils/RELEASE-NOTES.txt:315
 msgid "Remove the `handle_io_errors` option from io.FileInput/Output."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:308
+#: ../../docutils/RELEASE-NOTES.txt:317
 msgid "docutils/nodes.py"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:310
+#: ../../docutils/RELEASE-NOTES.txt:319
 msgid "If `auto_id_prefix`_ ends with \"%\", this is replaced with the tag name."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:318
+#: ../../docutils/RELEASE-NOTES.txt:327
 msgid "Release 0.15 (2019-07-20)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:322
+#: ../../docutils/RELEASE-NOTES.txt:331
 msgid ""
 "Docutils 0.14.x is the last version supporting Python 2.4, 2.5, 3.1, and "
 "3.2."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:325
+#: ../../docutils/RELEASE-NOTES.txt:334
 msgid ""
 "Docutils 0.15.x is compatible with Python versions 2.6, 2.7 and 3.3 to "
 "3.5 (cf. `Python 3 compatibility`_)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:330
+#: ../../docutils/RELEASE-NOTES.txt:339
 msgid ""
 "Allow embedded colons in field list field names (before, tokens like "
 "``:this:example:`` were considered ordinary text)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:333
+#: ../../docutils/RELEASE-NOTES.txt:342
 msgid "Fixed a bug with the \"trim\" options of the \"unicode\" directive."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:335
+#: ../../docutils/RELEASE-NOTES.txt:344
 msgid "languages: Added Korean localisation (ko)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:339
+#: ../../docutils/RELEASE-NOTES.txt:348
 msgid "Release 0.14 (2017-08-03)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:341
+#: ../../docutils/RELEASE-NOTES.txt:350
 msgid "docutils/docs/ref/docutils.dtd:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:343
+#: ../../docutils/RELEASE-NOTES.txt:352
 msgid "Enable validation of Docutils XML documents against the DTD:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:345
+#: ../../docutils/RELEASE-NOTES.txt:354
 msgid "docutils/parsers/rst/:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:347
+#: ../../docutils/RELEASE-NOTES.txt:356
 msgid "Added functionality: escaped whitespace in URI contexts."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:348
+#: ../../docutils/RELEASE-NOTES.txt:357
 msgid ""
 "Consistent handling of all whitespace characters in inline markup "
 "recognition. (May break documents that relied on some whitespace "
 "characters (NBSP, ...) *not* to be recognized as whitespace.)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:352
+#: ../../docutils/RELEASE-NOTES.txt:361
 msgid "docutils/utils/smartquotes.py:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:354
+#: ../../docutils/RELEASE-NOTES.txt:363
 msgid "Update quote definitions for et, fi, fr, ro, sv, tr, uk."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:355
+#: ../../docutils/RELEASE-NOTES.txt:364
 msgid "Add quote definitions for hr, hsb, hu, lv, sh, sl, sr."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:356
+#: ../../docutils/RELEASE-NOTES.txt:365
 msgid "Differentiate apostrophe from closing single quote (if possible)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:357
+#: ../../docutils/RELEASE-NOTES.txt:366
 msgid "Add command line interface for stand-alone use (requires 2.7)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:359
+#: ../../docutils/RELEASE-NOTES.txt:368
 msgid "docutils/writers/_html_base:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:361
+#: ../../docutils/RELEASE-NOTES.txt:370
 msgid "Provide default title in metadata."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:362
+#: ../../docutils/RELEASE-NOTES.txt:371
 msgid ""
 "The MathJax CDN shut down on April 30, 2017. For security reasons, we "
 "don't use a third party public installation as default but warn if `math-"
@@ -611,597 +626,597 @@ msgid ""
 "details."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:367
+#: ../../docutils/RELEASE-NOTES.txt:376
 msgid "docutils/writers/html4css1:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:369
+#: ../../docutils/RELEASE-NOTES.txt:378
 msgid "Respect automatic table column sizing."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:371 ../../docutils/RELEASE-NOTES.txt:450
-#: ../../docutils/RELEASE-NOTES.txt:559 ../../docutils/RELEASE-NOTES.txt:575
+#: ../../docutils/RELEASE-NOTES.txt:380 ../../docutils/RELEASE-NOTES.txt:459
+#: ../../docutils/RELEASE-NOTES.txt:568 ../../docutils/RELEASE-NOTES.txt:584
 msgid "docutils/writers/latex2e/__init__.py"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:373
+#: ../../docutils/RELEASE-NOTES.txt:382
 msgid ""
 "Handle class arguments for block-level elements by wrapping them in a "
 "\"DUclass\" environment. This replaces the special handling for "
 "\"epigraph\" and \"topic\" elements."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:377
+#: ../../docutils/RELEASE-NOTES.txt:386
 msgid "docutils/writers/odf_odt:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:379
+#: ../../docutils/RELEASE-NOTES.txt:388
 msgid "Language option sets ODF document's default language"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:380
+#: ../../docutils/RELEASE-NOTES.txt:389
 msgid "Image width, scale, ... set image size in generated ODF."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:382 ../../docutils/RELEASE-NOTES.txt:396
+#: ../../docutils/RELEASE-NOTES.txt:391 ../../docutils/RELEASE-NOTES.txt:405
 msgid "tools/"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:384
+#: ../../docutils/RELEASE-NOTES.txt:393
 msgid "New front-end ``rst2html4.py``."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:388
+#: ../../docutils/RELEASE-NOTES.txt:397
 msgid "Release 0.13.1 (2016-12-09)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:390
+#: ../../docutils/RELEASE-NOTES.txt:399
 msgid "docutils/writers/html5_polyglot"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:392
+#: ../../docutils/RELEASE-NOTES.txt:401
 msgid "New HTML writer generating `HTML 5`_."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:398
+#: ../../docutils/RELEASE-NOTES.txt:407
 msgid "New front-end ``rst2html5.py``."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:400
+#: ../../docutils/RELEASE-NOTES.txt:409
 msgid "languages: persian/farsi (fa) and latvian (la) mappings."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:402
+#: ../../docutils/RELEASE-NOTES.txt:411
 msgid "change default base url for :rfc: to http://tools.ietf.org/html/"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:404
+#: ../../docutils/RELEASE-NOTES.txt:413
 msgid "tables accept widths, a list and align"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:406
+#: ../../docutils/RELEASE-NOTES.txt:415
 msgid ""
 "latex2e: Fix admonition width, remove deprecated options, better "
 "tablewidth auto, ..."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:409
+#: ../../docutils/RELEASE-NOTES.txt:418
 msgid "rst.el: The problem with ``electric-indent-mode`` has been fixed."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:413
+#: ../../docutils/RELEASE-NOTES.txt:422
 msgid "Release 0.12 (2014-07-06)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:415
+#: ../../docutils/RELEASE-NOTES.txt:424
 msgid "Small changes only, release current state"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:419
+#: ../../docutils/RELEASE-NOTES.txt:428
 msgid "Release 0.11 (2013-07-22)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:421
+#: ../../docutils/RELEASE-NOTES.txt:430
 msgid "General"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:423
+#: ../../docutils/RELEASE-NOTES.txt:432
 msgid "Apply [ 2714873 ] Fix for the overwriting of document attributes."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:424
+#: ../../docutils/RELEASE-NOTES.txt:433
 msgid "Support embedded aliases within hyperlink references."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:425
+#: ../../docutils/RELEASE-NOTES.txt:434
 msgid ""
 "Fix [ 228 ] try local import of docutils components (reader, writer, "
 "parser, language module) before global search."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:428
+#: ../../docutils/RELEASE-NOTES.txt:437
 msgid "docutils/parsers/rst/directives/tables.py"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:430
+#: ../../docutils/RELEASE-NOTES.txt:439
 msgid "Fix [ 210 ] Python 3.3 checks CVS syntax only if \"strict\" is True."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:432
+#: ../../docutils/RELEASE-NOTES.txt:441
 msgid ""
 "docutils/writers/html4css1/__init__.py - Fix [ 3600051 ] for tables in a "
 "list, table cells are not compacted. - New setting `stylesheet_dirs` (see"
 " above)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:436
+#: ../../docutils/RELEASE-NOTES.txt:445
 msgid ""
 "Now, it is easy to add a custom stylesheet to Docutils' default "
 "stylesheet with, e.g., ``--stylesheet_path='html4css1.css, mystyle.css'``"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:442
+#: ../../docutils/RELEASE-NOTES.txt:451
 msgid "Changed behaviour of the default settings:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:440
+#: ../../docutils/RELEASE-NOTES.txt:449
 msgid ""
 "if there is a file ``html4css1.css`` in the working directory of the "
 "process at launch, it is used instead of the one provided by Docutils in "
 "the writer source directory."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:444
+#: ../../docutils/RELEASE-NOTES.txt:453
 msgid "New default for math-output_: ``HTML math.css``."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:445
+#: ../../docutils/RELEASE-NOTES.txt:454
 msgid ""
 "Avoid repeated class declarations in html4css1 writer (modified version "
 "of patch [ 104 ])."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:452
+#: ../../docutils/RELEASE-NOTES.txt:461
 msgid ""
 "Drop the simple algorithm replacing straight double quotes with English "
 "typographic ones. Activate the SmartQuotes_ transform if you want this "
 "feature."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:455
+#: ../../docutils/RELEASE-NOTES.txt:464
 msgid ""
 "New setting `stylesheet_dirs`: Comma-separated list of directories where "
 "stylesheets are found. Used by `stylesheet_path` when expanding relative "
 "path arguments."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:461
+#: ../../docutils/RELEASE-NOTES.txt:470
 msgid "docutils/writers/manpage.py"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:463
+#: ../../docutils/RELEASE-NOTES.txt:472
 msgid "Fix [3607063] handle lines starting with a period."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:464
+#: ../../docutils/RELEASE-NOTES.txt:473
 msgid "Fix option separating comma was bold (thanks to Bill Morris)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:467
+#: ../../docutils/RELEASE-NOTES.txt:476
 msgid "Release 0.10 (2012-12-16)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:471
+#: ../../docutils/RELEASE-NOTES.txt:480
 msgid "Docutils 0.9.x is the last version supporting Python 2.3."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:473
+#: ../../docutils/RELEASE-NOTES.txt:482
 msgid ""
 "Docutils 0.10 is compatible with Python versions from 2.4 to 3.2 (cf. "
 "`Python 3 compatibility`_)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:476 ../../docutils/RELEASE-NOTES.txt:515
-#: ../../docutils/RELEASE-NOTES.txt:533 ../../docutils/RELEASE-NOTES.txt:570
-#: ../../docutils/RELEASE-NOTES.txt:588 ../../docutils/RELEASE-NOTES.txt:672
-#: ../../docutils/RELEASE-NOTES.txt:793 ../../docutils/RELEASE-NOTES.txt:864
+#: ../../docutils/RELEASE-NOTES.txt:485 ../../docutils/RELEASE-NOTES.txt:524
+#: ../../docutils/RELEASE-NOTES.txt:542 ../../docutils/RELEASE-NOTES.txt:579
+#: ../../docutils/RELEASE-NOTES.txt:597 ../../docutils/RELEASE-NOTES.txt:681
+#: ../../docutils/RELEASE-NOTES.txt:802 ../../docutils/RELEASE-NOTES.txt:873
 msgid "General:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:478
+#: ../../docutils/RELEASE-NOTES.txt:487
 msgid "SmartQuotes transform for typographic quotes and dashes."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:480
+#: ../../docutils/RELEASE-NOTES.txt:489
 msgid ""
 "``docutils/math``, ``docutils/error_reporting.py``, and "
 "``docutils/urischemes.py`` moved to the utils package. Code importing "
 "these modules needs to adapt, e.g.::"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:489
+#: ../../docutils/RELEASE-NOTES.txt:498
 msgid "enhanced math and error handling."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:493
+#: ../../docutils/RELEASE-NOTES.txt:502
 msgid ""
 "FileInput/FileOutput: no system-exit on IOError. The `handle_io_errors` "
 "option is ignored."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:496 ../../docutils/RELEASE-NOTES.txt:555
+#: ../../docutils/RELEASE-NOTES.txt:505 ../../docutils/RELEASE-NOTES.txt:564
 msgid "docutils/writers/html4css1/__init__.py"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:498
+#: ../../docutils/RELEASE-NOTES.txt:507
 msgid ""
 "Use ``<code>`` tag for inline \"code\", do not drop nested inline nodes "
 "(syntax highlight tokens)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:500
+#: ../../docutils/RELEASE-NOTES.txt:509
 msgid "Customizable MathJax URL (based on patch by Dmitry Shachnev)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:501
+#: ../../docutils/RELEASE-NOTES.txt:510
 msgid "No line break after opening inline math tag."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:503
+#: ../../docutils/RELEASE-NOTES.txt:512
 msgid "docutils/writers/latex2e/__init__.py, docutils/writers/xetex/__init__.py"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:505
+#: ../../docutils/RELEASE-NOTES.txt:514
 msgid "Fix section numbering by LaTeX."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:507
+#: ../../docutils/RELEASE-NOTES.txt:516
 msgid "docutils/writers/s5_html/__init__.py"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:509
+#: ../../docutils/RELEASE-NOTES.txt:518
 msgid "Fix [ 3556388 ] Mathjax does not work with rst2s5."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:513
+#: ../../docutils/RELEASE-NOTES.txt:522
 msgid "Release 0.9.1 (2012-06-17)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:517
+#: ../../docutils/RELEASE-NOTES.txt:526
 msgid "Several fixes for Python 3 usage."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:519
+#: ../../docutils/RELEASE-NOTES.txt:528
 msgid "docutils/setup.py"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:521
+#: ../../docutils/RELEASE-NOTES.txt:530
 msgid ""
 "Fix [ 3527842 ]. Under Python 3, converted tests and tools were installed"
 " in the PYTHONPATH. Converted tests are now stored in "
 "``docutils/test3/``, tools no longer need conversion."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:525
+#: ../../docutils/RELEASE-NOTES.txt:534
 msgid ""
 "If you installed one of Docutils versions 0.7 ... 0.9 with ``setup.py "
 "install`` under Python 3, remove the spurious ``test/`` and ``tools/`` "
 "directories in the site library root."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:531
+#: ../../docutils/RELEASE-NOTES.txt:540
 msgid "Release 0.9 (2012-05-02)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:535
+#: ../../docutils/RELEASE-NOTES.txt:544
 msgid ""
 "reStructuredText \"code\" role and directive with syntax highlighting by "
 "Pygments_."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:537
+#: ../../docutils/RELEASE-NOTES.txt:546
 msgid "\"code\" option of the \"include\" directive."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:541
+#: ../../docutils/RELEASE-NOTES.txt:550
 msgid ""
 "Fix [ 3402314 ] allow non-ASCII whitespace, punctuation characters and "
 "\"international\" quotes around inline markup."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:544
+#: ../../docutils/RELEASE-NOTES.txt:553
 msgid "Fix handling of missing stylesheets."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:546
+#: ../../docutils/RELEASE-NOTES.txt:555
 msgid "setup.py"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:548
+#: ../../docutils/RELEASE-NOTES.txt:557
 msgid ""
 "Fix [ 2971827 ] and [ 3442827 ] extras/roman.py moved to "
 "docutils/utils/roman.py"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:551
+#: ../../docutils/RELEASE-NOTES.txt:560
 msgid "docutils/utils.py -> docutils/utils/__init__.py"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:553
+#: ../../docutils/RELEASE-NOTES.txt:562
 msgid "docutils.utils is now a package (providing a place for sub-modules)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:557
+#: ../../docutils/RELEASE-NOTES.txt:566
 msgid "change default for `math-output` setting to MathJax"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:561
+#: ../../docutils/RELEASE-NOTES.txt:570
 msgid "Support the `abbreviation` and `acronym` standard roles."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:562
+#: ../../docutils/RELEASE-NOTES.txt:571
 msgid "Record only files required to generate the LaTeX source as dependencies."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:563
+#: ../../docutils/RELEASE-NOTES.txt:572
 msgid ""
 "Use ``\\setcounter{secnumdepth}{0}`` instead of ``*``-versions when "
 "suppressing LaTeX section numbering."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:568
+#: ../../docutils/RELEASE-NOTES.txt:577
 msgid "Release 0.8.1 (2011-08-30)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:572
+#: ../../docutils/RELEASE-NOTES.txt:581
 msgid ""
 "Fix [ 3364658 ] (Change last file with Apache license to BSD-2-Clause) "
 "and [ 3395920 ] (correct copyright info for rst.el)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:577
+#: ../../docutils/RELEASE-NOTES.txt:586
 msgid "Clean up Babel language setting. Restores Sphinx compatibility."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:581
+#: ../../docutils/RELEASE-NOTES.txt:590
 msgid "Release 0.8 (2011-07-07)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:583
+#: ../../docutils/RELEASE-NOTES.txt:592
 msgid "COPYING:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:585
+#: ../../docutils/RELEASE-NOTES.txt:594
 msgid ""
 "Some additions to the Docutils core are released under the 2-Clause BSD "
 "license."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:590
+#: ../../docutils/RELEASE-NOTES.txt:599
 msgid "Handle language codes according to `BCP 47`_."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:591
+#: ../../docutils/RELEASE-NOTES.txt:600
 msgid ""
 "If the specified language is not supported by Docutils, warn and fall "
 "back to English."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:593
+#: ../../docutils/RELEASE-NOTES.txt:602
 msgid ""
 "Math support: reStructuredText \"math\" role and directive, ``math`` and "
 "``math_block`` doctree elements."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:595
+#: ../../docutils/RELEASE-NOTES.txt:604
 msgid "Orphaned \"python\" reader and \"newlatex2e\" writer moved to the sandbox."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:601
+#: ../../docutils/RELEASE-NOTES.txt:610
 msgid ""
 "most directives now support a \"name\" option that attaches a reference "
 "name. So you can write ::"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:607
+#: ../../docutils/RELEASE-NOTES.txt:616
 msgid "as a short form of ::"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:613 ../../docutils/RELEASE-NOTES.txt:789
-#: ../../docutils/RELEASE-NOTES.txt:851
+#: ../../docutils/RELEASE-NOTES.txt:622 ../../docutils/RELEASE-NOTES.txt:798
+#: ../../docutils/RELEASE-NOTES.txt:860
 msgid "Internationalization:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:615
+#: ../../docutils/RELEASE-NOTES.txt:624
 msgid "Added lithuanian mappings."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:617 ../../docutils/RELEASE-NOTES.txt:641
-#: ../../docutils/RELEASE-NOTES.txt:755 ../../docutils/RELEASE-NOTES.txt:817
+#: ../../docutils/RELEASE-NOTES.txt:626 ../../docutils/RELEASE-NOTES.txt:650
+#: ../../docutils/RELEASE-NOTES.txt:764 ../../docutils/RELEASE-NOTES.txt:826
 msgid "Components:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:619 ../../docutils/RELEASE-NOTES.txt:643
-#: ../../docutils/RELEASE-NOTES.txt:713
+#: ../../docutils/RELEASE-NOTES.txt:628 ../../docutils/RELEASE-NOTES.txt:652
+#: ../../docutils/RELEASE-NOTES.txt:722
 msgid "HTML writer:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:621
+#: ../../docutils/RELEASE-NOTES.txt:630
 msgid "New setting \"math-output\" with support for HTML, MathML, and LaTeX."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:623 ../../docutils/RELEASE-NOTES.txt:649
-#: ../../docutils/RELEASE-NOTES.txt:718 ../../docutils/RELEASE-NOTES.txt:762
+#: ../../docutils/RELEASE-NOTES.txt:632 ../../docutils/RELEASE-NOTES.txt:658
+#: ../../docutils/RELEASE-NOTES.txt:727 ../../docutils/RELEASE-NOTES.txt:771
 msgid "LaTeX2e writer:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:625
+#: ../../docutils/RELEASE-NOTES.txt:634
 msgid "Convert image URI to a local file path."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:626
+#: ../../docutils/RELEASE-NOTES.txt:635
 msgid ""
 "Apply [ 3148141 ] fix multicolumn support when a colspanning cell has "
 "more than one paragraph (Wolfgang Scherer)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:629
+#: ../../docutils/RELEASE-NOTES.txt:638
 msgid "XeTeX writer:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:631
+#: ../../docutils/RELEASE-NOTES.txt:640
 msgid "New writer generating LaTeX code for compiling with ``xelatex``."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:633
+#: ../../docutils/RELEASE-NOTES.txt:642
 msgid "XeTeX uses unicode and modern font technologies."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:635
+#: ../../docutils/RELEASE-NOTES.txt:644
 msgid "and fixes and enhancements here and there."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:639
+#: ../../docutils/RELEASE-NOTES.txt:648
 msgid "Release 0.7 (2010-07-07)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:645
+#: ../../docutils/RELEASE-NOTES.txt:654
 msgid "Support SVG and SWF images (thanks to Stefan Rank)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:646
+#: ../../docutils/RELEASE-NOTES.txt:655
 msgid ""
 "Generate valid XHTML for centered images with targets. Use CSS classes "
 "instead of \"align\" tags for image alignment."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:651
+#: ../../docutils/RELEASE-NOTES.txt:660
 msgid ""
 "Use the ``\\url`` command for URLs (breaks long URLs instead of writing "
 "into the margin)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:653
+#: ../../docutils/RELEASE-NOTES.txt:662
 msgid "Preserve runs of spaces in 'inline literals'."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:654
+#: ../../docutils/RELEASE-NOTES.txt:663
 msgid "Deprecate ``figure_footnotes`` setting."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:655
+#: ../../docutils/RELEASE-NOTES.txt:664
 msgid "Rename ``use_latex_footnotes`` setting to `docutils_footnotes`__."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:656
+#: ../../docutils/RELEASE-NOTES.txt:665
 msgid "New ``latex_preamble`` setting."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:657
+#: ../../docutils/RELEASE-NOTES.txt:666
 msgid "Use PDF standard fonts (Times/Helvetica/Courier) as default."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:658
+#: ../../docutils/RELEASE-NOTES.txt:667
 msgid ""
 "`hyperref` package called with ``unicode`` option (see the `hyperref "
 "config tips`__ for how to override)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:660
+#: ../../docutils/RELEASE-NOTES.txt:669
 msgid ""
 "Drop the special `output_encoding`__ default (\"latin-1\"). The Docutils "
 "wide default (usually \"UTF-8\") is used instead."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:667 ../../docutils/RELEASE-NOTES.txt:747
+#: ../../docutils/RELEASE-NOTES.txt:676 ../../docutils/RELEASE-NOTES.txt:756
 msgid "manpage writer:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:669
+#: ../../docutils/RELEASE-NOTES.txt:678
 msgid "Titles level 1, that is ``.SH``, always uppercase."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:670
+#: ../../docutils/RELEASE-NOTES.txt:679
 msgid "Apply patch from mg: literal text should be bold in man-pages."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:674
+#: ../../docutils/RELEASE-NOTES.txt:683
 msgid ""
 "io.FileInput opens files as text files with universal newline support "
 "(mode \"rU\", configurable with the new optional argument \"mode\")."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:677
+#: ../../docutils/RELEASE-NOTES.txt:686
 msgid "setup.py:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:679
+#: ../../docutils/RELEASE-NOTES.txt:688
 msgid ""
 "Python 3 support: copy test/ and tools/ to the build-dir and convert "
 "Python sources with 2to3."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:684
+#: ../../docutils/RELEASE-NOTES.txt:693
 msgid "Release 0.6 (2009-10-11)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:688
+#: ../../docutils/RELEASE-NOTES.txt:697
 msgid "Docutils 0.5 is the last version supporting Python 2.2."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:690
+#: ../../docutils/RELEASE-NOTES.txt:699
 msgid ""
 "Docutils 0.6 is compatible with Python versions from 2.3 up to 2.6 and "
 "convertible to 3.1 code."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:695
+#: ../../docutils/RELEASE-NOTES.txt:704
 msgid "The \"newlatex\" writer is orphaned."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:697
+#: ../../docutils/RELEASE-NOTES.txt:706
 msgid ""
 "The recommended way to generate PDF output is to use either the LaTeX2e "
 "writer or one of the alternatives listed at "
 "http://docutils.sourceforge.net/docs/user/links.html#pdf."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:703
+#: ../../docutils/RELEASE-NOTES.txt:712
 msgid "Allow length units for all length specifications."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:704
+#: ../../docutils/RELEASE-NOTES.txt:713
 msgid ""
 "Allow percent sign in \"scale\" argument of \"figure\" and \"image\" "
 "directives."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:705
+#: ../../docutils/RELEASE-NOTES.txt:714
 msgid ""
 "Bugfix: The \"figalign\" argument of a figure now works as intended "
 "(aligning the figure not its contents)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:707
+#: ../../docutils/RELEASE-NOTES.txt:716
 msgid ""
 "Align images with class \"align-[right|center|left]\" (allows setting the"
 " alignment of an image in a figure)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:709
+#: ../../docutils/RELEASE-NOTES.txt:718
 msgid ""
 "Hard tabs in literal inclusions are replaced by spaces. This is "
 "configurable via the new \"tab-width\" option of the \"include\" "
 "directive (a negative tab-width prevents tab expansion)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:715
+#: ../../docutils/RELEASE-NOTES.txt:724
 msgid ""
 "``--stylesheet`` and ``--stylesheet-path`` options now support a comma "
 "separated list of stylesheets."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:720
+#: ../../docutils/RELEASE-NOTES.txt:729
 msgid ""
 "New defaults: - font-encoding: \"T1\" (formerly implicitly set by 'ae'). "
 "- use-latex-toc: true (ToC with page numbers). - use-latex-footnotes: "
@@ -1211,170 +1226,170 @@ msgid ""
 "optional)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:727
+#: ../../docutils/RELEASE-NOTES.txt:736
 msgid "Support LaTeX packages as ``--stylesheet`` arguments."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:728
+#: ../../docutils/RELEASE-NOTES.txt:737
 msgid ""
 "Use ``bp`` for lengths without unit or unit ``pt``, do not convert ``px``"
 " to ``pt``."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:730
+#: ../../docutils/RELEASE-NOTES.txt:739
 msgid "Do not use 'ae' and 'aeguill' packages if font-encoding is set to ''."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:731
+#: ../../docutils/RELEASE-NOTES.txt:740
 msgid "Set sub- and superscript role argument as text not math."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:732
+#: ../../docutils/RELEASE-NOTES.txt:741
 msgid "Support custom roles based on standard roles."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:733
+#: ../../docutils/RELEASE-NOTES.txt:742
 msgid "Load packages and define macros only if required in the document."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:734
+#: ../../docutils/RELEASE-NOTES.txt:743
 msgid "All Docutils specific LaTeX macros are prefixed with ``DU``."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:735
+#: ../../docutils/RELEASE-NOTES.txt:744
 msgid "Better conformance to Docutils specifications with \"use_latex_toc\"."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:736
+#: ../../docutils/RELEASE-NOTES.txt:745
 msgid ""
 "If 'sectnum_xform' is False, the 'sectnum' directive triggers section "
 "numbering by LaTeX."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:738
+#: ../../docutils/RELEASE-NOTES.txt:747
 msgid "Use default font in admonitions and sidebar."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:739
+#: ../../docutils/RELEASE-NOTES.txt:748
 msgid "Typeset generic topic as \"quote with title\"."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:740
+#: ../../docutils/RELEASE-NOTES.txt:749
 msgid "Use template (file and configuration option)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:741
+#: ../../docutils/RELEASE-NOTES.txt:750
 msgid "Render doctest blocks as literal blocks (indented)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:743
+#: ../../docutils/RELEASE-NOTES.txt:752
 msgid "ODT writer:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:745 ../../docutils/RELEASE-NOTES.txt:749
+#: ../../docutils/RELEASE-NOTES.txt:754 ../../docutils/RELEASE-NOTES.txt:758
 msgid "moved from sandbox to Doctutils core."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:753
+#: ../../docutils/RELEASE-NOTES.txt:762
 msgid "Release 0.5 (2008-06-25)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:757
+#: ../../docutils/RELEASE-NOTES.txt:766
 msgid "HTML writer."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:759
+#: ../../docutils/RELEASE-NOTES.txt:768
 msgid ""
 "Dropped all ``name`` attributes of ``a`` elements (``id`` is universally "
 "supported now)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:764
+#: ../../docutils/RELEASE-NOTES.txt:773
 msgid "Better bibTeX citation support."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:765
+#: ../../docutils/RELEASE-NOTES.txt:774
 msgid "Add ``--literal-block-env``"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:767
+#: ../../docutils/RELEASE-NOTES.txt:776
 msgid "PEP writer:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:769
+#: ../../docutils/RELEASE-NOTES.txt:778
 msgid "Changed to support new python.org website structure and pep2pyramid.py."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:774
+#: ../../docutils/RELEASE-NOTES.txt:783
 msgid ""
 "Changed the directive API to a new object-oriented system. (Compatibility"
 " for the old, functional-style directive interface is retained.)  See the"
 " updated `Creating reStructuredText Directives`__ how-to."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:781
+#: ../../docutils/RELEASE-NOTES.txt:790
 msgid "Allow ``+`` and ``:`` in reference names requested for citations."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:783 ../../docutils/RELEASE-NOTES.txt:856
+#: ../../docutils/RELEASE-NOTES.txt:792 ../../docutils/RELEASE-NOTES.txt:865
 msgid "Documentation:"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:785
+#: ../../docutils/RELEASE-NOTES.txt:794
 msgid "Added `Deploying Docutils Securely`__"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:791
+#: ../../docutils/RELEASE-NOTES.txt:800
 msgid "Added hebrew mappings."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:795
+#: ../../docutils/RELEASE-NOTES.txt:804
 msgid "Configuration files are now assumed and required to be UTF-8-encoded."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:798
+#: ../../docutils/RELEASE-NOTES.txt:807
 msgid "Added docutils/writers/html4css1/template.txt."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:800
+#: ../../docutils/RELEASE-NOTES.txt:809
 msgid "Enhance emacs support."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:804
+#: ../../docutils/RELEASE-NOTES.txt:813
 msgid "Release 0.4 (2006-01-09)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:808
+#: ../../docutils/RELEASE-NOTES.txt:817
 msgid ""
 "Docutils 0.4.x is the last version that will support Python 2.1. Docutils"
 " 0.5 will *not* be compatible with Python 2.1; Python 2.2 or later will "
 "be required."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:812
+#: ../../docutils/RELEASE-NOTES.txt:821
 msgid ""
 "Docutils 0.4.x is the last version that will make compromises in its HTML"
 " output for Netscape Navigator 4.  Docutils 0.5 will require more up-to-"
 "date browsers (the exact definition is to be determined)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:819
+#: ../../docutils/RELEASE-NOTES.txt:828
 msgid ""
 "Added an `S5/HTML writer`__ and the rst2s5.py__ front end: multi-"
 "platform, multi-browser HTML slide shows."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:825
+#: ../../docutils/RELEASE-NOTES.txt:834
 msgid "The newlatex2e writer is nearing completion."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:827
+#: ../../docutils/RELEASE-NOTES.txt:836
 msgid ""
 "Added a DocTree reader, ``publish_doctree`` and ``publish_from_doctree`` "
 "convenience functions, for document tree extraction and reprocessing."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:833
+#: ../../docutils/RELEASE-NOTES.txt:842
 msgid ""
 "Added directives: \"container__\" (generic block-level container), "
 "\"default-role__\" (role used for \\`backtick\\` syntax), \"title__\" "
@@ -1382,120 +1397,128 @@ msgid ""
 "date, for substitution definitions)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:843
+#: ../../docutils/RELEASE-NOTES.txt:852
 msgid "Length units are now supported for image__ sizes."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:847
+#: ../../docutils/RELEASE-NOTES.txt:856
 msgid "Added `standard definition files`__ for special characters etc."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:853
+#: ../../docutils/RELEASE-NOTES.txt:862
 msgid ""
 "Added Japanese and Simplified Chinese language mappings, and support for "
 "double-width CJK-characters in tables and section titles."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:858
+#: ../../docutils/RELEASE-NOTES.txt:867
 msgid ""
 "Added a `guide for distributors`__ (package maintainers) and a `guide for"
 " developers`__."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:866
+#: ../../docutils/RELEASE-NOTES.txt:875
 msgid "Added significant `Emacs support for reST`__."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:870
+#: ../../docutils/RELEASE-NOTES.txt:879
 msgid "Added a `--strip-comments`__ option."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:874
+#: ../../docutils/RELEASE-NOTES.txt:883
 msgid ""
 "`--embed-stylesheet`__ is now the default for the HTML writer (rather "
 "than --link-stylesheet)."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:881
+#: ../../docutils/RELEASE-NOTES.txt:890
 msgid "Release 0.3.9 (2005-05-26)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:883
+#: ../../docutils/RELEASE-NOTES.txt:892
 msgid "Added \"file_insertion_enabled__\" and \"raw_enabled__\" settings."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:888
+#: ../../docutils/RELEASE-NOTES.txt:897
 msgid "Added `auto-enumerated lists`__."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:892
+#: ../../docutils/RELEASE-NOTES.txt:901
 msgid "Added `\"header\" and \"footer\"`__ directives."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:896
+#: ../../docutils/RELEASE-NOTES.txt:905
 msgid "Added \"list-table__\" directive."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:900
+#: ../../docutils/RELEASE-NOTES.txt:909
 msgid "Added support for `section subtitles`__."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:904
+#: ../../docutils/RELEASE-NOTES.txt:913
 msgid ""
 "Added \"field_name_limit__\" and \"option_limit__\" settings to HTML "
 "writer."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:909
+#: ../../docutils/RELEASE-NOTES.txt:918
 msgid "Added \"cloak_email_addresses__\" setting to HTML writer."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:913
+#: ../../docutils/RELEASE-NOTES.txt:922
 msgid "UTF-8 BOMs are now removed from the input stream."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:917
+#: ../../docutils/RELEASE-NOTES.txt:926
 msgid "Release 0.3.7 (2004-12-24)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:919
+#: ../../docutils/RELEASE-NOTES.txt:928
 msgid ""
 "A special \"`line block`__\" syntax has been added.  (Also see the `quick"
 " reference`__.)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:925
+#: ../../docutils/RELEASE-NOTES.txt:934
 msgid "Empty sections are now allowed."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:927
+#: ../../docutils/RELEASE-NOTES.txt:936
 msgid "A \"raw__\" role has been added."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:931
+#: ../../docutils/RELEASE-NOTES.txt:940
 msgid ""
 "The LaTeX writer now escapes consecutive dashes (like \"--\" or \"---\") "
 "so that they are no longer transformed by LaTeX to en or em dashes. "
 "(Please see the FAQ__ for how to represent such dashes.)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:937
+#: ../../docutils/RELEASE-NOTES.txt:946
 msgid "A `dependency recorder`__ has been added."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:941
+#: ../../docutils/RELEASE-NOTES.txt:950
 msgid "A directive has been added for `compound paragraphs`__."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:947
+#: ../../docutils/RELEASE-NOTES.txt:956
 msgid "Release 0.3.5 (2004-07-29)"
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:949
+#: ../../docutils/RELEASE-NOTES.txt:958
 msgid "Improved, extended and reorganized the documentation__."
 msgstr ""
 
-#: ../../docutils/RELEASE-NOTES.txt:953
+#: ../../docutils/RELEASE-NOTES.txt:962
 msgid "Added \"csv-table__\" directive."
 msgstr ""
+
+#~ msgid ""
+#~ "Removed function: ``utils.unique_combinations`` "
+#~ "(obsoleted by ``itertools.combinations``)."
+#~ msgstr ""
+
+#~ msgid "``nodes.Node.traverse()`` returns an iterator instead of a list."
+#~ msgstr ""
 

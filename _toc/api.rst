@@ -1,10 +1,10 @@
-========
-API
-========
+================================================
+API Reference Material for Client-Developers
+================================================
 
 .. toctree::
-   :maxdepth: 1
-   :caption: api
-   :glob:
+   :maxdepth: 2
 
-   ../docutils/docs/api/*
+   ../../docutils/docs/api/publisher
+   ../../docutils/docs/api/cmdline-tool
+   ../../docutils/docs/api/runtime-settings

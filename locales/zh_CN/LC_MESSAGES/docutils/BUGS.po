@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../docutils/BUGS.txt:3
 msgid "Docutils_ Bugs"
-msgstr ""
+msgstr "Docutils_ 错误"
 
 #: ../../docutils/BUGS.txt
 msgid "Author"

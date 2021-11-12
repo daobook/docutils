@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: docutilsx \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-12 09:31+0800\n"
+"POT-Creation-Date: 2021-11-12 14:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
 
-#: ../../_toc/ref.rst:3 ../../_toc/ref.rst:5
-msgid "ref"
+#: ../../_toc/ref/index.rst:12
+msgid "历史遗留"
+msgstr ""
+
+#: ../../_toc/ref/index.rst:3
+msgid "所有组的参考资料"
 msgstr ""
 
