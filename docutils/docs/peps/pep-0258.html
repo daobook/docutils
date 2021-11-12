@@ -3,13 +3,13 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-<link rel="index" title="索引" href="../../../genindex.html" /><link rel="search" title="搜索" href="../../../search.html" /><link rel="next" title="Abstract" href="pep-0287.html" /><link rel="prev" title="Abstract" href="pep-0257.html" />
+<link rel="index" title="索引" href="../../../genindex.html" /><link rel="search" title="搜索" href="../../../search.html" /><link rel="next" title="PEP 287: reStructuredText Docstring Format" href="pep-0287.html" /><link rel="prev" title="PEP 257: Docstring Conventions" href="pep-0257.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.png"/><meta name="generator" content="sphinx-4.3.0, furo 2021.10.09"/>
-        <title>Rejection Notice - docutilsx 0.0.1 文档</title>
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/><meta name="generator" content="sphinx-4.3.0, furo 2021.11.12"/>
+        <title>PEP 258: Docutils Design Specification - docutilsx 0.0.1 文档</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=cb850144ff767e23c5b2a31c47cdfe5847ae013d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
     
     
 
@@ -157,115 +157,112 @@
   <p class="caption" role="heading"><span class="caption-text">导航</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../web/index.html">Docutils：文档实用工具</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../web/mirror/setext.html">Setext 文档镜像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../web/rst.html"></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Docutils 项目文档概述</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../_toc/info.html">项目顶层</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../_toc/info.html">项目基础</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../README.html">Docutils 0.18.1b.dev 自述</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../FAQ.html"><span class="sectnum">1</span> Docutils FAQ (Frequently Asked Questions)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../BUGS.html">Docutils Bugs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../COPYING.html">Copying Docutils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../RELEASE-NOTES.html">Docutils Release Notes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../HISTORY.html">Docutils History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../THANKS.html">Acknowledgements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../FAQ.html"><span class="sectnum">1</span> Docutils 常见问题（Frequently Asked Questions）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../BUGS.html">Docutils 错误</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../COPYING.html">Docutils 分发</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../RELEASE-NOTES.html">Docutils 发行说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../HISTORY.html">Docutils 历史</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../THANKS.html">致谢</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../_toc/user.html">用户相关</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../user/config.html">Docutils Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user/emacs.html">Emacs Support for reStructuredText</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user/html.html">Docutils HTML writers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user/latex.html"><span class="sectnum">1</span> Generating LaTeX with Docutils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user/links.html">Docutils Link List</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user/mailing-lists.html">Docutils Mailing Lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user/manpage.html">manpage writer for Docutils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user/odt.html"><span class="sectnum">1</span> Odt Writer for Docutils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user/smartquotes.html">Smart Quotes for Docutils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user/tools.html">Docutils Front-End Tools</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../_toc/user/index.html">用户相关</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../_toc/user/general.html">Docutils 通用</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user/tools.html">Docutils Front-End Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user/config.html">Docutils Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user/mailing-lists.html">Docutils Mailing Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user/links.html">Docutils Link List</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../_toc/howto.html">howto</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../_toc/user/write.html">写作相关</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user/html.html">Docutils HTML writers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user/slide-shows.html">Easy Slide Shows With reST &amp; S5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user/latex.html"><span class="sectnum">1</span> Generating LaTeX with Docutils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user/odt.html"><span class="sectnum">1</span> Odt Writer for Docutils</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../_toc/user/rst.html">reStructuredText</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user/rst/quickstart.html">A ReStructuredText Primer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user/rst/cheatsheet.html">The reStructuredText Cheat Sheet: Syntax Reminders</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../_toc/user/editor.html">编辑器支持</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user/emacs.html">Emacs Support for reStructuredText</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../_toc/user/other.html">其他</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../user/manpage.html">manpage writer for Docutils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user/smartquotes.html">Smart Quotes for Docutils</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../_toc/ref/index.html">所有组的参考资料</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../_toc/ref/general.html">Docutils 通用参考</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ref/doctree.html">The Docutils Document Tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ref/transforms.html">Docutils Transforms</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../_toc/ref/rst.html">reStructuredText</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ref/rst/introduction.html">An Introduction to reStructuredText</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ref/rst/restructuredtext.html">reStructuredText Markup Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ref/rst/directives.html">reStructuredText Directives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ref/rst/roles.html">reStructuredText Interpreted Text Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ref/rst/definitions.html">reStructuredText Standard Definition Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ref/rst/mathematics.html"><span class="sectnum">1</span> LaTeX syntax for mathematics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../web/mirror/setext.html">Setext 文档镜像</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../_toc/peps.html">Python Enhancement Proposals</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pep-0256.html">PEP 256: Docstring Processing System Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pep-0257.html">PEP 257: Docstring Conventions</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">PEP 258: Docutils Design Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pep-0287.html">PEP 287: reStructuredText Docstring Format</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../_toc/api.html">API Reference Material for Client-Developers</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/publisher.html">The Docutils Publisher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/cmdline-tool.html">Inside A Docutils Command-Line Front-End Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/runtime-settings.html">Docutils Runtime Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../_toc/howto.html">Instructions for Developers</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../howto/security.html">Deploying Docutils Securely</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howto/html-stylesheets.html">Writing HTML (CSS) Stylesheets for Docutils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howto/i18n.html">Docutils Internationalization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howto/rst-directives.html">Creating reStructuredText Directives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howto/rst-roles.html">Creating reStructuredText Interpreted Text Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../howto/security.html">Deploying Docutils Securely</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../_toc/peps.html">peps</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="pep-0256.html">Rejection Notice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0256.html#abstract">Abstract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0256.html#road-map-to-the-docstring-peps">Road Map to the Docstring PEPs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0256.html#rationale">Rationale</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0256.html#specification">Specification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0256.html#project-web-site">Project Web Site</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0256.html#references-and-footnotes">References and Footnotes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0256.html#copyright">Copyright</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0256.html#acknowledgements">Acknowledgements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0257.html">Abstract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0257.html#rationale">Rationale</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0257.html#specification">Specification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0257.html#references-and-footnotes">References and Footnotes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0257.html#copyright">Copyright</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0257.html#acknowledgements">Acknowledgements</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Rejection Notice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#abstract">Abstract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#specification">Specification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#references-and-footnotes">References and Footnotes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#project-web-site">Project Web Site</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#copyright">Copyright</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#acknowledgements">Acknowledgements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0287.html">Abstract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0287.html#benefits">Benefits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0287.html#goals">Goals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0287.html#rationale">Rationale</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0287.html#specification">Specification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0287.html#docstring-significant-features">Docstring-Significant Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0287.html#questions-answers">Questions &amp; Answers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0287.html#references-footnotes">References &amp; Footnotes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0287.html#copyright">Copyright</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pep-0287.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../_toc/dev/index.html">Development Notes and Plans for Core-Developers</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../_toc/dev/general.html">Docutils 通用参考</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dev/hacking.html">Docutils Hacker’s Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/distributing.html">Docutils Distributor’s Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/todo.html">Docutils To Do List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/policies.html">Docutils Project Policies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/website.html">Docutils Web Site</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/release.html">Docutils Release Procedure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/repository.html">The Docutils Version Repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/testing.html">Docutils Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/semantics.html">Docstring Semantics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/pysource.html">Python Source Reader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/enthought-plan.html"><span class="sectnum">1</span> Plan for Enthought API Documentation Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/enthought-rfp.html"><span class="sectnum">1</span> Enthought API Documentation Tool</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../_toc/ref.html">ref</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ref/doctree.html">The Docutils Document Tree</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ref/transforms.html">Docutils Transforms</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../_toc/dev/rst.html">reStructuredText 参考</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dev/rst/alternatives.html">A Record of reStructuredText Syntax Alternatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev/rst/problems.html">Problems With StructuredText</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../_toc/rst.html">reStructuredText</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../web/rst.html"></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user/rst/cheatsheet.html">The reStructuredText Cheat Sheet: Syntax Reminders</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user/rst/quickstart.html">A ReStructuredText Primer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dev/rst/alternatives.html">A Record of reStructuredText Syntax Alternatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dev/rst/problems.html">Problems With StructuredText</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ref/rst/definitions.html">reStructuredText Standard Definition Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ref/rst/directives.html">reStructuredText Directives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ref/rst/introduction.html">An Introduction to reStructuredText</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ref/rst/mathematics.html"><span class="sectnum">1</span> LaTeX syntax for mathematics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ref/rst/restructuredtext.html">reStructuredText Markup Specification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ref/rst/roles.html">reStructuredText Interpreted Text Roles</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../_toc/dev.html">dev</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dev/distributing.html">Docutils Distributor’s Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dev/enthought-plan.html"><span class="sectnum">1</span> Plan for Enthought API Documentation Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dev/enthought-rfp.html"><span class="sectnum">1</span> Enthought API Documentation Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dev/hacking.html">Docutils Hacker’s Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dev/policies.html">Docutils Project Policies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dev/pysource.html">Python Source Reader</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dev/release.html">Docutils Release Procedure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dev/repository.html">The Docutils Version Repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dev/semantics.html">Docstring Semantics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dev/testing.html">Docutils Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dev/todo.html">Docutils To Do List</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dev/website.html">Docutils Web Site</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../_toc/api.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../api/cmdline-tool.html">Inside A Docutils Command-Line Front-End Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/publisher.html">The Docutils Publisher</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/runtime-settings.html">Docutils Runtime Settings</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../_toc/sandbox.html">sandbox</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../_toc/sandbox.html">sandbox</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../sandbox/README.html">Sandbox 自述</a></li>
 </ul>
 </li>
@@ -307,14 +304,16 @@ Content-Type: text/x-rst
 Requires: 256, 257
 Created: 31-May-2001
 Post-History: 13-Jun-2001</p>
+<section id="pep-258-docutils-design-specification">
+<h1>PEP 258: Docutils Design Specification<a class="headerlink" href="#pep-258-docutils-design-specification" title="永久链接至标题">¶</a></h1>
 <section id="rejection-notice">
-<h1>Rejection Notice<a class="headerlink" href="#rejection-notice" title="永久链接至标题">¶</a></h1>
+<h2>Rejection Notice<a class="headerlink" href="#rejection-notice" title="永久链接至标题">¶</a></h2>
 <p>While this may serve as an interesting design document for the
 now-independent docutils, it is no longer slated for inclusion in the
 standard library.</p>
 </section>
 <section id="abstract">
-<h1>Abstract<a class="headerlink" href="#abstract" title="永久链接至标题">¶</a></h1>
+<h2>Abstract<a class="headerlink" href="#abstract" title="永久链接至标题">¶</a></h2>
 <p>This PEP documents design issues and implementation details for
 Docutils, a Python Docstring Processing System (DPS).  The rationale
 and high-level concepts of a DPS are documented in PEP 256, “Docstring
@@ -329,9 +328,9 @@ deliverables consist of a package for the standard library and its
 documentation.</p>
 </section>
 <section id="specification">
-<h1>Specification<a class="headerlink" href="#specification" title="永久链接至标题">¶</a></h1>
+<h2>Specification<a class="headerlink" href="#specification" title="永久链接至标题">¶</a></h2>
 <section id="docutils-project-model">
-<h2>Docutils Project Model<a class="headerlink" href="#docutils-project-model" title="永久链接至标题">¶</a></h2>
+<h3>Docutils Project Model<a class="headerlink" href="#docutils-project-model" title="永久链接至标题">¶</a></h3>
 <p>Project components and data flow:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>                 <span class="o">+---------------------------+</span>
                  <span class="o">|</span>        <span class="n">Docutils</span><span class="p">:</span>          <span class="o">|</span>
@@ -359,7 +358,7 @@ be standard (pure &amp; unextended) Docutils doc trees.  Single-width
 lines signify that internal tree extensions or completely unrelated
 representations are possible, but they must be supported at both ends.</p>
 <section id="publisher">
-<h3>Publisher<a class="headerlink" href="#publisher" title="永久链接至标题">¶</a></h3>
+<h4>Publisher<a class="headerlink" href="#publisher" title="永久链接至标题">¶</a></h4>
 <p>The <code class="docutils literal notranslate"><span class="pre">docutils.core</span></code> module contains a “Publisher” facade class and
 several convenience functions: “publish_cmdline()” (for command-line
 front ends), “publish_file()” (for programmatic use with file-like
@@ -387,7 +386,7 @@ objects first, and pass <em>them</em> to the Publisher or <code class="docutils 
 convenience functions.</p>
 </section>
 <section id="readers">
-<h3>Readers<a class="headerlink" href="#readers" title="永久链接至标题">¶</a></h3>
+<h4>Readers<a class="headerlink" href="#readers" title="永久链接至标题">¶</a></h4>
 <p>Readers understand the input context (where the data is coming from),
 send the whole input or discrete “chunks” to the parser, and provide
 the context to bind the chunks together back into a cohesive whole.</p>
@@ -428,7 +427,7 @@ file?</p></li>
 </ul>
 </section>
 <section id="parsers">
-<h3>Parsers<a class="headerlink" href="#parsers" title="永久链接至标题">¶</a></h3>
+<h4>Parsers<a class="headerlink" href="#parsers" title="永久链接至标题">¶</a></h4>
 <p>Parsers analyze their input and produce a Docutils <a class="reference internal" href="#document-tree">document tree</a>.
 They don’t know or care anything about the source or destination of
 the data.</p>
@@ -444,7 +443,7 @@ reStructuredText markup.  It is implemented in the
 encouraged.</p>
 </section>
 <section id="transformer">
-<span id="transforms"></span><h3>Transformer<a class="headerlink" href="#transformer" title="永久链接至标题">¶</a></h3>
+<span id="transforms"></span><h4>Transformer<a class="headerlink" href="#transformer" title="永久链接至标题">¶</a></h4>
 <p>The Transformer class, in <code class="docutils literal notranslate"><span class="pre">docutils/transforms/__init__.py</span></code>, stores
 transforms and applies them to documents.  A transformer object is
 attached to every new document tree.  The <a class="reference internal" href="#publisher">Publisher</a> calls
@@ -496,7 +495,7 @@ specific Docutils component.</p></li>
 </ul>
 </section>
 <section id="writers">
-<h3>Writers<a class="headerlink" href="#writers" title="永久链接至标题">¶</a></h3>
+<h4>Writers<a class="headerlink" href="#writers" title="永久链接至标题">¶</a></h4>
 <p>Writers produce the final output (HTML, XML, TeX, etc.).  Writers
 translate the internal <a class="reference internal" href="#document-tree">document tree</a> structure into the final data
 format, possibly running Writer-specific <a class="reference internal" href="#transforms">transforms</a> first.</p>
@@ -537,7 +536,7 @@ sandbox).</p></li>
 </ul>
 </section>
 <section id="input-output">
-<h3>Input/Output<a class="headerlink" href="#input-output" title="永久链接至标题">¶</a></h3>
+<h4>Input/Output<a class="headerlink" href="#input-output" title="永久链接至标题">¶</a></h4>
 <p>I/O classes provide a uniform API for low-level input and output.
 Subclasses will exist for a variety of input/output mechanisms.
 However, they can be considered an implementation detail.  Most
@@ -581,7 +580,7 @@ of the normal output is to be used (implemented as
 </section>
 </section>
 <section id="docutils-package-structure">
-<h2>Docutils Package Structure<a class="headerlink" href="#docutils-package-structure" title="永久链接至标题">¶</a></h2>
+<h3>Docutils Package Structure<a class="headerlink" href="#docutils-package-structure" title="永久链接至标题">¶</a></h3>
 <ul>
 <li><p>Package “docutils”.</p>
 <ul>
@@ -697,12 +696,12 @@ installation.</p>
 </ul>
 </section>
 <section id="front-end-tools">
-<h2>Front-End Tools<a class="headerlink" href="#front-end-tools" title="永久链接至标题">¶</a></h2>
+<h3>Front-End Tools<a class="headerlink" href="#front-end-tools" title="永久链接至标题">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">tools/</span></code> directory contains several front ends for common
 Docutils processing.  See <a class="reference external" href="http://docutils.sourceforge.net/docs/user/tools.html">Docutils Front-End Tools</a> for details.</p>
 </section>
 <section id="document-tree">
-<h2>Document Tree<a class="headerlink" href="#document-tree" title="永久链接至标题">¶</a></h2>
+<h3>Document Tree<a class="headerlink" href="#document-tree" title="永久链接至标题">¶</a></h3>
 <p>A single intermediate data structure is used internally by Docutils,
 in the interfaces between components; it is defined in the
 <code class="docutils literal notranslate"><span class="pre">docutils.nodes</span></code> module.  It is not required that this data
@@ -738,7 +737,7 @@ thereof.</p>
 <p>See <a class="reference external" href="http://docutils.sourceforge.net/docs/ref/doctree.html">The Docutils Document Tree</a> for details (incomplete).</p>
 </section>
 <section id="error-handling">
-<h2>Error Handling<a class="headerlink" href="#error-handling" title="永久链接至标题">¶</a></h2>
+<h3>Error Handling<a class="headerlink" href="#error-handling" title="永久链接至标题">¶</a></h3>
 <p>When the parser encounters an error in markup, it inserts a system
 message (DTD element “system_message”).  There are five levels of
 system messages:</p>
@@ -767,7 +766,7 @@ from VMS.  Error handling has since been influenced by the <a class="reference e
 project</a>.</p>
 </section>
 <section id="python-source-reader">
-<h2>Python Source Reader<a class="headerlink" href="#python-source-reader" title="永久链接至标题">¶</a></h2>
+<h3>Python Source Reader<a class="headerlink" href="#python-source-reader" title="永久链接至标题">¶</a></h3>
 <p>The Python Source Reader (“PySource”) is the Docutils component that
 reads Python source files, extracts docstrings in context, then
 parses, links, and assembles the docstrings into a cohesive whole.  It
@@ -775,7 +774,7 @@ is a major and non-trivial component, currently under experimental
 development in the Docutils sandbox.  High-level design issues are
 presented here.</p>
 <section id="processing-model">
-<h3>Processing Model<a class="headerlink" href="#processing-model" title="永久链接至标题">¶</a></h3>
+<h4>Processing Model<a class="headerlink" href="#processing-model" title="永久链接至标题">¶</a></h4>
 <p>This model will evolve over time, incorporating experience and
 discoveries.</p>
 <ol class="arabic simple">
@@ -810,7 +809,7 @@ destination (disk file, directories and files, etc.).</p></li>
 </ol>
 </section>
 <section id="ast-mining">
-<h3>AST Mining<a class="headerlink" href="#ast-mining" title="永久链接至标题">¶</a></h3>
+<h4>AST Mining<a class="headerlink" href="#ast-mining" title="永久链接至标题">¶</a></h4>
 <p>Abstract Syntax Tree mining code will be written (or adapted) that
 scans a parsed Python module, and returns an ordered tree containing
 the names, docstrings (including attribute and additional docstrings;
@@ -834,7 +833,7 @@ each of the above will also be required.</p>
 2001-08-14.</p>
 </section>
 <section id="docstring-extraction-rules">
-<h3>Docstring Extraction Rules<a class="headerlink" href="#docstring-extraction-rules" title="永久链接至标题">¶</a></h3>
+<h4>Docstring Extraction Rules<a class="headerlink" href="#docstring-extraction-rules" title="永久链接至标题">¶</a></h4>
 <ol class="arabic">
 <li><p>What to examine:</p>
 <ol class="loweralpha simple">
@@ -890,7 +889,7 @@ will result from their use.  They are not assigned to <code class="docutils lite
 to any other attribute.  The initial parsing of a module may take a
 slight performance hit.</p>
 <section id="attribute-docstrings">
-<h4>Attribute Docstrings<a class="headerlink" href="#attribute-docstrings" title="永久链接至标题">¶</a></h4>
+<h5>Attribute Docstrings<a class="headerlink" href="#attribute-docstrings" title="永久链接至标题">¶</a></h5>
 <p>(This is a simplified version of PEP 224 <a class="footnote-reference brackets" href="#pep-224" id="id2">2</a>.)</p>
 <p>A string literal immediately following an assignment statement is
 interpreted by the docstring extraction machinery as the docstring of
@@ -959,7 +958,7 @@ connection between the assignment and the docstring.</p>
 </div>
 </section>
 <section id="additional-docstrings">
-<h4>Additional Docstrings<a class="headerlink" href="#additional-docstrings" title="永久链接至标题">¶</a></h4>
+<h5>Additional Docstrings<a class="headerlink" href="#additional-docstrings" title="永久链接至标题">¶</a></h5>
 <p>(This idea was adapted from PEP 216 <a class="footnote-reference brackets" href="#pep-216" id="id3">3</a>.)</p>
 <p>Many programmers would like to make extensive use of docstrings for
 API documentation.  However, docstrings do take up space in the
@@ -1013,7 +1012,7 @@ have to put up with the single-docstring limitation.</p></li>
 </section>
 </section>
 <section id="choice-of-docstring-format">
-<h3>Choice of Docstring Format<a class="headerlink" href="#choice-of-docstring-format" title="永久链接至标题">¶</a></h3>
+<h4>Choice of Docstring Format<a class="headerlink" href="#choice-of-docstring-format" title="永久链接至标题">¶</a></h4>
 <p>Rather than force everyone to use a single docstring format, multiple
 input formats are allowed by the processing system.  A special
 variable, <code class="docutils literal notranslate"><span class="pre">__docformat__</span></code>, may appear at the top level of a module
@@ -1041,7 +1040,7 @@ The language identifier is passed to the parser and can be used for
 language-dependent markup features.</p>
 </section>
 <section id="identifier-cross-references">
-<h3>Identifier Cross-References<a class="headerlink" href="#identifier-cross-references" title="永久链接至标题">¶</a></h3>
+<h4>Identifier Cross-References<a class="headerlink" href="#identifier-cross-references" title="永久链接至标题">¶</a></h4>
 <p>In Python docstrings, interpreted text is used to classify and mark up
 program identifiers, such as the names of variables, functions,
 classes, and modules.  If the identifier alone is given, its role is
@@ -1087,7 +1086,7 @@ when necessary.  For example (using reStructuredText markup):</p>
 references to the definitions of the identifiers themselves.</p>
 </section>
 <section id="stylist-transforms">
-<h3>Stylist Transforms<a class="headerlink" href="#stylist-transforms" title="永久链接至标题">¶</a></h3>
+<h4>Stylist Transforms<a class="headerlink" href="#stylist-transforms" title="永久链接至标题">¶</a></h4>
 <p>Stylist transforms are specialized transforms specific to the PySource
 Reader.  The PySource Reader doesn’t have to make any decisions as to
 style; it just produces a logically constructed document tree, parsed
@@ -1109,7 +1108,7 @@ stylist code will lower the barrier considerably.</p>
 </section>
 </section>
 <section id="references-and-footnotes">
-<h1>References and Footnotes<a class="headerlink" href="#references-and-footnotes" title="永久链接至标题">¶</a></h1>
+<h2>References and Footnotes<a class="headerlink" href="#references-and-footnotes" title="永久链接至标题">¶</a></h2>
 <dl class="footnote brackets">
 <dt class="label" id="pep-256"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>PEP 256, Docstring Processing System Framework, Goodger
@@ -1126,18 +1125,19 @@ stylist code will lower the barrier considerably.</p>
 </dl>
 </section>
 <section id="project-web-site">
-<h1>Project Web Site<a class="headerlink" href="#project-web-site" title="永久链接至标题">¶</a></h1>
+<h2>Project Web Site<a class="headerlink" href="#project-web-site" title="永久链接至标题">¶</a></h2>
 <p>A SourceForge project has been set up for this work at
 <a class="reference external" href="http://docutils.sourceforge.net/">http://docutils.sourceforge.net/</a>.</p>
 </section>
 <section id="copyright">
-<h1>Copyright<a class="headerlink" href="#copyright" title="永久链接至标题">¶</a></h1>
+<h2>Copyright<a class="headerlink" href="#copyright" title="永久链接至标题">¶</a></h2>
 <p>This document has been placed in the public domain.</p>
 </section>
 <section id="acknowledgements">
-<h1>Acknowledgements<a class="headerlink" href="#acknowledgements" title="永久链接至标题">¶</a></h1>
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="永久链接至标题">¶</a></h2>
 <p>This document borrows ideas from the archives of the <a class="reference external" href="http://www.python.org/sigs/doc-sig/">Python
 Doc-SIG</a>.  Thanks to all members past &amp; present.</p>
+</section>
 </section>
 
         </article>
@@ -1150,7 +1150,7 @@ Doc-SIG</a>.  Thanks to all members past &amp; present.</p>
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Abstract</div>
+                <div class="title">PEP 287: reStructuredText Docstring Format</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -1161,7 +1161,7 @@ Doc-SIG</a>.  Thanks to all members past &amp; present.</p>
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Abstract</div>
+                <div class="title">PEP 257: Docstring Conventions</div>
                 
               </div>
             </a>
@@ -1169,11 +1169,9 @@ Doc-SIG</a>.  Thanks to all members past &amp; present.</p>
 
         <div class="related-information">
               Copyright &#169; 2021, xinetzone |
-            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
-              and
-              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="../../../_sources/docutils/docs/peps/pep-0258.txt"
+          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            | <a class="muted-link" href="../../../_sources/docutils/docs/peps/pep-0258.txt"
                rel="nofollow">
               显示源代码
             </a>
@@ -1193,7 +1191,8 @@ Doc-SIG</a>.  Thanks to all members past &amp; present.</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Rejection Notice</a></li>
+<li><a class="reference internal" href="#">PEP 258: Docutils Design Specification</a><ul>
+<li><a class="reference internal" href="#rejection-notice">Rejection Notice</a></li>
 <li><a class="reference internal" href="#abstract">Abstract</a></li>
 <li><a class="reference internal" href="#specification">Specification</a><ul>
 <li><a class="reference internal" href="#docutils-project-model">Docutils Project Model</a><ul>
@@ -1229,6 +1228,8 @@ Doc-SIG</a>.  Thanks to all members past &amp; present.</p>
 <li><a class="reference internal" href="#copyright">Copyright</a></li>
 <li><a class="reference internal" href="#acknowledgements">Acknowledgements</a></li>
 </ul>
+</li>
+</ul>
 
           </div>
         </div>
@@ -1241,7 +1242,7 @@ Doc-SIG</a>.  Thanks to all members past &amp; present.</p>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/scripts/main.js"></script>
+    <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/translations.js"></script>
     </body>
 </html>

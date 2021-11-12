@@ -12,16 +12,15 @@ docutils' documentation!
    :caption: 导航
 
    web/index
-   web/mirror/setext
+   web/rst
    docutils/docs/index
    _toc/info
-   _toc/user
-   _toc/howto
+   _toc/user/index
+   _toc/ref/index
    _toc/peps
-   _toc/ref
-   _toc/rst
-   _toc/dev
    _toc/api
+   _toc/howto
+   _toc/dev/index
    _toc/sandbox
 
 Indices and tables

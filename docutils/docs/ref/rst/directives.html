@@ -3,13 +3,13 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-<link rel="index" title="索引" href="../../../../genindex.html" /><link rel="search" title="搜索" href="../../../../search.html" /><link rel="next" title="An Introduction to reStructuredText" href="introduction.html" /><link rel="prev" title="reStructuredText Standard Definition Files" href="definitions.html" />
+<link rel="index" title="索引" href="../../../../genindex.html" /><link rel="search" title="搜索" href="../../../../search.html" /><link rel="next" title="reStructuredText Interpreted Text Roles" href="roles.html" /><link rel="prev" title="reStructuredText Markup Specification" href="restructuredtext.html" />
 
-    <link rel="shortcut icon" href="../../../../_static/favicon.png"/><meta name="generator" content="sphinx-4.3.0, furo 2021.10.09"/>
+    <link rel="shortcut icon" href="../../../../_static/favicon.png"/><meta name="generator" content="sphinx-4.3.0, furo 2021.11.12"/>
         <title>reStructuredText Directives - docutilsx 0.0.1 文档</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=cb850144ff767e23c5b2a31c47cdfe5847ae013d" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
     
     
 
@@ -157,115 +157,112 @@
   <p class="caption" role="heading"><span class="caption-text">导航</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../web/index.html">Docutils：文档实用工具</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../web/mirror/setext.html">Setext 文档镜像</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../web/rst.html"></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Docutils 项目文档概述</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../_toc/info.html">项目顶层</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../_toc/info.html">项目基础</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../README.html">Docutils 0.18.1b.dev 自述</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../FAQ.html"><span class="sectnum">1</span> Docutils FAQ (Frequently Asked Questions)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../BUGS.html">Docutils Bugs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../COPYING.html">Copying Docutils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../RELEASE-NOTES.html">Docutils Release Notes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../HISTORY.html">Docutils History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../THANKS.html">Acknowledgements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../FAQ.html"><span class="sectnum">1</span> Docutils 常见问题（Frequently Asked Questions）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../BUGS.html">Docutils 错误</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../COPYING.html">Docutils 分发</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../RELEASE-NOTES.html">Docutils 发行说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../HISTORY.html">Docutils 历史</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../THANKS.html">致谢</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../_toc/user.html">用户相关</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../user/config.html">Docutils Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../user/emacs.html">Emacs Support for reStructuredText</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../user/html.html">Docutils HTML writers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../user/latex.html"><span class="sectnum">1</span> Generating LaTeX with Docutils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../user/links.html">Docutils Link List</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../user/mailing-lists.html">Docutils Mailing Lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../user/manpage.html">manpage writer for Docutils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../user/odt.html"><span class="sectnum">1</span> Odt Writer for Docutils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../user/smartquotes.html">Smart Quotes for Docutils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../user/tools.html">Docutils Front-End Tools</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../_toc/user/index.html">用户相关</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../_toc/user/general.html">Docutils 通用</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user/tools.html">Docutils Front-End Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user/config.html">Docutils Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user/mailing-lists.html">Docutils Mailing Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user/links.html">Docutils Link List</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../_toc/howto.html">howto</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../_toc/user/write.html">写作相关</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user/html.html">Docutils HTML writers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user/slide-shows.html">Easy Slide Shows With reST &amp; S5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user/latex.html"><span class="sectnum">1</span> Generating LaTeX with Docutils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user/odt.html"><span class="sectnum">1</span> Odt Writer for Docutils</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../_toc/user/rst.html">reStructuredText</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user/rst/quickstart.html">A ReStructuredText Primer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user/rst/cheatsheet.html">The reStructuredText Cheat Sheet: Syntax Reminders</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../_toc/user/editor.html">编辑器支持</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user/emacs.html">Emacs Support for reStructuredText</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../_toc/user/other.html">其他</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../user/manpage.html">manpage writer for Docutils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user/smartquotes.html">Smart Quotes for Docutils</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../../_toc/ref/index.html">所有组的参考资料</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../_toc/ref/general.html">Docutils 通用参考</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../doctree.html">The Docutils Document Tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../transforms.html">Docutils Transforms</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../../../_toc/ref/rst.html">reStructuredText</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">An Introduction to reStructuredText</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restructuredtext.html">reStructuredText Markup Specification</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">reStructuredText Directives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="roles.html">reStructuredText Interpreted Text Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="definitions.html">reStructuredText Standard Definition Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mathematics.html"><span class="sectnum">1</span> LaTeX syntax for mathematics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../web/mirror/setext.html">Setext 文档镜像</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../_toc/peps.html">Python Enhancement Proposals</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0256.html">PEP 256: Docstring Processing System Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0257.html">PEP 257: Docstring Conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0258.html">PEP 258: Docutils Design Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0287.html">PEP 287: reStructuredText Docstring Format</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../_toc/api.html">API Reference Material for Client-Developers</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api/publisher.html">The Docutils Publisher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/cmdline-tool.html">Inside A Docutils Command-Line Front-End Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api/runtime-settings.html">Docutils Runtime Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../_toc/howto.html">Instructions for Developers</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../howto/security.html">Deploying Docutils Securely</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../howto/html-stylesheets.html">Writing HTML (CSS) Stylesheets for Docutils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../howto/i18n.html">Docutils Internationalization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../howto/rst-directives.html">Creating reStructuredText Directives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../howto/rst-roles.html">Creating reStructuredText Interpreted Text Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../howto/security.html">Deploying Docutils Securely</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../_toc/peps.html">peps</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0256.html">Rejection Notice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0256.html#abstract">Abstract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0256.html#road-map-to-the-docstring-peps">Road Map to the Docstring PEPs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0256.html#rationale">Rationale</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0256.html#specification">Specification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0256.html#project-web-site">Project Web Site</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0256.html#references-and-footnotes">References and Footnotes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0256.html#copyright">Copyright</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0256.html#acknowledgements">Acknowledgements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0257.html">Abstract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0257.html#rationale">Rationale</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0257.html#specification">Specification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0257.html#references-and-footnotes">References and Footnotes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0257.html#copyright">Copyright</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0257.html#acknowledgements">Acknowledgements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0258.html">Rejection Notice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0258.html#abstract">Abstract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0258.html#specification">Specification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0258.html#references-and-footnotes">References and Footnotes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0258.html#project-web-site">Project Web Site</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0258.html#copyright">Copyright</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0258.html#acknowledgements">Acknowledgements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0287.html">Abstract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0287.html#benefits">Benefits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0287.html#goals">Goals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0287.html#rationale">Rationale</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0287.html#specification">Specification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0287.html#docstring-significant-features">Docstring-Significant Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0287.html#questions-answers">Questions &amp; Answers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0287.html#references-footnotes">References &amp; Footnotes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0287.html#copyright">Copyright</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../peps/pep-0287.html#acknowledgements">Acknowledgements</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../_toc/dev/index.html">Development Notes and Plans for Core-Developers</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../_toc/dev/general.html">Docutils 通用参考</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dev/hacking.html">Docutils Hacker’s Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev/distributing.html">Docutils Distributor’s Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev/todo.html">Docutils To Do List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev/policies.html">Docutils Project Policies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev/website.html">Docutils Web Site</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev/release.html">Docutils Release Procedure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev/repository.html">The Docutils Version Repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev/testing.html">Docutils Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev/semantics.html">Docstring Semantics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev/pysource.html">Python Source Reader</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev/enthought-plan.html"><span class="sectnum">1</span> Plan for Enthought API Documentation Tool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev/enthought-rfp.html"><span class="sectnum">1</span> Enthought API Documentation Tool</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../_toc/ref.html">ref</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../doctree.html">The Docutils Document Tree</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../transforms.html">Docutils Transforms</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../_toc/dev/rst.html">reStructuredText 参考</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dev/rst/alternatives.html">A Record of reStructuredText Syntax Alternatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev/rst/problems.html">Problems With StructuredText</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../../_toc/rst.html">reStructuredText</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../../../web/rst.html"></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../user/rst/cheatsheet.html">The reStructuredText Cheat Sheet: Syntax Reminders</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../user/rst/quickstart.html">A ReStructuredText Primer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../dev/rst/alternatives.html">A Record of reStructuredText Syntax Alternatives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../dev/rst/problems.html">Problems With StructuredText</a></li>
-<li class="toctree-l2"><a class="reference internal" href="definitions.html">reStructuredText Standard Definition Files</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">reStructuredText Directives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html">An Introduction to reStructuredText</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mathematics.html"><span class="sectnum">1</span> LaTeX syntax for mathematics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="restructuredtext.html">reStructuredText Markup Specification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="roles.html">reStructuredText Interpreted Text Roles</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../_toc/dev.html">dev</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../dev/distributing.html">Docutils Distributor’s Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../dev/enthought-plan.html"><span class="sectnum">1</span> Plan for Enthought API Documentation Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../dev/enthought-rfp.html"><span class="sectnum">1</span> Enthought API Documentation Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../dev/hacking.html">Docutils Hacker’s Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../dev/policies.html">Docutils Project Policies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../dev/pysource.html">Python Source Reader</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../dev/release.html">Docutils Release Procedure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../dev/repository.html">The Docutils Version Repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../dev/semantics.html">Docstring Semantics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../dev/testing.html">Docutils Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../dev/todo.html">Docutils To Do List</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../dev/website.html">Docutils Web Site</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../_toc/api.html">API</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../api/cmdline-tool.html">Inside A Docutils Command-Line Front-End Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../api/publisher.html">The Docutils Publisher</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../api/runtime-settings.html">Docutils Runtime Settings</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../_toc/sandbox.html">sandbox</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../_toc/sandbox.html">sandbox</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../sandbox/README.html">Sandbox 自述</a></li>
 </ul>
 </li>
@@ -296,7 +293,7 @@
         </div>
         <article role="main">
           <section id="restructuredtext-directives">
-<h1><a class="toc-backref" href="#id33">reStructuredText Directives</a><a class="headerlink" href="#restructuredtext-directives" title="永久链接至标题">¶</a></h1>
+<h1><a class="toc-backref" href="#id41">reStructuredText Directives</a><a class="headerlink" href="#restructuredtext-directives" title="永久链接至标题">¶</a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Author</dt>
 <dd class="field-odd"><p>David Goodger</p>
@@ -317,18 +314,18 @@
 <div class="contents topic" id="id1">
 <p class="topic-title">目录</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#restructuredtext-directives" id="id33">reStructuredText Directives</a></p>
+<li><p><a class="reference internal" href="#restructuredtext-directives" id="id41">reStructuredText Directives</a></p>
 <ul>
-<li><p><a class="reference internal" href="#admonitions" id="id34">Admonitions</a></p></li>
-<li><p><a class="reference internal" href="#images" id="id35">Images</a></p></li>
-<li><p><a class="reference internal" href="#body-elements" id="id36">Body Elements</a></p></li>
-<li><p><a class="reference internal" href="#tables" id="id37">Tables</a></p></li>
-<li><p><a class="reference internal" href="#document-parts" id="id38">Document Parts</a></p></li>
-<li><p><a class="reference internal" href="#references" id="id39">References</a></p></li>
-<li><p><a class="reference internal" href="#html-specific" id="id40">HTML-Specific</a></p></li>
-<li><p><a class="reference internal" href="#directives-for-substitution-definitions" id="id41">Directives for Substitution Definitions</a></p></li>
-<li><p><a class="reference internal" href="#miscellaneous" id="id42">Miscellaneous</a></p></li>
-<li><p><a class="reference internal" href="#common-options" id="id43">Common Options</a></p></li>
+<li><p><a class="reference internal" href="#admonitions" id="id42">Admonitions</a></p></li>
+<li><p><a class="reference internal" href="#images" id="id43">Images</a></p></li>
+<li><p><a class="reference internal" href="#body-elements" id="id44">Body Elements</a></p></li>
+<li><p><a class="reference internal" href="#tables" id="id45">Tables</a></p></li>
+<li><p><a class="reference internal" href="#document-parts" id="id46">Document Parts</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id47">References</a></p></li>
+<li><p><a class="reference internal" href="#html-specific" id="id48">HTML-Specific</a></p></li>
+<li><p><a class="reference internal" href="#directives-for-substitution-definitions" id="id49">Directives for Substitution Definitions</a></p></li>
+<li><p><a class="reference internal" href="#miscellaneous" id="id50">Miscellaneous</a></p></li>
+<li><p><a class="reference internal" href="#common-options" id="id51">Common Options</a></p></li>
 </ul>
 </li>
 </ul>
@@ -358,7 +355,7 @@ Docutils Document Tree</a> and the <a class="reference external" href="../docuti
 type definition.  For directive implementation details, see <a class="reference external" href="../../howto/rst-directives.html">Creating
 reStructuredText Directives</a>.</p>
 <section id="admonitions">
-<h2><a class="toc-backref" href="#id34">Admonitions</a><a class="headerlink" href="#admonitions" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id42">Admonitions</a><a class="headerlink" href="#admonitions" title="永久链接至标题">¶</a></h2>
 <section id="specific-admonitions">
 <span id="warning"></span><span id="tip"></span><span id="note"></span><span id="important"></span><span id="hint"></span><span id="error"></span><span id="danger"></span><span id="caution"></span><span id="attention"></span><h3>Specific Admonitions<a class="headerlink" href="#specific-admonitions" title="永久链接至标题">¶</a></h3>
 <dl class="field-list simple">
@@ -374,7 +371,7 @@ note, tip, warning, <a class="reference external" href="../doctree.html#admoniti
 <dd class="field-odd"><p>None.</p>
 </dd>
 <dt class="field-even">Directive Options</dt>
-<dd class="field-even"><p><a class="reference internal" href="#id24">class</a>, <a class="reference internal" href="#name">name</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#id32">class</a>, <a class="reference internal" href="#name">name</a></p>
 </dd>
 <dt class="field-odd">Directive Content</dt>
 <dd class="field-odd"><p>Interpreted as body elements.</p>
@@ -436,7 +433,7 @@ bullet list consisting of two list items:</p>
 <dd class="field-odd"><p>One, required (admonition title)</p>
 </dd>
 <dt class="field-even">Directive Options</dt>
-<dd class="field-even"><p><a class="reference internal" href="#id24">class</a>, <a class="reference internal" href="#name">name</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#id32">class</a>, <a class="reference internal" href="#name">name</a></p>
 </dd>
 <dt class="field-odd">Directive Content</dt>
 <dd class="field-odd"><p>Interpreted as body elements.</p>
@@ -462,13 +459,117 @@ prefixed).  For example, this admonition:</p>
             <span class="n">You</span> <span class="n">can</span> <span class="n">make</span> <span class="n">up</span> <span class="n">your</span> <span class="n">own</span> <span class="n">admonition</span> <span class="n">too</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>The <a class="reference internal" href="#id24">class</a> option overrides the computed <a class="reference external" href="../doctree.html#classes">“classes”</a> attribute
+<p>The <a class="reference internal" href="#id32">class</a> option overrides the computed <a class="reference external" href="../doctree.html#classes">“classes”</a> attribute
 value.</p>
 </section>
 </section>
 <section id="images">
-<h2><a class="toc-backref" href="#id35">Images</a><a class="headerlink" href="#images" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id43">Images</a><a class="headerlink" href="#images" title="永久链接至标题">¶</a></h2>
 <p>There are two image directives: “image” and “figure”.</p>
+<p>It is up to the author to ensure compatibility of the image data format
+with the output format or user agent (<a class="reference external" href="../../user/latex.html#image-inclusion">LaTeX</a> engine, <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types">HTML browser</a>,
+ODT, …). The following, non exhaustive table provides an overview</p>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 16%"/>
+<col style="width: 10%"/>
+<col style="width: 10%"/>
+<col style="width: 8%"/>
+<col style="width: 8%"/>
+<col style="width: 8%"/>
+<col style="width: 8%"/>
+<col style="width: 8%"/>
+<col style="width: 8%"/>
+<col style="width: 8%"/>
+<col style="width: 8%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head" colspan="2"><p>vector image</p></th>
+<th class="head" colspan="5"><p>raster image</p></th>
+<th class="head" colspan="3"><p>moving image <a class="footnote-reference brackets" href="#id5" id="id2">1</a></p></th>
+</tr>
+<tr class="row-even"><th class="head"></th>
+<th class="head"><p>SVG</p></th>
+<th class="head"><p>PDF</p></th>
+<th class="head"><p>PNG</p></th>
+<th class="head"><p>JPG</p></th>
+<th class="head"><p>GIF</p></th>
+<th class="head"><p>APNG</p></th>
+<th class="head"><p>AVIF</p></th>
+<th class="head"><p>WebM</p></th>
+<th class="head"><p>MP4</p></th>
+<th class="head"><p>OGG</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>HTML4</p></td>
+<td><p>✓ <a class="footnote-reference brackets" href="#id6" id="id3">2</a></p></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>(✓)</p></td>
+<td><p>(✓)</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>HTML5</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>LaTeX <a class="footnote-reference brackets" href="#id7" id="id4">3</a></p></td>
+<td></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ODT</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<dl class="footnote brackets">
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>The html5 writer uses the <code class="docutils literal notranslate"><span class="pre">&lt;video&gt;</span></code> tag if the image URI points
+to a file with an extension matching one of the listed video formats
+(since Docutils 0.17).</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>The html4 writer uses an <code class="docutils literal notranslate"><span class="pre">&lt;object&gt;</span></code> tag for SVG images for better
+compatibility with older browsers.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id4">3</a></span></dt>
+<dd><p>When compiling with <code class="docutils literal notranslate"><span class="pre">pdflatex</span></code>, <code class="docutils literal notranslate"><span class="pre">xelatex</span></code>, or <code class="docutils literal notranslate"><span class="pre">lualatex</span></code>.
+The original <code class="docutils literal notranslate"><span class="pre">latex</span></code> engine supports only the EPS image format.
+Some build systems, e.g. <a class="reference external" href="https://github.com/petrhosek/rubber">rubber</a> support additional formats via
+on-the-fly image conversion.</p>
+</dd>
+</dl>
 <section id="image">
 <h3>Image<a class="headerlink" href="#image" title="永久链接至标题">¶</a></h3>
 <dl class="field-list simple">
@@ -528,8 +629,8 @@ above, when the “scale” option is also specified, they are combined.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">scale</span></code><span class="classifier">integer percentage (the “%” symbol is optional)</span></dt><dd><p>The uniform scaling factor of the image.  The default is “100 %”, i.e.
 no scaling.</p>
-<p>If no “height” or “width” options are specified, the <a class="reference external" href="https://en.wikipedia.org/wiki/Python_Imaging_Library">Python
-Imaging Library</a> (PIL/<a class="reference external" href="https://pypi.org/project/Pillow/">Pillow</a>) may be used to determine them, if
+<p>If no “height” or “width” options are specified, the <cite>Python
+Imaging Library</cite> (PIL/<a class="reference external" href="https://pypi.org/project/Pillow/">Pillow</a>) may be used to determine them, if
 it is installed and the image file is available.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">align</span></code><span class="classifier">“top”, “middle”, “bottom”, “left”, “center”, or “right”</span></dt><dd><p>The alignment of the image, equivalent to the HTML <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> tag’s
@@ -548,7 +649,7 @@ option argument may be a URI (relative or absolute), or a
 <a class="reference external" href="restructuredtext.html#reference-names">reference name</a> with underscore suffix (e.g. <code class="docutils literal notranslate"><span class="pre">`a</span> <span class="pre">name`_</span></code>).</p>
 </dd>
 </dl>
-<p>and the common options <a class="reference internal" href="#id24">class</a> and <a class="reference internal" href="#name">name</a>.</p>
+<p>and the common options <a class="reference internal" href="#id32">class</a> and <a class="reference internal" href="#name">name</a>.</p>
 </section>
 <section id="figure">
 <h3>Figure<a class="headerlink" href="#figure" title="永久链接至标题">¶</a></h3>
@@ -612,7 +713,7 @@ depends upon the browser or rendering software used.</p>
 <dt><code class="docutils literal notranslate"><span class="pre">figwidth</span></code><span class="classifier">“image”, <a class="reference external" href="restructuredtext.html#length-units">length</a>, or <a class="reference external" href="restructuredtext.html#percentage-units">percentage</a> of current line width</span></dt><dd><p>The width of the figure.
 Limits the horizontal space used by the figure.
 A special value of “image” is allowed, in which case the
-included image’s actual width is used (requires the <a class="reference external" href="https://en.wikipedia.org/wiki/Python_Imaging_Library">Python Imaging
+included image’s actual width is used (requires the <a class="reference external" href="https://pypi.org/project/Pillow/">Python Imaging
 Library</a>). If the image file is not found or the required software is
 unavailable, this option is ignored.</p>
 <p>Sets the “width” attribute of the “figure” doctree element.</p>
@@ -636,13 +737,13 @@ unavailable, this option is ignored.</p>
 </div>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">figclass</span></code><span class="classifier">text</span></dt><dd><p>Set a <a class="reference external" href="../doctree.html#classes">“classes”</a> attribute value on the figure element.  See the
-<a class="reference internal" href="#id24">class</a> directive below.</p>
+<a class="reference internal" href="#id32">class</a> directive below.</p>
 </dd>
 </dl>
 </section>
 </section>
 <section id="body-elements">
-<h2><a class="toc-backref" href="#id36">Body Elements</a><a class="headerlink" href="#body-elements" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id44">Body Elements</a><a class="headerlink" href="#body-elements" title="永久链接至标题">¶</a></h2>
 <section id="topic">
 <h3>Topic<a class="headerlink" href="#topic" title="永久链接至标题">¶</a></h3>
 <dl class="field-list simple">
@@ -656,7 +757,7 @@ unavailable, this option is ignored.</p>
 <dd class="field-odd"><p>One, required (topic title).</p>
 </dd>
 <dt class="field-even">Directive Options</dt>
-<dd class="field-even"><p><a class="reference internal" href="#id24">class</a>, <a class="reference internal" href="#name">name</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#id32">class</a>, <a class="reference internal" href="#name">name</a></p>
 </dd>
 <dt class="field-odd">Directive Content</dt>
 <dd class="field-odd"><p>Interpreted as the topic body.</p>
@@ -722,7 +823,7 @@ interpreted as body elements.  For example:</p>
 <dt><code class="docutils literal notranslate"><span class="pre">subtitle</span></code><span class="classifier">text</span></dt><dd><p>The sidebar’s subtitle.</p>
 </dd>
 </dl>
-<p>and the common options <a class="reference internal" href="#id24">class</a> and <a class="reference internal" href="#name">name</a>.</p>
+<p>and the common options <a class="reference internal" href="#id32">class</a> and <a class="reference internal" href="#name">name</a>.</p>
 </section>
 <section id="line-block">
 <h3>Line Block<a class="headerlink" href="#line-block" title="永久链接至标题">¶</a></h3>
@@ -742,7 +843,7 @@ syntax</a> instead.</p>
 <dd class="field-odd"><p>None.</p>
 </dd>
 <dt class="field-even">Directive Options</dt>
-<dd class="field-even"><p><a class="reference internal" href="#id24">class</a>, <a class="reference internal" href="#name">name</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#id32">class</a>, <a class="reference internal" href="#name">name</a></p>
 </dd>
 <dt class="field-odd">Directive Content</dt>
 <dd class="field-odd"><p>Becomes the body of the line block.</p>
@@ -783,7 +884,7 @@ example, here’s a classic:</p>
 <dd class="field-odd"><p>None.</p>
 </dd>
 <dt class="field-even">Directive Options</dt>
-<dd class="field-even"><p><a class="reference internal" href="#id24">class</a>, <a class="reference internal" href="#name">name</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#id32">class</a>, <a class="reference internal" href="#name">name</a></p>
 </dd>
 <dt class="field-odd">Directive Content</dt>
 <dd class="field-odd"><p>Becomes the body of the literal block.</p>
@@ -840,7 +941,7 @@ according to their syntactic category. The actual highlighting requires
 a style-sheet (e.g. one <a class="reference external" href="http://pygments.org/docs/cmdline/#generating-styles">generated by Pygments</a>, see the
 <a class="reference external" href="http://docutils.sourceforge.net/sandbox/stylesheets/">sandbox/stylesheets</a> for examples).</p>
 <p>The parsing can be turned off with the <a class="reference external" href="../../user/config.html#syntax-highlight">syntax_highlight</a> configuration
-setting and command line option or by specifying the language as <a class="reference internal" href="#id24">class</a>
+setting and command line option or by specifying the language as <a class="reference internal" href="#id32">class</a>
 option instead of directive argument. This also avoids warnings
 when <a class="reference external" href="http://pygments.org/">Pygments</a> is not installed or the language is not in the
 <a class="reference external" href="http://pygments.org/languages/">supported languages and markup formats</a>.</p>
@@ -851,7 +952,7 @@ when <a class="reference external" href="http://pygments.org/">Pygments</a> is n
 The optional argument is the number of the first line (default 1).</p>
 </dd>
 </dl>
-<p>and the common options <a class="reference internal" href="#id24">class</a> and <a class="reference internal" href="#name">name</a>.</p>
+<p>and the common options <a class="reference internal" href="#id32">class</a> and <a class="reference internal" href="#name">name</a>.</p>
 <dl>
 <dt>Example::</dt><dd><p>The content of the following directive</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">code</span><span class="p">::</span> <span class="n">python</span>
@@ -878,7 +979,7 @@ The optional argument is the number of the first line (default 1).</p>
 <dd class="field-odd"><p>None.</p>
 </dd>
 <dt class="field-even">Directive Options</dt>
-<dd class="field-even"><p><a class="reference internal" href="#id24">class</a>, <a class="reference internal" href="#name">name</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#id32">class</a>, <a class="reference internal" href="#name">name</a></p>
 </dd>
 <dt class="field-odd">Directive Content</dt>
 <dd class="field-odd"><p>Becomes the body of the math block.
@@ -918,7 +1019,7 @@ support math typesetting, the content is inserted verbatim.</p>
 <dd class="field-odd"><p>One, required (rubric text).</p>
 </dd>
 <dt class="field-even">Directive Options</dt>
-<dd class="field-even"><p><a class="reference internal" href="#id24">class</a>, <a class="reference internal" href="#name">name</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#id32">class</a>, <a class="reference internal" href="#name">name</a></p>
 </dd>
 <dt class="field-odd">Directive Content</dt>
 <dd class="field-odd"><p>None.</p>
@@ -1036,7 +1137,7 @@ See <a class="reference internal" href="#epigraph">Epigraph</a> above for an ana
 <dd class="field-odd"><p>None.</p>
 </dd>
 <dt class="field-even">Directive Options</dt>
-<dd class="field-even"><p><a class="reference internal" href="#id24">class</a>, <a class="reference internal" href="#name">name</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#id32">class</a>, <a class="reference internal" href="#name">name</a></p>
 </dd>
 <dt class="field-odd">Directive Content</dt>
 <dd class="field-odd"><p>Interpreted as body elements.</p>
@@ -1119,7 +1220,7 @@ application-specific purposes.</p>
 </section>
 </section>
 <section id="tables">
-<h2><a class="toc-backref" href="#id37">Tables</a><a class="headerlink" href="#tables" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id45">Tables</a><a class="headerlink" href="#tables" title="永久链接至标题">¶</a></h2>
 <p>Formal tables need more structure than the reStructuredText syntax
 supplies.  Tables may be given titles with the <a class="reference external" href="../doctree.html#table">table</a> directive.
 Sometimes reStructuredText tables are inconvenient to write, or table
@@ -1173,10 +1274,10 @@ The default is the width of the input columns (in characters).</p>
 value “colwidths-auto”.</p>
 </dd>
 </dl>
-<p>Plus the common options <a class="reference internal" href="#id24">class</a> and <a class="reference internal" href="#name">name</a>.</p>
+<p>Plus the common options <a class="reference internal" href="#id32">class</a> and <a class="reference internal" href="#name">name</a>.</p>
 </section>
 <section id="csv-table">
-<span id="id4"></span><h3>CSV Table<a class="headerlink" href="#csv-table" title="永久链接至标题">¶</a></h3>
+<span id="id12"></span><h3>CSV Table<a class="headerlink" href="#csv-table" title="永久链接至标题">¶</a></h3>
 <dl class="field-list simple">
 <dt class="field-odd">Directive Type</dt>
 <dd class="field-odd"><p>“csv-table”</p>
@@ -1228,14 +1329,14 @@ the end of short rows.</p>
 <dl>
 <dt><code class="docutils literal notranslate"><span class="pre">align</span></code><span class="classifier">“left”, “center”, or “right”</span></dt><dd><p>The horizontal alignment of the table. (New in Docutils 0.13)</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">delim</span></code><span class="classifier">char | “tab” | “space” <a class="footnote-reference brackets" href="#whitespace-delim" id="id5">1</a></span></dt><dd><p>A one-character string<a class="footnote-reference brackets" href="#ascii-char" id="id6">2</a> used to separate fields.
+<dt><code class="docutils literal notranslate"><span class="pre">delim</span></code><span class="classifier">char | “tab” | “space” <a class="footnote-reference brackets" href="#whitespace-delim" id="id13">4</a></span></dt><dd><p>A one-character string<a class="footnote-reference brackets" href="#ascii-char" id="id14">5</a> used to separate fields.
 Defaults to <code class="docutils literal notranslate"><span class="pre">,</span></code> (comma).  May be specified as a Unicode code
 point; see the <a class="reference internal" href="#unicode">unicode</a> directive for syntax details.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">encoding</span></code><span class="classifier">string</span></dt><dd><p>The text encoding of the external CSV data (file or URL).
 Defaults to the document’s <a class="reference external" href="../../user/config.html#input-encoding">input_encoding</a>.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">escape</span></code><span class="classifier">char</span></dt><dd><p>A one-character<a class="footnote-reference brackets" href="#ascii-char" id="id7">2</a> string used to escape the
+<dt><code class="docutils literal notranslate"><span class="pre">escape</span></code><span class="classifier">char</span></dt><dd><p>A one-character<a class="footnote-reference brackets" href="#ascii-char" id="id15">5</a> string used to escape the
 delimiter or quote characters.  May be specified as a Unicode
 code point; see the <a class="reference internal" href="#unicode">unicode</a> directive for syntax details.  Used
 when the delimiter is used in an unquoted field, or when quote
@@ -1254,7 +1355,7 @@ Defaults to 0.</p>
 <dt><code class="docutils literal notranslate"><span class="pre">keepspace</span></code><span class="classifier">flag (empty)</span></dt><dd><p>Treat whitespace immediately following the delimiter as
 significant.  The default is to ignore such whitespace.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">quote</span></code><span class="classifier">char</span></dt><dd><p>A one-character string<a class="footnote-reference brackets" href="#ascii-char" id="id8">2</a> used to quote elements
+<dt><code class="docutils literal notranslate"><span class="pre">quote</span></code><span class="classifier">char</span></dt><dd><p>A one-character string<a class="footnote-reference brackets" href="#ascii-char" id="id16">5</a> used to quote elements
 containing the delimiter or which start with the quote
 character.  Defaults to <code class="docutils literal notranslate"><span class="pre">"</span></code> (quote).  May be specified as a
 Unicode code point; see the <a class="reference internal" href="#unicode">unicode</a> directive for syntax
@@ -1275,13 +1376,13 @@ of the line width.  If omitted, the renderer determines the width
 of the table based on its contents or the column <code class="docutils literal notranslate"><span class="pre">widths</span></code>.</p>
 </dd>
 </dl>
-<p>and the common options <a class="reference internal" href="#id24">class</a> and <a class="reference internal" href="#name">name</a>.</p>
+<p>and the common options <a class="reference internal" href="#id32">class</a> and <a class="reference internal" href="#name">name</a>.</p>
 <dl class="footnote brackets">
-<dt class="label" id="whitespace-delim"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
+<dt class="label" id="whitespace-delim"><span class="brackets"><a class="fn-backref" href="#id13">4</a></span></dt>
 <dd><p>Whitespace delimiters are supported only for external
 CSV files.</p>
 </dd>
-<dt class="label" id="ascii-char"><span class="brackets">2</span><span class="fn-backref">(<a href="#id6">1</a>,<a href="#id7">2</a>,<a href="#id8">3</a>)</span></dt>
+<dt class="label" id="ascii-char"><span class="brackets">5</span><span class="fn-backref">(<a href="#id14">1</a>,<a href="#id15">2</a>,<a href="#id16">3</a>)</span></dt>
 <dd><p>With Python 2, the values for the <code class="docutils literal notranslate"><span class="pre">delimiter</span></code>,
 <code class="docutils literal notranslate"><span class="pre">quote</span></code>, and <code class="docutils literal notranslate"><span class="pre">escape</span></code> options must be ASCII characters. (The csv
 module does not support Unicode and all non-ASCII characters are
@@ -1349,17 +1450,17 @@ left).  Defaults to 0.</p>
 of the line width.  If omitted, the renderer determines the width
 of the table based on its contents or the column <code class="docutils literal notranslate"><span class="pre">widths</span></code>.</p>
 </dd>
-<dt id="id10"><code class="docutils literal notranslate"><span class="pre">widths</span></code><span class="classifier">integer [integer…] or “auto”</span></dt><dd><p>A list of relative column widths.
+<dt id="id18"><code class="docutils literal notranslate"><span class="pre">widths</span></code><span class="classifier">integer [integer…] or “auto”</span></dt><dd><p>A list of relative column widths.
 The default is equal-width columns (100%/#columns).</p>
 <p>“auto” delegates the determination of column widths to the backend
 (LaTeX, the HTML browser, …).</p>
 </dd>
 </dl>
-<p>and the common options <a class="reference internal" href="#id24">class</a> and <a class="reference internal" href="#name">name</a>.</p>
+<p>and the common options <a class="reference internal" href="#id32">class</a> and <a class="reference internal" href="#name">name</a>.</p>
 </section>
 </section>
 <section id="document-parts">
-<h2><a class="toc-backref" href="#id38">Document Parts</a><a class="headerlink" href="#document-parts" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id46">Document Parts</a><a class="headerlink" href="#document-parts" title="永久链接至标题">¶</a></h2>
 <section id="table-of-contents">
 <span id="contents"></span><h3>Table of Contents<a class="headerlink" href="#table-of-contents" title="永久链接至标题">¶</a></h3>
 <dl class="field-list simple">
@@ -1418,10 +1519,10 @@ subsections of the section in which the directive is given.  If no
 explicit title is given, the table of contents will not be titled.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">backlinks</span></code><span class="classifier">“entry” or “top” or “none”</span></dt><dd><p>Generate links from section headers back to the table of contents
-entries, the table of contents itself, or generate no backlinks.</p>
+entries, the table of contents itself, or generate no back-links.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">class</span></code><span class="classifier">text</span></dt><dd><p>Set a <a class="reference external" href="../doctree.html#classes">“classes”</a> attribute value on the topic element.  See the
-<a class="reference internal" href="#id24">class</a> directive below.</p>
+<a class="reference internal" href="#id32">class</a> directive below.</p>
 </dd>
 </dl>
 </section>
@@ -1529,7 +1630,7 @@ such as a datestamp, a link to <a class="reference external" href="http://docuti
 </section>
 </section>
 <section id="references">
-<h2><a class="toc-backref" href="#id39">References</a><a class="headerlink" href="#references" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id47">References</a><a class="headerlink" href="#references" title="永久链接至标题">¶</a></h2>
 <section id="target-footnotes">
 <span id="target-notes"></span><h3>Target Footnotes<a class="headerlink" href="#target-footnotes" title="永久链接至标题">¶</a></h3>
 <dl class="field-list simple">
@@ -1543,7 +1644,7 @@ such as a datestamp, a link to <a class="reference external" href="http://docuti
 <dd class="field-odd"><p>None.</p>
 </dd>
 <dt class="field-even">Directive Options</dt>
-<dd class="field-even"><p><a class="reference internal" href="#id24">class</a>, <a class="reference internal" href="#name">name</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#id32">class</a>, <a class="reference internal" href="#name">name</a></p>
 </dd>
 <dt class="field-odd">Directive Options</dt>
 <dd class="field-odd"><p>Possible (see below).</p>
@@ -1604,7 +1705,7 @@ visible URL as content.</p>
 </section>
 </section>
 <section id="html-specific">
-<h2><a class="toc-backref" href="#id40">HTML-Specific</a><a class="headerlink" href="#html-specific" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id48">HTML-Specific</a><a class="headerlink" href="#html-specific" title="永久链接至标题">¶</a></h2>
 <section id="imagemap">
 <h3>Imagemap<a class="headerlink" href="#imagemap" title="永久链接至标题">¶</a></h3>
 <p><strong>NOT IMPLEMENTED YET</strong></p>
@@ -1612,7 +1713,7 @@ visible URL as content.</p>
 </section>
 </section>
 <section id="directives-for-substitution-definitions">
-<h2><a class="toc-backref" href="#id41">Directives for Substitution Definitions</a><a class="headerlink" href="#directives-for-substitution-definitions" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id49">Directives for Substitution Definitions</a><a class="headerlink" href="#directives-for-substitution-definitions" title="永久链接至标题">¶</a></h2>
 <p>The directives in this section may only be used in <a class="reference external" href="restructuredtext.html#substitution-definitions">substitution
 definitions</a>.  They may not be used directly, in standalone context.
 The <a class="reference external" href="../doctree.html#image">image</a> directive may be used both in substitution definitions
@@ -1757,7 +1858,7 @@ be used.  Examples:</p>
 </section>
 </section>
 <section id="miscellaneous">
-<h2><a class="toc-backref" href="#id42">Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id50">Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="永久链接至标题">¶</a></h2>
 <section id="including-an-external-document-fragment">
 <span id="include"></span><h3>Including an External Document Fragment<a class="headerlink" href="#including-an-external-document-fragment" title="永久链接至标题">¶</a></h3>
 <dl class="field-list simple">
@@ -1853,7 +1954,7 @@ A negative value prevents expansion of hard tabs. Defaults to the
 <a class="reference external" href="../../user/config.html#tab-width">tab_width</a> configuration setting.</p>
 </dd>
 </dl>
-<p>With <code class="docutils literal notranslate"><span class="pre">code</span></code> or <code class="docutils literal notranslate"><span class="pre">literal</span></code> the common options <a class="reference internal" href="#id24">class</a> and
+<p>With <code class="docutils literal notranslate"><span class="pre">code</span></code> or <code class="docutils literal notranslate"><span class="pre">literal</span></code> the common options <a class="reference internal" href="#id32">class</a> and
 <a class="reference internal" href="#name">name</a> are recognized as well.</p>
 <p>Combining <code class="docutils literal notranslate"><span class="pre">start/end-line</span></code> and <code class="docutils literal notranslate"><span class="pre">start-after/end-before</span></code> is possible. The
 text markers will be searched in the specified lines (further limiting the
@@ -1938,7 +2039,7 @@ example:</p>
 Defaults to the document’s encoding (if specified).</p>
 </dd>
 </dl>
-<p>and the common option <a class="reference internal" href="#id24">class</a>.</p>
+<p>and the common option <a class="reference internal" href="#id32">class</a>.</p>
 </section>
 <section id="class">
 <span id="classes"></span><h3>Class<a class="headerlink" href="#class" title="永久链接至标题">¶</a></h3>
@@ -1962,7 +2063,7 @@ elements.</p>
 </dd>
 </dl>
 <p>The “class” directive sets the <a class="reference external" href="../doctree.html#classes">“classes”</a> attribute value on its content
-or on the first immediately following <a class="footnote-reference brackets" href="#id14" id="id12">3</a> non-comment element <a class="footnote-reference brackets" href="#id15" id="id13">4</a>.
+or on the first immediately following <a class="footnote-reference brackets" href="#id22" id="id20">6</a> non-comment element <a class="footnote-reference brackets" href="#id23" id="id21">7</a>.
 The directive argument consists of one or more space-separated class
 names. The names are transformed to conform to the regular expression
 <code class="docutils literal notranslate"><span class="pre">[a-z](-?[a-z0-9]+)*</span></code> (see <a class="reference internal" href="#identifier-normalization">Identifier Normalization</a> below).</p>
@@ -2000,7 +2101,7 @@ names. The names are transformed to conform to the regular expression
 </pre></div>
 </div>
 <dl class="footnote brackets">
-<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id12">3</a></span></dt>
+<dt class="label" id="id22"><span class="brackets"><a class="fn-backref" href="#id20">6</a></span></dt>
 <dd><p>This is also true, if the class directive is “nested” at the end of
 an indented text block, for example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">note</span><span class="p">::</span> <span class="n">the</span> <span class="k">class</span> <span class="nc">values</span> <span class="nb">set</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">directive</span><span class="o">-</span><span class="n">block</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">apply</span> <span class="n">to</span>
@@ -2021,7 +2122,7 @@ first, as a preceding class directive applies to the list as a whole):</p>
 </pre></div>
 </div>
 </dd>
-<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id13">4</a></span></dt>
+<dt class="label" id="id23"><span class="brackets"><a class="fn-backref" href="#id21">7</a></span></dt>
 <dd><p>To set a “classes” attribute value on a block quote, the
 “class” directive must be followed by an empty comment:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">class</span><span class="p">::</span> <span class="n">highlights</span>
@@ -2081,7 +2182,7 @@ characters have been replaced with XML entities):</p>
 </li>
 </ul>
 <p>The CSS1 rule requires underscores (“_”), colons (“:”), and
-periods (“.”) to be escaped <a class="footnote-reference brackets" href="#id17" id="id16">5</a>,
+periods (“.”) to be escaped <a class="footnote-reference brackets" href="#id25" id="id24">8</a>,
 therefore <a class="reference external" href="../doctree.html#classes">“classes”</a> and <a class="reference external" href="../doctree.html#ids">“ids”</a> attributes should not
 contain these characters.  Combined with HTML4.1 requirements (the
 first character must be a letter; no “unicode”, “latin1”, or
@@ -2089,7 +2190,7 @@ first character must be a letter; no “unicode”, “latin1”, or
 <code class="docutils literal notranslate"><span class="pre">[A-Za-z][-A-Za-z0-9]*</span></code>. Docutils adds a normalization by
 downcasing and merge of consecutive hyphens.</p>
 <dl class="footnote brackets">
-<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id16">5</a></span></dt>
+<dt class="label" id="id25"><span class="brackets"><a class="fn-backref" href="#id24">8</a></span></dt>
 <dd><p>CSS identifiers may use underscores (“_”) directly in
 <a class="reference external" href="https://www.w3.org/TR/CSS21/syndata.html#value-def-identifier">CSS Level 1</a>, <a class="reference external" href="https://www.w3.org/TR/CSS/#css-level-1">CSS2.1</a>, <a class="reference external" href="https://www.w3.org/TR/CSS22/syndata.html">CSS2.2</a>, and <a class="reference external" href="https://www.w3.org/TR/css-syntax-3/#typedef-ident-token">CSS3</a>.</p>
 </dd>
@@ -2184,7 +2285,7 @@ base roles:</p>
 (<code class="docutils literal notranslate"><span class="pre">inline</span></code>, or element associated with a base class) when the
 custom interpreted text role is used.  If no directive options are
 specified, a “class” option with the directive argument (role
-name) as the value is implied.  See the <a class="reference internal" href="#id24">class</a> directive above.</p>
+name) as the value is implied.  See the <a class="reference internal" href="#id32">class</a> directive above.</p>
 </dd>
 </dl>
 <p>Specific base roles may support other options and/or directive
@@ -2257,7 +2358,7 @@ parser is “title-reference”.</p>
 <dd class="field-odd"><p>Must contain a flat field list.</p>
 </dd>
 </dl>
-<p>The “meta” directive is used to specify metadata<a class="footnote-reference brackets" href="#id23" id="id22">6</a> to be stored
+<p>The “meta” directive is used to specify metadata<a class="footnote-reference brackets" href="#id31" id="id30">9</a> to be stored
 in, e.g., <a class="reference external" href="https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element">HTML meta elements</a> or as <a class="reference external" href="https://en.wikipedia.org/wiki/OpenDocument_technical_specification#Metadata">ODT file properties</a>. The
 LaTeX writer passes it to the <code class="docutils literal notranslate"><span class="pre">pdfinfo</span></code> option of the <a class="reference external" href="http://ctan.org/pkg/hyperref">hyperref</a>
 package. If an output format does not support “invisible” metadata,
@@ -2312,7 +2413,7 @@ attribute.  To specify “http-equiv” META tags, simply omit the name:</p>
 </pre></div>
 </div>
 <dl class="footnote brackets">
-<dt class="label" id="id23"><span class="brackets"><a class="fn-backref" href="#id22">6</a></span></dt>
+<dt class="label" id="id31"><span class="brackets"><a class="fn-backref" href="#id30">9</a></span></dt>
 <dd><p>“Metadata” is data about data, in this case data about the
 document. Metadata is, e.g., used to describe and classify web
 pages in the World Wide Web, in a form that is easy for search
@@ -2372,12 +2473,12 @@ block.</p>
 </section>
 </section>
 <section id="common-options">
-<h2><a class="toc-backref" href="#id43">Common Options</a><a class="headerlink" href="#common-options" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id51">Common Options</a><a class="headerlink" href="#common-options" title="永久链接至标题">¶</a></h2>
 <p>Most of the directives that generate doctree elements support the following
 options:</p>
-<dl id="id24">
+<dl id="id32">
 <dt><code class="docutils literal notranslate"><span class="pre">class</span></code><span class="classifier">text (space separated list of <a class="reference external" href="../doctree.html#classnames-type">class names</a>)</span></dt><dd><p>Set a <a class="reference external" href="../doctree.html#classes">“classes”</a> attribute value on the doctree element generated by
-the directive. See also the <a class="reference internal" href="#id24">class</a> directive.</p>
+the directive. See also the <a class="reference internal" href="#id32">class</a> directive.</p>
 </dd>
 <dt id="name"><code class="docutils literal notranslate"><span class="pre">name</span></code><span class="classifier">text</span></dt><dd><p>Add <cite>text</cite> to the <a class="reference external" href="../doctree.html#names">“names”</a> attribute of the doctree element generated
 by the directive. This allows <a class="reference external" href="restructuredtext.html#hyperlink-references">hyperlink references</a> to the element
@@ -2404,23 +2505,23 @@ target</a></p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="introduction.html">
+          <a class="next-page" href="roles.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">An Introduction to reStructuredText</div>
+                <div class="title">reStructuredText Interpreted Text Roles</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="definitions.html">
+          <a class="prev-page" href="restructuredtext.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">reStructuredText Standard Definition Files</div>
+                <div class="title">reStructuredText Markup Specification</div>
                 
               </div>
             </a>
@@ -2428,11 +2529,9 @@ target</a></p>
 
         <div class="related-information">
               Copyright &#169; 2021, xinetzone |
-            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
-              and
-              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="../../../../_sources/docutils/docs/ref/rst/directives.txt"
+          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            | <a class="muted-link" href="../../../../_sources/docutils/docs/ref/rst/directives.txt"
                rel="nofollow">
               显示源代码
             </a>
@@ -2536,7 +2635,7 @@ target</a></p>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/scripts/main.js"></script>
+    <script src="../../../../_static/scripts/furo.js"></script>
     <script src="../../../../_static/translations.js"></script>
     </body>
 </html>
