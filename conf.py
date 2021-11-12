@@ -76,6 +76,7 @@ source_suffix = {
 
 locale_dirs = ['locales/']  # path is example but recommended.
 gettext_compact = False  # optional.
+html_favicon = "favicon.png"
 
 rediraffe_redirects = {
     "web/README": "docutils/README",
@@ -87,3 +88,4 @@ rediraffe_redirects = {
     "web/docs/dev/repository": "docutils/docs/dev/repository",
     "web/sandbox/README": "sandbox/README",
 }
+

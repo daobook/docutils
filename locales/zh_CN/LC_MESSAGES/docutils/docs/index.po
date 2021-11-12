@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../docutils/docs/index.txt:3
 msgid "Docutils_ Project Documentation Overview"
-msgstr ""
+msgstr "Docutils_ 项目文档概述"
 
 #: ../../docutils/docs/index.txt
 msgid "Author"
@@ -67,6 +67,8 @@ msgid ""
 "The latest working documents may be accessed individually below, or from "
 "the ``docs`` directory of the `Docutils distribution`_."
 msgstr ""
+"最新的工作文档可以在下面单独访问，"
+"或者从 `Docutils 分发版`_ 的 ``docs`` 目录中访问。"
 
 #: ../../docutils/docs/index.txt:18
 msgid "目录"
@@ -74,11 +76,11 @@ msgstr ""
 
 #: ../../docutils/docs/index.txt:21
 msgid "Docutils Stakeholders"
-msgstr ""
+msgstr "Docutils 利益相关者"
 
 #: ../../docutils/docs/index.txt:23
 msgid "Docutils stakeholders can be categorized in several groups:"
-msgstr ""
+msgstr "Docutils 的利益相关者（涉众）可以分为几组:"
 
 #: ../../docutils/docs/index.txt:25
 msgid ""
@@ -86,28 +88,35 @@ msgid ""
 "some are developers (e.g. Python developers utilizing reStructuredText "
 "for docstrings in their source), many are not."
 msgstr ""
+"最终使用者：reStructuredText 和 Docutils 工具的用户。"
+"虽然有些是开发人员（例如 Python 开发人员在源代码中使用 reStructuredText 作为"
+"文档字符串)，但也有很多不是。"
 
 #: ../../docutils/docs/index.txt:29
 msgid ""
 "Client-developers: developers using Docutils as a library, programmers "
 "developing *with* Docutils."
 msgstr ""
+"客户端开发人员：将 Docutils 作为库使用的开发人员，"
+"使用 Docutils 进行开发的程序员。"
 
 #: ../../docutils/docs/index.txt:32
 msgid ""
 "Component-developers: those who implement application-specific "
 "components, directives, and/or roles, separately from Docutils."
 msgstr ""
+"组件开发人员：那些实现特定于应用程序的组件、指令和/或角色的人，与 Docutils 分开。"
 
 #: ../../docutils/docs/index.txt:35
 msgid ""
 "Core-developers: developers of the Docutils codebase and participants in "
 "the Docutils project community."
 msgstr ""
+"核心开发人员: Docutils 代码库的开发人员和 Docutils 项目社区的参与者。"
 
 #: ../../docutils/docs/index.txt:38
 msgid "Re-implementers: developers of alternate implementations of Docutils."
-msgstr ""
+msgstr "再实现者: Docutils 替代实现的开发人员。"
 
 #: ../../docutils/docs/index.txt:41
 msgid ""
@@ -117,16 +126,21 @@ msgid ""
 "also be component-developers in other projects.  Component-developers are"
 " also client-developers."
 msgstr ""
+"这些群体之间有很多重叠。大多数（也许是所有）核心开发人员、组件开发人员、"
+"客户端开发人员和再实现人员也是最终用户。"
+"核心开发人员也是客户端开发人员，也可能是其他项目中的组件开发人员。"
+"组件开发人员也是客户端开发人员。"
 
 #: ../../docutils/docs/index.txt:49
 msgid "Project Fundamentals"
-msgstr ""
+msgstr "项目基础"
 
 #: ../../docutils/docs/index.txt:51
 msgid ""
 "These files are for all Docutils stakeholders.  They are kept at the top "
 "level of the Docutils project directory."
 msgstr ""
+"这些文件适用于所有 Docutils 涉众。它们被保存在 Docutils 项目目录的顶层。"
 
 #: ../../docutils/docs/index.txt
 msgid "README.txt_"
@@ -134,7 +148,7 @@ msgstr ""
 
 #: ../../docutils/docs/index.txt:54
 msgid "Project overview: quick-start, requirements, installation, and usage."
-msgstr ""
+msgstr "``user/``: 为最终用户提供的入门和教程材料"
 
 #: ../../docutils/docs/index.txt
 msgid "COPYING.txt_"
@@ -142,7 +156,7 @@ msgstr ""
 
 #: ../../docutils/docs/index.txt:56
 msgid "Conditions for Docutils redistribution, with links to licenses."
-msgstr ""
+msgstr "Docutils 再分发的条件，并有许可证的链接。"
 
 #: ../../docutils/docs/index.txt
 msgid "FAQ.txt_"
@@ -153,6 +167,7 @@ msgid ""
 "Docutils Frequently Asked Questions.  If you have a question or issue, "
 "there's a good chance it's already answered here."
 msgstr ""
+"Docutils 常见问题。如果你有一个问题或议题，很有可能已经在这里得到了回答。"
 
 #: ../../docutils/docs/index.txt
 msgid "BUGS.txt_"
@@ -160,7 +175,7 @@ msgstr ""
 
 #: ../../docutils/docs/index.txt:61
 msgid "A list of known bugs, and how to report a bug."
-msgstr ""
+msgstr "已知的 bug 列表，以及如何报告一个 bug。"
 
 #: ../../docutils/docs/index.txt
 msgid "RELEASE-NOTES.txt_"
@@ -168,7 +183,7 @@ msgstr ""
 
 #: ../../docutils/docs/index.txt:62
 msgid "Summary of the major changes in recent releases."
-msgstr ""
+msgstr "最近的版本中的主要变更摘要。"
 
 #: ../../docutils/docs/index.txt
 msgid "HISTORY.txt_"
@@ -176,7 +191,7 @@ msgstr ""
 
 #: ../../docutils/docs/index.txt:63
 msgid "Detailed change history log."
-msgstr ""
+msgstr "详细的变更历史记录。"
 
 #: ../../docutils/docs/index.txt
 msgid "THANKS.txt_"
@@ -184,11 +199,11 @@ msgstr ""
 
 #: ../../docutils/docs/index.txt:64
 msgid "Acknowledgements."
-msgstr ""
+msgstr "致谢。"
 
 #: ../../docutils/docs/index.txt:79
 msgid "``user/``: Introductory & Tutorial Material for End-Users"
-msgstr ""
+msgstr "``user/``：最终用户的介绍和教程材料"
 
 #: ../../docutils/docs/index.txt:81 ../../docutils/docs/index.txt:120
 #: ../../docutils/docs/index.txt:212

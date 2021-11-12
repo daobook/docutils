@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../web/index.txt:3
 msgid "Docutils: Documentation Utilities"
-msgstr ""
+msgstr "Docutils：文档实用工具"
 
 #: ../../web/index.txt:6
 msgid "Written in Python, for General- and Special-Purpose Use"
@@ -34,7 +34,7 @@ msgid ""
 "read, easy to use, what-you-see-is-what-you-get plaintext markup "
 "language."
 msgstr ""
-"Docutils 是一个开源文本处理系统，用于将纯文本文档处理成有用的格式，"
+"Docutils（全称 Documentation Utilities）是一个开源文本处理系统，用于将纯文本文档处理成有用的格式，"
 "如 HTML、LaTeX、man-pages、OpenDocument 或 XML。"
 "它包括 reStructuredText_ ，这是一种易于阅读、易于使用、"
 "所见即所得的纯文本标记语言。"

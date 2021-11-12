@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: docutils-doc \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-09 16:33+0800\n"
+"POT-Creation-Date: 2021-11-12 09:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,62 +19,26 @@ msgstr ""
 "Generated-By: Babel 2.9.0\n"
 
 #: ../../index.rst:10
-msgid "Overview"
-msgstr "概述"
-
-#: ../../index.rst:18
-msgid "user"
-msgstr ""
-
-#: ../../index.rst:25
-msgid "api"
-msgstr ""
-
-#: ../../index.rst:32
-msgid "dev"
-msgstr ""
-
-#: ../../index.rst:39
-msgid "howto"
-msgstr ""
-
-#: ../../index.rst:46
-msgid "peps"
-msgstr ""
-
-#: ../../index.rst:53
-msgid "ref"
-msgstr ""
-
-#: ../../index.rst:60
-msgid "docutils other"
-msgstr ""
-
-#: ../../index.rst:67
-msgid "reStructuredText"
-msgstr ""
-
-#: ../../index.rst:77
-msgid "sandbox"
+msgid "导航"
 msgstr ""
 
 #: ../../index.rst:8
 msgid "docutils' documentation!"
 msgstr "docutils 文档"
 
-#: ../../index.rst:85
+#: ../../index.rst:28
 msgid "Indices and tables"
 msgstr "索引和表格"
 
-#: ../../index.rst:87
+#: ../../index.rst:30
 msgid ":ref:`genindex`"
 msgstr ""
 
-#: ../../index.rst:88
+#: ../../index.rst:31
 msgid ":ref:`modindex`"
 msgstr ""
 
-#: ../../index.rst:89
+#: ../../index.rst:32
 msgid ":ref:`search`"
 msgstr ""
 
@@ -82,5 +46,35 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Documentation"
+#~ msgstr ""
+
+#~ msgid "Overview"
+#~ msgstr "概述"
+
+#~ msgid "user"
+#~ msgstr ""
+
+#~ msgid "api"
+#~ msgstr ""
+
+#~ msgid "dev"
+#~ msgstr ""
+
+#~ msgid "howto"
+#~ msgstr ""
+
+#~ msgid "peps"
+#~ msgstr ""
+
+#~ msgid "ref"
+#~ msgstr ""
+
+#~ msgid "docutils other"
+#~ msgstr ""
+
+#~ msgid "reStructuredText"
+#~ msgstr ""
+
+#~ msgid "sandbox"
 #~ msgstr ""
 
