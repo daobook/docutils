@@ -82,7 +82,7 @@ msgid ""
 msgstr ""
 "从一开始，让我说，\"结构化文本\" 可能是一个有点错误的名称。"
 "它更像是使用某些一致模式的 \"放松文本\"。"
-"这些模式被一个 HTML 转换器解释为产生可以被网络浏览器使用的 \"非常结构化的文本\"。"
+"这些模式被 HTML 转换器解释为产生可以被网络浏览器使用的 \"非常结构化的文本\"。"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:35
 msgid ""
@@ -92,9 +92,9 @@ msgid ""
 "left edge.  Paragraphs that start indented will result in indented quote "
 "paragraphs. For example::"
 msgstr ""
-"公认的最基本模式是 **段落**（quickref__）。"
+"公认的最基本模式是 **段落** （quickref__）。"
 "这是一大块由空行（一个就够了）分隔的文本。"
-"段落必须有相同的缩进 -- 也就是说，在其左边缘排队。"
+"段落必须有相同的缩进 -- 也就是说，在其左边缘排列。"
 "开始缩进的段落将导致缩进的引用段落。例如 ::"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:49
@@ -103,7 +103,7 @@ msgstr ""
 #: ../../docutils/docs/user/rst/quickstart.txt:232
 #: ../../docutils/docs/user/rst/quickstart.txt:251
 msgid "Results in:"
-msgstr ""
+msgstr "结果是："
 
 #: ../../docutils/docs/user/rst/quickstart.txt:51
 msgid "This is a paragraph.  It's quite short."
@@ -114,6 +114,7 @@ msgid ""
 "This paragraph will result in an indented block of text, typically used "
 "for quoting other text."
 msgstr ""
+""
 
 #: ../../docutils/docs/user/rst/quickstart.txt:57
 msgid "This is another one."
@@ -121,14 +122,14 @@ msgstr ""
 
 #: ../../docutils/docs/user/rst/quickstart.txt:63
 msgid "Text styles"
-msgstr ""
+msgstr "文本样式"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:65
 #: ../../docutils/docs/user/rst/quickstart.txt:214
 #: ../../docutils/docs/user/rst/quickstart.txt:262
 #: ../../docutils/docs/user/rst/quickstart.txt:356
 msgid "(quickref__)"
-msgstr ""
+msgstr "（quickref__ ）"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:69
 msgid ""
@@ -136,6 +137,8 @@ msgid ""
 "text for *italics* with \"``*italics*``\" or **bold** with "
 "\"``**bold**``\".  This is called \"inline markup\"."
 msgstr ""
+"在段落和其他正文中，你可以另外用 \"``*italics*``\" 标记 *italics*，或用 \"``**bold**``\" 标记 **bold**。"
+"这被称为 “内联标记”（\"inline markup\"）。"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:73
 msgid ""
@@ -144,6 +147,9 @@ msgid ""
 "inside the double back-quotes -- so asterisks \"``*``\" etc. are left "
 "alone."
 msgstr ""
+"如果你想让某些东西作为固定空间的文字出现，"
+"使用 \"````double back-quotes````\"。"
+"请注意，在双反引号内不会做进一步的处理 -- 所以星号 \"``*``\" 等就不用管了。"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:78
 msgid ""
@@ -156,6 +162,12 @@ msgid ""
 "it, like so \"``\\*``\" (quickref__), or by enclosing it in double back-"
 "quotes (inline literals), like this::"
 msgstr ""
+"如果你发现你想在文本中使用其中一个 “特殊” 字符，一般来说是可以的"
+" -- reStructuredText 是相当聪明的。"
+"例如，这个孤独的星号 * 被处理得很好，这个方程式 5*6=30 中的星号也是如此。"
+"如果你想让被星号包围的文本不被斜体化，那么你需要说明星号并不特别。"
+"你可以通过在它前面放一个反斜杠来做到这一点，就像这样 \"``\\*``\" （quickref__），"
+"或者用双反引号把它括起来（内联字），像这样 ::"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:91
 msgid ""
@@ -164,10 +176,12 @@ msgid ""
 "markup by itself (surrounded by whitespace) or in the middle of a word "
 "won't be recognized.  See the `markup spec`__ for full details."
 msgstr ""
+"把内联标记看作是（括号）的一种形式，并以同样的方式使用它：紧接在被标记的文本之前和之后。"
+"内联标记本身（由空格包围）或在一个词的中间，不会被识别。完整的细节请参考 `标记规范`__。" 
 
 #: ../../docutils/docs/user/rst/quickstart.txt:101
 msgid "Lists"
-msgstr ""
+msgstr "列表"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:103
 msgid ""
@@ -177,16 +191,20 @@ msgid ""
 "paragraph or whatever aligns with the first line of text in the list "
 "item."
 msgstr ""
+"项的列表有三种主要类型。**有序的** （enumerated），**无序的** （bulleted）和 **定义的**。"
+"在所有列表的情况下，你可以有任意多的段落、子列表等，"
+"只要段落或其他东西的左侧与列表项的第一行文本对齐即可。"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:109
 msgid ""
 "Lists must always start a new paragraph -- that is, they must appear "
 "after a blank line."
 msgstr ""
+"列表必须总是从一个新的段落开始 -- 也就是说，它们必须出现在一个空行之后。"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:161
 msgid "**enumerated** lists (numbers, letters or roman numerals; quickref__)"
-msgstr ""
+msgstr "**有序** 列表（数字、字母或罗马数字；quickref__）。"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:115
 msgid ""
@@ -194,12 +212,15 @@ msgid ""
 "right bracket \")\" or surrounded by brackets \"( )\" -- whatever you're "
 "comfortable with.  All of the following forms are recognised::"
 msgstr ""
+"用数字或字母开始一行，后面是句号 \".\"，右括号 \")\" 或用括号 \"( )\" "
+"包围。-- 无论你喜欢什么。以下所有的形式都被认可 ::"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:139
 msgid ""
 "Results in (note: the different enumerated list styles are not always "
 "supported by every web browser, so you may not get the full effect here):"
 msgstr ""
+"结果在（注意：不同的枚举式列表样式并不总是被每个网络浏览器所支持，所以你在这里可能无法获得完整的效果）："
 
 #: ../../docutils/docs/user/rst/quickstart.txt:143
 msgid "numbers"
@@ -243,13 +264,14 @@ msgstr ""
 
 #: ../../docutils/docs/user/rst/quickstart.txt:185
 msgid "**bulleted** lists (quickref__)"
-msgstr ""
+msgstr "**无序** 列表 （quickref__）"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:166
 msgid ""
 "Just like enumerated lists, start the line off with a bullet point "
 "character - either \"-\", \"+\" or \"*\"::"
 msgstr ""
+"就像有序列表一样，用一个圆点字符开始一行 -- 要么是 \"-\"、 \"+\" 或 \"*\" ::"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:179
 msgid "a bullet point using \"*\""
@@ -269,13 +291,14 @@ msgstr ""
 
 #: ../../docutils/docs/user/rst/quickstart.txt:210
 msgid "**definition** lists (quickref__)"
-msgstr ""
+msgstr "**定义** 列表 （quickref__）"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:190
 msgid ""
 "Unlike the other two, the definition lists consist of a term, and the "
 "definition of that term.  The format of a definition list is::"
 msgstr ""
+"与其他两个不同，定义列表由一个术语和该术语的定义组成。定义列表的格式是 ::"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:204
 msgid "what"
@@ -298,7 +321,7 @@ msgstr ""
 
 #: ../../docutils/docs/user/rst/quickstart.txt:213
 msgid "Preformatting (code samples)"
-msgstr ""
+msgstr "预设格式化（代码样本）"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:218
 msgid ""
@@ -307,6 +330,9 @@ msgid ""
 "finished when the text falls back to the same indentation level as a "
 "paragraph prior to the preformatted block.  For example::"
 msgstr ""
+"要想只包含一大块预设格式的、永远不会被悬挂的文本，"
+"就用 \"``::``\" 来结束前面的段落。"
+"当文本回落到与预格式化块之前的段落相同的缩进水平时，预格式化块就完成了。例如 ::"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:234
 msgid "An example::"
@@ -321,10 +347,11 @@ msgid ""
 "Note that if a paragraph consists only of \"``::``\", then it's removed "
 "from the output::"
 msgstr ""
+"注意，如果一个段落只由 \"``::``\" 组成，那么它就会从输出中删除 ::"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:260
 msgid "Sections"
-msgstr ""
+msgstr "章节"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:266
 msgid ""
@@ -339,12 +366,20 @@ msgid ""
 "consistent, since all sections marked with the same adornment style are "
 "deemed to be at the same level::"
 msgstr ""
+"要把较长的文本分成几个章节，你可以使用 **章节标题**。"
+"这些是带有装饰的单行文本（一个或多个单词）：单独的下划线，或下划线和上划线一起，"
+"用破折号 \"``-----``\"，等号 \"``======``\"，波浪线 \"``~~~~~~``\" 或任何你觉得合适的非字母"
+"数字字符 ``= - ` : ' \" ~ ^ _ * + # < >``。"
+"仅有下划线的装饰与使用相同字符的上划线和下划线的装饰不同。"
+"下划线/上划线必须至少与标题文本一样长。"
+"要保持一致，因为所有标有相同装饰风格的部分都被视为处于同一水平 ::"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:292
 msgid ""
 "This results in the following structure, illustrated by simplified "
 "pseudo-XML::"
 msgstr ""
+"这导致了以下结构，用简化的伪 XML 来说明 ::"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:311
 msgid ""
@@ -354,6 +389,9 @@ msgid ""
 "example, compare the section structure of this document's source text and"
 " processed output.)"
 msgstr ""
+"（伪 XML 使用缩进进行嵌套，没有结束标记。"
+"不可能像其他例子那样显示实际处理过的输出，因为部分不能存在于块状引号内。"
+"对于一个具体的例子，请比较本文档的源文本和处理后的输出的章节结构。）"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:317
 msgid ""
@@ -362,10 +400,13 @@ msgid ""
 "heading has a space in it like `text styles`_, we need to quote the "
 "heading \"```text styles`_``\"."
 msgstr ""
+"请注意，章节标题可以作为链接目标，只需使用其名称即可。"
+"要链接到 Lists_ 标题，我就写 \"``Lists_``\"。"
+"如果标题中有一个空格，如 `text styles`_，我们需要引用标题 \"```text styles`_``\"。"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:324
 msgid "Document Title / Subtitle"
-msgstr ""
+msgstr "文档标题/副标题"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:326
 msgid ""
@@ -373,6 +414,8 @@ msgid ""
 "be formatted somewhat differently (e.g. the HTML writer by default shows "
 "it as a centered heading)."
 msgstr ""
+"整个文档的标题（title）有别于章节标题，其格式可能有些不同"
+"（例如，HTML 编写者默认将其显示为居中的标题）。"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:330
 msgid ""
@@ -381,6 +424,8 @@ msgid ""
 "document subtitle, use another unique adornment style immediately after "
 "the document title.  For example::"
 msgstr ""
+"为了在 reStructuredText 中表示文档的标题，在文档的开头使用一种独特的装饰风格。"
+"要表示文档的副标题，请在文档标题之后立即使用另一种独特的装饰风格。例如 ::"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:347
 msgid ""
@@ -388,20 +433,23 @@ msgid ""
 "signs, but are distict and unrelated styles.  The text of overline-and-"
 "underlined titles (but not underlined-only) may be inset for aesthetics."
 msgstr ""
+"注意，上面的 \"Document Title\" 和 \"Section Title\" 都使用了等号，但却是不同的、不相关的样式。"
+"为美观起见，可以将加粗线和下划线的标题（但不能只用下划线）嵌入其中。"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:354
 msgid "Images"
-msgstr ""
+msgstr "图片"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:360
 msgid ""
 "To include an image in your document, you use the the ``image`` "
 "directive__. For example::"
 msgstr ""
+"要在你的文档中包含图片，你可以使用 ``image`` 指令__。例如 ::"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:365
 msgid "results in:"
-msgstr ""
+msgstr "结果是："
 
 #: ../../docutils/docs/user/rst/quickstart.txt:369
 msgid ""
@@ -410,10 +458,13 @@ msgid ""
 "image (format, size etc).  If the image is to appear in HTML and you wish"
 " to supply additional information, you may::"
 msgstr ""
+"``images/biohazard.png`` 部分表示你希望出现在文件中的图片的文件名。"
+"对图像没有任何限制（格式、大小等）。"
+"如果该图像将出现在 HTML 中，并且你希望提供额外的信息，你可以 ::"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:380
 msgid "See the full `image directive documentation`__ for more info."
-msgstr ""
+msgstr "更多信息请参见完整的 `image 指令文档`__。"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:387
 msgid "What Next?"
@@ -426,6 +477,9 @@ msgid ""
 "reference is a good place to go next.  For complete details, the "
 "`reStructuredText Markup Specification`_ is the place to go [#]_."
 msgstr ""
+"这篇入门读物介绍了 reStructuredText 最常见的功能，"
+"但还有很多东西需要探索。`Quick reStructuredText`_ 用户参考是一个好地方。"
+"对于完整的细节，`reStructuredText 标记规范`_ 是一个好地方 [#]_。"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:394
 msgid ""
@@ -433,10 +487,12 @@ msgid ""
 "reStructuredText should post a message to the Docutils-users_ mailing "
 "list."
 msgstr ""
+"对 Docutils 或 reStructuredText 有疑问或需要帮助的用户应在 Docutils-users_ 邮件列表中发布信息。"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:398
 msgid ""
 "If that relative link doesn't work, try the master document: "
 "http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html."
 msgstr ""
-
+"如果这个相对链接不起作用，试试主文档："
+"http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html."

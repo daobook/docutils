@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../docutils/docs/ref/rst/restructuredtext.txt:5
 msgid "reStructuredText Markup Specification"
-msgstr ""
+msgstr "reStructuredText 标记规范"
 
 #: ../../docutils/docs/ref/rst/restructuredtext.txt
 #: ../../docutils/docs/ref/rst/restructuredtext.txt:957
