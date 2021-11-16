@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 <link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="致谢" href="THANKS.html" /><link rel="prev" title="Docutils 发行说明" href="RELEASE-NOTES.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-4.3.0, furo 2021.11.12"/>
+    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-4.3.0, furo 2021.11.15"/>
         <title>Docutils 历史 - docutilsx 0.0.1 文档</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=cb850144ff767e23c5b2a31c47cdfe5847ae013d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=916d6ed8f59335acffa15474ff504849343d4c76" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
     
     
@@ -247,7 +247,7 @@
 <li class="toctree-l3"><a class="reference internal" href="docs/dev/policies.html">Docutils Project Policies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/dev/website.html">Docutils Web Site</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/dev/release.html">Docutils Release Procedure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docs/dev/repository.html">The Docutils Version Repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/dev/repository.html">Docutils 版本库</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/dev/testing.html">Docutils Testing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/dev/semantics.html">Docstring Semantics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/dev/pysource.html">Python Source Reader</a></li>
@@ -319,7 +319,7 @@
 <ul class="simple">
 <li><p><a class="reference internal" href="#docutils-history" id="id23">Docutils 历史</a></p>
 <ul>
-<li><p><a class="reference internal" href="#changes-since-0-18" id="id24">Changes Since 0.18</a></p></li>
+<li><p><a class="reference internal" href="#release-0-18-1-in-preparation" id="id24">Release 0.18.1 (in preparation)</a></p></li>
 <li><p><a class="reference internal" href="#release-0-18-2021-10-26" id="id25">Release 0.18 (2021-10-26)</a></p></li>
 <li><p><a class="reference internal" href="#release-0-18b1-2021-10-05" id="id26">Release 0.18b1 (2021-10-05)</a></p></li>
 <li><p><a class="reference internal" href="#release-0-17-1-2021-04-16" id="id27">Release 0.17.1 (2021-04-16)</a></p></li>
@@ -351,14 +351,15 @@
 </li>
 </ul>
 </div>
-<section id="changes-since-0-18">
-<h2><a class="toc-backref" href="#id24">Changes Since 0.18</a><a class="headerlink" href="#changes-since-0-18" title="永久链接至标题">¶</a></h2>
+<section id="release-0-18-1-in-preparation">
+<h2><a class="toc-backref" href="#id24">Release 0.18.1 (in preparation)</a><a class="headerlink" href="#release-0-18-1-in-preparation" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>docutils/nodes.py</p>
 <ul>
 <li><p>Node.traverse() returns a list again to restore backwards
 compatibility. Fixes bug #431.</p></li>
-<li><p>New method Node.findall(): like Node.traverse() but returns an iterator.</p></li>
+<li><p>New method Node.findall(): like Node.traverse() but returns an
+iterator. Obsoletes Node.traverse().</p></li>
 </ul>
 </li>
 <li><p>docutils/writers/_html_base.py</p>
@@ -369,6 +370,16 @@ compatibility. Fixes bug #431.</p></li>
 <li><p>docutils/writers/html5_polyglot/math.css</p>
 <ul>
 <li><p>Fix typo (bug #432).</p></li>
+</ul>
+</li>
+<li><p>docutils/writers/odf_odt/__init__.py:</p>
+<ul>
+<li><p>Fix spurious output with Windows (bug #350).</p></li>
+</ul>
+</li>
+<li><p>testtest_error_reporting.py</p>
+<ul>
+<li><p>Fix a false positive (bug #434).</p></li>
 </ul>
 </li>
 </ul>
@@ -404,8 +415,9 @@ to keep a log of recursive inclusions.</p></li>
 </li>
 <li><p>docutils/writers/html5_polyglot/__init__.py</p>
 <ul class="simple">
-<li><p>New option “image_loading”. Support “lazy” loading of images.
-Obsoletes “embed_images”.</p></li>
+<li><p>New option <a class="reference external" href="docs/user/config.html#image-loading">image_loading</a>. Support “lazy” loading of images.
+Obsoletes “embed_images”.</p>
+</li>
 </ul>
 </li>
 <li><p>docutils/writers/pseudoxml.py:</p>
@@ -4449,7 +4461,7 @@ test/test_rst); and all modifications required to make it all work.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Docutils 历史</a><ul>
-<li><a class="reference internal" href="#changes-since-0-18">Changes Since 0.18</a></li>
+<li><a class="reference internal" href="#release-0-18-1-in-preparation">Release 0.18.1 (in preparation)</a></li>
 <li><a class="reference internal" href="#release-0-18-2021-10-26">Release 0.18 (2021-10-26)</a></li>
 <li><a class="reference internal" href="#release-0-18b1-2021-10-05">Release 0.18b1 (2021-10-05)</a></li>
 <li><a class="reference internal" href="#release-0-17-1-2021-04-16">Release 0.17.1 (2021-04-16)</a></li>

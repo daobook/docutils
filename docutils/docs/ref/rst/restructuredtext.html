@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 <link rel="index" title="索引" href="../../../../genindex.html" /><link rel="search" title="搜索" href="../../../../search.html" /><link rel="next" title="reStructuredText Directives" href="directives.html" /><link rel="prev" title="An Introduction to reStructuredText" href="introduction.html" />
 
-    <link rel="shortcut icon" href="../../../../_static/favicon.png"/><meta name="generator" content="sphinx-4.3.0, furo 2021.11.12"/>
+    <link rel="shortcut icon" href="../../../../_static/favicon.png"/><meta name="generator" content="sphinx-4.3.0, furo 2021.11.15"/>
         <title>reStructuredText Markup Specification - docutilsx 0.0.1 文档</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=cb850144ff767e23c5b2a31c47cdfe5847ae013d" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=916d6ed8f59335acffa15474ff504849343d4c76" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
     
     
@@ -247,7 +247,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../dev/policies.html">Docutils Project Policies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dev/website.html">Docutils Web Site</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dev/release.html">Docutils Release Procedure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../dev/repository.html">The Docutils Version Repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dev/repository.html">Docutils 版本库</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dev/testing.html">Docutils Testing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dev/semantics.html">Docstring Semantics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dev/pysource.html">Python Source Reader</a></li>
@@ -293,7 +293,7 @@
         </div>
         <article role="main">
           <section id="restructuredtext-markup-specification">
-<h1><a class="toc-backref" href="#id51">reStructuredText Markup Specification</a><a class="headerlink" href="#restructuredtext-markup-specification" title="永久链接至标题">¶</a></h1>
+<h1><a class="toc-backref" href="#id55">reStructuredText Markup Specification</a><a class="headerlink" href="#restructuredtext-markup-specification" title="永久链接至标题">¶</a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Author</dt>
 <dd class="field-odd"><p>David Goodger</p>
@@ -340,117 +340,117 @@ examples throughout this document, to illustrate the plaintext markup.</p>
 <div class="contents topic" id="id1">
 <p class="topic-title">目录</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#restructuredtext-markup-specification" id="id51">reStructuredText Markup Specification</a></p>
+<li><p><a class="reference internal" href="#restructuredtext-markup-specification" id="id55">reStructuredText Markup Specification</a></p>
 <ul>
-<li><p><a class="reference internal" href="#quick-syntax-overview" id="id52">Quick Syntax Overview</a></p></li>
-<li><p><a class="reference internal" href="#syntax-details" id="id53">Syntax Details</a></p>
+<li><p><a class="reference internal" href="#quick-syntax-overview" id="id56">Quick Syntax Overview</a></p></li>
+<li><p><a class="reference internal" href="#syntax-details" id="id57">Syntax Details</a></p>
 <ul>
-<li><p><a class="reference internal" href="#whitespace" id="id54">Whitespace</a></p>
+<li><p><a class="reference internal" href="#whitespace" id="id58">Whitespace</a></p>
 <ul>
-<li><p><a class="reference internal" href="#blank-lines" id="id55">Blank Lines</a></p></li>
-<li><p><a class="reference internal" href="#indentation" id="id56">Indentation</a></p></li>
+<li><p><a class="reference internal" href="#blank-lines" id="id59">Blank Lines</a></p></li>
+<li><p><a class="reference internal" href="#indentation" id="id60">Indentation</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#escaping-mechanism" id="id57">Escaping Mechanism</a></p></li>
-<li><p><a class="reference internal" href="#reference-names" id="id58">Reference Names</a></p></li>
-<li><p><a class="reference internal" href="#document-structure" id="id59">Document Structure</a></p>
+<li><p><a class="reference internal" href="#escaping-mechanism" id="id61">Escaping Mechanism</a></p></li>
+<li><p><a class="reference internal" href="#reference-names" id="id62">Reference Names</a></p></li>
+<li><p><a class="reference internal" href="#document-structure" id="id63">Document Structure</a></p>
 <ul>
-<li><p><a class="reference internal" href="#document" id="id60">Document</a></p></li>
-<li><p><a class="reference internal" href="#sections" id="id61">Sections</a></p></li>
-<li><p><a class="reference internal" href="#transitions" id="id62">Transitions</a></p></li>
+<li><p><a class="reference internal" href="#document" id="id64">Document</a></p></li>
+<li><p><a class="reference internal" href="#sections" id="id65">Sections</a></p></li>
+<li><p><a class="reference internal" href="#transitions" id="id66">Transitions</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#body-elements" id="id63">Body Elements</a></p>
+<li><p><a class="reference internal" href="#body-elements" id="id67">Body Elements</a></p>
 <ul>
-<li><p><a class="reference internal" href="#paragraphs" id="id64">Paragraphs</a></p></li>
-<li><p><a class="reference internal" href="#bullet-lists" id="id65">Bullet Lists</a></p></li>
-<li><p><a class="reference internal" href="#enumerated-lists" id="id66">Enumerated Lists</a></p></li>
-<li><p><a class="reference internal" href="#definition-lists" id="id67">Definition Lists</a></p></li>
-<li><p><a class="reference internal" href="#field-lists" id="id68">Field Lists</a></p>
+<li><p><a class="reference internal" href="#paragraphs" id="id68">Paragraphs</a></p></li>
+<li><p><a class="reference internal" href="#bullet-lists" id="id69">Bullet Lists</a></p></li>
+<li><p><a class="reference internal" href="#enumerated-lists" id="id70">Enumerated Lists</a></p></li>
+<li><p><a class="reference internal" href="#definition-lists" id="id71">Definition Lists</a></p></li>
+<li><p><a class="reference internal" href="#field-lists" id="id72">Field Lists</a></p>
 <ul>
-<li><p><a class="reference internal" href="#bibliographic-fields" id="id69">Bibliographic Fields</a></p></li>
-<li><p><a class="reference internal" href="#rcs-keywords" id="id70">RCS Keywords</a></p></li>
+<li><p><a class="reference internal" href="#bibliographic-fields" id="id73">Bibliographic Fields</a></p></li>
+<li><p><a class="reference internal" href="#rcs-keywords" id="id74">RCS Keywords</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#option-lists" id="id71">Option Lists</a></p></li>
-<li><p><a class="reference internal" href="#literal-blocks" id="id72">Literal Blocks</a></p>
+<li><p><a class="reference internal" href="#option-lists" id="id75">Option Lists</a></p></li>
+<li><p><a class="reference internal" href="#literal-blocks" id="id76">Literal Blocks</a></p>
 <ul>
-<li><p><a class="reference internal" href="#indented-literal-blocks" id="id73">Indented Literal Blocks</a></p></li>
-<li><p><a class="reference internal" href="#quoted-literal-blocks" id="id74">Quoted Literal Blocks</a></p></li>
+<li><p><a class="reference internal" href="#indented-literal-blocks" id="id77">Indented Literal Blocks</a></p></li>
+<li><p><a class="reference internal" href="#quoted-literal-blocks" id="id78">Quoted Literal Blocks</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#line-blocks" id="id75">Line Blocks</a></p></li>
-<li><p><a class="reference internal" href="#block-quotes" id="id76">Block Quotes</a></p></li>
-<li><p><a class="reference internal" href="#doctest-blocks" id="id77">Doctest Blocks</a></p></li>
-<li><p><a class="reference internal" href="#tables" id="id78">Tables</a></p>
+<li><p><a class="reference internal" href="#line-blocks" id="id79">Line Blocks</a></p></li>
+<li><p><a class="reference internal" href="#block-quotes" id="id80">Block Quotes</a></p></li>
+<li><p><a class="reference internal" href="#doctest-blocks" id="id81">Doctest Blocks</a></p></li>
+<li><p><a class="reference internal" href="#tables" id="id82">Tables</a></p>
 <ul>
-<li><p><a class="reference internal" href="#grid-tables" id="id79">Grid Tables</a></p></li>
-<li><p><a class="reference internal" href="#simple-tables" id="id80">Simple Tables</a></p></li>
+<li><p><a class="reference internal" href="#grid-tables" id="id83">Grid Tables</a></p></li>
+<li><p><a class="reference internal" href="#simple-tables" id="id84">Simple Tables</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#explicit-markup-blocks" id="id81">Explicit Markup Blocks</a></p>
+<li><p><a class="reference internal" href="#explicit-markup-blocks" id="id85">Explicit Markup Blocks</a></p>
 <ul>
-<li><p><a class="reference internal" href="#footnotes" id="id82">Footnotes</a></p>
+<li><p><a class="reference internal" href="#footnotes" id="id86">Footnotes</a></p>
 <ul>
-<li><p><a class="reference internal" href="#auto-numbered-footnotes" id="id83">Auto-Numbered Footnotes</a></p></li>
-<li><p><a class="reference internal" href="#auto-symbol-footnotes" id="id84">Auto-Symbol Footnotes</a></p></li>
-<li><p><a class="reference internal" href="#mixed-manual-and-auto-numbered-footnotes" id="id85">Mixed Manual and Auto-Numbered Footnotes</a></p></li>
+<li><p><a class="reference internal" href="#auto-numbered-footnotes" id="id87">Auto-Numbered Footnotes</a></p></li>
+<li><p><a class="reference internal" href="#auto-symbol-footnotes" id="id88">Auto-Symbol Footnotes</a></p></li>
+<li><p><a class="reference internal" href="#mixed-manual-and-auto-numbered-footnotes" id="id89">Mixed Manual and Auto-Numbered Footnotes</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#citations" id="id86">Citations</a></p></li>
-<li><p><a class="reference internal" href="#hyperlink-targets" id="id87">Hyperlink Targets</a></p>
+<li><p><a class="reference internal" href="#citations" id="id90">Citations</a></p></li>
+<li><p><a class="reference internal" href="#hyperlink-targets" id="id91">Hyperlink Targets</a></p>
 <ul>
-<li><p><a class="reference internal" href="#anonymous-hyperlinks" id="id88">Anonymous Hyperlinks</a></p></li>
+<li><p><a class="reference internal" href="#anonymous-hyperlinks" id="id92">Anonymous Hyperlinks</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#directives" id="id89">Directives</a></p></li>
-<li><p><a class="reference internal" href="#substitution-definitions" id="id90">Substitution Definitions</a></p></li>
-<li><p><a class="reference internal" href="#comments" id="id91">Comments</a></p>
+<li><p><a class="reference internal" href="#directives" id="id93">Directives</a></p></li>
+<li><p><a class="reference internal" href="#substitution-definitions" id="id94">Substitution Definitions</a></p></li>
+<li><p><a class="reference internal" href="#comments" id="id95">Comments</a></p>
 <ul>
-<li><p><a class="reference internal" href="#empty-comments" id="id92">Empty Comments</a></p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#implicit-hyperlink-targets" id="id93">Implicit Hyperlink Targets</a></p></li>
-<li><p><a class="reference internal" href="#inline-markup" id="id94">Inline Markup</a></p>
-<ul>
-<li><p><a class="reference internal" href="#inline-markup-recognition-rules" id="id95">Inline markup recognition rules</a></p></li>
-<li><p><a class="reference internal" href="#recognition-order" id="id96">Recognition order</a></p></li>
-<li><p><a class="reference internal" href="#id41" id="id97">Character-Level Inline Markup</a></p></li>
-<li><p><a class="reference internal" href="#emphasis" id="id98">Emphasis</a></p></li>
-<li><p><a class="reference internal" href="#strong-emphasis" id="id99">Strong Emphasis</a></p></li>
-<li><p><a class="reference internal" href="#interpreted-text" id="id100">Interpreted Text</a></p></li>
-<li><p><a class="reference internal" href="#inline-literals" id="id101">Inline Literals</a></p></li>
-<li><p><a class="reference internal" href="#hyperlink-references" id="id102">Hyperlink References</a></p>
-<ul>
-<li><p><a class="reference internal" href="#embedded-uris-and-aliases" id="id103">Embedded URIs and Aliases</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#inline-internal-targets" id="id104">Inline Internal Targets</a></p></li>
-<li><p><a class="reference internal" href="#footnote-references" id="id105">Footnote References</a></p></li>
-<li><p><a class="reference internal" href="#citation-references" id="id106">Citation References</a></p></li>
-<li><p><a class="reference internal" href="#substitution-references" id="id107">Substitution References</a></p></li>
-<li><p><a class="reference internal" href="#standalone-hyperlinks" id="id108">Standalone Hyperlinks</a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#units" id="id109">Units</a></p>
-<ul>
-<li><p><a class="reference internal" href="#length-units" id="id110">Length Units</a></p></li>
-<li><p><a class="reference internal" href="#percentage-units" id="id111">Percentage Units</a></p></li>
+<li><p><a class="reference internal" href="#empty-comments" id="id96">Empty Comments</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#error-handling" id="id112">Error Handling</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#implicit-hyperlink-targets" id="id97">Implicit Hyperlink Targets</a></p></li>
+<li><p><a class="reference internal" href="#inline-markup" id="id98">Inline Markup</a></p>
+<ul>
+<li><p><a class="reference internal" href="#inline-markup-recognition-rules" id="id99">Inline markup recognition rules</a></p></li>
+<li><p><a class="reference internal" href="#recognition-order" id="id100">Recognition order</a></p></li>
+<li><p><a class="reference internal" href="#id45" id="id101">Character-Level Inline Markup</a></p></li>
+<li><p><a class="reference internal" href="#emphasis" id="id102">Emphasis</a></p></li>
+<li><p><a class="reference internal" href="#strong-emphasis" id="id103">Strong Emphasis</a></p></li>
+<li><p><a class="reference internal" href="#interpreted-text" id="id104">Interpreted Text</a></p></li>
+<li><p><a class="reference internal" href="#inline-literals" id="id105">Inline Literals</a></p></li>
+<li><p><a class="reference internal" href="#hyperlink-references" id="id106">Hyperlink References</a></p>
+<ul>
+<li><p><a class="reference internal" href="#embedded-uris-and-aliases" id="id107">Embedded URIs and Aliases</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#inline-internal-targets" id="id108">Inline Internal Targets</a></p></li>
+<li><p><a class="reference internal" href="#footnote-references" id="id109">Footnote References</a></p></li>
+<li><p><a class="reference internal" href="#citation-references" id="id110">Citation References</a></p></li>
+<li><p><a class="reference internal" href="#substitution-references" id="id111">Substitution References</a></p></li>
+<li><p><a class="reference internal" href="#standalone-hyperlinks" id="id112">Standalone Hyperlinks</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#units" id="id113">Units</a></p>
+<ul>
+<li><p><a class="reference internal" href="#length-units" id="id114">Length Units</a></p></li>
+<li><p><a class="reference internal" href="#percentage-units" id="id115">Percentage Units</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#error-handling" id="id116">Error Handling</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <section id="quick-syntax-overview">
-<h2><a class="toc-backref" href="#id52">Quick Syntax Overview</a><a class="headerlink" href="#quick-syntax-overview" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id56">Quick Syntax Overview</a><a class="headerlink" href="#quick-syntax-overview" title="永久链接至标题">¶</a></h2>
 <p>A reStructuredText document is made up of body or block-level
 elements, and may be structured into sections.  <a class="reference internal" href="#sections">Sections</a> are
 indicated through title style (underlines &amp; optional overlines).
@@ -629,21 +629,21 @@ two periods and a space:</p>
 </ul>
 </section>
 <section id="syntax-details">
-<h2><a class="toc-backref" href="#id53">Syntax Details</a><a class="headerlink" href="#syntax-details" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id57">Syntax Details</a><a class="headerlink" href="#syntax-details" title="永久链接至标题">¶</a></h2>
 <p>Descriptions below list “doctree elements” (document tree element
 names; XML DTD generic identifiers) corresponding to syntax
 constructs.  For details on the hierarchy of elements, please see <a class="reference external" href="../doctree.html">The
 Docutils Document Tree</a> and the <a class="reference external" href="../docutils.dtd">Docutils Generic DTD</a> XML document
 type definition.</p>
 <section id="whitespace">
-<h3><a class="toc-backref" href="#id54">Whitespace</a><a class="headerlink" href="#whitespace" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id58">Whitespace</a><a class="headerlink" href="#whitespace" title="永久链接至标题">¶</a></h3>
 <p>Spaces are recommended for <a class="reference internal" href="#indentation">indentation</a>, but tabs may also be used.
 Tabs will be converted to spaces.  Tab stops are at every 8th column
 (processing systems may make this value configurable).</p>
 <p>Other whitespace characters (form feeds [chr(12)] and vertical tabs
 [chr(11)]) are converted to single spaces before processing.</p>
 <section id="blank-lines">
-<h4><a class="toc-backref" href="#id55">Blank Lines</a><a class="headerlink" href="#blank-lines" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id59">Blank Lines</a><a class="headerlink" href="#blank-lines" title="永久链接至标题">¶</a></h4>
 <p>Blank lines are used to separate paragraphs and other elements.
 Multiple successive blank lines are equivalent to a single blank line,
 except within literal blocks (where all whitespace is preserved).
@@ -653,7 +653,7 @@ document is treated as if it is preceded by a blank line, and the last
 line of a document is treated as if it is followed by a blank line.</p>
 </section>
 <section id="indentation">
-<h4><a class="toc-backref" href="#id56">Indentation</a><a class="headerlink" href="#indentation" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id60">Indentation</a><a class="headerlink" href="#indentation" title="永久链接至标题">¶</a></h4>
 <p>Indentation is used to indicate – and is only significant in
 indicating – block quotes, definitions (in <a class="reference internal" href="#definition-lists">definition lists</a>),
 and local nested content:</p>
@@ -740,7 +740,7 @@ than the marker.  For example, field lists may have very long markers
 </section>
 </section>
 <section id="escaping-mechanism">
-<span id="escape"></span><h3><a class="toc-backref" href="#id57">Escaping Mechanism</a><a class="headerlink" href="#escaping-mechanism" title="永久链接至标题">¶</a></h3>
+<span id="escape"></span><h3><a class="toc-backref" href="#id61">Escaping Mechanism</a><a class="headerlink" href="#escaping-mechanism" title="永久链接至标题">¶</a></h3>
 <p>The character set universally available to plaintext documents, 7-bit
 ASCII, is limited.  No matter what characters are used for markup,
 they will already have multiple meanings in written text.  Therefore
@@ -759,7 +759,7 @@ markup interpretation. The escaped character represents the character
 itself. (A literal backslash can be specified by two backslashes in a
 row – the first backslash escapes the second. <a class="footnote-reference brackets" href="#caveat" id="id2">1</a>)</p></li>
 <li><p>Escaped whitespace characters are removed from the output document
-together with the escaping backslash. This allows for <a class="reference internal" href="#id41">character-level
+together with the escaping backslash. This allows for <a class="reference internal" href="#id45">character-level
 inline markup</a>.</p>
 <p>In <cite>URI context</cite> <a class="footnote-reference brackets" href="#uri-context" id="id3">2</a>, backslash-escaped whitespace
 represents a single space.</p>
@@ -797,7 +797,7 @@ reason to escape them.</p>
 </dl>
 </section>
 <section id="reference-names">
-<span id="reference-name"></span><h3><a class="toc-backref" href="#id58">Reference Names</a><a class="headerlink" href="#reference-names" title="永久链接至标题">¶</a></h3>
+<span id="reference-name"></span><h3><a class="toc-backref" href="#id62">Reference Names</a><a class="headerlink" href="#reference-names" title="永久链接至标题">¶</a></h3>
 <p><cite>Reference names</cite> identify elements for cross-referencing.</p>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
@@ -849,9 +849,9 @@ footnote, citation) may be processed and rendered differently.  Some
 care should be taken to avoid reference name conflicts.</p>
 </section>
 <section id="document-structure">
-<h3><a class="toc-backref" href="#id59">Document Structure</a><a class="headerlink" href="#document-structure" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id63">Document Structure</a><a class="headerlink" href="#document-structure" title="永久链接至标题">¶</a></h3>
 <section id="document">
-<h4><a class="toc-backref" href="#id60">Document</a><a class="headerlink" href="#document" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id64">Document</a><a class="headerlink" href="#document" title="永久链接至标题">¶</a></h4>
 <p>Doctree element: <a class="reference external" href="../doctree.html#document">document</a>.</p>
 <p>The top-level element of a parsed reStructuredText document is the
 “document” element.  After initial parsing, the document element is a
@@ -878,22 +878,27 @@ become part of the document body.</p>
 </dl>
 </section>
 <section id="sections">
-<h4><a class="toc-backref" href="#id61">Sections</a><a class="headerlink" href="#sections" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id65">Sections</a><a class="headerlink" href="#sections" title="永久链接至标题">¶</a></h4>
 <p>Doctree elements: <a class="reference external" href="../doctree.html#section">section</a>, <a class="reference external" href="../doctree.html#title">title</a>.</p>
 <p>Sections are identified through their titles, which are marked up with
 adornment: “underlines” below the title text, or underlines and
 matching “overlines” above the title.  An underline/overline is a
 single repeated punctuation character that begins in column 1 and
 forms a line extending at least as far as the right edge of the title
-text.  Specifically, an underline/overline character may be any
-non-alphanumeric printable 7-bit ASCII character <a class="footnote-reference brackets" href="#id11" id="id10">5</a>.  When an
+text. <a class="footnote-reference brackets" href="#id12" id="id10">5</a>  Specifically, an underline/overline character may be any
+non-alphanumeric printable 7-bit ASCII character <a class="footnote-reference brackets" href="#id13" id="id11">6</a>.  When an
 overline is used, the length and character used must match the
 underline.  Underline-only adornment styles are distinct from
 overline-and-underline styles that use the same character.  There may
 be any number of levels of section titles, although some output
 formats may have limits (HTML has 6 levels).</p>
 <dl class="footnote brackets">
-<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id10">5</a></span></dt>
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id10">5</a></span></dt>
+<dd><p>The key is the visual length of the title in a mono-spaced font.
+The adornment may need more or less characters than title, if the
+title contains <a class="reference external" href="https://en.wikipedia.org/wiki/Halfwidth_and_fullwidth_forms#In_Unicode">wide</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Combining_character">combining</a> characters.</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id11">6</a></span></dt>
 <dd><p>The following are all valid section title adornment
 characters:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~
@@ -967,7 +972,7 @@ Hyperlink Targets</a> for a complete description.</p>
 sections.</p>
 </section>
 <section id="transitions">
-<h4><a class="toc-backref" href="#id62">Transitions</a><a class="headerlink" href="#transitions" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id66">Transitions</a><a class="headerlink" href="#transitions" title="永久链接至标题">¶</a></h4>
 <p>Doctree element: <a class="reference external" href="../doctree.html#transition">transition</a>.</p>
 <blockquote>
 <div><p>Instead of subheads, extra space or a type ornament between
@@ -1000,9 +1005,9 @@ would be an obvious choice.</p>
 </section>
 </section>
 <section id="body-elements">
-<h3><a class="toc-backref" href="#id63">Body Elements</a><a class="headerlink" href="#body-elements" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id67">Body Elements</a><a class="headerlink" href="#body-elements" title="永久链接至标题">¶</a></h3>
 <section id="paragraphs">
-<h4><a class="toc-backref" href="#id64">Paragraphs</a><a class="headerlink" href="#paragraphs" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id68">Paragraphs</a><a class="headerlink" href="#paragraphs" title="永久链接至标题">¶</a></h4>
 <p>Doctree element: <a class="reference external" href="../doctree.html#paragraph">paragraph</a>.</p>
 <p>Paragraphs consist of blocks of left-aligned text with no markup
 indicating any other body element.  Blank lines separate paragraphs
@@ -1022,7 +1027,7 @@ from each other and from other body elements.  Paragraphs may contain
 </div>
 </section>
 <section id="bullet-lists">
-<h4><a class="toc-backref" href="#id65">Bullet Lists</a><a class="headerlink" href="#bullet-lists" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id69">Bullet Lists</a><a class="headerlink" href="#bullet-lists" title="永久链接至标题">¶</a></h4>
 <p>Doctree elements: <a class="reference external" href="../doctree.html#bullet-list">bullet_list</a>, <a class="reference external" href="../doctree.html#list-item">list_item</a>.</p>
 <p>A text block which begins with a “*”, “+”, “-”, “•”, “‣”, or “⁃”,
 followed by whitespace, is a bullet list item (a.k.a. “unordered” list
@@ -1069,7 +1074,7 @@ indentation.  For example:</p>
 </div>
 </section>
 <section id="enumerated-lists">
-<h4><a class="toc-backref" href="#id66">Enumerated Lists</a><a class="headerlink" href="#enumerated-lists" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id70">Enumerated Lists</a><a class="headerlink" href="#enumerated-lists" title="永久链接至标题">¶</a></h4>
 <p>Doctree elements: <a class="reference external" href="../doctree.html#enumerated-list">enumerated_list</a>, <a class="reference external" href="../doctree.html#list-item">list_item</a>.</p>
 <p>Enumerated lists (a.k.a. “ordered” lists) are similar to bullet lists,
 but use enumerators instead of bullets.  An enumerator consists of an
@@ -1151,7 +1156,7 @@ escaped in order to have the line parsed as an ordinary paragraph:</p>
 </div>
 </section>
 <section id="definition-lists">
-<h4><a class="toc-backref" href="#id67">Definition Lists</a><a class="headerlink" href="#definition-lists" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id71">Definition Lists</a><a class="headerlink" href="#definition-lists" title="永久链接至标题">¶</a></h4>
 <p>Doctree elements: <a class="reference external" href="../doctree.html#definition-list">definition_list</a>, <a class="reference external" href="../doctree.html#definition-list-item">definition_list_item</a>, <a class="reference external" href="../doctree.html#term">term</a>,
 <a class="reference external" href="../doctree.html#classifier">classifier</a>, <a class="reference external" href="../doctree.html#definition">definition</a>.</p>
 <p>Each definition list item contains a term, optional classifiers, and a
@@ -1212,7 +1217,7 @@ object schema.</p></li>
 </div>
 </section>
 <section id="field-lists">
-<h4><a class="toc-backref" href="#id68">Field Lists</a><a class="headerlink" href="#field-lists" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id72">Field Lists</a><a class="headerlink" href="#field-lists" title="永久链接至标题">¶</a></h4>
 <p>Doctree elements: <a class="reference external" href="../doctree.html#field-list">field_list</a>, <a class="reference external" href="../doctree.html#field">field</a>, <a class="reference external" href="../doctree.html#field-name">field_name</a>, <a class="reference external" href="../doctree.html#field-body">field_body</a>.</p>
 <p>Field lists are used as part of an extension syntax, such as options
 for <a class="reference internal" href="#directives">directives</a>, or database-like records meant for further
@@ -1225,7 +1230,7 @@ directives in <a class="reference external" href="directives.html">reStructuredT
 <p id="field-names">Field lists are mappings from <em>field names</em> to <em>field bodies</em>, modeled on
 <a class="reference external" href="http://www.rfc-editor.org/rfc/rfc822.txt">RFC822</a> headers.  A field name may consist of any characters, but
 colons (“:”) inside of field names must be backslash-escaped
-when followed by whitespace.<a class="footnote-reference brackets" href="#id13" id="id12">6</a>
+when followed by whitespace.<a class="footnote-reference brackets" href="#id17" id="id16">7</a>
 Inline markup is parsed in field names, but care must be taken when
 using <a class="reference internal" href="#interpreted-text">interpreted text</a> with explicit roles in field names: the role
 must be a suffix to the interpreted text.  Field names are
@@ -1268,23 +1273,23 @@ used.</p>
 </pre></div>
 </div>
 <dl class="footnote brackets">
-<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id12">6</a></span></dt>
+<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id16">7</a></span></dt>
 <dd><p>Up to Docutils 0.14, field markers were not recognized when
 containing a colon.</p>
 </dd>
 </dl>
 <section id="bibliographic-fields">
-<h5><a class="toc-backref" href="#id69">Bibliographic Fields</a><a class="headerlink" href="#bibliographic-fields" title="永久链接至标题">¶</a></h5>
+<h5><a class="toc-backref" href="#id73">Bibliographic Fields</a><a class="headerlink" href="#bibliographic-fields" title="永久链接至标题">¶</a></h5>
 <p>Doctree elements: <a class="reference external" href="../doctree.html#docinfo">docinfo</a>, <a class="reference external" href="../doctree.html#address">address</a>, <a class="reference external" href="../doctree.html#author">author</a>, <a class="reference external" href="../doctree.html#authors">authors</a>, <a class="reference external" href="../doctree.html#contact">contact</a>,
 <a class="reference external" href="../doctree.html#copyright">copyright</a>, <a class="reference external" href="../doctree.html#date">date</a>, <a class="reference external" href="../doctree.html#organization">organization</a>, <a class="reference external" href="../doctree.html#revision">revision</a>, <a class="reference external" href="../doctree.html#status">status</a>, <a class="reference external" href="../doctree.html#topic">topic</a>,
 <a class="reference external" href="../doctree.html#version">version</a>.</p>
 <p>When a field list is the first element in a document
-(after the document title, if there is one) <a class="footnote-reference brackets" href="#id15" id="id14">7</a>, it may have its fields
+(after the document title, if there is one) <a class="footnote-reference brackets" href="#id19" id="id18">8</a>, it may have its fields
 transformed to document bibliographic data.  This bibliographic data
 corresponds to the front matter of a book, such as the title page and
 copyright page.</p>
 <dl class="footnote brackets">
-<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id14">7</a></span></dt>
+<dt class="label" id="id19"><span class="brackets"><a class="fn-backref" href="#id18">8</a></span></dt>
 <dd><p>In addition to the document title and subtitle, also <a class="reference internal" href="#comments">comments</a>,
 <a class="reference internal" href="#substitution-definitions">substitution definitions</a>, <a class="reference internal" href="#hyperlink-targets">hyperlink targets</a>, and “header”,
 “footer”, “meta”, and “raw” <a class="reference internal" href="#directives">directives</a> may be placed before the
@@ -1378,26 +1383,26 @@ The field name is also used as a <a class="reference external" href="../doctree.
 converted into a valid identifier form.</p>
 </section>
 <section id="rcs-keywords">
-<h5><a class="toc-backref" href="#id70">RCS Keywords</a><a class="headerlink" href="#rcs-keywords" title="永久链接至标题">¶</a></h5>
+<h5><a class="toc-backref" href="#id74">RCS Keywords</a><a class="headerlink" href="#rcs-keywords" title="永久链接至标题">¶</a></h5>
 <p><a class="reference internal" href="#bibliographic-fields">Bibliographic fields</a> recognized by the parser are normally checked
-for RCS <a class="footnote-reference brackets" href="#id20" id="id16">8</a> keywords and cleaned up <a class="footnote-reference brackets" href="#id21" id="id17">9</a>.  RCS keywords may be
+for RCS <a class="footnote-reference brackets" href="#id24" id="id20">9</a> keywords and cleaned up <a class="footnote-reference brackets" href="#id25" id="id21">10</a>.  RCS keywords may be
 entered into source files as “$keyword$”, and once stored under RCS,
-CVS <a class="footnote-reference brackets" href="#id22" id="id18">10</a>, or SVN <a class="footnote-reference brackets" href="#id23" id="id19">11</a>, they are expanded to “$keyword: expansion text $”.
+CVS <a class="footnote-reference brackets" href="#id26" id="id22">11</a>, or SVN <a class="footnote-reference brackets" href="#id27" id="id23">12</a>, they are expanded to “$keyword: expansion text $”.
 For example, a “Status” field will be transformed to a “status” element:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:Status: $keyword: expansion text $
 </pre></div>
 </div>
 <dl class="footnote brackets">
-<dt class="label" id="id20"><span class="brackets"><a class="fn-backref" href="#id16">8</a></span></dt>
+<dt class="label" id="id24"><span class="brackets"><a class="fn-backref" href="#id20">9</a></span></dt>
 <dd><p>Revision Control System.</p>
 </dd>
-<dt class="label" id="id21"><span class="brackets"><a class="fn-backref" href="#id17">9</a></span></dt>
+<dt class="label" id="id25"><span class="brackets"><a class="fn-backref" href="#id21">10</a></span></dt>
 <dd><p>RCS keyword processing can be turned off (unimplemented).</p>
 </dd>
-<dt class="label" id="id22"><span class="brackets"><a class="fn-backref" href="#id18">10</a></span></dt>
+<dt class="label" id="id26"><span class="brackets"><a class="fn-backref" href="#id22">11</a></span></dt>
 <dd><p>Concurrent Versions System.  CVS uses the same keywords as RCS.</p>
 </dd>
-<dt class="label" id="id23"><span class="brackets"><a class="fn-backref" href="#id19">11</a></span></dt>
+<dt class="label" id="id27"><span class="brackets"><a class="fn-backref" href="#id23">12</a></span></dt>
 <dd><p>Subversion Versions System. Uses the same keywords as RCS.</p>
 </dd>
 </dl>
@@ -1410,11 +1415,11 @@ after a document title if there is one).</p>
 </section>
 </section>
 <section id="option-lists">
-<span id="option-list"></span><h4><a class="toc-backref" href="#id71">Option Lists</a><a class="headerlink" href="#option-lists" title="永久链接至标题">¶</a></h4>
+<span id="option-list"></span><h4><a class="toc-backref" href="#id75">Option Lists</a><a class="headerlink" href="#option-lists" title="永久链接至标题">¶</a></h4>
 <p>Doctree elements: <a class="reference external" href="../doctree.html#option-list">option_list</a>, <a class="reference external" href="../doctree.html#option-list-item">option_list_item</a>, <a class="reference external" href="../doctree.html#option-group">option_group</a>, <a class="reference external" href="../doctree.html#option">option</a>,
 <a class="reference external" href="../doctree.html#option-string">option_string</a>, <a class="reference external" href="../doctree.html#option-argument">option_argument</a>, <a class="reference external" href="../doctree.html#description">description</a>.</p>
-<p>Option lists are two-column lists of command-line options and
-descriptions, documenting a program’s options.  For example:</p>
+<p>Option lists map a program’s command-line options to descriptions
+documenting them.  For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">a</span>         <span class="n">Output</span> <span class="nb">all</span><span class="o">.</span>
 <span class="o">-</span><span class="n">b</span>         <span class="n">Output</span> <span class="n">both</span> <span class="p">(</span><span class="n">this</span> <span class="n">description</span> <span class="ow">is</span>
            <span class="n">quite</span> <span class="n">long</span><span class="p">)</span><span class="o">.</span>
@@ -1496,7 +1501,7 @@ between option entries.</p>
 </div>
 </section>
 <section id="literal-blocks">
-<h4><a class="toc-backref" href="#id72">Literal Blocks</a><a class="headerlink" href="#literal-blocks" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id76">Literal Blocks</a><a class="headerlink" href="#literal-blocks" title="永久链接至标题">¶</a></h4>
 <p>Doctree element: <a class="reference external" href="../doctree.html#literal-block">literal_block</a>.</p>
 <p>A paragraph consisting of two colons (“::”) signifies that the
 following text block(s) comprise a literal block.  The literal block
@@ -1557,7 +1562,7 @@ indentation for indented literal blocks) is preserved.  Blank lines
 are required before and after a literal block, but these blank lines
 are not included as part of the literal block.</p>
 <section id="indented-literal-blocks">
-<h5><a class="toc-backref" href="#id73">Indented Literal Blocks</a><a class="headerlink" href="#indented-literal-blocks" title="永久链接至标题">¶</a></h5>
+<h5><a class="toc-backref" href="#id77">Indented Literal Blocks</a><a class="headerlink" href="#indented-literal-blocks" title="永久链接至标题">¶</a></h5>
 <p>Indented literal blocks are indicated by indentation relative to the
 surrounding text (leading whitespace on each line).  The minimum
 indentation will be removed from each line of an indented literal
@@ -1576,13 +1581,13 @@ with the end of the indentation.</p>
 </div>
 </section>
 <section id="quoted-literal-blocks">
-<h5><a class="toc-backref" href="#id74">Quoted Literal Blocks</a><a class="headerlink" href="#quoted-literal-blocks" title="永久链接至标题">¶</a></h5>
+<h5><a class="toc-backref" href="#id78">Quoted Literal Blocks</a><a class="headerlink" href="#quoted-literal-blocks" title="永久链接至标题">¶</a></h5>
 <p>Quoted literal blocks are unindented contiguous blocks of text where
 each line begins with the same non-alphanumeric printable 7-bit ASCII
-character <a class="footnote-reference brackets" href="#id25" id="id24">12</a>.  A blank line ends a quoted literal block.  The
+character <a class="footnote-reference brackets" href="#id29" id="id28">13</a>.  A blank line ends a quoted literal block.  The
 quoting characters are preserved in the processed document.</p>
 <dl class="footnote brackets">
-<dt class="label" id="id25"><span class="brackets"><a class="fn-backref" href="#id24">12</a></span></dt>
+<dt class="label" id="id29"><span class="brackets"><a class="fn-backref" href="#id28">13</a></span></dt>
 <dd><p>The following are all valid quoting characters:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>! " # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~
 </pre></div>
@@ -1616,7 +1621,7 @@ You just did!  ;-)
 </section>
 </section>
 <section id="line-blocks">
-<h4><a class="toc-backref" href="#id75">Line Blocks</a><a class="headerlink" href="#line-blocks" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id79">Line Blocks</a><a class="headerlink" href="#line-blocks" title="永久链接至标题">¶</a></h4>
 <p>Doctree elements: <a class="reference external" href="../doctree.html#line-block">line_block</a>, <a class="reference external" href="../doctree.html#line">line</a>.  (New in Docutils 0.3.5.)</p>
 <p>Line blocks are useful for address blocks, verse (poetry, song
 lyrics), and unadorned lists, where the structure of lines is
@@ -1664,7 +1669,7 @@ initial indentation of new lines:</p>
 </div>
 </section>
 <section id="block-quotes">
-<h4><a class="toc-backref" href="#id76">Block Quotes</a><a class="headerlink" href="#block-quotes" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id80">Block Quotes</a><a class="headerlink" href="#block-quotes" title="永久链接至标题">¶</a></h4>
 <p>Doctree elements: <a class="reference external" href="../doctree.html#block-quote">block_quote</a>, <a class="reference external" href="../doctree.html#attribution">attribution</a>.</p>
 <p>A text block that is indented relative to the preceding text, without
 preceding markup indicating it to be a literal block or other content,
@@ -1728,7 +1733,7 @@ blank lines are not included as part of the block quote.</p>
 </div>
 </section>
 <section id="doctest-blocks">
-<h4><a class="toc-backref" href="#id77">Doctest Blocks</a><a class="headerlink" href="#doctest-blocks" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id81">Doctest Blocks</a><a class="headerlink" href="#doctest-blocks" title="永久链接至标题">¶</a></h4>
 <p>Doctree element: <a class="reference external" href="../doctree.html#doctest-block">doctest_block</a>.</p>
 <p>Doctest blocks are interactive Python sessions cut-and-pasted into
 docstrings.  They are meant to illustrate usage by example, and
@@ -1754,7 +1759,7 @@ The following is a literal block::
 <p>Indentation is not required for doctest blocks.</p>
 </section>
 <section id="tables">
-<h4><a class="toc-backref" href="#id78">Tables</a><a class="headerlink" href="#tables" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id82">Tables</a><a class="headerlink" href="#tables" title="永久链接至标题">¶</a></h4>
 <p>Doctree elements: <a class="reference external" href="../doctree.html#table">table</a>, <a class="reference external" href="../doctree.html#tgroup">tgroup</a>, <a class="reference external" href="../doctree.html#colspec">colspec</a>, <a class="reference external" href="../doctree.html#thead">thead</a>, <a class="reference external" href="../doctree.html#tbody">tbody</a>, <a class="reference external" href="../doctree.html#row">row</a>, <a class="reference external" href="../doctree.html#entry">entry</a>.</p>
 <p>ReStructuredText provides two syntax variants for delineating table
 cells: <a class="reference internal" href="#grid-tables">Grid Tables</a> and <a class="reference internal" href="#simple-tables">Simple Tables</a>. Tables are also generated by
@@ -1769,7 +1774,7 @@ top and bottom cell boundaries act as delimiting blank lines.  Each
 cell contains zero or more body elements.  Cell contents may include
 left and/or right margins, which are removed before processing.</p>
 <section id="grid-tables">
-<h5><a class="toc-backref" href="#id79">Grid Tables</a><a class="headerlink" href="#grid-tables" title="永久链接至标题">¶</a></h5>
+<h5><a class="toc-backref" href="#id83">Grid Tables</a><a class="headerlink" href="#grid-tables" title="永久链接至标题">¶</a></h5>
 <p>Grid tables provide a complete table representation via grid-like
 “ASCII art”.  Grid tables allow arbitrary cell contents (body
 elements), and both row and column spans.  However, grid tables can be
@@ -1846,7 +1851,7 @@ the text by adding an extra space before:</p>
 </div>
 </section>
 <section id="simple-tables">
-<h5><a class="toc-backref" href="#id80">Simple Tables</a><a class="headerlink" href="#simple-tables" title="永久链接至标题">¶</a></h5>
+<h5><a class="toc-backref" href="#id84">Simple Tables</a><a class="headerlink" href="#simple-tables" title="永久链接至标题">¶</a></h5>
 <p>Simple tables provide a compact and easy to type but limited
 row-oriented table representation for simple data sets.  Cell contents
 are typically single paragraphs, although arbitrary body elements may
@@ -1953,7 +1958,7 @@ column in the processed output (row 4):</p>
 </section>
 </section>
 <section id="explicit-markup-blocks">
-<h4><a class="toc-backref" href="#id81">Explicit Markup Blocks</a><a class="headerlink" href="#explicit-markup-blocks" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id85">Explicit Markup Blocks</a><a class="headerlink" href="#explicit-markup-blocks" title="永久链接至标题">¶</a></h4>
 <p>The explicit markup syntax is used for <a class="reference internal" href="#footnotes">footnotes</a>, <a class="reference internal" href="#citations">citations</a>,
 <a class="reference internal" href="#hyperlink-targets">hyperlink targets</a>, <a class="reference internal" href="#directives">directives</a>, <a class="reference internal" href="#substitution-definitions">substitution definitions</a>,
 and <a class="reference internal" href="#comments">comments</a>.</p>
@@ -1975,7 +1980,7 @@ same line as the explicit markup start.</p>
 elements, but are optional between explicit markup blocks where
 unambiguous.</p>
 <section id="footnotes">
-<h5><a class="toc-backref" href="#id82">Footnotes</a><a class="headerlink" href="#footnotes" title="永久链接至标题">¶</a></h5>
+<h5><a class="toc-backref" href="#id86">Footnotes</a><a class="headerlink" href="#footnotes" title="永久链接至标题">¶</a></h5>
 <p>See also: <a class="reference internal" href="#footnote-references">Footnote References</a>.</p>
 <p>Doctree elements: <a class="reference external" href="../doctree.html#footnote">footnote</a>, <a class="reference external" href="../doctree.html#label">label</a>.</p>
 <p>Configuration settings:
@@ -2019,7 +2024,7 @@ Targets</a> for a complete description of the mechanism.</p>
 </pre></div>
 </div>
 <section id="auto-numbered-footnotes">
-<h6><a class="toc-backref" href="#id83">Auto-Numbered Footnotes</a><a class="headerlink" href="#auto-numbered-footnotes" title="永久链接至标题">¶</a></h6>
+<h6><a class="toc-backref" href="#id87">Auto-Numbered Footnotes</a><a class="headerlink" href="#auto-numbered-footnotes" title="永久链接至标题">¶</a></h6>
 <p>A number sign (“#”) may be used as the first character of a footnote
 label to request automatic numbering of the footnote or footnote
 reference.</p>
@@ -2070,7 +2075,7 @@ they are encountered in the document, which is not necessarily the
 same as the order in which a person would read them.</p>
 </section>
 <section id="auto-symbol-footnotes">
-<h6><a class="toc-backref" href="#id84">Auto-Symbol Footnotes</a><a class="headerlink" href="#auto-symbol-footnotes" title="永久链接至标题">¶</a></h6>
+<h6><a class="toc-backref" href="#id88">Auto-Symbol Footnotes</a><a class="headerlink" href="#auto-symbol-footnotes" title="永久链接至标题">¶</a></h6>
 <p>An asterisk (“*”) may be used for footnote labels to request automatic
 symbol generation for footnotes and footnote references.  The asterisk
 may be the only character in the label.  For example:</p>
@@ -2084,7 +2089,7 @@ and footnote references.  The number of references must be equal to
 the number of footnotes.  One symbol footnote cannot have multiple
 references.</p>
 <p>The standard Docutils system uses the following symbols for footnote
-marks <a class="footnote-reference brackets" href="#id27" id="id26">13</a>:</p>
+marks <a class="footnote-reference brackets" href="#id31" id="id30">14</a>:</p>
 <ul class="simple">
 <li><p>asterisk/star (“*”)</p></li>
 <li><p>dagger (HTML character entity “&amp;dagger;”, Unicode U+02020)</p></li>
@@ -2098,7 +2103,7 @@ marks <a class="footnote-reference brackets" href="#id27" id="id26">13</a>:</p>
 <li><p>club suit (”&amp;clubs;”/U+02663)</p></li>
 </ul>
 <dl class="footnote brackets">
-<dt class="label" id="id27"><span class="brackets"><a class="fn-backref" href="#id26">13</a></span></dt>
+<dt class="label" id="id31"><span class="brackets"><a class="fn-backref" href="#id30">14</a></span></dt>
 <dd><p>This list was inspired by the list of symbols for “Note
 Reference Marks” in The Chicago Manual of Style, 14th edition,
 section 12.51.  “Parallels” (“||”) were given in CMoS instead of
@@ -2119,7 +2124,7 @@ alternative for HTML and XML output is to use the
 </div>
 </section>
 <section id="mixed-manual-and-auto-numbered-footnotes">
-<h6><a class="toc-backref" href="#id85">Mixed Manual and Auto-Numbered Footnotes</a><a class="headerlink" href="#mixed-manual-and-auto-numbered-footnotes" title="永久链接至标题">¶</a></h6>
+<h6><a class="toc-backref" href="#id89">Mixed Manual and Auto-Numbered Footnotes</a><a class="headerlink" href="#mixed-manual-and-auto-numbered-footnotes" title="永久链接至标题">¶</a></h6>
 <p>Manual and automatic footnote numbering may both be used within a
 single document, although the results may not be expected.  Manual
 numbering takes priority.  Only unused footnote numbers are assigned
@@ -2143,7 +2148,7 @@ illustrative:</p>
 </section>
 </section>
 <section id="citations">
-<h5><a class="toc-backref" href="#id86">Citations</a><a class="headerlink" href="#citations" title="永久链接至标题">¶</a></h5>
+<h5><a class="toc-backref" href="#id90">Citations</a><a class="headerlink" href="#citations" title="永久链接至标题">¶</a></h5>
 <p>See also: <a class="reference internal" href="#citation-references">Citation References</a>.</p>
 <p>Doctree element: <a class="reference external" href="../doctree.html#citation">citation</a></p>
 <p>Citations are identical to footnotes except that they use only
@@ -2160,7 +2165,7 @@ differently from footnotes.  For example:</p>
 </div>
 </section>
 <section id="hyperlink-targets">
-<span id="hyperlinks"></span><h5><a class="toc-backref" href="#id87">Hyperlink Targets</a><a class="headerlink" href="#hyperlink-targets" title="永久链接至标题">¶</a></h5>
+<span id="hyperlinks"></span><h5><a class="toc-backref" href="#id91">Hyperlink Targets</a><a class="headerlink" href="#hyperlink-targets" title="永久链接至标题">¶</a></h5>
 <p>Doctree element: <a class="reference external" href="../doctree.html#target">target</a>.</p>
 <p>These are also called <span class="target" id="explicit-hyperlink-targets">explicit hyperlink targets</span>, to differentiate
 them from <a class="reference internal" href="#implicit-hyperlink-targets">implicit hyperlink targets</a> defined below.</p>
@@ -2193,7 +2198,7 @@ indirect.</p>
 <li><p><span class="target" id="internal-hyperlink-targets">Internal hyperlink targets</span> have empty link blocks.  They provide
 an end point allowing a hyperlink to connect one place to another
 within a document.  An internal hyperlink target points to the
-element following the target. <a class="footnote-reference brackets" href="#id30" id="id29">14</a>  For example:</p>
+element following the target. <a class="footnote-reference brackets" href="#id34" id="id33">15</a>  For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Clicking</span> <span class="n">on</span> <span class="n">this</span> <span class="n">internal</span> <span class="n">hyperlink</span> <span class="n">will</span> <span class="n">take</span> <span class="n">us</span> <span class="n">to</span> <span class="n">the</span> <span class="n">target_</span>
 <span class="n">below</span><span class="o">.</span>
 
@@ -2225,7 +2230,7 @@ targets refer to the same URI:</p>
 <p>An inline form of internal hyperlink target is available; see
 <a class="reference internal" href="#inline-internal-targets">Inline Internal Targets</a>.</p>
 <dl class="footnote brackets">
-<dt class="label" id="id30"><span class="brackets"><a class="fn-backref" href="#id29">14</a></span></dt>
+<dt class="label" id="id34"><span class="brackets"><a class="fn-backref" href="#id33">15</a></span></dt>
 <dd><p>Works also, if the internal hyperlink target is “nested” at the
 end of an indented text block. This behaviour allows setting targets
 to individual list items (except the first, as a preceding internal
@@ -2349,7 +2354,7 @@ duplicate reference names.</p>
 </pre></div>
 </div>
 <section id="anonymous-hyperlinks">
-<h6><a class="toc-backref" href="#id88">Anonymous Hyperlinks</a><a class="headerlink" href="#anonymous-hyperlinks" title="永久链接至标题">¶</a></h6>
+<h6><a class="toc-backref" href="#id92">Anonymous Hyperlinks</a><a class="headerlink" href="#anonymous-hyperlinks" title="永久链接至标题">¶</a></h6>
 <p>The <a class="reference external" href="http://www.w3.org/">World Wide Web Consortium</a> recommends in its <a class="reference external" href="http://www.w3.org/TR/WCAG10-HTML-TECHS/#link-text">HTML Techniques
 for Web Content Accessibility Guidelines</a> that authors should
 “clearly identify the target of each link.”  Hyperlink references
@@ -2387,7 +2392,7 @@ require attention to the order of corresponding targets.</p>
 </section>
 </section>
 <section id="directives">
-<h5><a class="toc-backref" href="#id89">Directives</a><a class="headerlink" href="#directives" title="永久链接至标题">¶</a></h5>
+<h5><a class="toc-backref" href="#id93">Directives</a><a class="headerlink" href="#directives" title="永久链接至标题">¶</a></h5>
 <p>Doctree elements: depend on the directive.</p>
 <p>Directives are an extension mechanism for reStructuredText, a way of
 adding support for new constructs without adding new primary syntax
@@ -2485,7 +2490,7 @@ directives will trigger level-3 (error) system messages.</p>
 </div>
 </section>
 <section id="substitution-definitions">
-<h5><a class="toc-backref" href="#id90">Substitution Definitions</a><a class="headerlink" href="#substitution-definitions" title="永久链接至标题">¶</a></h5>
+<h5><a class="toc-backref" href="#id94">Substitution Definitions</a><a class="headerlink" href="#substitution-definitions" title="永久链接至标题">¶</a></h5>
 <p>Doctree element: <a class="reference external" href="../doctree.html#substitution-definition">substitution_definition</a>.</p>
 <p>Substitution definitions are indicated by an explicit markup start
 (“.. “) followed by a vertical bar, the substitution text, another
@@ -2592,7 +2597,7 @@ possibility:</p>
 </div>
 <p>The “<a class="reference external" href="directives.html#image">image</a>” directive has been implemented.</p>
 </dd>
-<dt>Styles <a class="footnote-reference brackets" href="#id32" id="id31">15</a></dt><dd><p>Substitution references may be used to associate inline text with
+<dt>Styles <a class="footnote-reference brackets" href="#id36" id="id35">16</a></dt><dd><p>Substitution references may be used to associate inline text with
 an externally defined presentation style:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Even</span> <span class="o">|</span><span class="n">the</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">Texas</span><span class="o">|</span> <span class="ow">is</span> <span class="n">big</span><span class="o">.</span>
 
@@ -2604,7 +2609,7 @@ output format (CSS class name for HTML output, LaTeX style name
 for LaTeX, etc), or may be ignored for other output formats (such
 as plaintext).</p>
 <dl class="footnote brackets">
-<dt class="label" id="id32"><span class="brackets"><a class="fn-backref" href="#id31">15</a></span></dt>
+<dt class="label" id="id36"><span class="brackets"><a class="fn-backref" href="#id35">16</a></span></dt>
 <dd><p>There may be sufficient need for a “style” mechanism to
 warrant simpler syntax such as an extension to the interpreted
 text role syntax.  The substitution mechanism is cumbersome for
@@ -2662,7 +2667,7 @@ __ http://developer.java.sun.com/developer/earlyAccess/
 </dl>
 </section>
 <section id="comments">
-<h5><a class="toc-backref" href="#id91">Comments</a><a class="headerlink" href="#comments" title="永久链接至标题">¶</a></h5>
+<h5><a class="toc-backref" href="#id95">Comments</a><a class="headerlink" href="#comments" title="永久链接至标题">¶</a></h5>
 <p>Doctree element: <a class="reference external" href="../doctree.html#comment">comment</a>.</p>
 <p><a class="reference internal" href="#explicit-markup-blocks">Explicit markup blocks</a> that are not recognized as <a class="reference internal" href="#citations">citations</a>,
 <a class="reference internal" href="#directives">directives</a>, <a class="reference internal" href="#footnotes">footnotes</a>, <a class="reference internal" href="#hyperlink-targets">hyperlink targets</a>, or <a class="reference internal" href="#substitution-definitions">substitution
@@ -2696,7 +2701,7 @@ from the processed output.</p>
 </pre></div>
 </div>
 <section id="empty-comments">
-<h6><a class="toc-backref" href="#id92">Empty Comments</a><a class="headerlink" href="#empty-comments" title="永久链接至标题">¶</a></h6>
+<h6><a class="toc-backref" href="#id96">Empty Comments</a><a class="headerlink" href="#empty-comments" title="永久链接至标题">¶</a></h6>
 <p>An explicit markup start followed by a blank line and nothing else
 (apart from whitespace) is an “<span class="target" id="empty-comment">empty comment</span>”.  It serves to
 terminate a preceding construct, and does <strong>not</strong> consume any indented
@@ -2715,7 +2720,7 @@ construct, insert an unindented empty comment in-between:</p>
 </section>
 </section>
 <section id="implicit-hyperlink-targets">
-<h3><a class="toc-backref" href="#id93">Implicit Hyperlink Targets</a><a class="headerlink" href="#implicit-hyperlink-targets" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id97">Implicit Hyperlink Targets</a><a class="headerlink" href="#implicit-hyperlink-targets" title="永久链接至标题">¶</a></h3>
 <p>Implicit hyperlink targets are generated by section titles, footnotes,
 and citations, and may also be generated by extension constructs.
 Implicit hyperlink targets otherwise behave identically to explicit
@@ -2743,13 +2748,13 @@ calling software (such as the <a class="reference external" href="http://docutil
 links, giving reasons for the messages.</p>
 </section>
 <section id="inline-markup">
-<h3><a class="toc-backref" href="#id94">Inline Markup</a><a class="headerlink" href="#inline-markup" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id98">Inline Markup</a><a class="headerlink" href="#inline-markup" title="永久链接至标题">¶</a></h3>
 <p>In reStructuredText, inline markup applies to words or phrases within
 a text block.  The same whitespace and punctuation that serves to
 delimit words in written text is used to delimit the inline markup
 syntax constructs (see the <a class="reference internal" href="#inline-markup-recognition-rules">inline markup recognition rules</a> for
 details).  The text within inline markup may not begin or end with
-whitespace.  Arbitrary <a class="reference internal" href="#id41">character-level inline markup</a> is supported
+whitespace.  Arbitrary <a class="reference internal" href="#id45">character-level inline markup</a> is supported
 although not encouraged.  Inline markup cannot be nested.</p>
 <p>There are nine inline markup constructs.  Five of the constructs use
 identical start-strings and end-strings to indicate the markup:</p>
@@ -2771,7 +2776,7 @@ trailing “_” (single words)</p></li>
 markup.</p>
 <p>Inline comments are not supported.</p>
 <section id="inline-markup-recognition-rules">
-<h4><a class="toc-backref" href="#id95">Inline markup recognition rules</a><a class="headerlink" href="#inline-markup-recognition-rules" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id99">Inline markup recognition rules</a><a class="headerlink" href="#inline-markup-recognition-rules" title="永久链接至标题">¶</a></h4>
 <p>Inline markup start-strings and end-strings are only recognized if
 the following conditions are met:</p>
 <ol class="arabic simple">
@@ -2786,9 +2791,9 @@ an unescaped backslash (except for the end-string of <a class="reference interna
 See <a class="reference internal" href="#escaping-mechanism">Escaping Mechanism</a> above for details.</p></li>
 <li><p>If an inline markup start-string is immediately preceded by one of the
 ASCII characters <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">"</span> <span class="pre">&lt;</span> <span class="pre">(</span> <span class="pre">[</span> <span class="pre">{</span></code> or a similar
-non-ASCII character <a class="footnote-reference brackets" href="#openers" id="id33">16</a>, it must not be followed by the
+non-ASCII character <a class="footnote-reference brackets" href="#openers" id="id37">17</a>, it must not be followed by the
 corresponding closing character from <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">"</span> <span class="pre">&gt;</span> <span class="pre">)</span> <span class="pre">]</span> <span class="pre">}</span></code> or a similar
-non-ASCII character <a class="footnote-reference brackets" href="#closers" id="id34">17</a>. (For quotes, matching characters can
+non-ASCII character <a class="footnote-reference brackets" href="#closers" id="id38">18</a>. (For quotes, matching characters can
 be any of the <a class="reference external" href="http://en.wikipedia.org/wiki/Quotation_mark,_non-English_usage">quotation marks in international usage</a>.)</p></li>
 </ol>
 <p>If the configuration setting <a class="reference external" href="../../user/config.html#character-level-inline-markup">character-level-inline-markup</a> is False
@@ -2800,7 +2805,7 @@ immediately preceded by</p>
 <ul class="simple">
 <li><p>whitespace,</p></li>
 <li><p>one of the ASCII characters <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">:</span> <span class="pre">/</span> <span class="pre">'</span> <span class="pre">"</span> <span class="pre">&lt;</span> <span class="pre">(</span> <span class="pre">[</span> <span class="pre">{</span></code></p></li>
-<li><p>or a similar non-ASCII punctuation character. <a class="footnote-reference brackets" href="#pre-chars" id="id35">18</a></p></li>
+<li><p>or a similar non-ASCII punctuation character. <a class="footnote-reference brackets" href="#pre-chars" id="id39">19</a></p></li>
 </ul>
 </li>
 <li><p>Inline markup end-strings must end a text block or be immediately
@@ -2808,28 +2813,28 @@ followed by</p>
 <ul class="simple">
 <li><p>whitespace,</p></li>
 <li><p>one of the ASCII characters <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">.</span> <span class="pre">,</span> <span class="pre">:</span> <span class="pre">;</span> <span class="pre">!</span> <span class="pre">?</span> <span class="pre">\</span> <span class="pre">/</span> <span class="pre">'</span> <span class="pre">"</span> <span class="pre">)</span> <span class="pre">]</span> <span class="pre">}</span> <span class="pre">&gt;</span></code></p></li>
-<li><p>or a similar non-ASCII punctuation character. <a class="footnote-reference brackets" href="#post-chars" id="id36">19</a></p></li>
+<li><p>or a similar non-ASCII punctuation character. <a class="footnote-reference brackets" href="#post-chars" id="id40">20</a></p></li>
 </ul>
 </li>
 </ol>
 <dl class="footnote brackets">
-<dt class="label" id="openers"><span class="brackets"><a class="fn-backref" href="#id33">16</a></span></dt>
+<dt class="label" id="openers"><span class="brackets"><a class="fn-backref" href="#id37">17</a></span></dt>
 <dd><p><a class="reference external" href="http://www.unicode.org/Public/5.1.0/ucd/UCD.html#General_Category_Values">Unicode categories</a> <cite>Ps</cite> (Open), <cite>Pi</cite> (Initial quote),
-or <cite>Pf</cite> (Final quote). <a class="footnote-reference brackets" href="#uni-version" id="id37">20</a></p>
+or <cite>Pf</cite> (Final quote). <a class="footnote-reference brackets" href="#uni-version" id="id41">21</a></p>
 </dd>
-<dt class="label" id="closers"><span class="brackets"><a class="fn-backref" href="#id34">17</a></span></dt>
+<dt class="label" id="closers"><span class="brackets"><a class="fn-backref" href="#id38">18</a></span></dt>
 <dd><p>Unicode categories <cite>Pe</cite> (Close), <cite>Pi</cite> (Initial quote),
-or <cite>Pf</cite> (Final quote). <a class="footnote-reference brackets" href="#uni-version" id="id38">20</a></p>
+or <cite>Pf</cite> (Final quote). <a class="footnote-reference brackets" href="#uni-version" id="id42">21</a></p>
 </dd>
-<dt class="label" id="pre-chars"><span class="brackets"><a class="fn-backref" href="#id35">18</a></span></dt>
+<dt class="label" id="pre-chars"><span class="brackets"><a class="fn-backref" href="#id39">19</a></span></dt>
 <dd><p>Unicode categories <cite>Ps</cite> (Open), <cite>Pi</cite> (Initial quote),
-<cite>Pf</cite> (Final quote), <cite>Pd</cite> (Dash), or <cite>Po</cite> (Other). <a class="footnote-reference brackets" href="#uni-version" id="id39">20</a></p>
+<cite>Pf</cite> (Final quote), <cite>Pd</cite> (Dash), or <cite>Po</cite> (Other). <a class="footnote-reference brackets" href="#uni-version" id="id43">21</a></p>
 </dd>
-<dt class="label" id="post-chars"><span class="brackets"><a class="fn-backref" href="#id36">19</a></span></dt>
+<dt class="label" id="post-chars"><span class="brackets"><a class="fn-backref" href="#id40">20</a></span></dt>
 <dd><p>Unicode categories  <cite>Pe</cite> (Close), <cite>Pi</cite> (Initial quote),
-<cite>Pf</cite> (Final quote), <cite>Pd</cite> (Dash), or <cite>Po</cite> (Other). <a class="footnote-reference brackets" href="#uni-version" id="id40">20</a></p>
+<cite>Pf</cite> (Final quote), <cite>Pd</cite> (Dash), or <cite>Po</cite> (Other). <a class="footnote-reference brackets" href="#uni-version" id="id44">21</a></p>
 </dd>
-<dt class="label" id="uni-version"><span class="brackets">20</span><span class="fn-backref">(<a href="#id37">1</a>,<a href="#id38">2</a>,<a href="#id39">3</a>,<a href="#id40">4</a>)</span></dt>
+<dt class="label" id="uni-version"><span class="brackets">21</span><span class="fn-backref">(<a href="#id41">1</a>,<a href="#id42">2</a>,<a href="#id43">3</a>,<a href="#id44">4</a>)</span></dt>
 <dd><p>The category of some characters changed with the
 development of the Unicode standard.
 Docutils 0.13 uses <a class="reference external" href="http://www.unicode.org/Public/5.2.0/">Unicode version 5.2.0</a>.</p>
@@ -2874,7 +2879,7 @@ The examples breaking rules 6 and 7 above show which constructs may need
 special attention.</p>
 </section>
 <section id="recognition-order">
-<h4><a class="toc-backref" href="#id96">Recognition order</a><a class="headerlink" href="#recognition-order" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id100">Recognition order</a><a class="headerlink" href="#recognition-order" title="永久链接至标题">¶</a></h4>
 <p>Inline markup delimiter characters are used for multiple constructs,
 so to avoid ambiguity there must be a specific recognition order for
 each character.  The inline markup recognition order is as follows:</p>
@@ -2893,8 +2898,8 @@ recognized.</p></li>
 <li><p><a class="reference internal" href="#standalone-hyperlinks">Standalone hyperlinks</a> are the last to be recognized.</p></li>
 </ul>
 </section>
-<section id="id41">
-<h4><a class="toc-backref" href="#id97">Character-Level Inline Markup</a><a class="headerlink" href="#id41" title="永久链接至标题">¶</a></h4>
+<section id="id45">
+<h4><a class="toc-backref" href="#id101">Character-Level Inline Markup</a><a class="headerlink" href="#id45" title="永久链接至标题">¶</a></h4>
 <p>It is possible to mark up individual characters within a word with
 backslash escapes (see <a class="reference internal" href="#escaping-mechanism">Escaping Mechanism</a> above).  Backslash
 escapes can be used to allow arbitrary text to immediately follow
@@ -2921,7 +2926,7 @@ sparingly and only where absolutely necessary.</p>
 </div>
 </section>
 <section id="emphasis">
-<h4><a class="toc-backref" href="#id98">Emphasis</a><a class="headerlink" href="#emphasis" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id102">Emphasis</a><a class="headerlink" href="#emphasis" title="永久链接至标题">¶</a></h4>
 <p>Doctree element: <a class="reference internal" href="#emphasis">emphasis</a>.</p>
 <p>Start-string = end-string = “*”.</p>
 <p>Text enclosed by single asterisk characters is emphasized:</p>
@@ -2931,7 +2936,7 @@ sparingly and only where absolutely necessary.</p>
 <p>Emphasized text is typically displayed in italics.</p>
 </section>
 <section id="strong-emphasis">
-<h4><a class="toc-backref" href="#id99">Strong Emphasis</a><a class="headerlink" href="#strong-emphasis" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id103">Strong Emphasis</a><a class="headerlink" href="#strong-emphasis" title="永久链接至标题">¶</a></h4>
 <p>Doctree element: <a class="reference external" href="../doctree.html#strong">strong</a>.</p>
 <p>Start-string = end-string = “**”.</p>
 <p>Text enclosed by double-asterisks is emphasized strongly:</p>
@@ -2941,7 +2946,7 @@ sparingly and only where absolutely necessary.</p>
 <p>Strongly emphasized text is typically displayed in boldface.</p>
 </section>
 <section id="interpreted-text">
-<h4><a class="toc-backref" href="#id100">Interpreted Text</a><a class="headerlink" href="#interpreted-text" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id104">Interpreted Text</a><a class="headerlink" href="#interpreted-text" title="永久链接至标题">¶</a></h4>
 <p>Doctree element: depends on the explicit or implicit role and
 processing.</p>
 <p>Start-string = end-string = “`”.</p>
@@ -3001,7 +3006,7 @@ interpreted text. The following are recognized as field list items:</p>
 </div>
 </section>
 <section id="inline-literals">
-<h4><a class="toc-backref" href="#id101">Inline Literals</a><a class="headerlink" href="#inline-literals" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id105">Inline Literals</a><a class="headerlink" href="#inline-literals" title="永久链接至标题">¶</a></h4>
 <p>Doctree element: <a class="reference external" href="../doctree.html#literal">literal</a>.</p>
 <p>Start-string = end-string = “``”.</p>
 <p>Text enclosed by double-backquotes is treated as inline literals:</p>
@@ -3025,7 +3030,7 @@ floating-point numbers (without exponents).
 </div>
 </section>
 <section id="hyperlink-references">
-<h4><a class="toc-backref" href="#id102">Hyperlink References</a><a class="headerlink" href="#hyperlink-references" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id106">Hyperlink References</a><a class="headerlink" href="#hyperlink-references" title="永久链接至标题">¶</a></h4>
 <p>Doctree element: <a class="reference external" href="../doctree.html#reference">reference</a>.</p>
 <ul class="simple">
 <li><p>Named hyperlink references:</p>
@@ -3058,7 +3063,7 @@ in the document.  See <a class="reference internal" href="#hyperlink-targets">Hy
 match references to targets, but otherwise behave similarly to named
 hyperlinks.</p>
 <section id="embedded-uris-and-aliases">
-<h5><a class="toc-backref" href="#id103">Embedded URIs and Aliases</a><a class="headerlink" href="#embedded-uris-and-aliases" title="永久链接至标题">¶</a></h5>
+<h5><a class="toc-backref" href="#id107">Embedded URIs and Aliases</a><a class="headerlink" href="#embedded-uris-and-aliases" title="永久链接至标题">¶</a></h5>
 <p>A hyperlink reference may directly embed a target URI or (since
 Docutils 0.11) a hyperlink reference within angle brackets (“&lt;…&gt;”)
 as follows:</p>
@@ -3136,7 +3141,7 @@ to be read in processed form.</p>
 </section>
 </section>
 <section id="inline-internal-targets">
-<h4><a class="toc-backref" href="#id104">Inline Internal Targets</a><a class="headerlink" href="#inline-internal-targets" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id108">Inline Internal Targets</a><a class="headerlink" href="#inline-internal-targets" title="永久链接至标题">¶</a></h4>
 <p>Doctree element: <a class="reference external" href="../doctree.html#target">target</a>.</p>
 <p>Start-string = “_`”, end-string = “`”.</p>
 <p>Inline internal targets are the equivalent of explicit <a class="reference internal" href="#internal-hyperlink-targets">internal
@@ -3153,7 +3158,7 @@ may not be anonymous.</p>
 reference names.</p>
 </section>
 <section id="footnote-references">
-<h4><a class="toc-backref" href="#id105">Footnote References</a><a class="headerlink" href="#footnote-references" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id109">Footnote References</a><a class="headerlink" href="#footnote-references" title="永久链接至标题">¶</a></h4>
 <p>See also: <a class="reference internal" href="#footnotes">Footnotes</a></p>
 <p>Doctree element: <a class="reference external" href="../doctree.html#footnote-reference">footnote_reference</a>.</p>
 <p>Configuration settings:
@@ -3183,7 +3188,7 @@ is removed by default, if the <a class="reference external" href="../../user/con
 “superscript”.</p>
 </section>
 <section id="citation-references">
-<h4><a class="toc-backref" href="#id106">Citation References</a><a class="headerlink" href="#citation-references" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id110">Citation References</a><a class="headerlink" href="#citation-references" title="永久链接至标题">¶</a></h4>
 <p>See also: <a class="reference internal" href="#citations">Citations</a></p>
 <p>Doctree element: <a class="reference external" href="../doctree.html#citation-reference">citation_reference</a>.</p>
 <p>Start-string = “[”, end-string = “]_”.</p>
@@ -3197,7 +3202,7 @@ plus internal hyphens, underscores, and periods; no whitespace).</p>
 </div>
 </section>
 <section id="substitution-references">
-<h4><a class="toc-backref" href="#id107">Substitution References</a><a class="headerlink" href="#substitution-references" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id111">Substitution References</a><a class="headerlink" href="#substitution-references" title="永久链接至标题">¶</a></h4>
 <p>Doctree elements: <a class="reference external" href="../doctree.html#substitution-reference">substitution_reference</a>, <a class="reference external" href="../doctree.html#reference">reference</a>.</p>
 <p>Start-string = “|”, end-string = “|” (optionally followed by “_” or
 “__”).</p>
@@ -3220,10 +3225,10 @@ definitions produce inline-compatible elements.</p>
 </div>
 </section>
 <section id="standalone-hyperlinks">
-<span id="standalone-hyperlink"></span><h4><a class="toc-backref" href="#id108">Standalone Hyperlinks</a><a class="headerlink" href="#standalone-hyperlinks" title="永久链接至标题">¶</a></h4>
+<span id="standalone-hyperlink"></span><h4><a class="toc-backref" href="#id112">Standalone Hyperlinks</a><a class="headerlink" href="#standalone-hyperlinks" title="永久链接至标题">¶</a></h4>
 <p>Doctree element: <a class="reference external" href="../doctree.html#reference">reference</a>.</p>
 <p>No start-string or end-string.</p>
-<p>A URI (absolute URI <a class="footnote-reference brackets" href="#uri" id="id42">21</a> or standalone email address) within a text
+<p>A URI (absolute URI <a class="footnote-reference brackets" href="#uri" id="id46">22</a> or standalone email address) within a text
 block is treated as a general external hyperlink with the URI itself
 as the link’s text.  For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">See</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">python</span><span class="o">.</span><span class="n">org</span> <span class="k">for</span> <span class="n">info</span><span class="o">.</span>
@@ -3281,7 +3286,7 @@ Backslashes may be used in URIs to escape markup characters,
 specifically asterisks (“*”) and underscores (“_”) which are valid URI
 characters (see <a class="reference internal" href="#escaping-mechanism">Escaping Mechanism</a> above).</p>
 <dl class="footnote brackets">
-<dt class="label" id="uri"><span class="brackets"><a class="fn-backref" href="#id42">21</a></span></dt>
+<dt class="label" id="uri"><span class="brackets"><a class="fn-backref" href="#id46">22</a></span></dt>
 <dd><p>Uniform Resource Identifier.  URIs are a general form of
 URLs (Uniform Resource Locators).  For the syntax of URIs see
 <a class="reference external" href="http://www.rfc-editor.org/rfc/rfc2396.txt">RFC2396</a> and <a class="reference external" href="http://www.rfc-editor.org/rfc/rfc2732.txt">RFC2732</a>.</p>
@@ -3290,7 +3295,7 @@ URLs (Uniform Resource Locators).  For the syntax of URIs see
 </section>
 </section>
 <section id="units">
-<h3><a class="toc-backref" href="#id109">Units</a><a class="headerlink" href="#units" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id113">Units</a><a class="headerlink" href="#units" title="永久链接至标题">¶</a></h3>
 <p>(New in Docutils 0.3.10.)</p>
 <p>All measures consist of a positive floating point number in standard
 (non-scientific) notation and a unit, possibly separated by one or
@@ -3298,7 +3303,7 @@ more spaces.</p>
 <p>Units are only supported where explicitly mentioned in the reference
 manuals.</p>
 <section id="length-units">
-<h4><a class="toc-backref" href="#id110">Length Units</a><a class="headerlink" href="#length-units" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id114">Length Units</a><a class="headerlink" href="#length-units" title="永久链接至标题">¶</a></h4>
 <p>The following length units are supported by the reStructuredText
 parser:</p>
 <ul class="simple">
@@ -3307,14 +3312,14 @@ parser:</p>
 <li><p>mm (millimeters; 1 mm = 1/1000 m)</p></li>
 <li><p>cm (centimeters; 1 cm = 10 mm)</p></li>
 <li><p>in (inches; 1 in = 2.54 cm = 96 px)</p></li>
-<li><p>px (pixels, 1 px = 1/96 in) <a class="footnote-reference brackets" href="#id44" id="id43">22</a></p></li>
+<li><p>px (pixels, 1 px = 1/96 in) <a class="footnote-reference brackets" href="#id48" id="id47">23</a></p></li>
 <li><p>pt (points; 1 pt = 1/72 in)</p></li>
 <li><p>pc (picas; 1 pc = 1/6 in = 12 pt)</p></li>
 </ul>
 <p>This set corresponds to the <a class="reference external" href="http://www.w3.org/TR/CSS2/syndata.html#length-units">length units in CSS2</a> (a subset of <a class="reference external" href="http://www.w3.org/TR/css-values-3/#absolute-lengths">length
 units in CSS3</a>).</p>
 <dl class="footnote brackets">
-<dt class="label" id="id44"><span class="brackets"><a class="fn-backref" href="#id43">22</a></span></dt>
+<dt class="label" id="id48"><span class="brackets"><a class="fn-backref" href="#id47">23</a></span></dt>
 <dd><p>In LaTeX, the default definition is 1 px = 1/72 in (cf. <a class="reference external" href="../../user/latex.html#size-of-a-pixel">How to
 configure the size of a pixel</a> in the LaTeX writer documentation).</p>
 </dd>
@@ -3325,7 +3330,7 @@ default (e.g. “px” with HTML, “pt” with <cite>latex2e</cite>). See the w
 specific documentation in the <a class="reference external" href="../../user/">user doc</a> for details.</p>
 </section>
 <section id="percentage-units">
-<h4><a class="toc-backref" href="#id111">Percentage Units</a><a class="headerlink" href="#percentage-units" title="永久链接至标题">¶</a></h4>
+<h4><a class="toc-backref" href="#id115">Percentage Units</a><a class="headerlink" href="#percentage-units" title="永久链接至标题">¶</a></h4>
 <p>Percentage values have a percent sign (“%”) as unit.  Percentage
 values are relative to other values, depending on the context in which
 they occur.</p>
@@ -3333,7 +3338,7 @@ they occur.</p>
 </section>
 </section>
 <section id="error-handling">
-<h2><a class="toc-backref" href="#id112">Error Handling</a><a class="headerlink" href="#error-handling" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id116">Error Handling</a><a class="headerlink" href="#error-handling" title="永久链接至标题">¶</a></h2>
 <p>Doctree elements: <a class="reference external" href="../doctree.html#system-message">system_message</a>, <a class="reference external" href="../doctree.html#problematic">problematic</a>.</p>
 <p>Markup errors are handled according to the specification in <a class="reference external" href="../../peps/pep-0258.html">PEP
 258</a>.</p>
@@ -3457,7 +3462,7 @@ they occur.</p>
 <li><a class="reference internal" href="#inline-markup">Inline Markup</a><ul>
 <li><a class="reference internal" href="#inline-markup-recognition-rules">Inline markup recognition rules</a></li>
 <li><a class="reference internal" href="#recognition-order">Recognition order</a></li>
-<li><a class="reference internal" href="#id41">Character-Level Inline Markup</a></li>
+<li><a class="reference internal" href="#id45">Character-Level Inline Markup</a></li>
 <li><a class="reference internal" href="#emphasis">Emphasis</a></li>
 <li><a class="reference internal" href="#strong-emphasis">Strong Emphasis</a></li>
 <li><a class="reference internal" href="#interpreted-text">Interpreted Text</a></li>

@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 <link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="Docutils 错误" href="BUGS.html" /><link rel="prev" title="Docutils 0.18.1b.dev 自述" href="README.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-4.3.0, furo 2021.11.12"/>
+    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-4.3.0, furo 2021.11.15"/>
         <title>1 Docutils 常见问题（Frequently Asked Questions） - docutilsx 0.0.1 文档</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=cb850144ff767e23c5b2a31c47cdfe5847ae013d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=916d6ed8f59335acffa15474ff504849343d4c76" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
     
     
@@ -247,7 +247,7 @@
 <li class="toctree-l3"><a class="reference internal" href="docs/dev/policies.html">Docutils Project Policies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/dev/website.html">Docutils Web Site</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/dev/release.html">Docutils Release Procedure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docs/dev/repository.html">The Docutils Version Repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/dev/repository.html">Docutils 版本库</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/dev/testing.html">Docutils Testing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/dev/semantics.html">Docstring Semantics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="docs/dev/pysource.html">Python Source Reader</a></li>
@@ -316,16 +316,16 @@
 <li><p><a class="reference internal" href="#docutils" id="id25"><span class="sectnum">1.1</span> Docutils</a></p>
 <ul class="auto-toc">
 <li><p><a class="reference internal" href="#what-is-docutils" id="id26"><span class="sectnum">1.1.1</span> 什么是 Docutils？</a></p></li>
-<li><p><a class="reference internal" href="#why-is-it-called-docutils" id="id27"><span class="sectnum">1.1.2</span> Why is it called “Docutils”?</a></p></li>
-<li><p><a class="reference internal" href="#is-there-a-gui-authoring-environment-for-docutils" id="id28"><span class="sectnum">1.1.3</span> Is there a GUI authoring environment for Docutils?</a></p></li>
-<li><p><a class="reference internal" href="#what-is-the-status-of-the-docutils-project" id="id29"><span class="sectnum">1.1.4</span> What is the status of the Docutils project?</a></p></li>
-<li><p><a class="reference internal" href="#what-is-the-docutils-project-release-policy" id="id30"><span class="sectnum">1.1.5</span> What is the Docutils project release policy?</a></p></li>
-<li><p><a class="reference internal" href="#how-can-i-get-a-new-feature-into-docutils" id="id31"><span class="sectnum">1.1.6</span> How can I get a new feature into Docutils?</a></p></li>
+<li><p><a class="reference internal" href="#why-is-it-called-docutils" id="id27"><span class="sectnum">1.1.2</span> 为什么叫 “Docutils” ？</a></p></li>
+<li><p><a class="reference internal" href="#is-there-a-gui-authoring-environment-for-docutils" id="id28"><span class="sectnum">1.1.3</span> Docutils 有一个 GUI 创作环境吗？</a></p></li>
+<li><p><a class="reference internal" href="#what-is-the-status-of-the-docutils-project" id="id29"><span class="sectnum">1.1.4</span> Docutils 项目的现状如何？</a></p></li>
+<li><p><a class="reference internal" href="#what-is-the-docutils-project-release-policy" id="id30"><span class="sectnum">1.1.5</span> Docutils 项目的发布政策是什么？</a></p></li>
+<li><p><a class="reference internal" href="#how-can-i-get-a-new-feature-into-docutils" id="id31"><span class="sectnum">1.1.6</span> 如何将一个新功能纳入 Docutils？</a></p></li>
 </ul>
 </li>
 <li><p><a class="reference internal" href="#restructuredtext" id="id32"><span class="sectnum">1.2</span> reStructuredText</a></p>
 <ul class="auto-toc">
-<li><p><a class="reference internal" href="#what-is-restructuredtext" id="id33"><span class="sectnum">1.2.1</span> What is reStructuredText?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-restructuredtext" id="id33"><span class="sectnum">1.2.1</span> 什么是 reStructuredText？</a></p></li>
 <li><p><a class="reference internal" href="#why-is-it-called-restructuredtext" id="id34"><span class="sectnum">1.2.2</span> Why is it called “reStructuredText”?</a></p></li>
 <li><p><a class="reference internal" href="#what-s-the-standard-abbreviation-for-restructuredtext" id="id35"><span class="sectnum">1.2.3</span> What’s the standard abbreviation for “reStructuredText”?</a></p></li>
 <li><p><a class="reference internal" href="#what-s-the-standard-filename-extension-for-a-restructuredtext-file" id="id36"><span class="sectnum">1.2.4</span> What’s the standard filename extension for a reStructuredText file?</a></p></li>
@@ -382,79 +382,48 @@
 <h2><a class="toc-backref" href="#id25"><span class="sectnum">1.1</span> Docutils</a><a class="headerlink" href="#docutils" title="永久链接至标题">¶</a></h2>
 <section id="what-is-docutils">
 <h3><a class="toc-backref" href="#id26"><span class="sectnum">1.1.1</span> 什么是 Docutils？</a><a class="headerlink" href="#what-is-docutils" title="永久链接至标题">¶</a></h3>
-<p><a class="reference external" href="https://docutils.sourceforge.io/">Docutils</a> is a system for processing plaintext documentation into
-useful formats, such as HTML, XML, and LaTeX.  It supports multiple
-types of input, such as standalone files, <a class="reference external" href="http://www.python.org/peps/pep-0012.html">PEPs (Python Enhancement
-Proposals)</a>, and string input. Client code may add other input types,
-e.g. <a class="reference external" href="http://sphinx.pocoo.org/index.html">Sphinx</a> comes with an extension to extract inline documentation
-from Python modules and packages.</p>
-<p>The Docutils distribution consists of:</p>
+<p><a class="reference external" href="https://docutils.sourceforge.io/">Docutils</a> 是一个将纯文本文件处理成有用格式的系统，如 HTML、XML 和 LaTeX。它支持多种类型的输入，如独立文件、<a class="reference external" href="http://www.python.org/peps/pep-0012.html">PEPs（Python 增强建议）</a> 和字符串输入。客户端代码可以添加其他的输入类型，例如，<a class="reference external" href="http://sphinx.pocoo.org/index.html">Sphinx</a> 带有一个扩展，可以从 Python 模块和包中提取内联文档。</p>
+<p>Docutils 发行版由以下部分组成：</p>
 <ul class="simple">
-<li><p>a library (the “docutils” package), which <a class="reference external" href="docs/api/publisher.html">can be used by client
-code</a>;</p></li>
-<li><p>several <a class="reference external" href="docs/user/tools.html">front-end tools</a> (such as <code class="docutils literal notranslate"><span class="pre">rst2html.py</span></code>, which converts
-reStructuredText input into HTML output);</p></li>
-<li><p>a <a class="reference external" href="docs/dev/testing.html">test suite</a>; and</p></li>
-<li><p><a class="reference external" href="docs/index.html">documentation</a>.</p></li>
+<li><p>一个库（”docutils”包），<a class="reference external" href="docs/api/publisher.html">可以被客户代码使用</a>。</p></li>
+<li><p>几个 <a class="reference external" href="docs/user/tools.html">前端工具</a> （如 <code class="docutils literal notranslate"><span class="pre">rst2html.py</span></code>，它将 reStructuredText 输入转换为 HTML 输出）；</p></li>
+<li><p>一个 <a class="reference external" href="docs/dev/testing.html">测试套件</a> ；以及</p></li>
+<li><p><a class="reference external" href="docs/index.html">文档</a> 。</p></li>
 </ul>
-<p>For an overview of the Docutils project implementation, see <a class="reference external" href="http://www.python.org/peps/pep-0258.html">PEP
-258</a>, “Docutils Design Specification”.</p>
-<p>Docutils is implemented in <a class="reference external" href="http://www.python.org/">Python</a>.</p>
+<p>关于 Docutils 项目实现的概述，见 <a class="reference external" href="http://www.python.org/peps/pep-0258.html">PEP 258</a>，”Docutils 设计规范”。</p>
+<p>Docutils 是用 <a class="reference external" href="http://www.python.org/">Python</a> 实现的。</p>
 </section>
 <section id="why-is-it-called-docutils">
-<h3><a class="toc-backref" href="#id27"><span class="sectnum">1.1.2</span> Why is it called “Docutils”?</a><a class="headerlink" href="#why-is-it-called-docutils" title="永久链接至标题">¶</a></h3>
-<p>Docutils is short for “Python Documentation Utilities”.  The name
-“Docutils” was inspired by “Distutils”, the Python Distribution
-Utilities architected by Greg Ward, a component of Python’s standard
-library.</p>
-<p>The earliest known use of the term “docutils” in a Python context was
-a <a class="reference external" href="http://mail.python.org/pipermail/doc-sig/1999-December/000878.html">fleeting reference</a> in a message by Fred Drake on 1999-12-02 in
-the Python Doc-SIG mailing list.  It was suggested <a class="reference external" href="http://mail.python.org/pipermail/doc-sig/2000-November/001252.html">as a project
-name</a> on 2000-11-27 on Doc-SIG, again by Fred Drake, in response to
-a question from Tony “Tibs” Ibbs: “What do we want to <em>call</em> this
-thing?”.  This was shortly after David Goodger first <a class="reference external" href="http://mail.python.org/pipermail/doc-sig/2000-November/001239.html">announced
-reStructuredText</a> on Doc-SIG.</p>
-<p>Tibs used the name “Docutils” for <a class="reference external" href="http://homepage.ntlworld.com/tibsnjoan/docutils/STpy.html">his effort</a> “to document what the
-Python docutils package should support, with a particular emphasis on
-documentation strings”.  Tibs joined the current project (and its
-predecessors) and graciously donated the name.</p>
-<p>For more history of reStructuredText and the Docutils project, see <a class="reference external" href="docs/ref/rst/introduction.html">An
-Introduction to reStructuredText</a>.</p>
-<p>Please note that the name is “Docutils”, not “DocUtils” or “Doc-Utils”
-or any other variation.  It is pronounced as in “DOCumentation
-UTILitieS”, with emphasis on the first syllable.</p>
+<h3><a class="toc-backref" href="#id27"><span class="sectnum">1.1.2</span> 为什么叫 “Docutils” ？</a><a class="headerlink" href="#why-is-it-called-docutils" title="永久链接至标题">¶</a></h3>
+<p>Docutils 是 “Python Documentation Utilities” 的简称。Docutils 这个名字的灵感来自于 Greg Ward 设计的 Python 发布工具，它是 Python 标准库的一个组成部分。</p>
+<p>在 Python 上下文中最早使用的术语是 Fred Drake 在 1999 年 12 月 2 日在 Python Doc-SIG 邮件列表中提到的 <a class="reference external" href="http://mail.python.org/pipermail/doc-sig/1999-December/000878.html">fleeting reference</a>。2000 年 11 月 27 日，Fred Drake 在 Doc-SIG 上建议将其 <a class="reference external" href="http://mail.python.org/pipermail/doc-sig/2000-November/001252.html">作为一个项目名称</a>，这也是对 Tony Ibbs 的问题：”What do we want to <em>call</em> this thing?” 的回应。这是在 David Goodger 第一次在 Doc-SIG 上 <a class="reference external" href="http://mail.python.org/pipermail/doc-sig/2000-November/001239.html">宣布 reStructuredText</a> 后不久。</p>
+<p>Tibs 用 “Docutils” 这个名字来形容 <a class="reference external" href="http://homepage.ntlworld.com/tibsnjoan/docutils/STpy.html">他的努力</a> 记录 Python docutils 包应该支持什么，特别强调文档字符串。Tibs 加入了当前的项目（以及它的前身），并慷慨地捐出了这个名字。</p>
+<p>关于 reStructuredText 和 Docutils 项目的更多历史，请参见 <a class="reference external" href="docs/ref/rst/introduction.html">reStructuredText 简介</a>。</p>
+<p>请注意，这个名字是 “Docutils”，而不是 “DocUtils” 或 “Doc-Utils” 或任何其他变化。它的发音与 “DOCumentation UTILitieS” 相同，重点在第一个音节。</p>
 </section>
 <section id="is-there-a-gui-authoring-environment-for-docutils">
-<h3><a class="toc-backref" href="#id28"><span class="sectnum">1.1.3</span> Is there a GUI authoring environment for Docutils?</a><a class="headerlink" href="#is-there-a-gui-authoring-environment-for-docutils" title="永久链接至标题">¶</a></h3>
-<p>See the links to <a class="reference external" href="docs/user/links.html#editors">editors</a> supporting reStructuredText.</p>
+<h3><a class="toc-backref" href="#id28"><span class="sectnum">1.1.3</span> Docutils 有一个 GUI 创作环境吗？</a><a class="headerlink" href="#is-there-a-gui-authoring-environment-for-docutils" title="永久链接至标题">¶</a></h3>
+<p>参见支持 reStructuredText 的 <a class="reference external" href="docs/user/links.html#editors">编辑器</a> 链接。</p>
 </section>
 <section id="what-is-the-status-of-the-docutils-project">
-<h3><a class="toc-backref" href="#id29"><span class="sectnum">1.1.4</span> What is the status of the Docutils project?</a><a class="headerlink" href="#what-is-the-status-of-the-docutils-project" title="永久链接至标题">¶</a></h3>
-<p>Docutils is mainly stable, with documented APIs and architecture
-subject to change after announcement and a transition period.</p>
-<p>We fix bugs as they are reported.  This means the code from the
-<a class="reference external" href="docs/dev/repository.html">repository</a> (or the <a class="reference external" href="https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/">snapshots</a>) is the most stable as well as the most
-featureful most of the time.</p>
+<h3><a class="toc-backref" href="#id29"><span class="sectnum">1.1.4</span> Docutils 项目的现状如何？</a><a class="headerlink" href="#what-is-the-status-of-the-docutils-project" title="永久链接至标题">¶</a></h3>
+<p>Docutils 主要是稳定的，有记录的 API 和架构在公布后会有变化，有一个过渡期。</p>
+<p>我们在收到报告后修复错误。这意味着来自 <a class="reference external" href="https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/">仓库</a> 的代码（或 <a class="reference external" href="docs/dev/repository.html">快照</a>）在大多数时候是最稳定的，也是最有特色的。</p>
 </section>
 <section id="what-is-the-docutils-project-release-policy">
-<h3><a class="toc-backref" href="#id30"><span class="sectnum">1.1.5</span> What is the Docutils project release policy?</a><a class="headerlink" href="#what-is-the-docutils-project-release-policy" title="永久链接至标题">¶</a></h3>
-<p>Besides the regular <a class="reference external" href="https://pypi.org/project/docutils/#history">releases</a>, we provide automatically-generated
-<a class="reference external" href="https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/">snapshots</a> which always contain the latest code from the <a class="reference external" href="docs/dev/repository.html">repository</a>.
-As the project matures, we may formalize on a
-stable/development-branch scheme, but we’re not using anything like
-that yet.</p>
+<h3><a class="toc-backref" href="#id30"><span class="sectnum">1.1.5</span> Docutils 项目的发布政策是什么？</a><a class="headerlink" href="#what-is-the-docutils-project-release-policy" title="永久链接至标题">¶</a></h3>
+<p>除了定期 <a class="reference external" href="https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/">发布</a>，我们还提供了自动生成的 <a class="reference external" href="https://pypi.org/project/docutils/#history">快照</a>，它总是包含来自 <a class="reference external" href="docs/dev/repository.html">存储库</a> 的最新代码。随着项目的成熟，我们可能会正式确定一个稳定/开发分支的方案，但我们还没有使用这样的东西。</p>
 </section>
 <section id="how-can-i-get-a-new-feature-into-docutils">
-<h3><a class="toc-backref" href="#id31"><span class="sectnum">1.1.6</span> How can I get a new feature into Docutils?</a><a class="headerlink" href="#how-can-i-get-a-new-feature-into-docutils" title="永久链接至标题">¶</a></h3>
-<p>Present your idea at the <a class="reference external" href="docs/user/mailing-lists.html#docutils-develop">docutils-develop</a> mailing list
-or file a ticket at Docutils’ <a class="reference external" href="http://sourceforge.net/p/docutils/feature-requests/">feature request tracker</a>.</p>
-<p>See the <a class="reference external" href="docs/dev/policies.html#how-to-get-a-new-feature-into-docutils">Docutils Policies</a> for a more detailed answer.</p>
+<h3><a class="toc-backref" href="#id31"><span class="sectnum">1.1.6</span> 如何将一个新功能纳入 Docutils？</a><a class="headerlink" href="#how-can-i-get-a-new-feature-into-docutils" title="永久链接至标题">¶</a></h3>
+<p>在 <a class="reference external" href="docs/user/mailing-lists.html#docutils-develop">docutils-develop</a> 邮件列表中提出你的想法，或者在 Docutils 的 <a class="reference external" href="http://sourceforge.net/p/docutils/feature-requests/">功能请求跟踪器</a> 中提交一张票。</p>
+<p>请参阅 <a class="reference external" href="docs/dev/policies.html#how-to-get-a-new-feature-into-docutils">Docutils 政策</a> 以获得更详细的答案。</p>
 </section>
 </section>
 <section id="restructuredtext">
 <h2><a class="toc-backref" href="#id32"><span class="sectnum">1.2</span> reStructuredText</a><a class="headerlink" href="#restructuredtext" title="永久链接至标题">¶</a></h2>
 <section id="what-is-restructuredtext">
-<h3><a class="toc-backref" href="#id33"><span class="sectnum">1.2.1</span> What is reStructuredText?</a><a class="headerlink" href="#what-is-restructuredtext" title="永久链接至标题">¶</a></h3>
+<h3><a class="toc-backref" href="#id33"><span class="sectnum">1.2.1</span> 什么是 reStructuredText？</a><a class="headerlink" href="#what-is-restructuredtext" title="永久链接至标题">¶</a></h3>
 <p><a class="reference external" href="https://docutils.sourceforge.io/rst.html">reStructuredText</a> is an easy-to-read, what-you-see-is-what-you-get
 plaintext markup syntax and parser system.  The reStructuredText
 parser is a component of <a class="reference external" href="https://docutils.sourceforge.io/">Docutils</a>.  reStructuredText is a revision
@@ -1394,15 +1363,15 @@ the reStructuredText markup.</p>
 <li><a class="reference internal" href="#"><span class="sectnum">1</span> Docutils 常见问题（Frequently Asked Questions）</a><ul>
 <li><a class="reference internal" href="#docutils"><span class="sectnum">1.1</span> Docutils</a><ul>
 <li><a class="reference internal" href="#what-is-docutils"><span class="sectnum">1.1.1</span> 什么是 Docutils？</a></li>
-<li><a class="reference internal" href="#why-is-it-called-docutils"><span class="sectnum">1.1.2</span> Why is it called “Docutils”?</a></li>
-<li><a class="reference internal" href="#is-there-a-gui-authoring-environment-for-docutils"><span class="sectnum">1.1.3</span> Is there a GUI authoring environment for Docutils?</a></li>
-<li><a class="reference internal" href="#what-is-the-status-of-the-docutils-project"><span class="sectnum">1.1.4</span> What is the status of the Docutils project?</a></li>
-<li><a class="reference internal" href="#what-is-the-docutils-project-release-policy"><span class="sectnum">1.1.5</span> What is the Docutils project release policy?</a></li>
-<li><a class="reference internal" href="#how-can-i-get-a-new-feature-into-docutils"><span class="sectnum">1.1.6</span> How can I get a new feature into Docutils?</a></li>
+<li><a class="reference internal" href="#why-is-it-called-docutils"><span class="sectnum">1.1.2</span> 为什么叫 “Docutils” ？</a></li>
+<li><a class="reference internal" href="#is-there-a-gui-authoring-environment-for-docutils"><span class="sectnum">1.1.3</span> Docutils 有一个 GUI 创作环境吗？</a></li>
+<li><a class="reference internal" href="#what-is-the-status-of-the-docutils-project"><span class="sectnum">1.1.4</span> Docutils 项目的现状如何？</a></li>
+<li><a class="reference internal" href="#what-is-the-docutils-project-release-policy"><span class="sectnum">1.1.5</span> Docutils 项目的发布政策是什么？</a></li>
+<li><a class="reference internal" href="#how-can-i-get-a-new-feature-into-docutils"><span class="sectnum">1.1.6</span> 如何将一个新功能纳入 Docutils？</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#restructuredtext"><span class="sectnum">1.2</span> reStructuredText</a><ul>
-<li><a class="reference internal" href="#what-is-restructuredtext"><span class="sectnum">1.2.1</span> What is reStructuredText?</a></li>
+<li><a class="reference internal" href="#what-is-restructuredtext"><span class="sectnum">1.2.1</span> 什么是 reStructuredText？</a></li>
 <li><a class="reference internal" href="#why-is-it-called-restructuredtext"><span class="sectnum">1.2.2</span> Why is it called “reStructuredText”?</a></li>
 <li><a class="reference internal" href="#what-s-the-standard-abbreviation-for-restructuredtext"><span class="sectnum">1.2.3</span> What’s the standard abbreviation for “reStructuredText”?</a></li>
 <li><a class="reference internal" href="#what-s-the-standard-filename-extension-for-a-restructuredtext-file"><span class="sectnum">1.2.4</span> What’s the standard filename extension for a reStructuredText file?</a></li>

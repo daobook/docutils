@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 <link rel="index" title="索引" href="../../../genindex.html" /><link rel="search" title="搜索" href="../../../search.html" /><link rel="next" title="Docutils Testing" href="testing.html" /><link rel="prev" title="Docutils Release Procedure" href="release.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.png"/><meta name="generator" content="sphinx-4.3.0, furo 2021.11.12"/>
-        <title>The Docutils Version Repository - docutilsx 0.0.1 文档</title>
+    <link rel="shortcut icon" href="../../../_static/favicon.png"/><meta name="generator" content="sphinx-4.3.0, furo 2021.11.15"/>
+        <title>Docutils 版本库 - docutilsx 0.0.1 文档</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=cb850144ff767e23c5b2a31c47cdfe5847ae013d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=916d6ed8f59335acffa15474ff504849343d4c76" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
     
     
@@ -247,7 +247,7 @@
 <li class="toctree-l3"><a class="reference internal" href="policies.html">Docutils Project Policies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="website.html">Docutils Web Site</a></li>
 <li class="toctree-l3"><a class="reference internal" href="release.html">Docutils Release Procedure</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">The Docutils Version Repository</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Docutils 版本库</a></li>
 <li class="toctree-l3"><a class="reference internal" href="testing.html">Docutils Testing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="semantics.html">Docstring Semantics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pysource.html">Python Source Reader</a></li>
@@ -293,7 +293,7 @@
         </div>
         <article role="main">
           <section id="the-docutils-version-repository">
-<h1>The <a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a> Version Repository<a class="headerlink" href="#the-docutils-version-repository" title="永久链接至标题">¶</a></h1>
+<h1><a class="reference internal" href="#docutils">Docutils</a> 版本库<a class="headerlink" href="#the-docutils-version-repository" title="永久链接至标题">¶</a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Author</dt>
 <dd class="field-odd"><p>Lea Wiemann, Docutils developers</p>
@@ -312,140 +312,109 @@
 </dd>
 </dl>
 <div class="admonition-quick-instructions admonition">
-<p class="admonition-title">Quick Instructions</p>
-<p>To get a checkout of the Docutils source tree (with the
-sandboxes) with <a class="reference external" href="https://subversion.apache.org/">SVN</a>, type</p>
+<p class="admonition-title">快速说明</p>
+<p>要想通过 <a class="reference external" href="https://subversion.apache.org/">SVN</a> 获得 Docutils 源码树（含沙盒）的签出，请输入</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">checkout</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">svn</span><span class="o">.</span><span class="n">code</span><span class="o">.</span><span class="n">sf</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">p</span><span class="o">/</span><span class="n">docutils</span><span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">trunk</span> <span class="n">docutils</span><span class="o">-</span><span class="n">code</span>
 </pre></div>
 </div>
-<p>Users of <a class="reference external" href="http://git-scm.com/">Git</a> can clone a mirror of the docutils repository with</p>
+<p><a class="reference external" href="http://git-scm.com/">Git</a> 的用户可以通过以下方式克隆 docutils 仓库的一个镜像</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="ow">or</span><span class="o">.</span><span class="n">cz</span><span class="o">/</span><span class="n">docutils</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
-<p>If you are going to commit changes to the repository, please read
-the <strong>whole document</strong>, especially the section “<a class="reference internal" href="#information-for-developers">Information for
-Developers</a>”!</p>
+<p>如果你要向版本库提交修改，请阅读 <strong>整个文档</strong>，特别是 <a class="reference internal" href="#information-for-developers">开发人员信息</a> 部分！</p>
 </div>
-<p>Docutils uses a <a class="reference external" href="https://subversion.apache.org/">Subversion</a> (SVN) repository located at
-<code class="docutils literal notranslate"><span class="pre">docutils.svn.sourceforge.net</span></code>.</p>
-<p>While Unix and Mac OS X users will probably prefer the standard
-Subversion command line interface, Windows user may want to try
-<a class="reference external" href="https://tortoisesvn.net/">TortoiseSVN</a>, a convenient explorer extension.  The instructions apply
-analogously.</p>
-<p>There is a <a class="reference external" href="http://git-scm.com/">Git</a> mirror at <a class="reference external" href="http://repo.or.cz/docutils.git">http://repo.or.cz/docutils.git</a> providing
-<a class="reference internal" href="#web-access">web access</a> and the base for <a class="reference internal" href="#creating-a-local-git-clone">creating a local Git clone</a>.
-<a class="footnote-reference brackets" href="#github-mirrors" id="id1">1</a></p>
-<p>For the project policy on repository use (check-in requirements,
-branching, etc.), please see the <a class="reference external" href="policies.html#subversion-repository">Docutils Project Policies</a>.</p>
+<p>Docutils 使用位于 <code class="docutils literal notranslate"><span class="pre">docutils.svn.sourceforge.net</span></code> 的 <a class="reference external" href="https://subversion.apache.org/">Subversion</a> （SVN）仓库。</p>
+<p>虽然 Unix 和 Mac OS X 用户可能更喜欢标准的 Subversion 命令行界面，但 Windows 用户可能想试试 <a class="reference external" href="https://tortoisesvn.net/">TortoiseSVN</a>，一个方便的资源管理器扩展。说明也是类似的。</p>
+<p>在 <a class="reference external" href="http://repo.or.cz/docutils.git">http://repo.or.cz/docutils.git</a>，有一个 <a class="reference external" href="http://git-scm.com/">Git</a> 镜像，提供 <a class="reference internal" href="#web-access">网络访问</a> 和 <a class="reference internal" href="#web-access">创建本地 Git 克隆</a> 的基础。<a class="footnote-reference brackets" href="#github-mirrors" id="id1">1</a></p>
+<p>关于版本库使用的项目政策（签入要求、分支等），请参见 <a class="reference external" href="policies.html#subversion-repository">Docutils 项目政策</a>。</p>
 <div class="contents topic" id="id3">
 <p class="topic-title">目录</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#the-docutils-version-repository" id="id6">The Docutils Version Repository</a></p>
+<li><p><a class="reference internal" href="#the-docutils-version-repository" id="id6">Docutils 版本库</a></p>
 <ul>
-<li><p><a class="reference internal" href="#accessing-the-repository" id="id7">Accessing the Repository</a></p>
+<li><p><a class="reference internal" href="#accessing-the-repository" id="id7">访问存储库</a></p>
 <ul>
-<li><p><a class="reference internal" href="#web-access" id="id8">Web Access</a></p></li>
-<li><p><a class="reference internal" href="#repository-access-methods" id="id9">Repository Access Methods</a></p></li>
-<li><p><a class="reference internal" href="#checking-out-the-repository" id="id10">Checking Out the Repository</a></p></li>
-<li><p><a class="reference internal" href="#switching-the-repository-root" id="id11">Switching the Repository Root</a></p></li>
+<li><p><a class="reference internal" href="#web-access" id="id8">网络访问</a></p></li>
+<li><p><a class="reference internal" href="#repository-access-methods" id="id9">存储库访问方法</a></p></li>
+<li><p><a class="reference internal" href="#checking-out-the-repository" id="id10">检查存储库</a></p></li>
+<li><p><a class="reference internal" href="#switching-the-repository-root" id="id11">切换版本库根目录</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#information-for-developers" id="id12">Information for Developers</a></p>
+<li><p><a class="reference internal" href="#information-for-developers" id="id12">开发者信息</a></p>
 <ul>
-<li><p><a class="reference internal" href="#setting-up-your-subversion-client-for-development" id="id13">Setting Up Your Subversion Client For Development</a></p></li>
+<li><p><a class="reference internal" href="#setting-up-your-subversion-client-for-development" id="id13">为开发设置你的 Subversion 客户端</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#repository-layout" id="id14">Repository Layout</a></p></li>
+<li><p><a class="reference internal" href="#repository-layout" id="id14">存储库的布局</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <section id="accessing-the-repository">
-<h2><a class="toc-backref" href="#id7">Accessing the Repository</a><a class="headerlink" href="#accessing-the-repository" title="永久链接至标题">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">访问存储库</a><a class="headerlink" href="#accessing-the-repository" title="永久链接至标题">¶</a></h2>
 <section id="web-access">
-<h3><a class="toc-backref" href="#id8">Web Access</a><a class="headerlink" href="#web-access" title="永久链接至标题">¶</a></h3>
-<p>The repository can be browsed and examined via the web at
-<a class="reference external" href="http://sourceforge.net/p/docutils/code">http://sourceforge.net/p/docutils/code</a>.</p>
-<p>Alternatively, use the web interface at <a class="reference external" href="http://repo.or.cz/docutils.git">http://repo.or.cz/docutils.git</a>.
-<a class="footnote-reference brackets" href="#github-mirrors" id="id4">1</a></p>
+<h3><a class="toc-backref" href="#id8">网络访问</a><a class="headerlink" href="#web-access" title="永久链接至标题">¶</a></h3>
+<p>资料库可以通过网络浏览和检查，网址是 <a class="reference external" href="http://sourceforge.net/p/docutils/code">http://sourceforge.net/p/docutils/code</a>。</p>
+<p>或者，使用网页界面，<a class="reference external" href="http://repo.or.cz/docutils.git">http://repo.or.cz/docutils.git</a> 。<a class="footnote-reference brackets" href="#github-mirrors" id="id4">1</a></p>
 <dl class="footnote brackets">
 <dt class="label" id="github-mirrors"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id4">2</a>)</span></dt>
-<dd><p>There are also 3rd-party mirrors and forks at
-GitHub, some of them orphaned. At the time of this writing (2021-11-03),
-<a class="reference external" href="https://github.com/live-clones/docutils/tree/master/docutils">https://github.com/live-clones/docutils/tree/master/docutils</a>
-provides an hourly updated clone.</p>
+<dd><p>GitHub 上也有第三方镜像和分叉，其中一些是 orphaned。在写这篇文章的时候（2021-11-03），<a class="reference external" href="https://github.com/live-clones/docutils/tree/master/docutils">https://github.com/live-clones/docutils/tree/master/docutils</a> ，提供每小时更新一次的克隆。</p>
 </dd>
 </dl>
 </section>
 <section id="repository-access-methods">
-<h3><a class="toc-backref" href="#id9">Repository Access Methods</a><a class="headerlink" href="#repository-access-methods" title="永久链接至标题">¶</a></h3>
-<p>To get a checkout, first determine the root of the repository depending
-on your preferred protocol:</p>
+<h3><a class="toc-backref" href="#id9">存储库访问方法</a><a class="headerlink" href="#repository-access-methods" title="永久链接至标题">¶</a></h3>
+<p>要获得签出，首先要根据你的首选协议确定版本库的根：</p>
 <dl>
-<dt>anonymous access: (read only)</dt><dd><p><a class="reference external" href="https://subversion.apache.org/">Subversion</a>: <code class="docutils literal notranslate"><span class="pre">http://svn.code.sf.net/p/docutils/code</span></code></p>
+<dt>匿名访问：（只读）</dt><dd><p><a class="reference external" href="https://subversion.apache.org/">Subversion</a>: <code class="docutils literal notranslate"><span class="pre">http://svn.code.sf.net/p/docutils/code</span></code></p>
 <p><a class="reference external" href="http://git-scm.com/">Git</a>: <code class="docutils literal notranslate"><span class="pre">git://repo.or.cz/docutils.git</span></code></p>
 </dd>
-<dt><a class="reference internal" href="#developer-access">developer access</a>: (read and write)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">svn+ssh://&lt;USERNAME&gt;@svn.code.sf.net/p/docutils/code</span></code></p>
+<dt><a class="reference internal" href="#developer-access">开发者访问</a>: （读与写）</dt><dd><p><code class="docutils literal notranslate"><span class="pre">svn+ssh://&lt;USERNAME&gt;@svn.code.sf.net/p/docutils/code</span></code></p>
 </dd>
 </dl>
 </section>
 <section id="checking-out-the-repository">
-<h3><a class="toc-backref" href="#id10">Checking Out the Repository</a><a class="headerlink" href="#checking-out-the-repository" title="永久链接至标题">¶</a></h3>
-<p id="creating-a-local-git-clone"><a class="reference external" href="http://git-scm.com/">Git</a> users can clone a mirror of the docutils repository with</p>
+<h3><a class="toc-backref" href="#id10">检查存储库</a><a class="headerlink" href="#checking-out-the-repository" title="永久链接至标题">¶</a></h3>
+<p id="creating-a-local-git-clone"><a class="reference external" href="http://git-scm.com/">Git</a> 用户可以通过以下方式克隆 docutils 仓库的一个镜像</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="ow">or</span><span class="o">.</span><span class="n">cz</span><span class="o">/</span><span class="n">docutils</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
-<p>and proceed according to the <a class="reference external" href="https://git.wiki.kernel.org/index.php/GitDocumentation">Git documentation</a>.
-Developer access (read and write) is possible with <a class="reference external" href="https://git.wiki.kernel.org/index.php/Git-svn">git svn</a>.</p>
-<p><a class="reference external" href="https://subversion.apache.org/">Subversion</a> users can use the following commands
-(substitute your preferred repository root for ROOT):</p>
+<p>并根据 <a class="reference external" href="https://git.wiki.kernel.org/index.php/GitDocumentation">Git 文档</a> 进行。开发者可以通过 <a class="reference external" href="https://git.wiki.kernel.org/index.php/Git-svn">git svn</a> 进行访问（读和写）。</p>
+<p><a class="reference external" href="https://subversion.apache.org/">Subversion</a> 用户可以使用以下命令（用你喜欢的版本库根目录代替 ROOT）：</p>
 <ul>
-<li><p>To check out only the current main source tree of Docutils, type</p>
+<li><p>要想只查看 Docutils 当前的主源码树，请输入</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">checkout</span> <span class="n">ROOT</span><span class="o">/</span><span class="n">trunk</span><span class="o">/</span><span class="n">docutils</span>
 </pre></div>
 </div>
 </li>
-<li><p>To check out everything (main tree, sandboxes, web site, and parallel
-projects), type</p>
+<li><p>要查看所有内容（main 树、沙盒、网站和并行项目），请输入</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">checkout</span> <span class="n">ROOT</span><span class="o">/</span><span class="n">trunk</span> <span class="n">docutils</span>
 </pre></div>
 </div>
-<p>This will create a working copy of the whole trunk in a new directory
-called <code class="docutils literal notranslate"><span class="pre">docutils</span></code>.</p>
+<p>这将在一个名为 <code class="docutils literal notranslate"><span class="pre">docutils</span></code> 的新目录中创建整个主干的工作副本。</p>
 </li>
 </ul>
-<p>Note that you probably do <em>not</em> want to check out the ROOT itself
-(without “/trunk”), because then you’d end up fetching the whole
-Docutils tree for every branch and tag over and over again.</p>
-<p>To update your working copy later on, <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the working copy and
-type</p>
+<p>请注意，你可能不想检查 ROOT 本身（不包括 “/trunk”），因为那样的话，你就会为每一个分支和标签一次又一次地获取整个 Docutils 树。</p>
+<p>以后要更新你的工作副本，<code class="docutils literal notranslate"><span class="pre">cd</span></code> 进入工作副本，然后输入</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">update</span>
 </pre></div>
 </div>
 </section>
 <section id="switching-the-repository-root">
-<h3><a class="toc-backref" href="#id11">Switching the Repository Root</a><a class="headerlink" href="#switching-the-repository-root" title="永久链接至标题">¶</a></h3>
-<p>If you changed your mind and want to use a different repository root,
-<code class="docutils literal notranslate"><span class="pre">cd</span></code> into your working copy and type:</p>
+<h3><a class="toc-backref" href="#id11">切换版本库根目录</a><a class="headerlink" href="#switching-the-repository-root" title="永久链接至标题">¶</a></h3>
+<p>如果你改变了主意，想使用不同的版本库根目录，<code class="docutils literal notranslate"><span class="pre">cd</span></code> 进入你的工作拷贝，然后输入</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">svn</span> <span class="n">switch</span> <span class="o">--</span><span class="n">relocate</span> <span class="n">OLDROOT</span> <span class="n">NEWROOT</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="information-for-developers">
-<span id="developer-access"></span><h2><a class="toc-backref" href="#id12">Information for Developers</a><a class="headerlink" href="#information-for-developers" title="永久链接至标题">¶</a></h2>
-<p>If you would like to have write access to the repository, register
-with <a class="reference external" href="http://sourceforge.net/">SourceForge.net</a> and send your SourceForge.net
-user names to <a class="reference external" href="mailto:docutils-develop%40lists.sourceforge.net">docutils-develop<span>@</span>lists<span>.</span>sourceforge<span>.</span>net</a>.
-(Note that there may be a delay of several hours until you can commit
-changes to the repository.)</p>
-<p>Sourceforge SVN access is documented <a class="reference external" href="http://sourceforge.net/p/forge/documentation/svn/">here</a></p>
+<span id="developer-access"></span><h2><a class="toc-backref" href="#id12">开发者信息</a><a class="headerlink" href="#information-for-developers" title="永久链接至标题">¶</a></h2>
+<p>如果你想拥有对版本库的写入权限，请在 <a class="reference external" href="http://sourceforge.net/">SourceForge.net</a> 注册，并将你的 SourceForge.net 用户名发送到 <a class="reference external" href="mailto:docutils-develop%40lists.sourceforge.net">docutils-develop<span>@</span>lists<span>.</span>sourceforge<span>.</span>net</a>。（注意，在你可以向版本库提交修改之前，可能会有几个小时的延迟。）</p>
+<p>Sourceforge SVN的访问记录在 <a class="reference external" href="http://sourceforge.net/p/forge/documentation/svn/">这里</a></p>
 <section id="setting-up-your-subversion-client-for-development">
-<h3><a class="toc-backref" href="#id13">Setting Up Your Subversion Client For Development</a><a class="headerlink" href="#setting-up-your-subversion-client-for-development" title="永久链接至标题">¶</a></h3>
-<p>Before committing changes to the repository, please ensure that the
-following lines are contained (and uncommented) in your local
-~/.subversion/config file, so that new files are added with the
-correct properties set:</p>
+<h3><a class="toc-backref" href="#id13">为开发设置你的 Subversion 客户端</a><a class="headerlink" href="#setting-up-your-subversion-client-for-development" title="永久链接至标题">¶</a></h3>
+<p>在提交修改到版本库之前，请确保在你的本地 ~/.subversion/config 文件中包含（并取消注释）以下几行，以便在添加新文件时设置正确的属性</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">miscellany</span><span class="p">]</span>
 <span class="c1"># For your convenience:</span>
 <span class="k">global</span><span class="o">-</span><span class="n">ignores</span> <span class="o">=</span> <span class="o">...</span> <span class="o">*.</span><span class="n">pyc</span> <span class="o">...</span>
@@ -469,8 +438,8 @@ correct properties set:</p>
 </section>
 </section>
 <section id="repository-layout">
-<h2><a class="toc-backref" href="#id14">Repository Layout</a><a class="headerlink" href="#repository-layout" title="永久链接至标题">¶</a></h2>
-<p>The following tree shows the repository layout:</p>
+<h2><a class="toc-backref" href="#id14">存储库的布局</a><a class="headerlink" href="#repository-layout" title="永久链接至标题">¶</a></h2>
+<p>下面的树显示了存储库的布局</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docutils/
 |-- branches/
 |   |-- branch1/
@@ -496,12 +465,8 @@ correct properties set:</p>
     `-- web/
 </pre></div>
 </div>
-<p>The main source tree lives at <code class="docutils literal notranslate"><span class="pre">docutils/trunk/docutils/</span></code>, next to
-the sandboxes (<code class="docutils literal notranslate"><span class="pre">docutils/trunk/sandbox/</span></code>) and the web site files
-(<code class="docutils literal notranslate"><span class="pre">docutils/trunk/web/</span></code>).</p>
-<p><code class="docutils literal notranslate"><span class="pre">docutils/branches/</span></code> and <code class="docutils literal notranslate"><span class="pre">docutils/tags/</span></code> contain (shallow) copies
-of either the whole trunk or only the main source tree
-(<code class="docutils literal notranslate"><span class="pre">docutils/trunk/docutils</span></code>).</p>
+<p>main 源树位于 <code class="docutils literal notranslate"><span class="pre">docutils/trunk/docutils/</span></code>，旁边是沙盒（<code class="docutils literal notranslate"><span class="pre">docutils/trunk/sandbox/</span></code>）和网站文件（<code class="docutils literal notranslate"><span class="pre">docutils/trunk/web/</span></code>）。</p>
+<p><code class="docutils literal notranslate"><span class="pre">docutils/branches/</span></code> 和 <code class="docutils literal notranslate"><span class="pre">docutils/tags/</span></code> 包含整个主干或只有主源树（<code class="docutils literal notranslate"><span class="pre">docutils/trunk/docutils</span></code>）的（浅）副本。</p>
 </section>
 </section>
 
@@ -556,19 +521,19 @@ of either the whole trunk or only the main source tree
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">The Docutils Version Repository</a><ul>
-<li><a class="reference internal" href="#accessing-the-repository">Accessing the Repository</a><ul>
-<li><a class="reference internal" href="#web-access">Web Access</a></li>
-<li><a class="reference internal" href="#repository-access-methods">Repository Access Methods</a></li>
-<li><a class="reference internal" href="#checking-out-the-repository">Checking Out the Repository</a></li>
-<li><a class="reference internal" href="#switching-the-repository-root">Switching the Repository Root</a></li>
+<li><a class="reference internal" href="#">Docutils 版本库</a><ul>
+<li><a class="reference internal" href="#accessing-the-repository">访问存储库</a><ul>
+<li><a class="reference internal" href="#web-access">网络访问</a></li>
+<li><a class="reference internal" href="#repository-access-methods">存储库访问方法</a></li>
+<li><a class="reference internal" href="#checking-out-the-repository">检查存储库</a></li>
+<li><a class="reference internal" href="#switching-the-repository-root">切换版本库根目录</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#information-for-developers">Information for Developers</a><ul>
-<li><a class="reference internal" href="#setting-up-your-subversion-client-for-development">Setting Up Your Subversion Client For Development</a></li>
+<li><a class="reference internal" href="#information-for-developers">开发者信息</a><ul>
+<li><a class="reference internal" href="#setting-up-your-subversion-client-for-development">为开发设置你的 Subversion 客户端</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#repository-layout">Repository Layout</a></li>
+<li><a class="reference internal" href="#repository-layout">存储库的布局</a></li>
 </ul>
 </li>
 </ul>
