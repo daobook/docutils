@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 <link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="" href="rst.html" /><link rel="prev" title="docutils 文档" href="../index.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-4.3.0, furo 2021.11.15"/>
+    <link rel="shortcut icon" href="../_static/favicon.png"/><meta name="generator" content="sphinx-4.3.0, furo 2021.11.16"/>
         <title>Docutils：文档实用工具 - docutilsx 0.0.1 文档</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=916d6ed8f59335acffa15474ff504849343d4c76" />
@@ -174,7 +174,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../docutils/docs/user/tools.html">Docutils Front-End Tools</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../docutils/docs/user/config.html">Docutils Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../docutils/docs/user/mailing-lists.html">Docutils Mailing Lists</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../docutils/docs/user/links.html">Docutils Link List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../docutils/docs/user/links.html">Docutils 链接列表</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../_toc/user/write.html">写作相关</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -185,7 +185,7 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../_toc/user/rst.html">reStructuredText</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../docutils/docs/user/rst/quickstart.html">A ReStructuredText Primer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../docutils/docs/user/rst/quickstart.html">ReStructuredText 初探</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../docutils/docs/user/rst/cheatsheet.html">The reStructuredText Cheat Sheet: Syntax Reminders</a></li>
 </ul>
 </li>
@@ -300,17 +300,17 @@
 <hr class="docutils"/>
 <section id="overview">
 <h3>概述<a class="headerlink" href="#overview" title="永久链接至标题">¶</a></h3>
-<p>要快速启动和运行，请参阅 <a class="reference external" href="README.html">README</a> 文件的 <a class="reference external" href="README.html#requirements">快速上手</a> 部分。运行 Docutils 的唯一 <a class="reference external" href="README.html#quick-start">需求</a> 是 <a class="reference external" href="https://www.python.org/">Python</a> 。</p>
+<p>要快速启动和运行，请参阅 <a class="reference external" href="README.html">README</a> 文件的 <a class="reference external" href="README.html#quick-start">快速上手</a> 部分。运行 Docutils 的唯一 <a class="reference external" href="README.html#requirements">需求</a> 是 <a class="reference external" href="https://www.python.org/">Python</a> 。</p>
 <p>所有文档都可以从 <a class="reference external" href="docs/index.html">Project Documentation Overview</a> 中获取。如果有什么不清楚或缺失的地方，可以向 <a class="reference external" href="docs/user/mailing-lists.html#docutils-users">docutils-users</a> 邮件列表询问。</p>
 <p><a class="reference internal" href="https://sourceforge.net/sflogo.php?group_id=38414"><img alt="SourceForge" class="align-middle" src="https://sourceforge.net/sflogo.php?group_id=38414" style="height: 1.5em;"/></a> <a class="reference external" href="https://sourceforge.net/p/docutils">项目页面</a> 有到跟踪器、邮件列表和代码存储库的链接。</p>
 <p>所有关于 Docutils 的讨论都发生在 <a class="reference external" href="docs/user/mailing-lists.html">mailing lists</a> 中。</p>
 <p>对于开源项目的开发人员来说，<strong>反馈</strong> 是一个很好的激励因素，非常受欢迎。我们还依赖反馈来决定要实现哪些特性。因此，如果你告诉我们你需要什么，我们可能会帮助你！请将任何反馈信息发送到 <a class="reference external" href="docs/user/mailing-lists.html#docutils-users">docutils-users</a> 邮件列表。</p>
 <p>如果发现错误，请 <a class="reference external" href="BUGS.html#how-to-report-a-bug">提交错误报告</a> 或通过邮件发送到 <a class="reference external" href="docs/user/mailing-lists.html#docutils-users">docutils-users</a>。</p>
-<p>我们欢迎各种各样的贡献。有一个 <a class="reference external" href="docs/dev/todo.html">待办清单</a>，上面满是等待冠军的想法。如果您有任何关于如何扩展 Docutils 的问题，请随时在 <a class="reference external" href="docs/user/mailing-lists.html#docutils-develop">docutils-develop</a> 邮件列表上提问。补丁提交应归档到 <a class="reference external" href="https://sourceforge.net/p/docutils/patches/">补丁追踪器</a> (首选)或发送到 <a class="reference external" href="docs/user/mailing-lists.html#docutils-develop">docutils-develop</a> 。</p>
+<p>我们欢迎各种各样的贡献。有一个 <a class="reference external" href="https://sourceforge.net/p/docutils/patches/">待办清单</a>，上面满是等待冠军的想法。如果您有任何关于如何扩展 Docutils 的问题，请随时在 <a class="reference external" href="docs/user/mailing-lists.html#docutils-develop">docutils-develop</a> 邮件列表上提问。补丁提交应归档到 <a class="reference external" href="docs/dev/todo.html">补丁追踪器</a> (首选)或发送到 <a class="reference external" href="docs/user/mailing-lists.html#docutils-develop">docutils-develop</a> 。</p>
 </section>
 <section id="download">
 <h3>下载<a class="headerlink" href="#download" title="永久链接至标题">¶</a></h3>
-<p><a class="reference external" href="RELEASE-NOTES.html">发布包</a> 可以从 <a class="reference external" href="https://pypi.org">PyPI</a> 下载。它们主要是为发布准备的。请参阅 <a class="reference external" href="https://pypi.org/project/docutils/#files">发布说明</a>，了解自上一版本以来的变化。</p>
+<p><a class="reference external" href="https://pypi.org/project/docutils/#files">发布包</a> 可以从 <a class="reference external" href="https://pypi.org">PyPI</a> 下载。它们主要是为发布准备的。请参阅 <a class="reference external" href="RELEASE-NOTES.html">发布说明</a>，了解自上一版本以来的变化。</p>
 <p>我们建议您使用 <a class="reference external" href="docs/dev/repository.html">Docutils Subversion 仓库</a> 中的 <a class="reference external" href="https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/">snapshot</a> <a class="footnote-reference brackets" href="#snapshots" id="id1">1</a>。与“官方”—版本相比，快照通常包含更多的特性和更少的 bug ——它们不仅仅是为开发人员准备的!</p>
 <dl class="footnote brackets">
 <dt class="label" id="snapshots"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
