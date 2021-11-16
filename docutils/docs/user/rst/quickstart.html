@@ -208,7 +208,7 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../../_toc/ref/rst.html">reStructuredText</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../ref/rst/introduction.html">An Introduction to reStructuredText</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../ref/rst/restructuredtext.html">reStructuredText Markup Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ref/rst/restructuredtext.html">reStructuredText 标记规范</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../ref/rst/directives.html">reStructuredText Directives</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../ref/rst/roles.html">reStructuredText Interpreted Text Roles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../ref/rst/definitions.html">reStructuredText Standard Definition Files</a></li>
@@ -311,15 +311,15 @@
 <li><p><a class="reference internal" href="#a-restructuredtext-primer" id="id17">ReStructuredText 初探</a></p>
 <ul>
 <li><p><a class="reference internal" href="#structure" id="id18">结构化</a></p></li>
-<li><p><a class="reference internal" href="#text-styles" id="id19">Text styles</a></p></li>
-<li><p><a class="reference internal" href="#lists" id="id20">Lists</a></p></li>
-<li><p><a class="reference internal" href="#preformatting-code-samples" id="id21">Preformatting (code samples)</a></p></li>
-<li><p><a class="reference internal" href="#sections" id="id22">Sections</a></p>
+<li><p><a class="reference internal" href="#text-styles" id="id19">文本样式</a></p></li>
+<li><p><a class="reference internal" href="#lists" id="id20">列表</a></p></li>
+<li><p><a class="reference internal" href="#preformatting-code-samples" id="id21">预设格式化（代码样本）</a></p></li>
+<li><p><a class="reference internal" href="#sections" id="id22">章节</a></p>
 <ul>
-<li><p><a class="reference internal" href="#document-title-subtitle" id="id23">Document Title / Subtitle</a></p></li>
+<li><p><a class="reference internal" href="#document-title-subtitle" id="id23">文档标题/副标题</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#images" id="id24">Images</a></p></li>
+<li><p><a class="reference internal" href="#images" id="id24">图片</a></p></li>
 <li><p><a class="reference internal" href="#what-next" id="id25">下一步是什么？</a></p></li>
 </ul>
 </li>
@@ -332,8 +332,8 @@
 </div>
 <section id="structure">
 <h2><a class="toc-backref" href="#id18">结构化</a><a class="headerlink" href="#structure" title="永久链接至标题">¶</a></h2>
-<p>从一开始，让我说，”结构化文本” 可能是一个有点错误的名称。它更像是使用某些一致模式的 “放松文本”。这些模式被一个 HTML 转换器解释为产生可以被网络浏览器使用的 “非常结构化的文本”。</p>
-<p>公认的最基本模式是 <a href="#id1"><span class="problematic" id="id2">**</span></a>段落**（<a class="reference external" href="quickref.html#paragraphs">quickref</a>）。这是一大块由空行（一个就够了）分隔的文本。段落必须有相同的缩进 – 也就是说，在其左边缘排队。开始缩进的段落将导致缩进的引用段落。例如</p>
+<p>从一开始，让我说，”结构化文本” 可能是一个有点错误的名称。它更像是使用某些一致模式的 “放松文本”。这些模式被 HTML 转换器解释为产生可以被网络浏览器使用的 “非常结构化的文本”。</p>
+<p>公认的最基本模式是 <strong>段落</strong> （<a class="reference external" href="quickref.html#paragraphs">quickref</a>）。这是一大块由空行（一个就够了）分隔的文本。段落必须有相同的缩进 – 也就是说，在其左边缘排列。开始缩进的段落将导致缩进的引用段落。例如</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">paragraph</span><span class="o">.</span>  <span class="n">It</span><span class="s1">'s quite</span>
 <span class="n">short</span><span class="o">.</span>
 
@@ -343,7 +343,7 @@
 <span class="n">This</span> <span class="ow">is</span> <span class="n">another</span> <span class="n">one</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>Results in:</p>
+<p>结果是：</p>
 <blockquote>
 <div><p>This is a paragraph.  It’s quite
 short.</p>
@@ -355,48 +355,25 @@ text, typically used for quoting other text.</p>
 </div></blockquote>
 </section>
 <section id="text-styles">
-<h2><a class="toc-backref" href="#id19">Text styles</a><a class="headerlink" href="#text-styles" title="永久链接至标题">¶</a></h2>
-<p>(<a class="reference external" href="quickref.html#inline-markup">quickref</a>)</p>
-<p>Inside paragraphs and other bodies of text, you may additionally mark
-text for <em>italics</em> with “<code class="docutils literal notranslate"><span class="pre">*italics*</span></code>” or <strong>bold</strong> with
-“<code class="docutils literal notranslate"><span class="pre">**bold**</span></code>”.  This is called “inline markup”.</p>
-<p>If you want something to appear as a fixed-space literal, use
-“<code class="docutils literal notranslate"><span class="pre">``double</span> <span class="pre">back-quotes``</span></code>”.  Note that no further fiddling is done
-inside the double back-quotes – so asterisks “<code class="docutils literal notranslate"><span class="pre">*</span></code>” etc. are left
-alone.</p>
-<p>If you find that you want to use one of the “special” characters in
-text, it will generally be OK – reStructuredText is pretty smart.
-For example, this lone asterisk * is handled just fine, as is the
-asterisk in this equation: 5*6=30.  If you actually
-want text *surrounded by asterisks* to <strong>not</strong> be italicised, then
-you need to indicate that the asterisk is not special.  You do this by
-placing a backslash just before it, like so “<code class="docutils literal notranslate"><span class="pre">\*</span></code>” (<a class="reference external" href="quickref.html#escaping">quickref</a>), or
-by enclosing it in double back-quotes (inline literals), like this:</p>
+<h2><a class="toc-backref" href="#id19">文本样式</a><a class="headerlink" href="#text-styles" title="永久链接至标题">¶</a></h2>
+<p>（<a class="reference external" href="quickref.html#inline-markup">quickref</a> ）</p>
+<p>在段落和其他正文中，你可以另外用 “<code class="docutils literal notranslate"><span class="pre">*italics*</span></code>” 标记 <em>italics</em>，或用 “<code class="docutils literal notranslate"><span class="pre">**bold**</span></code>” 标记 <strong>bold</strong>。这被称为 “内联标记”（”inline markup”）。</p>
+<p>如果你想让某些东西作为固定空间的文字出现，使用 “<code class="docutils literal notranslate"><span class="pre">``double</span> <span class="pre">back-quotes``</span></code>”。请注意，在双反引号内不会做进一步的处理 – 所以星号 “<code class="docutils literal notranslate"><span class="pre">*</span></code>” 等就不用管了。</p>
+<p>如果你发现你想在文本中使用其中一个 “特殊” 字符，一般来说是可以的 – reStructuredText 是相当聪明的。例如，这个孤独的星号 * 被处理得很好，这个方程式 5*6=30 中的星号也是如此。如果你想让被星号包围的文本不被斜体化，那么你需要说明星号并不特别。你可以通过在它前面放一个反斜杠来做到这一点，就像这样 “<code class="docutils literal notranslate"><span class="pre">\*</span></code>” （<a class="reference external" href="quickref.html#escaping">quickref</a>），或者用双反引号把它括起来（内联字），像这样</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>``*``
 </pre></div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">小技巧</p>
-<p>Think of inline markup as a form of (parentheses) and use it
-the same way: immediately before and after the text being marked
-up.  Inline markup by itself (surrounded by whitespace) or in the
-middle of a word won’t be recognized.  See the <a class="reference external" href="../../ref/rst/restructuredtext.html#inline-markup">markup spec</a> for
-full details.</p>
+<p>把内联标记看作是（括号）的一种形式，并以同样的方式使用它：紧接在被标记的文本之前和之后。内联标记本身（由空格包围）或在一个词的中间，不会被识别。完整的细节请参考 <a class="reference external" href="../../ref/rst/restructuredtext.html#inline-markup">标记规范</a>。</p>
 </div>
 </section>
 <section id="lists">
-<h2><a class="toc-backref" href="#id20">Lists</a><a class="headerlink" href="#lists" title="永久链接至标题">¶</a></h2>
-<p>Lists of items come in three main flavours: <strong>enumerated</strong>,
-<strong>bulleted</strong> and <strong>definitions</strong>.  In all list cases, you may have as
-many paragraphs, sublists, etc. as you want, as long as the left-hand
-side of the paragraph or whatever aligns with the first line of text
-in the list item.</p>
-<p>Lists must always start a new paragraph – that is, they must appear
-after a blank line.</p>
+<h2><a class="toc-backref" href="#id20">列表</a><a class="headerlink" href="#lists" title="永久链接至标题">¶</a></h2>
+<p>项的列表有三种主要类型。<strong>有序的</strong> （enumerated），<strong>无序的</strong> （bulleted）和 <strong>定义的</strong>。在所有列表的情况下，你可以有任意多的段落、子列表等，只要段落或其他东西的左侧与列表项的第一行文本对齐即可。</p>
+<p>列表必须总是从一个新的段落开始 – 也就是说，它们必须出现在一个空行之后。</p>
 <dl>
-<dt><strong>enumerated</strong> lists (numbers, letters or roman numerals; <a class="reference external" href="quickref.html#enumerated-lists">quickref</a>)</dt><dd><p>Start a line off with a number or letter followed by a period “.”,
-right bracket “)” or surrounded by brackets “( )” – whatever you’re
-comfortable with.  All of the following forms are recognised:</p>
+<dt><strong>有序</strong> 列表（数字、字母或罗马数字；<a class="reference external" href="quickref.html#enumerated-lists">quickref</a>）。</dt><dd><p>用数字或字母开始一行，后面是句号 “.”，右括号 “)” 或用括号 “( )” 包围。– 无论你喜欢什么。以下所有的形式都被认可</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. numbers
 
 A. upper-case letters
@@ -418,9 +395,7 @@ i. lower-case roman numerals
 1) and again
 </pre></div>
 </div>
-<p>Results in (note: the different enumerated list styles are not
-always supported by every web browser, so you may not get the full
-effect here):</p>
+<p>结果在（注意：不同的枚举式列表样式并不总是被每个网络浏览器所支持，所以你在这里可能无法获得完整的效果）：</p>
 <ol class="arabic simple">
 <li><p>numbers</p></li>
 </ol>
@@ -451,8 +426,7 @@ and it goes over many lines</p>
 <li><p>and again</p></li>
 </ol>
 </dd>
-<dt><strong>bulleted</strong> lists (<a class="reference external" href="quickref.html#bullet-lists">quickref</a>)</dt><dd><p>Just like enumerated lists, start the line off with a bullet point
-character - either “-”, “+” or “*”:</p>
+<dt><strong>无序</strong> 列表 （<a class="reference external" href="quickref.html#bullet-lists">quickref</a>）</dt><dd><p>就像有序列表一样，用一个圆点字符开始一行 – 要么是 “-”、 “+” 或 “*”</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">a</span> <span class="n">bullet</span> <span class="n">point</span> <span class="n">using</span> <span class="s2">"*"</span>
 
   <span class="o">-</span> <span class="n">a</span> <span class="n">sub</span><span class="o">-</span><span class="nb">list</span> <span class="n">using</span> <span class="s2">"-"</span>
@@ -462,7 +436,7 @@ character - either “-”, “+” or “*”:</p>
   <span class="o">-</span> <span class="n">another</span> <span class="n">item</span>
 </pre></div>
 </div>
-<p>Results in:</p>
+<p>结果是：</p>
 <ul class="simple">
 <li><p>a bullet point using “*”</p>
 <ul>
@@ -476,8 +450,7 @@ character - either “-”, “+” or “*”:</p>
 </li>
 </ul>
 </dd>
-<dt><strong>definition</strong> lists (<a class="reference external" href="quickref.html#definition-lists">quickref</a>)</dt><dd><p>Unlike the other two, the definition lists consist of a term, and
-the definition of that term.  The format of a definition list is:</p>
+<dt><strong>定义</strong> 列表 （<a class="reference external" href="quickref.html#definition-lists">quickref</a>）</dt><dd><p>与其他两个不同，定义列表由一个术语和该术语的定义组成。定义列表的格式是</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">what</span>
   <span class="n">Definition</span> <span class="n">lists</span> <span class="n">associate</span> <span class="n">a</span> <span class="n">term</span> <span class="k">with</span> <span class="n">a</span> <span class="n">definition</span><span class="o">.</span>
 
@@ -487,7 +460,7 @@ the definition of that term.  The format of a definition list is:</p>
   <span class="n">Blank</span> <span class="n">lines</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">allowed</span> <span class="n">between</span> <span class="n">term</span> <span class="ow">and</span> <span class="n">definition</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>Results in:</p>
+<p>结果是：</p>
 <dl class="simple">
 <dt>what</dt><dd><p>Definition lists associate a term with a definition.</p>
 </dd>
@@ -500,12 +473,9 @@ Blank lines are not allowed between term and definition.</p>
 </dl>
 </section>
 <section id="preformatting-code-samples">
-<h2><a class="toc-backref" href="#id21">Preformatting (code samples)</a><a class="headerlink" href="#preformatting-code-samples" title="永久链接至标题">¶</a></h2>
-<p>(<a class="reference external" href="quickref.html#literal-blocks">quickref</a>)</p>
-<p>To just include a chunk of preformatted, never-to-be-fiddled-with
-text, finish the prior paragraph with “<code class="docutils literal notranslate"><span class="pre">::</span></code>”.  The preformatted
-block is finished when the text falls back to the same indentation
-level as a paragraph prior to the preformatted block.  For example:</p>
+<h2><a class="toc-backref" href="#id21">预设格式化（代码样本）</a><a class="headerlink" href="#preformatting-code-samples" title="永久链接至标题">¶</a></h2>
+<p>（<a class="reference external" href="quickref.html#literal-blocks">quickref</a> ）</p>
+<p>要想只包含一大块预设格式的、永远不会被悬挂的文本，就用 “<code class="docutils literal notranslate"><span class="pre">::</span></code>” 来结束前面的段落。当文本回落到与预格式化块之前的段落相同的缩进水平时，预格式化块就完成了。例如</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">example</span><span class="p">::</span>
 
     <span class="n">Whitespace</span><span class="p">,</span> <span class="n">newlines</span><span class="p">,</span> <span class="n">blank</span> <span class="n">lines</span><span class="p">,</span> <span class="ow">and</span> <span class="nb">all</span> <span class="n">kinds</span> <span class="n">of</span> <span class="n">markup</span>
@@ -516,7 +486,7 @@ level as a paragraph prior to the preformatted block.  For example:</p>
 <span class="n">no</span> <span class="n">more</span> <span class="n">example</span>
 </pre></div>
 </div>
-<p>Results in:</p>
+<p>结果是：</p>
 <blockquote>
 <div><p>An example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">Whitespace</span><span class="p">,</span> <span class="n">newlines</span><span class="p">,</span> <span class="n">blank</span> <span class="n">lines</span><span class="p">,</span> <span class="ow">and</span> <span class="nb">all</span> <span class="n">kinds</span> <span class="n">of</span> <span class="n">markup</span>
@@ -527,33 +497,23 @@ level as a paragraph prior to the preformatted block.  For example:</p>
 </div>
 <p>no more example</p>
 </div></blockquote>
-<p>Note that if a paragraph consists only of “<code class="docutils literal notranslate"><span class="pre">::</span></code>”, then it’s removed
-from the output:</p>
+<p>注意，如果一个段落只由 “<code class="docutils literal notranslate"><span class="pre">::</span></code>” 组成，那么它就会从输出中删除</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">::</span>
 
     <span class="n">This</span> <span class="ow">is</span> <span class="n">preformatted</span> <span class="n">text</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span>
     <span class="n">last</span> <span class="s2">"::"</span> <span class="n">paragraph</span> <span class="ow">is</span> <span class="n">removed</span>
 </pre></div>
 </div>
-<p>Results in:</p>
+<p>结果是：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">preformatted</span> <span class="n">text</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span>
 <span class="n">last</span> <span class="s2">"::"</span> <span class="n">paragraph</span> <span class="ow">is</span> <span class="n">removed</span>
 </pre></div>
 </div>
 </section>
 <section id="sections">
-<h2><a class="toc-backref" href="#id22">Sections</a><a class="headerlink" href="#sections" title="永久链接至标题">¶</a></h2>
-<p>(<a class="reference external" href="quickref.html#section-structure">quickref</a>)</p>
-<p>To break longer text up into sections, you use <strong>section headers</strong>.
-These are a single line of text (one or more words) with adornment: an
-underline alone, or an underline and an overline together, in dashes
-“<code class="docutils literal notranslate"><span class="pre">-----</span></code>”, equals “<code class="docutils literal notranslate"><span class="pre">======</span></code>”, tildes “<code class="docutils literal notranslate"><span class="pre">~~~~~~</span></code>” or any of the
-non-alphanumeric characters <code class="docutils literal notranslate"><span class="pre">=</span> <span class="pre">-</span> <span class="pre">`</span> <span class="pre">:</span> <span class="pre">'</span> <span class="pre">"</span> <span class="pre">~</span> <span class="pre">^</span> <span class="pre">_</span> <span class="pre">*</span> <span class="pre">+</span> <span class="pre">#</span> <span class="pre">&lt;</span> <span class="pre">&gt;</span></code> that you
-feel comfortable with.  An underline-only adornment is distinct from
-an overline-and-underline adornment using the same character.  The
-underline/overline must be at least as long as the title text.  Be
-consistent, since all sections marked with the same adornment style
-are deemed to be at the same level:</p>
+<h2><a class="toc-backref" href="#id22">章节</a><a class="headerlink" href="#sections" title="永久链接至标题">¶</a></h2>
+<p>（<a class="reference external" href="quickref.html#section-structure">quickref</a> ）</p>
+<p>要把较长的文本分成几个章节，你可以使用 <strong>章节标题</strong>。这些是带有装饰的单行文本（一个或多个单词）：单独的下划线，或下划线和上划线一起，用破折号 “<code class="docutils literal notranslate"><span class="pre">-----</span></code>”，等号 “<code class="docutils literal notranslate"><span class="pre">======</span></code>”，波浪线 “<code class="docutils literal notranslate"><span class="pre">~~~~~~</span></code>” 或任何你觉得合适的非字母数字字符 <code class="docutils literal notranslate"><span class="pre">=</span> <span class="pre">-</span> <span class="pre">`</span> <span class="pre">:</span> <span class="pre">'</span> <span class="pre">"</span> <span class="pre">~</span> <span class="pre">^</span> <span class="pre">_</span> <span class="pre">*</span> <span class="pre">+</span> <span class="pre">#</span> <span class="pre">&lt;</span> <span class="pre">&gt;</span></code>。仅有下划线的装饰与使用相同字符的上划线和下划线的装饰不同。下划线/上划线必须至少与标题文本一样长。要保持一致，因为所有标有相同装饰风格的部分都被视为处于同一水平</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Chapter</span> <span class="mi">1</span> <span class="n">Title</span>
 <span class="o">===============</span>
 
@@ -570,8 +530,7 @@ are deemed to be at the same level:</p>
 <span class="o">===============</span>
 </pre></div>
 </div>
-<p>This results in the following structure, illustrated by simplified
-pseudo-XML:</p>
+<p>这导致了以下结构，用简化的伪 XML 来说明</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">section</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span>
         <span class="n">Chapter</span> <span class="mi">1</span> <span class="n">Title</span>
@@ -589,24 +548,12 @@ pseudo-XML:</p>
         <span class="n">Chapter</span> <span class="mi">2</span> <span class="n">Title</span>
 </pre></div>
 </div>
-<p>(Pseudo-XML uses indentation for nesting and has no end-tags.  It’s
-not possible to show actual processed output, as in the other
-examples, because sections cannot exist inside block quotes.  For a
-concrete example, compare the section structure of this document’s
-source text and processed output.)</p>
-<p>Note that section headers are available as link targets, just using
-their name.  To link to the <a class="reference internal" href="#lists">Lists</a> heading, I write “<code class="docutils literal notranslate"><span class="pre">Lists_</span></code>”.  If
-the heading has a space in it like <a class="reference internal" href="#text-styles">text styles</a>, we need to quote
-the heading “<code class="docutils literal notranslate"><span class="pre">`text</span> <span class="pre">styles`_</span></code>”.</p>
+<p>（伪 XML 使用缩进进行嵌套，没有结束标记。不可能像其他例子那样显示实际处理过的输出，因为部分不能存在于块状引号内。对于一个具体的例子，请比较本文档的源文本和处理后的输出的章节结构。）</p>
+<p>请注意，章节标题可以作为链接目标，只需使用其名称即可。要链接到 <a class="reference internal" href="#lists">Lists</a> 标题，我就写 “<code class="docutils literal notranslate"><span class="pre">Lists_</span></code>”。如果标题中有一个空格，如 <a class="reference internal" href="#text-styles">text styles</a>，我们需要引用标题 “<code class="docutils literal notranslate"><span class="pre">`text</span> <span class="pre">styles`_</span></code>”。</p>
 <section id="document-title-subtitle">
-<h3><a class="toc-backref" href="#id23">Document Title / Subtitle</a><a class="headerlink" href="#document-title-subtitle" title="永久链接至标题">¶</a></h3>
-<p>The title of the whole document is distinct from section titles and
-may be formatted somewhat differently (e.g. the HTML writer by default
-shows it as a centered heading).</p>
-<p>To indicate the document title in reStructuredText, use a unique adornment
-style at the beginning of the document.  To indicate the document subtitle,
-use another unique adornment style immediately after the document title.  For
-example:</p>
+<h3><a class="toc-backref" href="#id23">文档标题/副标题</a><a class="headerlink" href="#document-title-subtitle" title="永久链接至标题">¶</a></h3>
+<p>整个文档的标题（title）有别于章节标题，其格式可能有些不同（例如，HTML 编写者默认将其显示为居中的标题）。</p>
+<p>为了在 reStructuredText 中表示文档的标题，在文档的开头使用一种独特的装饰风格。要表示文档的副标题，请在文档标题之后立即使用另一种独特的装饰风格。例如</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">================</span>
  <span class="n">Document</span> <span class="n">Title</span>
 <span class="o">================</span>
@@ -620,26 +567,19 @@ example:</p>
 <span class="o">...</span>
 </pre></div>
 </div>
-<p>Note that “Document Title” and “Section Title” above both use equals
-signs, but are distict and unrelated styles.  The text of
-overline-and-underlined titles (but not underlined-only) may be inset
-for aesthetics.</p>
+<p>注意，上面的 “Document Title” 和 “Section Title” 都使用了等号，但却是不同的、不相关的样式。为美观起见，可以将加粗线和下划线的标题（但不能只用下划线）嵌入其中。</p>
 </section>
 </section>
 <section id="images">
-<h2><a class="toc-backref" href="#id24">Images</a><a class="headerlink" href="#images" title="永久链接至标题">¶</a></h2>
-<p>(<a class="reference external" href="quickref.html#directives">quickref</a>)</p>
-<p>To include an image in your document, you use the the <code class="docutils literal notranslate"><span class="pre">image</span></code> <a class="reference external" href="../../ref/rst/directives.html">directive</a>.
-For example:</p>
+<h2><a class="toc-backref" href="#id24">图片</a><a class="headerlink" href="#images" title="永久链接至标题">¶</a></h2>
+<p>（<a class="reference external" href="quickref.html#directives">quickref</a> ）</p>
+<p>要在你的文档中包含图片，你可以使用 <code class="docutils literal notranslate"><span class="pre">image</span></code> <a class="reference external" href="../../ref/rst/directives.html">指令</a>。例如</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">image</span><span class="p">::</span> <span class="n">images</span><span class="o">/</span><span class="n">biohazard</span><span class="o">.</span><span class="n">png</span>
 </pre></div>
 </div>
-<p>results in:</p>
+<p>结果是：</p>
 <img alt="../../../../_images/biohazard.png" src="../../../../_images/biohazard.png"/>
-<p>The <code class="docutils literal notranslate"><span class="pre">images/biohazard.png</span></code> part indicates the filename of the image
-you wish to appear in the document. There’s no restriction placed on
-the image (format, size etc).  If the image is to appear in HTML and
-you wish to supply additional information, you may:</p>
+<p><code class="docutils literal notranslate"><span class="pre">images/biohazard.png</span></code> 部分表示你希望出现在文件中的图片的文件名。对图像没有任何限制（格式、大小等）。如果该图像将出现在 HTML 中，并且你希望提供额外的信息，你可以</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">image</span><span class="p">::</span> <span class="n">images</span><span class="o">/</span><span class="n">biohazard</span><span class="o">.</span><span class="n">png</span>
    <span class="p">:</span><span class="n">height</span><span class="p">:</span> <span class="mi">100</span>
    <span class="p">:</span><span class="n">width</span><span class="p">:</span> <span class="mi">200</span>
@@ -647,21 +587,15 @@ you wish to supply additional information, you may:</p>
    <span class="p">:</span><span class="n">alt</span><span class="p">:</span> <span class="n">alternate</span> <span class="n">text</span>
 </pre></div>
 </div>
-<p>See the full <a class="reference external" href="../../ref/rst/directives.html#images">image directive documentation</a> for more info.</p>
+<p>更多信息请参见完整的 <a class="reference external" href="../../ref/rst/directives.html#images">image 指令文档</a>。</p>
 </section>
 <section id="what-next">
 <h2><a class="toc-backref" href="#id25">下一步是什么？</a><a class="headerlink" href="#what-next" title="永久链接至标题">¶</a></h2>
-<p>This primer introduces the most common features of reStructuredText,
-but there are a lot more to explore.  The <a class="reference external" href="quickref.html">Quick reStructuredText</a>
-user reference is a good place to go next.  For complete details, the
-<a class="reference external" href="../../ref/rst/restructuredtext.html">reStructuredText Markup Specification</a> is the place to go <a class="footnote-reference brackets" href="#id16" id="id15">1</a>.</p>
-<p>Users who have questions or need assistance with Docutils or
-reStructuredText should post a message to the <a class="reference external" href="../mailing-lists.html#docutils-users">Docutils-users</a> mailing
-list.</p>
+<p>这篇入门读物介绍了 reStructuredText 最常见的功能，但还有很多东西需要探索。<a class="reference external" href="quickref.html">Quick reStructuredText</a> 用户参考是一个好地方。对于完整的细节，<a class="reference external" href="../../ref/rst/restructuredtext.html">reStructuredText 标记规范</a> 是一个好地方 <a class="footnote-reference brackets" href="#id16" id="id15">1</a>。</p>
+<p>对 Docutils 或 reStructuredText 有疑问或需要帮助的用户应在 <a class="reference external" href="../mailing-lists.html#docutils-users">Docutils-users</a> 邮件列表中发布信息。</p>
 <dl class="footnote brackets">
 <dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id15">1</a></span></dt>
-<dd><p>If that relative link doesn’t work, try the master document:
-<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html">http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html</a>.</p>
+<dd><p>如果这个相对链接不起作用，试试主文档：<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html">http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html</a>.</p>
 </dd>
 </dl>
 </section>
@@ -720,14 +654,14 @@ list.</p>
             <ul>
 <li><a class="reference internal" href="#">ReStructuredText 初探</a><ul>
 <li><a class="reference internal" href="#structure">结构化</a></li>
-<li><a class="reference internal" href="#text-styles">Text styles</a></li>
-<li><a class="reference internal" href="#lists">Lists</a></li>
-<li><a class="reference internal" href="#preformatting-code-samples">Preformatting (code samples)</a></li>
-<li><a class="reference internal" href="#sections">Sections</a><ul>
-<li><a class="reference internal" href="#document-title-subtitle">Document Title / Subtitle</a></li>
+<li><a class="reference internal" href="#text-styles">文本样式</a></li>
+<li><a class="reference internal" href="#lists">列表</a></li>
+<li><a class="reference internal" href="#preformatting-code-samples">预设格式化（代码样本）</a></li>
+<li><a class="reference internal" href="#sections">章节</a><ul>
+<li><a class="reference internal" href="#document-title-subtitle">文档标题/副标题</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#images">Images</a></li>
+<li><a class="reference internal" href="#images">图片</a></li>
 <li><a class="reference internal" href="#what-next">下一步是什么？</a></li>
 </ul>
 </li>
