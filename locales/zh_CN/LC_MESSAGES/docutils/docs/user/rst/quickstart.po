@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../docutils/docs/user/rst/quickstart.txt:2
 msgid "A ReStructuredText Primer"
-msgstr ""
+msgstr "ReStructuredText 初探"
 
 #: ../../docutils/docs/user/rst/quickstart.txt
 msgid "Author"
@@ -57,6 +57,9 @@ msgid ""
 "reference.  If these links don't work, please refer to the `master quick "
 "reference`_ document."
 msgstr ""
+"下面的文本包含看起来像 \"(quickref__)\" 的链接。"
+"这些是相对链接，指向 `Quick reStructuredText`_ 用户参考。"
+"如果这些链接不起作用，请参考 `master quick reference`_ 文档。"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:21
 msgid ""
@@ -64,10 +67,11 @@ msgid ""
 " Next?`_ section below has links to further resources, including a formal"
 " reference."
 msgstr ""
+"本文档是对 reStructuredText 的非正式介绍。下面的 `下一步是什么？`_ 部分有更多资源的链接，包括正式的参考资料。"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:27
 msgid "Structure"
-msgstr ""
+msgstr "结构化"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:29
 msgid ""
@@ -76,6 +80,9 @@ msgid ""
 "consistent patterns.  These patterns are interpreted by a HTML converter "
 "to produce \"Very Structured Text\" that can be used by a web browser."
 msgstr ""
+"从一开始，让我说，\"结构化文本\" 可能是一个有点错误的名称。"
+"它更像是使用某些一致模式的 \"放松文本\"。"
+"这些模式被一个 HTML 转换器解释为产生可以被网络浏览器使用的 \"非常结构化的文本\"。"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:35
 msgid ""
@@ -85,6 +92,10 @@ msgid ""
 "left edge.  Paragraphs that start indented will result in indented quote "
 "paragraphs. For example::"
 msgstr ""
+"公认的最基本模式是 **段落**（quickref__）。"
+"这是一大块由空行（一个就够了）分隔的文本。"
+"段落必须有相同的缩进 -- 也就是说，在其左边缘排队。"
+"开始缩进的段落将导致缩进的引用段落。例如 ::"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:49
 #: ../../docutils/docs/user/rst/quickstart.txt:177
@@ -406,7 +417,7 @@ msgstr ""
 
 #: ../../docutils/docs/user/rst/quickstart.txt:387
 msgid "What Next?"
-msgstr ""
+msgstr "下一步是什么？"
 
 #: ../../docutils/docs/user/rst/quickstart.txt:389
 msgid ""

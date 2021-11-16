@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../docutils/docs/user/links.txt:3
 msgid "Docutils_ Link List"
-msgstr ""
+msgstr "Docutils_ 链接列表"
 
 #: ../../docutils/docs/user/links.txt
 msgid "Author"
@@ -73,26 +73,31 @@ msgid ""
 "`Docutils Sandbox`_.  If you have something to publish, you can get write"
 " access, too!"
 msgstr ""
+"本文档包含 Docutils 和 reStructuredText 的用户可能会发现有用的链接。"
+"这里列出的许多项目都托管在 `Docutils Sandbox`_ 中。如果你有东西要发布，你也可以获得写入权限！"
 
 #: ../../docutils/docs/user/links.txt:20
 msgid ""
 "The most current version of this link list can always be found at "
 "https://docutils.sourceforge.io/docs/user/links.html."
 msgstr ""
+"这个链接列表的最新版本总是可以在"
+"https://docutils.sourceforge.io/docs/user/links.html。"
 
 #: ../../docutils/docs/user/links.txt:28
 msgid "Editors"
-msgstr ""
+msgstr "编辑器"
 
 #: ../../docutils/docs/user/links.txt:30
 msgid ""
 "Advanced text editors with reStructuredText support, IDEs, and docutils "
 "GUIs:"
 msgstr ""
+"支持 reStructuredText 的高级文本编辑器、IDE 和 docutils GUIs："
 
 #: ../../docutils/docs/user/links.txt:32
 msgid "Emacs `rst mode <http://docutils.sf.net/tools/editors/emacs>`__."
-msgstr ""
+msgstr "Emacs  `rst 模式 <http://docutils.sf.net/tools/editors/emacs>`__ 。"
 
 #: ../../docutils/docs/user/links.txt:34
 msgid "`Vim <http://www.vim.org/index.php>`__:"
@@ -103,12 +108,16 @@ msgid ""
 "`reStructuredText syntax highlighting mode "
 "<http://www.vim.org/scripts/script.php?script_id=973>`__,"
 msgstr ""
+"`reStructuredText 语法高亮模式 "
+"<http://www.vim.org/scripts/script.php?script_id=973>`__,"
 
 #: ../../docutils/docs/user/links.txt:39
 msgid ""
 "`VST <http://www.vim.org/scripts/script.php?script_id=1334>`__ (Vim "
 "reStructuredText) plugin for Vim7 with folding."
 msgstr ""
+"`VST <http://www.vim.org/scripts/script.php?script_id=1334>`__ （Vim "
+"reStructuredText）Vim7 的插件，带有折叠功能。"
 
 #: ../../docutils/docs/user/links.txt:42
 msgid ""
@@ -116,40 +125,48 @@ msgid ""
 "for Vim that emulates two-pane outliner with support for reStructuredText"
 " (since version 4.0b2)."
 msgstr ""
+"`VOoM <http://www.vim.org/scripts/script.php?script_id=2657>`__ 插件"
+"Vim 的插件，模拟双窗格的 outliner，支持 reStructuredText"
+" (自 4.0b2 版起)。"
 
 #: ../../docutils/docs/user/links.txt:46
 msgid ""
 "`Riv: Take notes in rst <https://github.com/Rykka/riv.vim>`__ Vim plugin "
 "to take notes in reStructured text."
 msgstr ""
+"`Riv: Take notes in rst <https://github.com/Rykka/riv.vim>`__ Vim 插件，"
+"在 reStructured text 中做笔记。"
 
 #: ../../docutils/docs/user/links.txt:49
 msgid ""
 "`JED <http://www.jedsoft.org/jed/>`__ programmers editor with `rst mode "
 "<http://jedmodes.sf.net/mode/rst/>`__"
 msgstr ""
+"`JED <http://www.jedsoft.org/jed/>`__ 程序员编辑器与 `rst 模式 "
+"<http://jedmodes.sf.net/mode/rst/>`__"
 
 #: ../../docutils/docs/user/links.txt:52
 msgid "`reStructuredText editor plug-in for Eclipse`__"
-msgstr ""
+msgstr "`reStructuredText Eclipse 的编辑插件`__"
 
 #: ../../docutils/docs/user/links.txt:56
 msgid "Gnome's gedit offers syntax highlighting and a reST preview pane."
-msgstr ""
+msgstr "Gnome 的 gedit 提供了语法高亮和一个 reST 预览窗格。"
 
 #: ../../docutils/docs/user/links.txt:58
 msgid ""
 "Latest version of the plugin is available from `bittner @ github`_ (See "
 "also: `Gedit third party plugins`__)."
 msgstr ""
+"该插件的最新版本可从 `bittner @ github`_ 获得（参见：`Gedit 第三方插件`__）。"
 
 #: ../../docutils/docs/user/links.txt:64
 msgid "Gunnar Schwant's DocFactory_ is a wxPython GUI application for Docutils."
-msgstr ""
+msgstr "Gunnar Schwant 的 DocFactory_ 是一个用于 Docutils 的 wxPython GUI 应用程序。。"
 
 #: ../../docutils/docs/user/links.txt:69
 msgid "ReSTedit_ by Bill Bumgarner is a Docutils GUI for Mac OS X."
-msgstr ""
+msgstr "Bill Bumgarner 的 ReSTedit_ 是一个用于 Mac OS X 的 Docutils GUI。"
 
 #: ../../docutils/docs/user/links.txt:73
 msgid ""
@@ -158,26 +175,31 @@ msgid ""
 "and as `document editor`__ with outlines containing reStructuredText "
 "markup."
 msgstr ""
+"Leo_ 是一个使用 PyQt 的 Python 编写的 大纲器_。"
+"它可以作为文字编程的 IDE，也可以作为存放任何类型数据的文件柜，"
+"还可以作为包含 reStructuredText 标记的大纲的 `文档编辑器`__。"
 
 #: ../../docutils/docs/user/links.txt:81
 msgid ""
 "`NoTex <https://notex.ch>`_ is a browser-based reStructuredText editor "
 "with syntax highlighting and PDF/HTML export functionality using Sphinx."
 msgstr ""
+"`NoTex <https://notex.ch>`_ 是一个基于浏览器的 reStructuredText 编辑器，具有语法高亮和使用 Sphinx 的 PDF/HTML 导出功能。"
 
 #: ../../docutils/docs/user/links.txt:84
 msgid ""
 "`rsted <https://github.com/anru/rsted>`_ is a \"simple online editor for "
 "reStructuredText on Flask\". You can try it on http://rst.ninjs.org/"
 msgstr ""
+"`rsted <https://github.com/anru/rsted>`_ 是一个 \"简单的在线编辑器，用于 Flask 上的reStructuredText\"。你可以在 http://rst.ninjs.org/"
 
 #: ../../docutils/docs/user/links.txt:89
 msgid "Export"
-msgstr ""
+msgstr "输出"
 
 #: ../../docutils/docs/user/links.txt:91
 msgid "Projects providing additional export routes."
-msgstr ""
+msgstr "提供更多出口路线的项目。"
 
 #: ../../docutils/docs/user/links.txt:94
 msgid "PDF"
@@ -188,6 +210,8 @@ msgid ""
 "`rst2pdf (reportlab)`__ is a tool to go directly from reStructuredText to"
 " PDF, via ReportLab__. No LaTeX installation is required."
 msgstr ""
+"`rst2pdf (reportlab)`__ 是一个通过 ReportLab__ 直接从 reStructuredText 到 PDF 的工具。"
+"不需要安装 LaTeX。"
 
 #: ../../docutils/docs/user/links.txt:103
 msgid ""
@@ -196,6 +220,8 @@ msgid ""
 "destination location and finally deleting all the messy temporary files "
 "that this process generates."
 msgstr ""
+"Martin Blais 的 `rst2pdf (pdflatex)`__ 是一个最小的前端，产生 LaTeX，编译 LaTeX 文件，"
+"将产生的输出到目标位置，最后删除这个过程产生的所有混乱的临时文件。"
 
 #: ../../docutils/docs/user/links.txt:110
 msgid ""
@@ -204,20 +230,25 @@ msgid ""
 "intermediate files. It uses the rubber__ Python wrapper for LaTeX and "
 "friends."
 msgstr ""
+"`rst2pdf (rubber)`__ 是一个前端，"
+"用于通过 LaTeX 从 reStructuredText 源生成 PDF 文档，"
+"只需一步就能清理中间文件。"
+"它使用了用于 LaTeX 和友好的 rubber__ Python 包装器。"
 
 #: ../../docutils/docs/user/links.txt:118
 msgid "rlpdf_ is another PDF Writer based on ReportLabs."
-msgstr ""
+msgstr "rlpdf_ 是另一个基于 ReportLabs 的 PDF 写作工具。"
 
 #: ../../docutils/docs/user/links.txt:122
 msgid ""
 "RinohType_ is a pure Python PDF Writer based on a document template and a"
 " style sheet (beta)."
 msgstr ""
+"RinohType_ 是一个基于文档模板和样式表的纯 Python PDF 写作工具（beta）。"
 
 #: ../../docutils/docs/user/links.txt:128
 msgid "website generators and HTML variants"
-msgstr ""
+msgstr "网站生成器和 HTML 变体"
 
 #: ../../docutils/docs/user/links.txt:130
 msgid ""

@@ -74,7 +74,7 @@ msgid ""
 "edit the source text file directly."
 msgstr ""
 "请随时提出问题和/或提供答案；发送电子邮件到 `Docutils-users`_ 邮件列表。"
-"项目成员应随时直接编辑源文本文件。"
+"项目成员应随时直接编辑源文本文档。"
 
 #: ../../docutils/FAQ.txt:36
 msgid "Docutils"
@@ -93,8 +93,8 @@ msgid ""
 "comes with an extension to extract inline documentation from Python "
 "modules and packages."
 msgstr ""
-"Docutils_ 是一个将纯文本文件处理成有用格式的系统，如 HTML、XML 和 LaTeX。"
-"它支持多种类型的输入，如独立文件、`PEPs（Python 增强建议）`_ 和字符串输入。"
+"Docutils_ 是一个将纯文本文档处理成有用格式的系统，如 HTML、XML 和 LaTeX。"
+"它支持多种类型的输入，如独立文档、`PEPs（Python 增强建议）`_ 和字符串输入。"
 "客户端代码可以添加其他的输入类型，例如，Sphinx_ 带有一个扩展，可以从 Python 模块和包中提取内联文档。"
 
 #: ../../docutils/FAQ.txt:48
@@ -258,6 +258,9 @@ msgid ""
 "reinterpretation of the StructuredText_ and Setext_ lightweight markup "
 "systems."
 msgstr ""
+"reStructuredText_ 是一个易于阅读、所见即所得的纯文本标记语法和解析器系统。"
+"reStructuredText 解析器是 Docutils_ 的一个组件。"
+"reStructuredText 是对 StructuredText_ 和 Setext_ 轻量级标记系统的修订和重新解释。"
 
 #: ../../docutils/FAQ.txt:166
 msgid ""
@@ -265,6 +268,8 @@ msgid ""
 "source for this FAQ <FAQ.txt>`_ is written in reStructuredText; open it "
 "in another window and compare them side by side."
 msgstr ""
+"如果你在网上阅读这篇文章，你可以自己看。"
+"`这个 FAQ 的来源 <FAQ.txt>`_ 是用 reStructuredText 写的；在另一个窗口打开，并将它们并排比较。"
 
 #: ../../docutils/FAQ.txt:170
 msgid ""
@@ -272,10 +277,12 @@ msgid ""
 "reference are a good place to start.  The `reStructuredText Markup "
 "Specification`_ is a detailed technical specification."
 msgstr ""
+"`A ReStructuredText Primer`_ 和 `Quick reStructuredText`_ 用户参考是一个很好的开始。"
+"`reStructuredText Markup Specification`_ 是一份详细的技术规范。"
 
 #: ../../docutils/FAQ.txt:185
 msgid "Why is it called \"reStructuredText\"?"
-msgstr ""
+msgstr "为什么叫 \"reStructuredText\"?"
 
 #: ../../docutils/FAQ.txt:187
 msgid ""
@@ -285,14 +292,17 @@ msgid ""
 " For a detailed history of reStructuredText and the Docutils project, see"
 " `An Introduction to reStructuredText`_."
 msgstr ""
+"这个名字来自于 reStructuredText 的前身之一 \"StructuredText\" 和 \"re\" 的组合："
+"\"revised\"、\"reworked\" 和 \"reinterpreted\"，以及在 ``re.py`` 正则表达式模块中。"
+"关于 reStructuredText 和 Docutils 项目的详细历史，请参见 `An Introduction to reStructuredText`_。"
 
 #: ../../docutils/FAQ.txt:193
 msgid "\"reStructuredText\" is **ONE** word, *not two!*"
-msgstr ""
+msgstr "\"reStructuredText\" 是一个词而不是两个！"
 
 #: ../../docutils/FAQ.txt:197
 msgid "What's the standard abbreviation for \"reStructuredText\"?"
-msgstr ""
+msgstr "\"reStructuredText\" 的标准缩略语是什么？"
 
 #: ../../docutils/FAQ.txt:199
 msgid ""
@@ -300,6 +310,8 @@ msgid ""
 "taken with capitalization, to avoid confusion with \"REST__\", an acronym"
 " for \"Representational State Transfer\"."
 msgstr ""
+"\"RST\"和 \"ReST\" （或 \"reST\"）都是可以接受的。"
+"应注意大小写，以避免与 \"REST__\" 混淆，这是 \"Representational State Transfer\" 的缩写。
 
 #: ../../docutils/FAQ.txt:203
 msgid ""
@@ -307,10 +319,12 @@ msgid ""
 " they overemphasize reStructuredText's predecessor, Zope's "
 "StructuredText."
 msgstr ""
+"不应该使用缩写 \"reSTX\" 和 \"rSTX\"/\"rstx\"；"
+"它们过分强调了 reStructuredText 的前身，Zope 的 StructuredText。"
 
 #: ../../docutils/FAQ.txt:211
 msgid "What's the standard filename extension for a reStructuredText file?"
-msgstr ""
+msgstr "reStructuredText 文档的标准文档名扩展名是什么？"
 
 #: ../../docutils/FAQ.txt:213
 msgid ""
@@ -321,22 +335,25 @@ msgid ""
 "require that users alter their OS settings, which is something that many "
 "users will not be willing or able to do."
 msgstr ""
+"它是 \".txt\"。有些人想使用 \".rest\" 或 \".rst\" 或 \".restx\"，但为什么要麻烦呢？"
+"ReStructuredText 源文档的目的是作为纯文本阅读，而大多数操作系统已经将 \".txt\" 与文本文档联系起来。"
+"使用专门的文档名扩展名需要用户改变他们的操作系统设置，而这是许多用户不愿意或无法做到的。"
 
 #: ../../docutils/FAQ.txt:220
 msgid "Also see `What's the official MIME type for reStructuredText data?`_"
-msgstr ""
+msgstr "另见 `reStructuredText 数据的官方 MIME 类型是什么？`_"
 
 #: ../../docutils/FAQ.txt:224
 msgid "Are there any reStructuredText editor extensions?"
-msgstr ""
+msgstr "是否有任何 reStructuredText 编辑器的扩展？"
 
 #: ../../docutils/FAQ.txt:226
 msgid "See the list of editors_ supporting reStructuredText."
-msgstr ""
+msgstr "请参阅支持 reStructuredText 的 编辑器_ 列表。"
 
 #: ../../docutils/FAQ.txt:230
 msgid "How can I indicate the document title?  Subtitle?"
-msgstr ""
+msgstr "我怎样才能表明文档的标题？ 副标题？"
 
 #: ../../docutils/FAQ.txt:232
 msgid ""
@@ -345,20 +362,23 @@ msgid ""
 "section title immediately after the document title becomes the document "
 "subtitle.  For example::"
 msgstr ""
+"一个文档开头的独特装饰的章节标题被特别处理，作为文档标题。"
+"同样地，紧接在文档标题之后的独特装饰的章节标题成为文档副标题。例如 ::"
 
 #: ../../docutils/FAQ.txt:245
 msgid "Counterexample::"
-msgstr ""
+msgstr "反例 ::"
 
 #: ../../docutils/FAQ.txt:255
 msgid "Another counterexample::"
-msgstr ""
+msgstr "另一个反例 ::"
 
 #: ../../docutils/FAQ.txt:269
 msgid ""
 "How can I represent esoteric characters (e.g. character entities) in a "
 "document?"
 msgstr ""
+"我怎样才能在文档中表示深奥的字符（如字符实体）？"
 
 #: ../../docutils/FAQ.txt:271
 msgid ""
@@ -369,12 +389,17 @@ msgid ""
 "input encoding.  Docutils uses Unicode internally, so the em-dash "
 "character is a real em-dash internally."
 msgstr ""
+"例如，假设你想在你的文档中使用一个 em-dash（XML 字符实体 &mdash;，Unicode 字符 U+2014）："
+"使用一个真正的 em-dash。在你的输入文档中插入具体的字符（例如，输入一个真实的 em-dash），"
+"使用适合你的应用程序的任何编码，并告诉 Docutils 输入编码。"
+"Docutils 内部使用 Unicode，所以 em-dash 字符在内部是一个真正的 em-dash。"
 
 #: ../../docutils/FAQ.txt:278
 msgid ""
 "Emacs users should refer to the `Emacs Support for reStructuredText`__ "
 "document.  Tips for other editors are welcome."
 msgstr ""
+"Emacs 用户应该参考 `Emacs 对 reStructuredText 的支持`__ 文档。欢迎为其他编辑器提供提示。"
 
 #: ../../docutils/FAQ.txt:283
 msgid ""
@@ -386,6 +411,10 @@ msgid ""
 " or outside inline literals or literal blocks -- there's no character "
 "entity interpretation in either case."
 msgstr ""
+"ReStructuredText 没有字符实体子系统；它对 XML 链不了解。"
+"对 Docutils 来说，输入文本中的 \"&mdash;\" 是 7 个不连续的字符；没有解释发生。"
+"当编写 HTML 时，\"&\" 被转换为 \"&amp;\"，所以在原始输出中你会看到 \"&amp;mdash;\"。"
+"对于内联字元或字元块内部或外部的文本，解释上没有区别--在这两种情况下都没有字符实体解释。"
 
 #: ../../docutils/FAQ.txt:291
 msgid ""
@@ -395,10 +424,13 @@ msgid ""
 "XML & HTML character entity sets as substitution definitions.  For "
 "example, the Japanese yen currency symbol can be used as follows::"
 msgstr ""
+"如果你不能使用与 Unicode 兼容的编码，而必须依赖 7 位 ASCII，那么有一个变通办法。"
+"Docutils 0.3.10 中新增了一套 `标准替换定义集`_，它提供了等同于 XML 和 HTML 字符实体集的替换定义。"
+"例如，日元的货币符号可以如下使用 ::"
 
 #: ../../docutils/FAQ.txt:301
 msgid "Thanks to David Priest for the original idea."
-msgstr ""
+msgstr "感谢 David Priest 的原始想法。"
 
 #: ../../docutils/FAQ.txt:303
 msgid ""
@@ -407,6 +439,9 @@ msgid ""
 "complications though; you can no longer *write* about charents naturally;"
 " instead of writing \"&mdash;\" you'd have to write \"&amp;mdash;\"."
 msgstr ""
+"如果你坚持使用 XML 风格的链式，你就必须实现一个预处理系统来转换为 UTF-8 或其他的东西。"
+"不过这也带来了一些复杂的问题；你不能再自然地写 Charents 了；"
+"与其写 \"&mdash;\"，不如写 \"&amp;mdash;\"。"
 
 #: ../../docutils/FAQ.txt:309
 msgid ""
@@ -414,6 +449,7 @@ msgid ""
 "following substitution definitions into your document (both of them are "
 "using the \"unicode_\" directive)::"
 msgstr ""
+"对于长破折号的常见情况，你可能还想在你的文档中插入以下替换定义（这两个都是使用 \"unicode_\" 指令） ::"。
 
 #: ../../docutils/FAQ.txt:321
 msgid ""

@@ -9,21 +9,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: docutils-doc \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-09 14:45+0800\n"
+"POT-Creation-Date: 2021-11-16 14:45+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: ../../docutils/docs/ref/rst/restructuredtext.txt:5
 msgid "reStructuredText Markup Specification"
 msgstr ""
 
 #: ../../docutils/docs/ref/rst/restructuredtext.txt
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:950
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:957
 msgid "Author"
 msgstr ""
 
@@ -32,7 +32,7 @@ msgid "David Goodger"
 msgstr ""
 
 #: ../../docutils/docs/ref/rst/restructuredtext.txt
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:952
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:959
 msgid "Contact"
 msgstr ""
 
@@ -41,7 +41,7 @@ msgid "docutils-develop@lists.sourceforge.net"
 msgstr ""
 
 #: ../../docutils/docs/ref/rst/restructuredtext.txt
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:957
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:964
 msgid "Revision"
 msgstr ""
 
@@ -50,7 +50,7 @@ msgid "$Revision$"
 msgstr ""
 
 #: ../../docutils/docs/ref/rst/restructuredtext.txt
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:954
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:961
 msgid "Date"
 msgstr ""
 
@@ -59,7 +59,7 @@ msgid "$Date$"
 msgstr ""
 
 #: ../../docutils/docs/ref/rst/restructuredtext.txt
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:953
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:960
 msgid "Copyright"
 msgstr ""
 
@@ -545,26 +545,34 @@ msgid ""
 "adornment: \"underlines\" below the title text, or underlines and "
 "matching \"overlines\" above the title.  An underline/overline is a "
 "single repeated punctuation character that begins in column 1 and forms a"
-" line extending at least as far as the right edge of the title text.  "
-"Specifically, an underline/overline character may be any non-alphanumeric"
-" printable 7-bit ASCII character [#]_.  When an overline is used, the "
-"length and character used must match the underline.  Underline-only "
-"adornment styles are distinct from overline-and-underline styles that use"
-" the same character.  There may be any number of levels of section "
-"titles, although some output formats may have limits (HTML has 6 levels)."
+" line extending at least as far as the right edge of the title text. [#]_"
+"  Specifically, an underline/overline character may be any non-"
+"alphanumeric printable 7-bit ASCII character [#]_.  When an overline is "
+"used, the length and character used must match the underline.  Underline-"
+"only adornment styles are distinct from overline-and-underline styles "
+"that use the same character.  There may be any number of levels of "
+"section titles, although some output formats may have limits (HTML has 6 "
+"levels)."
 msgstr ""
 
 #: ../../docutils/docs/ref/rst/restructuredtext.txt:506
+msgid ""
+"The key is the visual length of the title in a mono-spaced font. The "
+"adornment may need more or less characters than title, if the title "
+"contains wide__ or combining__ characters."
+msgstr ""
+
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:510
 msgid "The following are all valid section title adornment characters::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:511
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:515
 msgid ""
 "Some characters are more suitable than others.  The following are "
 "recommended::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:516
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:523
 msgid ""
 "Rather than imposing a fixed number and order of section title adornment "
 "styles, the order enforced will be the order as encountered. The first "
@@ -572,25 +580,25 @@ msgid ""
 "style will be a subtitle, the third will be a subsubtitle, and so on."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:522
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:529
 msgid "Below are examples of section title styles::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:559
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:566
 msgid ""
 "When a title has both an underline and an overline, the title text may be"
 " inset, as in the first two examples above.  This is merely aesthetic and"
 " not significant.  Underline-only title text may *not* be inset."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:564
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:571
 msgid ""
 "A blank line after a title is optional.  All text blocks up to the next "
 "title of the same or higher level are included in a section (or "
 "subsection, etc.)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:568
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:575
 msgid ""
 "All section title styles need not be used, nor need any specific section "
 "title style be used.  However, a document must be consistent in its use "
@@ -598,7 +606,7 @@ msgid ""
 "sections must use that hierarchy."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:573
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:580
 msgid ""
 "Each section title automatically generates a hyperlink target pointing to"
 " the section.  The text of the hyperlink target (the \"reference name\") "
@@ -606,30 +614,30 @@ msgid ""
 "Targets`_ for a complete description."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:578
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:585
 msgid "Sections may contain `body elements`_, transitions_, and nested sections."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:583
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:590
 msgid "Transitions"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:585
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:592
 msgid "Doctree element: transition_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:587
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:594
 msgid ""
 "Instead of subheads, extra space or a type ornament between paragraphs "
 "may be used to mark text divisions or to signal changes in subject or "
 "emphasis."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:591
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:598
 msgid "(The Chicago Manual of Style, 14th edition, section 1.80)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:593
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:600
 msgid ""
 "Transitions are commonly seen in novels and short fiction, as a gap "
 "spanning one or more lines, with or without a type ornament such as a row"
@@ -638,7 +646,7 @@ msgid ""
 " be immediately adjacent."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:599
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:606
 msgid ""
 "The syntax for a transition marker is a horizontal line of 4 or more "
 "repeated punctuation characters.  The syntax is the same as section title"
@@ -646,33 +654,33 @@ msgid ""
 "before and after::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:610
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:617
 msgid ""
 "Unlike section title underlines, no hierarchy of transition markers is "
 "enforced, nor do differences in transition markers accomplish anything.  "
 "It is recommended that a single consistent style be used."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:614
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:621
 msgid ""
 "The processing system is free to render transitions in output in any way "
 "it likes.  For example, horizontal rules (``<hr>``) in HTML output would "
 "be an obvious choice."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:620
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:627
 msgid "Body Elements"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:623
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:630
 msgid "Paragraphs"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:625
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:632
 msgid "Doctree element: paragraph_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:627
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:634
 msgid ""
 "Paragraphs consist of blocks of left-aligned text with no markup "
 "indicating any other body element.  Blank lines separate paragraphs from "
@@ -680,30 +688,30 @@ msgid ""
 "markup`_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:632
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:686
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:838
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1183
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1221
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1276
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1336
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1670
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2012
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2157
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2203
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2397
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:639
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:693
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:845
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1190
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1228
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1283
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1343
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1677
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2019
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2164
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2210
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2404
 msgid "Syntax diagram::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:646
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:653
 msgid "Bullet Lists"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:648
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:655
 msgid "Doctree elements: bullet_list_, list_item_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:650
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:657
 msgid ""
 "A text block which begins with a \"*\", \"+\", \"-\", \"•\", \"‣\", or "
 "\"⁃\", followed by whitespace, is a bullet list item (a.k.a. "
@@ -712,19 +720,19 @@ msgid ""
 "determines the indentation.  For example::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:675
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:682
 msgid "Here are examples of **incorrectly** formatted bullet lists::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:695
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:702
 msgid "Enumerated Lists"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:697
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:704
 msgid "Doctree elements: enumerated_list_, list_item_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:699
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:706
 msgid ""
 "Enumerated lists (a.k.a. \"ordered\" lists) are similar to bullet lists, "
 "but use enumerators instead of bullets.  An enumerator consists of an "
@@ -732,27 +740,27 @@ msgid ""
 "following enumeration sequences are recognized:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:704
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:711
 msgid "arabic numerals: 1, 2, 3, ... (no upper limit)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:705
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:712
 msgid "uppercase alphabet characters: A, B, C, ..., Z."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:706
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:713
 msgid "lower-case alphabet characters: a, b, c, ..., z."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:707
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:714
 msgid "uppercase Roman numerals: I, II, III, IV, ..., MMMMCMXCIX (4999)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:708
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:715
 msgid "lowercase Roman numerals: i, ii, iii, iv, ..., mmmmcmxcix (4999)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:710
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:717
 msgid ""
 "In addition, the auto-enumerator, \"#\", may be used to automatically "
 "enumerate a list.  Auto-enumerated lists may begin with explicit "
@@ -761,40 +769,40 @@ msgid ""
 "Docutils 0.3.8.)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:716
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:723
 msgid "The following formatting types are recognized:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:718
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:725
 msgid "suffixed with a period: \"1.\", \"A.\", \"a.\", \"I.\", \"i.\"."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:719
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:726
 msgid "surrounded by parentheses: \"(1)\", \"(A)\", \"(a)\", \"(I)\", \"(i)\"."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:720
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:727
 msgid "suffixed with a right-parenthesis: \"1)\", \"A)\", \"a)\", \"I)\", \"i)\"."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:722
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:729
 msgid "While parsing an enumerated list, a new list will be started whenever:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:724
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:731
 msgid ""
 "An enumerator is encountered which does not have the same format and "
 "sequence type as the current list (e.g. \"1.\", \"(a)\" produces two "
 "separate lists)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:728
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:735
 msgid ""
 "The enumerators are not in sequence (e.g., \"1.\", \"3.\" produces two "
 "separate lists)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:731
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:738
 msgid ""
 "It is recommended that the enumerator of the first list item be ordinal-1"
 " (\"1\", \"A\", \"a\", \"I\", or \"i\").  Although other start-values "
@@ -803,7 +811,7 @@ msgid ""
 "with a non-ordinal-1 enumerator."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:737
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:744
 msgid ""
 "Lists using Roman numerals must begin with \"I\"/\"i\" or a multi-"
 "character value, such as \"II\" or \"XV\".  Any other single-character "
@@ -813,7 +821,7 @@ msgid ""
 "\"I\"/\"i\", since these are recognized as Roman numeral 1."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:744
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:751
 msgid ""
 "The second line of each enumerated list item is checked for validity. "
 "This is to prevent ordinary paragraphs from being mistakenly interpreted "
@@ -821,50 +829,50 @@ msgid ""
 "enumerators.  For example, this text is parsed as an ordinary paragraph::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:753
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:760
 msgid ""
 "However, ambiguity cannot be avoided if the paragraph consists of only "
 "one line.  This text is parsed as an enumerated list item::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:758
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:765
 msgid ""
 "If a single-line paragraph begins with text identical to an enumerator "
 "(\"A.\", \"1.\", \"(b)\", \"I)\", etc.), the first character will have to"
 " be escaped in order to have the line parsed as an ordinary paragraph::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:764
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:771
 msgid "Examples of nested enumerated lists::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:774
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:781
 msgid "Example syntax diagram::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:783
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:790
 msgid "Definition Lists"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:785
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:792
 msgid ""
 "Doctree elements: definition_list_, definition_list_item_, term_, "
 "classifier_, definition_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:788
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:795
 msgid ""
 "Each definition list item contains a term, optional classifiers, and a "
 "definition."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:791
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:798
 msgid ""
 "A `term` is a simple one-line word or phrase.  Escape_ a leading hyphen "
 "to prevent recognition as an `option list`_ item."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:794
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:801
 msgid ""
 "Optional `classifiers` may follow the term on the same line, each after "
 "an inline \" : \" (space, colon, space).  Inline markup is parsed in the "
@@ -872,7 +880,7 @@ msgid ""
 "will only be recognized if it appears outside of any inline markup."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:799
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:806
 msgid ""
 "A `definition` is a block indented relative to the term, and may contain "
 "multiple paragraphs and other body elements.  There may be no blank line "
@@ -881,22 +889,22 @@ msgid ""
 "and after the last definition list item, but are optional in-between."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:806
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:813
 msgid "Example::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:825
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:832
 msgid "A definition list may be used in various ways, including:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:827
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:834
 msgid ""
 "As a dictionary or glossary.  The term is the word itself, a classifier "
 "may be used to indicate the usage of the term (noun, verb, etc.), and the"
 " definition follows."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:831
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:838
 msgid ""
 "To describe program variables.  The term is the variable name, a "
 "classifier may be used to indicate the type of the variable (string, "
@@ -905,15 +913,15 @@ msgid ""
 "of Grouch_, a system for describing and enforcing a Python object schema."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:849
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:856
 msgid "Field Lists"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:851
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:858
 msgid "Doctree elements: field_list_, field_, field_name_, field_body_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:853
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:860
 msgid ""
 "Field lists are used as part of an extension syntax, such as options for "
 "directives_, or database-like records meant for further processing.  They"
@@ -924,7 +932,7 @@ msgid ""
 "\"image_\" and \"meta_\" directives in `reStructuredText Directives`_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:864
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:871
 msgid ""
 "Field lists are mappings from *field names* to *field bodies*, modeled on"
 " RFC822_ headers.  A field name may consist of any characters, but colons"
@@ -940,7 +948,7 @@ msgid ""
 " determines the indentation of the field body.  For example::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:890
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:897
 msgid ""
 "The interpretation of individual words in a multi-word field name is up "
 "to the application.  The application may specify a syntax for the field "
@@ -949,7 +957,7 @@ msgid ""
 "direct support for the \"name=value\" syntax may be added."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:896
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:903
 msgid ""
 "Standard RFC822_ headers cannot be used for this construct because they "
 "are ambiguous.  A word followed by a colon at the beginning of a line is "
@@ -958,28 +966,28 @@ msgid ""
 "email messages), standard RFC822 headers could be used."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:903
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1101
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:910
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1108
 msgid "Syntax diagram (simplified)::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:911
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:918
 msgid ""
 "Up to Docutils 0.14, field markers were not recognized when containing a "
 "colon."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:915
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:922
 msgid "Bibliographic Fields"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:917
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:924
 msgid ""
 "Doctree elements: docinfo_, address_, author_, authors_, contact_, "
 "copyright_, date_, organization_, revision_, status_, topic_, version_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:921
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:928
 msgid ""
 "When a field list is the first element in a document (after the document "
 "title, if there is one) [#]_, it may have its fields transformed to "
@@ -987,7 +995,7 @@ msgid ""
 "front matter of a book, such as the title page and copyright page."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:927
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:934
 msgid ""
 "In addition to the document title and subtitle, also comments_, "
 "`substitution definitions`_, `hyperlink targets`_, and \"header\", "
@@ -995,7 +1003,7 @@ msgid ""
 "bibliographic fields."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:932
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:939
 msgid ""
 "Certain registered field names (listed below) are recognized and "
 "transformed to the corresponding doctree elements, most becoming child "
@@ -1007,94 +1015,94 @@ msgid ""
 "fields will remain as generic fields in the docinfo element."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:942
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:949
 msgid ""
 "The registered bibliographic field names and their corresponding doctree "
 "elements are as follows:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:946
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:953
 msgid "Field name"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:946
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:953
 msgid "doctree element"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:948
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:955
 msgid "Abstract"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:948
 #: ../../docutils/docs/ref/rst/restructuredtext.txt:955
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:962
 msgid "topic_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:949
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:956
 msgid "Address"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:949
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:956
 msgid "address_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:950
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:957
 msgid "author_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:951
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:958
 msgid "Authors"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:951
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:958
 msgid "authors_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:952
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:959
 msgid "contact_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:953
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:960
 msgid "copyright_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:954
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:961
 msgid "date_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:955
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:962
 msgid "Dedication"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:956
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:963
 msgid "Organization"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:956
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:963
 msgid "organization_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:957
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:964
 msgid "revision_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:958
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:965
 msgid "Status"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:958
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:965
 msgid "status_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:959
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:966
 msgid "Version"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:959
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:966
 msgid "version_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:962
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:969
 msgid ""
 "The \"Authors\" field may contain either: a single paragraph consisting "
 "of a list of authors, separated by \";\" or \",\" (\";\" is checked "
@@ -1107,13 +1115,13 @@ msgid ""
 "to disambiguate: \":Authors: Doe, Jane;\"."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:973
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:980
 msgid ""
 "The \"Address\" field is for a multi-line surface mailing address. "
 "Newlines and whitespace will be preserved."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:976
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:983
 msgid ""
 "The \"Dedication\" and \"Abstract\" fields may contain arbitrary body "
 "elements.  Only one of each is allowed.  They become topic elements with "
@@ -1121,24 +1129,24 @@ msgid ""
 "immediately following the docinfo element."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:981
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:988
 msgid ""
 "This field-name-to-element mapping can be replaced for other languages.  "
 "See the `DocInfo transform`_ implementation documentation for details."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:985
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:992
 msgid ""
 "Unregistered/generic fields may contain one or more paragraphs or "
 "arbitrary body elements. The field name is also used as a `\"classes\" "
 "attribute`_ value after being converted into a valid identifier form."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:992
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:999
 msgid "RCS Keywords"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:994
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1001
 msgid ""
 "`Bibliographic fields`_ recognized by the parser are normally checked for"
 " RCS [#]_ keywords and cleaned up [#]_.  RCS keywords may be entered into"
@@ -1147,77 +1155,77 @@ msgid ""
 "example, a \"Status\" field will be transformed to a \"status\" element::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1002
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1009
 msgid "Revision Control System."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1003
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1010
 msgid "RCS keyword processing can be turned off (unimplemented)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1004
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1011
 msgid "Concurrent Versions System.  CVS uses the same keywords as RCS."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1005
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1012
 msgid "Subversion Versions System. Uses the same keywords as RCS."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1007
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1014
 msgid ""
 "Processed, the \"status\" element's text will become simply \"expansion "
 "text\".  The dollar sign delimiters and leading RCS keyword name are "
 "removed."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1011
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1018
 msgid ""
 "The RCS keyword processing only kicks in when the field list is in "
 "bibliographic context (first non-comment construct in the document, after"
 " a document title if there is one)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1018
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1025
 msgid "Option Lists"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1020
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1027
 msgid ""
 "Doctree elements: option_list_, option_list_item_, option_group_, "
 "option_, option_string_, option_argument_, description_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1023
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1030
 msgid ""
-"Option lists are two-column lists of command-line options and "
-"descriptions, documenting a program's options.  For example::"
+"Option lists map a program's command-line options to descriptions "
+"documenting them.  For example::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1051
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1058
 msgid "There are several types of options recognized by reStructuredText:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1053
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1060
 msgid "Short POSIX options consist of one dash and an option letter."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1054
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1061
 msgid ""
 "Long POSIX options consist of two dashes and an option word; some systems"
 " use a single dash."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1056
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1063
 msgid ""
 "Old GNU-style \"plus\" options consist of one plus and an option letter "
 "(\"plus\" options are deprecated now, their use discouraged)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1058
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1065
 msgid "DOS/VMS options consist of a slash and an option letter or word."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1060
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1067
 msgid ""
 "Please note that both POSIX-style and DOS/VMS-style options may be used "
 "by DOS or Windows software.  These and other variations are sometimes "
@@ -1225,7 +1233,7 @@ msgid ""
 "only."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1065
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1072
 msgid ""
 "The syntax for short and long POSIX options is based on the syntax "
 "supported by Python's getopt.py_ module, which implements an option "
@@ -1234,7 +1242,7 @@ msgid ""
 "reStructuredText option lists do not support all of them."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1071
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1078
 msgid ""
 "Although long POSIX and DOS/VMS option words may be allowed to be "
 "truncated by the operating system or the application when used on the "
@@ -1243,7 +1251,7 @@ msgid ""
 "supported by notes about truncation if and when applicable."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1077
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1084
 msgid ""
 "Options may be followed by an argument placeholder, whose role and syntax"
 " should be explained in the description text. Either a space or an equals"
@@ -1252,26 +1260,26 @@ msgid ""
 "omit the delimiter. Option arguments may take one of two forms:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1084
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1091
 msgid ""
 "Begins with a letter (``[a-zA-Z]``) and subsequently consists of letters,"
 " numbers, underscores and hyphens (``[a-zA-Z0-9_-]``)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1086
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1093
 msgid ""
 "Begins with an open-angle-bracket (``<``) and ends with a close-angle-"
 "bracket (``>``); any characters except angle brackets are allowed "
 "internally."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1090
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1097
 msgid ""
 "Multiple option \"synonyms\" may be listed, sharing a single description."
 "  They must be separated by comma-space."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1093
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1100
 msgid ""
 "There must be at least two spaces between the option(s) and the "
 "description (which can also start on the next line).  The description may"
@@ -1281,15 +1289,15 @@ msgid ""
 "after the last, but are optional between option entries."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1111
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1118
 msgid "Literal Blocks"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1113
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1120
 msgid "Doctree element: literal_block_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1115
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1122
 msgid ""
 "A paragraph consisting of two colons (\"::\") signifies that the "
 "following text block(s) comprise a literal block.  The literal block must"
@@ -1298,13 +1306,13 @@ msgid ""
 " monospaced typeface::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1134
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1141
 msgid ""
 "The paragraph containing only \"::\" will be completely removed from the "
 "output; no empty paragraph will remain."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1137
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1144
 msgid ""
 "As a convenience, the \"::\" is recognized at the end of any paragraph. "
 "If immediately preceded by whitespace, both colons will be removed from "
@@ -1314,25 +1322,25 @@ msgid ""
 "\":\"; this is the \"fully minimized\" form)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1144
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1151
 msgid ""
 "In other words, these are all equivalent (please pay attention to the "
 "colons after \"Paragraph\"):"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1147
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1154
 msgid "Expanded form::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1155
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1162
 msgid "Partially minimized form::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1161
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1168
 msgid "Fully minimized form::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1167
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1174
 msgid ""
 "All whitespace (including line breaks, but excluding minimum indentation "
 "for indented literal blocks) is preserved.  Blank lines are required "
@@ -1340,11 +1348,11 @@ msgid ""
 "as part of the literal block."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1174
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1181
 msgid "Indented Literal Blocks"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1176
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1183
 msgid ""
 "Indented literal blocks are indicated by indentation relative to the "
 "surrounding text (leading whitespace on each line).  The minimum "
@@ -1354,11 +1362,11 @@ msgid ""
 "of the indentation."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1195
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1202
 msgid "Quoted Literal Blocks"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1197
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1204
 msgid ""
 "Quoted literal blocks are unindented contiguous blocks of text where each"
 " line begins with the same non-alphanumeric printable 7-bit ASCII "
@@ -1366,29 +1374,29 @@ msgid ""
 "characters are preserved in the processed document."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1203
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1210
 msgid "The following are all valid quoting characters::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1207
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1214
 msgid ""
 "Note that these are the same characters as are valid for title adornment "
 "of sections_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1210
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1217
 msgid "Possible uses include literate programming in Haskell and email quoting::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1234
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1241
 msgid "Line Blocks"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1236
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1243
 msgid "Doctree elements: line_block_, line_.  (New in Docutils 0.3.5.)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1238
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1245
 msgid ""
 "Line blocks are useful for address blocks, verse (poetry, song lyrics), "
 "and unadorned lists, where the structure of lines is significant.  Line "
@@ -1402,25 +1410,25 @@ msgid ""
 "with a blank line."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1249
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1256
 msgid "This example illustrates continuation lines::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1257
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1264
 msgid ""
 "This example illustrates the nesting of line blocks, indicated by the "
 "initial indentation of new lines::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1285
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1292
 msgid "Block Quotes"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1287
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1294
 msgid "Doctree elements: block_quote_, attribution_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1289
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1296
 msgid ""
 "A text block that is indented relative to the preceding text, without "
 "preceding markup indicating it to be a literal block or other content, is"
@@ -1428,7 +1436,7 @@ msgid ""
 "markup) continues within the block quote::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1300
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1307
 msgid ""
 "A block quote may end with an attribution: a text block beginning with "
 "``--``, ``---``, or a true em-dash, flush left within the block quote.  "
@@ -1436,49 +1444,49 @@ msgid ""
 "second and subsequent lines must align."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1305
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1312
 msgid ""
 "Multiple block quotes may occur consecutively if terminated with "
 "attributions."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1308
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1315
 msgid "Unindented paragraph."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1310
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1317
 msgid "Block quote 1."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1314
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1321
 msgid "Block quote 2."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1316
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1323
 msgid ""
 "`Empty comments`_ may be used to explicitly terminate preceding "
 "constructs that would otherwise consume a block quote::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1325
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1332
 msgid "Empty comments may also be used to separate block quotes::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1333
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1340
 msgid ""
 "Blank lines are required before and after a block quote, but these blank "
 "lines are not included as part of the block quote."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1352
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1359
 msgid "Doctest Blocks"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1354
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1361
 msgid "Doctree element: doctest_block_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1356
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1363
 msgid ""
 "Doctest blocks are interactive Python sessions cut-and-pasted into "
 "docstrings.  They are meant to illustrate usage by example, and provide "
@@ -1486,7 +1494,7 @@ msgid ""
 "the Python standard library."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1361
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1368
 msgid ""
 "Doctest blocks are text blocks which begin with ``\">>> \"``, the Python "
 "interactive interpreter main prompt, and end with a blank line. Doctest "
@@ -1495,19 +1503,19 @@ msgid ""
 " takes priority over Doctest block syntax::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1378
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1385
 msgid "Indentation is not required for doctest blocks."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1382
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1389
 msgid "Tables"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1384
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1391
 msgid "Doctree elements: table_, tgroup_, colspec_, thead_, tbody_, row_, entry_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1386
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1393
 msgid ""
 "ReStructuredText provides two syntax variants for delineating table "
 "cells: `Grid Tables`_ and `Simple Tables`_. Tables are also generated by "
@@ -1515,7 +1523,7 @@ msgid ""
 "used to add a table title or specify options."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1391
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1398
 msgid ""
 "As with other body elements, blank lines are required before and after "
 "tables.  Tables' left edges should align with the left edge of preceding "
@@ -1523,7 +1531,7 @@ msgid ""
 "quote."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1396
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1403
 msgid ""
 "Once isolated, each table cell is treated as a miniature document; the "
 "top and bottom cell boundaries act as delimiting blank lines.  Each cell "
@@ -1531,11 +1539,11 @@ msgid ""
 "and/or right margins, which are removed before processing."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1403
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1410
 msgid "Grid Tables"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1405
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1412
 msgid ""
 "Grid tables provide a complete table representation via grid-like \"ASCII"
 " art\".  Grid tables allow arbitrary cell contents (body elements), and "
@@ -1545,7 +1553,7 @@ msgid ""
 "Tables`_ for a simpler (but limited) representation."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1413
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1420
 msgid ""
 "Grid tables are described with a visual grid made up of the characters "
 "\"-\", \"=\", \"|\", and \"+\".  The hyphen (\"-\") is used for "
@@ -1556,35 +1564,35 @@ msgid ""
 "intersections of horizontal and vertical lines.  Example::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1434
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1441
 msgid ""
 "Some care must be taken with grid tables to avoid undesired interactions "
 "with cell text in rare cases.  For example, the following table contains "
 "a cell in row 2 spanning from column 2 to column 4::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1446
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1453
 msgid ""
 "If a vertical bar is used in the text of that cell, it could have "
 "unintended effects if accidentally aligned with column boundaries::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1457
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1464
 msgid ""
 "Several solutions are possible.  All that is needed is to break the "
 "continuity of the cell outline rectangle.  One possibility is to shift "
 "the text by adding an extra space before::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1469
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1476
 msgid "Another possibility is to add an extra line to row 2::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1482
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1489
 msgid "Simple Tables"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1484
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1491
 msgid ""
 "Simple tables provide a compact and easy to type but limited row-oriented"
 " table representation for simple data sets.  Cell contents are typically "
@@ -1594,7 +1602,7 @@ msgid ""
 "for a complete table representation."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1491
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1498
 msgid ""
 "Simple tables are described with horizontal borders made up of \"=\" and "
 "\"-\" characters.  The equals sign (\"=\") is used for top and bottom "
@@ -1604,7 +1612,7 @@ msgid ""
 "and/or visually separate rows."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1498
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1505
 msgid ""
 "A simple table begins with a top border of equals signs with one or more "
 "spaces at each column boundary (two or more spaces recommended). "
@@ -1620,7 +1628,7 @@ msgid ""
 "body rows::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1520
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1527
 msgid ""
 "Underlines of '-' may be used to indicate column spans by \"filling in\" "
 "column margins to join adjacent columns.  Column span underlines must be "
@@ -1631,7 +1639,7 @@ msgid ""
 " the header::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1539
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1546
 msgid ""
 "Each line of text must contain spaces at column boundaries, except where "
 "cells have been joined by column spans.  Each line of text starts a new "
@@ -1644,32 +1652,32 @@ msgid ""
 "is unacceptable."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1551
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1558
 msgid ""
 "To start a new row in a simple table without text in the first column in "
 "the processed output, use one of these:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1554
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1561
 msgid ""
 "an empty comment (\"..\"), which may be omitted from the processed output"
 " (see Comments_ below)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1557
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1564
 msgid ""
 "a backslash escape (\"``\\``\") followed by a space (see `Escaping "
 "Mechanism`_ above)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1560
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1567
 msgid ""
 "Underlines of '-' may also be used to visually separate rows, even if "
 "there are no column spans.  This is especially useful in long tables, "
 "where rows are many lines long."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1564
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1571
 msgid ""
 "Blank lines are permitted within simple tables.  Their interpretation "
 "depends on the context.  Blank lines *between* rows are ignored. Blank "
@@ -1677,14 +1685,14 @@ msgid ""
 "elements within cells."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1569
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1576
 msgid ""
 "The rightmost column is unbounded; text may continue past the edge of the"
 " table (as indicated by the table borders).  However, it is recommended "
 "that borders be made long enough to contain the entire text."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1574
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1581
 msgid ""
 "The following example illustrates continuation lines (row 2 consists of "
 "two lines of text, and four lines for row 3), a blank line separating "
@@ -1693,37 +1701,37 @@ msgid ""
 "processed output (row 4)::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1595
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1602
 msgid "Explicit Markup Blocks"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1597
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1604
 msgid ""
 "The explicit markup syntax is used for footnotes_, citations_, `hyperlink"
 " targets`_, directives_, `substitution definitions`_, and comments_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1601
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1608
 msgid "An explicit markup block is a text block:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1603
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1610
 msgid ""
 "whose first line begins with \"..\" followed by whitespace (the "
 "\"explicit markup start\"),"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1605
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1612
 msgid ""
 "whose second and subsequent lines (if any) are indented relative to the "
 "first, and"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1607
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1614
 msgid "which ends before an unindented line."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1609
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1616
 msgid ""
 "Explicit markup blocks are analogous to field list items. The maximum "
 "common indentation is always removed from the second and subsequent lines"
@@ -1733,57 +1741,57 @@ msgid ""
 " start."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1616
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1623
 msgid ""
 "Blank lines are required between explicit markup blocks and other "
 "elements, but are optional between explicit markup blocks where "
 "unambiguous."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1622
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1629
 msgid "Footnotes"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1624
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1631
 msgid "See also: `Footnote References`_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1626
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1633
 msgid "Doctree elements: footnote_, label_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1628
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1635
 msgid ""
 "Configuration settings: `footnote_references <footnote_references "
 "setting_>`_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1634
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1641
 msgid ""
 "Each footnote consists of an explicit markup start (\".. \"), a left "
 "square bracket, the footnote label, a right square bracket, and "
 "whitespace, followed by indented body elements.  A footnote label can be:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1639
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1646
 msgid "a whole decimal number consisting of one or more digits,"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1641
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2929
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1648
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2936
 msgid "a single \"#\" (denoting `auto-numbered footnotes`_),"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1643
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1650
 msgid "a \"#\" followed by a simple reference name (an `autonumber label`_), or"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1646
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2934
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1653
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2941
 msgid "a single \"*\" (denoting `auto-symbol footnotes`_)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1648
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1655
 msgid ""
 "The footnote content (body elements) must be consistently indented and "
 "left-aligned.  The first body element within a footnote may often begin "
@@ -1793,18 +1801,18 @@ msgid ""
 "Otherwise, the difference in indentation will not be detected."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1656
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1663
 msgid ""
 "Footnotes may occur anywhere in the document, not only at the end. Where "
 "and how they appear in the processed output depends on the processing "
 "system."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1660
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1667
 msgid "Here is a manually numbered footnote::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1664
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1671
 msgid ""
 "Each footnote automatically generates a hyperlink target pointing to "
 "itself.  The text of the hyperlink target name is the same as that of the"
@@ -1813,18 +1821,18 @@ msgid ""
 " a complete description of the mechanism."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1680
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1687
 msgid "Auto-Numbered Footnotes"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1682
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1689
 msgid ""
 "A number sign (\"#\") may be used as the first character of a footnote "
 "label to request automatic numbering of the footnote or footnote "
 "reference."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1686
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1693
 msgid ""
 "The first footnote to request automatic numbering is assigned the label "
 "\"1\", the second is assigned the label \"2\", and so on (assuming there "
@@ -1834,26 +1842,26 @@ msgid ""
 "just as if the label was explicitly specified."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1695
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1702
 msgid ""
 "A footnote may specify a label explicitly while at the same time "
 "requesting automatic numbering: ``[#label]``.  These labels are called "
 "_`autonumber labels`.  Autonumber labels do two things:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1699
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1706
 msgid ""
 "On the footnote itself, they generate a hyperlink target whose name is "
 "the autonumber label (doesn't include the \"#\")."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1702
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1709
 msgid ""
 "They allow an automatically numbered footnote to be referred to more than"
 " once, as a footnote reference or hyperlink reference.  For example::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1713
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1720
 msgid ""
 "The numbering is determined by the order of the footnotes, not by the "
 "order of the references.  For footnote references without autonumber "
@@ -1861,7 +1869,7 @@ msgid ""
 "same relative order but need not alternate in lock-step.  For example::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1728
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1735
 msgid ""
 "Special care must be taken if footnotes themselves contain auto-numbered "
 "footnote references, or if multiple references are made in close "
@@ -1870,18 +1878,18 @@ msgid ""
 "order in which a person would read them."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1736
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1743
 msgid "Auto-Symbol Footnotes"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1738
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1745
 msgid ""
 "An asterisk (\"*\") may be used for footnote labels to request automatic "
 "symbol generation for footnotes and footnote references.  The asterisk "
 "may be the only character in the label.  For example::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1746
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1753
 msgid ""
 "A transform will insert symbols as labels into corresponding footnotes "
 "and footnote references.  The number of references must be equal to the "
@@ -1889,53 +1897,53 @@ msgid ""
 "references."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1751
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1758
 msgid ""
 "The standard Docutils system uses the following symbols for footnote "
 "marks [#]_:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1754
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1761
 msgid "asterisk/star (\"*\")"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1755
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1762
 msgid "dagger (HTML character entity \"&dagger;\", Unicode U+02020)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1756
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1763
 msgid "double dagger (\"&Dagger;\"/U+02021)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1757
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1764
 msgid "section mark (\"&sect;\"/U+000A7)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1758
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1765
 msgid "pilcrow or paragraph mark (\"&para;\"/U+000B6)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1759
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1766
 msgid "number sign (\"#\")"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1760
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1767
 msgid "spade suit (\"&spades;\"/U+02660)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1761
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1768
 msgid "heart suit (\"&hearts;\"/U+02665)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1762
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1769
 msgid "diamond suit (\"&diams;\"/U+02666)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1763
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1770
 msgid "club suit (\"&clubs;\"/U+02663)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1765
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1772
 msgid ""
 "This list was inspired by the list of symbols for \"Note Reference "
 "Marks\" in The Chicago Manual of Style, 14th edition, section 12.51.  "
@@ -1943,13 +1951,13 @@ msgid ""
 "last four symbols (the card suits) were added arbitrarily."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1771
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1778
 msgid ""
 "If more than ten symbols are required, the same sequence will be reused, "
 "doubled and then tripled, and so on (\"**\" etc.)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1774
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1781
 msgid ""
 "When using auto-symbol footnotes, the choice of output encoding is "
 "important.  Many of the symbols used are not encodable in certain common "
@@ -1958,11 +1966,11 @@ msgid ""
 "is to use the \"xmlcharrefreplace\" `output encoding error handler`__."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1785
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1792
 msgid "Mixed Manual and Auto-Numbered Footnotes"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1787
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1794
 msgid ""
 "Manual and automatic footnote numbering may both be used within a single "
 "document, although the results may not be expected.  Manual numbering "
@@ -1970,19 +1978,19 @@ msgid ""
 "numbered footnotes.  The following example should be illustrative::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1809
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1816
 msgid "Citations"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1811
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1818
 msgid "See also: `Citation References`_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1813
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1820
 msgid "Doctree element: citation_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1815
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1822
 msgid ""
 "Citations are identical to footnotes except that they use only non-"
 "numeric labels such as ``[note]`` or ``[GVR2001]``.  Citation labels are "
@@ -1992,28 +2000,28 @@ msgid ""
 "footnotes.  For example::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1831
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1838
 msgid "Hyperlink Targets"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1833
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2889
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1840
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2896
 msgid "Doctree element: target_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1835
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1842
 msgid ""
 "These are also called _`explicit hyperlink targets`, to differentiate "
 "them from `implicit hyperlink targets`_ defined below."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1838
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1845
 msgid ""
 "Hyperlink targets identify a location within or outside of a document, "
 "which may be linked to by `hyperlink references`_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1841
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1848
 msgid ""
 "Hyperlink targets may be named or anonymous.  Named hyperlink targets "
 "consist of an explicit markup start (\".. \"), an underscore, the "
@@ -2021,36 +2029,36 @@ msgid ""
 "block::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1848
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1855
 msgid ""
 "Reference names are whitespace-neutral and case-insensitive.  See "
 "`Reference Names`_ for details and examples."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1851
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1858
 msgid ""
 "Anonymous hyperlink targets consist of an explicit markup start (\".. "
 "\"), two underscores, a colon, whitespace, and a link block; there is no "
 "reference name::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1857
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1864
 msgid ""
 "An alternate syntax for anonymous hyperlinks consists of two underscores,"
 " a space, and a link block::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1862
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1869
 msgid "See `Anonymous Hyperlinks`_ below."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1864
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1871
 msgid ""
 "There are three types of hyperlink targets: internal, external, and "
 "indirect."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1867
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1874
 msgid ""
 "_`Internal hyperlink targets` have empty link blocks.  They provide an "
 "end point allowing a hyperlink to connect one place to another within a "
@@ -2058,13 +2066,13 @@ msgid ""
 "the target. [#]_  For example::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1879
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1886
 msgid ""
 "Internal hyperlink targets may be \"chained\".  Multiple adjacent "
 "internal hyperlink targets all point to the same element::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1888
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1895
 msgid ""
 "If the element \"pointed to\" is an external hyperlink target (with a URI"
 " in its link block; see #2 below) the URI from the external hyperlink "
@@ -2074,13 +2082,13 @@ msgid ""
 "URI::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1899
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1906
 msgid ""
 "An inline form of internal hyperlink target is available; see `Inline "
 "Internal Targets`_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1902
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1909
 msgid ""
 "Works also, if the internal hyperlink target is \"nested\" at the end of "
 "an indented text block. This behaviour allows setting targets to "
@@ -2088,17 +2096,17 @@ msgid ""
 "applies to the list as a whole)::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1914
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1921
 msgid ""
 "_`External hyperlink targets` have an absolute or relative URI or email "
 "address in their link blocks.  For example, take the following input::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1925
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1932
 msgid "After processing into HTML, the hyperlinks might be expressed as::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1933
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1940
 msgid ""
 "An external hyperlink's URI may begin on the same line as the explicit "
 "markup start and target name, or it may begin in an indented text block "
@@ -2108,25 +2116,25 @@ msgid ""
 "wrapping).  The following external hyperlink targets are equivalent::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1950
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1957
 msgid "Escaped whitespace is preserved as intentional spaces, e.g.::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1954
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1961
 msgid ""
 "If an external hyperlink target's URI contains an underscore as its last "
 "character, it must be escaped to avoid being mistaken for an indirect "
 "hyperlink target::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1962
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1969
 msgid ""
 "It is possible (although not generally recommended) to include URIs "
 "directly within hyperlink references.  See `Embedded URIs and Aliases`_ "
 "below."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1966
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1973
 msgid ""
 "_`Indirect hyperlink targets` have a hyperlink reference in their link "
 "blocks.  In the following example, target \"one\" indirectly references "
@@ -2135,7 +2143,7 @@ msgid ""
 "the same thing::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1976
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1983
 msgid ""
 "Just as with `hyperlink references`_ anywhere else in a document, if a "
 "phrase-reference is used in the link block it must be enclosed in "
@@ -2146,39 +2154,39 @@ msgid ""
 "normalized."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1984
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:1991
 msgid "For example, the following indirect hyperlink targets are equivalent::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1993
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2000
 msgid ""
 "It is possible to include an alias directly within hyperlink references. "
 "See `Embedded URIs and Aliases`_ below."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1996
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2003
 msgid "If the reference name contains any colons, either:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:1998
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2005
 msgid "the phrase must be enclosed in backquotes::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2003
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2010
 msgid "or the colon(s) must be backslash-escaped in the link target::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2009
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2016
 msgid ""
 "See `Implicit Hyperlink Targets`_ below for the resolution of duplicate "
 "reference names."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2022
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2029
 msgid "Anonymous Hyperlinks"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2024
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2031
 msgid ""
 "The `World Wide Web Consortium`_ recommends in its `HTML Techniques for "
 "Web Content Accessibility Guidelines`_ that authors should \"clearly "
@@ -2192,25 +2200,25 @@ msgid ""
 "advised."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2035
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2042
 msgid ""
 "Anonymous `hyperlink references`_ are specified with two underscores "
 "instead of one::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2040
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2047
 msgid ""
 "Anonymous targets begin with \".. __:\"; no reference name is required or"
 " allowed::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2045
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2052
 msgid ""
 "As a convenient alternative, anonymous targets may begin with \"__\" "
 "only::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2050
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2057
 msgid ""
 "The reference name of the reference is not used to match the reference to"
 " its target.  Instead, the order of anonymous hyperlink references and "
@@ -2223,15 +2231,15 @@ msgid ""
 "attention to the order of corresponding targets."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2062
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2069
 msgid "Directives"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2064
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2071
 msgid "Doctree elements: depend on the directive."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2066
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2073
 msgid ""
 "Directives are an extension mechanism for reStructuredText, a way of "
 "adding support for new constructs without adding new primary syntax "
@@ -2243,19 +2251,19 @@ msgid ""
 "available when processing the document."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2075
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2082
 msgid "For example, here's how an image_ may be placed::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2079
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2086
 msgid "A figure_ (a graphic with a caption) may placed like this::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2085
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2092
 msgid "An admonition_ (note, caution, etc.) contains other body elements::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2091
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2098
 msgid ""
 "Directives are indicated by an explicit markup start (\".. \") followed "
 "by the directive type, two colons, and whitespace (together called the "
@@ -2265,15 +2273,15 @@ msgid ""
 "directive type for these reasons:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2098
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2105
 msgid "Two colons are distinctive, and unlikely to be used in common text."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2100
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2107
 msgid "Two colons avoids clashes with common comment text like::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2104
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2111
 msgid ""
 "If an implementation of reStructuredText does not recognize a directive "
 "(i.e., the directive-handler is not installed), a level-3 (error) system "
@@ -2282,7 +2290,7 @@ msgid ""
 "natural choice."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2110
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2117
 msgid ""
 "The directive block consists of any text on the first line of the "
 "directive after the directive marker, and any subsequent indented text.  "
@@ -2290,19 +2298,19 @@ msgid ""
 "There are three logical parts to the directive block:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2115
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2122
 msgid "Directive arguments."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2116
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2123
 msgid "Directive options."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2117
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2124
 msgid "Directive content."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2119
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2126
 msgid ""
 "Individual directives can employ any combination of these parts. "
 "Directive arguments can be filesystem paths, URLs, title text, etc. "
@@ -2315,7 +2323,7 @@ msgid ""
 "directive employs all three parts::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2134
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2141
 msgid ""
 "Simple directives may not require any content.  If a directive that does "
 "not employ a content block is followed by indented text anyway, it is an "
@@ -2323,14 +2331,14 @@ msgid ""
 "empty comment in-between (see Comments_ below)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2139
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2146
 msgid ""
 "Actions taken in response to directives and the interpretation of text in"
 " the directive content block or subsequent text block(s) are directive-"
 "dependent.  See `reStructuredText Directives`_ for details."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2143
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2150
 msgid ""
 "Directives are meant for the arbitrary processing of their contents, "
 "which can be transformed into something possibly unrelated to the "
@@ -2341,7 +2349,7 @@ msgid ""
 " supported."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2151
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2158
 msgid ""
 "Directives do not generate \"directive\" elements; they are a *parser "
 "construct* only, and have no intrinsic meaning outside of "
@@ -2350,15 +2358,15 @@ msgid ""
 "directives will trigger level-3 (error) system messages."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2167
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2174
 msgid "Substitution Definitions"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2169
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2176
 msgid "Doctree element: substitution_definition_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2171
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2178
 msgid ""
 "Substitution definitions are indicated by an explicit markup start (\".. "
 "\") followed by a vertical bar, the substitution text, another vertical "
@@ -2368,13 +2376,13 @@ msgid ""
 "such as \"image_\" or \"replace_\".  For example::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2183
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2190
 msgid ""
 "It is an error for a substitution definition block to directly or "
 "indirectly contain a circular substitution reference."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2186
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2193
 msgid ""
 "`Substitution references`_ are replaced in-line by the processed contents"
 " of the corresponding definition (linked by matching substitution text)."
@@ -2382,7 +2390,7 @@ msgid ""
 " case-insensitive comparison is attempted."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2191
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2198
 msgid ""
 "Substitution definitions allow the power and flexibility of block-level "
 "directives_ to be shared by inline text.  They are a way to include "
@@ -2391,7 +2399,7 @@ msgid ""
 "named entities or programming language macros."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2197
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2204
 msgid ""
 "Without the substitution mechanism, every time someone wants an "
 "application-specific new inline structure, they would have to petition "
@@ -2400,30 +2408,30 @@ msgid ""
 "directive)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2211
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2218
 msgid ""
 "Following are some use cases for the substitution mechanism.  Please note"
 " that most of the embedded directives shown are examples only and have "
 "not been implemented."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2253
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2260
 msgid "Objects"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2216
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2223
 msgid ""
 "Substitution references may be used to associate ambiguous text with a "
 "unique object identifier."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2219
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2226
 msgid ""
 "For example, many sites may wish to implement an inline \"user\" "
 "directive::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2227
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2234
 msgid ""
 "Depending on the needs of the site, this may be used to index the "
 "document for later searching, to hyperlink the inline text in various "
@@ -2433,7 +2441,7 @@ msgid ""
 "the text, make the text bold or a different color, etc.)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2235
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2242
 msgid ""
 "The same approach can be used in documents which frequently refer to a "
 "particular type of objects with unique identifiers but ambiguous common "
@@ -2441,73 +2449,73 @@ msgid ""
 "possible.  For example::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2245
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2252
 msgid ""
 "Classes or functions, in contexts where the module or class names are "
 "unclear and/or interpreted text cannot be used, are another possibility::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2281
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2288
 msgid "Images"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2256
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2263
 msgid "Images are a common use for substitution references::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2281
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2288
 msgid "The \"image_\" directive has been implemented."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2315
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2322
 msgid "Styles [#]_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2284
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2291
 msgid ""
 "Substitution references may be used to associate inline text with an "
 "externally defined presentation style::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2291
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2298
 msgid ""
 "The style name may be meaningful in the context of some particular output"
 " format (CSS class name for HTML output, LaTeX style name for LaTeX, "
 "etc), or may be ignored for other output formats (such as plaintext)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2312
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2319
 msgid ""
 "There may be sufficient need for a \"style\" mechanism to warrant simpler"
 " syntax such as an extension to the interpreted text role syntax.  The "
 "substitution mechanism is cumbersome for simple text styling."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2331
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2338
 msgid "Templates"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2318
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2325
 msgid ""
 "Inline markup may be used for later processing by a template engine.  For"
 " example, a Zope_ author might write::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2325
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2332
 msgid "After processing, this ZPT output would result::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2330
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2337
 msgid ""
 "Zope would then transform this to something like \"Welcome back, David!\""
 " during a session with an actual user."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2366
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2373
 msgid "Replacement text"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2334
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2341
 msgid ""
 "The substitution mechanism may be used for simple macro substitution.  "
 "This may be appropriate when the replacement text is repeated many times "
@@ -2515,32 +2523,32 @@ msgid ""
 "later.  A short example is unavoidably contrived::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2348
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2355
 msgid ""
 "Note the trailing underscore in the first use of a substitution "
 "reference.  This indicates a reference to the corresponding hyperlink "
 "target."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2352
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2359
 msgid ""
 "Substitution is also appropriate when the replacement text cannot be "
 "represented using other inline constructs, or is obtrusively long::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2365
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2372
 msgid "The \"replace_\" directive has been implemented."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2369
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2376
 msgid "Comments"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2371
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2378
 msgid "Doctree element: comment_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2373
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2380
 msgid ""
 "`Explicit markup blocks`_ that are not recognized as citations_, "
 "directives_, footnotes_, `hyperlink targets`_, or `substitution "
@@ -2550,7 +2558,7 @@ msgid ""
 "leave the \"..\" on a line by itself::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2392
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2399
 msgid ""
 "Apart from removing the maximum common indentation, no further processing"
 " is done on the content; a comment contains a single \"text blob\".  "
@@ -2558,11 +2566,11 @@ msgid ""
 "processed output."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2406
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2413
 msgid "Empty Comments"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2408
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2415
 msgid ""
 "An explicit markup start followed by a blank line and nothing else (apart"
 " from whitespace) is an \"_`empty comment`\".  It serves to terminate a "
@@ -2571,11 +2579,11 @@ msgid ""
 "construct, insert an unindented empty comment in-between::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2422
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2429
 msgid "Implicit Hyperlink Targets"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2424
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2431
 msgid ""
 "Implicit hyperlink targets are generated by section titles, footnotes, "
 "and citations, and may also be generated by extension constructs. "
@@ -2583,20 +2591,20 @@ msgid ""
 "`hyperlink targets`_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2429
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2436
 msgid ""
 "Problems of ambiguity due to conflicting duplicate implicit and explicit "
 "reference names are avoided by following this procedure:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2432
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2439
 msgid ""
 "`Explicit hyperlink targets`_ override any implicit targets having the "
 "same reference name.  The implicit hyperlink targets are removed, and "
 "level-1 (info) system messages are inserted."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2436
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2443
 msgid ""
 "Duplicate implicit hyperlink targets are removed, and level-1 (info) "
 "system messages inserted.  For example, if two or more sections have the "
@@ -2604,7 +2612,7 @@ msgid ""
 "document), there will be duplicate implicit hyperlink targets."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2442
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2449
 msgid ""
 "Duplicate explicit hyperlink targets are removed, and level-2 (warning) "
 "system messages are inserted.  Exception: duplicate `external hyperlink "
@@ -2612,24 +2620,24 @@ msgid ""
 "conflict, and are not removed."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2447
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2454
 msgid ""
 "System messages are inserted where target links have been removed. See "
 "\"Error Handling\" in `PEP 258`_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2450
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2457
 msgid ""
 "The parser must return a set of *unique* hyperlink targets.  The calling "
 "software (such as the Docutils_) can warn of unresolvable links, giving "
 "reasons for the messages."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2456
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2463
 msgid "Inline Markup"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2458
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2465
 msgid ""
 "In reStructuredText, inline markup applies to words or phrases within a "
 "text block.  The same whitespace and punctuation that serves to delimit "
@@ -2640,94 +2648,94 @@ msgid ""
 "encouraged.  Inline markup cannot be nested."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2466
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2473
 msgid ""
 "There are nine inline markup constructs.  Five of the constructs use "
 "identical start-strings and end-strings to indicate the markup:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2469
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2476
 msgid "emphasis_: \"*\""
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2470
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2477
 msgid "`strong emphasis`_: \"**\""
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2471
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2478
 msgid "`interpreted text`_: \"`\""
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2472
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2479
 msgid "`inline literals`_: \"``\""
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2473
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2480
 msgid "`substitution references`_: \"|\""
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2475
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2482
 msgid "Three constructs use different start-strings and end-strings:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2477
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2484
 msgid "`inline internal targets`_: \"_`\" and \"`\""
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2478
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2485
 msgid "`footnote references`_: \"[\" and \"]_\""
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2479
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2486
 msgid ""
 "`hyperlink references`_: \"`\" and \"\\`_\" (phrases), or just a trailing"
 " \"_\" (single words)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2482
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2489
 msgid ""
 "`Standalone hyperlinks`_ are recognized implicitly, and use no extra "
 "markup."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2485
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2492
 msgid "Inline comments are not supported."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2489
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2496
 msgid "Inline markup recognition rules"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2491
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2498
 msgid ""
 "Inline markup start-strings and end-strings are only recognized if the "
 "following conditions are met:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2494
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2501
 msgid ""
 "Inline markup start-strings must be immediately followed by non-"
 "whitespace."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2497
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2504
 msgid "Inline markup end-strings must be immediately preceded by non-whitespace."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2500
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2507
 msgid ""
 "The inline markup end-string must be separated by at least one character "
 "from the start-string."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2503
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2510
 msgid ""
 "Both, inline markup start-string and end-string must not be preceded by "
 "an unescaped backslash (except for the end-string of `inline literals`_)."
 " See `Escaping Mechanism`_ above for details."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2507
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2514
 msgid ""
 "If an inline markup start-string is immediately preceded by one of the "
 "ASCII characters ``' \" < ( [ {`` or a similar non-ASCII character "
@@ -2737,77 +2745,77 @@ msgid ""
 "`quotation marks in international usage`_.)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2514
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2521
 msgid ""
 "If the configuration setting `character-level-inline-markup`_ is False "
 "(default), additional conditions apply to the characters \"around\" the "
 "inline markup:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2518
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2525
 msgid ""
 "Inline markup start-strings must start a text block or be immediately "
 "preceded by"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2521
 #: ../../docutils/docs/ref/rst/restructuredtext.txt:2528
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2535
 msgid "whitespace,"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2522
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2529
 msgid "one of the ASCII characters ``- : / ' \" < ( [ {``"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2523
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2530
 msgid "or a similar non-ASCII punctuation character. [#pre-chars]_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2525
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2532
 msgid ""
 "Inline markup end-strings must end a text block or be immediately "
 "followed by"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2529
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2536
 msgid "one of the ASCII characters ``- . , : ; ! ? \\ / ' \" ) ] } >``"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2530
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2537
 msgid "or a similar non-ASCII punctuation character. [#post-chars]_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2532
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2539
 msgid ""
 "`Unicode categories`_ `Ps` (Open), `Pi` (Initial quote), or `Pf` (Final "
 "quote). [#uni-version]_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2534
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2541
 msgid ""
 "Unicode categories `Pe` (Close), `Pi` (Initial quote), or `Pf` (Final "
 "quote). [#uni-version]_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2536
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2543
 msgid ""
 "Unicode categories `Ps` (Open), `Pi` (Initial quote), `Pf` (Final quote),"
 " `Pd` (Dash), or `Po` (Other). [#uni-version]_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2538
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2545
 msgid ""
 "Unicode categories  `Pe` (Close), `Pi` (Initial quote), `Pf` (Final "
 "quote), `Pd` (Dash), or `Po` (Other). [#uni-version]_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2541
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2548
 msgid ""
 "The category of some characters changed with the development of the "
 "Unicode standard. Docutils 0.13 uses `Unicode version 5.2.0`_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2551
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2558
 #, python-format
 msgid ""
 "The inline markup recognition rules were devised to allow 90% of non-"
@@ -2816,62 +2824,62 @@ msgid ""
 "markup strings:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2555
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2562
 msgid "2 * x  a ** b  (* BOM32_* ` `` _ __ | (breaks rule 1)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2556
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2563
 msgid "|| (breaks rule 3)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2557
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2564
 msgid ""
 "\"*\" '|' (*) [*] {*} <*> ‘*’ ‚*‘ ‘*‚ ’*’ ‚*’ “*” „*“ “*„ ”*” „*” »*« ›*‹"
 " «*» »*» ›*› (breaks rule 5)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2561
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2568
 msgid ""
 "2*x a**b O(N**2) e**(x*y) f(x)*f(y) a|b file*.* __init__ __init__()  "
 "(breaks rule 6)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2564
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2571
 msgid "No escaping is required inside the following inline markup examples:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2566
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2573
 msgid ""
 "``*2 * x  *a **b *.txt*`` (breaks rule 2; renders as \"*2 * x  *a **b "
 "*.txt*\")"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2567
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2574
 msgid ""
 "``*2*x a**b O(N**2) e**(x*y) f(x)*f(y) a*(1+2)*`` (breaks rule 7; renders"
 " as \"*2*x a**b O(N**2) e**(x*y) f(x)*f(y) a*(1+2)*\")"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2570
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2577
 msgid ""
 "It may be desirable to use `inline literals`_ for some of these anyhow, "
 "especially if they represent code snippets.  It's a judgment call."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2573
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2580
 msgid ""
 "The following terms *do* require either literal-quoting or escaping to "
 "avoid misinterpretation::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2578
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2585
 msgid ""
 "In most use cases, `inline literals`_ or `literal blocks`_ are the best "
 "choice (by default, this also selects a monospaced font). Alternatively, "
 "the inline markup characters can be escaped::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2585
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2592
 msgid ""
 "For languages that don't use whitespace between words (e.g. Japanese or "
 "Chinese) it is recommended to set `character-level-inline-markup`_ to "
@@ -2880,24 +2888,24 @@ msgid ""
 "attention."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2596
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2603
 msgid "Recognition order"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2598
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2605
 msgid ""
 "Inline markup delimiter characters are used for multiple constructs, so "
 "to avoid ambiguity there must be a specific recognition order for each "
 "character.  The inline markup recognition order is as follows:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2602
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2609
 msgid ""
 "Asterisks: `Strong emphasis`_ (\"**\") is recognized before emphasis_ "
 "(\"*\")."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2605
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2612
 msgid ""
 "Backquotes: `Inline literals`_ (\"``\"), `inline internal targets`_ "
 "(leading \"_`\", trailing \"`\"), are mutually independent, and are "
@@ -2905,54 +2913,54 @@ msgid ""
 " \"\\`_\") and `interpreted text`_ (\"`\")."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2610
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2617
 msgid ""
 "Trailing underscores: Footnote references (\"[\" + label + \"]_\") and "
 "simple `hyperlink references`_ (name + trailing \"_\") are mutually "
 "independent."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2614
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2621
 msgid ""
 "Vertical bars: `Substitution references`_ (\"|\") are independently "
 "recognized."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2617
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2624
 msgid "`Standalone hyperlinks`_ are the last to be recognized."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2621
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2628
 msgid "Character-Level Inline Markup"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2623
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2630
 msgid ""
 "It is possible to mark up individual characters within a word with "
 "backslash escapes (see `Escaping Mechanism`_ above).  Backslash escapes "
 "can be used to allow arbitrary text to immediately follow inline markup::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2630
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2637
 msgid ""
 "The backslash will disappear from the processed document.  The word "
 "\"list\" will appear as inline literal text, and the letter \"s\" will "
 "immediately follow it as normal text, with no space in-between."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2634
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2641
 msgid ""
 "Arbitrary text may immediately precede inline markup using backslash-"
 "escaped whitespace::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2639
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2646
 msgid ""
 "The backslashes and spaces separating \"re\", \"Structured\", and "
 "\"Text\" above will disappear from the processed document."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2644
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2651
 msgid ""
 "The use of backslash-escapes for character-level inline markup is not "
 "encouraged.  Such use is ugly and detrimental to the unprocessed "
@@ -2960,66 +2968,66 @@ msgid ""
 " absolutely necessary."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2651
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2658
 msgid "Emphasis"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2653
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2660
 msgid "Doctree element: emphasis_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2655
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2662
 msgid "Start-string = end-string = \"*\"."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2657
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2664
 msgid "Text enclosed by single asterisk characters is emphasized::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2661
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2668
 msgid "Emphasized text is typically displayed in italics."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2665
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2672
 msgid "Strong Emphasis"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2667
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2674
 msgid "Doctree element: strong_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2669
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2676
 msgid "Start-string = end-string = \"**\"."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2671
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2678
 msgid "Text enclosed by double-asterisks is emphasized strongly::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2675
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2682
 msgid "Strongly emphasized text is typically displayed in boldface."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2679
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2686
 msgid "Interpreted Text"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2681
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2688
 msgid "Doctree element: depends on the explicit or implicit role and processing."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2684
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2691
 msgid "Start-string = end-string = \"`\"."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2686
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2693
 msgid ""
 "Interpreted text is text that is meant to be related, indexed, linked, "
 "summarized, or otherwise processed, but the text itself is typically left"
 " alone.  Interpreted text is enclosed by single backquote characters::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2693
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2700
 msgid ""
 "The \"role\" of the interpreted text determines how the text is "
 "interpreted.  The role may be inferred implicitly (as above; the "
@@ -3032,7 +3040,7 @@ msgid ""
 "up to the author::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2707
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2714
 msgid ""
 "Interpreted text allows extensions to the available inline descriptive "
 "markup constructs.  To emphasis_, `strong emphasis`_, `inline literals`_,"
@@ -3046,38 +3054,38 @@ msgid ""
 "  In addition, applications may support specialized roles."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2719
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2726
 msgid ""
 "In `field lists`_, care must be taken when using interpreted text with "
 "explicit roles in field names: the role must be a suffix to the "
 "interpreted text. The following are recognized as field list items::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2728
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2735
 msgid "The following are **not** recognized as field list items::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2734
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2741
 msgid "Edge cases::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2743
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2750
 msgid "Inline Literals"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2745
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2752
 msgid "Doctree element: literal_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2747
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2754
 msgid "Start-string = end-string = \"``\"."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2749
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2756
 msgid "Text enclosed by double-backquotes is treated as inline literals::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2753
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2760
 msgid ""
 "Inline literals may contain any characters except two adjacent backquotes"
 " in an end-string context (according to the recognition rules above).  No"
@@ -3085,7 +3093,7 @@ msgid ""
 "done within inline literals."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2758
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2765
 msgid ""
 "Line breaks are *not* preserved in inline literals.  Although a "
 "reStructuredText parser will preserve runs of spaces in its output, the "
@@ -3095,44 +3103,44 @@ msgid ""
 "`literal blocks`_ should be used."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2765
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2772
 msgid "Inline literals are useful for short code snippets.  For example::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2772
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2779
 msgid "Hyperlink References"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2774
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3001
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2781
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3008
 msgid "Doctree element: reference_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2776
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2783
 msgid "Named hyperlink references:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2778
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2785
 msgid "No start-string, end-string = \"_\"."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2779
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2786
 msgid "Start-string = \"`\", end-string = \"\\`_\".  (Phrase references.)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2781
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2788
 msgid "Anonymous hyperlink references:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2783
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2790
 msgid "No start-string, end-string = \"__\"."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2784
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2791
 msgid "Start-string = \"`\", end-string = \"\\`__\".  (Phrase references.)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2786
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2793
 msgid ""
 "Hyperlink references are indicated by a trailing underscore, \"_\", "
 "except for `standalone hyperlinks`_ which are recognized independently.  "
@@ -3141,48 +3149,48 @@ msgid ""
 "underscores point toward `hyperlink targets`_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2792
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2799
 msgid ""
 "Hyperlinks consist of two parts.  In the text body, there is a source "
 "link, a reference name with a trailing underscore (or two underscores for"
 " `anonymous hyperlinks`_)::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2798
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2805
 msgid ""
 "A target link with a matching reference name must exist somewhere else in"
 " the document.  See `Hyperlink Targets`_ for a full description)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2801
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2808
 msgid ""
 "`Anonymous hyperlinks`_ (which see) do not use reference names to match "
 "references to targets, but otherwise behave similarly to named "
 "hyperlinks."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2807
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2814
 msgid "Embedded URIs and Aliases"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2809
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2816
 msgid ""
 "A hyperlink reference may directly embed a target URI or (since Docutils "
 "0.11) a hyperlink reference within angle brackets (\"<...>\") as "
 "follows::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2817
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2824
 msgid "This is exactly equivalent to::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2826
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2833
 msgid ""
 "The bracketed URI must be preceded by whitespace and be the last text "
 "before the end string."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2829
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2836
 msgid ""
 "With a single trailing underscore, the reference is named and the same "
 "target URI may be referred to again. With two trailing underscores, the "
@@ -3190,28 +3198,28 @@ msgid ""
 "referred to again.  These are \"one-off\" hyperlinks.  For example::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2839
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2846
 msgid "Equivalent to::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2846
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2853
 msgid ""
 "`Standalone hyperlinks`_ are treated as URIs, even if they end with an "
 "underscore like in the example of a Python function documentation::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2851
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2858
 msgid ""
 "If a target URI that is not recognized as `standalone hyperlink`_ happens"
 " to end with an underscore, this needs to be backslash-escaped to avoid "
 "being parsed as hyperlink reference. For example ::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2857
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2864
 msgid "creates an anonymous reference to the file ``parrots.txt_``."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2859
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2866
 msgid ""
 "If the reference text happens to end with angle-bracketed text that is "
 "*not* a URI or hyperlink reference, at least one angle-bracket needs to "
@@ -3219,14 +3227,14 @@ msgid ""
 " are three references to titles describing a tag::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2867
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2874
 msgid ""
 "The reference text may also be omitted, in which case the URI will be "
 "duplicated for use as the reference text.  This is useful for relative "
 "URIs where the address or file name is also the desired reference text::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2877
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2884
 msgid ""
 "This construct offers easy authoring and maintenance of hyperlinks at the"
 " expense of general readability.  Inline URIs, especially long ones, "
@@ -3236,15 +3244,15 @@ msgid ""
 "most suited to documents intended *only* to be read in processed form."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2887
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2894
 msgid "Inline Internal Targets"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2891
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2898
 msgid "Start-string = \"_`\", end-string = \"`\"."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2893
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2900
 msgid ""
 "Inline internal targets are the equivalent of explicit `internal "
 "hyperlink targets`_, but may appear within running text.  The syntax "
@@ -3253,63 +3261,63 @@ msgid ""
 "not be anonymous."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2899
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2906
 msgid ""
 "For example, the following paragraph contains a hyperlink target named "
 "\"Norwegian Blue\"::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2904
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2911
 msgid ""
 "See `Implicit Hyperlink Targets`_ for the resolution of duplicate "
 "reference names."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2909
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2916
 msgid "Footnote References"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2911
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2918
 msgid "See also: Footnotes_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2913
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2920
 msgid "Doctree element: footnote_reference_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2915
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2922
 msgid ""
 "Configuration settings: `footnote_references <footnote_references "
 "setting_>`_, trim_footnote_reference_space_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2922
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2957
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2929
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2964
 msgid "Start-string = \"[\", end-string = \"]_\"."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2924
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2931
 msgid ""
 "Each footnote reference consists of a square-bracketed label followed by "
 "a trailing underscore.  Footnote labels are one of:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2927
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2934
 msgid "one or more digits (i.e., a number),"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2931
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2938
 msgid ""
 "a \"#\" followed by a simple `reference name`_ (an `autonumber label`_), "
 "or"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2936
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2964
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2943
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2971
 msgid "For example::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2942
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2949
 msgid ""
 "`Inline markup recognition rules`_ may require whitespace in front of the"
 " footnote reference. To remove the whitespace from the output, use an "
@@ -3319,19 +3327,19 @@ msgid ""
 "\"superscript\"."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2951
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2958
 msgid "Citation References"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2953
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2960
 msgid "See also: Citations_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2955
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2962
 msgid "Doctree element: citation_reference_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2959
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2966
 msgid ""
 "Each citation reference consists of a square-bracketed label followed by "
 "a trailing underscore.  Citation labels are simple `reference names`_ "
@@ -3339,21 +3347,21 @@ msgid ""
 " hyphens, underscores, and periods; no whitespace)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2970
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2977
 msgid "Substitution References"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2972
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2979
 msgid "Doctree elements: substitution_reference_, reference_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2974
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2981
 msgid ""
 "Start-string = \"|\", end-string = \"|\" (optionally followed by \"_\" or"
 " \"__\")."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2977
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2984
 msgid ""
 "Vertical bars are used to bracket the substitution reference text.  A "
 "substitution reference may also be a hyperlink reference by appending a "
@@ -3361,7 +3369,7 @@ msgid ""
 " for the reference text in the named case."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2982
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2989
 msgid ""
 "The processing system replaces substitution references with the processed"
 " contents of the corresponding `substitution definitions`_ (which see for"
@@ -3369,40 +3377,40 @@ msgid ""
 "inline-compatible elements."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2987
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:2994
 msgid "Examples::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:2999
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3006
 msgid "Standalone Hyperlinks"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3003
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3010
 msgid "No start-string or end-string."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3005
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3012
 msgid ""
 "A URI (absolute URI [#URI]_ or standalone email address) within a text "
 "block is treated as a general external hyperlink with the URI itself as "
 "the link's text.  For example::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3011
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3018
 msgid "would be marked up in HTML as::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3016
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3023
 msgid "Two forms of URI are recognized:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3018
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3025
 msgid ""
 "Absolute URIs.  These consist of a scheme, a colon (\":\"), and a scheme-"
 "specific part whose interpretation depends on the scheme."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3021
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3028
 msgid ""
 "The scheme is the name of the protocol, such as \"http\", \"ftp\", "
 "\"mailto\", or \"telnet\".  The scheme consists of an initial letter, "
@@ -3411,26 +3419,26 @@ msgid ""
 "Schemes`_ and the W3C's `Retired Index of WWW Addressing Schemes`_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3027
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3034
 msgid ""
 "The scheme-specific part of the resource identifier may be either "
 "hierarchical or opaque:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3030
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3037
 msgid ""
 "Hierarchical identifiers begin with one or two slashes and may use "
 "slashes to separate hierarchical components of the path. Examples are web"
 " pages and FTP sites::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3038
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3045
 msgid ""
 "Opaque identifiers do not begin with slashes.  Examples are email "
 "addresses and newsgroups::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3045
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3052
 #, python-format
 msgid ""
 "With queries, fragments, and %-escape sequences, URIs can become quite "
@@ -3438,13 +3446,13 @@ msgid ""
 "absolute URI, as defined in RFC2396_ and RFC2732_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3049
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3056
 msgid ""
 "Standalone email addresses, which are treated as if they were absolute "
 "URIs with a \"mailto:\" scheme.  Example::"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3054
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3061
 msgid ""
 "Punctuation at the end of a URI is not considered part of the URI, unless"
 " the URI is terminated by a closing angle bracket (\">\"). Backslashes "
@@ -3453,116 +3461,148 @@ msgid ""
 "`Escaping Mechanism`_ above)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3060
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3067
 msgid ""
 "Uniform Resource Identifier.  URIs are a general form of URLs (Uniform "
 "Resource Locators).  For the syntax of URIs see RFC2396_ and RFC2732_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3066
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3073
 msgid "Units"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3068
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3075
 msgid "(New in Docutils 0.3.10.)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3070
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3077
 msgid ""
 "All measures consist of a positive floating point number in standard "
 "(non-scientific) notation and a unit, possibly separated by one or more "
 "spaces."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3074
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3081
 msgid ""
 "Units are only supported where explicitly mentioned in the reference "
 "manuals."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3079
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3086
 msgid "Length Units"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3081
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3088
 msgid "The following length units are supported by the reStructuredText parser:"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3084
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3091
 msgid "em (em unit, the element's font size)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3085
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3092
 msgid "ex (ex unit, x-height of the element’s font)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3086
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3093
 msgid "mm (millimeters; 1 mm = 1/1000 m)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3087
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3094
 msgid "cm (centimeters; 1 cm = 10 mm)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3088
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3095
 msgid "in (inches; 1 in = 2.54 cm = 96 px)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3089
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3096
 msgid "px (pixels, 1 px = 1/96 in) [#]_"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3090
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3097
 msgid "pt (points; 1 pt = 1/72 in)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3091
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3098
 msgid "pc (picas; 1 pc = 1/6 in = 12 pt)"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3093
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3100
 msgid ""
 "This set corresponds to the `length units in CSS2`_ (a subset of `length "
 "units in CSS3`_)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3096
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3103
 msgid ""
 "In LaTeX, the default definition is 1 px = 1/72 in (cf. `How to configure"
 " the size of a pixel`_ in the LaTeX writer documentation)."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3099
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3106
 msgid "The following are all valid length values: \"1.5em\", \"20 mm\", \".5in\"."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3101
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3108
 msgid ""
 "Length values without unit are completed with a writer-dependent default "
 "(e.g. \"px\" with HTML, \"pt\" with `latex2e`). See the writer specific "
 "documentation in the `user doc`__ for details."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3115
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3122
 msgid "Percentage Units"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3117
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3124
 msgid ""
 "Percentage values have a percent sign (\"%\") as unit.  Percentage values"
 " are relative to other values, depending on the context in which they "
 "occur."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3124
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3131
 msgid "Error Handling"
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3126
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3133
 msgid "Doctree elements: system_message_, problematic_."
 msgstr ""
 
-#: ../../docutils/docs/ref/rst/restructuredtext.txt:3128
+#: ../../docutils/docs/ref/rst/restructuredtext.txt:3135
 msgid "Markup errors are handled according to the specification in `PEP 258`_."
 msgstr ""
+
+#~ msgid ""
+#~ "Sections are identified through their "
+#~ "titles, which are marked up with "
+#~ "adornment: \"underlines\" below the title "
+#~ "text, or underlines and matching "
+#~ "\"overlines\" above the title.  An "
+#~ "underline/overline is a single repeated "
+#~ "punctuation character that begins in "
+#~ "column 1 and forms a line "
+#~ "extending at least as far as the"
+#~ " right edge of the title text.  "
+#~ "Specifically, an underline/overline character "
+#~ "may be any non-alphanumeric printable"
+#~ " 7-bit ASCII character [#]_.  When an"
+#~ " overline is used, the length and "
+#~ "character used must match the underline."
+#~ "  Underline-only adornment styles are "
+#~ "distinct from overline-and-underline "
+#~ "styles that use the same character.  "
+#~ "There may be any number of levels"
+#~ " of section titles, although some "
+#~ "output formats may have limits (HTML "
+#~ "has 6 levels)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Option lists are two-column lists "
+#~ "of command-line options and "
+#~ "descriptions, documenting a program's options."
+#~ "  For example::"
+#~ msgstr ""
 

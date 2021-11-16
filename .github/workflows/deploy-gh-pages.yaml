@@ -48,6 +48,7 @@ jobs:
       - name: 🔧 Build HTML
         run: |
           make html
+          cp docutils/docs/user/rst/quickref.html _build/html/docutils/docs/user/rst/quickref.html
 
         # remove the .doctrees folder when building for deployment as it takes two thirds of disk space
       - name: 🔥 Clean up files
