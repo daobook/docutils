@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../docutils/docs/dev/repository.txt:3
 msgid "The Docutils_ Version Repository"
-msgstr ""
+msgstr "Docutils_ 版本库"
 
 #: ../../docutils/docs/dev/repository.txt
 msgid "Author"
@@ -64,17 +64,18 @@ msgstr ""
 
 #: ../../docutils/docs/dev/repository.txt:13
 msgid "Quick Instructions"
-msgstr ""
+msgstr "快速说明"
 
 #: ../../docutils/docs/dev/repository.txt:15
 msgid ""
 "To get a checkout of the Docutils source tree (with the sandboxes) with "
 "SVN_, type ::"
 msgstr ""
+"要想通过 SVN_ 获得 Docutils 源码树（含沙盒）的签出，请输入 ::"
 
 #: ../../docutils/docs/dev/repository.txt:20
 msgid "Users of Git_ can clone a mirror of the docutils repository with ::"
-msgstr ""
+msgstr "Git_ 的用户可以通过以下方式克隆 docutils 仓库的一个镜像 ::"
 
 #: ../../docutils/docs/dev/repository.txt:24
 msgid ""
@@ -82,12 +83,14 @@ msgid ""
 "**whole document**, especially the section \"`Information for "
 "Developers`_\"!"
 msgstr ""
+"如果你要向版本库提交修改，请阅读 **整个文档**，特别是 `开发人员信息`_ 部分！"
 
 #: ../../docutils/docs/dev/repository.txt:28
 msgid ""
 "Docutils uses a Subversion_ (SVN) repository located at "
 "``docutils.svn.sourceforge.net``."
 msgstr ""
+"Docutils 使用位于 ``docutils.svn.sourceforge.net`` 的 Subversion_ （SVN）仓库。"
 
 #: ../../docutils/docs/dev/repository.txt:31
 msgid ""
@@ -96,6 +99,9 @@ msgid ""
 "TortoiseSVN_, a convenient explorer extension.  The instructions apply "
 "analogously."
 msgstr ""
+"虽然 Unix 和 Mac OS X 用户可能更喜欢标准的 Subversion 命令行界面，"
+"但 Windows 用户可能想试试 TortoiseSVN_，一个方便的资源管理器扩展。"
+"说明也是类似的。"
 
 #: ../../docutils/docs/dev/repository.txt:36
 msgid ""
@@ -103,12 +109,15 @@ msgid ""
 "access`_ and the base for `creating a local Git clone`_. [#github-"
 "mirrors]_"
 msgstr ""
+"在 http://repo.or.cz/docutils.git，有一个 Git_ 镜像，"
+"提供 `网络访问`_ 和 `创建本地 Git 克隆`_ 的基础。[#github-mirrors]_"
 
 #: ../../docutils/docs/dev/repository.txt:40
 msgid ""
 "For the project policy on repository use (check-in requirements, "
 "branching, etc.), please see the `Docutils Project Policies`__."
 msgstr ""
+"关于版本库使用的项目政策（签入要求、分支等），请参见 `Docutils 项目政策`__。"
 
 #: ../../docutils/docs/dev/repository.txt:52
 msgid "目录"
@@ -116,23 +125,25 @@ msgstr ""
 
 #: ../../docutils/docs/dev/repository.txt:55
 msgid "Accessing the Repository"
-msgstr ""
+msgstr "访问存储库"
 
 #: ../../docutils/docs/dev/repository.txt:58
 msgid "Web Access"
-msgstr ""
+msgstr "网络访问"
 
 #: ../../docutils/docs/dev/repository.txt:60
 msgid ""
 "The repository can be browsed and examined via the web at "
 "http://sourceforge.net/p/docutils/code."
 msgstr ""
+"资料库可以通过网络浏览和检查，网址是 http://sourceforge.net/p/docutils/code。"
 
 #: ../../docutils/docs/dev/repository.txt:63
 msgid ""
 "Alternatively, use the web interface at http://repo.or.cz/docutils.git. "
 "[#github-mirrors]_"
 msgstr ""
+"或者，使用网页界面，http://repo.or.cz/docutils.git 。[#github-mirrors]_"
 
 #: ../../docutils/docs/dev/repository.txt:66
 msgid ""
@@ -141,20 +152,25 @@ msgid ""
 "/live-clones/docutils/tree/master/docutils provides an hourly updated "
 "clone."
 msgstr ""
+"GitHub 上也有第三方镜像和分叉，其中一些是 orphaned。"
+"在写这篇文章的时候（2021-11-03），"
+"https://github.com/live-clones/docutils/tree/master/docutils ，"
+"提供每小时更新一次的克隆。"
 
 #: ../../docutils/docs/dev/repository.txt:72
 msgid "Repository Access Methods"
-msgstr ""
+msgstr "存储库访问方法"
 
 #: ../../docutils/docs/dev/repository.txt:74
 msgid ""
 "To get a checkout, first determine the root of the repository depending "
 "on your preferred protocol:"
 msgstr ""
+"要获得签出，首先要根据你的首选协议确定版本库的根："
 
 #: ../../docutils/docs/dev/repository.txt:80
 msgid "anonymous access: (read only)"
-msgstr ""
+msgstr "匿名访问：（只读）"
 
 #: ../../docutils/docs/dev/repository.txt:78
 msgid "Subversion_: ``http://svn.code.sf.net/p/docutils/code``"
@@ -166,7 +182,7 @@ msgstr ""
 
 #: ../../docutils/docs/dev/repository.txt:83
 msgid "`developer access`_: (read and write)"
-msgstr ""
+msgstr "`开发者访问`_: （读与写）"
 
 #: ../../docutils/docs/dev/repository.txt:83
 msgid "``svn+ssh://<USERNAME>@svn.code.sf.net/p/docutils/code``"
@@ -174,39 +190,43 @@ msgstr ""
 
 #: ../../docutils/docs/dev/repository.txt:86
 msgid "Checking Out the Repository"
-msgstr ""
+msgstr "检查存储库"
 
 #: ../../docutils/docs/dev/repository.txt:90
 msgid "Git_ users can clone a mirror of the docutils repository with ::"
-msgstr ""
+msgstr "Git_ 用户可以通过以下方式克隆 docutils 仓库的一个镜像 ::"
 
 #: ../../docutils/docs/dev/repository.txt:94
 msgid ""
 "and proceed according to the `Git documentation`_. Developer access (read"
 " and write) is possible with `git svn`_."
 msgstr ""
+"并根据 `Git 文档`_ 进行。开发者可以通过 `git svn`_ 进行访问（读和写）。"
 
 #: ../../docutils/docs/dev/repository.txt:100
 msgid ""
 "Subversion_ users can use the following commands (substitute your "
 "preferred repository root for ROOT):"
 msgstr ""
+"Subversion_ 用户可以使用以下命令（用你喜欢的版本库根目录代替 ROOT）："
 
 #: ../../docutils/docs/dev/repository.txt:103
 msgid "To check out only the current main source tree of Docutils, type ::"
-msgstr ""
+msgstr "要想只查看 Docutils 当前的主源码树，请输入 ::"
 
 #: ../../docutils/docs/dev/repository.txt:107
 msgid ""
 "To check out everything (main tree, sandboxes, web site, and parallel "
 "projects), type ::"
 msgstr ""
+"要查看所有内容（main 树、沙盒、网站和并行项目），请输入 ::"
 
 #: ../../docutils/docs/dev/repository.txt:112
 msgid ""
 "This will create a working copy of the whole trunk in a new directory "
 "called ``docutils``."
 msgstr ""
+"这将在一个名为 ``docutils`` 的新目录中创建整个主干的工作副本。"
 
 #: ../../docutils/docs/dev/repository.txt:115
 msgid ""
@@ -214,26 +234,30 @@ msgid ""
 "(without \"/trunk\"), because then you'd end up fetching the whole "
 "Docutils tree for every branch and tag over and over again."
 msgstr ""
+"请注意，你可能不想检查 ROOT 本身（不包括 \"/trunk\"），"
+"因为那样的话，你就会为每一个分支和标签一次又一次地获取整个 Docutils 树。"
 
 #: ../../docutils/docs/dev/repository.txt:119
 msgid ""
 "To update your working copy later on, ``cd`` into the working copy and "
 "type ::"
 msgstr ""
+"以后要更新你的工作副本，``cd`` 进入工作副本，然后输入 ::"
 
 #: ../../docutils/docs/dev/repository.txt:125
 msgid "Switching the Repository Root"
-msgstr ""
+msgstr "切换版本库根目录"
 
 #: ../../docutils/docs/dev/repository.txt:127
 msgid ""
 "If you changed your mind and want to use a different repository root, "
 "``cd`` into your working copy and type::"
 msgstr ""
+"如果你改变了主意，想使用不同的版本库根目录，``cd`` 进入你的工作拷贝，然后输入 ::"
 
 #: ../../docutils/docs/dev/repository.txt:136
 msgid "Information for Developers"
-msgstr ""
+msgstr "开发者信息"
 
 #: ../../docutils/docs/dev/repository.txt:138
 msgid ""
@@ -242,14 +266,17 @@ msgid ""
 "develop@lists.sourceforge.net. (Note that there may be a delay of several"
 " hours until you can commit changes to the repository.)"
 msgstr ""
+"如果你想拥有对版本库的写入权限，请在 SourceForge.net_ 注册，"
+"并将你的 SourceForge.net 用户名发送到 docutils-develop@lists.sourceforge.net。"
+"（注意，在你可以向版本库提交修改之前，可能会有几个小时的延迟。）"
 
 #: ../../docutils/docs/dev/repository.txt:144
 msgid "Sourceforge SVN access is documented `here`__"
-msgstr ""
+msgstr "Sourceforge SVN的访问记录在 这里__"
 
 #: ../../docutils/docs/dev/repository.txt:150
 msgid "Setting Up Your Subversion Client For Development"
-msgstr ""
+msgstr "为开发设置你的 Subversion 客户端"
 
 #: ../../docutils/docs/dev/repository.txt:152
 msgid ""
@@ -258,14 +285,16 @@ msgid ""
 "~/.subversion/config file, so that new files are added with the correct "
 "properties set::"
 msgstr ""
+"在提交修改到版本库之前，请确保在你的本地 ~/.subversion/config 文件中包含（并取消注释）以下几行，"
+"以便在添加新文件时设置正确的属性 ::"
 
 #: ../../docutils/docs/dev/repository.txt:178
 msgid "Repository Layout"
-msgstr ""
+msgstr "存储库的布局"
 
 #: ../../docutils/docs/dev/repository.txt:180
 msgid "The following tree shows the repository layout::"
-msgstr ""
+msgstr "下面的树显示了存储库的布局 ::"
 
 #: ../../docutils/docs/dev/repository.txt:206
 msgid ""
@@ -273,6 +302,7 @@ msgid ""
 "sandboxes (``docutils/trunk/sandbox/``) and the web site files "
 "(``docutils/trunk/web/``)."
 msgstr ""
+"main 源树位于 ``docutils/trunk/docutils/``，旁边是沙盒（``docutils/trunk/sandbox/``）和网站文件（``docutils/trunk/web/``）。"
 
 #: ../../docutils/docs/dev/repository.txt:210
 msgid ""
@@ -280,4 +310,4 @@ msgid ""
 " either the whole trunk or only the main source tree "
 "(``docutils/trunk/docutils``)."
 msgstr ""
-
+"``docutils/branches/`` 和 ``docutils/tags/`` 包含整个主干或只有主源树（``docutils/trunk/docutils``）的（浅）副本。"

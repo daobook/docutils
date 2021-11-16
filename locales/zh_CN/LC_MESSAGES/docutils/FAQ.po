@@ -93,42 +93,47 @@ msgid ""
 "comes with an extension to extract inline documentation from Python "
 "modules and packages."
 msgstr ""
+"Docutils_ 是一个将纯文本文件处理成有用格式的系统，如 HTML、XML 和 LaTeX。"
+"它支持多种类型的输入，如独立文件、`PEPs（Python 增强建议）`_ 和字符串输入。"
+"客户端代码可以添加其他的输入类型，例如，Sphinx_ 带有一个扩展，可以从 Python 模块和包中提取内联文档。"
 
 #: ../../docutils/FAQ.txt:48
 msgid "The Docutils distribution consists of:"
-msgstr ""
+msgstr "Docutils 发行版由以下部分组成："
 
 #: ../../docutils/FAQ.txt:50
 msgid "a library (the \"docutils\" package), which `can be used by client code`_;"
-msgstr ""
+msgstr "一个库（\"docutils\"包），`可以被客户代码使用`_。"
 
 #: ../../docutils/FAQ.txt:52
 msgid ""
 "several `front-end tools`_ (such as ``rst2html.py``, which converts "
 "reStructuredText input into HTML output);"
 msgstr ""
+"几个 `前端工具`_ （如 ``rst2html.py``，它将 reStructuredText 输入转换为 HTML 输出）；"
 
 #: ../../docutils/FAQ.txt:54
 msgid "a `test suite`_; and"
-msgstr ""
+msgstr "一个 `测试套件`_ ；以及"
 
 #: ../../docutils/FAQ.txt:55
 msgid "documentation_."
-msgstr ""
+msgstr "文档_ 。"
 
 #: ../../docutils/FAQ.txt:57
 msgid ""
 "For an overview of the Docutils project implementation, see `PEP 258`_, "
 "\"Docutils Design Specification\"."
 msgstr ""
+"关于 Docutils 项目实现的概述，见 `PEP 258`_，\"Docutils 设计规范\"。"
 
 #: ../../docutils/FAQ.txt:60
 msgid "Docutils is implemented in Python_."
-msgstr ""
+msgstr "Docutils 是用 Python_ 实现的。"
 
 #: ../../docutils/FAQ.txt:74
 msgid "Why is it called \"Docutils\"?"
-msgstr ""
+msgstr "为什么叫 \"Docutils\" ？"
 
 #: ../../docutils/FAQ.txt:76
 msgid ""
@@ -137,6 +142,8 @@ msgid ""
 "Utilities architected by Greg Ward, a component of Python's standard "
 "library."
 msgstr ""
+"Docutils 是 \"Python Documentation Utilities\" 的简称。"
+"Docutils 这个名字的灵感来自于 Greg Ward 设计的 Python 发布工具，它是 Python 标准库的一个组成部分。"
 
 #: ../../docutils/FAQ.txt:81
 msgid ""
@@ -148,6 +155,10 @@ msgid ""
 " was shortly after David Goodger first `announced reStructuredText`__ on "
 "Doc-SIG."
 msgstr ""
+"在 Python 上下文中最早使用的术语是 Fred Drake 在 1999 年 12 月 2 日在 Python Doc-SIG 邮件列表中提到的 "
+"`fleeting reference`__。2000 年 11 月 27 日，Fred Drake 在 Doc-SIG 上建议将其 `作为一个项目名称`__，"
+"这也是对 Tony Ibbs 的问题：\"What do we want to *call* this thing?\" 的回应。"
+"这是在 David Goodger 第一次在 Doc-SIG 上 `宣布 reStructuredText`__ 后不久。"
 
 #: ../../docutils/FAQ.txt:89
 msgid ""
@@ -156,12 +167,15 @@ msgid ""
 "documentation strings\".  Tibs joined the current project (and its "
 "predecessors) and graciously donated the name."
 msgstr ""
+"Tibs 用 \"Docutils\" 这个名字来形容 `他的努力`__ 记录 Python docutils 包应该支持什么，特别强调文档字符串。"
+"Tibs 加入了当前的项目（以及它的前身），并慷慨地捐出了这个名字。"
 
 #: ../../docutils/FAQ.txt:94
 msgid ""
 "For more history of reStructuredText and the Docutils project, see `An "
 "Introduction to reStructuredText`_."
 msgstr ""
+"关于 reStructuredText 和 Docutils 项目的更多历史，请参见 `reStructuredText 简介`_。"
 
 #: ../../docutils/FAQ.txt:97
 msgid ""
@@ -169,24 +183,27 @@ msgid ""
 "Utils\" or any other variation.  It is pronounced as in \"DOCumentation "
 "UTILitieS\", with emphasis on the first syllable."
 msgstr ""
+"请注意，这个名字是 \"Docutils\"，而不是 \"DocUtils\" 或 \"Doc-Utils\" 或任何其他变化。"
+"它的发音与 \"DOCumentation UTILitieS\" 相同，重点在第一个音节。"
 
 #: ../../docutils/FAQ.txt:109
 msgid "Is there a GUI authoring environment for Docutils?"
-msgstr ""
+msgstr "Docutils 有一个 GUI 创作环境吗？"
 
 #: ../../docutils/FAQ.txt:111
 msgid "See the links to editors_ supporting reStructuredText."
-msgstr ""
+msgstr "参见支持 reStructuredText 的 编辑器_ 链接。"
 
 #: ../../docutils/FAQ.txt:117
 msgid "What is the status of the Docutils project?"
-msgstr ""
+msgstr "Docutils 项目的现状如何？"
 
 #: ../../docutils/FAQ.txt:119
 msgid ""
 "Docutils is mainly stable, with documented APIs and architecture subject "
 "to change after announcement and a transition period."
 msgstr ""
+"Docutils 主要是稳定的，有记录的 API 和架构在公布后会有变化，有一个过渡期。"
 
 #: ../../docutils/FAQ.txt:122
 msgid ""
@@ -194,10 +211,11 @@ msgid ""
 "repository_ (or the snapshots_) is the most stable as well as the most "
 "featureful most of the time."
 msgstr ""
+"我们在收到报告后修复错误。这意味着来自 仓库_ 的代码（或 快照_）在大多数时候是最稳定的，也是最有特色的。"
 
 #: ../../docutils/FAQ.txt:128
 msgid "What is the Docutils project release policy?"
-msgstr ""
+msgstr "Docutils 项目的发布政策是什么？"
 
 #: ../../docutils/FAQ.txt:130
 msgid ""
@@ -206,20 +224,23 @@ msgid ""
 "the project matures, we may formalize on a stable/development-branch "
 "scheme, but we're not using anything like that yet."
 msgstr ""
+"除了定期 `发布`_，我们还提供了自动生成的 `快照`_，它总是包含来自 `存储库`_ 的最新代码。"
+"随着项目的成熟，我们可能会正式确定一个稳定/开发分支的方案，但我们还没有使用这样的东西。"
 
 #: ../../docutils/FAQ.txt:142
 msgid "How can I get a new feature into Docutils?"
-msgstr ""
+msgstr "如何将一个新功能纳入 Docutils？"
 
 #: ../../docutils/FAQ.txt:144
 msgid ""
 "Present your idea at the docutils-develop_ mailing list or file a ticket "
 "at Docutils' `feature request tracker`_."
 msgstr ""
+"在 docutils-develop_ 邮件列表中提出你的想法，或者在 Docutils 的 `功能请求跟踪器`_ 中提交一张票。"
 
 #: ../../docutils/FAQ.txt:147
 msgid "See the `Docutils Policies`__ for a more detailed answer."
-msgstr ""
+msgstr "请参阅 `Docutils 政策`__ 以获得更详细的答案。"
 
 #: ../../docutils/FAQ.txt:155
 msgid "reStructuredText"
@@ -227,7 +248,7 @@ msgstr ""
 
 #: ../../docutils/FAQ.txt:158
 msgid "What is reStructuredText?"
-msgstr ""
+msgstr "什么是 reStructuredText？"
 
 #: ../../docutils/FAQ.txt:160
 msgid ""
