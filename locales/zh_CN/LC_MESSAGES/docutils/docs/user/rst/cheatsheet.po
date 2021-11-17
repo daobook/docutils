@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../docutils/docs/user/rst/cheatsheet.txt:3
 msgid "The reStructuredText_ Cheat Sheet: Syntax Reminders"
-msgstr ""
+msgstr "reStructuredText_ 小抄：语法提醒"
 
 #: ../../docutils/docs/user/rst/cheatsheet.txt
 msgid "Info"
@@ -68,64 +68,65 @@ msgid ""
 "If you are reading this as HTML, please read `<cheatsheet.txt>`_ instead "
 "to see the input syntax examples!"
 msgstr ""
+"如果你是以 HTML 形式阅读此文，请改读 `<cheatsheet.txt>`_，以查看输入语法示例！"
 
 #: ../../docutils/docs/user/rst/cheatsheet.txt:14
 msgid "Section Structure"
-msgstr ""
+msgstr "章节结构"
 
 #: ../../docutils/docs/user/rst/cheatsheet.txt:15
 msgid "Section titles are underlined or overlined & underlined."
-msgstr ""
+msgstr "章节标题用下划线表示，或用上划线 & 下划线表示。"
 
 #: ../../docutils/docs/user/rst/cheatsheet.txt:18
 msgid "Body Elements"
-msgstr ""
+msgstr "Body 元素"
 
 #: ../../docutils/docs/user/rst/cheatsheet.txt:19
 msgid "Grid table:"
-msgstr ""
+msgstr "网格表格："
 
 #: ../../docutils/docs/user/rst/cheatsheet.txt:22
 msgid "Paragraphs are flush-left, separated by blank lines."
-msgstr ""
+msgstr "段落是齐头并进的，用空行分隔。"
 
 #: ../../docutils/docs/user/rst/cheatsheet.txt:25
 msgid "Block quotes are indented."
-msgstr ""
+msgstr "方块引用是缩进的。"
 
 #: ../../docutils/docs/user/rst/cheatsheet.txt:22
 msgid "Literal block, preceded by \"::\"::"
-msgstr ""
+msgstr "Literal 块，跟着 \"::\" ::"
 
 #: ../../docutils/docs/user/rst/cheatsheet.txt:26
 msgid "or::"
-msgstr ""
+msgstr "或者 ::"
 
 #: ../../docutils/docs/user/rst/cheatsheet.txt
 msgid "Line blocks preserve line breaks & indents. [new in 0.3.6]"
-msgstr ""
+msgstr "行块保留了换行和缩进。 [0.3.6版新增]"
 
 #: ../../docutils/docs/user/rst/cheatsheet.txt
 msgid ""
 "Useful for addresses, verse, and adornment-free lists; long lines can be "
 "wrapped with continuation lines."
 msgstr ""
+"适用于地址、诗句和无装饰的清单；长行可以用续行包裹。"
 
 #: ../../docutils/docs/user/rst/cheatsheet.txt:35
 msgid "Simple tables:"
-msgstr ""
+msgstr "简单表格："
 
 #: ../../docutils/docs/user/rst/cheatsheet.txt:38
 msgid "List Type"
-msgstr ""
+msgstr "列表类型"
 
 #: ../../docutils/docs/user/rst/cheatsheet.txt:38
 msgid "Examples (syntax in the `text source <cheatsheet.txt>`_)"
-msgstr ""
-
+msgstr "例子（在 `文本源 </_sources/docutils/docs/user/rst/cheatsheet.txt>`_ 中的句法）"
 #: ../../docutils/docs/user/rst/cheatsheet.txt:40
 msgid "Bullet list"
-msgstr ""
+msgstr "无序列表"
 
 #: ../../docutils/docs/user/rst/cheatsheet.txt:40
 msgid "items begin with \"-\", \"+\", or \"*\""

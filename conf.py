@@ -52,8 +52,8 @@ language = 'zh_CN'
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store',
                     'docutils/test', 'docutils/docutils',
                     'docutils/tools/**', 'docutils/licenses/**',
-                    'docutils/docs/user/rst/quickref.html',
-                    'docutils/docs/user/rst/demo.txt',
+                    # 'docutils/docs/user/rst/quickref.html',
+                    # 'docutils/docs/user/rst/demo.txt',
                     'requirements.txt', 'prest/**']
 
 exclude_patterns += [p.as_posix() for p in Path('sandbox').iterdir() if p.is_dir()]
