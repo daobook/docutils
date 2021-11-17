@@ -7,8 +7,8 @@ reStructuredText
    
    ../../docutils/docs/user/rst/quickstart
    ../../docutils/docs/user/rst/cheatsheet
+   ../../docutils/docs/user/rst/demo
 
+也可以阅读：快速参考__。
 
-
-docutils/docs/user/rst/quickref.html
-docutils/docs/user/rst/demo
+__ ../../docutils/docs/user/rst/quickref.html

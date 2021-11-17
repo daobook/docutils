@@ -157,7 +157,7 @@
   <p class="caption" role="heading"><span class="caption-text">导航</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../web/index.html">Docutils：文档实用工具</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../web/rst.html"></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../web/rst.html">reStructuredText</a></li>
 <li class="toctree-l1"><a class="reference internal" href="docs/index.html">Docutils 项目文档概述</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../_toc/info.html">项目基础</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="README.html">Docutils 0.18.1b.dev 自述</a></li>
@@ -186,7 +186,8 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../_toc/user/rst.html">reStructuredText</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="docs/user/rst/quickstart.html">ReStructuredText 初探</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docs/user/rst/cheatsheet.html">The reStructuredText Cheat Sheet: Syntax Reminders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/user/rst/cheatsheet.html">reStructuredText 小抄：语法提醒</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/user/rst/demo.html"><span class="sectnum">1</span> reStructuredText Demonstration</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../_toc/user/editor.html">编辑器支持</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -408,11 +409,11 @@
 <section id="what-is-the-status-of-the-docutils-project">
 <h3><a class="toc-backref" href="#id29"><span class="sectnum">1.1.4</span> Docutils 项目的现状如何？</a><a class="headerlink" href="#what-is-the-status-of-the-docutils-project" title="永久链接至标题">¶</a></h3>
 <p>Docutils 主要是稳定的，有记录的 API 和架构在公布后会有变化，有一个过渡期。</p>
-<p>我们在收到报告后修复错误。这意味着来自 <a class="reference external" href="docs/dev/repository.html">仓库</a> 的代码（或 <a class="reference external" href="https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/">快照</a>）在大多数时候是最稳定的，也是最有特色的。</p>
+<p>我们在收到报告后修复错误。这意味着来自 <a class="reference external" href="https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/">仓库</a> 的代码（或 <a class="reference external" href="docs/dev/repository.html">快照</a>）在大多数时候是最稳定的，也是最有特色的。</p>
 </section>
 <section id="what-is-the-docutils-project-release-policy">
 <h3><a class="toc-backref" href="#id30"><span class="sectnum">1.1.5</span> Docutils 项目的发布政策是什么？</a><a class="headerlink" href="#what-is-the-docutils-project-release-policy" title="永久链接至标题">¶</a></h3>
-<p>除了定期 <a class="reference external" href="https://pypi.org/project/docutils/#history">发布</a>，我们还提供了自动生成的 <a class="reference external" href="docs/dev/repository.html">快照</a>，它总是包含来自 <a class="reference external" href="https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/">存储库</a> 的最新代码。随着项目的成熟，我们可能会正式确定一个稳定/开发分支的方案，但我们还没有使用这样的东西。</p>
+<p>除了定期 <a class="reference external" href="https://sourceforge.net/p/docutils/code/HEAD/tree/trunk/docutils/">发布</a>，我们还提供了自动生成的 <a class="reference external" href="https://pypi.org/project/docutils/#history">快照</a>，它总是包含来自 <a class="reference external" href="docs/dev/repository.html">存储库</a> 的最新代码。随着项目的成熟，我们可能会正式确定一个稳定/开发分支的方案，但我们还没有使用这样的东西。</p>
 </section>
 <section id="how-can-i-get-a-new-feature-into-docutils">
 <h3><a class="toc-backref" href="#id31"><span class="sectnum">1.1.6</span> 如何将一个新功能纳入 Docutils？</a><a class="headerlink" href="#how-can-i-get-a-new-feature-into-docutils" title="永久链接至标题">¶</a></h3>

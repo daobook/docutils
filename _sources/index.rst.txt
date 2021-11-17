@@ -12,7 +12,7 @@ docutils' documentation!
    :caption: 导航
 
    web/index
-   web/rst
+   reStructuredText <web/rst>
    docutils/docs/index
    _toc/info
    _toc/user/index

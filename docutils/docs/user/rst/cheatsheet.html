@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-<link rel="index" title="索引" href="../../../../genindex.html" /><link rel="search" title="搜索" href="../../../../search.html" /><link rel="next" title="编辑器支持" href="../../../../_toc/user/editor.html" /><link rel="prev" title="ReStructuredText 初探" href="quickstart.html" />
+<link rel="index" title="索引" href="../../../../genindex.html" /><link rel="search" title="搜索" href="../../../../search.html" /><link rel="next" title="1 reStructuredText Demonstration" href="demo.html" /><link rel="prev" title="ReStructuredText 初探" href="quickstart.html" />
 
     <link rel="shortcut icon" href="../../../../_static/favicon.png"/><meta name="generator" content="sphinx-4.3.0, furo 2021.11.16"/>
-        <title>The reStructuredText Cheat Sheet: Syntax Reminders - docutilsx 0.0.1 文档</title>
+        <title>reStructuredText 小抄：语法提醒 - docutilsx 0.0.1 文档</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=916d6ed8f59335acffa15474ff504849343d4c76" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
@@ -157,7 +157,7 @@
   <p class="caption" role="heading"><span class="caption-text">导航</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../../web/index.html">Docutils：文档实用工具</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../web/rst.html"></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../web/rst.html">reStructuredText</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Docutils 项目文档概述</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../../_toc/info.html">项目基础</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../README.html">Docutils 0.18.1b.dev 自述</a></li>
@@ -186,7 +186,8 @@
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../../../../_toc/user/rst.html">reStructuredText</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="quickstart.html">ReStructuredText 初探</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">The reStructuredText Cheat Sheet: Syntax Reminders</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">reStructuredText 小抄：语法提醒</a></li>
+<li class="toctree-l3"><a class="reference internal" href="demo.html"><span class="sectnum">1</span> reStructuredText Demonstration</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../../_toc/user/editor.html">编辑器支持</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -293,7 +294,7 @@
         </div>
         <article role="main">
           <section id="the-restructuredtext-cheat-sheet-syntax-reminders">
-<h1>The <a class="reference external" href="http://docutils.sf.net/rst.html">reStructuredText</a> Cheat Sheet: Syntax Reminders<a class="headerlink" href="#the-restructuredtext-cheat-sheet-syntax-reminders" title="永久链接至标题">¶</a></h1>
+<h1><a class="reference internal" href="#restructuredtext">reStructuredText</a> 小抄：语法提醒<a class="headerlink" href="#the-restructuredtext-cheat-sheet-syntax-reminders" title="永久链接至标题">¶</a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Info</dt>
 <dd class="field-odd"><p>See &lt;<a class="reference external" href="http://docutils.sf.net/rst.html">http://docutils.sf.net/rst.html</a>&gt; for introductory docs.</p>
@@ -313,33 +314,31 @@
 </dl>
 <div class="admonition note">
 <p class="admonition-title">注解</p>
-<p>If you are reading this as HTML, please read
-<a class="reference external" href="cheatsheet.txt">cheatsheet.txt</a> instead to see the input syntax examples!</p>
+<p>如果你是以 HTML 形式阅读此文，请改读 <a class="reference external" href="cheatsheet.txt">cheatsheet.txt</a>，以查看输入语法示例！</p>
 </div>
 <section id="section-structure">
-<h2>Section Structure<a class="headerlink" href="#section-structure" title="永久链接至标题">¶</a></h2>
-<p>Section titles are underlined or overlined &amp; underlined.</p>
+<h2>章节结构<a class="headerlink" href="#section-structure" title="永久链接至标题">¶</a></h2>
+<p>章节标题用下划线表示，或用上划线 &amp; 下划线表示。</p>
 </section>
 <section id="body-elements">
-<h2>Body Elements<a class="headerlink" href="#body-elements" title="永久链接至标题">¶</a></h2>
-<p>Grid table:</p>
+<h2>Body 元素<a class="headerlink" href="#body-elements" title="永久链接至标题">¶</a></h2>
+<p>网格表格：</p>
 <div class="table-wrapper"><table class="docutils align-default">
 <colgroup>
 <col style="width: 48%"/>
 <col style="width: 52%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Paragraphs are flush-left,
-separated by blank lines.</p>
+<tr class="row-odd"><td><p>段落是齐头并进的，用空行分隔。</p>
 <blockquote>
-<div><p>Block quotes are indented.</p>
+<div><p>方块引用是缩进的。</p>
 </div></blockquote>
 </td>
-<td rowspan="2"><p>Literal block, preceded by “::”:</p>
+<td rowspan="2"><p>Literal 块，跟着 “::”</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Indented</span>
 </pre></div>
 </div>
-<p>or:</p>
+<p>或者</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Quoted</span>
 </pre></div>
 </div>
@@ -352,29 +351,28 @@ separated by blank lines.</p>
 </td>
 </tr>
 <tr class="row-odd"><td colspan="2"><div class="line-block">
-<div class="line">Line blocks preserve line breaks &amp; indents. [new in 0.3.6]</div>
+<div class="line">行块保留了换行和缩进。 [0.3.6版新增]</div>
 <div class="line-block">
-<div class="line">Useful for addresses, verse, and adornment-free lists; long
-lines can be wrapped with continuation lines.</div>
+<div class="line">适用于地址、诗句和无装饰的清单；长行可以用续行包裹。</div>
 </div>
 </div>
 </td>
 </tr>
 </tbody>
 </table></div>
-<p>Simple tables:</p>
+<p>简单表格：</p>
 <div class="table-wrapper"><table class="docutils align-default">
 <colgroup>
 <col style="width: 21%"/>
 <col style="width: 79%"/>
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>List Type</p></th>
-<th class="head"><p>Examples (syntax in the <a class="reference external" href="cheatsheet.txt">text source</a>)</p></th>
+<tr class="row-odd"><th class="head"><p>列表类型</p></th>
+<th class="head"><p>例子（在 <a class="reference external" href="/_sources/docutils/docs/user/rst/cheatsheet.txt">文本源</a> 中的句法）</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Bullet list</p></td>
+<tr class="row-even"><td><p>无序列表</p></td>
 <td><ul class="simple">
 <li><p>items begin with “-”, “+”, or “*”</p></li>
 </ul>
@@ -419,7 +417,7 @@ lines can be wrapped with continuation lines.</div>
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Explicit Markup</p></th>
-<th class="head"><p>Examples (visible in the <a class="reference external" href="cheatsheet.txt">text source</a>)</p></th>
+<th class="head"><p>Examples (visible in the <a class="reference internal" href="#text-source">text source</a>)</p></th>
 </tr>
 </thead>
 <tbody>
@@ -469,7 +467,7 @@ used to separate indentation contexts)</p></td>
 with role</em>; <code class="docutils literal notranslate"><span class="pre">inline</span> <span class="pre">literal</span> <span class="pre">text</span></code>; standalone hyperlink,
 <a class="reference external" href="http://docutils.sourceforge.net">http://docutils.sourceforge.net</a>; named reference, <a class="reference external" href="http://docutils.sf.net/rst.html">reStructuredText</a>;
 <a class="reference external" href="http://docutils.sf.net/docs/ref/rst/restructuredtext.html">anonymous reference</a>; footnote reference, <a class="footnote-reference brackets" href="#id1" id="id3">1</a>; citation reference,
-<a class="reference internal" href="#cit2002" id="id4"><span>[CIT2002]</span></a>; like an inline directive; <span class="target" id="inline-internal-target">inline internal target</span>.</p>
+<a class="reference internal" href="demo.html#cit2002" id="id4"><span>[CIT2002]</span></a>; like an inline directive; <span class="target" id="inline-internal-target">inline internal target</span>.</p>
 </section>
 <section id="directive-quick-reference">
 <h2>Directive Quick Reference<a class="headerlink" href="#directive-quick-reference" title="永久链接至标题">¶</a></h2>
@@ -636,12 +634,12 @@ with role</em>; <code class="docutils literal notranslate"><span class="pre">inl
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../../../../_toc/user/editor.html">
+          <a class="next-page" href="demo.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">编辑器支持</div>
+                <div class="title"><span class="sectnum">1</span> reStructuredText Demonstration</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -682,9 +680,9 @@ with role</em>; <code class="docutils literal notranslate"><span class="pre">inl
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">The reStructuredText Cheat Sheet: Syntax Reminders</a><ul>
-<li><a class="reference internal" href="#section-structure">Section Structure</a></li>
-<li><a class="reference internal" href="#body-elements">Body Elements</a></li>
+<li><a class="reference internal" href="#">reStructuredText 小抄：语法提醒</a><ul>
+<li><a class="reference internal" href="#section-structure">章节结构</a></li>
+<li><a class="reference internal" href="#body-elements">Body 元素</a></li>
 <li><a class="reference internal" href="#inline-markup">Inline Markup</a></li>
 <li><a class="reference internal" href="#directive-quick-reference">Directive Quick Reference</a></li>
 <li><a class="reference internal" href="#interpreted-text-role-quick-reference">Interpreted Text Role Quick Reference</a></li>
