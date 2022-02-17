@@ -19,15 +19,15 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['replace'] = [
-["""\
+totest = {
+    'replace': [
+        [
+            """\
 Test the |name| directive.
 
 .. |name| replace:: "**replace**"
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Test the \n\
@@ -39,13 +39,15 @@ Test the |name| directive.
         <strong>
             replace
         "
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. |name| replace:: paragraph 1
 
                     paragraph 2
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -57,11 +59,13 @@ Test the |name| directive.
             .. |name| replace:: paragraph 1
             \n\
                                 paragraph 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. |name| replace::
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -73,15 +77,17 @@ Test the |name| directive.
             Substitution definition "name" empty or invalid.
         <literal_block xml:space="preserve">
             .. |name| replace::
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. |Python| replace:: Python, *the* best language around
 
 .. _Python: http://www.python.org/
 
 I recommend you try |Python|_.
 """,
-"""\
+            """\
 <document source="test data">
     <substitution_definition names="Python">
         Python, \n\
@@ -95,11 +101,13 @@ I recommend you try |Python|_.
             <substitution_reference refname="Python">
                 Python
         .
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. |name| replace::  *error in **inline ``markup
 """,
-"""\
+            """\
 <document source="test data">
     <system_message ids="system-message-1" level="2" line="1" source="test data" type="WARNING">
         <paragraph>
@@ -118,19 +126,23 @@ I recommend you try |Python|_.
                 *
         <literal_block xml:space="preserve">
             .. |name| replace::  *error in **inline ``markup
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. replace:: not valid outside of a substitution definition
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
             Invalid context: the "replace" directive can only be used within a substitution definition.
         <literal_block xml:space="preserve">
             .. replace:: not valid outside of a substitution definition
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

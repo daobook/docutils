@@ -18,10 +18,10 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['container'] = [
-["""\
+totest = {
+    'container': [
+        [
+            """\
 .. container::
 
    "container" is a generic element, an extension mechanism for
@@ -29,7 +29,7 @@ totest['container'] = [
 
    Containers may contain arbitrary body elements.
 """,
-"""\
+            """\
 <document source="test data">
     <container>
         <paragraph>
@@ -37,19 +37,23 @@ totest['container'] = [
             users & applications.
         <paragraph>
             Containers may contain arbitrary body elements.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. container:: custom
 
    Some text.
 """,
-"""\
+            """\
 <document source="test data">
     <container classes="custom">
         <paragraph>
             Some text.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. container:: one two three
    four
 
@@ -59,7 +63,7 @@ totest['container'] = [
 
    Multiple paragraphs in the container.
 """,
-"""\
+            """\
 <document source="test data">
     <container classes="one two three four">
         <paragraph>
@@ -68,14 +72,16 @@ totest['container'] = [
             Multi-line argument.
         <paragraph>
             Multiple paragraphs in the container.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. container::
    :name: my name
 
    The name argument allows hyperlinks to `my name`_.
 """,
-"""\
+            """\
 <document source="test data">
     <container ids="my-name" names="my\\ name">
         <paragraph>
@@ -83,8 +89,10 @@ totest['container'] = [
             <reference name="my name" refname="my name">
                 my name
             .
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

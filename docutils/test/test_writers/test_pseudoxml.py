@@ -24,12 +24,10 @@ def suite():
     s.generateTests(totest_detailed)
     return s
 
-totest = {}
-totest_detailed = {}
-
-totest['basic'] = [
-# input
-[r"""
+totest = {
+    'basic': [
+        [
+            r"""
 This is a paragraph.
 
 ----------
@@ -42,8 +40,8 @@ A Section
 
 Foo.
 """,
-# output
-"""\
+            # output
+            """\
 <document source="<string>">
     <paragraph>
         This is a paragraph.
@@ -56,14 +54,17 @@ Foo.
             A Section
         <paragraph>
             Foo.
-"""]
-]
+""",
+        ]
+    ]
+}
 
-totest_detailed['basic'] = [
-# input                             
-[totest['basic'][0][0],
-# output 
-"""\
+totest_detailed = {
+    'basic': [
+        [
+            totest['basic'][0][0],
+            # output
+            """\
 <document source="<string>">
     <paragraph>
         <#text>
@@ -80,8 +81,10 @@ totest_detailed['basic'] = [
         <paragraph>
             <#text>
                 'Foo.'
-"""]
-]
+""",
+        ]
+    ]
+}
 
 if __name__ == '__main__':
     import unittest

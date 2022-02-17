@@ -22,17 +22,17 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['double-width'] = [
-[u"""\
+totest = {
+    'double-width': [
+        [
+            u"""\
 タイトル1
 =========
 
 タイトル2
 ========
 """,
-u"""\
+            u"""\
 <document source="test data">
     <section ids="section-1" names="タイトル1">
         <title>
@@ -46,8 +46,10 @@ u"""\
             <literal_block xml:space="preserve">
                 タイトル2
                 ========
-"""],
-[u"""
+""",
+        ],
+        [
+            u"""
 +-----------------------+
 | * ヒョウ:ダイ1ギョウ  |
 | * ダイ2ギョウ         |
@@ -56,7 +58,7 @@ u"""\
 | * ダイ2ギョウ         |
 +-----------------------+
 """,
-u"""\
+            u"""\
 <document source="test data">
     <table>
         <tgroup cols="1">
@@ -76,8 +78,10 @@ u"""\
                         <paragraph>
                             * ダイ1ギョウ
                             * ダイ2ギョウ
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 Complex spanning pattern (no edge knows all rows/cols):
 
 +--------+---------------------+
@@ -88,7 +92,7 @@ Complex spanning pattern (no edge knows all rows/cols):
 | 南西・南セル          | セル |
 +-----------------------+------+
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         Complex spanning pattern (no edge knows all rows/cols):
@@ -119,8 +123,10 @@ u"""\
                     <entry morecols="1">
                         <paragraph>
                             南西・南セル
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 =========  =========
 ダイ1ラン  ダイ2ラン
 =========  =========
@@ -129,7 +135,7 @@ u"""\
 ダイ1ラン ダイ2ラン
 ========  =========
 """,
-u"""\
+            u"""\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -151,8 +157,10 @@ u"""\
             ========  =========
             ダイ1ラン ダイ2ラン
             ========  =========
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 Some ambiguous-width characters:
 
 = ===================================
@@ -175,7 +183,7 @@ Some ambiguous-width characters:
 ⇔ left-right double arrow
 = ===================================
 """,
-b"""\
+            b"""\
 <document source="test data">
     <paragraph>
         Some ambiguous-width characters:
@@ -303,8 +311,14 @@ b"""\
                     <entry>
                         <paragraph>
                             left-right double arrow
-""".decode('raw_unicode_escape')],
-]
+""".decode(
+                'raw_unicode_escape'
+            ),
+        ],
+    ]
+}
+
+
 '''
 [u"""\
 """,

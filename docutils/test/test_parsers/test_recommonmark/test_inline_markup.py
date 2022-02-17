@@ -26,14 +26,14 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['emphasis'] = [
-["""\
+totest = {
+    'emphasis': [
+        [
+            """\
 *emphasis*
 _also emphasis_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <emphasis>
@@ -41,44 +41,52 @@ _also emphasis_
         \n\
         <emphasis>
             also emphasis
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 Partially*emphasised*word.
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         Partially
         <emphasis>
             emphasised
         word.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 *emphasized sentence
 across lines*
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <emphasis>
             emphasized sentence
             across lines
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 *no emphasis without closing asterisk
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         *no emphasis without closing asterisk
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 No markup when \*escaped or unbalanced *.
 
 What about *this**?
 Unbalanced _markup__ is kept as-is without warning.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         No markup when *escaped or unbalanced *.
@@ -91,13 +99,15 @@ Unbalanced _markup__ is kept as-is without warning.
         <emphasis>
             markup
         _ is kept as-is without warning.
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 Emphasized asterisk: *\**
 
 Emphasized double asterisk: *\*\**
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Emphasized asterisk: \n\
@@ -107,15 +117,16 @@ Emphasized double asterisk: *\*\**
         Emphasized double asterisk: \n\
         <emphasis>
             **
-"""],
-]
-
-totest['strong'] = [
-["""\
+""",
+        ],
+    ],
+    'strong': [
+        [
+            """\
 **strong**
 __also strong__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <strong>
@@ -123,13 +134,15 @@ __also strong__
         \n\
         <strong>
             also strong
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Strong asterisk must be escaped **\\***
 
 Strong double asterisk: **\\*\\***
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Strong asterisk must be escaped \n\
@@ -139,22 +152,25 @@ Strong double asterisk: **\\*\\***
         Strong double asterisk: \n\
         <strong>
             **
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 **not strong without closing asterisks
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         **not strong without closing asterisks
-"""],
-]
-
-totest['literal'] = [
-["""\
+""",
+        ],
+    ],
+    'literal': [
+        [
+            """\
 Inline `literals` are called `code spans` in CommonMark.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Inline \n\
@@ -164,38 +180,46 @@ Inline `literals` are called `code spans` in CommonMark.
         <literal classes="code">
             code spans
          in CommonMark.
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 `\*literal`
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <literal classes="code">
             \\*literal
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 ``lite\ral``
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <literal classes="code">
             lite\\ral
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 ``literal\``
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <literal classes="code">
             literal\\
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 l'``literal`` and l\u2019``literal`` with apostrophe
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         l'
@@ -205,13 +229,15 @@ u"""\
         <literal classes="code">
             literal
          with apostrophe
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 quoted '``literal``', quoted "``literal``",
 quoted \u2018``literal``\u2019, quoted \u201c``literal``\u201d,
 quoted \xab``literal``\xbb
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         quoted '
@@ -232,13 +258,15 @@ u"""\
         <literal classes="code">
             literal
         \xbb
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 ``'literal'`` with quotes, ``"literal"`` with quotes,
 ``\u2018literal\u2019`` with quotes, ``\u201cliteral\u201d`` with quotes,
 ``\xabliteral\xbb`` with quotes
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         <literal classes="code">
@@ -256,13 +284,15 @@ u"""\
         <literal classes="code">
             \xabliteral\xbb
          with quotes
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 ``literal ``no literal
 
 No warning for `standalone TeX quotes' or other *unbalanced markup**.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <literal classes="code">
@@ -273,173 +303,200 @@ No warning for `standalone TeX quotes' or other *unbalanced markup**.
         <emphasis>
             unbalanced markup
         *.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ``not literal without closing backquotes
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         ``not literal without closing backquotes
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 Python ``list``s use square bracket syntax.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Python \n\
         <literal classes="code">
             list
         s use square bracket syntax.
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 Blank after opening `` not allowed.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Blank after opening `` not allowed.
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 no blank ``after closing``still ends a literal.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         no blank \n\
         <literal classes="code">
             after closing
         still ends a literal.
-"""],
-]
-
-totest['references'] = [
-["""\
+""",
+        ],
+    ],
+    'references': [
+        [
+            """\
 [ref]
 
 [ref]: /uri
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="ref" refuri="/uri">
             ref
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Inline image ![foo *bar*][foobar]
 in a paragraph.
 
 [FOOBAR]: train.jpg "train & tracks"
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Inline image \n\
         <image alt="foo " title="train & tracks" uri="train.jpg">
         \n\
         in a paragraph.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 [phrase reference]
 
 [phrase reference]: /uri
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="phrase reference" refuri="/uri">
             phrase reference
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 No whitespace required around a[phrase reference].
 
 [phrase reference]: /uri
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         No whitespace required around a
         <reference name="phrase reference" refuri="/uri">
             phrase reference
         .
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 [phrase reference
 across lines]
 
 [phrase reference across lines]: /uri
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="phrase referenceacross lines" refuri="/uri">
             phrase reference
             across lines
-"""],
-]
-
-totest['appended_URIs'] = [
-["""\
+""",
+        ],
+    ],
+    'appended_URIs': [
+        [
+            """\
 [anonymous reference](http://example.com)
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="anonymous reference" refuri="http://example.com">
             anonymous reference
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Inline image ![a train](train.jpg) more text.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Inline image \n\
         <image alt="a train" uri="train.jpg">
          more text.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Inline image ![foo](/url "title") more text.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Inline image \n\
         <image alt="foo" title="title" uri="/url">
          more text.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 [URI must follow immediately]
 (http://example.com)
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         [URI must follow immediately]
         (http://example.com)
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Relative URIs' reference text can't be omitted:
 
 [reference](reference)
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Relative URIs' reference text can't be omitted:
     <paragraph>
         <reference name="reference" refuri="reference">
             reference
-"""],
-]
-
-totest['standalone hyperlink'] = [
-["""\
+""",
+        ],
+    ],
+    'standalone hyperlink': [
+        [
+            """\
 CommonMark calls standalone hyperlinks
 like <http://example.com> "autolinks".
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         CommonMark calls standalone hyperlinks
@@ -447,27 +504,30 @@ like <http://example.com> "autolinks".
         <reference name="http://example.com" refuri="http://example.com">
             http://example.com
          "autolinks".
-"""],
-]
-
-totest['raw HTML'] = [
-["""\
+""",
+        ]
+    ],
+    'raw HTML': [
+        [
+            """\
 foo <a href="uri"> bar
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         foo \n\
         <raw format="html" xml:space="preserve">
             <a href="uri">
          bar
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 foo <br /> bar
 and <!-- this is an inline
 comment - with hyphen -->
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         foo \n\
@@ -478,29 +538,32 @@ comment - with hyphen -->
         <raw format="html" xml:space="preserve">
             <!-- this is an inline
             comment - with hyphen -->
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Hard line breaks are not supported by Docutils.
 Not the soft line break preceded by two or more spaces,  \n\
 nor the more visible alternative,\\
 a backslash before the line ending.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Hard line breaks are not supported by Docutils.
         Not the soft line break preceded by two or more spaces,\
 nor the more visible alternative,\
 a backslash before the line ending.
-"""],
-]
-
-totest['markup recognition rules'] = [
-[r"""
+""",
+        ],
+    ],
+    'markup recognition rules': [
+        [
+            r"""
 Character-level m*a***r**`k`_u_p
 works except for underline.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Character-level m
@@ -512,8 +575,10 @@ works except for underline.
             k
         _u_p
         works except for underline.
-"""],
-]
+""",
+        ]
+    ],
+}
 
 
 if __name__ == '__main__':

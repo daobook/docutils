@@ -28,10 +28,12 @@ a = '        lol'
 b = '        10^1 \n' + '\n         \n'.join(10 * [a])
 c = '        10^2 \n' + '\n         \n'.join(10 * [b])
 
-totest = {}
-
-totest['substitutions'] = ((Substitutions,), [
-["""\
+totest = {
+    'substitutions': (
+        (Substitutions,),
+        [
+            [
+                """\
 The billion laughs attack for ReStructuredText:
 
 .. |a| replace:: lol
@@ -41,7 +43,7 @@ The billion laughs attack for ReStructuredText:
 
 |a| |c| continuation text
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         The billion laughs attack for ReStructuredText:
@@ -62,8 +64,13 @@ The billion laughs attack for ReStructuredText:
     <system_message backrefs="problematic-1" ids="system-message-1" level="3" line="9" source="test data" type="ERROR">
         <paragraph>
             Substitution definition "c" exceeds the line-length-limit.
-""".format(b, c)],
-])
+""".format(
+                    b, c
+                ),
+            ],
+        ],
+    )
+}
 
 
 if __name__ == '__main__':

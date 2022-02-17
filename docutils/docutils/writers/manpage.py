@@ -138,13 +138,14 @@ class Table(object):
         while cell_lines and cell_lines[-1] in ('\n', '.sp\n'):
             del cell_lines[-1]
     def as_list(self):
-        text = ['.TS\n']
-        text.append(' '.join(self._options) + ';\n')
-        text.append('|%s|.\n' % ('|'.join(self._coldefs)))
+        text = [
+            '.TS\n',
+            ' '.join(self._options) + ';\n',
+            '|%s|.\n' % ('|'.join(self._coldefs)),
+        ]
+
         for row in self._rows:
-            # row = array of cells. cell = array of lines.
-            text.append('_\n')       # line above
-            text.append('T{\n')
+            text.extend(('_\n', 'T{\n'))
             for i in range(len(row)):
                 cell = row[i]
                 self._minimize_cell(cell)
@@ -155,8 +156,7 @@ class Table(object):
                     text.append('T}'+self._tab_char+'T{\n')
                 else:
                     text.append('T}\n')
-        text.append('_\n')
-        text.append('.TE\n')
+        text.extend(('_\n', '.TE\n'))
         return text
 
 class Translator(nodes.NodeVisitor):
@@ -241,10 +241,9 @@ class Translator(nodes.NodeVisitor):
         """Return commented version of the passed text WITHOUT end of
         line/comment."""
         prefix = '.\\" '
-        out_text = ''.join(
+        return ''.join(
             [(prefix + in_line + '\n')
             for in_line in text.split('\n')])
-        return out_text
 
     def comment(self, text):
         """Return commented version of the passed text."""
@@ -298,7 +297,7 @@ class Translator(nodes.NodeVisitor):
         text = self.deunicode(text)
         # prevent interpretation of "." at line start
         if text.startswith('.'):
-            text = '\\&' + text
+            text = f'\\&{text}'
         if self._in_literal:
             text = text.replace('\n.', '\n\\&.')
         self.body.append(text)
@@ -315,10 +314,7 @@ class Translator(nodes.NodeVisitor):
 
             def __init__(self, style):
                 self._style = style
-                if 'start' in node:
-                    self._cnt = node['start'] - 1
-                else:
-                    self._cnt = 0
+                self._cnt = node['start'] - 1 if 'start' in node else 0
                 self._indent = 2
                 if style == 'arabic':
                     # indentation depends on number of children
@@ -335,9 +331,7 @@ class Translator(nodes.NodeVisitor):
                     self._indent = 5
 
             def __next__(self):
-                if self._style == 'bullet':
-                    return self.enum_style[self._style]
-                elif self._style == 'emdash':
+                if self._style in ['bullet', 'emdash']:
                     return self.enum_style[self._style]
                 self._cnt += 1
                 # TODO add prefix postfix
@@ -346,7 +340,7 @@ class Translator(nodes.NodeVisitor):
                 elif self._style in ('loweralpha', 'upperalpha'):
                     return "%c." % self._cnt
                 elif self._style.endswith('roman'):
-                    res = roman.toRoman(self._cnt) + '.'
+                    res = f'{roman.toRoman(self._cnt)}.'
                     if self._style.startswith('upper'):
                         return res.upper()
                     return res.lower()
@@ -486,7 +480,7 @@ class Translator(nodes.NodeVisitor):
         pass
 
     def visit_citation_reference(self, node):
-        self.body.append('['+node.astext()+']')
+        self.body.append(f'[{node.astext()}]')
         raise nodes.SkipNode
 
     def visit_classifier(self, node):
@@ -606,7 +600,7 @@ class Translator(nodes.NodeVisitor):
                                     self._docinfo[name],
                                     self.defs['indent'][1],
                                     self.defs['indent'][1]))
-            elif not name in skip:
+            elif name not in skip:
                 if name in self._docinfo_names:
                     label = self._docinfo_names[name]
                 else:
@@ -710,7 +704,7 @@ class Translator(nodes.NodeVisitor):
                 base_node=node)
 
     def visit_footnote_reference(self, node):
-        self.body.append('['+self.deunicode(node.astext())+']')
+        self.body.append(f'[{self.deunicode(node.astext())}]')
         raise nodes.SkipNode
 
     def depart_footnote_reference(self, node):
@@ -775,8 +769,7 @@ class Translator(nodes.NodeVisitor):
 
     def visit_label(self, node):
         # footnote and citation
-        if (isinstance(node.parent, nodes.footnote)
-            or isinstance(node.parent, nodes.citation)):
+        if isinstance(node.parent, (nodes.footnote, nodes.citation)):
             raise nodes.SkipNode
         self.document.reporter.warning('"unsupported "label"',
                 base_node=node)
@@ -1037,12 +1030,14 @@ class Translator(nodes.NodeVisitor):
                 base_node=node)
 
     def visit_subtitle(self, node):
-        if isinstance(node.parent, nodes.sidebar):
+        if (
+            isinstance(node.parent, nodes.sidebar)
+            or not isinstance(node.parent, nodes.document)
+            and isinstance(node.parent, nodes.section)
+        ):
             self.body.append(self.defs['strong'][0])
         elif isinstance(node.parent, nodes.document):
             self.visit_docinfo_item(node, 'subtitle')
-        elif isinstance(node.parent, nodes.section):
-            self.body.append(self.defs['strong'][0])
 
     def depart_subtitle(self, node):
         # document subtitle calls SkipNode
@@ -1057,10 +1052,7 @@ class Translator(nodes.NodeVisitor):
         backref_text = ''
         if node.hasattr('id'):
             attr['name'] = node['id']
-        if node.hasattr('line'):
-            line = ', line %s' % node['line']
-        else:
-            line = ''
+        line = ', line %s' % node['line'] if node.hasattr('line') else ''
         self.body.append('.IP "System Message: %s/%s (%s:%s)"\n'
                          % (node['type'], node['level'], node['source'], line))
 

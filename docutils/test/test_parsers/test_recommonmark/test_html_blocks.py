@@ -26,29 +26,31 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['html_blocks'] = [
-["""\
+totest = {
+    'html_blocks': [
+        [
+            """\
 A paragraph:
 
 <p>A HTML block.</p>
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
     <raw format="html" xml:space="preserve">
         <p>A HTML block.</p>
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 <DIV CLASS="foo">
 
 *Markdown*
 
 </DIV>
 """,
-"""\
+            """\
 <document source="test data">
     <raw format="html" xml:space="preserve">
         <DIV CLASS="foo">
@@ -57,13 +59,15 @@ A paragraph:
             Markdown
     <raw format="html" xml:space="preserve">
         </DIV>
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 <a href="foo">
 *bar*
 </a>
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <raw format="html" xml:space="preserve">
@@ -74,19 +78,22 @@ A paragraph:
         \n\
         <raw format="html" xml:space="preserve">
             </a>
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 <!-- foo -->*bar*
 *baz*
 """,
-"""\
+            """\
 <document source="test data">
     <raw format="html" xml:space="preserve">
         <!-- foo -->*bar*
         *baz*
-"""],
-]
-
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

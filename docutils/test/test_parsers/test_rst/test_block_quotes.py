@@ -18,16 +18,16 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['block_quotes'] = [
-["""\
+totest = {
+    'block_quotes': [
+        [
+            """\
 Line 1.
 Line 2.
 
    Indented.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Line 1.
@@ -35,8 +35,10 @@ Line 2.
     <block_quote>
         <paragraph>
             Indented.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Line 1.
 Line 2.
 
@@ -44,7 +46,7 @@ Line 2.
 
       Indented 2.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Line 1.
@@ -55,13 +57,15 @@ Line 2.
         <block_quote>
             <paragraph>
                 Indented 2.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Line 1.
 Line 2.
     Unexpectedly indented.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Line 1.
@@ -72,15 +76,17 @@ Line 2.
     <block_quote>
         <paragraph>
             Unexpectedly indented.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Line 1.
 Line 2.
 
    Indented.
 no blank line
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Line 1.
@@ -93,8 +99,10 @@ no blank line
             Block quote ends without a blank line; unexpected unindent.
     <paragraph>
         no blank line
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Here is a paragraph.
 
         Indent 8 spaces.
@@ -104,7 +112,7 @@ Here is a paragraph.
 Is this correct? Should it generate a warning?
 Yes, it is correct, no warning necessary.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Here is a paragraph.
@@ -117,8 +125,10 @@ Yes, it is correct, no warning necessary.
     <paragraph>
         Is this correct? Should it generate a warning?
         Yes, it is correct, no warning necessary.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Paragraph.
 
    Block quote.
@@ -131,7 +141,7 @@ Paragraph.
 
    --Attribution
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Paragraph.
@@ -147,8 +157,10 @@ Paragraph.
             Block quote.
         <attribution>
             Attribution
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 Alternative: true em-dash.
 
    Block quote.
@@ -161,7 +173,7 @@ Alternative: three hyphens.
 
    --- Attribution
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Alternative: true em-dash.
@@ -177,8 +189,10 @@ Alternative: three hyphens.
             Block quote.
         <attribution>
             Attribution
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Paragraph.
 
    Block quote.
@@ -195,7 +209,7 @@ Paragraph.
 
 Paragraph.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Paragraph.
@@ -215,8 +229,10 @@ Paragraph.
             and line two
     <paragraph>
         Paragraph.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Paragraph.
 
    Block quote 1.
@@ -227,7 +243,7 @@ Paragraph.
 
    --Attribution 2
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Paragraph.
@@ -241,8 +257,10 @@ Paragraph.
             Block quote 2.
         <attribution>
             Attribution 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Paragraph.
 
    Block quote 1.
@@ -251,7 +269,7 @@ Paragraph.
 
    Block quote 2.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Paragraph.
@@ -263,8 +281,10 @@ Paragraph.
     <block_quote>
         <paragraph>
             Block quote 2.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Unindented paragraph.
 
     Block quote 1.
@@ -277,7 +297,7 @@ Unindented paragraph.
 
     Block quote 3.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Unindented paragraph.
@@ -293,8 +313,10 @@ Unindented paragraph.
     <block_quote>
         <paragraph>
             Block quote 3.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Paragraph.
 
    -- Not an attribution
@@ -313,7 +335,7 @@ Paragraph.
       and line two
           and line three
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Paragraph.
@@ -344,8 +366,10 @@ Paragraph.
                             <definition>
                                 <paragraph>
                                     and line three
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Paragraph.
 
    -- Not a valid attribution
@@ -360,7 +384,7 @@ Paragraph.
 
    --Attribution 2
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Paragraph.
@@ -378,8 +402,10 @@ Paragraph.
             Block quote 2.
         <attribution>
             Attribution 2
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

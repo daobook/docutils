@@ -46,19 +46,16 @@ class ClassAttribute(Transform):
         parent = pending.parent
         child = pending
         while parent:
-            # Check for appropriate following siblings:
             for index in range(parent.index(child) + 1, len(parent)):
                 element = parent[index]
-                if (isinstance(element, nodes.Invisible) or
-                    isinstance(element, nodes.system_message)):
+                if isinstance(element, (nodes.Invisible, nodes.system_message)):
                     continue
                 element['classes'] += pending.details['class']
                 pending.parent.remove(pending)
                 return
-            else:
-                # At end of section or container; apply to sibling
-                child = parent
-                parent = parent.parent
+            # At end of section or container; apply to sibling
+            child = parent
+            parent = parent.parent
         error = self.document.reporter.error(
             'No suitable element following "%s" directive'
             % pending.details['directive'],
@@ -105,8 +102,7 @@ class Transitions(Transform):
             (index == 1 or
              isinstance(node.parent[1], nodes.subtitle) and
              index == 2)):
-            assert (isinstance(node.parent, nodes.document) or
-                    isinstance(node.parent, nodes.section))
+            assert isinstance(node.parent, (nodes.document, nodes.section))
             error = self.document.reporter.error(
                 'Document or section may not begin with a transition.',
                 source=node.source, line=node.line)

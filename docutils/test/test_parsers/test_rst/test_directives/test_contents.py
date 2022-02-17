@@ -18,13 +18,13 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['contents'] = [
-["""\
+totest = {
+    'contents': [
+        [
+            """\
 .. contents::
 """,
-"""\
+            """\
 <document source="test data">
     <topic classes="contents" ids="contents" names="contents">
         <title>
@@ -33,11 +33,13 @@ totest['contents'] = [
             .. internal attributes:
                  .transform: docutils.transforms.parts.Contents
                  .details:
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. contents:: Table of Contents
 """,
-"""\
+            """\
 <document source="test data">
     <topic classes="contents" ids="table-of-contents" names="table\\ of\\ contents">
         <title>
@@ -46,12 +48,14 @@ totest['contents'] = [
             .. internal attributes:
                  .transform: docutils.transforms.parts.Contents
                  .details:
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. contents::
    Table of Contents
 """,
-"""\
+            """\
 <document source="test data">
     <topic classes="contents" ids="table-of-contents" names="table\\ of\\ contents">
         <title>
@@ -60,13 +64,15 @@ totest['contents'] = [
             .. internal attributes:
                  .transform: docutils.transforms.parts.Contents
                  .details:
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. contents:: Table
    of
    Contents
 """,
-"""\
+            """\
 <document source="test data">
     <topic classes="contents" ids="table-of-contents" names="table\\ of\\ contents">
         <title>
@@ -77,11 +83,13 @@ totest['contents'] = [
             .. internal attributes:
                  .transform: docutils.transforms.parts.Contents
                  .details:
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. contents:: *Table* of ``Contents``
 """,
-"""\
+            """\
 <document source="test data">
     <topic classes="contents" ids="table-of-contents" names="table\\ of\\ contents">
         <title>
@@ -94,13 +102,15 @@ totest['contents'] = [
             .. internal attributes:
                  .transform: docutils.transforms.parts.Contents
                  .details:
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. contents::
    :depth: 2
    :local:
 """,
-"""\
+            """\
 <document source="test data">
     <topic classes="contents local" ids="contents" names="contents">
         <pending>
@@ -109,12 +119,14 @@ totest['contents'] = [
                  .details:
                    depth: 2
                    local: None
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. contents::
    :local: arg
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -124,14 +136,16 @@ totest['contents'] = [
         <literal_block xml:space="preserve">
             .. contents::
                :local: arg
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. contents:: Table of Contents
    :local:
    :depth: 2
    :backlinks: none
 """,
-"""\
+            """\
 <document source="test data">
     <topic classes="contents local" ids="table-of-contents" names="table\\ of\\ contents">
         <title>
@@ -143,12 +157,14 @@ totest['contents'] = [
                    backlinks: None
                    depth: 2
                    local: None
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. contents::
    :depth: two
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -158,12 +174,15 @@ totest['contents'] = [
         <literal_block xml:space="preserve">
             .. contents::
                :depth: two
-""" % DocutilsTestSupport.exception_data(int, "two")[1][0]],
-["""\
+"""
+            % DocutilsTestSupport.exception_data(int, "two")[1][0],
+        ],
+        [
+            """\
 .. contents::
    :width: 2
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -172,12 +191,14 @@ totest['contents'] = [
         <literal_block xml:space="preserve">
             .. contents::
                :width: 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. contents::
    :backlinks: no way!
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -187,12 +208,14 @@ totest['contents'] = [
         <literal_block xml:space="preserve">
             .. contents::
                :backlinks: no way!
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. contents::
    :backlinks:
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -202,11 +225,13 @@ totest['contents'] = [
         <literal_block xml:space="preserve">
             .. contents::
                :backlinks:
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 * .. contents::
 """,
-"""\
+            """\
 <document source="test data">
     <bullet_list bullet="*">
         <list_item>
@@ -215,13 +240,15 @@ totest['contents'] = [
                     The "contents" directive may not be used within topics or body elements.
                 <literal_block xml:space="preserve">
                     .. contents::
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. sidebar:: containing contents
 
    .. contents::
 """,
-"""\
+            """\
 <document source="test data">
     <sidebar>
         <title>
@@ -233,8 +260,10 @@ totest['contents'] = [
                 .. internal attributes:
                      .transform: docutils.transforms.parts.Contents
                      .details:
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

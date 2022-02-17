@@ -24,17 +24,17 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['enumerated_lists'] = [
-["""\
+totest = {
+    'enumerated_lists': [
+        [
+            """\
 1. Item one.
 
 2. Item two.
 
 3. Item three.
 """,
-"""\
+            """\
 <document source="test data">
     <enumerated_list>
         <list_item>
@@ -46,15 +46,17 @@ totest['enumerated_lists'] = [
         <list_item>
             <paragraph>
                 Item three.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 No blank lines betwen items:
 
 1. Item one.
 2. Item two.
 3. Item three.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         No blank lines betwen items:
@@ -68,32 +70,38 @@ No blank lines betwen items:
         <list_item>
             <paragraph>
                 Item three.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 1.
    Content may start at the next line
    if it's indented at least 3 spaces.
 """,
-"""\
+            """\
 <document source="test data">
     <enumerated_list>
         <list_item>
             <paragraph>
                 Content may start at the next line
                 if it's indented at least 3 spaces.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 1.
 empty item above, no blank line, no indent
 """,
-"""\
+            """\
 <document source="test data">
     <enumerated_list>
         <list_item>
     <paragraph>
         empty item above, no blank line, no indent
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Items are auto-numbered.
 No check for consistency: Skipping item 3
 
@@ -101,7 +109,7 @@ No check for consistency: Skipping item 3
 2. Item 2.
 4. Item 4.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Items are auto-numbered.
@@ -116,8 +124,10 @@ No check for consistency: Skipping item 3
         <list_item>
             <paragraph>
                 Item 4.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 No warning when starting with non-ordinal-1:
 
 0. Item zero.
@@ -130,7 +140,7 @@ And again:
 2. Item two.
 3. Item three.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         No warning when starting with non-ordinal-1:
@@ -156,8 +166,10 @@ And again:
         <list_item>
             <paragraph>
                 Item three.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 1. Item one: line 1,
    line 2.
 2. Item two: line 1,
@@ -167,7 +179,7 @@ line 2.
 
    Paragraph 2.
 """,
-"""\
+            """\
 <document source="test data">
     <enumerated_list>
         <list_item>
@@ -184,8 +196,10 @@ line 2.
                 line 2.
             <paragraph>
                 Paragraph 2.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Supported enumeration sequences:
 
 1. Item 1.
@@ -195,7 +209,7 @@ Supported enumeration sequences:
 2) Item 2)
 
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Supported enumeration sequences:
@@ -213,8 +227,10 @@ Supported enumeration sequences:
         <list_item>
             <paragraph>
                 Item 2)
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Nested enumerated lists:
 
 1. Item 1
@@ -237,7 +253,7 @@ Nested enumerated lists:
 
 3. Item 3.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Nested enumerated lists:
@@ -281,8 +297,10 @@ Nested enumerated lists:
         <list_item>
             <paragraph>
                 Item 3.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 1. Item one: line 1,
    line 2.
 2. Item two: line 1,
@@ -292,7 +310,7 @@ line 2.
 
    Item three: paragraph 2.
 """,
-"""\
+            """\
 <document source="test data">
     <enumerated_list>
         <list_item>
@@ -309,8 +327,10 @@ line 2.
                 line 2.
             <paragraph>
                 Item three: paragraph 2.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 3-space indent, with a trailing space:
 
 1. \n\
@@ -340,7 +360,7 @@ No item content:
 
 1.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         3-space indent, with a trailing space:
@@ -376,8 +396,10 @@ No item content:
         No item content:
     <enumerated_list>
         <list_item>
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

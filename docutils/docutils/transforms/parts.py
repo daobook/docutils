@@ -47,10 +47,7 @@ class SectNum(Transform):
 
     def update_section_numbers(self, node, prefix=(), depth=0):
         depth += 1
-        if prefix:
-            sectnum = 1
-        else:
-            sectnum = self.startvalue
+        sectnum = 1 if prefix else self.startvalue
         for child in node:
             if isinstance(child, nodes.section):
                 numbers = prefix + (str(sectnum),)
@@ -91,8 +88,7 @@ class Contents(Transform):
         details = self.startnode.details
         if 'local' in details:
             startnode = self.startnode.parent.parent
-            while not (isinstance(startnode, nodes.section)
-                       or isinstance(startnode, nodes.document)):
+            while not isinstance(startnode, (nodes.section, nodes.document)):
                 # find the ToC root: a direct ancestor of startnode
                 startnode = startnode.parent
         else:
@@ -139,13 +135,12 @@ class Contents(Transform):
                 subsects = self.build_contents(section, level)
                 item += subsects
             entries.append(item)
-        if entries:
-            contents = nodes.bullet_list('', *entries)
-            if auto: # auto-numbered sections
-                contents['classes'].append('auto-toc') # auto-numbered sections
-            return contents
-        else:
+        if not entries:
             return []
+        contents = nodes.bullet_list('', *entries)
+        if auto: # auto-numbered sections
+            contents['classes'].append('auto-toc') # auto-numbered sections
+        return contents
 
     def copy_and_filter(self, node):
         """Return a copy of a title, with references, images, etc. removed."""

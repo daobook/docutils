@@ -23,10 +23,12 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['strip_comments'] = ((StripComments,), [
-["""\
+totest = {
+    'strip_comments': (
+        (StripComments,),
+        [
+            [
+                """\
 .. this is a comment
 
 Title
@@ -36,15 +38,18 @@ Paragraph.
 
 .. second comment
 """,
-"""\
+                """\
 <document source="test data">
     <section ids="title" names="title">
         <title>
             Title
         <paragraph>
             Paragraph.
-"""],
-])
+""",
+            ],
+        ],
+    )
+}
 
 
 if __name__ == '__main__':

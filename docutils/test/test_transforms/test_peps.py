@@ -22,26 +22,30 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['target_notes'] = ((TargetNotes,), [
-["""\
+totest = {
+    'target_notes': (
+        (TargetNotes,),
+        [
+            [
+                """\
 No references or targets exist, therefore
 no "References" section should be generated.
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         No references or targets exist, therefore
         no "References" section should be generated.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 A target exists, here's the reference_.
 A "References" section should be generated.
 
 .. _reference: http://www.example.org
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         A target exists, here's the \n\
@@ -59,9 +63,11 @@ A "References" section should be generated.
             <paragraph>
                 <reference refuri="http://www.example.org">
                     http://www.example.org
-"""],
-])
-
+""",
+            ],
+        ],
+    )
+}
 
 
 if __name__ == '__main__':

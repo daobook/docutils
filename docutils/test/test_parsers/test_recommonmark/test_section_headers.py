@@ -26,36 +26,40 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['section_headers'] = [
-["""\
+totest = {
+    'section_headers': [
+        [
+            """\
 The Title
 =========
 Paragraph.
 """,
-"""\
+            """\
 <document source="test data">
     <section ids="the-title" names="the\ title">
         <title>
             The Title
         <paragraph>
             Paragraph.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Another Section Title
 =====================
 Paragraph (no blank line required).
 """,
-"""\
+            """\
 <document source="test data">
     <section ids="another-section-title" names="another\ section\ title">
         <title>
             Another Section Title
         <paragraph>
             Paragraph (no blank line required).
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Paragraph.
 
 Title
@@ -63,7 +67,7 @@ Title
 
 Paragraph.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Paragraph.
@@ -72,39 +76,26 @@ Paragraph.
             Title
         <paragraph>
             Paragraph.
-"""],
-# ["""\
-# Test unexpected section titles.
-# 
-# * Title
-#   =====
-#   
-#   Paragraph.
-# """,
-# """\
-# <document source="test data">
-#     <paragraph>
-#         Test unexpected section titles.
-#     <system_message level="3" source="test data" type="ERROR">
-#         <paragraph>
-#             Parsing with "recommonmark" returned the error:
-#             'NoneType' object has no attribute 'note_implicit_target'
-# """],
-["""\
+""",
+        ],
+        [
+            """\
 Title
 ==
 
 A short underline is no problem in CommonMark
 """,
-"""\
+            """\
 <document source="test data">
     <section ids="title" names="title">
         <title>
             Title
         <paragraph>
             A short underline is no problem in CommonMark
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Test return to existing, highest-level section (Title 3).
 
 Title 1
@@ -123,7 +114,7 @@ Title 4
 -------
 Paragraph 4.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Test return to existing, highest-level section (Title 3).
@@ -147,8 +138,10 @@ Paragraph 4.
                 Title 4
             <paragraph>
                 Paragraph 4.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Test bad subsection order.
 
 ## Title 1
@@ -161,7 +154,7 @@ Test bad subsection order.
 
 ### Title 5
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Test bad subsection order.
@@ -200,14 +193,16 @@ Test bad subsection order.
                     Title level inconsistent. Changing from 3 to 2.
                 <literal_block xml:space="preserve">
                     Title 5
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Title containing *inline* ``markup``
 ====================================
 
 Paragraph.
 """,
-"""\
+            """\
 <document source="test data">
     <section ids="title-containing-inline-markup" names="title\\ containing\\ inline\\ markup">
         <title>
@@ -219,14 +214,16 @@ Paragraph.
                 markup
         <paragraph>
             Paragraph.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 1. Not a numbered title but an enumerated list
 ==============================================
 
 Paragraph.
 """,
-"""\
+            """\
 <document source="test data">
     <enumerated_list>
         <list_item>
@@ -235,32 +232,38 @@ Paragraph.
                 ==============================================
     <paragraph>
         Paragraph.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ABC
 ===
 
 Short title.
 """,
-"""\
+            """\
 <document source="test data">
     <section ids="abc" names="abc">
         <title>
             ABC
         <paragraph>
             Short title.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Empty Section
 =============
 """,
-"""\
+            """\
 <document source="test data">
     <section ids="empty-section" names="empty\\ section">
         <title>
             Empty Section
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

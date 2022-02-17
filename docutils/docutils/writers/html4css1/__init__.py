@@ -436,10 +436,12 @@ class HTMLTranslator(writers._html_base.HTMLTranslator):
                 assert isinstance(field_body, nodes.field_body)
                 children = [n for n in field_body
                             if not isinstance(n, nodes.Invisible)]
-                if not (len(children) == 0 or
-                        len(children) == 1 and
-                        isinstance(children[0],
-                                   (nodes.paragraph, nodes.line_block))):
+                if children and (
+                    len(children) != 1
+                    or not isinstance(
+                        children[0], (nodes.paragraph, nodes.line_block)
+                    )
+                ):
                     self.compact_field_list = False
                     break
         self.body.append(self.starttag(node, 'table', frame='void',
@@ -454,11 +456,7 @@ class HTMLTranslator(writers._html_base.HTMLTranslator):
         self.compact_field_list, self.compact_p = self.context.pop()
 
     def visit_field_name(self, node):
-        atts = {}
-        if self.in_docinfo:
-            atts['class'] = 'docinfo-name'
-        else:
-            atts['class'] = 'field-name'
+        atts = {'class': 'docinfo-name' if self.in_docinfo else 'field-name'}
         if ( self.settings.field_name_limit
              and len(node.astext()) > self.settings.field_name_limit):
             atts['colspan'] = 2
@@ -494,9 +492,8 @@ class HTMLTranslator(writers._html_base.HTMLTranslator):
                 self.context.append('<a class="fn-backref" href="#%s">'
                                     % backrefs[0])
             else:
-                for (i, backref) in enumerate(backrefs, 1):
-                    backlinks.append('<a class="fn-backref" href="#%s">%s</a>'
-                                     % (backref, i))
+                backlinks.extend('<a class="fn-backref" href="#%s">%s</a>'
+                                     % (backref, i) for (i, backref) in enumerate(backrefs, 1))
                 self.context.append('<em>(%s)</em> ' % ', '.join(backlinks))
                 self.context += ['', '']
         else:
@@ -529,7 +526,7 @@ class HTMLTranslator(writers._html_base.HTMLTranslator):
                                        CLASS='footnote-reference', href=href))
 
     def depart_footnote_reference(self, node):
-        self.body.append(self.context.pop() + '</a>')
+        self.body.append(f'{self.context.pop()}</a>')
 
     # just pass on generated text
     def visit_generated(self, node):
@@ -560,8 +557,11 @@ class HTMLTranslator(writers._html_base.HTMLTranslator):
         if 'height' in node:
             atts['height'] = node['height']
         if 'scale' in node:
-            if (PIL and not ('width' in node and 'height' in node)
-                and self.settings.file_insertion_enabled):
+            if (
+                PIL
+                and ('width' not in node or 'height' not in node)
+                and self.settings.file_insertion_enabled
+            ):
                 imagepath = url2pathname(uri)
                 try:
                     img = PIL.Image.open(
@@ -715,14 +715,14 @@ class HTMLTranslator(writers._html_base.HTMLTranslator):
         """
         Determine if the <p> tags around paragraph ``node`` can be omitted.
         """
-        if (isinstance(node.parent, nodes.document) or
-            isinstance(node.parent, nodes.compound)):
+        if isinstance(node.parent, (nodes.document, nodes.compound)):
             # Never compact paragraphs in document or compound.
             return False
         for key, value in node.attlist():
-            if (node.is_not_default(key) and
-                not (key == 'classes' and value in
-                     ([], ['first'], ['last'], ['first', 'last']))):
+            if node.is_not_default(key) and (
+                key != 'classes'
+                or value not in ([], ['first'], ['last'], ['first', 'last'])
+            ):
                 # Attribute which needs to survive.
                 return False
         first = isinstance(node.parent[0], nodes.label) # skip label
@@ -827,17 +827,14 @@ class HTMLTranslator(writers._html_base.HTMLTranslator):
                 backref_text = ('; <em><a href="#%s">backlink</a></em>'
                                 % backrefs[0])
             else:
-                i = 1
-                backlinks = []
-                for backref in backrefs:
-                    backlinks.append('<a href="#%s">%s</a>' % (backref, i))
-                    i += 1
+                backlinks = [
+                    '<a href="#%s">%s</a>' % (backref, i)
+                    for i, backref in enumerate(backrefs, start=1)
+                ]
+
                 backref_text = ('; <em>backlinks: %s</em>'
                                 % ', '.join(backlinks))
-        if node.hasattr('line'):
-            line = ', line %s' % node['line']
-        else:
-            line = ''
+        line = ', line %s' % node['line'] if node.hasattr('line') else ''
         self.body.append('System Message: %s/%s '
                          '(<tt class="docutils">%s</tt>%s)%s</p>\n'
                          % (node['type'], node['level'],
@@ -899,9 +896,7 @@ class HTMLTranslator(writers._html_base.HTMLTranslator):
         tagname = 'h%i' % min(h_level, 6)
         start_tag = self.starttag(node, tagname, '', classes=classes)
         if node.hasattr('refid'):
-            atts = {}
-            atts['class'] = 'toc-backref'
-            atts['href'] = '#' + node['refid']
+            atts = {'class': 'toc-backref', 'href': '#' + node['refid']}
             start_tag += self.starttag({}, 'a', '', **atts)
             close_tag = '</a></%s>\n' % tagname
         else:
@@ -919,13 +914,19 @@ class SimpleListChecker(writers._html_base.SimpleListChecker):
     """
 
     def visit_list_item(self, node):
-        children = []
-        for child in node.children:
-            if not isinstance(child, nodes.Invisible):
-                children.append(child)
-        if (children and isinstance(children[0], nodes.paragraph)
-            and (isinstance(children[-1], nodes.bullet_list)
-                 or isinstance(children[-1], nodes.enumerated_list))):
+        children = [
+            child
+            for child in node.children
+            if not isinstance(child, nodes.Invisible)
+        ]
+
+        if (
+            children
+            and isinstance(children[0], nodes.paragraph)
+            and isinstance(
+                children[-1], (nodes.bullet_list, nodes.enumerated_list)
+            )
+        ):
             children.pop()
         if len(children) <= 1:
             return

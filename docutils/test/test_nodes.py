@@ -574,7 +574,7 @@ class MiscTests(unittest.TestCase):
                           [e[0][0], e[0][1], e[1], e[2]])
         self.assertEqual(list(e[0][0].traverse(descend=False, siblings=True)),
                           [e[0][0], e[0][1]])
-        self.testlist = e[0:2]
+        self.testlist = e[:2]
         self.assertEqual(list(e.traverse(condition=self.not_in_testlist)),
                           [e, e[0][0], e[0][1], e[0][1][0], e[2]])
         # Return siblings despite siblings=False because ascend is true.

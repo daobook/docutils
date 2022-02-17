@@ -18,13 +18,13 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['class'] = [
-["""\
+totest = {
+    'class': [
+        [
+            """\
 .. class:: class1  class2
 """,
-"""\
+            """\
 <document source="test data">
     <pending>
         .. internal attributes:
@@ -32,22 +32,26 @@ totest['class'] = [
              .details:
                class: ['class1', 'class2']
                directive: 'class'
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. class:: class1  class2
 
    The classes are applied to this paragraph.
 
    And this one.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph classes="class1 class2">
         The classes are applied to this paragraph.
     <paragraph classes="class1 class2">
         And this one.
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

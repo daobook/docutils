@@ -19,10 +19,10 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['admonitions'] = [
-["""\
+totest = {
+    'admonitions': [
+        [
+            """\
 .. Achtung:: Directives at large.
 
 .. Notiz:: :name: mynote
@@ -51,7 +51,7 @@ totest['admonitions'] = [
    - Call your mother.
    - Back up your data.
 """,
-"""\
+            """\
 <document source="test data">
     <attention>
         <paragraph>
@@ -96,13 +96,15 @@ totest['admonitions'] = [
             <list_item>
                 <paragraph>
                     Back up your data.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. Notiz:: One-line notes.
 .. Notiz:: One after the other.
 .. Notiz:: No blank lines in-between.
 """,
-"""\
+            """\
 <document source="test data">
     <note>
         <paragraph>
@@ -113,8 +115,10 @@ totest['admonitions'] = [
     <note>
         <paragraph>
             No blank lines in-between.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. Notiz:: Content before options
    is possible too.
    :class: mynote
@@ -125,7 +129,7 @@ totest['admonitions'] = [
 .. Notiz:: a role is
    :strong:`not an option`, even if its starts a line.
 """,
-"""\
+            """\
 <document source="test data">
     <note classes="mynote">
         <paragraph>
@@ -146,65 +150,75 @@ totest['admonitions'] = [
             <strong>
                 not an option
             , even if its starts a line.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. Notiz::
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
             Content block expected for the "Notiz" directive; none found.
         <literal_block xml:space="preserve">
             .. Notiz::
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. admonition:: Admonition
 
    This is a generic admonition.
 """,
-"""\
+            """\
 <document source="test data">
     <admonition classes="admonition-admonition">
         <title>
             Admonition
         <paragraph>
             This is a generic admonition.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. admonition:: And, by the way...
 
    You can make up your own admonition too.
 """,
-"""\
+            """\
 <document source="test data">
     <admonition classes="admonition-and-by-the-way">
         <title>
             And, by the way...
         <paragraph>
             You can make up your own admonition too.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. admonition:: Admonition
    :class: emergency
    :name: reference name
 
    Test the "class" override.
 """,
-"""\
+            """\
 <document source="test data">
     <admonition classes="emergency" ids="reference-name" names="reference\\ name">
         <title>
             Admonition
         <paragraph>
             Test the "class" override.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. admonition::
 
    Generic admonitions require a title.
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -214,8 +228,10 @@ totest['admonitions'] = [
             .. admonition::
             
                Generic admonitions require a title.
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

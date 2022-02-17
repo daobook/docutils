@@ -26,25 +26,27 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['bullet_lists'] = [
-["""\
+totest = {
+    'bullet_lists': [
+        [
+            """\
 - item
 """,
-"""\
+            """\
 <document source="test data">
     <bullet_list>
         <list_item>
             <paragraph>
                 item
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 * item 1
 
 * item 2
 """,
-"""\
+            """\
 <document source="test data">
     <bullet_list>
         <list_item>
@@ -53,14 +55,16 @@ totest['bullet_lists'] = [
         <list_item>
             <paragraph>
                 item 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 No blank line between:
 
 + item 1
 + item 2
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         No blank line between:
@@ -71,15 +75,17 @@ No blank line between:
         <list_item>
             <paragraph>
                 item 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 - item 1, paragraph 1.
 
   item 1, paragraph 2.
 
 - item 2
 """,
-"""\
+            """\
 <document source="test data">
     <bullet_list>
         <list_item>
@@ -90,13 +96,15 @@ No blank line between:
         <list_item>
             <paragraph>
                 item 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 - item 1, line 1
   item 1, line 2
 - item 2
 """,
-"""\
+            """\
 <document source="test data">
     <bullet_list>
         <list_item>
@@ -106,8 +114,10 @@ No blank line between:
         <list_item>
             <paragraph>
                 item 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Different bullets start different lists: 
 
 - item 1
@@ -117,7 +127,7 @@ Different bullets start different lists:
 * no blank line
 - required between lists
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Different bullets start different lists:
@@ -137,43 +147,51 @@ Different bullets start different lists:
         <list_item>
             <paragraph>
                 required between lists
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 - item 1
 continuation of item 1
 """,
-"""\
+            """\
 <document source="test data">
     <bullet_list>
         <list_item>
             <paragraph>
                 item 1
                 continuation of item 1
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 -
 
 empty item above
 """,
-"""\
+            """\
 <document source="test data">
     <bullet_list>
         <list_item>
     <paragraph>
         empty item above
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 -
 empty item above, no blank line
 """,
-"""\
+            """\
 <document source="test data">
     <bullet_list>
         <list_item>
     <paragraph>
         empty item above, no blank line
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 Unicode bullets are not supported by CommonMark.
 
 • BULLET
@@ -182,7 +200,7 @@ Unicode bullets are not supported by CommonMark.
 
 ⁃ HYPHEN BULLET
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         Unicode bullets are not supported by CommonMark.
@@ -192,8 +210,11 @@ u"""\
         ‣ TRIANGULAR BULLET
     <paragraph>
         ⁃ HYPHEN BULLET
-"""],
-]
+""",
+        ],
+    ]
+}
+
 
 if __name__ == '__main__':
     import unittest

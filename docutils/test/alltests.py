@@ -67,11 +67,10 @@ def pformat(suite):
         output.append(' ' * indent + line)
         if line[-1:] == '[':
             indent += step
-        else:
-            if line[-5:] == ']>]>,':
-                indent -= step * 2
-            elif line[-3:] == ']>,':
-                indent -= step
+        elif line[-5:] == ']>]>,':
+            indent -= step * 2
+        elif line[-3:] == ']>,':
+            indent -= step
     return '\n'.join(output)
 
 

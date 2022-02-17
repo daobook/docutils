@@ -19,79 +19,85 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['argument'] = [
-["""\
+totest = {
+    'argument': [
+        [
+            """\
 .. math:: y = f(x)
 """,
-"""\
+            """\
 <document source="test data">
     <math_block xml:space="preserve">
         y = f(x)
-"""],
-]
-
-totest['content'] = [
-["""\
+""",
+        ]
+    ],
+    'content': [
+        [
+            """\
 .. math::
 
   1+1=2
 """,
-"""\
+            """\
 <document source="test data">
     <math_block xml:space="preserve">
         1+1=2
-"""],
-]
-
-totest['options'] = [
-["""\
+""",
+        ]
+    ],
+    'options': [
+        [
+            """\
 .. math::
   :class: new
   :name: eq:Eulers law
 
   e^i*2*\\pi = 1
 """,
-"""\
+            """\
 <document source="test data">
     <math_block classes="new" ids="eq-eulers-law" names="eq:eulers\\ law" xml:space="preserve">
         e^i*2*\\pi = 1
-"""],
-]
-
-totest['argument_and_content'] = [
-["""\
+""",
+        ]
+    ],
+    'argument_and_content': [
+        [
+            """\
 .. math:: y = f(x)
 
   1+1=2
 
 """,
-"""\
+            """\
 <document source="test data">
     <math_block xml:space="preserve">
         y = f(x)
     <math_block xml:space="preserve">
         1+1=2
-"""],
-]
-
-totest['content with blank line'] = [
-["""\
+""",
+        ]
+    ],
+    'content with blank line': [
+        [
+            """\
 .. math::
 
   1+1=2
 
   E = mc^2
 """,
-"""\
+            """\
 <document source="test data">
     <math_block xml:space="preserve">
         1+1=2
     <math_block xml:space="preserve">
         E = mc^2
-"""],
-]
+""",
+        ]
+    ],
+}
 
 
 if __name__ == '__main__':

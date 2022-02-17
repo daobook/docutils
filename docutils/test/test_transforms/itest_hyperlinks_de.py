@@ -31,27 +31,32 @@ from docutils.parsers.rst import Parser, directives
 
 def suite():
     parser = Parser()
-    settings = {}
-    settings['language_code'] = 'de'
+    settings = {'language_code': 'de'}
     s = DocutilsTestSupport.TransformTestSuite(
         parser, suite_settings=settings)
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['hyperlinks'] = ((PropagateTargets, AnonymousHyperlinks,
-                         IndirectHyperlinks, ExternalTargets,
-                         InternalTargets, DanglingReferences), [
-
-["""\
+totest = {
+    'hyperlinks': (
+        (
+            PropagateTargets,
+            AnonymousHyperlinks,
+            IndirectHyperlinks,
+            ExternalTargets,
+            InternalTargets,
+            DanglingReferences,
+        ),
+        [
+            [
+                """\
 Target_ should propagate past the system_message to set "id" on note.
 
 .. _target:
 .. note:: Kurznotiz
    :name: mynote
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         <reference name="Target" refid="target">
@@ -68,8 +73,12 @@ Target_ should propagate past the system_message to set "id" on note.
     <system_message level="1" source="test data" type="INFO">
         <paragraph>
             Using <module 'docutils.languages.de' from '/usr/local/src/docutils-git-svn/docutils/docutils/languages/de.pyc'> for language "de".
-"""],
-])
+""",
+            ],
+        ],
+    )
+}
+
 
 if __name__ == '__main__':
     import unittest

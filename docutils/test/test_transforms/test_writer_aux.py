@@ -22,10 +22,12 @@ def suite():
     return s
 
 
-totest = {}
-
-totest['compound'] = ((writer_aux.Compound,), [
-["""\
+totest = {
+    'compound': (
+        (writer_aux.Compound,),
+        [
+            [
+                """\
 .. class:: compound
 
 .. compound::
@@ -40,7 +42,7 @@ totest['compound'] = ((writer_aux.Compound,), [
 
        Block quote.
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph classes="paragraph1 compound">
         Paragraph 1.
@@ -49,18 +51,22 @@ totest['compound'] = ((writer_aux.Compound,), [
     <block_quote classes="continued">
         <paragraph>
             Block quote.
-"""],
-])
-
-totest['admonitions'] = ((writer_aux.Admonitions,), [
-["""\
+""",
+            ],
+        ],
+    ),
+    'admonitions': (
+        (writer_aux.Admonitions,),
+        [
+            [
+                """\
 .. note::
 
    These are the note contents.
 
    Another paragraph.
 """,
-"""\
+                """\
 <document source="test data">
     <admonition classes="note">
         <title>
@@ -69,21 +75,26 @@ totest['admonitions'] = ((writer_aux.Admonitions,), [
             These are the note contents.
         <paragraph>
             Another paragraph.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. admonition:: Generic
 
    Admonitions contents...
 """,
-"""\
+                """\
 <document source="test data">
     <admonition classes="admonition-generic admonition">
         <title>
             Generic
         <paragraph>
             Admonitions contents...
-"""],
-])
+""",
+            ],
+        ],
+    ),
+}
 
 
 if __name__ == '__main__':

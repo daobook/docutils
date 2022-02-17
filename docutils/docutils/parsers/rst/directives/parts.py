@@ -30,10 +30,7 @@ class Contents(Directive):
 
     def backlinks(arg):
         value = directives.choice(arg, Contents.backlinks_values)
-        if value == 'none':
-            return None
-        else:
-            return value
+        return None if value == 'none' else value
 
     optional_arguments = 1
     final_argument_whitespace = True

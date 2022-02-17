@@ -21,20 +21,25 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['meta'] = ((), [
-["""\
+totest = {
+    'meta': (
+        (),
+        [
+            [
+                """\
 .. meta::
    :description: The reStructuredText plaintext markup language
    :keywords: plaintext,markup language
 """,
-"""\
+                """\
 <document source="test data">
     <meta content="The reStructuredText plaintext markup language" name="description">
     <meta content="plaintext,markup language" name="keywords">
-"""],
-])
+""",
+            ],
+        ],
+    )
+}
 
 
 if __name__ == '__main__':

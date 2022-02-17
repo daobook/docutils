@@ -26,15 +26,11 @@ def suite():
     s.generateTests(totest)
     return s
 
-if platform.system() == "Windows":
-    drive_prefix = "C:"
-else:
-    drive_prefix = ""
-
-totest = {}
-
-totest['template'] = [
-["""\
+drive_prefix = "C:" if platform.system() == "Windows" else ""
+totest = {
+    'template': [
+        [
+            """\
 ================
  Document Title
 ================
@@ -51,7 +47,7 @@ Section
 
 Some text.
 """,
-r'''head_prefix = """\
+            r'''head_prefix = """\
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -238,10 +234,15 @@ html_body = """\
 <hr class="footer" />
 footer text
 </div>"""
-''' % {'version': DocutilsTestSupport.docutils.__version__,
-        'drive': drive_prefix,
-    }]
-]
+'''
+            % {
+                'version': DocutilsTestSupport.docutils.__version__,
+                'drive': drive_prefix,
+            },
+        ]
+    ]
+}
+
 
 if __name__ == '__main__':
     import unittest

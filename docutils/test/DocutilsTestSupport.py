@@ -116,7 +116,7 @@ class StandardTestCase(unittest.TestCase):
         """Fail if the two objects are unequal as determined by the '=='
            operator.
         """
-        if not first == second:
+        if first != second:
             raise self.failureException(
                 msg or '%s != %s' % _format_str(first, second))
 
@@ -843,8 +843,7 @@ def _format_str(*args):
     return_tuple = []
     for i in args:
         r = repr(i)
-        if ( (isinstance(i, bytes) or isinstance(i, unicode))
-             and '\n' in i):
+        if isinstance(i, (bytes, unicode)) and '\n' in i:
             stripped = ''
             if isinstance(i, unicode) and r.startswith('u'):
                 stripped = r[0]
@@ -855,7 +854,7 @@ def _format_str(*args):
             # quote_char = "'" or '"'
             quote_char = r[0]
             assert quote_char in ("'", '"'), quote_char
-            assert r[0] == r[-1]
+            assert quote_char == r[-1]
             r = r[1:-1]
             r = (stripped + 3 * quote_char + '\\\n' +
                  re.sub(r'(?<!\\)((\\\\)*)\\n', r'\1\n', r) +

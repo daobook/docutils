@@ -19,10 +19,10 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['unknown'] = [
-["""\
+totest = {
+    'unknown': [
+        [
+            """\
 .. reStructuredText-unknown-directive::
 
 .. reStructuredText-unknown-directive:: argument
@@ -30,7 +30,7 @@ totest['unknown'] = [
 .. reStructuredText-unknown-directive::
    block
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="1" line="1" source="test data" type="INFO">
         <paragraph>
@@ -60,8 +60,10 @@ totest['unknown'] = [
         <literal_block xml:space="preserve">
             .. reStructuredText-unknown-directive::
                block
-"""],
-]
+""",
+        ]
+    ]
+}
 
 
 if __name__ == '__main__':

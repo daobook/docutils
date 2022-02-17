@@ -65,8 +65,7 @@ class TableParser(object):
         self.setup(block)
         self.find_head_body_sep()
         self.parse_table()
-        structure = self.structure_from_cells()
-        return structure
+        return self.structure_from_cells()
 
     def find_head_body_sep(self):
         """Look for a head/body row separator line; store the line index."""
@@ -78,11 +77,9 @@ class TableParser(object):
                         'Multiple head/body row separators '
                         '(table lines %s and %s); only one allowed.'
                         % (self.head_body_sep+1, i+1), offset=i)
-                else:
-                    self.head_body_sep = i
-                    self.block[i] = line.replace('=', '-')
-        if self.head_body_sep == 0 or self.head_body_sep == (len(self.block)
-                                                             - 1):
+                self.head_body_sep = i
+                self.block[i] = line.replace('=', '-')
+        if self.head_body_sep in [0, len(self.block) - 1]:
             raise TableMarkupError('The head/body row separator may not be '
                                    'the first or last line of the table.',
                                    offset=i)
@@ -201,16 +198,12 @@ class GridTableParser(TableParser):
     def check_parse_complete(self):
         """Each text column should have been completely seen."""
         last = self.bottom - 1
-        for col in range(self.right):
-            if self.done[col] != last:
-                return False
-        return True
+        return all(self.done[col] == last for col in range(self.right))
 
     def scan_cell(self, top, left):
         """Starting at the top-left corner, start tracing out a cell."""
         assert self.block[top][left] == '+'
-        result = self.scan_right(top, left)
-        return result
+        return self.scan_right(top, left)
 
     def scan_right(self, top, left):
         """
@@ -222,8 +215,7 @@ class GridTableParser(TableParser):
         for i in range(left + 1, self.right + 1):
             if line[i] == '+':
                 colseps[i] = [top]
-                result = self.scan_down(top, left, i)
-                if result:
+                if result := self.scan_down(top, left, i):
                     bottom, rowseps, newcolseps = result
                     update_dict_of_lists(colseps, newcolseps)
                     return bottom, i, rowseps, colseps
@@ -240,8 +232,7 @@ class GridTableParser(TableParser):
         for i in range(top + 1, self.bottom + 1):
             if self.block[i][right] == '+':
                 rowseps[i] = [right]
-                result = self.scan_left(top, left, i, right)
-                if result:
+                if result := self.scan_left(top, left, i, right):
                     newrowseps, colseps = result
                     update_dict_of_lists(rowseps, newrowseps)
                     return i, rowseps, colseps
@@ -287,18 +278,14 @@ class GridTableParser(TableParser):
         structure.
         """
         rowseps = sorted(self.rowseps.keys())   # list of row boundaries
-        rowindex = {}
-        for i in range(len(rowseps)):
-            rowindex[rowseps[i]] = i    # row boundary -> row number mapping
+        rowindex = {rowseps[i]: i for i in range(len(rowseps))}
         colseps = sorted(self.colseps.keys())   # list of column boundaries
-        colindex = {}
-        for i in range(len(colseps)):
-            colindex[colseps[i]] = i    # column boundary -> col number map
+        colindex = {colseps[i]: i for i in range(len(colseps))}
         colspecs = [(colseps[i] - colseps[i - 1] - 1)
                     for i in range(1, len(colseps))] # list of column widths
         # prepare an empty table with the correct number of rows & columns
-        onerow = [None for i in range(len(colseps) - 1)]
-        rows = [onerow[:] for i in range(len(rowseps) - 1)]
+        onerow = [None for _ in range(len(colseps) - 1)]
+        rows = [onerow[:] for _ in range(len(rowseps) - 1)]
         # keep track of # of cells remaining; should reduce to zero
         remaining = (len(rowseps) - 1) * (len(colseps) - 1)
         for top, left, bottom, right, block in self.cells:
@@ -504,8 +491,7 @@ class SimpleTableParser(TableParser):
         for i in range(len(columns) - 1):
             start, end = columns[i]
             nextstart = columns[i+1][0]
-            offset = 0
-            for line in lines:
+            for offset, line in enumerate(lines):
                 if i == lastcol and line[end:].strip():
                     text = line[start:].rstrip()
                     new_end = start + len(text)
@@ -517,7 +503,6 @@ class SimpleTableParser(TableParser):
                     raise TableMarkupError('Text in column margin '
                         'in table line %s.' % (first_line+offset+1),
                         offset=first_line+offset)
-                offset += 1
         columns.pop()
 
     def structure_from_cells(self):

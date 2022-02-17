@@ -113,10 +113,7 @@ class OptionParser(frontend.OptionParser):
 
     def check_args(self, args):
         source = destination = None
-        if args:
-            self.values._directories = args
-        else:
-            self.values._directories = [os.getcwd()]
+        self.values._directories = args or [os.getcwd()]
         return source, destination
 
 
@@ -252,15 +249,12 @@ class Builder(object):
                 self.process_txt(directory, name)
 
     def process_txt(self, directory, name):
-        if name.startswith('pep-'):
-            publisher = 'PEPs'
-        else:
-            publisher = self.initial_settings.writer
+        publisher = 'PEPs' if name.startswith('pep-') else self.initial_settings.writer
         settings = self.get_settings(publisher, directory)
         errout = ErrorOutput(encoding=settings.error_encoding)
         pub_struct = self.publishers[publisher]
         settings._source = os.path.normpath(os.path.join(directory, name))
-        settings._destination = settings._source[:-4]+'.html'
+        settings._destination = f'{settings._source[:-4]}.html'
         if not self.initial_settings.silent:
             errout.write('    ::: Processing: %s\n' % name)
             sys.stderr.flush()

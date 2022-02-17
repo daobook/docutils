@@ -20,15 +20,15 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['admonitions'] = [
-["""\
+totest = {
+    'admonitions': [
+        [
+            """\
 .. Dummy-Attention:: directive with silly localised name.
 
 .. Attention:: English fallback (an INFO is written).
 """,
-"""\
+            """\
 <document source="test data">
     <attention>
         <paragraph>
@@ -36,8 +36,10 @@ totest['admonitions'] = [
     <attention>
         <paragraph>
             English fallback (an INFO is written).
-"""],
-]
+""",
+        ]
+    ]
+}
 
 
 if __name__ == '__main__':

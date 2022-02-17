@@ -105,13 +105,17 @@ def validate_encoding_and_error_handler(
     if ':' in value:
         encoding, handler = value.split(':')
         validate_encoding_error_handler(
-            setting + '_error_handler', handler, option_parser,
-            config_parser, config_section)
+            f'{setting}_error_handler',
+            handler,
+            option_parser,
+            config_parser,
+            config_section,
+        )
+
         if config_parser:
-            config_parser.set(config_section, setting + '_error_handler',
-                              handler)
+            config_parser.set(config_section, f'{setting}_error_handler', handler)
         else:
-            setattr(option_parser.values, setting + '_error_handler', handler)
+            setattr(option_parser.values, f'{setting}_error_handler', handler)
     else:
         encoding = value
     validate_encoding(setting, encoding, option_parser,
@@ -193,7 +197,7 @@ def validate_url_trailing_slash(
     elif value.endswith('/'):
         return value
     else:
-        return value + '/'
+        return f'{value}/'
 
 def validate_dependency_file(setting, value, option_parser,
                              config_parser=None, config_section=None):
@@ -323,8 +327,7 @@ class Values(optparse.Values):
         other_dict = other_dict.copy()
         for setting in option_parser.lists.keys():
             if (hasattr(self, setting) and setting in other_dict):
-                value = getattr(self, setting)
-                if value:
+                if value := getattr(self, setting):
                     value += other_dict[setting]
                     del other_dict[setting]
         self._update_loose(other_dict)
@@ -352,8 +355,7 @@ class Option(optparse.Option):
         Extends `optparse.Option.process`.
         """
         result = optparse.Option.process(self, opt, value, values, parser)
-        setting = self.dest
-        if setting:
+        if setting := self.dest:
             if self.validator:
                 value = getattr(values, setting)
                 try:

@@ -18,10 +18,10 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['compound'] = [
-["""\
+totest = {
+    'compound': [
+        [
+            """\
 .. compound::
 
    Compound paragraphs are single logical paragraphs
@@ -34,7 +34,7 @@ totest['compound'] = [
 
    and are split into multiple physical paragraphs.
 """,
-"""\
+            """\
 <document source="test data">
     <compound>
         <paragraph>
@@ -55,8 +55,10 @@ totest['compound'] = [
                     and other body elements
         <paragraph>
             and are split into multiple physical paragraphs.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. compound::
    :name: interesting
    :class: log
@@ -71,7 +73,7 @@ totest['compound'] = [
    and another simple paragraph which is actually just a continuation
    of the first simple paragraph, with the literal block in between.
 """,
-"""\
+            """\
 <document source="test data">
     <compound classes="log" ids="interesting" names="interesting">
         <paragraph>
@@ -84,21 +86,25 @@ totest['compound'] = [
         <paragraph>
             and another simple paragraph which is actually just a continuation
             of the first simple paragraph, with the literal block in between.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. compound:: content may start on same line
 
    second paragraph
 """,
-"""\
+            """\
 <document source="test data">
     <compound>
         <paragraph>
             content may start on same line
         <paragraph>
             second paragraph
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

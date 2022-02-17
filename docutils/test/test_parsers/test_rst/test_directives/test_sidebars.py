@@ -19,17 +19,17 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['sidebars'] = [
-["""\
+totest = {
+    'sidebars': [
+        [
+            """\
 .. sidebar:: Outer
 
    .. sidebar:: Nested
 
       Body.
 """,
-"""\
+            """\
 <document source="test data">
     <sidebar>
         <title>
@@ -41,8 +41,10 @@ totest['sidebars'] = [
                 .. sidebar:: Nested
                 \n\
                    Body.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. sidebar:: Margin Notes
    :subtitle: with options
    :class: margin
@@ -50,7 +52,7 @@ totest['sidebars'] = [
 
    Body.
 """,
-"""\
+            """\
 <document source="test data">
     <sidebar classes="margin" ids="note-options" names="note:options">
         <title>
@@ -59,19 +61,23 @@ totest['sidebars'] = [
             with options
         <paragraph>
             Body.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. sidebar::
 
    The title is optional.
 """,
-"""\
+            """\
 <document source="test data">
     <sidebar>
         <paragraph>
             The title is optional.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. sidebar:: Outer
 
    .. topic:: Topic
@@ -80,7 +86,7 @@ totest['sidebars'] = [
 
          text
 """,
-"""\
+            """\
 <document source="test data">
     <sidebar>
         <title>
@@ -95,8 +101,10 @@ totest['sidebars'] = [
                     .. sidebar:: Inner
                     \n\
                        text
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

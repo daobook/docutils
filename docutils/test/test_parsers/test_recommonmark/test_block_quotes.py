@@ -26,39 +26,43 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['block_quotes'] = [
-["""\
+totest = {
+    'block_quotes': [
+        [
+            """\
 > block quote
 > line 2
 """,
-"""\
+            """\
 <document source="test data">
     <block_quote>
         <paragraph>
             block quote
             line 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Line 1.
 
   > Indented block quote.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Line 1.
     <block_quote>
         <paragraph>
             Indented block quote.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Line 1.
 Line 2.
 > Block quote, without blank line before.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Line 1.
@@ -66,15 +70,17 @@ Line 2.
     <block_quote>
         <paragraph>
             Block quote, without blank line before.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Line 1.
 Line 2.
 
 >Block quote,
 continuation line 
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Line 1.
@@ -83,15 +89,17 @@ continuation line
         <paragraph>
             Block quote,
             continuation line
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Here is a paragraph.
 
 >   >  Nested
 >
 >   block quotes.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Here is a paragraph.
@@ -101,8 +109,10 @@ Here is a paragraph.
                 Nested
         <paragraph>
             block quotes.
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

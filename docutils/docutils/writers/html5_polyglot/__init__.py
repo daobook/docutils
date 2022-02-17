@@ -348,7 +348,7 @@ class HTMLTranslator(writers._html_base.HTMLTranslator):
                 if cls in classes]
         if len(tags):
             tagname = tags[0]
-            classes.remove(tags[0])
+            classes.remove(tagname)
         else:
             tagname = 'span'
         if tagname == 'code':
@@ -446,5 +446,5 @@ class HTMLTranslator(writers._html_base.HTMLTranslator):
             and not isinstance(node.parent, nodes.document)):
             self_link = ('<a class="self-link" title="link to this section"'
                         ' href="#%s"></a>' % ids[0])
-            close_tag = close_tag.replace('</h', self_link + '</h')
+            close_tag = close_tag.replace('</h', f'{self_link}</h')
         return start_tag, close_tag

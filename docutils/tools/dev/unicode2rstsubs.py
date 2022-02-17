@@ -109,7 +109,7 @@ class CharacterEntitySetExtractor(object):
 
     def StartElementHandler(self, name, attributes):
         self.elements.append(name)
-        handler = name + '_start'
+        handler = f'{name}_start'
         if hasattr(self, handler):
             getattr(self, handler)(name, attributes)
 
@@ -117,12 +117,12 @@ class CharacterEntitySetExtractor(object):
         assert self.elements[-1] == name, \
                'unknown end-tag %r (%r)' % (name, self.element)
         self.elements.pop()
-        handler = name + '_end'
+        handler = f'{name}_end'
         if hasattr(self, handler):
             getattr(self, handler)(name)
 
     def CharacterDataHandler(self, data):
-        handler = self.elements[-1] + '_data'
+        handler = f'{self.elements[-1]}_data'
         if hasattr(self, handler):
             getattr(self, handler)(data)
 
@@ -168,10 +168,7 @@ class CharacterEntitySetExtractor(object):
             self.write_set(set_name)
 
     def write_set(self, set_name, wide=None):
-        if wide:
-            outname = set_name + '-wide.txt'
-        else:
-            outname = set_name + '.txt'
+        outname = f'{set_name}-wide.txt' if wide else f'{set_name}.txt'
         outfile = open(outname, 'w')
         print('writing file "%s"' % outname)
         outfile.write(self.header + '\n')
@@ -195,9 +192,17 @@ class CharacterEntitySetExtractor(object):
                 if int(code, 16) > 0xFFFF:
                     return 1            # wide-Unicode character
         codes = ' '.join(['U+%s' % code for code in charid[1:].split('-')])
-        outfile.write('.. %-*s unicode:: %s .. %s\n'
-                      % (longest + 2, '|' + entity_name + '|',
-                         codes, self.descriptions[charid]))
+        outfile.write(
+            (
+                '.. %-*s unicode:: %s .. %s\n'
+                % (
+                    longest + 2,
+                    f'|{entity_name}|',
+                    codes,
+                    self.descriptions[charid],
+                )
+            )
+        )
 
 
 if __name__ == '__main__':

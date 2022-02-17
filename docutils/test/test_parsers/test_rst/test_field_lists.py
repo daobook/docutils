@@ -19,10 +19,10 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['field_lists'] = [
-["""\
+totest = {
+    'field_lists': [
+        [
+            """\
 One-liners:
 
 :Author: Me
@@ -33,7 +33,7 @@ One-liners:
 
 :Parameter i: integer
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         One-liners:
@@ -62,8 +62,10 @@ One-liners:
             <field_body>
                 <paragraph>
                     integer
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 One-liners, no blank lines:
 
 :Author: Me
@@ -71,7 +73,7 @@ One-liners, no blank lines:
 :Date: 2001-08-11
 :Parameter i: integer
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         One-liners, no blank lines:
@@ -100,12 +102,14 @@ One-liners, no blank lines:
             <field_body>
                 <paragraph>
                     integer
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 :field:
 empty item above, no blank line
 """,
-"""\
+            """\
 <document source="test data">
     <field_list>
         <field>
@@ -117,8 +121,10 @@ empty item above, no blank line
             Field list ends without a blank line; unexpected unindent.
     <paragraph>
         empty item above, no blank line
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Field bodies starting on the next line:
 
 :Author:
@@ -130,7 +136,7 @@ Field bodies starting on the next line:
 :Parameter i:
   integer
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Field bodies starting on the next line:
@@ -159,8 +165,10 @@ Field bodies starting on the next line:
             <field_body>
                 <paragraph>
                     integer
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 One-paragraph, multi-liners:
 
 :Authors: Me,
@@ -173,7 +181,7 @@ One-paragraph, multi-liners:
 :Parameter i: counter
               (integer)
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         One-paragraph, multi-liners:
@@ -207,8 +215,10 @@ One-paragraph, multi-liners:
                 <paragraph>
                     counter
                     (integer)
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 One-paragraph, multi-liners, not lined up:
 
 :Authors: Me,
@@ -221,7 +231,7 @@ One-paragraph, multi-liners, not lined up:
 :Parameter i: counter
   (integer)
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         One-paragraph, multi-liners, not lined up:
@@ -255,8 +265,10 @@ One-paragraph, multi-liners, not lined up:
                 <paragraph>
                     counter
                     (integer)
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Multiple body elements:
 
 :Authors: - Me
@@ -278,7 +290,7 @@ Multiple body elements:
     :Day: Saturday
     :Time: 15:07
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Multiple body elements:
@@ -330,8 +342,10 @@ Multiple body elements:
                         <field_body>
                             <paragraph>
                                 15:07
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Nested field lists on one line:
 
 :field1: :field2: :field3: body
@@ -341,7 +355,7 @@ Nested field lists on one line:
          :field9: body line 1
            body line 2
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Nested field lists on one line:
@@ -397,11 +411,13 @@ Nested field lists on one line:
                             <paragraph>
                                 body line 1
                                 body line 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 :Parameter i j k: multiple arguments
 """,
-"""\
+            """\
 <document source="test data">
     <field_list>
         <field>
@@ -410,12 +426,14 @@ Nested field lists on one line:
             <field_body>
                 <paragraph>
                     multiple arguments
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 :Field *name* `with` **inline** ``markup``: inline markup in
                                             field name is parsed.
 """,
-"""\
+            """\
 <document source="test data">
     <field_list>
         <field>
@@ -436,11 +454,13 @@ Nested field lists on one line:
                 <paragraph>
                     inline markup in
                     field name is parsed.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 :Field name with *bad inline markup: should generate warning.
 """,
-"""\
+            """\
 <document source="test data">
     <field_list>
         <field>
@@ -455,8 +475,10 @@ Nested field lists on one line:
                         Inline emphasis start-string without end-string.
                 <paragraph>
                     should generate warning.
-"""],
-[r"""Some edge cases:
+""",
+        ],
+        [
+            r"""Some edge cases:
 
 :Empty:
 :Author: Me
@@ -485,7 +507,7 @@ Field: marker is missing its open-colon.
 :\:
     A definition list, not a field list.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Some edge cases:
@@ -545,8 +567,10 @@ Field: marker is missing its open-colon.
             <definition>
                 <paragraph>
                     A definition list, not a field list.
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 :first: field
 :field:name:with:embedded:colons: unambiguous, no need for escapes
 
@@ -556,7 +580,7 @@ Field: marker is missing its open-colon.
 :field:\`:name: not interpreted text
 :field:\`name: not interpreted text
 """,
-"""\
+            """\
 <document source="test data">
     <field_list>
         <field>
@@ -591,8 +615,10 @@ Field: marker is missing its open-colon.
             <field_body>
                 <paragraph>
                     not interpreted text
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 Edge cases involving embedded colons and interpreted text.
 
 Recognized as field list items:
@@ -617,7 +643,7 @@ Not recognized as field list items:
 
 :code:`not a field name`: paragraph with interpreted text
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Edge cases involving embedded colons and interpreted text.
@@ -679,8 +705,11 @@ Not recognized as field list items:
         <literal classes="code">
             not a field name
         : paragraph with interpreted text
-"""],
-]
+""",
+        ],
+    ]
+}
+
 
 if __name__ == '__main__':
     import unittest

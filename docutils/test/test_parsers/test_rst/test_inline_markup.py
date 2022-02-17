@@ -21,23 +21,25 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['emphasis'] = [
-["""\
+totest = {
+    'emphasis': [
+        [
+            """\
 *emphasis*
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <emphasis>
             emphasis
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 l'*emphasis* with the *emphasis*' apostrophe.
 l\u2019*emphasis* with the *emphasis*\u2019 apostrophe.
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         l\'
@@ -54,22 +56,26 @@ u"""\
         <emphasis>
             emphasis
         \u2019 apostrophe.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 *emphasized sentence
 across lines*
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <emphasis>
             emphasized sentence
             across lines
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 *emphasis without closing asterisk
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <problematic ids="problematic-1" refid="system-message-1">
@@ -78,8 +84,10 @@ across lines*
     <system_message backrefs="problematic-1" ids="system-message-1" level="2" line="1" source="test data" type="WARNING">
         <paragraph>
             Inline emphasis start-string without end-string.
-"""],
-[r"""some punctuation is allowed around inline markup, e.g.
+""",
+        ],
+        [
+            r"""some punctuation is allowed around inline markup, e.g.
 /*emphasis*/, -*emphasis*-, and :*emphasis*: (delimiters),
 (*emphasis*), [*emphasis*], <*emphasis*>, {*emphasis*} (open/close pairs)
 *emphasis*., *emphasis*,, *emphasis*!, and *emphasis*\ (closing delimiters),
@@ -95,7 +103,7 @@ However, '*args' will trigger a warning and may be problematic.
 
 what about *this**?
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         some punctuation is allowed around inline markup, e.g.
@@ -157,8 +165,10 @@ what about *this**?
         <emphasis>
             this*
         ?
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 Quotes around inline markup:
 
 '*emphasis*' "*emphasis*" Straight,
@@ -173,7 +183,7 @@ Quotes around inline markup:
 „*emphasis*” ‚*emphasis*’ Polish,
 „*emphasis*” »*emphasis*« ’*emphasis*’ Hungarian,
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         Quotes around inline markup:
@@ -276,13 +286,15 @@ u"""\
         <emphasis>
             emphasis
         \u2019 Hungarian,
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 Emphasized asterisk: *\**
 
 Emphasized double asterisk: *\***
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Emphasized asterisk: \n\
@@ -292,23 +304,26 @@ Emphasized double asterisk: *\***
         Emphasized double asterisk: \n\
         <emphasis>
             **
-"""],
-]
-
-totest['strong'] = [
-["""\
+""",
+        ],
+    ],
+    'strong': [
+        [
+            """\
 **strong**
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <strong>
             strong
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 l'**strong** and l\u2019**strong** with apostrophe
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         l'
@@ -318,13 +333,15 @@ u"""\
         <strong>
             strong
          with apostrophe
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 quoted '**strong**', quoted "**strong**",
 quoted \u2018**strong**\u2019, quoted \u201c**strong**\u201d,
 quoted \xab**strong**\xbb
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         quoted '
@@ -345,13 +362,15 @@ u"""\
         <strong>
             strong
         \xbb
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 (**strong**) but not (**) or '(** ' or x**2 or \**kwargs or **
 
 (however, '**kwargs' will trigger a warning and may be problematic)
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         (
@@ -366,13 +385,15 @@ u"""\
     <system_message backrefs="problematic-1" ids="system-message-1" level="2" line="4" source="test data" type="WARNING">
         <paragraph>
             Inline strong start-string without end-string.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Strong asterisk: *****
 
 Strong double asterisk: ******
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Strong asterisk: \n\
@@ -382,11 +403,13 @@ Strong double asterisk: ******
         Strong double asterisk: \n\
         <strong>
             **
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 **strong without closing asterisks
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <problematic ids="problematic-1" refid="system-message-1">
@@ -395,50 +418,59 @@ Strong double asterisk: ******
     <system_message backrefs="problematic-1" ids="system-message-1" level="2" line="1" source="test data" type="WARNING">
         <paragraph>
             Inline strong start-string without end-string.
-"""],
-]
-
-totest['literal'] = [
-["""\
+""",
+        ],
+    ],
+    'literal': [
+        [
+            """\
 ``literal``
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <literal>
             literal
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 ``\literal``
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <literal>
             \\literal
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 ``lite\ral``
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <literal>
             lite\\ral
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 ``literal\``
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <literal>
             literal\\
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 l'``literal`` and l\u2019``literal`` with apostrophe
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         l'
@@ -448,13 +480,15 @@ u"""\
         <literal>
             literal
          with apostrophe
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 quoted '``literal``', quoted "``literal``",
 quoted \u2018``literal``\u2019, quoted \u201c``literal``\u201d,
 quoted \xab``literal``\xbb
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         quoted '
@@ -475,13 +509,15 @@ u"""\
         <literal>
             literal
         \xbb
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 ``'literal'`` with quotes, ``"literal"`` with quotes,
 ``\u2018literal\u2019`` with quotes, ``\u201cliteral\u201d`` with quotes,
 ``\xabliteral\xbb`` with quotes
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         <literal>
@@ -499,14 +535,16 @@ u"""\
         <literal>
             \xabliteral\xbb
          with quotes
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 ``literal ``TeX quotes'' & \backslash`` but not "``" or ``
 
 (however, ``standalone TeX quotes'' will trigger a warning
 and may be problematic)
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <literal>
@@ -521,22 +559,26 @@ and may be problematic)
     <system_message backrefs="problematic-1" ids="system-message-1" level="2" line="4" source="test data" type="WARNING">
         <paragraph>
             Inline literal start-string without end-string.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Find the ```interpreted text``` in this paragraph!
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Find the \n\
         <literal>
             `interpreted text`
          in this paragraph!
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ``literal without closing backquotes
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <problematic ids="problematic-1" refid="system-message-1">
@@ -545,64 +587,75 @@ Find the ```interpreted text``` in this paragraph!
     <system_message backrefs="problematic-1" ids="system-message-1" level="2" line="1" source="test data" type="WARNING">
         <paragraph>
             Inline literal start-string without end-string.
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 Python ``list``\s use square bracket syntax.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Python \n\
         <literal>
             list
         s use square bracket syntax.
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 Blank after opening `` not allowed.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Blank after opening `` not allowed.
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 no blank ``after closing``continues`` literal.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         no blank \n\
         <literal>
             after closing``continues
          literal.
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 dot ``after closing``. is possible.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         dot \n\
         <literal>
             after closing
         . is possible.
-"""],
-]
-
-totest['references'] = [
-["""\
+""",
+        ],
+    ],
+    'references': [
+        [
+            """\
 ref_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="ref" refname="ref">
             ref
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 l'ref_ and l\u2019ref_ with apostrophe
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         l'
@@ -612,15 +665,17 @@ u"""\
         <reference name="ref" refname="ref">
             ref
          with apostrophe
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 quoted 'ref_', quoted "ref_",
 quoted \u2018ref_\u2019, quoted \u201cref_\u201d,
 quoted \xabref_\xbb,
 but not 'ref ref'_, "ref ref"_, \u2018ref ref\u2019_,
 \u201cref ref\u201d_, or \xabref ref\xbb_
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         quoted '
@@ -643,20 +698,24 @@ u"""\
         \xbb,
         but not 'ref ref'_, "ref ref"_, \u2018ref ref\u2019_,
         \u201cref ref\u201d_, or \xabref ref\xbb_
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ref__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference anonymous="1" name="ref">
             ref
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 l'ref__ and l\u2019ref__ with apostrophe
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         l'
@@ -666,15 +725,17 @@ u"""\
         <reference anonymous="1" name="ref">
             ref
          with apostrophe
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 quoted 'ref__', quoted "ref__",
 quoted \u2018ref__\u2019, quoted \u201cref__\u201d,
 quoted \xabref__\xbb,
 but not 'ref ref'__, "ref ref"__, \u2018ref ref\u2019__,
 \u201cref ref\u201d__, or \xabref ref\xbb__
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         quoted '
@@ -697,12 +758,14 @@ u"""\
         \xbb,
         but not 'ref ref'__, "ref ref"__, \u2018ref ref\u2019__,
         \u201cref ref\u201d__, or \xabref ref\xbb__
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ref_, r_, r_e-f_, -ref_, and anonymousref__,
 but not _ref_ or __attr__ or object.__attr__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="ref" refname="ref">
@@ -721,23 +784,26 @@ but not _ref_ or __attr__ or object.__attr__
             anonymousref
         ,
         but not _ref_ or __attr__ or object.__attr__
-"""],
-]
-
-totest['phrase_references'] = [
-["""\
+""",
+        ],
+    ],
+    'phrase_references': [
+        [
+            """\
 `phrase reference`_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="phrase reference" refname="phrase reference">
             phrase reference
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 l'`phrase reference`_ and l\u2019`phrase reference`_ with apostrophe
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         l'
@@ -747,14 +813,16 @@ u"""\
         <reference name="phrase reference" refname="phrase reference">
             phrase reference
          with apostrophe
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 quoted '`phrase reference`_', quoted "`phrase reference`_",
 quoted \u2018`phrase reference`_\u2019,
 quoted \u201c`phrase reference`_\u201d,
 quoted \xab`phrase reference`_\xbb
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         quoted '
@@ -776,14 +844,16 @@ u"""\
         <reference name="phrase reference" refname="phrase reference">
             phrase reference
         \xbb
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 `'phrase reference'`_ with quotes, `"phrase reference"`_ with quotes,
 `\u2018phrase reference\u2019`_ with quotes,
 `\u201cphrase reference\u201d`_ with quotes,
 `\xabphrase reference\xbb`_ with quotes
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         <reference name="'phrase reference'" refname="'phrase reference'">
@@ -801,20 +871,24 @@ u"""\
         <reference name="\xabphrase reference\xbb" refname="\xabphrase reference\xbb">
             \xabphrase reference\xbb
          with quotes
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 `anonymous reference`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference anonymous="1" name="anonymous reference">
             anonymous reference
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 l'`anonymous reference`__ and l\u2019`anonymous reference`__ with apostrophe
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         l'
@@ -824,14 +898,16 @@ u"""\
         <reference anonymous="1" name="anonymous reference">
             anonymous reference
          with apostrophe
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 quoted '`anonymous reference`__', quoted "`anonymous reference`__",
 quoted \u2018`anonymous reference`__\u2019,
 quoted \u201c`anonymous reference`__\u201d,
 quoted \xab`anonymous reference`__\xbb
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         quoted '
@@ -853,14 +929,16 @@ u"""\
         <reference anonymous="1" name="anonymous reference">
             anonymous reference
         \xbb
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 `'anonymous reference'`__ with quotes, `"anonymous reference"`__ with quotes,
 `\u2018anonymous reference\u2019`__ with quotes,
 `\u201canonymous reference\u201d`__ with quotes,
 `\xabanonymous reference\xbb`__ with quotes
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         <reference anonymous="1" name="'anonymous reference'">
@@ -878,33 +956,39 @@ u"""\
         <reference anonymous="1" name="\xabanonymous reference\xbb">
             \xabanonymous reference\xbb
          with quotes
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 `phrase reference
 across lines`_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="phrase reference across lines" refname="phrase reference across lines">
             phrase reference
             across lines
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 `phrase\\`_ reference`_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="phrase`_ reference" refname="phrase`_ reference">
             phrase`_ reference
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Invalid phrase reference:
 
 :role:`phrase reference`_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Invalid phrase reference:
@@ -914,13 +998,15 @@ Invalid phrase reference:
     <system_message backrefs="problematic-1" ids="system-message-1" level="2" line="3" source="test data" type="WARNING">
         <paragraph>
             Mismatch: both interpreted text role prefix and reference suffix.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Invalid phrase reference:
 
 `phrase reference`:role:_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Invalid phrase reference:
@@ -930,11 +1016,13 @@ Invalid phrase reference:
     <system_message backrefs="problematic-1" ids="system-message-1" level="2" line="3" source="test data" type="WARNING">
         <paragraph>
             Mismatch: both interpreted text role suffix and reference suffix.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 `phrase reference_ without closing backquote
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <problematic ids="problematic-1" refid="system-message-1">
@@ -946,11 +1034,13 @@ Invalid phrase reference:
     <system_message backrefs="problematic-1" ids="system-message-1" level="2" line="1" source="test data" type="WARNING">
         <paragraph>
             Inline interpreted text or phrase reference start-string without end-string.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 `anonymous phrase reference__ without closing backquote
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <problematic ids="problematic-1" refid="system-message-1">
@@ -962,66 +1052,77 @@ Invalid phrase reference:
     <system_message backrefs="problematic-1" ids="system-message-1" level="2" line="1" source="test data" type="WARNING">
         <paragraph>
             Inline interpreted text or phrase reference start-string without end-string.
-"""],
-]
-
-totest['embedded_URIs'] = [
-["""\
+""",
+        ],
+    ],
+    'embedded_URIs': [
+        [
+            """\
 `phrase reference <http://example.com>`_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="phrase reference" refuri="http://example.com">
             phrase reference
         <target ids="phrase-reference" names="phrase\\ reference" refuri="http://example.com">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 `anonymous reference <http://example.com>`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="anonymous reference" refuri="http://example.com">
             anonymous reference
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 `embedded URI on next line
 <http://example.com>`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="embedded URI on next line" refuri="http://example.com">
             embedded URI on next line
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 `embedded URI across lines <http://example.com/
 long/path>`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="embedded URI across lines" refuri="http://example.com/long/path">
             embedded URI across lines
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 `embedded URI with whitespace <http://example.com/
 long/path /and  /whitespace>`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="embedded URI with whitespace" refuri="http://example.com/long/path/and/whitespace">
             embedded URI with whitespace
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 `embedded URI with escaped whitespace <http://example.com/a\
 long/path\ and/some\ escaped\ whitespace>`__
 
 `<omitted\ reference\ text\ with\ escaped\ whitespace>`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="embedded URI with escaped whitespace" refuri="http://example.com/a long/path and/some escaped whitespace">
@@ -1029,14 +1130,16 @@ long/path\ and/some\ escaped\ whitespace>`__
     <paragraph>
         <reference name="omitted reference text with escaped whitespace" refuri="omitted reference text with escaped whitespace">
             omitted reference text with escaped whitespace
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 `embedded email address <jdoe@example.com>`__
 
 `embedded email address broken across lines <jdoe
 @example.com>`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="embedded email address" refuri="mailto:jdoe@example.com">
@@ -1044,8 +1147,10 @@ long/path\ and/some\ escaped\ whitespace>`__
     <paragraph>
         <reference name="embedded email address broken across lines" refuri="mailto:jdoe@example.com">
             embedded email address broken across lines
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 `embedded URI with too much whitespace < http://example.com/
 long/path /and  /whitespace >`__
 
@@ -1058,7 +1163,7 @@ long/path /and  /whitespace >`__
 
 See `HTML Anchors: \<a>`_.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference anonymous="1" name="embedded URI with too much whitespace < http://example.com/ long/path /and /whitespace >">
@@ -1079,15 +1184,17 @@ See `HTML Anchors: \<a>`_.
         <reference name="HTML Anchors: <a>" refname="html anchors: <a>">
             HTML Anchors: <a>
         .
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Relative URIs' reference text can be omitted:
 
 `<reference>`_
 
 `<anonymous>`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Relative URIs' reference text can be omitted:
@@ -1098,15 +1205,17 @@ Relative URIs' reference text can be omitted:
     <paragraph>
         <reference name="anonymous" refuri="anonymous">
             anonymous
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 Escape trailing low-line char in URIs:
 
 `<reference\_>`_
 
 `<anonymous\_>`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Escape trailing low-line char in URIs:
@@ -1117,15 +1226,17 @@ Escape trailing low-line char in URIs:
     <paragraph>
         <reference name="anonymous_" refuri="anonymous_">
             anonymous_
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Escape other char in URIs:
 
 `<reference\\:1>`_
 
 `<anonymous\\call>`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Escape other char in URIs:
@@ -1136,74 +1247,87 @@ Escape other char in URIs:
     <paragraph>
         <reference name="anonymouscall" refuri="anonymouscall">
             anonymouscall
-"""],
-]
-
-totest['embedded_aliases'] = [
-["""\
+""",
+        ],
+    ],
+    'embedded_aliases': [
+        [
+            """\
 `phrase reference <alias_>`_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="phrase reference" refname="alias">
             phrase reference
         <target names="phrase\\ reference" refname="alias">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 `anonymous reference <alias_>`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="anonymous reference" refname="alias">
             anonymous reference
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 `embedded alias on next line
 <alias_>`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="embedded alias on next line" refname="alias">
             embedded alias on next line
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 `embedded alias across lines <alias
 phrase_>`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="embedded alias across lines" refname="alias phrase">
             embedded alias across lines
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 `embedded alias with whitespace <alias
 long  phrase_>`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="embedded alias with whitespace" refname="alias long phrase">
             embedded alias with whitespace
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 `<embedded alias with whitespace_>`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="embedded alias with whitespace" refname="embedded alias with whitespace">
             embedded alias with whitespace
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 `no embedded alias (whitespace inside bracket) < alias_ >`__
 
 `no embedded alias (no preceding whitespace)<alias_>`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference anonymous="1" name="no embedded alias (whitespace inside bracket) < alias_ >">
@@ -1211,29 +1335,34 @@ long  phrase_>`__
     <paragraph>
         <reference anonymous="1" name="no embedded alias (no preceding whitespace)<alias_>">
             no embedded alias (no preceding whitespace)<alias_>
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 `anonymous reference <alias\ with\\ escaped \:characters_>`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="anonymous reference" refname="aliaswith\\ escaped :characters">
             anonymous reference
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 `anonymous reference <alias\ with\\ escaped \:characters_>`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="anonymous reference" refname="aliaswith\\ escaped :characters">
             anonymous reference
-"""],
-]
-
-totest['inline_targets'] = [
-["""\
+""",
+        ],
+    ],
+    'inline_targets': [
+        [
+            """\
 _`target`
 
 Here is _`another target` in some text. And _`yet
@@ -1241,7 +1370,7 @@ another target`, spanning lines.
 
 _`Here is  a    TaRgeT` with case and spacial difficulties.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <target ids="target" names="target">
@@ -1259,11 +1388,13 @@ _`Here is  a    TaRgeT` with case and spacial difficulties.
         <target ids="here-is-a-target" names="here\\ is\\ a\\ target">
             Here is  a    TaRgeT
          with case and spacial difficulties.
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 l'_`target1` and l\u2019_`target2` with apostrophe
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         l'
@@ -1273,13 +1404,15 @@ u"""\
         <target ids="target2" names="target2">
             target2
          with apostrophe
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 quoted '_`target1`', quoted "_`target2`",
 quoted \u2018_`target3`\u2019, quoted \u201c_`target4`\u201d,
 quoted \xab_`target5`\xbb
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         quoted '
@@ -1300,13 +1433,15 @@ u"""\
         <target ids="target5" names="target5">
             target5
         \xbb
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 _`'target1'` with quotes, _`"target2"` with quotes,
 _`\u2018target3\u2019` with quotes, _`\u201ctarget4\u201d` with quotes,
 _`\xabtarget5\xbb` with quotes
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         <target ids="target1" names="'target1'">
@@ -1324,13 +1459,15 @@ u"""\
         <target ids="target5" names="\xabtarget5\xbb">
             \xabtarget5\xbb
          with quotes
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 But this isn't a _target; targets require backquotes.
 
 And _`this`_ is just plain confusing.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         But this isn't a _target; targets require backquotes.
@@ -1342,11 +1479,13 @@ And _`this`_ is just plain confusing.
     <system_message backrefs="problematic-1" ids="system-message-1" level="2" line="3" source="test data" type="WARNING">
         <paragraph>
             Inline target start-string without end-string.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 _`inline target without closing backquote
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <problematic ids="problematic-1" refid="system-message-1">
@@ -1355,67 +1494,79 @@ _`inline target without closing backquote
     <system_message backrefs="problematic-1" ids="system-message-1" level="2" line="1" source="test data" type="WARNING">
         <paragraph>
             Inline target start-string without end-string.
-"""],
-]
-
-totest['footnote_reference'] = [
-["""\
+""",
+        ],
+    ],
+    'footnote_reference': [
+        [
+            """\
 [1]_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <footnote_reference ids="footnote-reference-1" refname="1">
             1
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 [#]_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <footnote_reference auto="1" ids="footnote-reference-1">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 [#label]_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <footnote_reference auto="1" ids="footnote-reference-1" refname="label">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 [*]_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <footnote_reference auto="*" ids="footnote-reference-1">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Adjacent footnote refs are not possible: [*]_[#label]_ [#]_[2]_ [1]_[*]_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Adjacent footnote refs are not possible: [*]_[#label]_ [#]_[2]_ [1]_[*]_
-"""],
-]
-
-totest['citation_reference'] = [
-["""\
+""",
+        ],
+    ],
+    'citation_reference': [
+        [
+            """\
 [citation]_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <citation_reference ids="citation-reference-1" refname="citation">
             citation
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 [citation]_ and [cit-ation]_ and [cit.ation]_ and [CIT1]_ but not [CIT 1]_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <citation_reference ids="citation-reference-1" refname="citation">
@@ -1430,31 +1581,36 @@ totest['citation_reference'] = [
         <citation_reference ids="citation-reference-4" refname="cit1">
             CIT1
          but not [CIT 1]_
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Adjacent citation refs are not possible: [citation]_[CIT1]_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Adjacent citation refs are not possible: [citation]_[CIT1]_
-"""],
-]
-
-totest['substitution_references'] = [
-["""\
+""",
+        ],
+    ],
+    'substitution_references': [
+        [
+            """\
 |subref|
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <substitution_reference refname="subref">
             subref
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 |subref|_ and |subref|__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference refname="subref">
@@ -1464,31 +1620,37 @@ totest['substitution_references'] = [
         <reference anonymous="1">
             <substitution_reference refname="subref">
                 subref
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 |substitution reference|
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <substitution_reference refname="substitution reference">
             substitution reference
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 |substitution
 reference|
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <substitution_reference refname="substitution reference">
             substitution
             reference
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 |substitution reference without closing verbar
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <problematic ids="problematic-1" refid="system-message-1">
@@ -1497,21 +1659,25 @@ reference|
     <system_message backrefs="problematic-1" ids="system-message-1" level="2" line="1" source="test data" type="WARNING">
         <paragraph>
             Inline substitution_reference start-string without end-string.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 first | then || and finally |||
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         first | then || and finally |||
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Substitution reference with |mix|.
 
 .. |mix| replace:: text and hyperlink-reference_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Substitution reference with \n\
@@ -1522,11 +1688,12 @@ Substitution reference with |mix|.
         text and \n\
         <reference name="hyperlink-reference" refname="hyperlink-reference">
             hyperlink-reference
-"""],
-]
-
-totest['standalone_hyperlink'] = [
-["""\
+""",
+        ],
+    ],
+    'standalone_hyperlink': [
+        [
+            """\
 http://www.standalone.hyperlink.com
 
 http:/one-slash-only.absolute.path
@@ -1553,7 +1720,7 @@ ftp://ends.with.a.period.
 
 (a.question.mark@end?)
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference refuri="http://www.standalone.hyperlink.com">
@@ -1606,15 +1773,17 @@ ftp://ends.with.a.period.
         <reference refuri="mailto:a.question.mark@end">
             a.question.mark@end
         ?)
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 Valid URLs with escaped markup characters:
 
 http://example.com/\*content\*/whatever
 
 http://example.com/\*content*/whatever
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Valid URLs with escaped markup characters:
@@ -1624,13 +1793,15 @@ http://example.com/\*content*/whatever
     <paragraph>
         <reference refuri="http://example.com/*content*/whatever">
             http://example.com/*content*/whatever
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Valid URLs may end with punctuation inside "<>":
 
 <http://example.org/ends-with-dot.>
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Valid URLs may end with punctuation inside "<>":
@@ -1639,55 +1810,64 @@ Valid URLs may end with punctuation inside "<>":
         <reference refuri="http://example.org/ends-with-dot.">
             http://example.org/ends-with-dot.
         >
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Valid URLs with interesting endings:
 
 http://example.org/ends-with-pluses++
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Valid URLs with interesting endings:
     <paragraph>
         <reference refuri="http://example.org/ends-with-pluses++">
             http://example.org/ends-with-pluses++
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 None of these are standalone hyperlinks (their "schemes"
 are not recognized): signal:noise, a:b.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         None of these are standalone hyperlinks (their "schemes"
         are not recognized): signal:noise, a:b.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Escaped email addresses are not recognized: test\\@example.org
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Escaped email addresses are not recognized: test@example.org
-"""],
-]
-
-totest['markup recognition rules'] = [
-["""\
+""",
+        ],
+    ],
+    'markup recognition rules': [
+        [
+            """\
 __This__ should be left alone.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         __This__ should be left alone.
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 Character-level m\ *a*\ **r**\ ``k``\ `u`:title:\p
 with backslash-escaped whitespace, including new\
 lines.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Character-level m
@@ -1701,12 +1881,14 @@ lines.
             u
         p
         with backslash-escaped whitespace, including newlines.
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 text-*separated*\u2010*by*\u2011*various*\u2012*dashes*\u2013*and*\u2014*hyphens*.
 \u00bf*punctuation*? \u00a1*examples*!\u00a0*no-break-space*\u00a0.
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         text-
@@ -1738,10 +1920,10 @@ u"""\
         <emphasis>
             no-break-space
         \u00a0.
-"""],
-# Whitespace characters:
-#  \u180e*MONGOLIAN VOWEL SEPARATOR*\u180e,   fails in Python 2.6
-[u"""\
+""",
+        ],
+        [
+            u"""\
 text separated by
 *newline*
 or *space* or one of
@@ -1763,7 +1945,7 @@ or *space* or one of
 \u3000*IDEOGRAPHIC SPACE*\u3000,
 \u2028*LINE SEPARATOR*\u2028
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         text separated by
@@ -1841,14 +2023,16 @@ u"""\
     <paragraph>
         <emphasis>
             LINE SEPARATOR
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 inline markup separated by non-ASCII whitespace
 \xa0**NO-BREAK SPACE**\xa0, \xa0``NO-BREAK SPACE``\xa0, \xa0`NO-BREAK SPACE`\xa0,
 \u2000**EN QUAD**\u2000, \u2000``EN QUAD``\u2000, \u2000`EN QUAD`\u2000,
 \u202f**NARROW NBSP**\u202f, \u202f``NARROW NBSP``\u202f, \u202f`NARROW NBSP`\u202f,
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         inline markup separated by non-ASCII whitespace
@@ -1882,8 +2066,10 @@ u"""\
         <title_reference>
             NARROW NBSP
         \u202f,
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 no inline markup due to whitespace inside and behind: *
 newline
 *
@@ -1906,7 +2092,7 @@ newline
 *\u3000IDEOGRAPHIC SPACE\u3000*
 *\u2028LINE SEPARATOR\u2028*
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         no inline markup due to whitespace inside and behind: *
@@ -1931,23 +2117,26 @@ u"""\
         *\u3000IDEOGRAPHIC SPACE\u3000*
         *
         LINE SEPARATOR
-        *"""],
-[u"""\
+        *""",
+        ],
+        [
+            u"""\
 no inline markup because of non-ASCII whitespace following /preceding the markup
 **\xa0NO-BREAK SPACE\xa0** ``\xa0NO-BREAK SPACE\xa0`` `\xa0NO-BREAK SPACE\xa0`
 **\u2000EN QUAD\u2000** ``\u2000EN QUAD\u2000`` `\u2000EN QUAD\u2000`
 **\u202fNARROW NBSP\u202f** ``\u202fNARROW NBSP\u202f`` `\u202fNARROW NBSP\u202f`
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         no inline markup because of non-ASCII whitespace following /preceding the markup
         **\xa0NO-BREAK SPACE\xa0** ``\xa0NO-BREAK SPACE\xa0`` `\xa0NO-BREAK SPACE\xa0`
         **\u2000EN QUAD\u2000** ``\u2000EN QUAD\u2000`` `\u2000EN QUAD\u2000`
         **\u202fNARROW NBSP\u202f** ``\u202fNARROW NBSP\u202f`` `\u202fNARROW NBSP\u202f`\
-"""],
-# « * » ‹ * › « * » ‹ * › « * » ‹ * › French,
-[u"""\
+""",
+        ],
+        [
+            u"""\
 "Quoted" markup start-string (matched openers & closers) -> no markup:
 
 '*' "*" (*) <*> [*] {*}
@@ -1965,7 +2154,7 @@ Some international quoting styles:
 
 But this is „*’ emphasized »*‹.
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         "Quoted" markup start-string (matched openers & closers) -> no markup:
@@ -1987,8 +2176,10 @@ u"""\
         <emphasis>
             ’ emphasized »
         ‹.
-"""],
-]
+""",
+        ],
+    ],
+}
 
 
 if __name__ == '__main__':

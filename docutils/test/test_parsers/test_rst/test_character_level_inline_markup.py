@@ -22,10 +22,10 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['emphasis'] = [
-[r"""some punctuation is allowed around inline markup, e.g.
+totest = {
+    'emphasis': [
+        [
+            r"""some punctuation is allowed around inline markup, e.g.
 /*emphasis*/, -*emphasis*-, and :*emphasis*: (delimiters),
 (*emphasis*), [*emphasis*], <*emphasis*>, {*emphasis*} (open/close pairs)
 *emphasis*., *emphasis*,, *emphasis*!, and *emphasis*\ (closing delimiters),
@@ -43,7 +43,7 @@ However, '*args' triggers a warning.
 
 Also *this**.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         some punctuation is allowed around inline markup, e.g.
@@ -130,13 +130,15 @@ Also *this**.
     <system_message backrefs="problematic-2" ids="system-message-2" level="2" line="17" source="test data" type="WARNING">
         <paragraph>
             Inline emphasis start-string without end-string.
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 Emphasized asterisk: *\**
 
 Emphasized double asterisk: *\*\** (requires two escape chars).
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Emphasized asterisk: \n\
@@ -147,17 +149,18 @@ Emphasized double asterisk: *\*\** (requires two escape chars).
         <emphasis>
             **
          (requires two escape chars).
-"""],
-]
-
-totest['strong'] = [
-[r"""
+""",
+        ],
+    ],
+    'strong': [
+        [
+            r"""
 (**strong**) but not (**) or '(** '
 
 However, '**kwargs' and x**2 are recognized as strong markup
 and \**kwargs or ** as emphasized.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         (
@@ -173,14 +176,16 @@ and \**kwargs or ** as emphasized.
         <emphasis>
             kwargs or *
          as emphasized.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Strong asterisk: **\\***
 and
 strong double asterisk: **\\*\\***
 require escaping with simple-inline-markup.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Strong asterisk: \n\
@@ -193,25 +198,28 @@ require escaping with simple-inline-markup.
             **
         \n\
         require escaping with simple-inline-markup.
-"""],
-]
-
-totest['literal'] = [
-["""\
+""",
+        ],
+    ],
+    'literal': [
+        [
+            """\
 With simple-inline-markup, this is ```interpreted text``` in backquotes!
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         With simple-inline-markup, this is \n\
         <literal>
             `interpreted text
         ` in backquotes!
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ``literal without closing backquotes
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <problematic ids="problematic-1" refid="system-message-1">
@@ -220,26 +228,29 @@ With simple-inline-markup, this is ```interpreted text``` in backquotes!
     <system_message backrefs="problematic-1" ids="system-message-1" level="2" line="1" source="test data" type="WARNING">
         <paragraph>
             Inline literal start-string without end-string.
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 Python ``list``s use square bracket syntax.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Python \n\
         <literal>
             list
         s use square bracket syntax.
-"""],
-]
-
-totest['references'] = [
-["""\
+""",
+        ],
+    ],
+    'references': [
+        [
+            """\
 ref_, r_, r_e-f_, -ref_, and anonymousref__,
 beware of _ref_ or __attr__ or object.__attr__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <reference name="ref" refname="ref">
@@ -266,11 +277,12 @@ beware of _ref_ or __attr__ or object.__attr__
          or object.__
         <reference anonymous="1" name="attr">
             attr
-"""],
-]
-
-totest['embedded_URIs'] = [
-[r"""
+""",
+        ]
+    ],
+    'embedded_URIs': [
+        [
+            r"""
 Escape chars in URIs:
 
 `<reference\:1>`_
@@ -279,7 +291,7 @@ Escape chars in URIs:
 
 `<anonymous\_call>`__
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Escape chars in URIs:
@@ -293,17 +305,18 @@ Escape chars in URIs:
     <paragraph>
         <reference name="anonymous_call" refuri="anonymous_call">
             anonymous_call
-"""],
-]
-
-totest['inline_targets'] = [
-["""\
+""",
+        ]
+    ],
+    'inline_targets': [
+        [
+            """\
 This isn't a _target; targets require backquotes.
 
 With simple-inline-markup, _`this`_ is a a target followed by an
 underscore.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         This isn't a _target; targets require backquotes.
@@ -313,18 +326,19 @@ underscore.
             this
         _ is a a target followed by an
         underscore.
-"""],
-]
-
-totest['footnote_reference'] = [
-["""\
+""",
+        ]
+    ],
+    'footnote_reference': [
+        [
+            """\
 Adjacent footnote refs are possible with simple-inline-markup:
 [*]_[#label]_ [#]_[2]_ [1]_[*]_
 
 .. [#] test1
 .. [*] test2
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Adjacent footnote refs are possible with simple-inline-markup:
@@ -344,15 +358,16 @@ Adjacent footnote refs are possible with simple-inline-markup:
     <footnote auto="*" ids="footnote-2">
         <paragraph>
             test2
-"""],
-]
-
-totest['citation_reference'] = [
-["""\
+""",
+        ]
+    ],
+    'citation_reference': [
+        [
+            """\
 Adjacent citation refs are possible with simple-inline-markup:
 [citation]_[CIT1]_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Adjacent citation refs are possible with simple-inline-markup:
@@ -360,24 +375,26 @@ Adjacent citation refs are possible with simple-inline-markup:
             citation
         <citation_reference ids="citation-reference-2" refname="cit1">
             CIT1
-"""],
-]
-
-totest['substitution_references'] = [
-["""\
+""",
+        ]
+    ],
+    'substitution_references': [
+        [
+            """\
 |sub|ref
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         <substitution_reference refname="sub">
             sub
         ref
-"""],
-]
-
-totest['standalone_hyperlink'] = [
-[r"""
+""",
+        ]
+    ],
+    'standalone_hyperlink': [
+        [
+            r"""
 Valid URLs with escaped markup characters:
 
 http://example.com/\*content\*/whatever
@@ -387,7 +404,7 @@ Invalid with the simple-inline-markup setting:
 http://example.com/\*content*/whatever
 http://example.com/rST_for_all.html
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Valid URLs with escaped markup characters:
@@ -410,27 +427,30 @@ http://example.com/rST_for_all.html
     <system_message backrefs="problematic-1" ids="system-message-1" level="2" line="8" source="test data" type="WARNING">
         <paragraph>
             Inline emphasis start-string without end-string.
-"""],
-]
-
-totest['markup recognition rules'] = [
-["""\
+""",
+        ]
+    ],
+    'markup recognition rules': [
+        [
+            """\
 __This__ is an anonymous reference with simple-inline-markup.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         __
         <reference anonymous="1" name="This">
             This
          is an anonymous reference with simple-inline-markup.
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 Character-level m*a***r**``k``\ `u`:title:\p
 with backslash-escaped whitespace, including new\
 lines.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Character-level m
@@ -444,12 +464,14 @@ lines.
             u
         p
         with backslash-escaped whitespace, including newlines.
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 text-*separated*\u2010*by*\u2011*various*\u2012*dashes*\u2013*and*\u2014*hyphens*.
 \u00bf*punctuation*? \u00a1*examples*!\xa0*no-break-space*\xa0.
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         text-
@@ -481,9 +503,10 @@ u"""\
         <emphasis>
             no-break-space
         \xa0.
-"""],
-# Whitespace characters:
-[u"""\
+""",
+        ],
+        [
+            u"""\
 inline markup surrounded by various whitespace characters:
 *newline*
 or *space* or one of
@@ -506,7 +529,7 @@ or *space* or one of
 \u3000*IDEOGRAPHIC SPACE*\u3000,
 \u2028*LINE SEPARATOR*\u2028
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         inline markup surrounded by various whitespace characters:
@@ -588,8 +611,10 @@ u"""\
     <paragraph>
         <emphasis>
             LINE SEPARATOR
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 no inline markup due to whitespace inside and behind: *
 newline
 *
@@ -612,7 +637,7 @@ newline
 *\u3000IDEOGRAPHIC SPACE\u3000*
 *\u2028LINE SEPARATOR\u2028*
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         no inline markup due to whitespace inside and behind: *
@@ -637,9 +662,10 @@ u"""\
         *\u3000IDEOGRAPHIC SPACE\u3000*
         *
         LINE SEPARATOR
-        *"""],
-# « * » ‹ * › « * » ‹ * › « * » ‹ * › French,
-[u"""\
+        *""",
+        ],
+        [
+            u"""\
 "Quoted" markup start-string (matched openers & closers) -> no markup:
 
 '*' "*" (*) <*> [*] {*}
@@ -657,7 +683,7 @@ Some international quoting styles:
 
 But this is „*’ emphasized »*‹.
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         "Quoted" markup start-string (matched openers & closers) -> no markup:
@@ -679,8 +705,10 @@ u"""\
         <emphasis>
             ’ emphasized »
         ‹.
-"""],
-]
+""",
+        ],
+    ],
+}
 
 
 if __name__ == '__main__':

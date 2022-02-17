@@ -23,10 +23,12 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['system_message_sections'] = ((Substitutions, Messages), [
-["""\
+totest = {
+    'system_message_sections': (
+        (Substitutions, Messages),
+        [
+            [
+                """\
 This |unknown substitution| will generate a system message, thanks to
 the ``Substitutions`` transform. The ``Messages`` transform will
 generate a "System Messages" section.
@@ -34,7 +36,7 @@ generate a "System Messages" section.
 (A second copy of the system message is tacked on to the end of the
 document by the test framework.)
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         This \n\
@@ -58,8 +60,11 @@ document by the test framework.)
         <system_message backrefs="problematic-1" ids="system-message-1" level="3" line="1" source="test data" type="ERROR">
             <paragraph>
                 Undefined substitution referenced: "unknown substitution".
-"""],
-])
+""",
+            ],
+        ],
+    )
+}
 
 
 if __name__ == '__main__':

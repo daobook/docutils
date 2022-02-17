@@ -18,25 +18,27 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['bullet_lists'] = [
-["""\
+totest = {
+    'bullet_lists': [
+        [
+            """\
 - item
 """,
-"""\
+            """\
 <document source="test data">
     <bullet_list bullet="-">
         <list_item>
             <paragraph>
                 item
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 * item 1
 
 * item 2
 """,
-"""\
+            """\
 <document source="test data">
     <bullet_list bullet="*">
         <list_item>
@@ -45,14 +47,16 @@ totest['bullet_lists'] = [
         <list_item>
             <paragraph>
                 item 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 No blank line between:
 
 + item 1
 + item 2
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         No blank line between:
@@ -63,15 +67,17 @@ No blank line between:
         <list_item>
             <paragraph>
                 item 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 - item 1, para 1.
 
   item 1, para 2.
 
 - item 2
 """,
-"""\
+            """\
 <document source="test data">
     <bullet_list bullet="-">
         <list_item>
@@ -82,13 +88,15 @@ No blank line between:
         <list_item>
             <paragraph>
                 item 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 - item 1, line 1
   item 1, line 2
 - item 2
 """,
-"""\
+            """\
 <document source="test data">
     <bullet_list bullet="-">
         <list_item>
@@ -98,8 +106,10 @@ No blank line between:
         <list_item>
             <paragraph>
                 item 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Different bullets:
 
 - item 1
@@ -109,7 +119,7 @@ Different bullets:
 * item 1
 - item 1
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Different bullets:
@@ -132,12 +142,14 @@ Different bullets:
         <list_item>
             <paragraph>
                 item 1
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 - item
 no blank line
 """,
-"""\
+            """\
 <document source="test data">
     <bullet_list bullet="-">
         <list_item>
@@ -148,24 +160,28 @@ no blank line
             Bullet list ends without a blank line; unexpected unindent.
     <paragraph>
         no blank line
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 -
 
 empty item above
 """,
-"""\
+            """\
 <document source="test data">
     <bullet_list bullet="-">
         <list_item>
     <paragraph>
         empty item above
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 -
 empty item above, no blank line
 """,
-"""\
+            """\
 <document source="test data">
     <bullet_list bullet="-">
         <list_item>
@@ -174,8 +190,10 @@ empty item above, no blank line
             Bullet list ends without a blank line; unexpected unindent.
     <paragraph>
         empty item above, no blank line
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 Unicode bullets:
 
 \u2022 BULLET
@@ -184,7 +202,7 @@ Unicode bullets:
 
 \u2043 HYPHEN BULLET
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         Unicode bullets:
@@ -200,8 +218,11 @@ u"""\
         <list_item>
             <paragraph>
                 HYPHEN BULLET
-"""],
-]
+""",
+        ],
+    ]
+}
+
 
 if __name__ == '__main__':
     import unittest

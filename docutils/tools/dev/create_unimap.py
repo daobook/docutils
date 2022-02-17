@@ -56,12 +56,12 @@ def call_visitor(node, visitor=Visitor()):
         name = 'Text'
     else:
         name = node.nodeName.replace('#', '_')
-    if hasattr(visitor, 'visit_' + name):
-        getattr(visitor, 'visit_' + name)(node)
+    if hasattr(visitor, f'visit_{name}'):
+        getattr(visitor, f'visit_{name}')(node)
     for child in node.childNodes:
         call_visitor(child)
-    if hasattr(visitor, 'depart_' + name):
-        getattr(visitor, 'depart_' + name)(node)
+    if hasattr(visitor, f'depart_{name}'):
+        getattr(visitor, f'depart_{name}')(node)
 
 document = minidom.parse(sys.stdin)
 call_visitor(document)

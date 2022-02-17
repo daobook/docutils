@@ -34,11 +34,10 @@ interpolations = {
 if platform.system() == "Windows":
     interpolations['drive'] = "C:"
 
-totest_1 = {}
-totest_2 = {}
-
-totest_1['basics'] = [
-["""\
+totest_1 = {
+    'basics': [
+        [
+            """\
 ============
  Show Title
 ============
@@ -50,7 +49,7 @@ First Slide
 
 Slide text.
 """,
-"""\
+            """\
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -104,18 +103,23 @@ Slide text.
 </div>
 </body>
 </html>
-""" % interpolations]
-]
+"""
+            % interpolations,
+        ]
+    ]
+}
 
-totest_2['settings'] = [
-["""\
+totest_2 = {
+    'settings': [
+        [
+            """\
 ==================
  Bogus Slide Show
 ==================
 
 We're just checking the settings
 """,
-"""\
+            """\
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -164,8 +168,11 @@ We're just checking the settings
 </div>
 </body>
 </html>
-""" % interpolations]
-]
+"""
+            % interpolations,
+        ]
+    ]
+}
 
 if __name__ == '__main__':
     import unittest

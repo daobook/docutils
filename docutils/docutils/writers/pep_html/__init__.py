@@ -68,10 +68,7 @@ class Writer(html4css1.Writer):
         pyhome = settings.python_home
         subs['pyhome'] = pyhome
         subs['pephome'] = settings.pep_home
-        if pyhome == '..':
-            subs['pepindex'] = '.'
-        else:
-            subs['pepindex'] = pyhome + '/dev/peps'
+        subs['pepindex'] = '.' if pyhome == '..' else f'{pyhome}/dev/peps'
         index = self.document.first_child_matching_class(nodes.field_list)
         header = self.document[index]
         self.pepnum = header[0][1].astext()

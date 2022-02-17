@@ -79,7 +79,7 @@ def get_parser_class(parser_name):
     if parser_name in _parser_aliases:
         parser_name = _parser_aliases[parser_name]
     try:
-        module = import_module('docutils.parsers.'+parser_name)
+        module = import_module(f'docutils.parsers.{parser_name}')
     except ImportError:
         module = import_module(parser_name)
     return module.Parser

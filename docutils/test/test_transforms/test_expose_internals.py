@@ -25,18 +25,23 @@ def suite():
     return s
 
 
-totest = {}
-
-totest['transitions'] = ((ExposeInternals,), [
-["""\
+totest = {
+    'transitions': (
+        (ExposeInternals,),
+        [
+            [
+                """\
 This is a test.
 """,
-"""\
+                """\
 <document internal:rawsource="" source="test data">
     <paragraph internal:rawsource="This is a test." internal:source="test data">
         This is a test.
-"""],
-])
+""",
+            ],
+        ],
+    )
+}
 
 
 if __name__ == '__main__':

@@ -20,17 +20,17 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['replace'] = [
-["""\
+totest = {
+    'replace': [
+        [
+            """\
 Test directive containing french role exposant (superscript).
 
 .. |Na+| remplace:: Na\\ :exp:`+`
 
 Le |Na+| est l'ion sodium.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Test directive containing french role exposant (superscript).
@@ -43,15 +43,17 @@ Le |Na+| est l'ion sodium.
         <substitution_reference refname="Na+">
             Na+
          est l\'ion sodium.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Test directive containing english role superscript.
 
 .. |Na+| remplace:: Na\\ :sup:`+`
 
 Le |Na+| est l'ion sodium.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Test directive containing english role superscript.
@@ -67,8 +69,10 @@ Le |Na+| est l'ion sodium.
         Le \n\
         <substitution_reference refname="Na+">
             Na+
-         est l\'ion sodium."""],
-]
+         est l\'ion sodium.""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

@@ -97,16 +97,13 @@ expected output and check it in:
         DocutilsTestSupport.CustomTestCase.__init__(self, *args, **kwargs)
 
     def shortDescription(self):
-        return 'test_functional.py: ' + self.configfile
+        return f'test_functional.py: {self.configfile}'
 
     def test(self):
         """Process self.configfile."""
         os.chdir(DocutilsTestSupport.testroot)
         # Keyword parameters for publish_file:
-        namespace = {}
-        # Initialize 'settings_overrides' for test settings scripts,
-        # and disable configuration files:
-        namespace['settings_overrides'] = {'_disable_config': True}
+        namespace = {'settings_overrides': {'_disable_config': True}}
         # Read the variables set in the default config file and in
         # the current config file into namespace:
         with open(join_path(datadir, 'tests', '_default.py')) as f:

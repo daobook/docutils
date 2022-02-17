@@ -39,7 +39,7 @@ class DirectiveOptionConversionTestCase(DocutilsTestSupport.StandardTestCase):
 
     def test_unchanged(self):
         self.assertEqual('', directives.unchanged(''))
-        self.assertTrue('something' == directives.unchanged('something'))
+        self.assertTrue(directives.unchanged('something') == 'something')
         self.assertEqual(3, directives.unchanged(3))
         self.assertEqual([3], directives.unchanged([3]))
 

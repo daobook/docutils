@@ -19,35 +19,39 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['headers'] = [
-["""\
+totest = {
+    'headers': [
+        [
+            """\
 .. header:: a paragraph for the header
 """,
-"""\
+            """\
 <document source="test data">
     <decoration>
         <header>
             <paragraph>
                 a paragraph for the header
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. header::
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
             Content block expected for the "header" directive; none found.
         <literal_block xml:space="preserve">
             .. header::
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. header:: first part of the header
 .. header:: second part of the header
 """,
-"""\
+            """\
 <document source="test data">
     <decoration>
         <header>
@@ -55,25 +59,28 @@ totest['headers'] = [
                 first part of the header
             <paragraph>
                 second part of the header
-"""],
-]
-
-totest['footers'] = [
-["""\
+""",
+        ],
+    ],
+    'footers': [
+        [
+            """\
 .. footer:: a paragraph for the footer
 """,
-"""\
+            """\
 <document source="test data">
     <decoration>
         <footer>
             <paragraph>
                 a paragraph for the footer
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. footer:: even if a footer is declared first
 .. header:: the header appears first
 """,
-"""\
+            """\
 <document source="test data">
     <decoration>
         <header>
@@ -82,8 +89,10 @@ totest['footers'] = [
         <footer>
             <paragraph>
                 even if a footer is declared first
-"""],
-]
+""",
+        ],
+    ],
+}
 
 
 if __name__ == '__main__':

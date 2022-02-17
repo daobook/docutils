@@ -23,10 +23,12 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['strip_spam'] = ((StripClassesAndElements,), [
-["""\
+totest = {
+    'strip_spam': (
+        (StripClassesAndElements,),
+        [
+            [
+                """\
 not classy
 
 .. class:: spam
@@ -47,7 +49,7 @@ this is ham
 
 this is not ham
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         not classy
@@ -55,8 +57,11 @@ this is not ham
         this is ham
     <paragraph>
         this is not ham
-"""],
-])
+""",
+            ],
+        ],
+    )
+}
 
 
 if __name__ == '__main__':

@@ -217,8 +217,7 @@ class Node(object):
         if isinstance(self, cls):
             yield self
         for child in self.children:
-            for subnode in child._fast_findall(cls):
-                yield subnode
+            yield from child._fast_findall(cls)
 
     def _superfast_findall(self):
         """Return iterator that doesn't check for a condition."""
@@ -227,8 +226,7 @@ class Node(object):
         # which yields only the direct children.
         yield self
         for child in self.children:
-            for subnode in child._superfast_findall():
-                yield subnode
+            yield from child._superfast_findall()
 
     def traverse(self, condition=None, include_self=True, descend=True,
                  siblings=False, ascend=False):
@@ -373,13 +371,11 @@ def unescape(text, restore_backslashes=False, respect_whitespace=False):
     Return a string with nulls removed or restored to backslashes.
     Backslash-escaped spaces are also removed.
     """
-    # `respect_whitespace` is ignored (since introduction 2016-12-16)
     if restore_backslashes:
         return text.replace('\x00', '\\')
-    else:
-        for sep in ['\x00 ', '\x00\n', '\x00']:
-            text = ''.join(text.split(sep))
-        return text
+    for sep in ['\x00 ', '\x00\n', '\x00']:
+        text = ''.join(text.split(sep))
+    return text
 
 
 class Text(Node, reprunicode):
@@ -415,7 +411,7 @@ class Text(Node, reprunicode):
     def shortrepr(self, maxlen=18):
         data = self
         if len(data) > maxlen:
-            data = data[:maxlen-4] + ' ...'
+            data = f'{data[:maxlen-4]} ...'
         return '<%s: %r>' % (self.tagname, reprunicode(data))
 
     def __repr__(self):
@@ -535,32 +531,23 @@ class Element(Node):
     """Separator for child nodes, used by `astext()` method."""
 
     def __init__(self, rawsource='', *children, **attributes):
-        self.rawsource = rawsource
         """The raw text from which this element was constructed.
 
         NOTE: some elements do not set this value (default '').
         """
 
-        self.children = []
         """List of child nodes (elements and/or `Text`)."""
 
+        self.rawsource = rawsource
+        self.children = []
         self.extend(children)           # maintain parent info
 
-        self.attributes = {}
         """Dictionary of attribute {name: value}."""
 
-        # Initialize list attributes.
-        for att in self.list_attributes:
-            self.attributes[att] = []
-
+        self.attributes = {att: [] for att in self.list_attributes}
         for att, value in attributes.items():
             att = att.lower()
-            if att in self.list_attributes:
-                # mutable list; make a copy for this node
-                self.attributes[att] = value[:]
-            else:
-                self.attributes[att] = value
-
+            self.attributes[att] = value[:] if att in self.list_attributes else value
         if self.tagname is None:
             self.tagname = self.__class__.__name__
 
@@ -579,7 +566,7 @@ class Element(Node):
         for c in self.children:
             data += c.shortrepr()
             if len(data) > 60:
-                data = data[:56] + ' ...'
+                data = f'{data[:56]} ...'
                 break
         if self['names']:
             return '<%s "%s": %s>' % (self.__class__.__name__,
@@ -698,15 +685,14 @@ class Element(Node):
               [child.astext() for child in self.children])
 
     def non_default_attributes(self):
-        atts = {}
-        for key, value in self.attributes.items():
-            if self.is_not_default(key):
-                atts[key] = value
-        return atts
+        return {
+            key: value
+            for key, value in self.attributes.items()
+            if self.is_not_default(key)
+        }
 
     def attlist(self):
-        attlist = sorted(self.non_default_attributes().items())
-        return attlist
+        return sorted(self.non_default_attributes().items())
 
     def get(self, key, failobj=None):
         return self.attributes.get(key, failobj)
@@ -788,7 +774,7 @@ class Element(Node):
         """
         # List Concatenation
         for value in values:
-            if not value in self[attr]:
+            if value not in self[attr]:
                 self[attr].append(value)
 
     def coerce_append_attr_list(self, attr, value):
@@ -1393,11 +1379,7 @@ class document(Root, Structural, Element):
         base_id = ''
         id = ''
         for name in node['names']:
-            if id_prefix:
-                # allow names starting with numbers if `id_prefix`
-                base_id = make_id('x'+name)[1:]
-            else:
-                base_id = make_id(name)
+            base_id = make_id(f'x{name}')[1:] if id_prefix else make_id(name)
             # TODO: normalize id-prefix? (would make code simpler)
             id = id_prefix + base_id
             if base_id and id not in self.ids:
@@ -1406,7 +1388,7 @@ class document(Root, Structural, Element):
             if base_id and auto_id_prefix.endswith('%'):
                 # disambiguate name-derived ID
                 # TODO: remove second condition after announcing change
-                prefix = id + '-'
+                prefix = f'{id}-'
             else:
                 prefix = id_prefix + auto_id_prefix
                 if  prefix.endswith('%'):
@@ -1592,10 +1574,7 @@ class document(Root, Structural, Element):
 
     def note_source(self, source, offset):
         self.current_source = source
-        if offset is None:
-            self.current_line = offset
-        else:
-            self.current_line = offset + 1
+        self.current_line = offset if offset is None else offset + 1
 
     def copy(self):
         obj = self.__class__(self.settings, self.reporter,
@@ -2019,7 +1998,7 @@ class NodeVisitor(object):
         self.unknown_visit.
         """
         node_name = node.__class__.__name__
-        method = getattr(self, 'visit_' + node_name, self.unknown_visit)
+        method = getattr(self, f'visit_{node_name}', self.unknown_visit)
         self.document.reporter.debug(
             'docutils.nodes.NodeVisitor.dispatch_visit calling %s for %s'
             % (method.__name__, node_name))
@@ -2032,7 +2011,7 @@ class NodeVisitor(object):
         self.unknown_departure.
         """
         node_name = node.__class__.__name__
-        method = getattr(self, 'depart_' + node_name, self.unknown_departure)
+        method = getattr(self, f'depart_{node_name}', self.unknown_departure)
         self.document.reporter.debug(
             'docutils.nodes.NodeVisitor.dispatch_departure calling %s for %s'
             % (method.__name__, node_name))
@@ -2111,10 +2090,10 @@ def _nop(self, node):
 def _add_node_class_names(names):
     """Save typing with dynamic assignments:"""
     for _name in names:
-        setattr(GenericNodeVisitor, "visit_" + _name, _call_default_visit)
-        setattr(GenericNodeVisitor, "depart_" + _name, _call_default_departure)
-        setattr(SparseNodeVisitor, 'visit_' + _name, _nop)
-        setattr(SparseNodeVisitor, 'depart_' + _name, _nop)
+        setattr(GenericNodeVisitor, f'visit_{_name}', _call_default_visit)
+        setattr(GenericNodeVisitor, f'depart_{_name}', _call_default_departure)
+        setattr(SparseNodeVisitor, f'visit_{_name}', _nop)
+        setattr(SparseNodeVisitor, f'depart_{_name}', _nop)
 
 _add_node_class_names(node_class_names)
 

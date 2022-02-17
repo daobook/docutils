@@ -74,10 +74,8 @@ except:
 InputError: [Errno 2] No such file or directory: '\u043c\u0438\u0440.txt'.\
 """
 
-# Parsing with Markdown (recommonmark) is an optional feature depending
-# on 3rd-party modules:
-if recommonmark_wrapper.CommonMarkParser:
-    markdown_parsing_result = """\
+markdown_parsing_result = (
+    """\
     <section ids="title-1" names="title\\ 1">
         <title>
             Title 1
@@ -92,26 +90,27 @@ if recommonmark_wrapper.CommonMarkParser:
             <reference name="phrase reference" refuri="/uri">
                 phrase reference
             ."""
-else:
-    markdown_parsing_result = """\
+    if recommonmark_wrapper.CommonMarkParser
+    else """\
     <system_message level="2" source="test_parsers/test_rst/test_directives/include.md" type="WARNING">
         <paragraph>
             Missing dependency: MarkDown input is processed by a 3rd party parser but Python did not find the required module "recommonmark" (https://pypi.org/project/recommonmark/).\
 """
+)
 
-
-totest = {}
-
-totest['include'] = [
-["""\
+totest = {
+    'include': [
+        [
+            """\
 Include Test
 ============
 
 .. include:: %s
 
 A paragraph.
-""" % include1,
-"""\
+"""
+            % include1,
+            """\
 <document source="test data">
     <section ids="include-test" names="include\\ test">
         <title>
@@ -126,8 +125,10 @@ A paragraph.
                 .
             <paragraph>
                 A paragraph.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Include Test
 ============
 
@@ -137,8 +138,9 @@ Include Test
    :name: my name
 
 A paragraph.
-""" % include1,
-"""\
+"""
+            % include1,
+            """\
 <document source="test data">
     <section ids="include-test" names="include\\ test">
         <title>
@@ -150,15 +152,19 @@ A paragraph.
             This file is used by ``test_include.py``.
         <paragraph>
             A paragraph.
-""" % reldir(include1)],
-["""\
+"""
+            % reldir(include1),
+        ],
+        [
+            """\
 Literal include, add line numbers
 
 .. include:: %s
    :literal:
    :number-lines:
-""" % include1,
-"""\
+"""
+            % include1,
+            """\
 <document source="test data">
     <paragraph>
         Literal include, add line numbers
@@ -175,16 +181,20 @@ Literal include, add line numbers
         <inline classes="ln">
             4 \n\
         This file is used by ``test_include.py``.
-""" % reldir(include1)],
-["""\
+"""
+            % reldir(include1),
+        ],
+        [
+            """\
 Include code
 
 .. include:: %s
    :code:
    :class: test
    :name: my name
-""" % include1,
-"""\
+"""
+            % include1,
+            """\
 <document source="test data">
     <paragraph>
         Include code
@@ -193,15 +203,19 @@ Include code
         -----------
         \n\
         This file is used by ``test_include.py``.
-""" % reldir(include1)],
-["""\
+"""
+            % reldir(include1),
+        ],
+        [
+            """\
 Include code, add line numbers
 
 .. include:: %s
    :code:
    :number-lines:
-""" % include1,
-"""\
+"""
+            % include1,
+            """\
 <document source="test data">
     <paragraph>
         Include code, add line numbers
@@ -218,24 +232,31 @@ Include code, add line numbers
         <inline classes="ln">
             4 \n\
         This file is used by ``test_include.py``.
-""" % reldir(include1)],
-["""\
+"""
+            % reldir(include1),
+        ],
+        [
+            """\
 Include markdown (recommonmark).
 
 .. include:: %s
    :parser: markdown
 
 A paragraph.
-""" % include_md,
-"""\
+"""
+            % include_md,
+            """\
 <document source="test data">
     <paragraph>
         Include markdown (recommonmark).
 %s
     <paragraph>
         A paragraph.
-""" % markdown_parsing_result],
-["""\
+"""
+            % markdown_parsing_result,
+        ],
+        [
+            """\
 Let's test the parse context.
 
     This paragraph is in a block quote.
@@ -243,8 +264,9 @@ Let's test the parse context.
     .. include:: %s
 
 The included paragraphs should also be in the block quote.
-""" % include2,
-"""\
+"""
+            % include2,
+            """\
 <document source="test data">
     <paragraph>
         Let's test the parse context.
@@ -261,8 +283,10 @@ The included paragraphs should also be in the block quote.
             .
     <paragraph>
         The included paragraphs should also be in the block quote.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Include Test
 ============
 
@@ -270,7 +294,7 @@ Include Test
 
 A paragraph.
 """,
-"""\
+            """\
 <document source="test data">
     <section ids="include-test" names="include\\ test">
         <title>
@@ -283,8 +307,10 @@ A paragraph.
                 .. include:: nonexistent.txt
         <paragraph>
             A paragraph.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Include Test
 ============
 
@@ -293,8 +319,9 @@ Include Test
 .. include:: %s
 
 A paragraph.
-""" % (include1, include1),
-"""\
+"""
+            % (include1, include1),
+            """\
 <document source="test data">
     <section ids="include-test" names="include\\ test">
         <title>
@@ -320,8 +347,11 @@ A paragraph.
                 .
             <paragraph>
                 A paragraph.
-""" % reldir(include1)],
-["""\
+"""
+            % reldir(include1),
+        ],
+        [
+            """\
 Include Test
 ============
 
@@ -332,8 +362,9 @@ Include Test
 .. include:: %s
 
 A paragraph.
-""" % (include1, include1),
-"""\
+"""
+            % (include1, include1),
+            """\
 <document source="test data">
     <section ids="include-test" names="include\\ test">
         <title>
@@ -360,15 +391,19 @@ A paragraph.
                 .
             <paragraph>
                 A paragraph.
-""" % reldir(include1)],
-["""\
+"""
+            % reldir(include1),
+        ],
+        [
+            """\
 Recursive inclusions: adapt paths.
 
 In test data
 
 .. include:: %s
-""" % include3,
-"""\
+"""
+            % include3,
+            """\
 <document source="test data">
     <paragraph>
         Recursive inclusions: adapt paths.
@@ -400,16 +435,19 @@ In test data
                     <entry>
                         <paragraph>
                             includes/sibling/include7.txt
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Recursive inclusion with specified parser.
 
 In test data
 
 .. include:: %s
    :parser: rst
-""" % include3,
-"""\
+"""
+            % include3,
+            """\
 <document source="test data">
     <paragraph>
         Recursive inclusion with specified parser.
@@ -441,8 +479,10 @@ In test data
                     <entry>
                         <paragraph>
                             includes/sibling/include7.txt
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 In test data
 
 Section
@@ -451,8 +491,9 @@ Section
 (Section contents in nested parse; slice of input_lines ViewList.)
 
 .. include:: %s
-""" % include3,
-"""\
+"""
+            % include3,
+            """\
 <document source="test data">
     <paragraph>
         In test data
@@ -487,13 +528,15 @@ Section
                         <entry>
                             <paragraph>
                                 includes/sibling/include7.txt
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Testing relative includes:
 
 .. include:: %s
 """ % include8,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Testing relative includes:
@@ -509,14 +552,17 @@ Testing relative includes:
         <literal>
             test_include.py
         .
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Encoding:
 
 .. include:: %s
    :encoding: utf-16
-""" % reldir(utf_16_file),
-b"""\
+"""
+            % reldir(utf_16_file),
+            b"""\
 <document source="test data">
     <paragraph>
         Encoding:
@@ -526,14 +572,19 @@ b"""\
         "Crunchy Frog", 1.49, "If we took the b\xf6nes out, it wouldn\\u2019t be
         crunchy, now would it?"
         "Gannet Ripple", 1.99, "\xbfOn a \\u03c3\\u03c4\\u03b9\\u03ba?"
-""".decode('raw_unicode_escape')],
-["""\
+""".decode(
+                'raw_unicode_escape'
+            ),
+        ],
+        [
+            """\
 Include file is UTF-16-encoded, and is not valid ASCII.
 
 .. include:: %s
    :encoding: ascii
-""" % reldir(utf_16_file),
-"""\
+"""
+            % reldir(utf_16_file),
+            """\
 <document source="test data">
     <paragraph>
         Include file is UTF-16-encoded, and is not valid ASCII.
@@ -544,13 +595,16 @@ Include file is UTF-16-encoded, and is not valid ASCII.
         <literal_block xml:space="preserve">
             .. include:: %s
                :encoding: ascii
-""" % (utf_16_error_str, reldir(utf_16_file))],
-[u"""\
+"""
+            % (utf_16_error_str, reldir(utf_16_file)),
+        ],
+        [
+            u"""\
 cyrillic filename:
 
 .. include:: \u043c\u0438\u0440.txt
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         cyrillic filename:
@@ -560,13 +614,17 @@ u"""\
             %s
         <literal_block xml:space="preserve">
             .. include:: \u043c\u0438\u0440.txt
-""" % errstr_8bit_path],
-["""\
+"""
+            % errstr_8bit_path,
+        ],
+        [
+            """\
 Testing errors in included file:
 
 .. include:: %s
-""" % include10,
-"""\
+"""
+            % include10,
+            """\
 <document source="test data">
     <paragraph>
         Testing errors in included file:
@@ -810,28 +868,37 @@ Testing errors in included file:
                 no bottom       border
                 
                 .. end of inclusion from "test_parsers/test_rst/test_directives/include10.txt"
-""" % {'source': reldir(include10), 'nonexistent': reldir(nonexistent),
-       'unichr_exception':
-       DocutilsTestSupport.exception_data(unichr, int("11111111", 16))[2]
-      }],
-["""\
+"""
+            % {
+                'source': reldir(include10),
+                'nonexistent': reldir(nonexistent),
+                'unichr_exception': DocutilsTestSupport.exception_data(
+                    unichr, int("11111111", 16)
+                )[2],
+            },
+        ],
+        [
+            """\
 Include file with whitespace in the path:
 
 .. include:: %s
-""" % reldir(include11),
-"""\
+"""
+            % reldir(include11),
+            """\
 <document source="test data">
     <paragraph>
         Include file with whitespace in the path:
     <paragraph>
         some text
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Standard include data file:
 
 .. include:: <isogrk4.txt>
 """,
-b"""\
+            b"""\
 <document source="test data">
     <paragraph>
         Standard include data file:
@@ -846,13 +913,17 @@ b"""\
         \\u03dc
     <substitution_definition names="b.gammad">
         \\u03dd
-""".decode('raw_unicode_escape')],
-["""\
+""".decode(
+                'raw_unicode_escape'
+            ),
+        ],
+        [
+            """\
 Nonexistent standard include data file:
 
 .. include:: <nonexistent>
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Nonexistent standard include data file:
@@ -862,22 +933,28 @@ Nonexistent standard include data file:
             InputError: [Errno 2] No such file or directory: '%s'.
         <literal_block xml:space="preserve">
             .. include:: <nonexistent>
-""" % nonexistent_rel],
-["""\
+"""
+            % nonexistent_rel,
+        ],
+        [
+            """\
 Include start-line/end-line Test
 
 .. include:: %s
    :start-line: 3
    :end-line: 4
-""" % include2,
-"""\
+"""
+            % include2,
+            """\
 <document source="test data">
     <paragraph>
         Include start-line/end-line Test
     <paragraph>
         This file (include2.txt) is used by
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Include start-line/end-line + start-after Test
 
 .. include:: %s
@@ -886,8 +963,9 @@ Include start-line/end-line + start-after Test
    :start-after: here
 
 Text search is limited to the specified lines.
-""" % include12,
-"""\
+"""
+            % include12,
+            """\
 <document source="test data">
     <paragraph>
         Include start-line/end-line + start-after Test
@@ -895,8 +973,10 @@ Text search is limited to the specified lines.
         In include12.txt (after "start here", before "stop here")
     <paragraph>
         Text search is limited to the specified lines.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Include start-after/end-before Test
 
 .. include:: %s
@@ -904,8 +984,9 @@ Include start-after/end-before Test
    :end-before: .. stop here
 
 A paragraph.
-""" % include12,
-"""\
+"""
+            % include12,
+            """\
 <document source="test data">
     <paragraph>
         Include start-after/end-before Test
@@ -913,8 +994,10 @@ A paragraph.
         In include12.txt (after "start here", before "stop here")
     <paragraph>
         A paragraph.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Include start-after/end-before Test, single option variant
 
 .. include:: %s
@@ -924,8 +1007,9 @@ Include start-after/end-before Test, single option variant
    :start-after: .. stop here
 
 A paragraph.
-""" % (include12, include12),
-"""\
+"""
+            % (include12, include12),
+            """\
 <document source="test data">
     <paragraph>
         Include start-after/end-before Test, single option variant
@@ -935,8 +1019,10 @@ A paragraph.
         In include12.txt (after "stop here")
     <paragraph>
         A paragraph.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Include start-after/end-before multi-line test.
 
 .. include:: %s
@@ -953,8 +1039,9 @@ Include start-after/end-before multi-line test.
          -- mork of ork
 
 A paragraph.
-""" % (include13, include13),
-"""\
+"""
+            % (include13, include13),
+            """\
 <document source="test data">
     <paragraph>
         Include start-after/end-before multi-line test.
@@ -972,15 +1059,19 @@ A paragraph.
         In include13.txt (between header and signature)
     <paragraph>
         A paragraph.
-""" % include13],
-["""\
+"""
+            % include13,
+        ],
+        [
+            """\
 Error handling test; "end-before" error handling tested in previous test.
 
 .. include:: %s
    :start-after: bad string
    :end-before: mork of ork
-""" % include13,
-"""\
+"""
+            % include13,
+            """\
 <document source="test data">
     <paragraph>
         Error handling test; "end-before" error handling tested in previous test.
@@ -992,14 +1083,18 @@ Error handling test; "end-before" error handling tested in previous test.
             .. include:: %s
                :start-after: bad string
                :end-before: mork of ork
-""" % include13],
-["""\
+"""
+            % include13,
+        ],
+        [
+            """\
 TAB expansion with literal include:
 
 .. include:: %s
    :literal:
-""" % include_literal,
-"""\
+"""
+            % include_literal,
+            """\
 <document source="test data">
     <paragraph>
         TAB expansion with literal include:
@@ -1010,15 +1105,19 @@ TAB expansion with literal include:
         Newlines
         are
         normalized.
-""" % include_literal],
-["""\
+"""
+            % include_literal,
+        ],
+        [
+            """\
 Custom TAB expansion with literal include:
 
 .. include:: %s
    :literal:
    :tab-width: 2
-""" % include_literal,
-"""\
+"""
+            % include_literal,
+            """\
 <document source="test data">
     <paragraph>
         Custom TAB expansion with literal include:
@@ -1029,15 +1128,19 @@ Custom TAB expansion with literal include:
         Newlines
         are
         normalized.
-""" % include_literal],
-["""\
+"""
+            % include_literal,
+        ],
+        [
+            """\
 No TAB expansion with literal include:
 
 .. include:: %s
    :literal:
    :tab-width: -1
-""" % include_literal,
-"""\
+"""
+            % include_literal,
+            """\
 <document source="test data">
     <paragraph>
         No TAB expansion with literal include:
@@ -1048,8 +1151,11 @@ No TAB expansion with literal include:
         Newlines
         are
         normalized.
-""" % include_literal],
-]
+"""
+            % include_literal,
+        ],
+    ]
+}
 
 totest['include-code'] = [
 ["""\

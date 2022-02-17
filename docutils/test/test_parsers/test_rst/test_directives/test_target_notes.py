@@ -19,48 +19,54 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['target-notes'] = [
-["""\
+totest = {
+    'target-notes': [
+        [
+            """\
 .. target-notes::
 """,
-"""\
+            """\
 <document source="test data">
     <pending>
         .. internal attributes:
              .transform: docutils.transforms.references.TargetNotes
              .details:
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. target-notes:: :class: custom
 """,
-"""\
+            """\
 <document source="test data">
     <pending>
         .. internal attributes:
              .transform: docutils.transforms.references.TargetNotes
              .details:
                class: ['custom']
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. target-notes::
    :class: custom
    :name: targets
 """,
-"""\
+            """\
 <document source="test data">
     <pending ids="targets" names="targets">
         .. internal attributes:
              .transform: docutils.transforms.references.TargetNotes
              .details:
                class: ['custom']
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. target-notes::
    :class:
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -70,8 +76,10 @@ totest['target-notes'] = [
         <literal_block xml:space="preserve">
             .. target-notes::
                :class:
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

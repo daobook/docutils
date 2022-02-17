@@ -137,16 +137,20 @@ class ErrorStringTests(unittest.TestCase):
     def test_str(self):
         self.assertEqual('Exception: spam',
                          str(ErrorString(Exception('spam'))))
-        self.assertEqual('IndexError: '+str(self.bs),
-                         str(ErrorString(IndexError(self.bs))))
+        self.assertEqual(
+            f'IndexError: {str(self.bs)}', str(ErrorString(IndexError(self.bs)))
+        )
+
         self.assertEqual('ImportError: %s' % SafeString(self.us),
                          str(ErrorString(ImportError(self.us))))
 
     def test_unicode(self):
         self.assertEqual(u'Exception: spam',
                          unicode(ErrorString(Exception(u'spam'))))
-        self.assertEqual(u'IndexError: '+self.us,
-                         unicode(ErrorString(IndexError(self.us))))
+        self.assertEqual(
+            f'IndexError: {self.us}', unicode(ErrorString(IndexError(self.us)))
+        )
+
         self.assertEqual(u'ImportError: %s' % SafeString(self.bs),
                          unicode(ErrorString(ImportError(self.bs))))
 

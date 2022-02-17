@@ -43,11 +43,10 @@ def html_parts(input_string, source_path=None, destination_path=None,
     overrides = {'input_encoding': input_encoding,
                  'doctitle_xform': doctitle,
                  'initial_header_level': initial_header_level}
-    parts = core.publish_parts(
+    return core.publish_parts(
         source=input_string, source_path=source_path,
         destination_path=destination_path,
         writer_name='html', settings_overrides=overrides)
-    return parts
 
 def html_body(input_string, source_path=None, destination_path=None,
               input_encoding='unicode', output_encoding='unicode',
@@ -79,10 +78,7 @@ def internals(input_string, source_path=None, destination_path=None,
 
     Parameters: see `html_parts()`.
     """
-    if settings_overrides:
-        overrides = settings_overrides.copy()
-    else:
-        overrides = {}
+    overrides = settings_overrides.copy() if settings_overrides else {}
     overrides['input_encoding'] = input_encoding
     output, pub = core.publish_programmatically(
         source_class=io.StringInput, source=input_string,

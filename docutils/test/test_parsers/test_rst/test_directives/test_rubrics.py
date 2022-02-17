@@ -18,24 +18,26 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['rubrics'] = [
-["""\
+totest = {
+    'rubrics': [
+        [
+            """\
 .. rubric:: This is a rubric
 """,
-"""\
+            """\
 <document source="test data">
     <rubric>
         This is a rubric
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. rubric::
 .. rubric:: A rubric has no content
 
    Invalid content
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -51,14 +53,16 @@ totest['rubrics'] = [
             .. rubric:: A rubric has no content
             \n\
                Invalid content
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. rubric:: A rubric followed by a block quote
 ..
 
    Block quote
 """,
-"""\
+            """\
 <document source="test data">
     <rubric>
         A rubric followed by a block quote
@@ -66,18 +70,22 @@ totest['rubrics'] = [
     <block_quote>
         <paragraph>
             Block quote
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. rubric:: A Rubric
    :class: foo bar
    :name: Foo Rubric
 """,
-"""\
+            """\
 <document source="test data">
     <rubric classes="foo bar" ids="foo-rubric" names="foo\\ rubric">
         A Rubric
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

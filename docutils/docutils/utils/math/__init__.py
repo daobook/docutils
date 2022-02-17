@@ -41,10 +41,7 @@ def pick_math_environment(code, numbered=False):
     If `numbered` evaluates to ``False``, the "starred" versions are used
     to suppress numbering.
     """
-    if toplevel_code(code).find(r'\\') >= 0:
-        env = 'align'
-    else:
-        env = 'equation'
+    env = 'align' if toplevel_code(code).find(r'\\') >= 0 else 'equation'
     if not numbered:
         env += '*'
     return env

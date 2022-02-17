@@ -26,22 +26,24 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['literal_blocks'] = [
-["""\
+totest = {
+    'literal_blocks': [
+        [
+            """\
 A paragraph:
 
     A literal block (indented code block).
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
     <literal_block classes="code" xml:space="preserve">
         A literal block (indented code block).
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph:
 ~~~
 A literal block (fenced code block).
@@ -54,7 +56,7 @@ Another paragraph:
 
 A final paragraph.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
@@ -67,15 +69,17 @@ A final paragraph.
         With two blank lines following.
     <paragraph>
         A final paragraph.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph
 on more than
 one line.
     No literal block
     but paragraph continuation lines.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph
@@ -83,14 +87,16 @@ one line.
         one line.
         No literal block
         but paragraph continuation lines.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph:
 
     A literal block.
 no blank line
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
@@ -98,15 +104,17 @@ no blank line
         A literal block.
     <paragraph>
         no blank line
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph:
 ```
   A fenced code block.
 ```
 no blank lines.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
@@ -114,30 +122,36 @@ no blank lines.
           A fenced code block.
     <paragraph>
         no blank lines.
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 A paragraph:
 
    Not a literal block because only indented 3 spaces.
 """,
-r"""<document source="test data">
+            r"""<document source="test data">
     <paragraph>
         A paragraph:
     <paragraph>
         Not a literal block because only indented 3 spaces.
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
     A literal block.
 
    Not a literal block.
 """,
-r"""<document source="test data">
+            r"""<document source="test data">
     <literal_block classes="code" xml:space="preserve">
         A literal block.
     <paragraph>
         Not a literal block.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph:
 
       A wonky literal block.
@@ -145,7 +159,7 @@ A paragraph:
   
       Literal line 3.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
@@ -154,8 +168,10 @@ A paragraph:
         Literal line 2.
         \n\
           Literal line 3.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph:
 ~~~
   A fenced literal block.
@@ -164,7 +180,7 @@ Literal line 2.
   Literal line 3.
 ~~~  
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
@@ -173,24 +189,27 @@ Literal line 2.
         Literal line 2.
         \n\
           Literal line 3.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph:
 ~~~ ruby
 A literal block (fenced code block)
 with *info string*.
 ~~~
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
     <literal_block classes="code ruby" xml:space="preserve">
         A literal block (fenced code block)
         with *info string*.
-"""],
-]
-
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

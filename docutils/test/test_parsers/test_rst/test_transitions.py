@@ -19,27 +19,27 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-# See DocutilsTestSupport.ParserTestSuite.generateTests for a
-# description of the 'totest' data structure.
-totest['transitions'] = [
-["""\
+totest = {
+    'transitions': [
+        [
+            """\
 Test transition markers.
 
 --------
 
 Paragraph
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Test transition markers.
     <transition>
     <paragraph>
         Paragraph
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Section 1
 =========
 First text division of section 1.
@@ -52,7 +52,7 @@ Section 2
 ---------
 Paragraph 2 in section 2.
 """,
-"""\
+            """\
 <document source="test data">
     <section ids="section-1" names="section\\ 1">
         <title>
@@ -67,9 +67,10 @@ Paragraph 2 in section 2.
                 Section 2
             <paragraph>
                 Paragraph 2 in section 2.
-"""],
-# TODO: disable this test case, as it endorses non-standard results?
-["""\
+""",
+        ],
+        [
+            """\
 --------
 
 According to the DTD, a section or document may not begin with a transition.
@@ -92,7 +93,7 @@ may not end with a transition.
 
 --------
 """,
-"""\
+            """\
 <document source="test data">
     <transition>
     <paragraph>
@@ -111,8 +112,10 @@ may not end with a transition.
         The DTD also specifies that a section or document
         may not end with a transition.
     <transition>
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Test unexpected transition markers.
 
     Block quote.
@@ -121,7 +124,7 @@ Test unexpected transition markers.
 
     Paragraph.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Test unexpected transition markers.
@@ -135,15 +138,17 @@ Test unexpected transition markers.
                 --------
         <paragraph>
             Paragraph.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Short transition marker.
 
 ---
 
 Paragraph
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Short transition marker.
@@ -151,8 +156,10 @@ Paragraph
         ---
     <paragraph>
         Paragraph
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Sections with transitions at beginning and end.
 
 Section 1
@@ -169,7 +176,7 @@ Section 2
 
 ----------
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Sections with transitions at beginning and end.
@@ -184,8 +191,10 @@ Section 2
         <title>
             Section 2
         <transition>
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph, two transitions, and a blank line.
 
 ----------
@@ -193,39 +202,45 @@ A paragraph, two transitions, and a blank line.
 ----------
 
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph, two transitions, and a blank line.
     <transition>
     <transition>
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph and two transitions.
 
 ----------
 
 ----------
-""", # the same:
-"""\
+""",  # the same:
+            """\
 <document source="test data">
     <paragraph>
         A paragraph and two transitions.
     <transition>
     <transition>
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ----------
 
 Document beginning with a transition.
 """,
-"""\
+            """\
 <document source="test data">
     <transition>
     <paragraph>
         Document beginning with a transition.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Section 1
 =========
 
@@ -241,7 +256,7 @@ Section 2
 
 Some text.
 """,
-"""\
+            """\
 <document source="test data">
     <section ids="section-1" names="section\\ 1">
         <title>
@@ -257,8 +272,10 @@ Some text.
             Section 2
         <paragraph>
             Some text.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Section 1
 =========
 
@@ -273,7 +290,7 @@ Section 2
 
 Some text.
 """,
-"""\
+            """\
 <document source="test data">
     <section ids="section-1" names="section\\ 1">
         <title>
@@ -286,33 +303,39 @@ Some text.
             Section 2
         <paragraph>
             Some text.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ----------
 
 ----------
 
 ----------
 """,
-"""\
+            """\
 <document source="test data">
     <transition>
     <transition>
     <transition>
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph.
 
 ----------
 
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph.
     <transition>
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

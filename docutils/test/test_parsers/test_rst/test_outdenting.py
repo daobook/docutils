@@ -19,10 +19,10 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['outdenting'] = [
-["""\
+totest = {
+    'outdenting': [
+        [
+            """\
 Anywhere a paragraph would have an effect on the current
 indentation level, a comment or list item should also.
 
@@ -32,7 +32,7 @@ This paragraph ends the bullet list item before a block quote.
 
   Block quote.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Anywhere a paragraph would have an effect on the current
@@ -46,8 +46,10 @@ This paragraph ends the bullet list item before a block quote.
     <block_quote>
         <paragraph>
             Block quote.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 + bullet
 
 .. Comments swallow up all indented text following.
@@ -63,7 +65,7 @@ This paragraph ends the bullet list item before a block quote.
 
   Block quote.
 """,
-"""\
+            """\
 <document source="test data">
     <bullet_list bullet="+">
         <list_item>
@@ -84,8 +86,11 @@ This paragraph ends the bullet list item before a block quote.
     <block_quote>
         <paragraph>
             Block quote.
-"""],
-]
+""",
+        ],
+    ]
+}
+
 
 if __name__ == '__main__':
     import unittest

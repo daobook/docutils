@@ -40,6 +40,7 @@ The `SafeString`, `ErrorString` and `ErrorOutput` classes handle
 common exceptions.
 """
 
+
 import codecs
 import sys
 
@@ -58,10 +59,7 @@ else:
     except ValueError as error: # OS X may set UTF-8 without language code
         # see http://bugs.python.org/issue18378
         # and https://sourceforge.net/p/docutils/bugs/298/
-        if "unknown locale: UTF-8" in error.args:
-            locale_encoding = "UTF-8"
-        else:
-            locale_encoding = None
+        locale_encoding = "UTF-8" if "unknown locale: UTF-8" in error.args else None
     except: # any other problems determining the locale -> use None
         locale_encoding = None
     try:

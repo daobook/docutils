@@ -23,10 +23,12 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['section_numbers'] = ((Substitutions,), [
-["""\
+totest = {
+    'section_numbers': (
+        (Substitutions,),
+        [
+            [
+                """\
 .. sectnum::
 
 Title 1
@@ -45,7 +47,7 @@ Title 4
 -------
 Paragraph 4.
 """,
-u"""\
+                u"""\
 <document source="test data">
     <section ids="title-1" names="title\\ 1">
         <title auto="1">
@@ -75,15 +77,17 @@ u"""\
                 Title 4
             <paragraph>
                 Paragraph 4.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. sectnum::
 
 **Bold Title**
 ==============
 Paragraph 1.
 """,
-u"""\
+                u"""\
 <document source="test data">
     <section ids="bold-title" names="bold\\ title">
         <title auto="1">
@@ -93,8 +97,10 @@ u"""\
                 Bold Title
         <paragraph>
             Paragraph 1.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. sectnum:: :depth: 2
 
 Title 1
@@ -113,7 +119,7 @@ Title 4
 -------
 Paragraph 4.
 """,
-u"""\
+                u"""\
 <document source="test data">
     <section ids="title-1" names="title\\ 1">
         <title auto="1">
@@ -141,8 +147,10 @@ u"""\
                 Title 4
             <paragraph>
                 Paragraph 4.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. contents::
 .. sectnum:: :depth: 2
 
@@ -162,7 +170,7 @@ Title 4
 -------
 Paragraph 4.
 """,
-u"""\
+                u"""\
 <document source="test data">
     <topic classes="contents" ids="contents" names="contents">
         <title>
@@ -218,8 +226,10 @@ u"""\
                 Title 4
             <paragraph>
                 Paragraph 4.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. sectnum::
    :prefix: Arbitrary-
 
@@ -239,7 +249,7 @@ Title 4
 -------
 Paragraph 4.
 """,
-u"""\
+                u"""\
 <document source="test data">
     <section ids="title-1" names="title\\ 1">
         <title auto="1">
@@ -269,8 +279,10 @@ u"""\
                 Title 4
             <paragraph>
                 Paragraph 4.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. sectnum::
    :start: 3
    
@@ -290,7 +302,7 @@ Title 4
 -------
 Paragraph 4.
 """,
-u"""\
+                u"""\
 <document source="test data">
     <section ids="title-1" names="title\\ 1">
         <title auto="1">
@@ -320,8 +332,10 @@ u"""\
                 Title 4
             <paragraph>
                 Paragraph 4.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. sectnum::
    :prefix: (5.9.
    :suffix: )
@@ -343,7 +357,7 @@ Title 4
 -------
 Paragraph 4.
 """,
-u"""\
+                u"""\
 <document source="test data">
     <section ids="title-1" names="title\\ 1">
         <title auto="1">
@@ -373,8 +387,11 @@ u"""\
                 Title 4
             <paragraph>
                 Paragraph 4.
-"""],
-])
+""",
+            ],
+        ],
+    )
+}
 
 
 if __name__ == '__main__':

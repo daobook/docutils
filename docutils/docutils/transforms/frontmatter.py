@@ -241,12 +241,12 @@ class DocTitle(TitlePromoter):
                 self.document['title'] = self.document[0].astext()
 
     def apply(self):
-        if self.document.settings.setdefault('doctitle_xform', True):
-            # promote_(sub)title defined in TitlePromoter base class.
-            if self.promote_title(self.document):
-                # If a title has been promoted, also try to promote a
-                # subtitle.
-                self.promote_subtitle(self.document)
+        if self.document.settings.setdefault(
+            'doctitle_xform', True
+        ) and self.promote_title(self.document):
+            # If a title has been promoted, also try to promote a
+            # subtitle.
+            self.promote_subtitle(self.document)
         # Set document['title'].
         self.set_metadata()
 
@@ -437,17 +437,16 @@ class DocInfo(Transform):
                        and isinstance(field[-1][0], nodes.paragraph):
                     utils.clean_rcs_keywords(
                         field[-1][0], self.rcs_keyword_substitutions)
-                # if normedname not in bibliofields:
-                classvalue = nodes.make_id(normedname)
-                if classvalue:
+                if classvalue := nodes.make_id(normedname):
                     field['classes'].append(classvalue)
                 docinfo.append(field)
         nodelist = []
         if len(docinfo) != 0:
             nodelist.append(docinfo)
-        for name in ('dedication', 'abstract'):
-            if topics[name]:
-                nodelist.append(topics[name])
+        nodelist.extend(
+            topics[name] for name in ('dedication', 'abstract') if topics[name]
+        )
+
         return nodelist
 
     def check_empty_biblio_field(self, field, name):
@@ -489,9 +488,9 @@ class DocInfo(Transform):
                     raise TransformError
             else:
                 authors = self.authors_from_paragraphs(field)
-            authornodes = [nodes.author('', '', *author)
-                           for author in authors if author]
-            if len(authornodes) >= 1:
+            if authornodes := [
+                nodes.author('', '', *author) for author in authors if author
+            ]:
                 docinfo.append(nodes.authors('', *authornodes))
             else:
                 raise TransformError
@@ -523,8 +522,7 @@ class DocInfo(Transform):
             if len(authornames) > 1:
                 break
         authornames = (name.strip() for name in authornames)
-        authors = [[nodes.Text(name)] for name in authornames if name]
-        return authors
+        return [[nodes.Text(name)] for name in authornames if name]
 
     def authors_from_bullet_list(self, field):
         authors = []
@@ -542,6 +540,5 @@ class DocInfo(Transform):
         for item in field[1]:
             if not isinstance(item, (nodes.paragraph, nodes.comment)):
                 raise TransformError
-        authors = [item.children for item in field[1]
+        return [item.children for item in field[1]
                    if not isinstance(item, nodes.comment)]
-        return authors

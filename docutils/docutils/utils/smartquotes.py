@@ -505,8 +505,8 @@ class smartchars(object):
 def smartyPants(text, attr=default_smartypants_attr, language='en'):
     """Main function for "traditional" use."""
 
-    return "".join([t for t in educate_tokens(tokenize(text),
-                                              attr, language)])
+    return "".join(list(educate_tokens(tokenize(text),
+                                              attr, language)))
 
 
 def educate_tokens(text_tokens, attr=default_smartypants_attr, language='en'):
@@ -536,7 +536,9 @@ def educate_tokens(text_tokens, attr=default_smartypants_attr, language='en'):
     do_stupefy = False
 
     # if attr == "0": # pass tokens unchanged (see below).
-    if attr == "1": # Do everything, turn all options on.
+    if attr == "-1":
+        do_stupefy   = True
+    elif attr == "1":
         do_quotes    = True
         do_backticks = True
         do_dashes    = 1
@@ -553,8 +555,6 @@ def educate_tokens(text_tokens, attr=default_smartypants_attr, language='en'):
         do_backticks = True
         do_dashes    = 3
         do_ellipses  = True
-    elif attr == "-1": # Special "stupefy" mode.
-        do_stupefy   = True
     else:
         if "q" in attr: do_quotes = True
         if "b" in attr: do_backticks = True
@@ -619,9 +619,7 @@ def educate_tokens(text_tokens, attr=default_smartypants_attr, language='en'):
         # Remember last char as context for the next token
         prev_token_last_char = last_char
 
-        text = processEscapes(text, restore=True)
-
-        yield text
+        yield processEscapes(text, restore=True)
 
 
 
@@ -677,7 +675,7 @@ def educateQuotes(text, language='en'):
                     (?=\\w|%(punct)s) # followed by a word character or punctuation
                     """ % ch_classes, re.VERBOSE | re.UNICODE)
 
-    text = opening_secondary_quotes_regex.sub(r'\1'+smart.osquote, text)
+    text = opening_secondary_quotes_regex.sub(f'\\1{smart.osquote}', text)
 
     # In many locales, secondary closing quotes are different from apostrophe:
     if smart.csquote != smart.apostrophe:
@@ -703,7 +701,7 @@ def educateQuotes(text, language='en'):
                     (?=\\w|%(punct)s) # followed by a word character or punctuation
                     """ % ch_classes, re.VERBOSE | re.UNICODE)
 
-    text = opening_primary_quotes_regex.sub(r'\1'+smart.opquote, text)
+    text = opening_primary_quotes_regex.sub(f'\\1{smart.opquote}', text)
 
     # primary closing quotes:
     closing_primary_quotes_regex = re.compile(r"""
@@ -858,13 +856,8 @@ def processEscapes(text, restore=False):
                     (r'\.', r'&#46;'),
                     (r'\-', r'&#45;'),
                     (r'\`', r'&#96;'))
-    if restore:
-        for (ch, rep) in replacements:
-            text = text.replace(rep, ch[1])
-    else:
-        for (ch, rep) in replacements:
-            text = text.replace(ch, rep)
-
+    for (ch, rep) in replacements:
+        text = text.replace(rep, ch[1]) if restore else text.replace(ch, rep)
     return text
 
 

@@ -65,16 +65,16 @@ class Trace(object):
     Trace.show(message, sys.stdout)
 
   def error(cls, message):
-    "Show an error message"
-    message = '* ' + message
-    if Trace.prefix and Trace.showlinesmode:
-      message = Trace.prefix + message
-    Trace.show(message, sys.stderr)
+      "Show an error message"
+      message = f'* {message}'
+      if Trace.prefix and Trace.showlinesmode:
+        message = Trace.prefix + message
+      Trace.show(message, sys.stderr)
 
   def fatal(cls, message):
-    "Show an error message and terminate"
-    Trace.error('FATAL: ' + message)
-    exit(-1)
+      "Show an error message and terminate"
+      Trace.error(f'FATAL: {message}')
+      exit(-1)
 
   def show(cls, message, channel):
     "Show a message out of a channel"
@@ -131,429 +131,431 @@ class EscapeConfig(object):
       }
 
 
+
+
 class FormulaConfig(object):
-  "Configuration class from elyxer.config file"
+    "Configuration class from elyxer.config file"
 
-  alphacommands = {
-      '\\AmS': u'<span class="textsc">AmS</span>',
-      '\\AA':        u'Å',
-      '\\AE':        u'Æ',
-      '\\DH':        u'Ð',
-      '\\L':         u'Ł',
-      '\\O':         u'Ø',
-      '\\OE':        u'Œ',
-      '\\TH':        u'Þ',
-      '\\aa':        u'å',
-      '\\ae':        u'æ',
-      '\\dh':        u'ð',
-      '\\i':         u'ı',
-      '\\j':         u'ȷ',
-      '\\l':         u'ł',
-      '\\o':         u'ø',
-      '\\oe':        u'œ',
-      '\\ss':        u'ß',
-      '\\th':        u'þ',
-      }
-  for key, value in tex2unichar.mathalpha.items():
-      alphacommands['\\'+key] = value
+    alphacommands = {
+        '\\AmS': u'<span class="textsc">AmS</span>',
+        '\\AA':        u'Å',
+        '\\AE':        u'Æ',
+        '\\DH':        u'Ð',
+        '\\L':         u'Ł',
+        '\\O':         u'Ø',
+        '\\OE':        u'Œ',
+        '\\TH':        u'Þ',
+        '\\aa':        u'å',
+        '\\ae':        u'æ',
+        '\\dh':        u'ð',
+        '\\i':         u'ı',
+        '\\j':         u'ȷ',
+        '\\l':         u'ł',
+        '\\o':         u'ø',
+        '\\oe':        u'œ',
+        '\\ss':        u'ß',
+        '\\th':        u'þ',
+        }
+    for key, value in tex2unichar.mathalpha.items():
+        alphacommands[f'\\{key}'] = value
 
-  array = {
-      u'begin': u'\\begin',
-      u'cellseparator': u'&',
-      u'end': u'\\end',
-      u'rowseparator': u'\\\\',
-      }
+    array = {
+        u'begin': u'\\begin',
+        u'cellseparator': u'&',
+        u'end': u'\\end',
+        u'rowseparator': u'\\\\',
+        }
 
-  bigbrackets = {u'(': [u'⎛', u'⎜', u'⎝',],
-                 u')': [u'⎞', u'⎟', u'⎠',],
-                 u'[': [u'⎡', u'⎢', u'⎣',],
-                 u']': [u'⎤', u'⎥', u'⎦',],
-                 u'{': [u'⎧', u'⎪', u'⎨', u'⎩',],
-                 u'}': [u'⎫', u'⎪', u'⎬', u'⎭',],
-                 # TODO: 2-row brackets with ⎰⎱ (\lmoustache \rmoustache)
-                 u'|': [u'|',], # 007C VERTICAL LINE
-                 # u'|': [u'⎮',], # 23AE INTEGRAL EXTENSION
-                 # u'|': [u'⎪',], # 23AA CURLY BRACKET EXTENSION
-                 u'‖': [u'‖'], # 2016 DOUBLE VERTICAL LINE
-                 # u'∥': [u'∥'], # 2225 PARALLEL TO
-                }
+    bigbrackets = {u'(': [u'⎛', u'⎜', u'⎝',],
+                   u')': [u'⎞', u'⎟', u'⎠',],
+                   u'[': [u'⎡', u'⎢', u'⎣',],
+                   u']': [u'⎤', u'⎥', u'⎦',],
+                   u'{': [u'⎧', u'⎪', u'⎨', u'⎩',],
+                   u'}': [u'⎫', u'⎪', u'⎬', u'⎭',],
+                   # TODO: 2-row brackets with ⎰⎱ (\lmoustache \rmoustache)
+                   u'|': [u'|',], # 007C VERTICAL LINE
+                   # u'|': [u'⎮',], # 23AE INTEGRAL EXTENSION
+                   # u'|': [u'⎪',], # 23AA CURLY BRACKET EXTENSION
+                   u'‖': [u'‖'], # 2016 DOUBLE VERTICAL LINE
+                   # u'∥': [u'∥'], # 2225 PARALLEL TO
+                  }
 
-  bracketcommands = {
-      u'\\left': u'span class="stretchy"',
-      u'\\left.': u'<span class="leftdot"></span>',
-      u'\\middle': u'span class="stretchy"',
-      u'\\right': u'span class="stretchy"',
-      u'\\right.': u'<span class="rightdot"></span>',
-      }
+    bracketcommands = {
+        u'\\left': u'span class="stretchy"',
+        u'\\left.': u'<span class="leftdot"></span>',
+        u'\\middle': u'span class="stretchy"',
+        u'\\right': u'span class="stretchy"',
+        u'\\right.': u'<span class="rightdot"></span>',
+        }
 
-  combiningfunctions = {
-      u"\\'": u'́',
-      u'\\"': u'̈',
-      u'\\^': u'̂',
-      u'\\`': u'̀',
-      u'\\~': u'̃',
-      u'\\c': u'̧',
-      u'\\r': u'̊',
-      u'\\s': u'̩',
-      u'\\textcircled': u'⃝',
-      u'\\textsubring': u'̥',
-      u'\\v': u'̌',
-      }
-  for key, value in tex2unichar.mathaccent.items():
-      combiningfunctions['\\'+key] = value
+    combiningfunctions = {
+        u"\\'": u'́',
+        u'\\"': u'̈',
+        u'\\^': u'̂',
+        u'\\`': u'̀',
+        u'\\~': u'̃',
+        u'\\c': u'̧',
+        u'\\r': u'̊',
+        u'\\s': u'̩',
+        u'\\textcircled': u'⃝',
+        u'\\textsubring': u'̥',
+        u'\\v': u'̌',
+        }
+    for key, value in tex2unichar.mathaccent.items():
+        combiningfunctions[f'\\{key}'] = value
 
-  commands = {
-      '\\\\': u'<br/>',
-      '\\\n': u' ', # escaped whitespace
-      '\\\t': u' ', # escaped whitespace
-      '\\centerdot': u'\u2B1D', # BLACK VERY SMALL SQUARE, mathbin
-      '\\colon': u': ',
-      '\\copyright': u'©',
-      '\\dotminus': u'∸',
-      '\\dots': u'…',
-      '\\dotsb': u'⋯',
-      '\\dotsc': u'…',
-      '\\dotsi': u'⋯',
-      '\\dotsm': u'⋯',
-      '\\dotso': u'…',
-      '\\euro': u'€',
-      '\\guillemotleft': u'«',
-      '\\guillemotright': u'»',
-      '\\hbar': u'<i>\u0127</i>', # ħ LATIN SMALL LETTER H WITH STROKE
-      '\\lVert': u'‖',
-      '\\Arrowvert':  u'\u2016', # ‖
-      '\\lvert': u'|',
-      '\\newline': u'<br/>',
-      '\\nobreakspace': u' ',
-      '\\nolimits': u'',
-      '\\nonumber': u'',
-      '\\qquad': u'  ',
-      '\\rVert': u'‖',
-      '\\rvert': u'|',
-      '\\textasciicircum': u'^',
-      '\\textasciitilde': u'~',
-      '\\textbackslash': u'\\',
-      '\\textcopyright': u'©',
-      '\\textdegree': u'°',
-      '\\textellipsis': u'…',
-      '\\textemdash': u'—',
-      '\\textendash': u'—',
-      '\\texteuro': u'€',
-      '\\textgreater': u'>',
-      '\\textless': u'<',
-      '\\textordfeminine': u'ª',
-      '\\textordmasculine': u'º',
-      '\\textquotedblleft': u'“',
-      '\\textquotedblright': u'”',
-      '\\textquoteright': u'’',
-      '\\textregistered': u'®',
-      '\\textrightarrow': u'→',
-      '\\textsection': u'§',
-      '\\texttrademark': u'™',
-      '\\texttwosuperior': u'²',
-      '\\textvisiblespace': u' ',
-      '\\thickspace': u'<span class="thickspace"> </span>', # 5/13 em
-      '\\;': u'<span class="thickspace"> </span>', # 5/13 em
-      '\\triangle': u'\u25B3', # WHITE UP-POINTING TRIANGLE, mathord
-      '\\triangledown': u'\u25BD', # WHITE DOWN-POINTING TRIANGLE, mathord
-      '\\varnothing': u'\u2300', # ⌀ DIAMETER SIGN
-      # functions
-      '\\Pr': u'Pr',
-      '\\arccos': u'arccos',
-      '\\arcsin': u'arcsin',
-      '\\arctan': u'arctan',
-      '\\arg': u'arg',
-      '\\cos': u'cos',
-      '\\cosh': u'cosh',
-      '\\cot': u'cot',
-      '\\coth': u'coth',
-      '\\csc': u'csc',
-      '\\deg': u'deg',
-      '\\det': u'det',
-      '\\dim': u'dim',
-      '\\exp': u'exp',
-      '\\gcd': u'gcd',
-      '\\hom': u'hom',
-      '\\injlim': u'inj lim',
-      '\\ker': u'ker',
-      '\\lg': u'lg',
-      '\\liminf': u'lim inf',
-      '\\limsup': u'lim sup',
-      '\\ln': u'ln',
-      '\\log': u'log',
-      '\\projlim': u'proj lim',
-      '\\sec': u'sec',
-      '\\sin': u'sin',
-      '\\sinh': u'sinh',
-      '\\tan': u'tan',
-      '\\tanh': u'tanh',
-  }
-  cmddict = {}
-  cmddict.update(tex2unichar.mathbin) # TODO: spacing around binary operators
-  cmddict.update(tex2unichar.mathopen)
-  cmddict.update(tex2unichar.mathclose)
-  cmddict.update(tex2unichar.mathfence)
-  cmddict.update(tex2unichar.mathord)
-  cmddict.update(tex2unichar.mathpunct)
-  cmddict.update(tex2unichar.space)
-  commands.update(('\\' + key, value) for key, value in cmddict.items())
+    commands = {
+        '\\\\': u'<br/>',
+        '\\\n': u' ', # escaped whitespace
+        '\\\t': u' ', # escaped whitespace
+        '\\centerdot': u'\u2B1D', # BLACK VERY SMALL SQUARE, mathbin
+        '\\colon': u': ',
+        '\\copyright': u'©',
+        '\\dotminus': u'∸',
+        '\\dots': u'…',
+        '\\dotsb': u'⋯',
+        '\\dotsc': u'…',
+        '\\dotsi': u'⋯',
+        '\\dotsm': u'⋯',
+        '\\dotso': u'…',
+        '\\euro': u'€',
+        '\\guillemotleft': u'«',
+        '\\guillemotright': u'»',
+        '\\hbar': u'<i>\u0127</i>', # ħ LATIN SMALL LETTER H WITH STROKE
+        '\\lVert': u'‖',
+        '\\Arrowvert':  u'\u2016', # ‖
+        '\\lvert': u'|',
+        '\\newline': u'<br/>',
+        '\\nobreakspace': u' ',
+        '\\nolimits': u'',
+        '\\nonumber': u'',
+        '\\qquad': u'  ',
+        '\\rVert': u'‖',
+        '\\rvert': u'|',
+        '\\textasciicircum': u'^',
+        '\\textasciitilde': u'~',
+        '\\textbackslash': u'\\',
+        '\\textcopyright': u'©',
+        '\\textdegree': u'°',
+        '\\textellipsis': u'…',
+        '\\textemdash': u'—',
+        '\\textendash': u'—',
+        '\\texteuro': u'€',
+        '\\textgreater': u'>',
+        '\\textless': u'<',
+        '\\textordfeminine': u'ª',
+        '\\textordmasculine': u'º',
+        '\\textquotedblleft': u'“',
+        '\\textquotedblright': u'”',
+        '\\textquoteright': u'’',
+        '\\textregistered': u'®',
+        '\\textrightarrow': u'→',
+        '\\textsection': u'§',
+        '\\texttrademark': u'™',
+        '\\texttwosuperior': u'²',
+        '\\textvisiblespace': u' ',
+        '\\thickspace': u'<span class="thickspace"> </span>', # 5/13 em
+        '\\;': u'<span class="thickspace"> </span>', # 5/13 em
+        '\\triangle': u'\u25B3', # WHITE UP-POINTING TRIANGLE, mathord
+        '\\triangledown': u'\u25BD', # WHITE DOWN-POINTING TRIANGLE, mathord
+        '\\varnothing': u'\u2300', # ⌀ DIAMETER SIGN
+        # functions
+        '\\Pr': u'Pr',
+        '\\arccos': u'arccos',
+        '\\arcsin': u'arcsin',
+        '\\arctan': u'arctan',
+        '\\arg': u'arg',
+        '\\cos': u'cos',
+        '\\cosh': u'cosh',
+        '\\cot': u'cot',
+        '\\coth': u'coth',
+        '\\csc': u'csc',
+        '\\deg': u'deg',
+        '\\det': u'det',
+        '\\dim': u'dim',
+        '\\exp': u'exp',
+        '\\gcd': u'gcd',
+        '\\hom': u'hom',
+        '\\injlim': u'inj lim',
+        '\\ker': u'ker',
+        '\\lg': u'lg',
+        '\\liminf': u'lim inf',
+        '\\limsup': u'lim sup',
+        '\\ln': u'ln',
+        '\\log': u'log',
+        '\\projlim': u'proj lim',
+        '\\sec': u'sec',
+        '\\sin': u'sin',
+        '\\sinh': u'sinh',
+        '\\tan': u'tan',
+        '\\tanh': u'tanh',
+    }
+    cmddict = {}
+    cmddict.update(tex2unichar.mathbin) # TODO: spacing around binary operators
+    cmddict.update(tex2unichar.mathopen)
+    cmddict.update(tex2unichar.mathclose)
+    cmddict.update(tex2unichar.mathfence)
+    cmddict.update(tex2unichar.mathord)
+    cmddict.update(tex2unichar.mathpunct)
+    cmddict.update(tex2unichar.space)
+    commands.update((f'\\{key}', value) for key, value in cmddict.items())
 
-  oversetfunctions = {
-      # math accents (cf. combiningfunctions)
-      # '\\acute':    u'´',
-      '\\bar':      u'‒',  # FIGURE DASH
-      # '\\breve':    u'˘',
-      # '\\check':    u'ˇ',
-      '\\dddot':    u'<span class="smallsymbol">⋯</span>',
-      # '\\ddot':     u'··', # ¨ too high
-      # '\\dot':      u'·',
-      # '\\grave':    u'`',
-      # '\\hat':      u'^',
-      # '\\mathring': u'˚',
-      # '\\tilde':    u'~',
-      '\\vec':      u'<span class="smallsymbol">→</span>',
-      # embellishments
-      '\\overleftarrow': u'⟵',
-      '\\overleftrightarrow': u'⟷',
-      '\\overrightarrow': u'⟶',
-      '\\widehat': u'^',
-      '\\widetilde': u'～',
-  }
+    oversetfunctions = {
+        # math accents (cf. combiningfunctions)
+        # '\\acute':    u'´',
+        '\\bar':      u'‒',  # FIGURE DASH
+        # '\\breve':    u'˘',
+        # '\\check':    u'ˇ',
+        '\\dddot':    u'<span class="smallsymbol">⋯</span>',
+        # '\\ddot':     u'··', # ¨ too high
+        # '\\dot':      u'·',
+        # '\\grave':    u'`',
+        # '\\hat':      u'^',
+        # '\\mathring': u'˚',
+        # '\\tilde':    u'~',
+        '\\vec':      u'<span class="smallsymbol">→</span>',
+        # embellishments
+        '\\overleftarrow': u'⟵',
+        '\\overleftrightarrow': u'⟷',
+        '\\overrightarrow': u'⟶',
+        '\\widehat': u'^',
+        '\\widetilde': u'～',
+    }
 
-  undersetfunctions = {
-      '\\underleftarrow': u'⟵',
-      '\\underleftrightarrow': u'⟷',
-      '\\underrightarrow': u'⟶',
-  }
+    undersetfunctions = {
+        '\\underleftarrow': u'⟵',
+        '\\underleftrightarrow': u'⟷',
+        '\\underrightarrow': u'⟶',
+    }
 
-  endings = {
-      u'bracket': u'}',
-      u'complex': u'\\]',
-      u'endafter': u'}',
-      u'endbefore': u'\\end{',
-      u'squarebracket': u']',
-      }
+    endings = {
+        u'bracket': u'}',
+        u'complex': u'\\]',
+        u'endafter': u'}',
+        u'endbefore': u'\\end{',
+        u'squarebracket': u']',
+        }
 
-  environments = {
-      u'align': [u'r', u'l',],
-      u'eqnarray': [u'r', u'c', u'l',],
-      u'gathered': [u'l', u'l',],
-      u'smallmatrix': [u'c', u'c',],
-      }
+    environments = {
+        u'align': [u'r', u'l',],
+        u'eqnarray': [u'r', u'c', u'l',],
+        u'gathered': [u'l', u'l',],
+        u'smallmatrix': [u'c', u'c',],
+        }
 
-  fontfunctions = {
-      u'\\boldsymbol': u'b', u'\\mathbb': u'span class="blackboard"',
-      u'\\mathbb{A}': u'𝔸', u'\\mathbb{B}': u'𝔹', u'\\mathbb{C}': u'ℂ',
-      u'\\mathbb{D}': u'𝔻', u'\\mathbb{E}': u'𝔼', u'\\mathbb{F}': u'𝔽',
-      u'\\mathbb{G}': u'𝔾', u'\\mathbb{H}': u'ℍ', u'\\mathbb{J}': u'𝕁',
-      u'\\mathbb{K}': u'𝕂', u'\\mathbb{L}': u'𝕃', u'\\mathbb{N}': u'ℕ',
-      u'\\mathbb{O}': u'𝕆', u'\\mathbb{P}': u'ℙ', u'\\mathbb{Q}': u'ℚ',
-      u'\\mathbb{R}': u'ℝ', u'\\mathbb{S}': u'𝕊', u'\\mathbb{T}': u'𝕋',
-      u'\\mathbb{W}': u'𝕎', u'\\mathbb{Z}': u'ℤ', u'\\mathbf': u'b',
-      u'\\mathcal': u'span class="scriptfont"',
-      u'\\mathcal{B}': u'ℬ', u'\\mathcal{E}': u'ℰ', u'\\mathcal{F}':
-      u'ℱ', u'\\mathcal{H}': u'ℋ', u'\\mathcal{I}': u'ℐ',
-      u'\\mathcal{L}': u'ℒ', u'\\mathcal{M}': u'ℳ', u'\\mathcal{R}': u'ℛ',
-      u'\\mathfrak': u'span class="fraktur"',
-      u'\\mathfrak{C}': u'ℭ', u'\\mathfrak{F}': u'𝔉', u'\\mathfrak{H}': u'ℌ',
-      u'\\mathfrak{I}': u'ℑ', u'\\mathfrak{R}': u'ℜ', u'\\mathfrak{Z}': u'ℨ',
-      u'\\mathit': u'i',
-      u'\\mathring{A}': u'Å', u'\\mathring{U}': u'Ů',
-      u'\\mathring{a}': u'å', u'\\mathring{u}': u'ů', u'\\mathring{w}': u'ẘ',
-      u'\\mathring{y}': u'ẙ',
-      u'\\mathrm': u'span class="mathrm"',
-      u'\\mathscr': u'span class="mathscr"',
-      u'\\mathscr{B}': u'ℬ', u'\\mathscr{E}': u'ℰ', u'\\mathscr{F}': u'ℱ',
-      u'\\mathscr{H}': u'ℋ', u'\\mathscr{I}': u'ℐ', u'\\mathscr{L}': u'ℒ',
-      u'\\mathscr{M}': u'ℳ', u'\\mathscr{R}': u'ℛ',
-      u'\\mathsf': u'span class="mathsf"',
-      u'\\mathtt': u'span class="mathtt"',
-      u'\\operatorname': u'span class="mathrm"',
-      }
+    fontfunctions = {
+        u'\\boldsymbol': u'b', u'\\mathbb': u'span class="blackboard"',
+        u'\\mathbb{A}': u'𝔸', u'\\mathbb{B}': u'𝔹', u'\\mathbb{C}': u'ℂ',
+        u'\\mathbb{D}': u'𝔻', u'\\mathbb{E}': u'𝔼', u'\\mathbb{F}': u'𝔽',
+        u'\\mathbb{G}': u'𝔾', u'\\mathbb{H}': u'ℍ', u'\\mathbb{J}': u'𝕁',
+        u'\\mathbb{K}': u'𝕂', u'\\mathbb{L}': u'𝕃', u'\\mathbb{N}': u'ℕ',
+        u'\\mathbb{O}': u'𝕆', u'\\mathbb{P}': u'ℙ', u'\\mathbb{Q}': u'ℚ',
+        u'\\mathbb{R}': u'ℝ', u'\\mathbb{S}': u'𝕊', u'\\mathbb{T}': u'𝕋',
+        u'\\mathbb{W}': u'𝕎', u'\\mathbb{Z}': u'ℤ', u'\\mathbf': u'b',
+        u'\\mathcal': u'span class="scriptfont"',
+        u'\\mathcal{B}': u'ℬ', u'\\mathcal{E}': u'ℰ', u'\\mathcal{F}':
+        u'ℱ', u'\\mathcal{H}': u'ℋ', u'\\mathcal{I}': u'ℐ',
+        u'\\mathcal{L}': u'ℒ', u'\\mathcal{M}': u'ℳ', u'\\mathcal{R}': u'ℛ',
+        u'\\mathfrak': u'span class="fraktur"',
+        u'\\mathfrak{C}': u'ℭ', u'\\mathfrak{F}': u'𝔉', u'\\mathfrak{H}': u'ℌ',
+        u'\\mathfrak{I}': u'ℑ', u'\\mathfrak{R}': u'ℜ', u'\\mathfrak{Z}': u'ℨ',
+        u'\\mathit': u'i',
+        u'\\mathring{A}': u'Å', u'\\mathring{U}': u'Ů',
+        u'\\mathring{a}': u'å', u'\\mathring{u}': u'ů', u'\\mathring{w}': u'ẘ',
+        u'\\mathring{y}': u'ẙ',
+        u'\\mathrm': u'span class="mathrm"',
+        u'\\mathscr': u'span class="mathscr"',
+        u'\\mathscr{B}': u'ℬ', u'\\mathscr{E}': u'ℰ', u'\\mathscr{F}': u'ℱ',
+        u'\\mathscr{H}': u'ℋ', u'\\mathscr{I}': u'ℐ', u'\\mathscr{L}': u'ℒ',
+        u'\\mathscr{M}': u'ℳ', u'\\mathscr{R}': u'ℛ',
+        u'\\mathsf': u'span class="mathsf"',
+        u'\\mathtt': u'span class="mathtt"',
+        u'\\operatorname': u'span class="mathrm"',
+        }
 
-  hybridfunctions = {
-      u'\\addcontentsline': [u'{$p!}{$q!}{$r!}', u'f0{}', u'ignored',],
-      u'\\addtocontents': [u'{$p!}{$q!}', u'f0{}', u'ignored',],
-      u'\\backmatter': [u'', u'f0{}', u'ignored',],
-      u'\\binom': [u'{$1}{$2}', u'f2{(}f0{f1{$1}f1{$2}}f2{)}', u'span class="binom"', u'span class="binomstack"', u'span class="bigdelimiter size2"',],
-      u'\\boxed': [u'{$1}', u'f0{$1}', u'span class="boxed"',],
-      u'\\cfrac': [u'[$p!]{$1}{$2}', u'f0{f3{(}f1{$1}f3{)/(}f2{$2}f3{)}}', u'span class="fullfraction"', u'span class="numerator align-$p"', u'span class="denominator"', u'span class="ignored"',],
-      u'\\color': [u'{$p!}{$1}', u'f0{$1}', u'span style="color: $p;"',],
-      u'\\colorbox': [u'{$p!}{$1}', u'f0{$1}', u'span class="colorbox" style="background: $p;"',],
-      u'\\dbinom': [u'{$1}{$2}', u'(f0{f1{f2{$1}}f1{f2{ }}f1{f2{$2}}})', u'span class="binomial"', u'span class="binomrow"', u'span class="binomcell"',],
-      u'\\dfrac': [u'{$1}{$2}', u'f0{f3{(}f1{$1}f3{)/(}f2{$2}f3{)}}', u'span class="fullfraction"', u'span class="numerator"', u'span class="denominator"', u'span class="ignored"',],
-      u'\\displaystyle': [u'{$1}', u'f0{$1}', u'span class="displaystyle"',],
-      u'\\fancyfoot': [u'[$p!]{$q!}', u'f0{}', u'ignored',],
-      u'\\fancyhead': [u'[$p!]{$q!}', u'f0{}', u'ignored',],
-      u'\\fbox': [u'{$1}', u'f0{$1}', u'span class="fbox"',],
-      u'\\fboxrule': [u'{$p!}', u'f0{}', u'ignored',],
-      u'\\fboxsep': [u'{$p!}', u'f0{}', u'ignored',],
-      u'\\fcolorbox': [u'{$p!}{$q!}{$1}', u'f0{$1}', u'span class="boxed" style="border-color: $p; background: $q;"',],
-      u'\\frac': [u'{$1}{$2}', u'f0{f3{(}f1{$1}f3{)/(}f2{$2}f3{)}}', u'span class="fraction"', u'span class="numerator"', u'span class="denominator"', u'span class="ignored"',],
-      u'\\framebox': [u'[$p!][$q!]{$1}', u'f0{$1}', u'span class="framebox align-$q" style="width: $p;"',],
-      u'\\frontmatter': [u'', u'f0{}', u'ignored',],
-      u'\\href': [u'[$o]{$u!}{$t!}', u'f0{$t}', u'a href="$u"',],
-      u'\\hspace': [u'{$p!}', u'f0{ }', u'span class="hspace" style="width: $p;"',],
-      u'\\leftroot': [u'{$p!}', u'f0{ }', u'span class="leftroot" style="width: $p;px"',],
-      # TODO: convert 1 mu to 1/18 em
-      # u'\\mspace': [u'{$p!}', u'f0{ }', u'span class="hspace" style="width: $p;"',],
-      u'\\nicefrac': [u'{$1}{$2}', u'f0{f1{$1}⁄f2{$2}}', u'span class="fraction"', u'sup class="numerator"', u'sub class="denominator"', u'span class="ignored"',],
-      u'\\parbox': [u'[$p!]{$w!}{$1}', u'f0{1}', u'div class="Boxed" style="width: $w;"',],
-      u'\\raisebox': [u'{$p!}{$1}', u'f0{$1.font}', u'span class="raisebox" style="vertical-align: $p;"',],
-      u'\\renewenvironment': [u'{$1!}{$2!}{$3!}', u'',],
-      u'\\rule': [u'[$v!]{$w!}{$h!}', u'f0/', u'hr class="line" style="width: $w; height: $h;"',],
-      u'\\scriptscriptstyle': [u'{$1}', u'f0{$1}', u'span class="scriptscriptstyle"',],
-      u'\\scriptstyle': [u'{$1}', u'f0{$1}', u'span class="scriptstyle"',],
-      # TODO: increase √-size with argument (\frac in display mode, ...)
-      u'\\sqrt': [u'[$0]{$1}', u'f0{f1{$0}f2{√}f4{(}f3{$1}f4{)}}', u'span class="sqrt"', u'sup class="root"', u'span class="radical"', u'span class="root"', u'span class="ignored"',],
-      u'\\stackrel': [u'{$1}{$2}', u'f0{f1{$1}f2{$2}}', u'span class="stackrel"', u'span class="upstackrel"', u'span class="downstackrel"',],
-      u'\\tbinom': [u'{$1}{$2}', u'(f0{f1{f2{$1}}f1{f2{ }}f1{f2{$2}}})', u'span class="binomial"', u'span class="binomrow"', u'span class="binomcell"',],
-      u'\\tfrac':  [u'{$1}{$2}', u'f0{f3{(}f1{$1}f3{)/(}f2{$2}f3{)}}', u'span class="textfraction"', u'span class="numerator"', u'span class="denominator"', u'span class="ignored"',],
-      u'\\textcolor': [u'{$p!}{$1}', u'f0{$1}', u'span style="color: $p;"',],
-      u'\\textstyle': [u'{$1}', u'f0{$1}', u'span class="textstyle"',],
-      u'\\thispagestyle': [u'{$p!}', u'f0{}', u'ignored',],
-      u'\\unit': [u'[$0]{$1}', u'$0f0{$1.font}', u'span class="unit"',],
-      u'\\unitfrac': [u'[$0]{$1}{$2}', u'$0f0{f1{$1.font}⁄f2{$2.font}}', u'span class="fraction"', u'sup class="unit"', u'sub class="unit"',],
-      u'\\uproot': [u'{$p!}', u'f0{ }', u'span class="uproot" style="width: $p;px"',],
-      u'\\url': [u'{$u!}', u'f0{$u}', u'a href="$u"',],
-      u'\\vspace': [u'{$p!}', u'f0{ }', u'span class="vspace" style="height: $p;"',],
-      }
+    hybridfunctions = {
+        u'\\addcontentsline': [u'{$p!}{$q!}{$r!}', u'f0{}', u'ignored',],
+        u'\\addtocontents': [u'{$p!}{$q!}', u'f0{}', u'ignored',],
+        u'\\backmatter': [u'', u'f0{}', u'ignored',],
+        u'\\binom': [u'{$1}{$2}', u'f2{(}f0{f1{$1}f1{$2}}f2{)}', u'span class="binom"', u'span class="binomstack"', u'span class="bigdelimiter size2"',],
+        u'\\boxed': [u'{$1}', u'f0{$1}', u'span class="boxed"',],
+        u'\\cfrac': [u'[$p!]{$1}{$2}', u'f0{f3{(}f1{$1}f3{)/(}f2{$2}f3{)}}', u'span class="fullfraction"', u'span class="numerator align-$p"', u'span class="denominator"', u'span class="ignored"',],
+        u'\\color': [u'{$p!}{$1}', u'f0{$1}', u'span style="color: $p;"',],
+        u'\\colorbox': [u'{$p!}{$1}', u'f0{$1}', u'span class="colorbox" style="background: $p;"',],
+        u'\\dbinom': [u'{$1}{$2}', u'(f0{f1{f2{$1}}f1{f2{ }}f1{f2{$2}}})', u'span class="binomial"', u'span class="binomrow"', u'span class="binomcell"',],
+        u'\\dfrac': [u'{$1}{$2}', u'f0{f3{(}f1{$1}f3{)/(}f2{$2}f3{)}}', u'span class="fullfraction"', u'span class="numerator"', u'span class="denominator"', u'span class="ignored"',],
+        u'\\displaystyle': [u'{$1}', u'f0{$1}', u'span class="displaystyle"',],
+        u'\\fancyfoot': [u'[$p!]{$q!}', u'f0{}', u'ignored',],
+        u'\\fancyhead': [u'[$p!]{$q!}', u'f0{}', u'ignored',],
+        u'\\fbox': [u'{$1}', u'f0{$1}', u'span class="fbox"',],
+        u'\\fboxrule': [u'{$p!}', u'f0{}', u'ignored',],
+        u'\\fboxsep': [u'{$p!}', u'f0{}', u'ignored',],
+        u'\\fcolorbox': [u'{$p!}{$q!}{$1}', u'f0{$1}', u'span class="boxed" style="border-color: $p; background: $q;"',],
+        u'\\frac': [u'{$1}{$2}', u'f0{f3{(}f1{$1}f3{)/(}f2{$2}f3{)}}', u'span class="fraction"', u'span class="numerator"', u'span class="denominator"', u'span class="ignored"',],
+        u'\\framebox': [u'[$p!][$q!]{$1}', u'f0{$1}', u'span class="framebox align-$q" style="width: $p;"',],
+        u'\\frontmatter': [u'', u'f0{}', u'ignored',],
+        u'\\href': [u'[$o]{$u!}{$t!}', u'f0{$t}', u'a href="$u"',],
+        u'\\hspace': [u'{$p!}', u'f0{ }', u'span class="hspace" style="width: $p;"',],
+        u'\\leftroot': [u'{$p!}', u'f0{ }', u'span class="leftroot" style="width: $p;px"',],
+        # TODO: convert 1 mu to 1/18 em
+        # u'\\mspace': [u'{$p!}', u'f0{ }', u'span class="hspace" style="width: $p;"',],
+        u'\\nicefrac': [u'{$1}{$2}', u'f0{f1{$1}⁄f2{$2}}', u'span class="fraction"', u'sup class="numerator"', u'sub class="denominator"', u'span class="ignored"',],
+        u'\\parbox': [u'[$p!]{$w!}{$1}', u'f0{1}', u'div class="Boxed" style="width: $w;"',],
+        u'\\raisebox': [u'{$p!}{$1}', u'f0{$1.font}', u'span class="raisebox" style="vertical-align: $p;"',],
+        u'\\renewenvironment': [u'{$1!}{$2!}{$3!}', u'',],
+        u'\\rule': [u'[$v!]{$w!}{$h!}', u'f0/', u'hr class="line" style="width: $w; height: $h;"',],
+        u'\\scriptscriptstyle': [u'{$1}', u'f0{$1}', u'span class="scriptscriptstyle"',],
+        u'\\scriptstyle': [u'{$1}', u'f0{$1}', u'span class="scriptstyle"',],
+        # TODO: increase √-size with argument (\frac in display mode, ...)
+        u'\\sqrt': [u'[$0]{$1}', u'f0{f1{$0}f2{√}f4{(}f3{$1}f4{)}}', u'span class="sqrt"', u'sup class="root"', u'span class="radical"', u'span class="root"', u'span class="ignored"',],
+        u'\\stackrel': [u'{$1}{$2}', u'f0{f1{$1}f2{$2}}', u'span class="stackrel"', u'span class="upstackrel"', u'span class="downstackrel"',],
+        u'\\tbinom': [u'{$1}{$2}', u'(f0{f1{f2{$1}}f1{f2{ }}f1{f2{$2}}})', u'span class="binomial"', u'span class="binomrow"', u'span class="binomcell"',],
+        u'\\tfrac':  [u'{$1}{$2}', u'f0{f3{(}f1{$1}f3{)/(}f2{$2}f3{)}}', u'span class="textfraction"', u'span class="numerator"', u'span class="denominator"', u'span class="ignored"',],
+        u'\\textcolor': [u'{$p!}{$1}', u'f0{$1}', u'span style="color: $p;"',],
+        u'\\textstyle': [u'{$1}', u'f0{$1}', u'span class="textstyle"',],
+        u'\\thispagestyle': [u'{$p!}', u'f0{}', u'ignored',],
+        u'\\unit': [u'[$0]{$1}', u'$0f0{$1.font}', u'span class="unit"',],
+        u'\\unitfrac': [u'[$0]{$1}{$2}', u'$0f0{f1{$1.font}⁄f2{$2.font}}', u'span class="fraction"', u'sup class="unit"', u'sub class="unit"',],
+        u'\\uproot': [u'{$p!}', u'f0{ }', u'span class="uproot" style="width: $p;px"',],
+        u'\\url': [u'{$u!}', u'f0{$u}', u'a href="$u"',],
+        u'\\vspace': [u'{$p!}', u'f0{ }', u'span class="vspace" style="height: $p;"',],
+        }
 
-  hybridsizes = {
-      u'\\binom': u'$1+$2', u'\\cfrac': u'$1+$2', u'\\dbinom': u'$1+$2+1',
-      u'\\dfrac': u'$1+$2', u'\\frac': u'$1+$2', u'\\tbinom': u'$1+$2+1',
-      }
+    hybridsizes = {
+        u'\\binom': u'$1+$2', u'\\cfrac': u'$1+$2', u'\\dbinom': u'$1+$2+1',
+        u'\\dfrac': u'$1+$2', u'\\frac': u'$1+$2', u'\\tbinom': u'$1+$2+1',
+        }
 
-  labelfunctions = {
-      '\\label': u'a name="#"',
-      }
+    labelfunctions = {
+        '\\label': u'a name="#"',
+        }
 
-  limitcommands = {
-      '\\biginterleave': u'⫼',
-      '\\inf': u'inf',
-      '\\lim': u'lim',
-      '\\max': u'max',
-      '\\min': u'min',
-      '\\sup': u'sup',
-      '\\ointop':    u'<span class="bigoperator integral">∮</span>',
-      '\\bigcap':    u'<span class="bigoperator">⋂</span>',
-      '\\bigcup':    u'<span class="bigoperator">⋃</span>',
-      '\\bigodot':   u'<span class="bigoperator">⨀</span>',
-      '\\bigoplus':  u'<span class="bigoperator">⨁</span>',
-      '\\bigotimes': u'<span class="bigoperator">⨂</span>',
-      '\\bigsqcap':  u'<span class="bigoperator">⨅</span>',
-      '\\bigsqcup':  u'<span class="bigoperator">⨆</span>',
-      '\\biguplus':  u'<span class="bigoperator">⨄</span>',
-      '\\bigvee':    u'<span class="bigoperator">⋁</span>',
-      '\\bigwedge':  u'<span class="bigoperator">⋀</span>',
-      '\\coprod':    u'<span class="bigoperator">∐</span>',
-      '\\intop':     u'<span class="bigoperator integral">∫</span>',
-      '\\prod':      u'<span class="bigoperator">∏</span>',
-      '\\sum':       u'<span class="bigoperator">∑</span>',
-      '\\varprod':   u'<span class="bigoperator">⨉</span>',
-      '\\zcmp': u'⨟', '\\zhide': u'⧹', '\\zpipe': u'⨠', '\\zproject': u'⨡',
-      # integrals have limits in index position with LaTeX default settings
-      # TODO: move to commands?
-      '\\int': u'<span class="bigoperator integral">∫</span>',
-      '\\iint': u'<span class="bigoperator integral">∬</span>',
-      '\\iiint': u'<span class="bigoperator integral">∭</span>',
-      '\\iiiint': u'<span class="bigoperator integral">⨌</span>',
-      '\\fint': u'<span class="bigoperator integral">⨏</span>',
-      '\\idotsint': u'<span class="bigoperator integral">∫⋯∫</span>',
-      '\\oint': u'<span class="bigoperator integral">∮</span>',
-      '\\oiint': u'<span class="bigoperator integral">∯</span>',
-      '\\oiiint': u'<span class="bigoperator integral">∰</span>',
-      '\\ointclockwise': u'<span class="bigoperator integral">∲</span>',
-      '\\ointctrclockwise': u'<span class="bigoperator integral">∳</span>',
-      '\\smallint': u'<span class="smallsymbol integral">∫</span>',
-      '\\sqint': u'<span class="bigoperator integral">⨖</span>',
-      '\\varointclockwise': u'<span class="bigoperator integral">∲</span>',
-      }
+    limitcommands = {
+        '\\biginterleave': u'⫼',
+        '\\inf': u'inf',
+        '\\lim': u'lim',
+        '\\max': u'max',
+        '\\min': u'min',
+        '\\sup': u'sup',
+        '\\ointop':    u'<span class="bigoperator integral">∮</span>',
+        '\\bigcap':    u'<span class="bigoperator">⋂</span>',
+        '\\bigcup':    u'<span class="bigoperator">⋃</span>',
+        '\\bigodot':   u'<span class="bigoperator">⨀</span>',
+        '\\bigoplus':  u'<span class="bigoperator">⨁</span>',
+        '\\bigotimes': u'<span class="bigoperator">⨂</span>',
+        '\\bigsqcap':  u'<span class="bigoperator">⨅</span>',
+        '\\bigsqcup':  u'<span class="bigoperator">⨆</span>',
+        '\\biguplus':  u'<span class="bigoperator">⨄</span>',
+        '\\bigvee':    u'<span class="bigoperator">⋁</span>',
+        '\\bigwedge':  u'<span class="bigoperator">⋀</span>',
+        '\\coprod':    u'<span class="bigoperator">∐</span>',
+        '\\intop':     u'<span class="bigoperator integral">∫</span>',
+        '\\prod':      u'<span class="bigoperator">∏</span>',
+        '\\sum':       u'<span class="bigoperator">∑</span>',
+        '\\varprod':   u'<span class="bigoperator">⨉</span>',
+        '\\zcmp': u'⨟', '\\zhide': u'⧹', '\\zpipe': u'⨠', '\\zproject': u'⨡',
+        # integrals have limits in index position with LaTeX default settings
+        # TODO: move to commands?
+        '\\int': u'<span class="bigoperator integral">∫</span>',
+        '\\iint': u'<span class="bigoperator integral">∬</span>',
+        '\\iiint': u'<span class="bigoperator integral">∭</span>',
+        '\\iiiint': u'<span class="bigoperator integral">⨌</span>',
+        '\\fint': u'<span class="bigoperator integral">⨏</span>',
+        '\\idotsint': u'<span class="bigoperator integral">∫⋯∫</span>',
+        '\\oint': u'<span class="bigoperator integral">∮</span>',
+        '\\oiint': u'<span class="bigoperator integral">∯</span>',
+        '\\oiiint': u'<span class="bigoperator integral">∰</span>',
+        '\\ointclockwise': u'<span class="bigoperator integral">∲</span>',
+        '\\ointctrclockwise': u'<span class="bigoperator integral">∳</span>',
+        '\\smallint': u'<span class="smallsymbol integral">∫</span>',
+        '\\sqint': u'<span class="bigoperator integral">⨖</span>',
+        '\\varointclockwise': u'<span class="bigoperator integral">∲</span>',
+        }
 
-  modified = {
-      u'\n': u'', u' ': u'', u'$': u'', u'&': u'	', u'\'': u'’', u'+': u'\u2009+\u2009',
-      u',': u',\u2009', u'-': u'\u2009−\u2009', u'/': u'\u2009⁄\u2009', u':': u' : ', u'<': u'\u2009&lt;\u2009',
-      u'=': u'\u2009=\u2009', u'>': u'\u2009&gt;\u2009', u'@': u'', u'~': u'\u00a0',
-      }
+    modified = {
+        u'\n': u'', u' ': u'', u'$': u'', u'&': u'	', u'\'': u'’', u'+': u'\u2009+\u2009',
+        u',': u',\u2009', u'-': u'\u2009−\u2009', u'/': u'\u2009⁄\u2009', u':': u' : ', u'<': u'\u2009&lt;\u2009',
+        u'=': u'\u2009=\u2009', u'>': u'\u2009&gt;\u2009', u'@': u'', u'~': u'\u00a0',
+        }
 
-  onefunctions = {
-      '\\big': 'span class="bigdelimiter size1"',
-      '\\bigl': 'span class="bigdelimiter size1"',
-      '\\bigr': 'span class="bigdelimiter size1"',
-      '\\Big': 'span class="bigdelimiter size2"',
-      '\\Bigl': 'span class="bigdelimiter size2"',
-      '\\Bigr': 'span class="bigdelimiter size2"',
-      '\\bigg': 'span class="bigdelimiter size3"',
-      '\\biggl': 'span class="bigdelimiter size3"',
-      '\\biggr': 'span class="bigdelimiter size3"',
-      '\\Bigg': 'span class="bigdelimiter size4"',
-      '\\Biggl': 'span class="bigdelimiter size4"',
-      '\\Biggr': 'span class="bigdelimiter size4"',
-      # '\\bar': 'span class="bar"',
-      '\\begin{array}': 'span class="arraydef"',
-      '\\centering': 'span class="align-center"',
-      '\\ensuremath': 'span class="ensuremath"',
-      '\\hphantom': 'span class="phantom"',
-      '\\noindent': 'span class="noindent"',
-      '\\overbrace': 'span class="overbrace"',
-      '\\overline': 'span class="overline"',
-      '\\phantom': 'span class="phantom"',
-      '\\underbrace': 'span class="underbrace"',
-      '\\underline': 'u',
-      '\\vphantom': 'span class="phantom"',
-      }
+    onefunctions = {
+        '\\big': 'span class="bigdelimiter size1"',
+        '\\bigl': 'span class="bigdelimiter size1"',
+        '\\bigr': 'span class="bigdelimiter size1"',
+        '\\Big': 'span class="bigdelimiter size2"',
+        '\\Bigl': 'span class="bigdelimiter size2"',
+        '\\Bigr': 'span class="bigdelimiter size2"',
+        '\\bigg': 'span class="bigdelimiter size3"',
+        '\\biggl': 'span class="bigdelimiter size3"',
+        '\\biggr': 'span class="bigdelimiter size3"',
+        '\\Bigg': 'span class="bigdelimiter size4"',
+        '\\Biggl': 'span class="bigdelimiter size4"',
+        '\\Biggr': 'span class="bigdelimiter size4"',
+        # '\\bar': 'span class="bar"',
+        '\\begin{array}': 'span class="arraydef"',
+        '\\centering': 'span class="align-center"',
+        '\\ensuremath': 'span class="ensuremath"',
+        '\\hphantom': 'span class="phantom"',
+        '\\noindent': 'span class="noindent"',
+        '\\overbrace': 'span class="overbrace"',
+        '\\overline': 'span class="overline"',
+        '\\phantom': 'span class="phantom"',
+        '\\underbrace': 'span class="underbrace"',
+        '\\underline': 'u',
+        '\\vphantom': 'span class="phantom"',
+        }
 
-  # relations (put additional space before and after the symbol)
-  spacedcommands = {
-      # negated symbols without pre-composed Unicode character
-      '\\nleqq':      u'\u2266\u0338', # ≦̸
-      '\\ngeqq':      u'\u2267\u0338', # ≧̸
-      '\\nleqslant':  u'\u2a7d\u0338', # ⩽̸
-      '\\ngeqslant':  u'\u2a7e\u0338', # ⩾̸
-      '\\nsubseteqq': u'\u2AC5\u0338', # ⫅̸
-      '\\nsupseteqq': u'\u2AC6\u0338', # ⫆̸
-      '\\nsqsubset':  u'\u2276\u228F', # ⊏̸
-      # modified glyphs
-      '\\shortmid': u'<span class="smallsymbol">∣</span>',
-      '\\shortparallel': u'<span class="smallsymbol">∥</span>',
-      '\\nshortmid': u'<span class="smallsymbol">∤</span>',
-      '\\nshortparallel': u'<span class="smallsymbol">∦</span>',
-      '\\smallfrown': u'<span class="smallsymbol">⌢</span>',
-      '\\smallsmile': u'<span class="smallsymbol">⌣</span>',
-      '\\thickapprox': u'<span class="boldsymbol">≈</span>',
-      '\\thicksim': u'<span class="boldsymbol">∼</span>',
-      '\\varpropto': u'<span class="mathsf">\u221d</span>', # ∝ PROPORTIONAL TO
-      }
-  for key, value in tex2unichar.mathrel.items():
-      spacedcommands['\\'+key] = value
-  starts = {
-      u'beginafter': u'}', u'beginbefore': u'\\begin{', u'bracket': u'{',
-      u'command': u'\\', u'comment': u'%', u'complex': u'\\[', u'simple': u'$',
-      u'squarebracket': u'[', u'unnumbered': u'*',
-      }
+    # relations (put additional space before and after the symbol)
+    spacedcommands = {
+        # negated symbols without pre-composed Unicode character
+        '\\nleqq':      u'\u2266\u0338', # ≦̸
+        '\\ngeqq':      u'\u2267\u0338', # ≧̸
+        '\\nleqslant':  u'\u2a7d\u0338', # ⩽̸
+        '\\ngeqslant':  u'\u2a7e\u0338', # ⩾̸
+        '\\nsubseteqq': u'\u2AC5\u0338', # ⫅̸
+        '\\nsupseteqq': u'\u2AC6\u0338', # ⫆̸
+        '\\nsqsubset':  u'\u2276\u228F', # ⊏̸
+        # modified glyphs
+        '\\shortmid': u'<span class="smallsymbol">∣</span>',
+        '\\shortparallel': u'<span class="smallsymbol">∥</span>',
+        '\\nshortmid': u'<span class="smallsymbol">∤</span>',
+        '\\nshortparallel': u'<span class="smallsymbol">∦</span>',
+        '\\smallfrown': u'<span class="smallsymbol">⌢</span>',
+        '\\smallsmile': u'<span class="smallsymbol">⌣</span>',
+        '\\thickapprox': u'<span class="boldsymbol">≈</span>',
+        '\\thicksim': u'<span class="boldsymbol">∼</span>',
+        '\\varpropto': u'<span class="mathsf">\u221d</span>', # ∝ PROPORTIONAL TO
+        }
+    for key, value in tex2unichar.mathrel.items():
+        spacedcommands[f'\\{key}'] = value
+    starts = {
+        u'beginafter': u'}', u'beginbefore': u'\\begin{', u'bracket': u'{',
+        u'command': u'\\', u'comment': u'%', u'complex': u'\\[', u'simple': u'$',
+        u'squarebracket': u'[', u'unnumbered': u'*',
+        }
 
-  symbolfunctions = {
-      u'^': u'sup', u'_': u'sub',
-      }
+    symbolfunctions = {
+        u'^': u'sup', u'_': u'sub',
+        }
 
-  textfunctions = {
-      u'\\mbox': u'span class="mbox"',
-      u'\\text': u'span class="text"',
-      u'\\textbf': u'span class="textbf"',
-      u'\\textit': u'span class="textit"',
-      u'\\textnormal': u'span class="textnormal"',
-      u'\\textrm': u'span class="textrm"',
-      u'\\textsc': u'span class="textsc"',
-      u'\\textsf': u'span class="textsf"',
-      u'\\textsl': u'span class="textsl"',
-      u'\\texttt': u'span class="texttt"',
-      u'\\textup': u'span class="normal"',
-      }
+    textfunctions = {
+        u'\\mbox': u'span class="mbox"',
+        u'\\text': u'span class="text"',
+        u'\\textbf': u'span class="textbf"',
+        u'\\textit': u'span class="textit"',
+        u'\\textnormal': u'span class="textnormal"',
+        u'\\textrm': u'span class="textrm"',
+        u'\\textsc': u'span class="textsc"',
+        u'\\textsf': u'span class="textsf"',
+        u'\\textsl': u'span class="textsl"',
+        u'\\texttt': u'span class="texttt"',
+        u'\\textup': u'span class="normal"',
+        }
 
-  unmodified = {
-      u'characters': [u'.', u'*', u'€', u'(', u')', u'[', u']',
-                      u'·', u'!', u';', u'|', u'§', u'"', u'?'],
-      }
+    unmodified = {
+        u'characters': [u'.', u'*', u'€', u'(', u')', u'[', u']',
+                        u'·', u'!', u';', u'|', u'§', u'"', u'?'],
+        }
 
 
 class CommandLineParser(object):
@@ -563,57 +565,54 @@ class CommandLineParser(object):
     self.options = options
 
   def parseoptions(self, args):
-    "Parse command line options"
-    if len(args) == 0:
+      "Parse command line options"
+      if len(args) == 0:
+        return None
+      while len(args) > 0 and args[0].startswith('--'):
+          key, value = self.readoption(args)
+          if not key:
+              return f'Option {value} not recognized'
+          if not value:
+              return f'Option {key} needs a value'
+          setattr(self.options, key, value)
       return None
-    while len(args) > 0 and args[0].startswith('--'):
-      key, value = self.readoption(args)
-      if not key:
-        return 'Option ' + value + ' not recognized'
-      if not value:
-        return 'Option ' + key + ' needs a value'
-      setattr(self.options, key, value)
-    return None
 
   def readoption(self, args):
-    "Read the key and value for an option"
-    arg = args[0][2:]
-    del args[0]
-    if '=' in arg:
-      key = self.readequalskey(arg, args)
-    else:
-      key = arg.replace('-', '')
-    if not hasattr(self.options, key):
-      return None, key
-    current = getattr(self.options, key)
-    if isinstance(current, bool):
-      return key, True
-    # read value
-    if len(args) == 0:
-      return key, None
-    if args[0].startswith('"'):
-      initial = args[0]
+      "Read the key and value for an option"
+      arg = args[0][2:]
       del args[0]
-      return key, self.readquoted(args, initial)
-    value = args[0].decode('utf-8')
-    del args[0]
-    if isinstance(current, list):
-      current.append(value)
-      return key, current
-    return key, value
+      key = self.readequalskey(arg, args) if '=' in arg else arg.replace('-', '')
+      if not hasattr(self.options, key):
+        return None, key
+      current = getattr(self.options, key)
+      if isinstance(current, bool):
+        return key, True
+      # read value
+      if len(args) == 0:
+        return key, None
+      if args[0].startswith('"'):
+        initial = args[0]
+        del args[0]
+        return key, self.readquoted(args, initial)
+      value = args[0].decode('utf-8')
+      del args[0]
+      if isinstance(current, list):
+        current.append(value)
+        return key, current
+      return key, value
 
   def readquoted(self, args, initial):
-    "Read a value between quotes"
-    Trace.error('Oops')
-    value = initial[1:]
-    while len(args) > 0 and not args[0].endswith('"') and not args[0].startswith('--'):
-      Trace.error('Appending ' + args[0])
-      value += ' ' + args[0]
-      del args[0]
-    if len(args) == 0 or args[0].startswith('--'):
-      return None
-    value += ' ' + args[0:-1]
-    return value
+      "Read a value between quotes"
+      Trace.error('Oops')
+      value = initial[1:]
+      while len(args) > 0 and not args[0].endswith('"') and not args[0].startswith('--'):
+          Trace.error(f'Appending {args[0]}')
+          value += f' {args[0]}'
+          del args[0]
+      if len(args) == 0 or args[0].startswith('--'):
+        return None
+      value += ' ' + args[:-1]
+      return value
 
   def readequalskey(self, arg, args):
     "Read a key using equals"
@@ -639,15 +638,14 @@ class Options(object):
   branches = dict()
 
   def parseoptions(self, args):
-    "Parse command line options"
-    Options.location = args[0]
-    del args[0]
-    parser = CommandLineParser(Options)
-    result = parser.parseoptions(args)
-    if result:
-      Trace.error(result)
-      self.usage()
-    self.processoptions()
+      "Parse command line options"
+      Options.location = args[0]
+      del args[0]
+      parser = CommandLineParser(Options)
+      if result := parser.parseoptions(args):
+          Trace.error(result)
+          self.usage()
+      self.processoptions()
 
   def processoptions(self):
     "Process all options parsed."
@@ -661,11 +659,16 @@ class Options(object):
         setattr(Trace, param, getattr(self, param[:-4]))
 
   def usage(self):
-    "Show correct usage"
-    Trace.error('Usage: ' + os.path.basename(Options.location)
-                + ' [options] "input string"')
-    Trace.error('Convert input string with LaTeX math to MathML')
-    self.showoptions()
+      "Show correct usage"
+      Trace.error(
+          (
+              f'Usage: {os.path.basename(Options.location)}'
+              + ' [options] "input string"'
+          )
+      )
+
+      Trace.error('Convert input string with LaTeX math to MathML')
+      self.showoptions()
 
   def showoptions(self):
     "Show all possible options"
@@ -677,9 +680,9 @@ class Options(object):
     sys.exit()
 
   def showversion(self):
-    "Return the current eLyXer version string"
-    Trace.error('math2html '+__version__)
-    sys.exit()
+      "Return the current eLyXer version string"
+      Trace.error(f'math2html {__version__}')
+      sys.exit()
 
 
 class Cloner(object):
@@ -725,12 +728,12 @@ class ContainerExtractor(object):
     return list
 
   def process(self, container, list):
-    "Add allowed containers."
-    name = container.__class__.__name__
-    if name in self.allowed:
-      list.append(container)
-    else:
-      Trace.error('Unknown container class ' + name)
+      "Add allowed containers."
+      name = container.__class__.__name__
+      if name in self.allowed:
+          list.append(container)
+      else:
+          Trace.error(f'Unknown container class {name}')
 
   def safeclone(self, container):
     "Return a new container with contents only in a safe list, recursively."
@@ -744,8 +747,8 @@ class Parser(object):
   "A generic parser"
 
   def __init__(self):
-    self.begin = 0
-    self.parameters = dict()
+      self.begin = 0
+      self.parameters = {}
 
   def parseheader(self, reader):
     "Parse the header"
@@ -755,38 +758,37 @@ class Parser(object):
     return header
 
   def parseparameter(self, reader):
-    "Parse a parameter"
-    split = reader.currentline().strip().split(' ', 1)
-    reader.nextline()
-    if len(split) == 0:
-      return
-    key = split[0]
-    if len(split) == 1:
-      self.parameters[key] = True
-      return
-    if not '"' in split[1]:
-      self.parameters[key] = split[1].strip()
-      return
-    doublesplit = split[1].split('"')
-    self.parameters[key] = doublesplit[1]
+      "Parse a parameter"
+      split = reader.currentline().strip().split(' ', 1)
+      reader.nextline()
+      if len(split) == 0:
+        return
+      key = split[0]
+      if len(split) == 1:
+        self.parameters[key] = True
+        return
+      if '"' not in split[1]:
+          self.parameters[key] = split[1].strip()
+          return
+      doublesplit = split[1].split('"')
+      self.parameters[key] = doublesplit[1]
 
   def parseending(self, reader, process):
-    "Parse until the current ending is found"
-    if not self.ending:
-      Trace.error('No ending for ' + unicode(self))
-      return
-    while not reader.currentline().startswith(self.ending):
-      process()
+      "Parse until the current ending is found"
+      if not self.ending:
+          Trace.error(f'No ending for {unicode(self)}')
+          return
+      while not reader.currentline().startswith(self.ending):
+        process()
 
   def parsecontainer(self, reader, contents):
-    container = self.factory.createcontainer(reader)
-    if container:
-      container.parent = self.parent
-      contents.append(container)
+      if container := self.factory.createcontainer(reader):
+          container.parent = self.parent
+          contents.append(container)
 
   def __unicode__(self):
-    "Return a description"
-    return self.__class__.__name__ + ' (' + unicode(self.begin) + ')'
+      "Return a description"
+      return f'{self.__class__.__name__} ({unicode(self.begin)})'
 
   if sys.version_info >= (3, 0):
     __str__ = __unicode__
@@ -883,8 +885,8 @@ class ContainerOutput(object):
   "The generic HTML output for a container."
 
   def gethtml(self, container):
-    "Show an error."
-    Trace.error('gethtml() not implemented for ' + unicode(self))
+      "Show an error."
+      Trace.error(f'gethtml() not implemented for {unicode(self)}')
 
   def isempty(self):
     "Decide if the output is empty: by default, not empty."
@@ -911,16 +913,16 @@ class ContentsOutput(ContainerOutput):
   "Outputs the contents converted to HTML"
 
   def gethtml(self, container):
-    "Return the HTML code"
-    html = []
-    if container.contents == None:
+      "Return the HTML code"
+      html = []
+      if container.contents is None:
+          return html
+      for element in container.contents:
+          if not hasattr(element, 'gethtml'):
+              Trace.error(f'No html in {element.__class__.__name__}: {unicode(element)}')
+              return html
+          html += element.gethtml()
       return html
-    for element in container.contents:
-      if not hasattr(element, 'gethtml'):
-        Trace.error('No html in ' + element.__class__.__name__ + ': ' + unicode(element))
-        return html
-      html += element.gethtml()
-    return html
 
 class TaggedOutput(ContentsOutput):
   "Outputs an HTML tag surrounding the contents."
@@ -953,40 +955,40 @@ class TaggedOutput(ContentsOutput):
     return html
 
   def open(self, container):
-    "Get opening line."
-    if not self.checktag(container):
-      return ''
-    open = '<' + self.tag + '>'
-    if self.breaklines:
-      return open + '\n'
-    return open
+      "Get opening line."
+      if not self.checktag(container):
+        return ''
+      open = f'<{self.tag}>'
+      if self.breaklines:
+        return open + '\n'
+      return open
 
   def close(self, container):
-    "Get closing line."
-    if not self.checktag(container):
-      return ''
-    close = '</' + self.tag.split()[0] + '>'
-    if self.breaklines:
-      return '\n' + close + '\n'
-    return close
+      "Get closing line."
+      if not self.checktag(container):
+        return ''
+      close = f'</{self.tag.split()[0]}>'
+      if self.breaklines:
+        return '\n' + close + '\n'
+      return close
 
   def selfclosing(self, container):
-    "Get self-closing line."
-    if not self.checktag(container):
-      return ''
-    selfclosing = '<' + self.tag + '/>'
-    if self.breaklines:
-      return selfclosing + '\n'
-    return selfclosing
+      "Get self-closing line."
+      if not self.checktag(container):
+        return ''
+      selfclosing = f'<{self.tag}/>'
+      if self.breaklines:
+        return selfclosing + '\n'
+      return selfclosing
 
   def checktag(self, container):
-    "Check that the tag is valid."
-    if not self.tag:
-      Trace.error('No tag in ' + unicode(container))
-      return False
-    if self.tag == '':
-      return False
-    return True
+      "Check that the tag is valid."
+      if not self.tag:
+          Trace.error(f'No tag in {unicode(container)}')
+          return False
+      if self.tag == '':
+        return False
+      return True
 
 class FilteredOutput(ContentsOutput):
   "Returns the output in the contents, but filtered:"
@@ -1001,12 +1003,9 @@ class FilteredOutput(ContentsOutput):
     self.filters.append((original, replacement))
 
   def gethtml(self, container):
-    "Return the HTML code"
-    result = []
-    html = ContentsOutput.gethtml(self, container)
-    for line in html:
-      result.append(self.filter(line))
-    return result
+      "Return the HTML code"
+      html = ContentsOutput.gethtml(self, container)
+      return [self.filter(line) for line in html]
 
   def filter(self, line):
     "Filter a single line with all available filters."
@@ -1085,10 +1084,8 @@ class Globable(object):
     return self.glob(lambda: self.current().isdigit())
 
   def isidentifier(self):
-    "Return if the current character is alphanumeric or _."
-    if self.current().isalnum() or self.current() == '_':
-      return True
-    return False
+      "Return if the current character is alphanumeric or _."
+      return bool(self.current().isalnum() or self.current() == '_')
 
   def globidentifier(self):
     "Glob alphanumeric and _ symbols."
@@ -1126,14 +1123,14 @@ class Globable(object):
     self.endinglist.add(ending, optional)
 
   def popending(self, expected = None):
-    "Pop the ending found at the current position"
-    if self.isout() and self.leavepending:
-      return expected
-    ending = self.endinglist.pop(self)
-    if expected and expected != ending:
-      Trace.error('Expected ending ' + expected + ', got ' + ending)
-    self.skip(ending)
-    return ending
+      "Pop the ending found at the current position"
+      if self.isout() and self.leavepending:
+        return expected
+      ending = self.endinglist.pop(self)
+      if expected and expected != ending:
+          Trace.error(f'Expected ending {expected}, got {ending}')
+      self.skip(ending)
+      return ending
 
   def nextending(self):
     "Return the next ending in the queue."
@@ -1157,53 +1154,51 @@ class EndingList(object):
     self.endings += pos.endinglist.endings
 
   def checkin(self, pos):
-    "Search for an ending"
-    if self.findending(pos):
-      return True
-    return False
+      "Search for an ending"
+      return bool(self.findending(pos))
 
   def pop(self, pos):
-    "Remove the ending at the current position"
-    if pos.isout():
-      Trace.error('No ending out of bounds')
+      "Remove the ending at the current position"
+      if pos.isout():
+        Trace.error('No ending out of bounds')
+        return ''
+      ending = self.findending(pos)
+      if not ending:
+          Trace.error(f'No ending at {pos.current()}')
+          return ''
+      for each in reversed(self.endings):
+          self.endings.remove(each)
+          if each == ending:
+              return each.ending
+          elif not each.optional:
+              Trace.error(f'Removed non-optional ending {each}')
+      Trace.error('No endings left')
       return ''
-    ending = self.findending(pos)
-    if not ending:
-      Trace.error('No ending at ' + pos.current())
-      return ''
-    for each in reversed(self.endings):
-      self.endings.remove(each)
-      if each == ending:
-        return each.ending
-      elif not each.optional:
-        Trace.error('Removed non-optional ending ' + each)
-    Trace.error('No endings left')
-    return ''
 
   def findending(self, pos):
-    "Find the ending at the current position"
-    if len(self.endings) == 0:
-      return None
-    for index, ending in enumerate(reversed(self.endings)):
-      if ending.checkin(pos):
-        return ending
-      if not ending.optional:
+      "Find the ending at the current position"
+      if len(self.endings) == 0:
         return None
-    return None
+      for ending in reversed(self.endings):
+          if ending.checkin(pos):
+            return ending
+          if not ending.optional:
+            return None
+      return None
 
   def checkpending(self):
-    "Check if there are any pending endings"
-    if len(self.endings) != 0:
-      Trace.error('Pending ' + unicode(self) + ' left open')
+      "Check if there are any pending endings"
+      if len(self.endings) != 0:
+          Trace.error(f'Pending {unicode(self)} left open')
 
   def __unicode__(self):
-    "Printable representation"
-    string = 'endings ['
-    for ending in self.endings:
-      string += unicode(ending) + ','
-    if len(self.endings) > 0:
-      string = string[:-1]
-    return string + ']'
+      "Printable representation"
+      string = 'endings ['
+      for ending in self.endings:
+          string += f'{unicode(ending)},'
+      if len(self.endings) > 0:
+        string = string[:-1]
+      return f'{string}]'
 
   if sys.version_info >= (3, 0):
     __str__ = __unicode__
@@ -1221,11 +1216,11 @@ class PositionEnding(object):
     return pos.checkfor(self.ending)
 
   def __unicode__(self):
-    "Printable representation"
-    string = 'Ending ' + self.ending
-    if self.optional:
-      string += ' (optional)'
-    return string
+      "Printable representation"
+      string = f'Ending {self.ending}'
+      if self.optional:
+        string += ' (optional)'
+      return string
 
   if sys.version_info >= (3, 0):
     __str__ = __unicode__
@@ -1287,8 +1282,8 @@ class Position(Globable):
     return True
 
   def error(self, message):
-    "Show an error message and the position identifier."
-    Trace.error(message + ': ' + self.identifier())
+      "Show an error message and the position identifier."
+      Trace.error(f'{message}: {self.identifier()}')
 
 class TextPosition(Position):
   "A parse position based on a raw text."
@@ -1305,11 +1300,11 @@ class TextPosition(Position):
     self.pos += len(string)
 
   def identifier(self):
-    "Return a sample of the remaining text."
-    length = 30
-    if self.pos + length > len(self.text):
-      length = len(self.text) - self.pos
-    return '*' + self.text[self.pos:self.pos + length] + '*'
+      "Return a sample of the remaining text."
+      length = 30
+      if self.pos + length > len(self.text):
+        length = len(self.text) - self.pos
+      return f'*{self.text[self.pos:self.pos + length]}*'
 
   def isout(self):
     "Find out if we are out of the text yet."
@@ -1334,19 +1329,19 @@ class Container(object):
   begin = None
 
   def __init__(self):
-    self.contents = list()
+      self.contents = []
 
   def process(self):
     "Process contents"
     pass
 
   def gethtml(self):
-    "Get the resulting HTML"
-    html = self.output.gethtml(self)
-    if isinstance(html, basestring):
-      Trace.error('Raw string ' + html)
-      html = [html]
-    return html
+      "Get the resulting HTML"
+      html = self.output.gethtml(self)
+      if isinstance(html, basestring):
+          Trace.error(f'Raw string {html}')
+          html = [html]
+      return html
 
   def escape(self, line, replacements = EscapeConfig.entities):
     "Escape a line with replacements from a map"
@@ -1358,19 +1353,19 @@ class Container(object):
     return line
 
   def escapeentities(self, line):
-    "Escape all Unicode characters to HTML entities."
-    result = ''
-    pos = TextPosition(line)
-    while not pos.finished():
-      if ord(pos.current()) > 128:
-        codepoint = hex(ord(pos.current()))
-        if codepoint == '0xd835':
-          codepoint = hex(ord(next(pos)) + 0xf800)
-        result += '&#' + codepoint[1:] + ';'
-      else:
-        result += pos.current()
-      pos.skipcurrent()
-    return result
+      "Escape all Unicode characters to HTML entities."
+      result = ''
+      pos = TextPosition(line)
+      while not pos.finished():
+          if ord(pos.current()) > 128:
+              codepoint = hex(ord(pos.current()))
+              if codepoint == '0xd835':
+                codepoint = hex(ord(next(pos)) + 0xf800)
+              result += f'&#{codepoint[1:]};'
+          else:
+              result += pos.current()
+          pos.skipcurrent()
+      return result
 
   def searchall(self, type):
     "Search for all embedded containers of a given type"
@@ -1436,10 +1431,8 @@ class Container(object):
       container.tree(level + 1)
 
   def getparameter(self, name):
-    "Get the value of a parameter, if present."
-    if not name in self.parameters:
-      return None
-    return self.parameters[name]
+      "Get the value of a parameter, if present."
+      return None if name not in self.parameters else self.parameters[name]
 
   def getparameterlist(self, name):
     "Get the value of a comma-separated parameter as a list."
@@ -1458,10 +1451,10 @@ class Container(object):
     return False
 
   def __unicode__(self):
-    "Get a description"
-    if not self.begin:
-      return self.__class__.__name__
-    return self.__class__.__name__ + '@' + unicode(self.begin)
+      "Get a description"
+      if not self.begin:
+        return self.__class__.__name__
+      return f'{self.__class__.__name__}@{unicode(self.begin)}'
 
   if sys.version_info >= (3, 0):
     __str__ = __unicode__
@@ -1492,17 +1485,17 @@ class StringContainer(Container):
       self.parsed = None
 
   def replacespecial(self, line):
-    "Replace all special chars from a line"
-    replaced = self.escape(line, EscapeConfig.entities)
-    replaced = self.changeline(replaced)
-    if ContainerConfig.string['startcommand'] in replaced and len(replaced) > 1:
-      # unprocessed commands
-      if self.begin:
-        message = 'Unknown command at ' + unicode(self.begin) + ': '
-      else:
-        message = 'Unknown command: '
-      Trace.error(message + replaced.strip())
-    return replaced
+      "Replace all special chars from a line"
+      replaced = self.escape(line, EscapeConfig.entities)
+      replaced = self.changeline(replaced)
+      if ContainerConfig.string['startcommand'] in replaced and len(replaced) > 1:
+              # unprocessed commands
+          if self.begin:
+              message = f'Unknown command at {unicode(self.begin)}: '
+          else:
+              message = 'Unknown command: '
+          Trace.error(message + replaced.strip())
+      return replaced
 
   def changeline(self, line):
     line = self.escape(line, EscapeConfig.chars)
@@ -1513,14 +1506,12 @@ class StringContainer(Container):
     return self.string
 
   def __unicode__(self):
-    "Return a printable representation."
-    result = 'StringContainer'
-    if self.begin:
-      result += '@' + unicode(self.begin)
-    ellipsis = '...'
-    if len(self.string.strip()) <= 15:
-      ellipsis = ''
-    return result + ' (' + self.string.strip()[:15] + ellipsis + ')'
+      "Return a printable representation."
+      result = 'StringContainer'
+      if self.begin:
+          result += f'@{unicode(self.begin)}'
+      ellipsis = '' if len(self.string.strip()) <= 15 else '...'
+      return f'{result} ({self.string.strip()[:15]}{ellipsis})'
 
   if sys.version_info >= (3, 0):
     __str__ = __unicode__
@@ -1535,7 +1526,7 @@ class Constant(StringContainer):
     self.output = StringOutput()
 
   def __unicode__(self):
-    return 'Constant: ' + self.string
+      return f'Constant: {self.string}'
 
   if sys.version_info >= (3, 0):
     __str__ = __unicode__
@@ -1551,16 +1542,16 @@ class FormulaParser(Parser):
   "Parses a formula"
 
   def parseheader(self, reader):
-    "See if the formula is inlined"
-    self.begin = reader.linenumber + 1
-    type = self.parsetype(reader)
-    if not type:
-      reader.nextline()
+      "See if the formula is inlined"
+      self.begin = reader.linenumber + 1
       type = self.parsetype(reader)
       if not type:
-        Trace.error('Unknown formula type in ' + reader.currentline().strip())
-        return ['unknown']
-    return [type]
+          reader.nextline()
+          type = self.parsetype(reader)
+      if not type:
+          Trace.error(f'Unknown formula type in {reader.currentline().strip()}')
+          return ['unknown']
+      return [type]
 
   def parsetype(self, reader):
     "Get the formula type from the first line."
@@ -1575,81 +1566,81 @@ class FormulaParser(Parser):
     return None
 
   def parse(self, reader):
-    "Parse the formula until the end"
-    formula = self.parseformula(reader)
-    while not reader.currentline().startswith(self.ending):
-      stripped = reader.currentline().strip()
-      if len(stripped) > 0:
-        Trace.error('Unparsed formula line ' + stripped)
+      "Parse the formula until the end"
+      formula = self.parseformula(reader)
+      while not reader.currentline().startswith(self.ending):
+          stripped = reader.currentline().strip()
+          if len(stripped) > 0:
+              Trace.error(f'Unparsed formula line {stripped}')
+          reader.nextline()
       reader.nextline()
-    reader.nextline()
-    return formula
+      return formula
 
   def parseformula(self, reader):
-    "Parse the formula contents"
-    simple = FormulaConfig.starts['simple']
-    if simple in reader.currentline():
-      rest = reader.currentline().split(simple, 1)[1]
-      if simple in rest:
-        # formula is $...$
-        return self.parsesingleliner(reader, simple, simple)
-      # formula is multiline $...$
-      return self.parsemultiliner(reader, simple, simple)
-    if FormulaConfig.starts['complex'] in reader.currentline():
-      # formula of the form \[...\]
-      return self.parsemultiliner(reader, FormulaConfig.starts['complex'],
-          FormulaConfig.endings['complex'])
-    beginbefore = FormulaConfig.starts['beginbefore']
-    beginafter = FormulaConfig.starts['beginafter']
-    if beginbefore in reader.currentline():
-      if reader.currentline().strip().endswith(beginafter):
-        current = reader.currentline().strip()
-        endsplit = current.split(beginbefore)[1].split(beginafter)
-        startpiece = beginbefore + endsplit[0] + beginafter
-        endbefore = FormulaConfig.endings['endbefore']
-        endafter = FormulaConfig.endings['endafter']
-        endpiece = endbefore + endsplit[0] + endafter
-        return startpiece + self.parsemultiliner(reader, startpiece, endpiece) + endpiece
-      Trace.error('Missing ' + beginafter + ' in ' + reader.currentline())
+      "Parse the formula contents"
+      simple = FormulaConfig.starts['simple']
+      if simple in reader.currentline():
+        rest = reader.currentline().split(simple, 1)[1]
+        if simple in rest:
+          # formula is $...$
+          return self.parsesingleliner(reader, simple, simple)
+        # formula is multiline $...$
+        return self.parsemultiliner(reader, simple, simple)
+      if FormulaConfig.starts['complex'] in reader.currentline():
+        # formula of the form \[...\]
+        return self.parsemultiliner(reader, FormulaConfig.starts['complex'],
+            FormulaConfig.endings['complex'])
+      beginbefore = FormulaConfig.starts['beginbefore']
+      beginafter = FormulaConfig.starts['beginafter']
+      if beginbefore in reader.currentline():
+          if reader.currentline().strip().endswith(beginafter):
+            current = reader.currentline().strip()
+            endsplit = current.split(beginbefore)[1].split(beginafter)
+            startpiece = beginbefore + endsplit[0] + beginafter
+            endbefore = FormulaConfig.endings['endbefore']
+            endafter = FormulaConfig.endings['endafter']
+            endpiece = endbefore + endsplit[0] + endafter
+            return startpiece + self.parsemultiliner(reader, startpiece, endpiece) + endpiece
+          Trace.error(f'Missing {beginafter} in {reader.currentline()}')
+          return ''
+      begincommand = FormulaConfig.starts['command']
+      beginbracket = FormulaConfig.starts['bracket']
+      if begincommand in reader.currentline() and beginbracket in reader.currentline():
+        endbracket = FormulaConfig.endings['bracket']
+        return self.parsemultiliner(reader, beginbracket, endbracket)
+      Trace.error(f'Formula beginning {reader.currentline()} is unknown')
       return ''
-    begincommand = FormulaConfig.starts['command']
-    beginbracket = FormulaConfig.starts['bracket']
-    if begincommand in reader.currentline() and beginbracket in reader.currentline():
-      endbracket = FormulaConfig.endings['bracket']
-      return self.parsemultiliner(reader, beginbracket, endbracket)
-    Trace.error('Formula beginning ' + reader.currentline() + ' is unknown')
-    return ''
 
   def parsesingleliner(self, reader, start, ending):
-    "Parse a formula in one line"
-    line = reader.currentline().strip()
-    if not start in line:
-      Trace.error('Line ' + line + ' does not contain formula start ' + start)
-      return ''
-    if not line.endswith(ending):
-      Trace.error('Formula ' + line + ' does not end with ' + ending)
-      return ''
-    index = line.index(start)
-    rest = line[index + len(start):-len(ending)]
-    reader.nextline()
-    return rest
+      "Parse a formula in one line"
+      line = reader.currentline().strip()
+      if start not in line:
+          Trace.error(f'Line {line} does not contain formula start {start}')
+          return ''
+      if not line.endswith(ending):
+          Trace.error(f'Formula {line} does not end with {ending}')
+          return ''
+      index = line.index(start)
+      rest = line[index + len(start):-len(ending)]
+      reader.nextline()
+      return rest
 
   def parsemultiliner(self, reader, start, ending):
-    "Parse a formula in multiple lines"
-    formula = ''
-    line = reader.currentline()
-    if not start in line:
-      Trace.error('Line ' + line.strip() + ' does not contain formula start ' + start)
-      return ''
-    index = line.index(start)
-    line = line[index + len(start):].strip()
-    while not line.endswith(ending):
-      formula += line + '\n'
-      reader.nextline()
+      "Parse a formula in multiple lines"
+      formula = ''
       line = reader.currentline()
-    formula += line[:-len(ending)]
-    reader.nextline()
-    return formula
+      if start not in line:
+          Trace.error(f'Line {line.strip()} does not contain formula start {start}')
+          return ''
+      index = line.index(start)
+      line = line[index + len(start):].strip()
+      while not line.endswith(ending):
+        formula += line + '\n'
+        reader.nextline()
+        line = reader.currentline()
+      formula += line[:-len(ending)]
+      reader.nextline()
+      return formula
 
 
 class FormulaBit(Container):
@@ -1676,25 +1667,25 @@ class FormulaBit(Container):
     bit.parent = self
 
   def skiporiginal(self, string, pos):
-    "Skip a string and add it to the original formula"
-    self.original += string
-    if not pos.checkskip(string):
-      Trace.error('String ' + string + ' not at ' + pos.identifier())
+      "Skip a string and add it to the original formula"
+      self.original += string
+      if not pos.checkskip(string):
+          Trace.error(f'String {string} not at {pos.identifier()}')
 
   def computesize(self):
-    "Compute the size of the bit as the max of the sizes of all contents."
-    if len(self.contents) == 0:
-      return 1
-    self.size = max([element.size for element in self.contents])
-    return self.size
+      "Compute the size of the bit as the max of the sizes of all contents."
+      if len(self.contents) == 0:
+        return 1
+      self.size = max(element.size for element in self.contents)
+      return self.size
 
   def clone(self):
     "Return a copy of itself."
     return self.factory.parseformula(self.original)
 
   def __unicode__(self):
-    "Get a string representation"
-    return self.__class__.__name__ + ' read in ' + self.original
+      "Get a string representation"
+      return f'{self.__class__.__name__} read in {self.original}'
 
   if sys.version_info >= (3, 0):
     __str__ = __unicode__
@@ -1739,8 +1730,8 @@ class FormulaConstant(Constant):
     return FormulaConstant(self.original)
 
   def __unicode__(self):
-    "Return a printable representation."
-    return 'Formula constant: ' + self.string
+      "Return a printable representation."
+      return f'Formula constant: {self.string}'
 
   if sys.version_info >= (3, 0):
     __str__ = __unicode__
@@ -1774,14 +1765,14 @@ class FormulaSymbol(FormulaBit):
     return False
 
   def parsebit(self, pos):
-    "Parse the symbol"
-    if pos.current() in FormulaSymbol.unmodified:
-      self.addsymbol(pos.current(), pos)
-      return
-    if pos.current() in FormulaSymbol.modified:
-      self.addsymbol(FormulaSymbol.modified[pos.current()], pos)
-      return
-    Trace.error('Symbol ' + pos.current() + ' not found')
+      "Parse the symbol"
+      if pos.current() in FormulaSymbol.unmodified:
+        self.addsymbol(pos.current(), pos)
+        return
+      if pos.current() in FormulaSymbol.modified:
+        self.addsymbol(FormulaSymbol.modified[pos.current()], pos)
+        return
+      Trace.error(f'Symbol {pos.current()} not found')
 
   def addsymbol(self, symbol, pos):
     "Add a symbol"
@@ -1826,8 +1817,8 @@ class WhiteSpace(FormulaBit):
     self.original += pos.skipspace()
 
   def __unicode__(self):
-    "Return a printable representation."
-    return 'Whitespace: *' + self.original + '*'
+      "Return a printable representation."
+      return f'Whitespace: *{self.original}*'
 
   if sys.version_info >= (3, 0):
     __str__ = __unicode__
@@ -1864,15 +1855,15 @@ class Bracket(FormulaBit):
     return self
 
   def parsecomplete(self, pos, innerparser):
-    "Parse the start and end marks"
-    if not pos.checkfor(self.start):
-      Trace.error('Bracket should start with ' + self.start + ' at ' + pos.identifier())
-      return None
-    self.skiporiginal(self.start, pos)
-    pos.pushending(self.ending)
-    innerparser(pos)
-    self.original += pos.popending(self.ending)
-    self.computesize()
+      "Parse the start and end marks"
+      if not pos.checkfor(self.start):
+          Trace.error(f'Bracket should start with {self.start} at {pos.identifier()}')
+          return None
+      self.skiporiginal(self.start, pos)
+      pos.pushending(self.ending)
+      innerparser(pos)
+      self.original += pos.popending(self.ending)
+      self.computesize()
 
   def innerformula(self, pos):
     "Parse a whole formula inside the bracket"
@@ -1880,28 +1871,27 @@ class Bracket(FormulaBit):
       self.add(self.factory.parseany(pos))
 
   def innertext(self, pos):
-    "Parse some text inside the bracket, following textual rules."
-    specialchars = list(FormulaConfig.symbolfunctions.keys())
-    specialchars.append(FormulaConfig.starts['command'])
-    specialchars.append(FormulaConfig.starts['bracket'])
-    specialchars.append(Comment.start)
-    while not pos.finished():
-      if pos.current() in specialchars:
-        self.add(self.factory.parseany(pos))
-        if pos.checkskip(' '):
-          self.original += ' '
-      else:
-        self.add(FormulaConstant(pos.skipcurrent()))
+      "Parse some text inside the bracket, following textual rules."
+      specialchars = list(FormulaConfig.symbolfunctions.keys())
+      specialchars.append(FormulaConfig.starts['command'])
+      specialchars.extend((FormulaConfig.starts['bracket'], Comment.start))
+      while not pos.finished():
+        if pos.current() in specialchars:
+          self.add(self.factory.parseany(pos))
+          if pos.checkskip(' '):
+            self.original += ' '
+        else:
+          self.add(FormulaConstant(pos.skipcurrent()))
 
   def innerliteral(self, pos):
-    "Parse a literal inside the bracket, which does not generate HTML."
-    self.literal = ''
-    while not pos.finished() and not pos.current() == self.ending:
-      if pos.current() == self.start:
-        self.parseliteral(pos)
-      else:
-        self.literal += pos.skipcurrent()
-    self.original += self.literal
+      "Parse a literal inside the bracket, which does not generate HTML."
+      self.literal = ''
+      while not pos.finished() and pos.current() != self.ending:
+          if pos.current() == self.start:
+            self.parseliteral(pos)
+          else:
+            self.literal += pos.skipcurrent()
+      self.original += self.literal
 
 class SquareBracket(Bracket):
   "A [] bracket inside a formula"
@@ -1920,12 +1910,12 @@ class MathsProcessor(object):
   "A processor for a maths construction inside the FormulaProcessor."
 
   def process(self, contents, index):
-    "Process an element inside a formula."
-    Trace.error('Unimplemented process() in ' + unicode(self))
+      "Process an element inside a formula."
+      Trace.error(f'Unimplemented process() in {unicode(self)}')
 
   def __unicode__(self):
-    "Return a printable description."
-    return 'Maths processor ' + self.__class__.__name__
+      "Return a printable description."
+      return f'Maths processor {self.__class__.__name__}'
 
   if sys.version_info >= (3, 0):
     __str__ = __unicode__
@@ -1971,13 +1961,12 @@ class FormulaProcessor(object):
       last = bit
 
   def traverse(self, bit):
-    "Traverse a formula and yield a flattened structure of (bit, list) pairs."
-    for element in bit.contents:
-      if hasattr(element, 'type') and element.type:
-        yield (element, bit.contents)
-      elif isinstance(element, FormulaBit):
-        for pair in self.traverse(element):
-          yield pair
+      "Traverse a formula and yield a flattened structure of (bit, list) pairs."
+      for element in bit.contents:
+          if hasattr(element, 'type') and element.type:
+              yield (element, bit.contents)
+          elif isinstance(element, FormulaBit):
+              yield from self.traverse(element)
 
   def italicize(self, bit, contents):
     "Italicize the given bit of text."
@@ -2058,10 +2047,10 @@ class Formula(Container):
     pos.popending(limit)
 
   def __unicode__(self):
-    "Return a printable representation."
-    if self.partkey and self.partkey.number:
-      return 'Formula (' + self.partkey.number + ')'
-    return 'Unnumbered formula'
+      "Return a printable representation."
+      if self.partkey and self.partkey.number:
+          return f'Formula ({self.partkey.number})'
+      return 'Unnumbered formula'
 
   if sys.version_info >= (3, 0):
     __str__ = __unicode__
@@ -2088,20 +2077,18 @@ class FormulaFactory(object):
   defining = False
 
   def __init__(self):
-    "Initialize the map of instances."
-    self.instances = dict()
+      "Initialize the map of instances."
+      self.instances = {}
 
   def detecttype(self, type, pos):
-    "Detect a bit of a given type."
-    if pos.finished():
-      return False
-    return self.instance(type).detect(pos)
+      "Detect a bit of a given type."
+      return False if pos.finished() else self.instance(type).detect(pos)
 
   def instance(self, type):
-    "Get an instance of the given type."
-    if not type in self.instances or not self.instances[type]:
-      self.instances[type] = self.create(type)
-    return self.instances[type]
+      "Get an instance of the given type."
+      if type not in self.instances or not self.instances[type]:
+          self.instances[type] = self.create(type)
+      return self.instances[type]
 
   def create(self, type):
     "Create a new formula bit of the given type."
@@ -2115,41 +2102,44 @@ class FormulaFactory(object):
     return
 
   def skipany(self, pos):
-    "Skip any skipped types."
-    for type in self.skippedtypes:
-      if self.instance(type).detect(pos):
-        return self.parsetype(type, pos)
-    return None
+      "Skip any skipped types."
+      return next(
+          (
+              self.parsetype(type, pos)
+              for type in self.skippedtypes
+              if self.instance(type).detect(pos)
+          ),
+          None,
+      )
 
   def parseany(self, pos):
-    "Parse any formula bit at the current location."
-    for type in self.types + self.skippedtypes:
-      if self.detecttype(type, pos):
-        return self.parsetype(type, pos)
-    Trace.error('Unrecognized formula at ' + pos.identifier())
-    return FormulaConstant(pos.skipcurrent())
+      "Parse any formula bit at the current location."
+      for type in self.types + self.skippedtypes:
+        if self.detecttype(type, pos):
+          return self.parsetype(type, pos)
+      Trace.error(f'Unrecognized formula at {pos.identifier()}')
+      return FormulaConstant(pos.skipcurrent())
 
   def parsetype(self, type, pos):
-    "Parse the given type and return it."
-    bit = self.instance(type)
-    self.instances[type] = None
-    returnedbit = bit.parsebit(pos)
-    if returnedbit:
-      return returnedbit.setfactory(self)
-    return bit
+      "Parse the given type and return it."
+      bit = self.instance(type)
+      self.instances[type] = None
+      if returnedbit := bit.parsebit(pos):
+          return returnedbit.setfactory(self)
+      return bit
 
   def parseformula(self, formula):
-    "Parse a string of text that contains a whole formula."
-    pos = TextPosition(formula)
-    whole = self.create(WholeFormula)
-    if whole.detect(pos):
-      whole.parsebit(pos)
+      "Parse a string of text that contains a whole formula."
+      pos = TextPosition(formula)
+      whole = self.create(WholeFormula)
+      if whole.detect(pos):
+        whole.parsebit(pos)
+        return whole
+        # no formula found
+      if not pos.finished():
+          Trace.error(f'Unknown formula at: {pos.identifier()}')
+          whole.add(TaggedBit().constant(formula, 'span class="unknown"'))
       return whole
-    # no formula found
-    if not pos.finished():
-      Trace.error('Unknown formula at: ' + pos.identifier())
-      whole.add(TaggedBit().constant(formula, 'span class="unknown"'))
-    return whole
 
 
 class FormulaCommand(FormulaBit):
@@ -2164,52 +2154,53 @@ class FormulaCommand(FormulaBit):
     return pos.checkfor(FormulaCommand.start)
 
   def parsebit(self, pos):
-    "Parse the command."
-    command = self.extractcommand(pos)
-    bit = self.parsewithcommand(command, pos)
-    if bit:
-      return bit
-    if command.startswith('\\up') or command.startswith('\\Up'):
-      upgreek = self.parseupgreek(command, pos)
-      if upgreek:
-        return upgreek
-    if not self.factory.defining:
-      Trace.error('Unknown command ' + command)
-    self.output = TaggedOutput().settag('span class="unknown"')
-    self.add(FormulaConstant(command))
-    return None
+      "Parse the command."
+      command = self.extractcommand(pos)
+      if bit := self.parsewithcommand(command, pos):
+          return bit
+      if command.startswith('\\up') or command.startswith('\\Up'):
+          if upgreek := self.parseupgreek(command, pos):
+              return upgreek
+      if not self.factory.defining:
+          Trace.error(f'Unknown command {command}')
+      self.output = TaggedOutput().settag('span class="unknown"')
+      self.add(FormulaConstant(command))
+      return None
 
   def parsewithcommand(self, command, pos):
-    "Parse the command type once we have the command."
-    for type in FormulaCommand.types:
-      if command in type.commandmap:
-        return self.parsecommandtype(command, type, pos)
-    return None
+      "Parse the command type once we have the command."
+      return next(
+          (
+              self.parsecommandtype(command, type, pos)
+              for type in FormulaCommand.types
+              if command in type.commandmap
+          ),
+          None,
+      )
 
   def parsecommandtype(self, command, type, pos):
-    "Parse a given command type."
-    bit = self.factory.create(type)
-    bit.setcommand(command)
-    returned = bit.parsebit(pos)
-    if returned:
-      return returned
-    return bit
+      "Parse a given command type."
+      bit = self.factory.create(type)
+      bit.setcommand(command)
+      if returned := bit.parsebit(pos):
+          return returned
+      return bit
 
   def extractcommand(self, pos):
-    "Extract the command from the current position."
-    if not pos.checkskip(FormulaCommand.start):
-      pos.error('Missing command start ' + FormulaCommand.start)
-      return
-    if pos.finished():
-      return self.emptycommand(pos)
-    if pos.current().isalpha():
-      # alpha command
-      command = FormulaCommand.start + pos.globalpha()
-      # skip mark of short command
-      pos.checkskip('*')
-      return command
-    # symbol command
-    return FormulaCommand.start + pos.skipcurrent()
+      "Extract the command from the current position."
+      if not pos.checkskip(FormulaCommand.start):
+          pos.error(f'Missing command start {FormulaCommand.start}')
+          return
+      if pos.finished():
+        return self.emptycommand(pos)
+      if pos.current().isalpha():
+        # alpha command
+        command = FormulaCommand.start + pos.globalpha()
+        # skip mark of short command
+        pos.checkskip('*')
+        return command
+      # symbol command
+      return FormulaCommand.start + pos.skipcurrent()
 
   def emptycommand(self, pos):
     """Check for an empty command: look for command disguised as ending.
@@ -2222,20 +2213,20 @@ class FormulaCommand(FormulaBit):
     return FormulaCommand.start + command
 
   def parseupgreek(self, command, pos):
-    "Parse the Greek \\up command.."
-    if len(command) < 4:
-      return None
-    if command.startswith('\\up'):
-      upcommand = '\\' + command[3:]
-    elif pos.checkskip('\\Up'):
-      upcommand = '\\' + command[3:4].upper() + command[4:]
-    else:
-      Trace.error('Impossible upgreek command: ' + command)
-      return
-    upgreek = self.parsewithcommand(upcommand, pos)
-    if upgreek:
-      upgreek.type = 'font'
-    return upgreek
+      "Parse the Greek \\up command.."
+      if len(command) < 4:
+        return None
+      if command.startswith('\\up'):
+          upcommand = f'\\{command[3:]}'
+      elif pos.checkskip('\\Up'):
+          upcommand = f'\\{command[3:4].upper()}{command[4:]}'
+      else:
+          Trace.error(f'Impossible upgreek command: {command}')
+          return
+      upgreek = self.parsewithcommand(upcommand, pos)
+      if upgreek:
+        upgreek.type = 'font'
+      return upgreek
 
 class CommandBit(FormulaCommand):
   "A formula bit that includes a command"
@@ -2266,16 +2257,16 @@ class CommandBit(FormulaCommand):
     return bracket
 
   def parseliteral(self, pos):
-    "Parse a literal bracket."
-    self.factory.clearskipped(pos)
-    if not self.factory.detecttype(Bracket, pos):
-      if not pos.isvalue():
-        Trace.error('No literal parameter found at: ' + pos.identifier())
-        return None
-      return pos.globvalue()
-    bracket = Bracket().setfactory(self.factory)
-    self.add(bracket.parseliteral(pos))
-    return bracket.literal
+      "Parse a literal bracket."
+      self.factory.clearskipped(pos)
+      if not self.factory.detecttype(Bracket, pos):
+          if not pos.isvalue():
+              Trace.error(f'No literal parameter found at: {pos.identifier()}')
+              return None
+          return pos.globvalue()
+      bracket = Bracket().setfactory(self.factory)
+      self.add(bracket.parseliteral(pos))
+      return bracket.literal
 
   def parsesquareliteral(self, pos):
     "Parse a square bracket literally."
@@ -2287,14 +2278,14 @@ class CommandBit(FormulaCommand):
     return bracket.literal
 
   def parsetext(self, pos):
-    "Parse a text parameter."
-    self.factory.clearskipped(pos)
-    if not self.factory.detecttype(Bracket, pos):
-      Trace.error('No text parameter for ' + self.command)
-      return None
-    bracket = Bracket().setfactory(self.factory).parsetext(pos)
-    self.add(bracket)
-    return bracket
+      "Parse a text parameter."
+      self.factory.clearskipped(pos)
+      if not self.factory.detecttype(Bracket, pos):
+          Trace.error(f'No text parameter for {self.command}')
+          return None
+      bracket = Bracket().setfactory(self.factory).parsetext(pos)
+      self.add(bracket)
+      return bracket
 
 class EmptyCommand(CommandBit):
   "An empty command (without parameters)"
@@ -2429,9 +2420,9 @@ class BigBracket(object):
       self.pieces = FormulaConfig.bigbrackets[bracket]
 
   def getpiece(self, index):
-    "Return the nth piece for the bracket."
-    function = getattr(self, 'getpiece' + unicode(len(self.pieces)))
-    return function(index)
+      "Return the nth piece for the bracket."
+      function = getattr(self, f'getpiece{unicode(len(self.pieces))}')
+      return function(index)
 
   def getpiece1(self, index):
     "Return the only piece for a single-piece bracket."
@@ -2585,17 +2576,15 @@ class FormulaArray(MultiRowFormula):
     self.parserows(pos)
 
   def parsealignments(self, pos):
-    "Parse the different alignments"
-    # vertical
-    self.valign = 'c'
-    literal = self.parsesquareliteral(pos)
-    if literal:
-      self.valign = literal
-    # horizontal
-    literal = self.parseliteral(pos)
-    self.alignments = []
-    for l in literal:
-      self.alignments.append(l)
+      "Parse the different alignments"
+      # vertical
+      self.valign = 'c'
+      literal = self.parsesquareliteral(pos)
+      if literal:
+        self.valign = literal
+      # horizontal
+      literal = self.parseliteral(pos)
+      self.alignments = list(literal)
 
 class FormulaMatrix(MultiRowFormula):
   "A matrix (array with center alignment)."
@@ -2631,20 +2620,20 @@ class EquationEnvironment(MultiRowFormula):
   "A \\begin{}...\\end equation environment with rows and cells."
 
   def parsebit(self, pos):
-    "Parse the whole environment."
-    environment = self.piece.replace('*', '')
-    self.output = TaggedOutput().settag(
-                    'span class="environment %s"'%environment, False)
-    if environment in FormulaConfig.environments:
-      self.alignments = FormulaConfig.environments[environment]
-    else:
-      Trace.error('Unknown equation environment ' + self.piece)
-      # print in red
-      self.output = TaggedOutput().settag('span class="unknown"')
-      self.add(FormulaConstant('\\begin{%s} '%environment))
+      "Parse the whole environment."
+      environment = self.piece.replace('*', '')
+      self.output = TaggedOutput().settag(
+                      'span class="environment %s"'%environment, False)
+      if environment in FormulaConfig.environments:
+          self.alignments = FormulaConfig.environments[environment]
+      else:
+          Trace.error(f'Unknown equation environment {self.piece}')
+          # print in red
+          self.output = TaggedOutput().settag('span class="unknown"')
+          self.add(FormulaConstant('\\begin{%s} '%environment))
 
-      self.alignments = ['l']
-    self.parserows(pos)
+          self.alignments = ['l']
+      self.parserows(pos)
 
 class BeginCommand(CommandBit):
   "A \\begin{}...\\end command and what it entails (array, cases, aligned)"
@@ -2681,30 +2670,27 @@ class CombiningFunction(OneParamFunction):
   commandmap = FormulaConfig.combiningfunctions
 
   def parsebit(self, pos):
-    "Parse a combining function."
-    combining = self.translated
-    parameter = self.parsesingleparameter(pos)
-    if not parameter:
-      Trace.error('Missing parameter for combining function ' + self.command)
-      return
-    # Trace.message('apply %s to %r'%(self.command, parameter.extracttext()))
-    # parameter.tree()
-    if not isinstance(parameter, FormulaConstant):
-      try:
-        extractor = ContainerExtractor(ContainerConfig.extracttext)
-        parameter = extractor.extract(parameter)[0]
-      except IndexError:
-        Trace.error('No base character found for "%s".' % self.command)
-        return
-    # Trace.message('  basechar: %r' % parameter.string)
-    # Insert combining character after the first character:
-    if parameter.string.startswith(u'\u2009'):
-        i = 2 # skip padding by SpacedCommand and FormulaConfig.modified
-    else:
-        i = 1
-    parameter.string = parameter.string[:i] + combining + parameter.string[i:]
-    # Use pre-composed characters if possible: \not{=} -> ≠, say.
-    parameter.string = unicodedata.normalize('NFC', parameter.string)
+      "Parse a combining function."
+      combining = self.translated
+      parameter = self.parsesingleparameter(pos)
+      if not parameter:
+          Trace.error(f'Missing parameter for combining function {self.command}')
+          return
+      # Trace.message('apply %s to %r'%(self.command, parameter.extracttext()))
+      # parameter.tree()
+      if not isinstance(parameter, FormulaConstant):
+        try:
+          extractor = ContainerExtractor(ContainerConfig.extracttext)
+          parameter = extractor.extract(parameter)[0]
+        except IndexError:
+          Trace.error('No base character found for "%s".' % self.command)
+          return
+        # Trace.message('  basechar: %r' % parameter.string)
+        # Insert combining character after the first character:
+      i = 2 if parameter.string.startswith(u'\u2009') else 1
+      parameter.string = parameter.string[:i] + combining + parameter.string[i:]
+      # Use pre-composed characters if possible: \not{=} -> ≠, say.
+      parameter.string = unicodedata.normalize('NFC', parameter.string)
 
   def parsesingleparameter(self, pos):
     "Parse a parameter, or a single letter."
@@ -2837,10 +2823,8 @@ class LimitsProcessor(MathsProcessor):
     return self.checkcommand(contents, index, SymbolFunction)
 
   def checkcommand(self, contents, index, type):
-    "Check for the given type as the current element."
-    if len(contents) <= index:
-      return False
-    return isinstance(contents[index], type)
+      "Check for the given type as the current element."
+      return False if len(contents) <= index else isinstance(contents[index], type)
 
   def getscript(self, contents, index):
     "Get the sub- or superscript."
@@ -2859,11 +2843,11 @@ class BracketCommand(OneParamFunction):
     OneParamFunction.parsebit(self, pos)
 
   def create(self, direction, character):
-    "Create the bracket for the given character."
-    self.original = character
-    self.command = '\\' + direction
-    self.contents = [FormulaConstant(character)]
-    return self
+      "Create the bracket for the given character."
+      self.original = character
+      self.command = f'\\{direction}'
+      self.contents = [FormulaConstant(character)]
+      return self
 
 class BracketProcessor(MathsProcessor):
   "A processor for bracket commands."
@@ -2912,9 +2896,9 @@ class BracketProcessor(MathsProcessor):
     return None
 
   def findmax(self, contents, leftindex, rightindex):
-    "Find the max size of the contents between the two given indices."
-    sliced = contents[leftindex:rightindex]
-    return max([element.size for element in sliced])
+      "Find the max size of the contents between the two given indices."
+      sliced = contents[leftindex:rightindex]
+      return max(element.size for element in sliced)
 
   def resize(self, command, size):
     "Resize a bracket command to the given size."
@@ -2951,23 +2935,23 @@ class ParameterDefinition(object):
     self.literalvalue = None
 
   def parse(self, pos):
-    "Parse a parameter definition: [$0], {$x}, {$1!}..."
-    for (opening, closing) in ParameterDefinition.parambrackets:
-      if pos.checkskip(opening):
-        if opening == '[':
-          self.optional = True
-        if not pos.checkskip('$'):
-          Trace.error('Wrong parameter name, did you mean $' + pos.current() + '?')
-          return None
-        self.name = pos.skipcurrent()
-        if pos.checkskip('!'):
-          self.literal = True
-        if not pos.checkskip(closing):
-          Trace.error('Wrong parameter closing ' + pos.skipcurrent())
-          return None
-        return self
-    Trace.error('Wrong character in parameter template: ' + pos.skipcurrent())
-    return None
+      "Parse a parameter definition: [$0], {$x}, {$1!}..."
+      for (opening, closing) in ParameterDefinition.parambrackets:
+          if pos.checkskip(opening):
+              if opening == '[':
+                self.optional = True
+              if not pos.checkskip('$'):
+                  Trace.error(f'Wrong parameter name, did you mean ${pos.current()}?')
+                  return None
+              self.name = pos.skipcurrent()
+              if pos.checkskip('!'):
+                self.literal = True
+              if not pos.checkskip(closing):
+                  Trace.error(f'Wrong parameter closing {pos.skipcurrent()}')
+                  return None
+              return self
+      Trace.error(f'Wrong character in parameter template: {pos.skipcurrent()}')
+      return None
 
   def read(self, pos, function):
     "Read the parameter itself using the definition."
@@ -2984,13 +2968,10 @@ class ParameterDefinition(object):
       self.value = function.parseparameter(pos)
 
   def __unicode__(self):
-    "Return a printable representation."
-    result = 'param ' + self.name
-    if self.value:
-      result += ': ' + unicode(self.value)
-    else:
-      result += ' (empty)'
-    return result
+      "Return a printable representation."
+      result = f'param {self.name}'
+      result += f': {unicode(self.value)}' if self.value else ' (empty)'
+      return result
 
   if sys.version_info >= (3, 0):
     __str__ = __unicode__
@@ -3001,25 +2982,22 @@ class ParameterFunction(CommandBit):
   "The parameters are defined as a parameter definition."
 
   def readparams(self, readtemplate, pos):
-    "Read the params according to the template."
-    self.params = dict()
-    for paramdef in self.paramdefs(readtemplate):
-      paramdef.read(pos, self)
-      self.params['$' + paramdef.name] = paramdef
+      "Read the params according to the template."
+      self.params = {}
+      for paramdef in self.paramdefs(readtemplate):
+          paramdef.read(pos, self)
+          self.params[f'${paramdef.name}'] = paramdef
 
   def paramdefs(self, readtemplate):
-    "Read each param definition in the template"
-    pos = TextPosition(readtemplate)
-    while not pos.finished():
-      paramdef = ParameterDefinition().parse(pos)
-      if paramdef:
-        yield paramdef
+      "Read each param definition in the template"
+      pos = TextPosition(readtemplate)
+      while not pos.finished():
+          if paramdef := ParameterDefinition().parse(pos):
+              yield paramdef
 
   def getparam(self, name):
-    "Get a parameter as parsed."
-    if not name in self.params:
-      return None
-    return self.params[name]
+      "Get a parameter as parsed."
+      return None if name not in self.params else self.params[name]
 
   def getvalue(self, name):
     "Get the value of a parameter."
@@ -3065,37 +3043,35 @@ class HybridFunction(ParameterFunction):
     return self.writepos(TextPosition(writetemplate))
 
   def writepos(self, pos):
-    "Write all params as read in the parse position."
-    result = []
-    while not pos.finished():
-      if pos.checkskip('$'):
-        param = self.writeparam(pos)
-        if param:
-          result.append(param)
-      elif pos.checkskip('f'):
-        function = self.writefunction(pos)
-        if function:
-          function.type = None
-          result.append(function)
-      elif pos.checkskip('('):
-        result.append(self.writebracket('left', '('))
-      elif pos.checkskip(')'):
-        result.append(self.writebracket('right', ')'))
-      else:
-        result.append(FormulaConstant(pos.skipcurrent()))
-    return result
+      "Write all params as read in the parse position."
+      result = []
+      while not pos.finished():
+          if pos.checkskip('$'):
+              if param := self.writeparam(pos):
+                  result.append(param)
+          elif pos.checkskip('f'):
+              if function := self.writefunction(pos):
+                  function.type = None
+                  result.append(function)
+          elif pos.checkskip('('):
+            result.append(self.writebracket('left', '('))
+          elif pos.checkskip(')'):
+            result.append(self.writebracket('right', ')'))
+          else:
+              result.append(FormulaConstant(pos.skipcurrent()))
+      return result
 
   def writeparam(self, pos):
-    "Write a single param of the form $0, $x..."
-    name = '$' + pos.skipcurrent()
-    if not name in self.params:
-      Trace.error('Unknown parameter ' + name)
-      return None
-    if not self.params[name]:
-      return None
-    if pos.checkskip('.'):
-      self.params[name].value.type = pos.globalpha()
-    return self.params[name].value
+      "Write a single param of the form $0, $x..."
+      name = f'${pos.skipcurrent()}'
+      if name not in self.params:
+          Trace.error(f'Unknown parameter {name}')
+          return None
+      if not self.params[name]:
+        return None
+      if pos.checkskip('.'):
+        self.params[name].value.type = pos.globalpha()
+      return self.params[name].value
 
   def writefunction(self, pos):
     "Write a single function f0,...,fn."
@@ -3116,43 +3092,46 @@ class HybridFunction(ParameterFunction):
     return TaggedBit().complete(contents, tag)
 
   def readtag(self, pos):
-    "Get the tag corresponding to the given index. Does parameter substitution."
-    if not pos.current().isdigit():
-      Trace.error('Function should be f0,...,f9: f' + pos.current())
-      return None
-    index = int(pos.skipcurrent())
-    if 2 + index > len(self.translated):
-      Trace.error('Function f' + unicode(index) + ' is not defined')
-      return None
-    tag = self.translated[2 + index]
-    if not '$' in tag:
+      "Get the tag corresponding to the given index. Does parameter substitution."
+      if not pos.current().isdigit():
+          Trace.error(f'Function should be f0,...,f9: f{pos.current()}')
+          return None
+      index = int(pos.skipcurrent())
+      if 2 + index > len(self.translated):
+          Trace.error(f'Function f{unicode(index)} is not defined')
+          return None
+      tag = self.translated[2 + index]
+      if '$' not in tag:
+          return tag
+      for variable in self.params:
+          if variable in tag:
+              param = self.params[variable]
+              if not param.literal:
+                  Trace.error(
+                      f'Parameters in tag {tag}'
+                      + ' should be literal: {'
+                      + variable
+                      + '!}'
+                  )
+
+                  continue
+              value = param.literalvalue or ''
+              tag = tag.replace(variable, value)
       return tag
-    for variable in self.params:
-      if variable in tag:
-        param = self.params[variable]
-        if not param.literal:
-          Trace.error('Parameters in tag ' + tag + ' should be literal: {' + variable + '!}')
-          continue
-        if param.literalvalue:
-          value = param.literalvalue
-        else:
-          value = ''
-        tag = tag.replace(variable, value)
-    return tag
 
   def writebracket(self, direction, character):
     "Return a new bracket looking at the given direction."
     return self.factory.create(BracketCommand).create(direction, character)
 
   def computehybridsize(self):
-    "Compute the size of the hybrid function."
-    if not self.command in HybridSize.configsizes:
-      self.computesize()
-      return
-    self.size = HybridSize().getsize(self)
-    # set the size in all elements at first level
-    for element in self.contents:
-      element.size = self.size
+      "Compute the size of the hybrid function."
+      if self.command not in HybridSize.configsizes:
+          self.computesize()
+          return
+      self.size = HybridSize().getsize(self)
+      # set the size in all elements at first level
+      for element in self.contents:
+        element.size = self.size
 
 
 class HybridSize(object):
@@ -3161,16 +3140,16 @@ class HybridSize(object):
   configsizes = FormulaConfig.hybridsizes
 
   def getsize(self, function):
-    "Read the size for a function and parse it."
-    sizestring = self.configsizes[function.command]
-    for name in function.params:
-      if name in sizestring:
-        size = function.params[name].value.computesize()
-        sizestring = sizestring.replace(name, unicode(size))
-    if '$' in sizestring:
-      Trace.error('Unconverted variable in hybrid size: ' + sizestring)
-      return 1
-    return eval(sizestring)
+      "Read the size for a function and parse it."
+      sizestring = self.configsizes[function.command]
+      for name in function.params:
+        if name in sizestring:
+          size = function.params[name].value.computesize()
+          sizestring = sizestring.replace(name, unicode(size))
+      if '$' in sizestring:
+          Trace.error(f'Unconverted variable in hybrid size: {sizestring}')
+          return 1
+      return eval(sizestring)
 
 
 FormulaCommand.types += [HybridFunction]

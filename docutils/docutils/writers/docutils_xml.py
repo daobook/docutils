@@ -8,6 +8,7 @@ Simple document tree Writer, writes Docutils XML according to
 http://docutils.sourceforge.net/docs/ref/docutils.dtd.
 """
 
+
 __docformat__ = 'reStructuredText'
 
 import sys
@@ -18,12 +19,11 @@ from docutils import frontend, writers, nodes
 
 if sys.version_info >= (3, 0):
     from io import StringIO  # noqa
+    unicode = str  # noqa
+
+
 else:
     from StringIO import StringIO  # noqa
-
-
-if sys.version_info >= (3, 0):
-    unicode = str  # noqa
 
 
 class RawXmlError(docutils.ApplicationError): pass

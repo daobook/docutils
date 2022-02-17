@@ -151,9 +151,7 @@ def main(suite=None):
     if debug:
         print("Debug: Suite=%s" % suite, file=sys.stderr)
     testRunner = unittest.TextTestRunner(verbosity=verbosity)
-    # run suites (if we were called from test_all) or suite...
-    if isinstance(suite, type([])):
-        for s in suite:
-            testRunner.run(s)
-    else:
+    if not isinstance(suite, type([])):
         return testRunner.run(suite)
+    for s in suite:
+        testRunner.run(s)

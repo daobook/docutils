@@ -21,10 +21,10 @@ def suite():
         s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['code-parsing-long'] = [
-["""\
+totest = {
+    'code-parsing-long': [
+        [
+            """\
 .. code:: python3
   :number-lines: 7
 
@@ -35,7 +35,7 @@ totest['code-parsing-long'] = [
       # and now for something completely different
       print(8/2)
 """,
-"""\
+            """\
 <document source="test data">
     <literal_block classes="code python3" xml:space="preserve">
         <inline classes="ln">
@@ -82,13 +82,15 @@ totest['code-parsing-long'] = [
             2
         <inline classes="punctuation">
             )
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. code:: latex
 
   hello \\emph{world} % emphasize
 """,
-"""\
+            """\
 <document source="test data">
     <literal_block classes="code latex" xml:space="preserve">
         hello \n\
@@ -101,8 +103,10 @@ totest['code-parsing-long'] = [
             }
          \n\
         <inline classes="comment">
-            % emphasize"""],
-]
+            % emphasize""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

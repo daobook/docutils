@@ -17,6 +17,7 @@
 
 """common definitions for Docutils HTML writers"""
 
+
 import base64
 import mimetypes
 import os, os.path
@@ -35,11 +36,9 @@ from docutils.utils.math import (unichar2tex, pick_math_environment,
 
 if sys.version_info >= (3, 0):
     from urllib.request import url2pathname
+    unicode = str  # noqa
 else:
     from urllib import url2pathname
-
-if sys.version_info >= (3, 0):
-    unicode = str  # noqa
 
 
 class Writer(writers.Writer):
@@ -160,17 +159,18 @@ class Writer(writers.Writer):
         self.output = self.apply_template()
 
     def apply_template(self):
-        template_file = open(self.document.settings.template, 'rb')
-        template = unicode(template_file.read(), 'utf-8')
-        template_file.close()
+        with open(self.document.settings.template, 'rb') as template_file:
+            template = unicode(template_file.read(), 'utf-8')
         subs = self.interpolation_dict()
         return template % subs
 
     def interpolation_dict(self):
-        subs = {}
         settings = self.document.settings
-        for attr in self.visitor_attributes:
-            subs[attr] = ''.join(getattr(self, attr)).rstrip('\n')
+        subs = {
+            attr: ''.join(getattr(self, attr)).rstrip('\n')
+            for attr in self.visitor_attributes
+        }
+
         subs['encoding'] = settings.output_encoding
         subs['version'] = docutils.__version__
         return subs
@@ -317,13 +317,13 @@ class HTMLTranslator(nodes.NodeVisitor):
             warnings.warn('The configuration setting "embed_images" '
                 'will be removed in Docutils 1.2. Use "image_loading: embed".',
                 FutureWarning, stacklevel=8)
-            if self.image_loading == None:
+            if self.image_loading is None:
                 self.image_loading = 'embed'
         if getattr(settings, 'embed_images', None) is False:
             warnings.warn('The configuration setting "embed_images" '
                 'will be removed in Docutils 1.2. Use "image_loading: link".',
                 FutureWarning, stacklevel=8)
-        if self.image_loading == None:
+        if self.image_loading is None:
             self.image_loading = 'link' # default
         self.math_output = settings.math_output.split()
         self.math_output_options = self.math_output[1:]
@@ -419,9 +419,7 @@ class HTMLTranslator(nodes.NodeVisitor):
         """
         tagname = tagname.lower()
         prefix = []
-        atts = {}
-        for (name, value) in attributes.items():
-            atts[name.lower()] = value
+        atts = {name.lower(): value for (name, value) in attributes.items()}
         classes = atts.pop('classes', [])
         languages = []
         # unify class arguments and move language specification
@@ -474,10 +472,7 @@ class HTMLTranslator(nodes.NodeVisitor):
             else:
                 parts.append('%s="%s"' % (name.lower(),
                                           self.attval(unicode(value))))
-        if empty:
-            infix = ' /'
-        else:
-            infix = ''
+        infix = ' /' if empty else ''
         return ''.join(prefix) + '<%s%s>' % (' '.join(parts), infix) + suffix
 
     def emptytag(self, node, tagname, suffix='\n', **attributes):
@@ -850,10 +845,7 @@ class HTMLTranslator(nodes.NodeVisitor):
         if node.parent.parent.parent.stubs[node.parent.column]:
             # "stubs" list is an attribute of the tgroup element
             atts['classes'].append('stub')
-        if atts['classes']:
-            tagname = 'th'
-        else:
-            tagname = 'td'
+        tagname = 'th' if atts['classes'] else 'td'
         node.parent.column += 1
         if 'morerows' in node:
             atts['rowspan'] = node['morerows'] + 1
@@ -1004,8 +996,11 @@ class HTMLTranslator(nodes.NodeVisitor):
         if 'height' in node:
             atts['height'] = node['height']
         if 'scale' in node:
-            if (PIL and not ('width' in node and 'height' in node)
-                and self.settings.file_insertion_enabled):
+            if (
+                PIL
+                and ('width' not in node or 'height' not in node)
+                and self.settings.file_insertion_enabled
+            ):
                 imagepath = url2pathname(uri)
                 try:
                     img = PIL.Image.open(
@@ -1402,10 +1397,7 @@ class HTMLTranslator(nodes.NodeVisitor):
 
     def visit_raw(self, node):
         if 'html' in node.get('format', '').split():
-            if isinstance(node.parent, nodes.TextElement):
-                tagname = 'span'
-            else:
-                tagname = 'div'
+            tagname = 'span' if isinstance(node.parent, nodes.TextElement) else 'div'
             if node['classes']:
                 self.body.append(self.starttag(node, tagname, suffix=''))
             self.body.append(node.astext())
@@ -1543,17 +1535,14 @@ class HTMLTranslator(nodes.NodeVisitor):
                 backref_text = ('; <em><a href="#%s">backlink</a></em>'
                                 % backrefs[0])
             else:
-                i = 1
-                backlinks = []
-                for backref in backrefs:
-                    backlinks.append('<a href="#%s">%s</a>' % (backref, i))
-                    i += 1
+                backlinks = [
+                    '<a href="#%s">%s</a>' % (backref, i)
+                    for i, backref in enumerate(backrefs, start=1)
+                ]
+
                 backref_text = ('; <em>backlinks: %s</em>'
                                 % ', '.join(backlinks))
-        if node.hasattr('line'):
-            line = ', line %s' % node['line']
-        else:
-            line = ''
+        line = ', line %s' % node['line'] if node.hasattr('line') else ''
         self.body.append('System Message: %s/%s '
                          '(<span class="docutils literal">%s</span>%s)%s</p>\n'
                          % (node['type'], node['level'],
@@ -1575,8 +1564,7 @@ class HTMLTranslator(nodes.NodeVisitor):
         self.body.append('</table>\n')
 
     def visit_target(self, node):
-        if not ('refuri' in node or 'refid' in node
-                or 'refname' in node):
+        if 'refuri' not in node and 'refid' not in node and 'refname' not in node:
             self.body.append(self.starttag(node, 'span', '', CLASS='target'))
             self.context.append('</span>')
         else:
@@ -1628,9 +1616,7 @@ class HTMLTranslator(nodes.NodeVisitor):
             atts['aria-level'] = h_level
         start_tag = self.starttag(node, tagname, '', **atts)
         if node.hasattr('refid'):
-            atts = {}
-            atts['class'] = 'toc-backref'
-            atts['role'] = 'doc-backlink' # HTML5 only
+            atts = {'class': 'toc-backref', 'role': 'doc-backlink'}
             atts['href'] = '#' + node['refid']
             start_tag += self.starttag(nodes.reference(), 'a', '', **atts)
             close_tag = '</a></%s>\n' % tagname

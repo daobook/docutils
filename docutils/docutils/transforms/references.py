@@ -116,14 +116,18 @@ class AnonymousHyperlinks(Transform):
     default_priority = 440
 
     def apply(self):
-        anonymous_refs = []
-        anonymous_targets = []
-        for node in self.document.findall(nodes.reference):
-            if node.get('anonymous'):
-                anonymous_refs.append(node)
-        for node in self.document.findall(nodes.target):
-            if node.get('anonymous'):
-                anonymous_targets.append(node)
+        anonymous_refs = [
+            node
+            for node in self.document.findall(nodes.reference)
+            if node.get('anonymous')
+        ]
+
+        anonymous_targets = [
+            node
+            for node in self.document.findall(nodes.target)
+            if node.get('anonymous')
+        ]
+
         if len(anonymous_refs) \
               != len(anonymous_targets):
             msg = self.document.reporter.error(
@@ -144,7 +148,6 @@ class AnonymousHyperlinks(Transform):
                 if target.hasattr('refuri'):
                     ref['refuri'] = target['refuri']
                     ref.resolved = 1
-                    break
                 else:
                     if not target['ids']:
                         # Propagated target.
@@ -152,7 +155,8 @@ class AnonymousHyperlinks(Transform):
                         continue
                     ref['refid'] = target['ids'][0]
                     self.document.note_refid(ref)
-                    break
+
+                break
 
 
 class IndirectHyperlinks(Transform):
@@ -249,13 +253,12 @@ class IndirectHyperlinks(Transform):
         elif reftarget.hasattr('refid'):
             target['refid'] = reftarget['refid']
             self.document.note_refid(target)
+        elif reftarget['ids']:
+            target['refid'] = reftarget_id
+            self.document.note_refid(target)
         else:
-            if reftarget['ids']:
-                target['refid'] = reftarget_id
-                self.document.note_refid(target)
-            else:
-                self.nonexistent_indirect_target(target)
-                return
+            self.nonexistent_indirect_target(target)
+            return
         if refname is not None:
             del target['refname']
         target.resolved = 1
@@ -271,10 +274,8 @@ class IndirectHyperlinks(Transform):
         self.indirect_target_error(target, 'forming a circular reference')
 
     def indirect_target_error(self, target, explanation):
-        naming = ''
         reflist = []
-        if target['names']:
-            naming = '"%s" ' % target['names'][0]
+        naming = '"%s" ' % target['names'][0] if target['names'] else ''
         for name in target['names']:
             reflist.extend(self.document.refnames.get(name, []))
         for id in target['ids']:
@@ -701,16 +702,19 @@ class Substitutions(Transform):
 
             parent = ref.parent
             index = parent.index(ref)
-            if  ('ltrim' in subdef.attributes
-                    or 'trim' in subdef.attributes):
-                if index > 0 and isinstance(parent[index - 1],
-                                            nodes.Text):
-                    parent[index - 1] = parent[index - 1].rstrip()
-            if  ('rtrim' in subdef.attributes
-                    or 'trim' in subdef.attributes):
-                if  (len(parent) > index + 1
-                        and isinstance(parent[index + 1], nodes.Text)):
-                    parent[index + 1] = parent[index + 1].lstrip()
+            if (
+                (('ltrim' in subdef.attributes or 'trim' in subdef.attributes))
+                and index > 0
+                and isinstance(parent[index - 1], nodes.Text)
+            ):
+                parent[index - 1] = parent[index - 1].rstrip()
+            if (
+                ('rtrim' in subdef.attributes or 'trim' in subdef.attributes)
+            ) and (
+                len(parent) > index + 1
+                and isinstance(parent[index + 1], nodes.Text)
+            ):
+                parent[index + 1] = parent[index + 1].lstrip()
             subdef_copy = subdef.deepcopy()
             try:
                 # Take care of nested substitution references:
@@ -750,11 +754,8 @@ class Substitutions(Transform):
             # register refname of the replacement node(s)
             # (needed for resolution of references)
             for node in subdef_copy.children:
-                if isinstance(node, nodes.Referential):
-                    # HACK: verify refname attribute exists.
-                    # Test with docs/dev/todo.txt, see. |donate|
-                    if 'refname' in node:
-                        self.document.note_refname(node)
+                if isinstance(node, nodes.Referential) and 'refname' in node:
+                    self.document.note_refname(node)
 
 
 class TargetNotes(Transform):
@@ -809,12 +810,12 @@ class TargetNotes(Transform):
             footnote = notes[refuri]
             assert len(footnote['names']) == 1
             footnote_name = footnote['names'][0]
-        else:                           # original
+        else:                       # original
             footnote = nodes.footnote()
             footnote_id = self.document.set_id(footnote)
             # Use uppercase letters and a colon; they can't be
             # produced inside names by the parser.
-            footnote_name = 'TARGET_NOTE: ' + footnote_id
+            footnote_name = f'TARGET_NOTE: {footnote_id}'
             footnote['auto'] = 1
             footnote['names'] = [footnote_name]
             footnote_paragraph = nodes.paragraph()

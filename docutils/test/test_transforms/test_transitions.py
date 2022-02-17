@@ -23,10 +23,12 @@ def suite():
     return s
 
 
-totest = {}
-
-totest['transitions'] = ((Transitions,), [
-["""\
+totest = {
+    'transitions': (
+        (Transitions,),
+        [
+            [
+                """\
 Section 1
 =========
 
@@ -42,7 +44,7 @@ Section 2
 
 Some text.
 """,
-"""\
+                """\
 <document source="test data">
     <section ids="section-1" names="section\\ 1">
         <title>
@@ -58,8 +60,10 @@ Some text.
             Section 2
         <paragraph>
             Some text.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 A paragraph.
 
 ----------
@@ -69,7 +73,7 @@ Section 1
 
 Paragraph.
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         A paragraph.
@@ -79,8 +83,10 @@ Paragraph.
             Section 1
         <paragraph>
             Paragraph.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 --------
 
 A section or document may not begin with a transition.
@@ -99,7 +105,7 @@ may not end with a transition.
 
 --------
 """,
-"""\
+                """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -126,8 +132,10 @@ may not end with a transition.
     <system_message level="3" line="17" source="test data" type="ERROR">
         <paragraph>
             Document may not end with a transition.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Sections with transitions at beginning and end.
 
 Section 1
@@ -144,7 +152,7 @@ Section 2
 
 ----------
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         Sections with transitions at beginning and end.
@@ -168,15 +176,17 @@ Section 2
         <system_message level="3" line="15" source="test data" type="ERROR">
             <paragraph>
                 Document may not end with a transition.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 A paragraph and two transitions.
 
 ----------
 
 ----------
-""", # the same:
-"""\
+""",  # the same:
+                """\
 <document source="test data">
     <paragraph>
         A paragraph and two transitions.
@@ -188,8 +198,10 @@ A paragraph and two transitions.
     <system_message level="3" line="5" source="test data" type="ERROR">
         <paragraph>
             Document may not end with a transition.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 A paragraph, two transitions, and a blank line.
 
 ----------
@@ -197,7 +209,7 @@ A paragraph, two transitions, and a blank line.
 ----------
 
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         A paragraph, two transitions, and a blank line.
@@ -209,13 +221,15 @@ A paragraph, two transitions, and a blank line.
     <system_message level="3" line="5" source="test data" type="ERROR">
         <paragraph>
             Document may not end with a transition.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 ----------
 
 Document beginning with a transition.
 """,
-"""\
+                """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -223,8 +237,10 @@ Document beginning with a transition.
     <transition>
     <paragraph>
         Document beginning with a transition.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Section 1
 =========
 
@@ -239,7 +255,7 @@ Section 2
 
 Some text.
 """,
-"""\
+                """\
 <document source="test data">
     <section ids="section-1" names="section\\ 1">
         <title>
@@ -261,15 +277,17 @@ Some text.
             Section 2
         <paragraph>
             Some text.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 ----------
 
 ----------
 
 ----------
 """,
-"""\
+                """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -286,14 +304,16 @@ Some text.
     <system_message level="3" line="5" source="test data" type="ERROR">
         <paragraph>
             Document may not end with a transition.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 A paragraph.
 
 ----------
 
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         A paragraph.
@@ -301,8 +321,11 @@ A paragraph.
     <system_message level="3" line="3" source="test data" type="ERROR">
         <paragraph>
             Document may not end with a transition.
-"""],
-])
+""",
+            ],
+        ],
+    )
+}
 
 
 if __name__ == '__main__':

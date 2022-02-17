@@ -60,12 +60,13 @@ generic_tests = [
 """],
 ]
 
-totest = {}
-for block_quote_type in ('epigraph', 'highlights', 'pull-quote'):
-   totest[block_quote_type] = [
-       [text % {'type': block_quote_type} for text in pair]
-       for pair in generic_tests]
-
+totest = {
+    block_quote_type: [
+        [text % {'type': block_quote_type} for text in pair]
+        for pair in generic_tests
+    ]
+    for block_quote_type in ('epigraph', 'highlights', 'pull-quote')
+}
 
 if __name__ == '__main__':
     import unittest

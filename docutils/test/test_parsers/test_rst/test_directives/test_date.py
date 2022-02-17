@@ -21,15 +21,15 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['date'] = [
-["""\
+totest = {
+    'date': [
+        [
+            """\
 .. |date| date::
 
 Today's date is |date|.
 """,
-"""\
+            """\
 <document source="test data">
     <substitution_definition names="date">
         %s
@@ -38,27 +38,36 @@ Today's date is |date|.
         <substitution_reference refname="date">
             date
         .
-""" % time.strftime('%Y-%m-%d')],
-["""\
+"""
+            % time.strftime('%Y-%m-%d'),
+        ],
+        [
+            """\
 .. |date| date:: %a, %d %b %Y
 """,
-"""\
+            """\
 <document source="test data">
     <substitution_definition names="date">
         %s
-""" % time.strftime('%a, %d %b %Y')],
-["""\
+"""
+            % time.strftime('%a, %d %b %Y'),
+        ],
+        [
+            """\
 .. date::
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
             Invalid context: the "date" directive can only be used within a substitution definition.
         <literal_block xml:space="preserve">
             .. date::
-"""],
-]
+""",
+        ],
+    ]
+}
+
 
 # some locales return non-ASCII characters for names of days or months
 if locale_encoding in ['utf8', 'utf-8', 'latin-1']:

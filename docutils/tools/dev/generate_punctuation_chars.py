@@ -180,11 +180,14 @@ def unicode_charlists(categories, cp_min=0, cp_max=None):
         cp_max = max(x for x in range(sys.maxunicode+1)
                     if unicodedata.category(unichr(x)) in categories)
         # print(cp_max) # => 74867 for unicode_punctuation_categories
-    charlists = {}
-    for cat in categories:
-        charlists[cat] = [unichr(x) for x in range(cp_min, cp_max+1)
-                            if unicodedata.category(unichr(x)) == cat]
-    return charlists
+    return {
+        cat: [
+            unichr(x)
+            for x in range(cp_min, cp_max + 1)
+            if unicodedata.category(unichr(x)) == cat
+        ]
+        for cat in categories
+    }
 
 
 # Character categories in Docutils

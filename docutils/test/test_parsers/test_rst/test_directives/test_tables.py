@@ -37,23 +37,22 @@ empty_txt = os.path.join(mydir, 'empty.txt')
 
 unichr_exception = DocutilsTestSupport.exception_data(
     unichr, int("9999999999999", 16))[0]
-if isinstance(unichr_exception, OverflowError):
-    unichr_exception_string = 'code too large (%s)' % unichr_exception
-else:
-    unichr_exception_string = str(unichr_exception)
-
 # some error messages changed in Python 3.3, CPython has backported to 2.7.4,
 # PyPy has not
 csv_eod_error_str = 'unexpected end of data'
+unichr_exception_string = (
+    'code too large (%s)' % unichr_exception
+    if isinstance(unichr_exception, OverflowError)
+    else str(unichr_exception)
+)
+
 if sys.version_info < (2,7,4) or (platform.python_implementation() == 'PyPy'
                                   and sys.version_info < (3,0)):
     csv_eod_error_str = 'newline inside string'
 # pypy adds a line number
 if platform.python_implementation() == 'PyPy':
-    csv_eod_error_str = 'line 1: ' + csv_eod_error_str
-csv_unknown_url = "'bogus.csv'"
-if sys.version_info < (3, 0):
-    csv_unknown_url = "bogus.csv"
+    csv_eod_error_str = f'line 1: {csv_eod_error_str}'
+csv_unknown_url = "bogus.csv" if sys.version_info < (3, 0) else "'bogus.csv'"
 
 
 def null_bytes():
@@ -66,10 +65,10 @@ def null_bytes():
 
 null_bytes_exception = DocutilsTestSupport.exception_data(null_bytes)[0]
 
-totest = {}
-
-totest['table'] = [
-["""\
+totest = {
+    'table': [
+        [
+            """\
 .. table:: Truth table for "not"
    :class: custom
    :name:  tab:truth.not
@@ -81,7 +80,7 @@ totest['table'] = [
    True   False
    =====  =====
 """,
-"""\
+            """\
 <document source="test data">
     <table classes="custom" ids="tab-truth-not" names="tab:truth.not">
         <title>
@@ -112,8 +111,10 @@ totest['table'] = [
                     <entry>
                         <paragraph>
                             False
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. table::
 
    ========== ==========
@@ -121,7 +122,7 @@ totest['table'] = [
    a          title
    ========== ==========
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -142,15 +143,17 @@ totest['table'] = [
                     <entry>
                         <paragraph>
                             title
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. table:: title with an *error
 
    ======  =====
    Simple  table
    ======  =====
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <title>
@@ -172,13 +175,15 @@ totest['table'] = [
     <system_message backrefs="problematic-1" ids="system-message-1" level="2" line="1" source="test data" type="WARNING">
         <paragraph>
             Inline emphasis start-string without end-string.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. table:: Not a table.
 
    This is a paragraph.
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -187,19 +192,23 @@ totest['table'] = [
             .. table:: Not a table.
             \n\
                This is a paragraph.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. table:: empty
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="2" line="1" source="test data" type="WARNING">
         <paragraph>
             Content block expected for the "table" directive; none found.
         <literal_block xml:space="preserve">
             .. table:: empty
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. table::
     :width: 100 %
 
@@ -207,7 +216,7 @@ totest['table'] = [
     col 1        col 2
     ============ ==============
 """,
-"""\
+            """\
 <document source="test data">
     <table width="100%">
         <tgroup cols="2">
@@ -221,8 +230,10 @@ totest['table'] = [
                     <entry>
                         <paragraph>
                             col 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. table::
     :width: 100px
 
@@ -230,7 +241,7 @@ totest['table'] = [
     col 1        col 2
     ============ ==============
 """,
-"""\
+            """\
 <document source="test data">
     <table width="100px">
         <tgroup cols="2">
@@ -244,8 +255,10 @@ totest['table'] = [
                     <entry>
                         <paragraph>
                             col 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. table::
     :width: 321
 
@@ -253,7 +266,7 @@ totest['table'] = [
     col 1        col 2
     ============ ==============
 """,
-"""\
+            """\
 <document source="test data">
     <table width="321">
         <tgroup cols="2">
@@ -267,8 +280,10 @@ totest['table'] = [
                     <entry>
                         <paragraph>
                             col 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. table::
     :widths: 15, 25
 
@@ -276,7 +291,7 @@ totest['table'] = [
     Columns with custom widths.
     ============ ==============
 """,
-"""\
+            """\
 <document source="test data">
     <table classes="colwidths-given">
         <tgroup cols="2">
@@ -290,8 +305,10 @@ totest['table'] = [
                     <entry>
                         <paragraph>
                             custom widths.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. table::
     :widths: 10, 20
 
@@ -299,7 +316,7 @@ totest['table'] = [
     | Columns with | custom widths. |
     +--------------+----------------+
 """,
-"""\
+            """\
 <document source="test data">
     <table classes="colwidths-given">
         <tgroup cols="2">
@@ -313,8 +330,10 @@ totest['table'] = [
                     <entry>
                         <paragraph>
                             custom widths.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. table::
     :widths: auto
 
@@ -322,7 +341,7 @@ totest['table'] = [
     | Columns with | automatic widths. |
     +--------------+-------------------+
 """,
-"""\
+            """\
 <document source="test data">
     <table classes="colwidths-auto">
         <tgroup cols="2">
@@ -336,8 +355,10 @@ totest['table'] = [
                     <entry>
                         <paragraph>
                             automatic widths.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. table::
     :widths: grid
 
@@ -345,7 +366,7 @@ totest['table'] = [
     | Columns with | automatic widths. |
     +--------------+-------------------+
 """,
-"""\
+            """\
 <document source="test data">
     <table classes="colwidths-given">
         <tgroup cols="2">
@@ -359,8 +380,10 @@ totest['table'] = [
                     <entry>
                         <paragraph>
                             automatic widths.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. table::
     :align: center
 
@@ -368,7 +391,7 @@ totest['table'] = [
     Simple  table
     ======  =====
 """,
-"""\
+            """\
 <document source="test data">
     <table align="center">
         <tgroup cols="2">
@@ -382,11 +405,12 @@ totest['table'] = [
                     <entry>
                         <paragraph>
                             table
-"""],
-]
-
-totest['csv-table'] = [
-["""\
+""",
+        ],
+    ],
+    'csv-table': [
+        [
+            """\
 .. csv-table:: inline with integral header
    :width: 80%
    :widths: 10, 20, 30
@@ -399,7 +423,7 @@ totest['csv-table'] = [
    crunchy, now would it?"
    "Gannet Ripple", 1.99, "On a stick!"
 """,
-"""\
+            """\
 <document source="test data">
     <table classes="colwidths-given" width="80%">
         <title>
@@ -451,15 +475,17 @@ totest['csv-table'] = [
                     <entry>
                         <paragraph>
                             On a stick!
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. csv-table:: inline with separate header
    :header: "Treat", Quantity, "Description"
    :widths: 10,20,30
 
    "Albatross", 2.99, "On a stick!"
 """,
-"""\
+            """\
 <document source="test data">
     <table classes="colwidths-given">
         <title>
@@ -490,8 +516,10 @@ totest['csv-table'] = [
                     <entry>
                         <paragraph>
                             On a stick!
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. csv-table:: complex internal structure
    :header: "Treat", Quantity, "
             * Description,
@@ -503,7 +531,7 @@ totest['csv-table'] = [
    * Sorbet
    * Albatross", 2.99, "On a stick!"
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <title>
@@ -550,14 +578,16 @@ totest['csv-table'] = [
                     <entry>
                         <paragraph>
                             On a stick!
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. csv-table:: short rows
 
    one, 2, three
    4, five
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <title>
@@ -585,8 +615,10 @@ totest['csv-table'] = [
                         <paragraph>
                             five
                     <entry>
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. csv-table:: short rows
    :header-rows: 1
 
@@ -594,7 +626,7 @@ totest['csv-table'] = [
    one, 2, three
    4
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <title>
@@ -629,13 +661,15 @@ totest['csv-table'] = [
                             4
                     <entry>
                     <entry>
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 .. csv-table:: non-ASCII characters
 
    Heiz\xf6lr\xfccksto\xdfabd\xe4mpfung
 """,
-u"""\
+            u"""\
 <document source="test data">
     <table>
         <title>
@@ -647,15 +681,17 @@ u"""\
                     <entry>
                         <paragraph>
                             Heiz\xf6lr\xfccksto\xdfabd\xe4mpfung
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. csv-table:: center aligned
    :align: center
 
    11, 12
    21, 22
 """,
-"""\
+            """\
 <document source="test data">
     <table align="center">
         <title>
@@ -678,25 +714,29 @@ u"""\
                     <entry>
                         <paragraph>
                             22
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. csv-table:: empty
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="2" line="1" source="test data" type="WARNING">
         <paragraph>
             The "csv-table" directive requires content; none supplied.
         <literal_block xml:space="preserve">
             .. csv-table:: empty
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. csv-table:: insufficient header row data
    :header-rows: 2
 
    some, csv, data
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -706,14 +746,16 @@ u"""\
                :header-rows: 2
             \n\
                some, csv, data
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. csv-table:: insufficient body data
    :header-rows: 1
 
    some, csv, data
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -723,14 +765,16 @@ u"""\
                :header-rows: 1
             \n\
                some, csv, data
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. csv-table:: content and external
    :file: bogus.csv
 
    some, csv, data
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -740,13 +784,15 @@ u"""\
                :file: bogus.csv
             \n\
                some, csv, data
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. csv-table:: external file and url
    :file: bogus.csv
    :url: http://example.org/bogus.csv
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -755,13 +801,15 @@ u"""\
             .. csv-table:: external file and url
                :file: bogus.csv
                :url: http://example.org/bogus.csv
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. csv-table:: error in the *title
 
    some, csv, data
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <title>
@@ -787,12 +835,14 @@ u"""\
     <system_message backrefs="problematic-1" ids="system-message-1" level="2" line="1" source="test data" type="WARNING">
         <paragraph>
             Inline emphasis start-string without end-string.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. csv-table:: no such file
    :file: bogus.csv
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="4" line="1" source="test data" type="SEVERE">
         <paragraph>
@@ -801,13 +851,14 @@ u"""\
         <literal_block xml:space="preserve">
             .. csv-table:: no such file
                :file: bogus.csv
-"""],
-# note that this output is rewritten below for certain python versions
-["""\
+""",
+        ],
+        [
+            """\
 .. csv-table:: bad URL
    :url: bogus.csv
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="4" line="1" source="test data" type="SEVERE">
         <paragraph>
@@ -816,14 +867,17 @@ u"""\
         <literal_block xml:space="preserve">
             .. csv-table:: bad URL
                :url: bogus.csv
-""" % csv_unknown_url],
-["""\
+"""
+            % csv_unknown_url,
+        ],
+        [
+            """\
 .. csv-table:: column mismatch
    :widths: 10,20
 
    some, csv, data
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -833,8 +887,10 @@ u"""\
                :widths: 10,20
             \n\
                some, csv, data
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. csv-table:: bad column widths
    :widths: 10,y,z
 
@@ -845,7 +901,7 @@ u"""\
 
    some, csv, data
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -867,8 +923,11 @@ u"""\
                :widths: 0 0 0
             \n\
                some, csv, data
-""" % DocutilsTestSupport.exception_data(int, u"y")[1][0]],
-["""\
+"""
+            % DocutilsTestSupport.exception_data(int, u"y")[1][0],
+        ],
+        [
+            """\
 .. csv-table:: good delimiter
    :delim: /
 
@@ -889,7 +948,7 @@ u"""\
 
    some csv data
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <title>
@@ -963,15 +1022,17 @@ u"""\
                     <entry>
                         <paragraph>
                             data
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. csv-table:: bad delimiter
    :delim: multiple
 
 .. csv-table:: bad delimiter
    :delim: U+9999999999999
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -989,13 +1050,16 @@ u"""\
         <literal_block xml:space="preserve">
             .. csv-table:: bad delimiter
                :delim: U+9999999999999
-""" % unichr_exception_string],
-["""\
+"""
+            % unichr_exception_string,
+        ],
+        [
+            """\
 .. csv-table:: bad CSV data
 
    "bad", \"csv, data
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -1005,14 +1069,17 @@ u"""\
             .. csv-table:: bad CSV data
             \n\
                "bad", \"csv, data
-""" % csv_eod_error_str],
-["""\
+"""
+            % csv_eod_error_str,
+        ],
+        [
+            """\
 .. csv-table:: bad CSV header data
    :header: "bad", \"csv, data
 
    good, csv, data
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -1023,15 +1090,19 @@ u"""\
                :header: "bad", \"csv, data
             \n\
                good, csv, data
-""" % csv_eod_error_str],
-["""\
+"""
+            % csv_eod_error_str,
+        ],
+        [
+            """\
 .. csv-table:: bad encoding
    :file: %s
    :encoding: latin-1
 
 (7- and 8-bit text encoded as UTF-16 has lots of null/zero bytes.)
-""" % utf_16_csv,
-"""\
+"""
+            % utf_16_csv,
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -1043,14 +1114,18 @@ u"""\
                :encoding: latin-1
     <paragraph>
         (7- and 8-bit text encoded as UTF-16 has lots of null/zero bytes.)
-""" % (null_bytes_exception, utf_16_csv)],
-["""\
+"""
+            % (null_bytes_exception, utf_16_csv),
+        ],
+        [
+            """\
 .. csv-table:: good encoding
    :file: %s
    :encoding: utf-16
    :header-rows: 1
-""" % utf_16_csv,
-u"""\
+"""
+            % utf_16_csv,
+            u"""\
 <document source="test data">
     <table>
         <title>
@@ -1102,12 +1177,14 @@ u"""\
                     <entry>
                         <paragraph>
                             \u00bfOn a \u03c3\u03c4\u03b9\u03ba?
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. csv-table:: no CSV data
    :file: %s
 """ % empty_txt,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -1115,11 +1192,13 @@ u"""\
         <literal_block xml:space="preserve">
             .. csv-table:: no CSV data
                :file: %s
-""" % empty_txt],
-]
-
-totest['list-table'] = [
-["""\
+"""
+            % empty_txt,
+        ],
+    ],
+    'list-table': [
+        [
+            """\
 .. list-table:: list table with integral header
    :widths: 10 20 30
    :header-rows: 1
@@ -1139,7 +1218,7 @@ totest['list-table'] = [
      - 1.99
      - On a stick!
 """,
-"""\
+            """\
 <document source="test data">
     <table classes="colwidths-given">
         <title>
@@ -1191,8 +1270,10 @@ totest['list-table'] = [
                     <entry>
                         <paragraph>
                             On a stick!
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. list-table:: list table with integral header
    :widths: auto
    :header-rows: 1
@@ -1205,7 +1286,7 @@ totest['list-table'] = [
      - 2.99
      - On a stick!
 """,
-"""\
+            """\
 <document source="test data">
     <table classes="colwidths-auto">
         <title>
@@ -1236,8 +1317,10 @@ totest['list-table'] = [
                     <entry>
                         <paragraph>
                             On a stick!
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. list-table:: list table with integral header
    :header-rows: 1
    :stub-columns: 1
@@ -1256,7 +1339,7 @@ totest['list-table'] = [
      - 1.99
      - On a stick!
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <title>
@@ -1308,8 +1391,10 @@ totest['list-table'] = [
                     <entry>
                         <paragraph>
                             On a stick!
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. list-table:: center aligned
    :align: center
 
@@ -1318,7 +1403,7 @@ totest['list-table'] = [
    * - 21
      - 22
 """,
-"""\
+            """\
 <document source="test data">
     <table align="center">
         <title>
@@ -1341,13 +1426,15 @@ totest['list-table'] = [
                     <entry>
                         <paragraph>
                             22
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. list-table::
 
    not a bullet list
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -1356,13 +1443,15 @@ totest['list-table'] = [
             .. list-table::
             \n\
                not a bullet list
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. list-table::
 
    * not a second-level bullet list
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -1371,15 +1460,17 @@ totest['list-table'] = [
             .. list-table::
             \n\
                * not a second-level bullet list
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. list-table::
 
    * - columns not uniform
    * - first row has one,
      - second row has two
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -1390,14 +1481,16 @@ totest['list-table'] = [
                * - columns not uniform
                * - first row has one,
                  - second row has two
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. list-table::
    :widths: 10 20
 
    * - ":widths:" option doesn't match columns
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -1407,15 +1500,17 @@ totest['list-table'] = [
                :widths: 10 20
             \n\
                * - ":widths:" option doesn\'t match columns
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. list-table::
    :stub-columns: 3
 
    * - column 1
      - column 2
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -1426,15 +1521,17 @@ totest['list-table'] = [
             \n\
                * - column 1
                  - column 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. list-table::
    :stub-columns: 2
 
    * - column 1
      - column 2
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -1445,19 +1542,23 @@ totest['list-table'] = [
             \n\
                * - column 1
                  - column 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. list-table:: empty
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
             The "list-table" directive is empty; content required.
         <literal_block xml:space="preserve">
             .. list-table:: empty
-"""],
-]
+""",
+        ],
+    ],
+}
 
 
 if __name__ == '__main__':

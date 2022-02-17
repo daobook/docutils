@@ -29,12 +29,12 @@ def suite():
     s.generateTests(totest_ru)
     return s
 
-totest = {}
-totest_de = {}
-totest_ru = {}
-
-totest['bibliographic_field_lists'] = ((DocInfo,), [
-["""\
+totest = {
+    'bibliographic_field_lists': (
+        (DocInfo,),
+        [
+            [
+                """\
 .. Bibliographic element extraction.
 
 :Abstract:
@@ -47,7 +47,7 @@ totest['bibliographic_field_lists'] = ((DocInfo,), [
 :Date: 2001-08-11
 :Parameter i: integer
 """,
-"""\
+                """\
 <document source="test data">
     <docinfo>
         <author>
@@ -71,8 +71,10 @@ totest['bibliographic_field_lists'] = ((DocInfo,), [
             It is automatically moved to the end of the other bibliographic elements.
     <comment xml:space="preserve">
         Bibliographic element extraction.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. Bibliographic element extraction.
 
 :Abstract: Abstract 1.
@@ -85,7 +87,7 @@ totest['bibliographic_field_lists'] = ((DocInfo,), [
 :Date: 2001-08-11
 :Parameter i: integer
 """,
-"""\
+                """\
 <document source="test data">
     <docinfo>
         <author>
@@ -122,8 +124,10 @@ totest['bibliographic_field_lists'] = ((DocInfo,), [
             Abstract 1.
     <comment xml:space="preserve">
         Bibliographic element extraction.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 :Author: - must be a paragraph
 :Status: a *simple* paragraph
 :Date: But only one
@@ -133,7 +137,7 @@ totest['bibliographic_field_lists'] = ((DocInfo,), [
 
 .. and not empty either
 """,
-"""\
+                """\
 <document source="test data">
     <docinfo>
         <field classes="author">
@@ -172,8 +176,10 @@ totest['bibliographic_field_lists'] = ((DocInfo,), [
                         Cannot extract empty bibliographic field "Version".
     <comment xml:space="preserve">
         and not empty either
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 :Authors: Me, Myself, **I**
 :Authors: PacMan; Ms. PacMan; PacMan, Jr.
 :Authors:
@@ -186,7 +192,7 @@ totest['bibliographic_field_lists'] = ((DocInfo,), [
           - Second
           - Third
 """,
-"""\
+                """\
 <document source="test data">
     <docinfo>
         <authors>
@@ -218,12 +224,14 @@ totest['bibliographic_field_lists'] = ((DocInfo,), [
                 Second
             <author>
                 Third
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 :Authors: Only One
 :Authors: One, Only;
 """,
-"""\
+                """\
 <document source="test data">
     <docinfo>
         <authors>
@@ -232,8 +240,10 @@ totest['bibliographic_field_lists'] = ((DocInfo,), [
         <authors>
             <author>
                 One, Only
-"""],
-[r""":Authors: Me\, Myself; **I**
+""",
+            ],
+            [
+                r""":Authors: Me\, Myself; **I**
 :Authors: Pac\;Man\\; Ms. Pac\Man; Pac\ Man, Jr.
 :Authors:
     Here
@@ -245,7 +255,7 @@ totest['bibliographic_field_lists'] = ((DocInfo,), [
           - Se\ cond
           - Thir\d
 """,
-"""\
+                """\
 <document source="test data">
     <docinfo>
         <authors>
@@ -275,8 +285,10 @@ totest['bibliographic_field_lists'] = ((DocInfo,), [
                 Second
             <author>
                 Third
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 :Authors:
 
 :Authors: A. Einstein
@@ -296,7 +308,7 @@ totest['bibliographic_field_lists'] = ((DocInfo,), [
 
       Two
 """,
-"""\
+                """\
 <document source="test data">
     <docinfo>
         <field classes="authors">
@@ -356,16 +368,22 @@ totest['bibliographic_field_lists'] = ((DocInfo,), [
                 <system_message level="2" line="15" source="test data" type="WARNING">
                     <paragraph>
                         Bibliographic field "Authors" incompatible with extraction: it must contain either a single paragraph (with authors separated by one of ";,"), multiple paragraphs (one per author), or a bullet list with one paragraph (one author) per item.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. RCS keyword extraction.
 
-:Status: (some text) $""" + """RCSfile: test_docinfo.py,v $ (more text) 
-:Date: (some text) $""" + """Date: 2002/10/08 01:34:23 $ (more text)
-:Date: (some text) $""" + """Date: 2005-03-26T16:21:28.693201Z $ (more text)
-:Version: (some text) $""" + """Revision: 1.1 $ (more text)
+:Status: (some text) $"""
+                + """RCSfile: test_docinfo.py,v $ (more text) 
+:Date: (some text) $"""
+                + """Date: 2002/10/08 01:34:23 $ (more text)
+:Date: (some text) $"""
+                + """Date: 2005-03-26T16:21:28.693201Z $ (more text)
+:Version: (some text) $"""
+                + """Revision: 1.1 $ (more text)
 """,
-"""\
+                """\
 <document source="test data">
     <docinfo>
         <status>
@@ -378,11 +396,18 @@ totest['bibliographic_field_lists'] = ((DocInfo,), [
             (some text) 1.1 (more text)
     <comment xml:space="preserve">
         RCS keyword extraction.
-"""],
-])
+""",
+            ],
+        ],
+    )
+}
 
-totest_de['bibliographic_field_lists'] = ((DocInfo,), [
-[u"""\
+totest_de = {
+    'bibliographic_field_lists': (
+        (DocInfo,),
+        [
+            [
+                u"""\
 .. Bibliographic element extraction for a German document.
 
 :Zusammenfassung: Abstract 1.
@@ -394,7 +419,7 @@ totest_de['bibliographic_field_lists'] = ((DocInfo,), [
 :Datum: 2001-08-11
 :Parameter i: integer
 """,
-u"""\
+                u"""\
 <document source="test data">
     <docinfo>
         <author>
@@ -422,10 +447,18 @@ u"""\
             Abstract 1.
     <comment xml:space="preserve">
         Bibliographic element extraction for a German document.
-"""],])
+""",
+            ],
+        ],
+    )
+}
 
-totest_ru['bibliographic_field_lists'] = ((DocInfo,), [
-[u"""\
+totest_ru = {
+    'bibliographic_field_lists': (
+        (DocInfo,),
+        [
+            [
+                u"""\
 .. Bibliographic element extraction for a Russian document.
 
 :аннотация: Abstract 1.
@@ -437,7 +470,7 @@ totest_ru['bibliographic_field_lists'] = ((DocInfo,), [
 :дата: 2001-08-11
 :Parameter i: integer
 """,
-u"""\
+                u"""\
 <document source="test data">
     <docinfo>
         <author>
@@ -465,8 +498,11 @@ u"""\
             Abstract 1.
     <comment xml:space="preserve">
         Bibliographic element extraction for a Russian document.
-"""],])
-
+""",
+            ],
+        ],
+    )
+}
 
 if __name__ == '__main__':
     import unittest

@@ -194,14 +194,13 @@ class S5HTMLTranslator(html4css1.HTMLTranslator):
         required_files_copied = {}
         # This is a link (URL) in HTML, so we use "/", not os.sep:
         self.theme_file_path = '%s/%s' % ('ui', settings.theme)
-        if settings._destination:
-            dest = os.path.join(
-                os.path.dirname(settings._destination), 'ui', settings.theme)
-            if not os.path.isdir(dest):
-                os.makedirs(dest)
-        else:
+        if not settings._destination:
             # no destination, so we can't copy the theme
             return
+        dest = os.path.join(
+            os.path.dirname(settings._destination), 'ui', settings.theme)
+        if not os.path.isdir(dest):
+            os.makedirs(dest)
         default = False
         while path:
             for f in os.listdir(path):  # copy all files from each theme
@@ -238,7 +237,7 @@ class S5HTMLTranslator(html4css1.HTMLTranslator):
         if len(required_files_copied) != len(self.required_theme_files):
             # Some required files weren't found & couldn't be copied.
             required = list(self.required_theme_files)
-            for f in required_files_copied.keys():
+            for f in required_files_copied:
                 required.remove(f)
             raise docutils.ApplicationError(
                 'Theme files not found: %s'
@@ -264,15 +263,13 @@ class S5HTMLTranslator(html4css1.HTMLTranslator):
             if os.path.exists(dest) and not settings.overwrite_theme_files:
                 settings.record_dependencies.add(dest)
             else:
-                src_file = open(source, 'rb')
-                src_data = src_file.read()
-                src_file.close()
-                dest_file = open(dest, 'wb')
-                dest_dir = dest_dir.replace(os.sep, '/')
-                dest_file.write(src_data.replace(b'ui/default',
-                    dest_dir[dest_dir.rfind('ui/'):].encode(
-                    sys.getfilesystemencoding())))
-                dest_file.close()
+                with open(source, 'rb') as src_file:
+                    src_data = src_file.read()
+                with open(dest, 'wb') as dest_file:
+                    dest_dir = dest_dir.replace(os.sep, '/')
+                    dest_file.write(src_data.replace(b'ui/default',
+                        dest_dir[dest_dir.rfind('ui/'):].encode(
+                        sys.getfilesystemencoding())))
                 settings.record_dependencies.add(source)
             return 1
         if os.path.isfile(dest):

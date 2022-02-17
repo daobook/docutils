@@ -19,17 +19,17 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['enumerated_lists'] = [
-["""\
+totest = {
+    'enumerated_lists': [
+        [
+            """\
 1. Item one.
 
 2. Item two.
 
 3. Item three.
 """,
-"""\
+            """\
 <document source="test data">
     <enumerated_list enumtype="arabic" prefix="" suffix=".">
         <list_item>
@@ -41,15 +41,17 @@ totest['enumerated_lists'] = [
         <list_item>
             <paragraph>
                 Item three.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 No blank lines betwen items:
 
 1. Item one.
 2. Item two.
 3. Item three.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         No blank lines betwen items:
@@ -63,18 +65,22 @@ No blank lines betwen items:
         <list_item>
             <paragraph>
                 Item three.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 1.
 empty item above, no blank line
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         1.
         empty item above, no blank line
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Scrambled:
 
 3. Item three.
@@ -87,7 +93,7 @@ Scrambled:
 2. Item two.
 1. Item one.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Scrambled:
@@ -113,15 +119,17 @@ Scrambled:
         3. Item three.
         2. Item two.
         1. Item one.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Skipping item 3:
 
 1. Item 1.
 2. Item 2.
 4. Item 4.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Skipping item 3:
@@ -135,8 +143,10 @@ Skipping item 3:
     <paragraph>
         2. Item 2.
         4. Item 4.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Start with non-ordinal-1:
 
 0. Item zero.
@@ -149,7 +159,7 @@ And again:
 2. Item two.
 3. Item three.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Start with non-ordinal-1:
@@ -181,8 +191,10 @@ And again:
     <system_message level="1" line="10" source="test data" type="INFO">
         <paragraph>
             Enumerated list start value not ordinal-1: "2" (ordinal 2)
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 1. Item one: line 1,
    line 2.
 2. Item two: line 1,
@@ -192,7 +204,7 @@ And again:
 
    Paragraph 2.
 """,
-"""\
+            """\
 <document source="test data">
     <enumerated_list enumtype="arabic" prefix="" suffix=".">
         <list_item>
@@ -209,8 +221,10 @@ And again:
                 line 2.
             <paragraph>
                 Paragraph 2.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Different enumeration sequences:
 
 1. Item 1.
@@ -233,7 +247,7 @@ i. Item i.
 ii. Item ii.
 iii. Item iii.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Different enumeration sequences:
@@ -287,8 +301,10 @@ iii. Item iii.
         <list_item>
             <paragraph>
                 Item iii.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Bad Roman numerals:
 
 i. i
@@ -310,7 +326,7 @@ iiii. iiii
 
 (IVXLCDM) IVXLCDM
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Bad Roman numerals:
@@ -343,8 +359,10 @@ iiii. iiii
                 I
     <paragraph>
         (IVXLCDM) IVXLCDM
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Potentially ambiguous cases:
 
 A. Item A.
@@ -365,7 +383,7 @@ iii. Item iii.
 
 Phew! Safe!
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Potentially ambiguous cases:
@@ -411,8 +429,10 @@ Phew! Safe!
                 Item iii.
     <paragraph>
         Phew! Safe!
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Definitely ambiguous:
 
 A. Item A.
@@ -439,7 +459,7 @@ i. Item i.
 ii. Item ii.
 iii. Item iii.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Definitely ambiguous:
@@ -519,8 +539,10 @@ iii. Item iii.
         <list_item>
             <paragraph>
                 Item iii.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Different enumeration formats:
 
 1. Item 1.
@@ -535,7 +557,7 @@ Different enumeration formats:
 (2) Item (2).
 (3) Item (3).
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Different enumeration formats:
@@ -569,8 +591,10 @@ Different enumeration formats:
         <list_item>
             <paragraph>
                 Item (3).
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Nested enumerated lists:
 
 1. Item 1.
@@ -597,7 +621,7 @@ Nested enumerated lists:
 
 3. Item 3.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Nested enumerated lists:
@@ -651,8 +675,10 @@ Nested enumerated lists:
         <list_item>
             <paragraph>
                 Item 3.
-"""],
-[u"""\
+""",
+        ],
+        [
+            u"""\
 A. Einstein was a great influence on
 B. Physicist, who was a colleague of
 C. Chemist.  They all worked in
@@ -665,7 +691,7 @@ B. Physicist, who was a colleague of
 C. Chemist.  They all worked in
 Princeton, NJ.
 """,
-"""\
+            """\
 <document source="test data">
     <enumerated_list enumtype="upperalpha" prefix="" suffix=".">
         <list_item>
@@ -687,8 +713,10 @@ Princeton, NJ.
         B. Physicist, who was a colleague of
         C. Chemist.  They all worked in
         Princeton, NJ.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 1. Item one: line 1,
    line 2.
 2. Item two: line 1,
@@ -698,7 +726,7 @@ Princeton, NJ.
 
    Paragraph 2.
 """,
-"""\
+            """\
 <document source="test data">
     <enumerated_list enumtype="arabic" prefix="" suffix=".">
         <list_item>
@@ -733,15 +761,17 @@ Princeton, NJ.
         <block_quote>
             <paragraph>
                 Paragraph 2.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 1. Item one.
 
 #. Item two.
 
 #. Item three.
 """,
-"""\
+            """\
 <document source="test data">
     <enumerated_list enumtype="arabic" prefix="" suffix=".">
         <list_item>
@@ -753,13 +783,15 @@ Princeton, NJ.
         <list_item>
             <paragraph>
                 Item three.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 a. Item one.
 #. Item two.
 #. Item three.
 """,
-"""\
+            """\
 <document source="test data">
     <enumerated_list enumtype="loweralpha" prefix="" suffix=".">
         <list_item>
@@ -771,13 +803,15 @@ a. Item one.
         <list_item>
             <paragraph>
                 Item three.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 i. Item one.
 ii. Item two.
 #. Item three.
 """,
-"""\
+            """\
 <document source="test data">
     <enumerated_list enumtype="lowerroman" prefix="" suffix=".">
         <list_item>
@@ -789,13 +823,15 @@ ii. Item two.
         <list_item>
             <paragraph>
                 Item three.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 #. Item one.
 #. Item two.
 #. Item three.
 """,
-"""\
+            """\
 <document source="test data">
     <enumerated_list enumtype="arabic" prefix="" suffix=".">
         <list_item>
@@ -807,13 +843,15 @@ ii. Item two.
         <list_item>
             <paragraph>
                 Item three.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 1. Item one.
 #. Item two.
 3. Item three.
 """,
-"""\
+            """\
 <document source="test data">
     <enumerated_list enumtype="arabic" prefix="" suffix=".">
         <list_item>
@@ -825,18 +863,22 @@ ii. Item two.
     <paragraph>
         #. Item two.
         3. Item three.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 z.
 x
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         z.
         x
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 3-space indent, with a trailing space:
 
 1. \n\
@@ -866,7 +908,7 @@ No item content:
 
 1.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         3-space indent, with a trailing space:
@@ -901,8 +943,10 @@ No item content:
         No item content:
     <enumerated_list enumtype="arabic" prefix="" suffix=".">
         <list_item>
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

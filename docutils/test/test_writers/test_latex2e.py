@@ -125,48 +125,50 @@ r"""\usepackage{alltt}
 """))
 
 
-totest = {}
-totest_latex_toc = {}
-totest_latex_toc_book = {}
-totest_latex_sectnum = {}
-totest_latex_citations = {}
-totest_stylesheet = {}
-totest_stylesheet_embed = {}
-totest_table_style_auto = {}
-totest_table_style_booktabs = {}
-
-totest['url_chars'] = [
-["http://nowhere/url_with%28parens%29",
-head + r"""
+totest = {
+    'url_chars': [
+        [
+            "http://nowhere/url_with%28parens%29",
+            head
+            + r"""
 \url{http://nowhere/url_with\%28parens\%29}
 
 \end{document}
-"""],
-]
-
-totest['textcomp'] = [
-["2 µm is just 2/1000000 m",
-head_textcomp + r"""
+""",
+        ]
+    ],
+    'textcomp': [
+        [
+            "2 µm is just 2/1000000 m",
+            head_textcomp + r"""
 2 µm is just 2/1000000 m
 
 \end{document}
-"""],
-]
-
-totest['spanish quote'] = [
-[".. role:: language-es\n\nUnd damit :language-es:`basta`!",
-head_template.substitute(dict(parts, requirements =
-r"""\usepackage{ifthen}
+""",
+        ]
+    ],
+    'spanish quote': [
+        [
+            ".. role:: language-es\n\nUnd damit :language-es:`basta`!",
+            head_template.substitute(
+                dict(
+                    parts,
+                    requirements=r"""\usepackage{ifthen}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish,english]{babel}
 \AtBeginDocument{\shorthandoff{.<>}}
-""")) + r"""
+""",
+                )
+            )
+            + r"""
 Und damit \foreignlanguage{spanish}{basta}!
 
 \end{document}
-"""],
-]
+""",
+        ]
+    ],
+}
 
 totest['code role'] = [
 [":code:`x=1`",
@@ -295,18 +297,24 @@ paragraph
 """],
 ]
 
-totest_latex_toc['no_sectnum'] = [
-# input
-["""\
+totest_latex_toc = {
+    'no_sectnum': [
+        [
+            """\
 .. contents::
 
 first section
 -------------
 """,
-# expected output
-head_template.substitute(dict(parts,
-    requirements=parts['requirements'] + '\\setcounter{secnumdepth}{0}\n'
-)) + r"""
+            # expected output
+            head_template.substitute(
+                dict(
+                    parts,
+                    requirements=parts['requirements']
+                    + '\\setcounter{secnumdepth}{0}\n',
+                )
+            )
+            + r"""
 \phantomsection\label{contents}
 \pdfbookmark[1]{Contents}{contents}
 \tableofcontents
@@ -317,8 +325,10 @@ head_template.substitute(dict(parts,
 }
 
 \end{document}
-"""],
-]
+""",
+        ]
+    ]
+}
 
 totest_latex_toc['sectnum'] = [
 # input
@@ -373,21 +383,27 @@ head_template.substitute(dict(parts,
 """],
 ]
 
-totest_latex_toc_book['depth'] = [
-# input
-["""\
+totest_latex_toc_book = {
+    'depth': [
+        [
+            """\
 .. contents::
     :depth: 1
 
 first chapter
 -------------
 """,
-# expected output
-head_template.substitute(dict(parts,
-    head_prefix=r"""\documentclass[a4paper]{book}
+            # expected output
+            head_template.substitute(
+                dict(
+                    parts,
+                    head_prefix=r"""\documentclass[a4paper]{book}
 """,
-    requirements=parts['requirements'] + '\\setcounter{secnumdepth}{0}\n'
-)) + r"""
+                    requirements=parts['requirements']
+                    + '\\setcounter{secnumdepth}{0}\n',
+                )
+            )
+            + r"""
 \phantomsection\label{contents}
 \pdfbookmark[1]{Contents}{contents}
 \setcounter{tocdepth}{0}
@@ -399,22 +415,30 @@ head_template.substitute(dict(parts,
 }
 
 \end{document}
-"""],
-]
+""",
+        ]
+    ]
+}
 
-
-totest_latex_sectnum['no_sectnum'] = [
-# input
-["""\
+totest_latex_sectnum = {
+    'no_sectnum': [
+        [
+            """\
 some text
 
 first section
 -------------
 """,
-# expected output
-head_template.substitute(dict(parts, requirements = parts['requirements'] +
-r"""\setcounter{secnumdepth}{0}
-""")) + r"""
+            # expected output
+            head_template.substitute(
+                dict(
+                    parts,
+                    requirements=parts['requirements']
+                    + r"""\setcounter{secnumdepth}{0}
+""",
+                )
+            )
+            + r"""
 some text
 
 
@@ -423,8 +447,10 @@ some text
 }
 
 \end{document}
-"""],
-]
+""",
+        ]
+    ]
+}
 
 totest_latex_sectnum['sectnum'] = [
 # input
@@ -451,16 +477,18 @@ some text
 """],
 ]
 
-totest_latex_citations['citations_with_underscore'] = [
-# input
-["""\
+totest_latex_citations = {
+    'citations_with_underscore': [
+        [
+            """\
 Just a test citation [my_cite2006]_.
 
 .. [my_cite2006]
    The underscore is mishandled.
 """,
-# expected output
-head + r"""
+            # expected output
+            head
+            + r"""
 Just a test citation \cite{my_cite2006}.
 
 \begin{thebibliography}{my\_cite2006}
@@ -470,13 +498,12 @@ The underscore is mishandled.
 \end{thebibliography}
 
 \end{document}
-"""],
-]
-
-
-totest_latex_citations['adjacent_citations'] = [
-# input
-["""\
+""",
+        ]
+    ],
+    'adjacent_citations': [
+        [
+            """\
 Two non-citations: [MeYou2007]_[YouMe2007]_.
 
 Need to be separated for grouping: [MeYou2007]_ [YouMe2007]_.
@@ -489,8 +516,9 @@ But a line break should work: [MeYou2007]_
 .. [MeYou2007] not.
 .. [YouMe2007] important.
 """,
-# expected output
-head + r"""
+            # expected output
+            head
+            + r"""
 Two non-citations: {[}MeYou2007{]}\_{[}YouMe2007{]}\_.
 
 Need to be separated for grouping: \cite{MeYou2007,YouMe2007}.
@@ -509,9 +537,10 @@ important.
 \end{thebibliography}
 
 \end{document}
-"""],
-]
-
+""",
+        ]
+    ],
+}
 
 totest['enumerated_lists'] = [
 # input
@@ -700,9 +729,10 @@ head_table + r"""
 """],
 ]
 
-totest_table_style_booktabs['table_styles'] = [
-# borderless overrides "booktabs" table_style
-["""\
+totest_table_style_booktabs = {
+    'table_styles': [
+        [
+            """\
 .. table::
    :class: borderless
 
@@ -712,7 +742,8 @@ totest_table_style_booktabs['table_styles'] = [
    |  3  |  4  |
    +-----+-----+
 """,
-head_table + r"""
+            head_table
+            + r"""
 \setlength{\DUtablewidth}{\linewidth}%
 \begin{longtable*}{p{0.075\DUtablewidth}p{0.075\DUtablewidth}}
 
@@ -728,8 +759,10 @@ head_table + r"""
 \end{longtable*}
 
 \end{document}
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. table::
    :widths: auto
 
@@ -737,7 +770,8 @@ head_table + r"""
    |  1  |2|
    +-----+-+
 """,
-head_booktabs + r"""
+            head_booktabs
+            + r"""
 \begin{longtable*}{ll}
 \toprule
 1 & 2 \\
@@ -745,8 +779,10 @@ head_booktabs + r"""
 \end{longtable*}
 
 \end{document}
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. table::
    :widths: 15, 30
 
@@ -754,7 +790,8 @@ head_booktabs + r"""
    |  1  |  2  |
    +-----+-----+
 """,
-head_booktabs + r"""
+            head_booktabs
+            + r"""
 \setlength{\DUtablewidth}{\linewidth}%
 \begin{longtable*}{p{0.191\DUtablewidth}p{0.365\DUtablewidth}}
 \toprule
@@ -767,10 +804,15 @@ head_booktabs + r"""
 \end{longtable*}
 
 \end{document}
-"""],
-]
-totest_table_style_auto['table_styles'] = [
-["""\
+""",
+        ],
+    ]
+}
+
+totest_table_style_auto = {
+    'table_styles': [
+        [
+            """\
 .. table::
    :class: borderless
 
@@ -780,15 +822,18 @@ totest_table_style_auto['table_styles'] = [
    |  3  |  4  |
    +-----+-----+
 """,
-head_table + r"""
+            head_table
+            + r"""
 \begin{longtable*}{ll}
 1 & 2 \\
 3 & 4 \\
 \end{longtable*}
 
 \end{document}
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. table::
    :class: booktabs
 
@@ -796,7 +841,8 @@ head_table + r"""
    |  1  |2|
    +-----+-+
 """,
-head_booktabs + r"""
+            head_booktabs
+            + r"""
 \begin{longtable*}{ll}
 \toprule
 1 & 2 \\
@@ -804,9 +850,10 @@ head_booktabs + r"""
 \end{longtable*}
 
 \end{document}
-"""],
-# given width overrides "colwidth-auto"
-["""\
+""",
+        ],
+        [
+            """\
 .. table::
    :widths: 15, 30
 
@@ -814,7 +861,8 @@ head_booktabs + r"""
    |  1  |  2  |
    +-----+-----+
 """,
-head_table + r"""
+            head_table
+            + r"""
 \setlength{\DUtablewidth}{\linewidth}%
 \begin{longtable*}{|p{0.191\DUtablewidth}|p{0.365\DUtablewidth}|}
 \hline
@@ -827,8 +875,10 @@ head_table + r"""
 \end{longtable*}
 
 \end{document}
-"""],
-]
+""",
+        ],
+    ]
+}
 
 totest['table_align'] = [
 # input
@@ -1112,34 +1162,50 @@ This is the \emph{document}.
 """],
 ]
 
-totest_stylesheet['two-styles'] = [
-# input
-["""two stylesheet links in the header""",
-head_template.substitute(dict(parts, stylesheet =
-r"""\usepackage{data/spam}
+totest_stylesheet = {
+    'two-styles': [
+        [
+            """two stylesheet links in the header""",
+            head_template.substitute(
+                dict(
+                    parts,
+                    stylesheet=r"""\usepackage{data/spam}
 \input{data/ham.tex}
-""")) + r"""
+""",
+                )
+            )
+            + r"""
 two stylesheet links in the header
 
 \end{document}
-"""],
-]
+""",
+        ]
+    ]
+}
 
-totest_stylesheet_embed['two-styles'] = [
-# input
-["""two stylesheets embedded in the header""",
-head_template.substitute(dict(parts, stylesheet =
-r"""% Cannot embed stylesheet 'data/spam.sty':
+totest_stylesheet_embed = {
+    'two-styles': [
+        [
+            """two stylesheets embedded in the header""",
+            head_template.substitute(
+                dict(
+                    parts,
+                    stylesheet=r"""% Cannot embed stylesheet 'data/spam.sty':
 %   No such file or directory.
 % embedded stylesheet: data/ham.tex
 \newcommand{\ham}{wonderful ham}
 
-""")) + r"""
+""",
+                )
+            )
+            + r"""
 two stylesheets embedded in the header
 
 \end{document}
-"""],
-]
+""",
+        ]
+    ]
+}
 
 if __name__ == '__main__':
     import unittest

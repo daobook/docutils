@@ -44,10 +44,12 @@ def suite():
 mydir = 'test_parsers/test_rst/'
 include14 = os.path.join(mydir, 'includes/include14.txt')
 
-totest = {}
-
-totest['transitions'] = ((ExposeInternals,), [
-["""\
+totest = {
+    'transitions': (
+        (ExposeInternals,),
+        [
+            [
+                """\
 Paragraph starting in line 1.
 With *inline* element in line 2.
 
@@ -61,7 +63,7 @@ With *inline* element in line 2.
 
 1. enumerated list in line 12
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph internal:line="1" internal:source="test data">
         Paragraph starting in line 1.
@@ -86,15 +88,17 @@ With *inline* element in line 2.
         <list_item internal:source="test data">
             <paragraph internal:line="12" internal:source="test data">
                 enumerated list in line 12
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Paragraph
 
   Block quote in line 3
 
   -- attribution in line 5
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph internal:line="1" internal:source="test data">
         Paragraph
@@ -103,8 +107,10 @@ Paragraph
             Block quote in line 3
         <attribution internal:line="5" internal:source="test data">
             attribution in line 5
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Paragraph
 
   Block quote in line 3
@@ -122,7 +128,7 @@ Paragraph
 
   -- attribution in line 16
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph internal:line="1" internal:source="test data">
         Paragraph
@@ -144,13 +150,15 @@ Paragraph
                 nested attribution in line 14
         <attribution internal:line="16" internal:source="test data">
             attribution in line 16
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Paragraph
 
 .. include:: %s
 """ % include14,
-"""\
+                """\
 <document source="test data">
     <paragraph internal:line="1" internal:source="test data">
         Paragraph
@@ -177,8 +185,10 @@ Paragraph
         <list_item internal:source="test_parsers/test_rst/includes/include14.txt">
             <paragraph internal:line="12" internal:source="test_parsers/test_rst/includes/include14.txt">
                 enumerated list in line 12
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Paragraph
 
   Block quote in line 3
@@ -191,7 +201,7 @@ Paragraph
 
 Final paragraph in line 11
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph internal:line="1" internal:source="test data">
         Paragraph
@@ -207,8 +217,11 @@ Final paragraph in line 11
             attribution in line 9
     <paragraph internal:line="11" internal:source="test data">
         Final paragraph in line 11
-"""],
-])
+""",
+            ],
+        ],
+    )
+}
 
 
 if __name__ == '__main__':

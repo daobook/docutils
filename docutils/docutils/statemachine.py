@@ -259,10 +259,7 @@ class StateMachine(object):
                 except StateCorrection as exception:
                     self.previous_line() # back up for another try
                     next_state = exception.args[0]
-                    if len(exception.args) == 1:
-                        transitions = None
-                    else:
-                        transitions = (exception.args[1],)
+                    transitions = None if len(exception.args) == 1 else (exception.args[1], )
                     if self.debug:
                         print('\nStateMachine.run: StateCorrection to state '
                               '"%s", transition %s.'
@@ -369,10 +366,7 @@ class StateMachine(object):
         If the optional argument `lineno` is given, convert it from an
         absolute line number to the corresponding (source, line) pair.
         """
-        if lineno is None:
-            offset = self.line_offset
-        else:
-            offset = lineno - self.input_offset - 1
+        offset = self.line_offset if lineno is None else lineno - self.input_offset - 1
         try:
             src, srcoffset = self.input_lines.info(offset)
             srcline = srcoffset + 1
@@ -388,12 +382,20 @@ class StateMachine(object):
         return (src, srcline)
 
     def insert_input(self, input_lines, source):
-        self.input_lines.insert(self.line_offset + 1, '',
-                                source='internal padding after '+source,
-                                offset=len(input_lines))
-        self.input_lines.insert(self.line_offset + 1, '',
-                                source='internal padding before '+source,
-                                offset=-1)
+        self.input_lines.insert(
+            self.line_offset + 1,
+            '',
+            source=f'internal padding after {source}',
+            offset=len(input_lines),
+        )
+
+        self.input_lines.insert(
+            self.line_offset + 1,
+            '',
+            source=f'internal padding before {source}',
+            offset=-1,
+        )
+
         self.input_lines.insert(self.line_offset + 2,
                                 StringList(input_lines, source))
 
@@ -443,18 +445,16 @@ class StateMachine(object):
                   % (state.__class__.__name__, transitions), file=self._stderr)
         for name in transitions:
             pattern, method, next_state = state.transitions[name]
-            match = pattern.match(self.line)
-            if match:
+            if match := pattern.match(self.line):
                 if self.debug:
                     print('\nStateMachine.check_line: Matched transition '
                           '"%s" in state "%s".'
                           % (name, state.__class__.__name__), file=self._stderr)
                 return method(match, context, next_state)
-        else:
-            if self.debug:
-                print('\nStateMachine.check_line: No match in state "%s".'
-                      % state.__class__.__name__, file=self._stderr)
-            return state.no_match(context, transitions)
+        if self.debug:
+            print('\nStateMachine.check_line: No match in state "%s".'
+                  % state.__class__.__name__, file=self._stderr)
+        return state.no_match(context, transitions)
 
     def add_state(self, state_class):
         """
@@ -1099,10 +1099,7 @@ class ViewList(object):
             self.items = initlist.items[:]
         elif initlist is not None:
             self.data = list(initlist)
-            if items:
-                self.items = items
-            else:
-                self.items = [(source, i) for i in range(len(initlist))]
+            self.items = items or [(source, i) for i in range(len(initlist))]
         assert len(self.data) == len(self.items), 'data mismatch'
 
     def __str__(self):
@@ -1126,10 +1123,7 @@ class ViewList(object):
         return (mine > yours) - (yours < mine)
 
     def __cast(self, other):
-        if isinstance(other, ViewList):
-            return other.data
-        else:
-            return other
+        return other.data if isinstance(other, ViewList) else other
 
     def __contains__(self, item): return item in self.data
     def __len__(self): return len(self.data)
@@ -1139,13 +1133,12 @@ class ViewList(object):
     # just works.
 
     def __getitem__(self, i):
-        if isinstance(i, slice):
-            assert i.step in (None, 1),  'cannot handle slice with stride'
-            return self.__class__(self.data[i.start:i.stop],
-                                  items=self.items[i.start:i.stop],
-                                  parent=self, parent_offset=i.start or 0)
-        else:
+        if not isinstance(i, slice):
             return self.data[i]
+        assert i.step in (None, 1),  'cannot handle slice with stride'
+        return self.__class__(self.data[i.start:i.stop],
+                              items=self.items[i.start:i.stop],
+                              parent=self, parent_offset=i.start or 0)
 
     def __setitem__(self, i, item):
         if isinstance(i, slice):
@@ -1407,10 +1400,7 @@ class StringList(ViewList):
                     break
             elif block_indent is None:
                 line_indent = len(line) - len(stripped)
-                if indent is None:
-                    indent = line_indent
-                else:
-                    indent = min(indent, line_indent)
+                indent = line_indent if indent is None else min(indent, line_indent)
             end += 1
         else:
             blank_finish = 1            # block ends at end of lines
@@ -1510,8 +1500,7 @@ def string2lines(astring, tab_width=8, convert_whitespace=False,
     """
     if convert_whitespace:
         astring = whitespace.sub(' ', astring)
-    lines = [s.expandtabs(tab_width).rstrip() for s in astring.splitlines()]
-    return lines
+    return [s.expandtabs(tab_width).rstrip() for s in astring.splitlines()]
 
 def _exception_data():
     """

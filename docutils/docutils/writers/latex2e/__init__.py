@@ -492,8 +492,7 @@ class SortableDict(dict):
     """
     def sortedkeys(self):
         """Return sorted list of keys"""
-        keys = sorted(self.keys())
-        return keys
+        return sorted(self.keys())
 
     def sortedvalues(self):
         """Return list of values sorted by keys"""
@@ -815,10 +814,7 @@ class DocumentClass(object):
         The name depends on the specific document class.
         Level is 1,2,3..., as level 0 is the title.
         """
-        if level <= len(self.sections):
-            return self.sections[level-1]
-        # unsupported levels
-        return 'DUtitle'
+        return self.sections[level-1] if level <= len(self.sections) else 'DUtitle'
 
     def latex_section_depth(self, depth):
         """
@@ -901,14 +897,10 @@ class Table(object):
         self._attrs[attr] = value
 
     def get(self, attr):
-        if attr in self._attrs:
-            return self._attrs[attr]
-        return None
+        return self._attrs[attr] if attr in self._attrs else None
 
     def get_vertical_bar(self):
-        if self.borders == 'standard':
-            return '|'
-        return ''
+        return '|' if self.borders == 'standard' else ''
 
     # horizontal lines are drawn below a row,
     def get_opening(self, width=r'\linewidth'):
@@ -979,10 +971,7 @@ class Table(object):
             #   ABC DE
             #   === ==
             # getting too narrow:
-            if 'colwidths-given' not in node.parent.parent['classes']:
-                allowance = 1
-            else:
-                allowance = 0 # "widths" option specified, use exact ratio
+            allowance = 1 if 'colwidths-given' not in node.parent.parent['classes'] else 0
             self._colwidths = [(node['colwidth']+allowance)/norm_length
                                for node in self._col_specs]
             total_width = sum(self._colwidths)
@@ -1006,9 +995,7 @@ class Table(object):
     def get_multicolumn_width(self, start, len_):
         """Return sum of columnwidths for multicell."""
         try:
-            multicol_width = sum([width
-                                  for width in ([self._colwidths[start + co]
-                                                 for co in range(len_)])])
+            multicol_width = sum(self._colwidths[start + co] for co in range(len_))
             if self.legacy_column_widths:
                 return 'p{%.2f\\DUtablewidth}' % multicol_width
             return 'p{\\DUcolumnwidth{%.3f}}' % multicol_width
@@ -1019,13 +1006,13 @@ class Table(object):
         if not self.caption:
             return ''
         caption = ''.join(self.caption)
-        if 1 == self._translator.thead_depth():
+        if self._translator.thead_depth() == 1:
             return r'\caption{%s}\\' '\n' % caption
         return r'\caption[]{%s (... continued)}\\' '\n' % caption
 
     def need_recurse(self):
         if self._latex_type == 'longtable':
-            return 1 == self._translator.thead_depth()
+            return self._translator.thead_depth() == 1
         return 0
 
     def visit_thead(self):
@@ -1043,20 +1030,20 @@ class Table(object):
         if self.borders == 'booktabs':
             a.append('\\midrule\n')
         if self._latex_type == 'longtable':
-            if 1 == self._translator.thead_depth():
+            if self._translator.thead_depth() == 1:
                 a.append('\\endfirsthead\n')
             else:
-                n_c = len(self._col_specs)
                 a.append('\\endhead\n')
                 # footer on all but last page (if it fits):
-                twidth = sum([node['colwidth']+2 for node in self._col_specs])
+                twidth = sum(node['colwidth']+2 for node in self._col_specs)
                 if twidth > 30 or (twidth > 12 and not self.colwidths_auto):
+                    n_c = len(self._col_specs)
                     a.append(r'\multicolumn{%d}{%s}'
                              % (n_c, self.get_multicolumn_width(0, n_c))
                              + r'{\raggedleft\ldots continued on next page}\\'
                              + '\n')
                 a.append('\\endfoot\n\\endlastfoot\n')
-            # for longtable one could add firsthead, foot and lastfoot
+                # for longtable one could add firsthead, foot and lastfoot
         self._in_thead -= 1
         return a
 
@@ -1355,7 +1342,7 @@ class LaTeXTranslator(nodes.NodeVisitor):
             self.hyperref_options = 'colorlinks=true,linkcolor=%s,urlcolor=%s' % (
                                       self.hyperlink_color, self.hyperlink_color)
         if settings.hyperref_options:
-            self.hyperref_options += ',' + settings.hyperref_options
+            self.hyperref_options += f',{settings.hyperref_options}'
 
         # LaTeX Toc
         # include all supported sections in toc and PDF bookmarks
@@ -1401,7 +1388,7 @@ class LaTeXTranslator(nodes.NodeVisitor):
         # Embed content of style file:
         if self.settings.embed_stylesheet:
             if is_package:
-                path = base + '.sty' # ensure extension
+                path = f'{base}.sty'
             try:
                 content = docutils.io.FileInput(source_path=path,
                                        encoding='utf-8').read()
@@ -1488,9 +1475,7 @@ class LaTeXTranslator(nodes.NodeVisitor):
         # keep the underscore in citation references
         if self.inside_citation_reference_label and not self.alltt:
             del(table[ord('_')])
-        # Workarounds for OT1 font-encoding
         if self.font_encoding in ['OT1', ''] and not self.is_xetex:
-            # * out-of-order characters in cmtt
             if self.literal:
                 # replace underscore by underlined blank,
                 # because this has correct width.
@@ -1499,7 +1484,6 @@ class LaTeXTranslator(nodes.NodeVisitor):
                 # \reflectbox is provided by graphicx:
                 self.requirements['graphicx'] = self.graphicx_package
                 table[ord('\\')] = u'\\reflectbox{/}'
-            # * ``< | >`` come out as different chars (except for cmtt):
             else:
                 table[ord('|')] = u'\\textbar{}'
                 table[ord('<')] = u'\\textless{}'
@@ -1524,10 +1508,9 @@ class LaTeXTranslator(nodes.NodeVisitor):
                     self.requirements['textcomp'] = PreambleCmds.textcomp
                 elif cp in CharMaps.pifont:
                     self.requirements['pifont'] = '\\usepackage{pifont}'
-                # preamble-definitions for unsupported Unicode characters
                 elif (self.latex_encoding == 'utf8'
                       and cp in CharMaps.unsupported_unicode):
-                    self.requirements['_inputenc'+str(cp)] = (
+                    self.requirements[f'_inputenc{cp}'] = (
                         '\\DeclareUnicodeCharacter{%04X}{%s}'
                          % (cp, CharMaps.unsupported_unicode[cp]))
         text = text.translate(table)
@@ -1599,9 +1582,7 @@ class LaTeXTranslator(nodes.NodeVisitor):
 
     def set_align_from_classes(self, node):
         """Convert ``align-*`` class arguments into alignment args."""
-        # separate:
-        align = [cls for cls in node['classes'] if cls.startswith('align-')]
-        if align:
+        if align := [cls for cls in node['classes'] if cls.startswith('align-')]:
             node['align'] = align[-1].replace('align-', '')
             node['classes'] = [cls for cls in node['classes']
                                if not cls.startswith('align-')]
@@ -1621,14 +1602,12 @@ class LaTeXTranslator(nodes.NodeVisitor):
              self.out.append('\n')
         for cls in node['classes']:
             if cls.startswith('language-'):
-                language = self.babel.language_name(cls[9:])
-                if language:
+                if language := self.babel.language_name(cls[9:]):
                     self.babel.otherlanguages[language] = True
                     self.out.append('\\begin{selectlanguage}{%s}\n' % language)
-            elif (isinstance(node, nodes.table)
-                  and cls in Writer.table_style_values + ['colwidths-given']):
-                pass
-            else:
+            elif not isinstance(
+                node, nodes.table
+            ) or cls not in Writer.table_style_values + ['colwidths-given']:
                 if not self.fallback_stylesheet:
                     self.fallbacks['DUclass'] = PreambleCmds.duclass
                 self.out.append('\\begin{DUclass}{%s}\n' % cls)
@@ -1637,13 +1616,11 @@ class LaTeXTranslator(nodes.NodeVisitor):
         """Close a group of class declarations."""
         for cls in reversed(node['classes']):
             if cls.startswith('language-'):
-                language = self.babel.language_name(cls[9:])
-                if language:
+                if language := self.babel.language_name(cls[9:]):
                     self.out.append('\\end{selectlanguage}\n')
-            elif (isinstance(node, nodes.table)
-                  and cls in Writer.table_style_values + ['colwidths-given']):
-                pass
-            else:
+            elif not isinstance(
+                node, nodes.table
+            ) or cls not in Writer.table_style_values + ['colwidths-given']:
                 if not self.fallback_stylesheet:
                     self.fallbacks['DUclass'] = PreambleCmds.duclass
                 self.out.append('\\end{DUclass}\n')

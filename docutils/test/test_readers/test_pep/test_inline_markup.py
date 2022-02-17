@@ -20,14 +20,14 @@ def suite():
     return s
 
 
-totest = {}
-
-totest['standalone_references'] = [
-["""\
+totest = {
+    'standalone_references': [
+        [
+            """\
 See PEP 287 (pep-0287.txt),
 and RFC 2822 (which obsoletes RFC822 and RFC-733).
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         See \n\
@@ -47,8 +47,10 @@ and RFC 2822 (which obsoletes RFC822 and RFC-733).
         <reference refuri="http://tools.ietf.org/html/rfc733.html">
             RFC-733
         ).
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 References split across lines:
 
 PEP
@@ -57,7 +59,7 @@ PEP
 RFC
 2822
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         References split across lines:
@@ -69,13 +71,15 @@ RFC
         <reference refuri="http://tools.ietf.org/html/rfc2822.html">
             RFC
             2822
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Test PEP-specific implicit references before a URL:
 
 PEP 287 (http://www.python.org/dev/peps/pep-0287), RFC 2822.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Test PEP-specific implicit references before a URL:
@@ -89,17 +93,18 @@ PEP 287 (http://www.python.org/dev/peps/pep-0287), RFC 2822.
         <reference refuri="http://tools.ietf.org/html/rfc2822.html">
             RFC 2822
         .
-"""],
-]
-
-totest['miscellaneous'] = [
-["""\
+""",
+        ],
+    ],
+    'miscellaneous': [
+        [
+            """\
 For *completeness*, _`let's` ``test`` **other** forms_
 |of| `inline markup` [*]_.
 
 .. [*] See http://docutils.sf.net/docs/ref/rst/restructuredtext.html.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         For \n\
@@ -132,8 +137,10 @@ For *completeness*, _`let's` ``test`` **other** forms_
             <reference refuri="http://docutils.sf.net/docs/ref/rst/restructuredtext.html">
                 http://docutils.sf.net/docs/ref/rst/restructuredtext.html
             .
-"""],
-]
+""",
+        ]
+    ],
+}
 
 
 if __name__ == '__main__':

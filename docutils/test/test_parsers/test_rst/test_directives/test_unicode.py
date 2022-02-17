@@ -27,15 +27,16 @@ def suite():
 
 unichr_exception = DocutilsTestSupport.exception_data(
     unichr, int("111111111111111111", 16))[0]
-if isinstance(unichr_exception, OverflowError):
-    unichr_exception_string = 'code too large (%s)' % unichr_exception
-else:
-    unichr_exception_string = str(unichr_exception)
+unichr_exception_string = (
+    'code too large (%s)' % unichr_exception
+    if isinstance(unichr_exception, OverflowError)
+    else str(unichr_exception)
+)
 
-totest = {}
-
-totest['unicode'] = [
-["""
+totest = {
+    'unicode': [
+        [
+            """
 Insert an em-dash (|mdash|), a copyright symbol (|copy|), a non-breaking
 space (|nbsp|), a backwards-not-equals (|bne|), and a captial omega (|Omega|).
 
@@ -45,7 +46,7 @@ space (|nbsp|), a backwards-not-equals (|bne|), and a captial omega (|Omega|).
 .. |bne| unicode:: U0003D U020E5
 .. |Omega| unicode:: U+003A9
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         Insert an em-dash (
@@ -76,8 +77,10 @@ u"""\
         \u20e5
     <substitution_definition names="Omega">
         \u03a9
-"""],
-["""
+""",
+        ],
+        [
+            """
 Bad input:
 
 .. |empty| unicode::
@@ -86,7 +89,7 @@ Bad input:
 .. |not all hex| unicode:: UABCX
 .. unicode:: not in a substitution definition
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Bad input:
@@ -115,8 +118,10 @@ Bad input:
             Invalid context: the "unicode" directive can only be used within a substitution definition.
         <literal_block xml:space="preserve">
             .. unicode:: not in a substitution definition
-"""],
-["""
+""",
+        ],
+        [
+            """
 Testing comments and extra text.
 
 Copyright |copy| 2003, |BogusMegaCorp (TM)|.
@@ -125,7 +130,7 @@ Copyright |copy| 2003, |BogusMegaCorp (TM)|.
 .. |BogusMegaCorp (TM)| unicode:: BogusMegaCorp U+2122
    .. with trademark sign
 """,
-u"""\
+            u"""\
 <document source="test data">
     <paragraph>
         Testing comments and extra text.
@@ -142,12 +147,14 @@ u"""\
     <substitution_definition names="BogusMegaCorp\\ (TM)">
         BogusMegaCorp
         \u2122
-"""],
-["""
+""",
+        ],
+        [
+            """
 .. |too big for int| unicode:: 0x111111111111111111
 .. |too big for unicode| unicode:: 0x11111111
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="2" source="test data" type="ERROR">
         <paragraph>
@@ -171,10 +178,16 @@ u"""\
             Substitution definition "too big for unicode" empty or invalid.
         <literal_block xml:space="preserve">
             .. |too big for unicode| unicode:: 0x11111111
-""" % (unichr_exception_string,
-       DocutilsTestSupport.exception_data(unichr, int("11111111", 16))[2])]
-]
-
+"""
+            % (
+                unichr_exception_string,
+                DocutilsTestSupport.exception_data(
+                    unichr, int("11111111", 16)
+                )[2],
+            ),
+        ],
+    ]
+}
 
 if __name__ == '__main__':
     import unittest

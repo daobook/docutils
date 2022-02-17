@@ -18,20 +18,22 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['code-parsing-none'] = [
-["""\
+totest = {
+    'code-parsing-none': [
+        [
+            """\
 .. code::
 
    This is a code block.
 """,
-"""\
+            """\
 <document source="test data">
     <literal_block classes="code" xml:space="preserve">
         This is a code block.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. code:: python
   :number-lines: 7
 
@@ -42,7 +44,7 @@ totest['code-parsing-none'] = [
       # and now for something completely different
       print(8/2)
 """,
-"""\
+            """\
 <document source="test data">
     <literal_block classes="code python" xml:space="preserve">
         <inline classes="ln">
@@ -63,18 +65,22 @@ totest['code-parsing-none'] = [
         <inline classes="ln">
             12 \n\
             print(8/2)
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. code:: latex
 
   hello \\emph{world} % emphasize
 """,
-"""\
+            """\
 <document source="test data">
     <literal_block classes="code latex" xml:space="preserve">
         hello \\emph{world} % emphasize
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

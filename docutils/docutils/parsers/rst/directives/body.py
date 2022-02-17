@@ -142,10 +142,7 @@ class CodeBlock(Directive):
 
     def run(self):
         self.assert_has_content()
-        if self.arguments:
-            language = self.arguments[0]
-        else:
-            language = ''
+        language = self.arguments[0] if self.arguments else ''
         set_classes(self.options)
         classes = ['code']
         if language:
@@ -287,10 +284,7 @@ class Container(Directive):
         self.assert_has_content()
         text = '\n'.join(self.content)
         try:
-            if self.arguments:
-                classes = directives.class_option(self.arguments[0])
-            else:
-                classes = []
+            classes = directives.class_option(self.arguments[0]) if self.arguments else []
         except ValueError:
             raise self.error(
                 'Invalid class attribute value for "%s" directive: "%s".'

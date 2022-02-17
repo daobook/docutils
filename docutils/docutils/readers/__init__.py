@@ -80,8 +80,7 @@ class Reader(Component):
 
     def new_document(self):
         """Create and return a new empty document tree (root node)."""
-        document = utils.new_document(self.source.source_path, self.settings)
-        return document
+        return utils.new_document(self.source.source_path, self.settings)
 
 
 class ReReader(Reader):
@@ -107,7 +106,7 @@ def get_reader_class(reader_name):
     if reader_name in _reader_aliases:
         reader_name = _reader_aliases[reader_name]
     try:
-        module = import_module('docutils.readers.'+reader_name)
+        module = import_module(f'docutils.readers.{reader_name}')
     except ImportError:
         module = import_module(reader_name)
     return module.Reader

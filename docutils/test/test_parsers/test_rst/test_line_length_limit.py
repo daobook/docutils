@@ -27,30 +27,35 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['default'] = [
-["""\
+totest = {
+    'default': [
+        [
+            """\
 within the limit
 %s
-""" % ("x"*80),
-"""\
+""" % ("x" * 80),
+            """\
 <document source="test data">
     <paragraph>
         within the limit
         %s
-""" % ("x"*80)],
-["""\
+"""
+            % ("x" * 80),
+        ],
+        [
+            """\
 above the limit
 %s
-""" % ("x"*81),
-"""\
+""" % ("x" * 81),
+            """\
 <document source="test data">
     <system_message level="3" source="test data" type="ERROR">
         <paragraph>
             Line 2 exceeds the line-length-limit.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Include Test
 ============
 
@@ -59,7 +64,7 @@ Include Test
 
 A paragraph.
 """,
-"""\
+            """\
 <document source="test data">
     <section ids="include-test" names="include\\ test">
         <title>
@@ -72,8 +77,10 @@ A paragraph.
                    :literal:
         <paragraph>
             A paragraph.
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

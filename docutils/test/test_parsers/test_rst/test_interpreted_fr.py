@@ -20,17 +20,17 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['basics'] = [
-["""\
+totest = {
+    'basics': [
+        [
+            """\
 Simple explicit roles and english fallbacks:
 :acronym:`acronym`,
 :exp:`superscript`,
 :ind:`subscript`,
 :titre:`title reference`.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Simple explicit roles and english fallbacks:
@@ -50,8 +50,11 @@ Simple explicit roles and english fallbacks:
         <paragraph>
             No role entry for "acronym" in module "docutils.parsers.rst.languages.fr".
             Using English fallback for role "acronym".
-"""],
-]
+""",
+        ]
+    ]
+}
+
 
 if __name__ == '__main__':
     import unittest

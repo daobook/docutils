@@ -172,10 +172,7 @@ def unchanged(argument):
 
     No argument implies empty string ("").
     """
-    if argument is None:
-        return u''
-    else:
-        return argument  # unchanged!
+    return u'' if argument is None else argument
 
 def path(argument):
     """
@@ -187,8 +184,7 @@ def path(argument):
     if argument is None:
         raise ValueError('argument required but none supplied')
     else:
-        path = ''.join([s.strip() for s in argument.splitlines()])
-        return path
+        return ''.join([s.strip() for s in argument.splitlines()])
 
 def uri(argument):
     """
@@ -199,10 +195,8 @@ def uri(argument):
     """
     if argument is None:
         raise ValueError('argument required but none supplied')
-    else:
-        parts = split_escaped_whitespace(escape2null(argument))
-        uri = ' '.join(''.join(unescape(part).split()) for part in parts)
-        return uri
+    parts = split_escaped_whitespace(escape2null(argument))
+    return ' '.join(''.join(unescape(part).split()) for part in parts)
 
 def nonnegative_int(argument):
     """
@@ -307,15 +301,12 @@ def unicode_code(code):
     Raise ValueError for illegal Unicode code values.
     """
     try:
-        if code.isdigit():                  # decimal number
+        if code.isdigit():
             return unichr(int(code))
-        else:
-            match = unicode_pattern.match(code)
-            if match:                       # hex number
-                value = match.group(1) or match.group(2)
-                return unichr(int(value, 16))
-            else:                           # other text
-                return code
+        if not (match := unicode_pattern.match(code)):
+            return code
+        value = match.group(1) or match.group(2)
+        return unichr(int(value, 16))
     except OverflowError as detail:
         raise ValueError('code too large (%s)' % detail)
 
@@ -336,12 +327,11 @@ def single_char_or_whitespace_or_unicode(argument):
     (Directive option conversion function.)
     """
     if argument == 'tab':
-        char = '\t'
+        return '\t'
     elif argument == 'space':
-        char = ' '
+        return ' '
     else:
-        char = single_char_or_unicode(argument)
-    return char
+        return single_char_or_unicode(argument)
 
 def positive_int(argument):
     """
@@ -361,10 +351,7 @@ def positive_int_list(argument):
 
     Raises ValueError for non-positive-integer values.
     """
-    if ',' in argument:
-        entries = argument.split(',')
-    else:
-        entries = argument.split()
+    entries = argument.split(',') if ',' in argument else argument.split()
     return [positive_int(entry) for entry in entries]
 
 def encoding(argument):
@@ -417,10 +404,7 @@ def value_or(values, other):
     The argument can be any of `values` or `argument_type`.
     """
     def auto_or_other(argument):
-        if argument in values:
-            return argument
-        else:
-            return other(argument)
+        return argument if argument in values else other(argument)
     return auto_or_other
 
 def parser_name(argument):

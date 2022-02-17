@@ -49,8 +49,7 @@ class LanguageTestSuite(DocutilsTestSupport.CustomTestSuite):
         languages = {}
         for mod in (os.listdir(docutils.languages.__path__[0])
                     + os.listdir(docutils.parsers.rst.languages.__path__[0])):
-            match = self.language_module_pattern.match(mod)
-            if match:
+            if match := self.language_module_pattern.match(mod):
                 languages[match.group(1)] = 1
         self.languages = list(languages.keys())
         # test language tag normalization:
@@ -65,8 +64,14 @@ class LanguageTestSuite(DocutilsTestSupport.CustomTestSuite):
     def generateTests(self):
         for language in self.languages:
             for method in LanguageTestCase.test_methods:
-                self.addTestCase(LanguageTestCase, method, None, None,
-                                 id=language+'.py', language=language)
+                self.addTestCase(
+                    LanguageTestCase,
+                    method,
+                    None,
+                    None,
+                    id=f'{language}.py',
+                    language=language,
+                )
 
 
 class LanguageTestCase(DocutilsTestSupport.CustomTestCase):
@@ -87,22 +92,13 @@ class LanguageTestCase(DocutilsTestSupport.CustomTestCase):
         Returns entries that are only in one dictionary.
         (missing_in_lang, more_than_in_ref).
         """
-        missing  = []   # in ref but not in l.
-        too_much = []   # in l but not in ref.
-        for label in ref_dict.keys():
-            if label not in l_dict:
-                missing.append(label)
-        for label in l_dict.keys():
-            if label not in ref_dict:
-                too_much.append(label)
+        missing = [label for label in ref_dict.keys() if label not in l_dict]
+        too_much = [label for label in l_dict.keys() if label not in ref_dict]
         return (missing, too_much)
 
     def _invert(self, adict):
         """Return an inverted (keys & values swapped) dictionary."""
-        inverted = {}
-        for key, value in adict.items():
-            inverted[value] = key
-        return inverted
+        return {value: key for key, value in adict.items()}
 
     def test_labels(self):
         try:
@@ -152,9 +148,12 @@ class LanguageTestCase(DocutilsTestSupport.CustomTestCase):
         inverted = self._invert(module.directives)
         canonical = sorted(directives._directive_registry.keys())
         canonical.remove('restructuredtext-test-directive')
-        for name in canonical:
-            if name not in inverted:
-                failures.append('"%s": translation missing' % name)
+        failures.extend(
+            '"%s": translation missing' % name
+            for name in canonical
+            if name not in inverted
+        )
+
         if failures:
             text = ('Module docutils.parsers.rst.languages.%s:\n    %s'
                     % (self.language, '\n    '.join(failures)))
@@ -186,9 +185,12 @@ class LanguageTestCase(DocutilsTestSupport.CustomTestCase):
         inverted = self._invert(module.roles)
         canonical = sorted(roles._role_registry.keys())
         canonical.remove('restructuredtext-unimplemented-role')
-        for name in canonical:
-            if name not in inverted:
-                failures.append('"%s": translation missing' % name)
+        failures.extend(
+            '"%s": translation missing' % name
+            for name in canonical
+            if name not in inverted
+        )
+
         if failures:
             text = ('Module docutils.parsers.rst.languages.%s:\n    %s'
                     % (self.language, '\n    '.join(failures)))

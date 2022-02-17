@@ -173,7 +173,7 @@ class Reporter(object):
             if line is not None:
                 attributes.setdefault('line', line)
                 # assert source is not None, "node has line- but no source-argument"
-        if not 'source' in attributes: # 'line' is absolute line number
+        if 'source' not in attributes: # 'line' is absolute line number
             try: # look up (source, line-in-source)
                 source, line = self.get_source_and_line(attributes.get('line'))
             except AttributeError:
@@ -267,8 +267,7 @@ def extract_extension_options(field_list, options_spec):
           missing data, bad quotes, etc.).
     """
     option_list = extract_options(field_list)
-    option_dict = assemble_option_dict(option_list, options_spec)
-    return option_dict
+    return assemble_option_dict(option_list, options_spec)
 
 def extract_options(field_list):
     """
@@ -416,12 +415,11 @@ def new_reporter(source_path, settings):
         `settings` : optparse.Values object
             Runtime settings.
     """
-    reporter = Reporter(
+    return Reporter(
         source_path, settings.report_level, settings.halt_level,
         stream=settings.warning_stream, debug=settings.debug,
         encoding=settings.error_encoding,
         error_handler=settings.error_encoding_error_handler)
-    return reporter
 
 def new_document(source_path, settings=None):
     """
@@ -454,8 +452,7 @@ def clean_rcs_keywords(paragraph, keyword_substitutions):
     if len(paragraph) == 1 and isinstance(paragraph[0], nodes.Text):
         textnode = paragraph[0]
         for pattern, substitution in keyword_substitutions:
-            match = pattern.search(textnode)
-            if match:
+            if match := pattern.search(textnode):
                 paragraph[0] = nodes.Text(pattern.sub(substitution, textnode))
                 return
 
@@ -492,14 +489,13 @@ def get_stylesheet_reference(settings, relative_to=None):
     enable specification of multiple stylesheets as a comma-separated
     list.
     """
-    if settings.stylesheet_path:
-        assert not settings.stylesheet, (
-            'stylesheet and stylesheet_path are mutually exclusive.')
-        if relative_to == None:
-            relative_to = settings._destination
-        return relative_path(relative_to, settings.stylesheet_path)
-    else:
+    if not settings.stylesheet_path:
         return settings.stylesheet
+    assert not settings.stylesheet, (
+        'stylesheet and stylesheet_path are mutually exclusive.')
+    if relative_to is None:
+        relative_to = settings._destination
+    return relative_path(relative_to, settings.stylesheet_path)
 
 # Return 'stylesheet' or 'stylesheet_path' arguments as list.
 #
@@ -577,8 +573,7 @@ def escape2null(text):
         if found == -1:
             parts.append(text[start:])
             return ''.join(parts)
-        parts.append(text[start:found])
-        parts.append('\x00' + text[found+1:found+2])
+        parts.extend((text[start:found], '\x00' + text[found+1:found+2]))
         start = found + 2               # skip character after escape
 
 # `unescape` definition moved to `nodes` to avoid circular import dependency.
@@ -642,18 +637,17 @@ def column_width(text):
     """
     if isinstance(text, str) and sys.version_info < (3, 0):
         return len(text) # shortcut for binary strings
-    width = sum([east_asian_widths[unicodedata.east_asian_width(c)]
-                 for c in text])
+    width = sum(east_asian_widths[unicodedata.east_asian_width(c)] for c in text)
     # correction for combining chars:
     width -= len(find_combining_chars(text))
     return width
 
 def uniq(L):
-     r = []
-     for item in L:
-         if not item in r:
-             r.append(item)
-     return r
+    r = []
+    for item in L:
+        if item not in r:
+            r.append(item)
+    return r
 
 def normalize_language_tag(tag):
     """Return a list of normalized combinations for a `BCP 47` language tag.
@@ -671,13 +665,16 @@ def normalize_language_tag(tag):
     tag = tag.lower().replace('-', '_')
     # split (except singletons, which mark the following tag as non-standard):
     tag = re.sub(r'_([a-zA-Z0-9])_', r'_\1-', tag)
-    subtags = [subtag for subtag in tag.split('_')]
+    subtags = list(tag.split('_'))
     base_tag = (subtags.pop(0),)
     # find all combinations of subtags
     taglist = []
     for n in range(len(subtags), 0, -1):
-        for tags in itertools.combinations(subtags, n):
-            taglist.append('-'.join(base_tag+tags))
+        taglist.extend(
+            '-'.join(base_tag + tags)
+            for tags in itertools.combinations(subtags, n)
+        )
+
     taglist += base_tag
     return taglist
 
@@ -714,10 +711,7 @@ class DependencyList(object):
         """
         self.list = []
         if output_file:
-            if output_file == '-':
-                of = None
-            else:
-                of = output_file
+            of = None if output_file == '-' else output_file
             self.file = docutils.io.FileOutput(destination_path=of,
                                    encoding='utf8', autoclose=False)
         else:
@@ -730,7 +724,7 @@ class DependencyList(object):
         is not None.
         """
         for filename in filenames:
-            if not filename in self.list:
+            if filename not in self.list:
                 self.list.append(filename)
                 if self.file is not None:
                     self.file.write(filename+'\n')
@@ -766,26 +760,14 @@ def version_identifier(version_info=None):
     """
     if version_info is None:
         version_info = __version_info__
-    if version_info.micro:
-        micro = '.%s' % version_info.micro
-    else:
-        # 0 is omitted:
-        micro = ''
+    micro = '.%s' % version_info.micro if version_info.micro else ''
     releaselevel = release_level_abbreviations[version_info.releaselevel]
-    if version_info.serial:
-        serial = version_info.serial
-    else:
-        # 0 is omitted:
-        serial = ''
-    if version_info.release:
-        dev = ''
-    else:
-        dev = '.dev'
-    version = '%s.%s%s%s%s%s' % (
+    serial = version_info.serial or ''
+    dev = '' if version_info.release else '.dev'
+    return '%s.%s%s%s%s%s' % (
         version_info.major,
         version_info.minor,
         micro,
         releaselevel,
         serial,
         dev)
-    return version

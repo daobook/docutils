@@ -127,10 +127,7 @@ class Include(Directive):
 
         if 'literal' in self.options:
             # Don't convert tabs to spaces, if `tab_width` is negative.
-            if tab_width >= 0:
-                text = rawtext.expandtabs(tab_width)
-            else:
-                text = rawtext
+            text = rawtext.expandtabs(tab_width) if tab_width >= 0 else rawtext
             literal_block = nodes.literal_block(rawtext, source=path,
                                     classes=self.options.get('class', []))
             literal_block.line = 1

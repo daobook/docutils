@@ -43,32 +43,35 @@ def suite():
     return s
 
 
-totest = {}
-totest_de = {}
-totest_de_alt = {}
-totest_locales = {}
-
-totest['smartquotes'] = ((SmartQuotes,), [
-["""\
+totest = {
+    'smartquotes': (
+        (SmartQuotes,),
+        [
+            [
+                """\
 Test "smart quotes", 'secondary smart quotes',
 "'nested' smart" quotes
 -- and ---also long--- dashes.
 """,
-u"""\
+                u"""\
 <document source="test data">
     <paragraph>
         Test “smart quotes”, ‘secondary smart quotes’,
         “‘nested’ smart” quotes
         – and —also long— dashes.
-"""],
-[r"""Escaped \"ASCII quotes\" and \'secondary ASCII quotes\'.
 """,
-u"""\
+            ],
+            [
+                r"""Escaped \"ASCII quotes\" and \'secondary ASCII quotes\'.
+""",
+                u"""\
 <document source="test data">
     <paragraph>
         Escaped "ASCII quotes" and 'secondary ASCII quotes'.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Do not "educate" quotes ``inside "literal" text`` and ::
 
   "literal" blocks.
@@ -88,7 +91,7 @@ Keep quotes straight in code and math:
    f'(x) = df(x)/dx
 
 """,
-u"""\
+                u"""\
 <document source="test data">
     <paragraph>
         Do not “educate” quotes 
@@ -112,8 +115,10 @@ u"""\
         print("hello")
     <math_block xml:space="preserve">
         f'(x) = df(x)/dx
-"""],
-[u"""\
+""",
+            ],
+            [
+                u"""\
 Closing quotes, if preceded by
 wor"d char's
 or punctuation:"a",'a';'a' (TODO: opening quotes if followed by word-char?).
@@ -138,7 +143,7 @@ But not if followed by (optional punctuation and) whitespace:
 "-", "–", "—", "(", "a[", "{"
 '-', '–', '—', '((', '[', '{'
 """,
-u"""\
+                u"""\
 <document source="test data">
     <paragraph>
         Closing quotes, if preceded by
@@ -164,8 +169,10 @@ u"""\
         But not if followed by (optional punctuation and) whitespace:
         “-”, “–”, “—”, “(”, “a[”, “{”
         ‘-’, ‘–’, ‘—’, ‘((’, ‘[’, ‘{’
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Quotes and inline-elements:
 
 * Around "_`targets`", "*emphasized*" or "``literal``" text
@@ -176,7 +183,7 @@ Quotes and inline-elements:
 Do not drop characters from intra-word inline markup like
 *re*\\ ``Structured``\\ *Text*.
 """,
-u"""\
+                u"""\
 <document source="test data">
     <paragraph>
         Quotes and inline-elements:
@@ -214,8 +221,10 @@ u"""\
         <emphasis>
             Text
         .\
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Do not convert context-character at inline-tag boundaries
 (in French, smart quotes expand to two characters).
 
@@ -230,7 +239,7 @@ Do not convert context-character at inline-tag boundaries
   Do not drop characters from intra-word inline markup like
   *re*\\ ``Structured``\\ *Text*.
 """,
-u"""\
+                u"""\
 <document source="test data">
     <paragraph>
         Do not convert context-character at inline-tag boundaries
@@ -280,8 +289,10 @@ u"""\
         <emphasis>
             Text
         .
-"""],
-[r"""
+""",
+            ],
+            [
+                r"""
 Docutils escape mechanism uses the backslash:
 
 \Remove \non-escaped \backslashes\:
@@ -307,7 +318,7 @@ Test around inline elements:\ [*]_
 
 .. [*] and footnotes
 """,
-u"""\
+                u"""\
 <document source="test data">
     <paragraph>
         Docutils escape mechanism uses the backslash:
@@ -358,13 +369,15 @@ u"""\
         <footnote auto="*" ids="footnote-1">
             <paragraph>
                 and footnotes
-"""],
-[r"""
+""",
+            ],
+            [
+                r"""
 Character-level m\ *a*\ **r**\ ``k``\ `u`:title:\p
 with backslash-escaped whitespace, including new\
 lines.
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         Character-level m
@@ -378,8 +391,10 @@ lines.
             u
         p
         with backslash-escaped whitespace, including newlines.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. class:: language-de
 
 German "smart quotes" and 'secondary smart quotes'.
@@ -397,7 +412,7 @@ British "primary quotes" use single and
 
 Alternative German "smart quotes" and 'secondary smart quotes'.
 """,
-u"""\
+                u"""\
 <document source="test data">
     <paragraph classes="language-de">
         German „smart quotes“ and ‚secondary smart quotes‘.
@@ -411,28 +426,42 @@ u"""\
     <system_message level="2" line="12" source="test data" type="WARNING">
         <paragraph>
             No smart quotes defined for language "foo".
-"""],
-])
+""",
+            ],
+        ],
+    )
+}
 
-totest_de['smartquotes'] = ((SmartQuotes,), [
-["""\
+totest_de = {
+    'smartquotes': (
+        (SmartQuotes,),
+        [
+            [
+                """\
 German "smart quotes" and 'secondary smart quotes'.
 
 .. class:: language-en
 
 English "smart quotes" and 'secondary smart quotes'.
 """,
-u"""\
+                u"""\
 <document source="test data">
     <paragraph>
         German „smart quotes“ and ‚secondary smart quotes‘.
     <paragraph classes="language-en">
         English “smart quotes” and ‘secondary smart quotes’.
-"""],
-])
+""",
+            ],
+        ],
+    )
+}
 
-totest_de_alt['smartquotes'] = ((SmartQuotes,), [
-["""\
+totest_de_alt = {
+    'smartquotes': (
+        (SmartQuotes,),
+        [
+            [
+                """\
 Alternative German "smart quotes" and 'secondary smart quotes'.
 
 In this case, the apostrophe isn't a closing secondary quote!
@@ -446,7 +475,7 @@ British "quotes" use single and 'secondary quotes' double quote signs
 
 Romanian "smart quotes" and 'secondary' smart quotes.
 """,
-u"""\
+                u"""\
 <document source="test data">
     <paragraph>
         Alternative German »smart quotes« and ›secondary smart quotes‹.
@@ -457,26 +486,35 @@ u"""\
         (there are no alternative quotes defined).
     <paragraph classes="language-ro">
         Romanian „smart quotes” and «secondary» smart quotes.
-"""],
-])
+""",
+            ],
+        ],
+    )
+}
 
-totest_locales['smartquotes'] = ((SmartQuotes,), [
-["""\
+totest_locales = {
+    'smartquotes': (
+        (SmartQuotes,),
+        [
+            [
+                """\
 German "smart quotes" and 'secondary smart quotes'.
 
 .. class:: language-nl
 
 Dutch "smart quotes" and 's Gravenhage (leading apostrophe).
 """,
-u"""\
+                u"""\
 <document source="test data">
     <paragraph>
         German «smart quotes» and (secondary smart quotes).
     <paragraph classes="language-nl">
         Dutch „smart quotes” and ’s Gravenhage (leading apostrophe).
-"""],
-])
-
+""",
+            ],
+        ],
+    )
+}
 
 if __name__ == '__main__':
     import unittest

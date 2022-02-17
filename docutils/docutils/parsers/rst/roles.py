@@ -272,8 +272,7 @@ def pep_reference_role(role, rawtext, text, lineno, inliner,
     ref = (inliner.document.settings.pep_base_url
            + inliner.document.settings.pep_file_url_template % pepnum)
     set_classes(options)
-    return [nodes.reference(rawtext, 'PEP ' + text, refuri=ref,
-                            **options)], []
+    return [nodes.reference(rawtext, f'PEP {text}', refuri=ref, **options)], []
 
 register_canonical_role('pep-reference', pep_reference_role)
 
@@ -296,10 +295,9 @@ def rfc_reference_role(role, rawtext, text, lineno, inliner,
     # Base URL mainly used by inliner.rfc_reference, so this is correct:
     ref = inliner.document.settings.rfc_base_url + inliner.rfc_url % rfcnum
     if section is not None:
-        ref += "#"+section
+        ref += f'#{section}'
     set_classes(options)
-    node = nodes.reference(rawtext, 'RFC ' + str(rfcnum), refuri=ref,
-                           **options)
+    node = nodes.reference(rawtext, f'RFC {rfcnum}', refuri=ref, **options)
     return [node], []
 
 register_canonical_role('rfc-reference', rfc_reference_role)

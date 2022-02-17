@@ -18,14 +18,14 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['definition_lists'] = [
-["""\
+totest = {
+    'definition_lists': [
+        [
+            """\
 term
   definition
 """,
-"""\
+            """\
 <document source="test data">
     <definition_list>
         <definition_list_item>
@@ -34,14 +34,16 @@ term
             <definition>
                 <paragraph>
                     definition
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 term
   definition
 
 paragraph
 """,
-"""\
+            """\
 <document source="test data">
     <definition_list>
         <definition_list_item>
@@ -52,13 +54,15 @@ paragraph
                     definition
     <paragraph>
         paragraph
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 term
   definition
 no blank line
 """,
-"""\
+            """\
 <document source="test data">
     <definition_list>
         <definition_list_item>
@@ -72,12 +76,14 @@ no blank line
             Definition list ends without a blank line; unexpected unindent.
     <paragraph>
         no blank line
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph::
     A literal block without a blank line first?
 """,
-"""\
+            """\
 <document source="test data">
     <definition_list>
         <definition_list_item>
@@ -89,13 +95,15 @@ A paragraph::
                         Blank line missing before literal block (after the "::")? Interpreted as a definition list item.
                 <paragraph>
                     A literal block without a blank line first?
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 this is not a term;
 a term may only be one line long
   this is not a definition
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         this is not a term;
@@ -106,15 +114,17 @@ a term may only be one line long
     <block_quote>
         <paragraph>
             this is not a definition
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 term 1
   definition 1
 
 term 2
   definition 2
 """,
-"""\
+            """\
 <document source="test data">
     <definition_list>
         <definition_list_item>
@@ -129,14 +139,16 @@ term 2
             <definition>
                 <paragraph>
                     definition 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 term 1
   definition 1 (no blank line below)
 term 2
   definition 2
 """,
-"""\
+            """\
 <document source="test data">
     <definition_list>
         <definition_list_item>
@@ -151,15 +163,17 @@ term 2
             <definition>
                 <paragraph>
                     definition 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 term 1
   definition 1 (no blank line below)
 term 2
   definition 2
 No blank line after the definition list.
 """,
-"""\
+            """\
 <document source="test data">
     <definition_list>
         <definition_list_item>
@@ -179,8 +193,10 @@ No blank line after the definition list.
             Definition list ends without a blank line; unexpected unindent.
     <paragraph>
         No blank line after the definition list.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 term 1
   definition 1
 
@@ -195,7 +211,7 @@ term 2
 
 paragraph
 """,
-"""\
+            """\
 <document source="test data">
     <definition_list>
         <definition_list_item>
@@ -225,13 +241,15 @@ paragraph
                     definition 2
     <paragraph>
         paragraph
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Term : classifier
     The ' : ' indicates a classifier in
     definition list item terms only.
 """,
-"""\
+            """\
 <document source="test data">
     <definition_list>
         <definition_list_item>
@@ -243,8 +261,10 @@ Term : classifier
                 <paragraph>
                     The ' : ' indicates a classifier in
                     definition list item terms only.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Term: not a classifier
     Because there's no space before the colon.
 Term :not a classifier
@@ -252,7 +272,7 @@ Term :not a classifier
 Term \\: not a classifier
     Because the colon is escaped.
 """,
-"""\
+            """\
 <document source="test data">
     <definition_list>
         <definition_list_item>
@@ -273,12 +293,14 @@ Term \\: not a classifier
             <definition>
                 <paragraph>
                     Because the colon is escaped.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ``Term : not a classifier``
     Because the ' : ' is inside an inline literal.
 """,
-"""\
+            """\
 <document source="test data">
     <definition_list>
         <definition_list_item>
@@ -288,12 +310,14 @@ Term \\: not a classifier
             <definition>
                 <paragraph>
                     Because the ' : ' is inside an inline literal.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Term `with *inline ``text **errors : classifier `with *errors ``too
     Definition `with *inline ``text **markup errors.
 """,
-"""\
+            """\
 <document source="test data">
     <definition_list>
         <definition_list_item>
@@ -370,12 +394,14 @@ Term `with *inline ``text **errors : classifier `with *errors ``too
                 <system_message backrefs="problematic-11" ids="system-message-11" level="2" line="2" source="test data" type="WARNING">
                     <paragraph>
                         Inline strong start-string without end-string.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Term : `reference`_
     classifier starting with a reference crashes from release 8197 to ...
 """,
-"""\
+            """\
 <document source="test data">
     <definition_list>
         <definition_list_item>
@@ -387,12 +413,14 @@ Term : `reference`_
             <definition>
                 <paragraph>
                     classifier starting with a reference crashes from release 8197 to ...
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Term : a `reference`_ in text : second
     classifier with reference crashes from release 8197 to ...
 """,
-"""\
+            """\
 <document source="test data">
     <definition_list>
         <definition_list_item>
@@ -408,12 +436,14 @@ Term : a `reference`_ in text : second
             <definition>
                 <paragraph>
                     classifier with reference crashes from release 8197 to ...
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Term : classifier one  :  classifier two
     Definition
 """,
-"""\
+            """\
 <document source="test data">
     <definition_list>
         <definition_list_item>
@@ -426,8 +456,11 @@ Term : classifier one  :  classifier two
             <definition>
                 <paragraph>
                     Definition
-"""],
-]
+""",
+        ],
+    ]
+}
+
 
 if __name__ == '__main__':
     import unittest

@@ -22,15 +22,17 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['substitutions'] = ((Substitutions,), [
-["""\
+totest = {
+    'substitutions': (
+        (Substitutions,),
+        [
+            [
+                """\
 The |biohazard| symbol is deservedly scary-looking.
 
 .. |biohazard| image:: biohazard.png
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         The \n\
@@ -38,11 +40,13 @@ The |biohazard| symbol is deservedly scary-looking.
          symbol is deservedly scary-looking.
     <substitution_definition names="biohazard">
         <image alt="biohazard" uri="biohazard.png">
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Here's an |unknown| substitution.
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         Here's an \n\
@@ -52,8 +56,10 @@ Here's an |unknown| substitution.
     <system_message backrefs="problematic-1" ids="system-message-1" level="3" line="1" source="test data" type="ERROR">
         <paragraph>
             Undefined substitution referenced: "unknown".
-"""],
-[u"""\
+""",
+            ],
+            [
+                u"""\
 Substitutions support case differences:
 
 .. |eacute| replace:: \u00E9
@@ -61,7 +67,7 @@ Substitutions support case differences:
 
 |Eacute|\\t\\ |eacute|, and even |EACUTE|.
 """,
-u"""\
+                u"""\
 <document source="test data">
     <paragraph>
         Substitutions support case differences:
@@ -76,8 +82,10 @@ u"""\
         , and even \n\
         \u00C9
         .
-"""],
-[u"""\
+""",
+            ],
+            [
+                u"""\
 Indirect substitution definitions with multiple references:
 
 |substitute| my coke for gin
@@ -87,7 +95,7 @@ at least I'll get my washing done
 .. |substitute| replace:: |replace|
 .. |replace| replace:: swap
 """,
-u"""\
+                u"""\
 <document source="test data">
     <paragraph>
         Indirect substitution definitions with multiple references:
@@ -101,8 +109,10 @@ u"""\
         swap
     <substitution_definition names="replace">
         swap
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. |l| unicode:: U+00AB .. left chevron
 .. |r| unicode:: U+00BB .. right chevron
 .. |.| replace:: |l|\\ ``.``\\ |r|
@@ -113,7 +123,7 @@ Regular expression |.| will match any character
 
 .. Note:: Note that |.| matches *exactly* one character
 """,
-u"""\
+                u"""\
 <document source="test data">
     <substitution_definition names="l">
         \xab
@@ -144,24 +154,28 @@ u"""\
             <emphasis>
                 exactly
              one character
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. |sub| replace:: |sub|
 """,
-"""\
+                """\
 <document source="test data">
     <system_message level="3" line="1" names="sub" source="test data" type="ERROR">
         <paragraph>
             Circular substitution definition detected:
         <literal_block xml:space="preserve">
             .. |sub| replace:: |sub|
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. |sub| replace:: |indirect1|
 .. |indirect1| replace:: |indirect2|
 .. |indirect2| replace:: |Sub|
 """,
-"""\
+                """\
 <document source="test data">
     <system_message level="3" line="1" names="sub" source="test data" type="ERROR">
         <paragraph>
@@ -178,15 +192,17 @@ u"""\
             Circular substitution definition detected:
         <literal_block xml:space="preserve">
             .. |indirect2| replace:: |Sub|
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. |indirect1| replace:: |indirect2|
 .. |indirect2| replace:: |Sub|
 .. |sub| replace:: |indirect1|
 
 Use |sub| and |indirect1| and |sub| again (and |sub| one more time).
 """,
-"""\
+                """\
 <document source="test data">
     <system_message level="3" line="1" names="indirect1" source="test data" type="ERROR">
         <paragraph>
@@ -229,13 +245,15 @@ Use |sub| and |indirect1| and |sub| again (and |sub| one more time).
     <system_message backrefs="problematic-4" ids="system-message-4" level="3" line="5" source="test data" type="ERROR">
         <paragraph>
             Circular substitution definition referenced: "Sub".
-"""],
-[u"""\
+""",
+            ],
+            [
+                u"""\
 Substitution reference with |reference-in-content|.
 
 .. |reference-in-content| replace:: text and hyperlink-reference_
 """,
-u"""\
+                u"""\
 <document source="test data">
     <paragraph>
         Substitution reference with 
@@ -247,11 +265,15 @@ u"""\
         text and 
         <reference name="hyperlink-reference" refname="hyperlink-reference">
             hyperlink-reference
-"""],
-])
-
-totest['unicode'] = ((Substitutions,), [
-["""\
+""",
+            ],
+        ],
+    ),
+    'unicode': (
+        (Substitutions,),
+        [
+            [
+                """\
 Insert an em-dash (|mdash|), a copyright symbol (|copy|), a non-breaking
 space (|nbsp|), a backwards-not-equals (|bne|), and a captial omega (|Omega|).
 
@@ -261,7 +283,7 @@ space (|nbsp|), a backwards-not-equals (|bne|), and a captial omega (|Omega|).
 .. |bne| unicode:: U0003D U020E5
 .. |Omega| unicode:: U+003A9
 """,
-u"""\
+                u"""\
 <document source="test data">
     <paragraph>
         Insert an em-dash (
@@ -288,8 +310,10 @@ u"""\
         \u20e5
     <substitution_definition names="Omega">
         \u03a9
-"""],
-["""
+""",
+            ],
+            [
+                """
 Testing comments and extra text.
 
 Copyright |copy| 2003, |BogusMegaCorp (TM)|.
@@ -298,7 +322,7 @@ Copyright |copy| 2003, |BogusMegaCorp (TM)|.
 .. |BogusMegaCorp (TM)| unicode:: BogusMegaCorp U+2122
    .. with trademark sign
 """,
-u"""\
+                u"""\
 <document source="test data">
     <paragraph>
         Testing comments and extra text.
@@ -314,8 +338,10 @@ u"""\
     <substitution_definition names="BogusMegaCorp\\ (TM)">
         BogusMegaCorp
         \u2122
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Insert an em-dash |---| automatically trimming whitespace.
 Some substitutions |TM| only need |rarrow| trimming on one side.
 
@@ -326,7 +352,7 @@ Some substitutions |TM| only need |rarrow| trimming on one side.
 .. |rarrow| unicode:: U+2192
    :rtrim:
 """,
-u"""\
+                u"""\
 <document source="test data">
     <paragraph>
         Insert an em-dash
@@ -343,15 +369,17 @@ u"""\
         \u2122
     <substitution_definition names="rarrow" rtrim="1">
         \u2192
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Substitution definition with an illegal element:
 
 .. |target| replace:: _`target`
 
 Make sure this substitution definition is not registered: |target|
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         Substitution definition with an illegal element:
@@ -370,8 +398,11 @@ Make sure this substitution definition is not registered: |target|
     <system_message backrefs="problematic-1" ids="system-message-1" level="3" line="5" source="test data" type="ERROR">
         <paragraph>
             Undefined substitution referenced: "target".
-"""],
-])
+""",
+            ],
+        ],
+    ),
+}
 
 
 if __name__ == '__main__':

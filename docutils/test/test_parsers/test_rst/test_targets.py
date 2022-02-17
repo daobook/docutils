@@ -20,28 +20,32 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['targets'] = [
-["""\
+totest = {
+    'targets': [
+        [
+            """\
 .. _target:
 
 (Internal hyperlink target.)
 """,
-"""\
+            """\
 <document source="test data">
     <target ids="target" names="target">
     <paragraph>
         (Internal hyperlink target.)
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. _optional space before colon :
 """,
-"""\
+            """\
 <document source="test data">
     <target ids="optional-space-before-colon" names="optional\\ space\\ before\\ colon">
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 External hyperlink targets:
 
 .. _one-liner: http://structuredtext.sourceforge.net
@@ -59,7 +63,7 @@ External hyperlink targets:
 
 .. _not-indirect: uri\_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         External hyperlink targets:
@@ -68,39 +72,45 @@ External hyperlink targets:
     <target ids="entirely-below" names="entirely-below" refuri="http://structuredtext.sourceforge.net">
     <target ids="escaped-whitespace" names="escaped-whitespace" refuri="http://example.org/a path with spaces.html">
     <target ids="not-indirect" names="not-indirect" refuri="uri_">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Indirect hyperlink targets:
 
 .. _target1: reference_
 
 .. _target2: `phrase-link reference`_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Indirect hyperlink targets:
     <target ids="target1" names="target1" refname="reference">
     <target ids="target2" names="target2" refname="phrase-link reference">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. _a long target name:
 
 .. _`a target name: including a colon (quoted)`:
 
 .. _a target name\\: including a colon (escaped):
 """,
-"""\
+            """\
 <document source="test data">
     <target ids="a-long-target-name" names="a\\ long\\ target\\ name">
     <target ids="a-target-name-including-a-colon-quoted" names="a\\ target\\ name:\\ including\\ a\\ colon\\ (quoted)">
     <target ids="a-target-name-including-a-colon-escaped" names="a\\ target\\ name:\\ including\\ a\\ colon\\ (escaped)">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. _`target: No matching backquote.
 .. _`: No matching backquote either.
 """,
-"""\
+            """\
 <document source="test data">
     <comment xml:space="preserve">
         _`target: No matching backquote.
@@ -112,41 +122,49 @@ Indirect hyperlink targets:
     <system_message level="2" line="2" source="test data" type="WARNING">
         <paragraph>
             malformed hyperlink target.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. _a very long target name,
    split across lines:
 .. _`and another,
    with backquotes`:
 """,
-"""\
+            """\
 <document source="test data">
     <target ids="a-very-long-target-name-split-across-lines" names="a\\ very\\ long\\ target\\ name,\\ split\\ across\\ lines">
     <target ids="and-another-with-backquotes" names="and\\ another,\\ with\\ backquotes">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 External hyperlink:
 
 .. _target: http://www.python.org/
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         External hyperlink:
     <target ids="target" names="target" refuri="http://www.python.org/">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. _email: jdoe@example.com
 
 .. _multi-line email: jdoe
    @example.com
 """,
-"""\
+            """\
 <document source="test data">
     <target ids="email" names="email" refuri="mailto:jdoe@example.com">
     <target ids="multi-line-email" names="multi-line\\ email" refuri="mailto:jdoe@example.com">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Malformed target:
 
 .. __malformed: no good
@@ -155,7 +173,7 @@ Target beginning with an underscore:
 
 .. _`_target`: OK
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Malformed target:
@@ -167,15 +185,17 @@ Target beginning with an underscore:
     <paragraph>
         Target beginning with an underscore:
     <target ids="target" names="_target" refuri="OK">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Duplicate external targets (different URIs):
 
 .. _target: first
 
 .. _target: second
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Duplicate external targets (different URIs):
@@ -184,15 +204,17 @@ Duplicate external targets (different URIs):
         <paragraph>
             Duplicate explicit target name: "target".
     <target dupnames="target" ids="target-1" refuri="second">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Duplicate external targets (same URIs):
 
 .. _target: first
 
 .. _target: first
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Duplicate external targets (same URIs):
@@ -201,8 +223,10 @@ Duplicate external targets (same URIs):
         <paragraph>
             Duplicate explicit target name: "target".
     <target dupnames="target" ids="target-1" refuri="first">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Duplicate implicit targets.
 
 Title
@@ -215,7 +239,7 @@ Title
 
 Paragraph.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Duplicate implicit targets.
@@ -232,8 +256,10 @@ Paragraph.
                 Duplicate implicit target name: "title".
         <paragraph>
             Paragraph.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Duplicate implicit/explicit targets.
 
 Title
@@ -243,7 +269,7 @@ Title
 
 Paragraph.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Duplicate implicit/explicit targets.
@@ -256,8 +282,10 @@ Paragraph.
         <target ids="title-1" names="title">
         <paragraph>
             Paragraph.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Duplicate implicit/directive targets.
 
 Title
@@ -266,7 +294,7 @@ Title
 .. target-notes::
    :name: title
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Duplicate implicit/directive targets.
@@ -280,8 +308,10 @@ Title
             .. internal attributes:
                  .transform: docutils.transforms.references.TargetNotes
                  .details:
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Duplicate explicit targets.
 
 .. _title:
@@ -296,7 +326,7 @@ Second.
 
 Third.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Duplicate explicit targets.
@@ -315,8 +345,10 @@ Third.
     <target dupnames="title" ids="title-2">
     <paragraph>
         Third.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Duplicate explicit/directive targets.
 
 .. _title:
@@ -327,7 +359,7 @@ First.
    :name: title
 
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Duplicate explicit/directive targets.
@@ -339,8 +371,10 @@ First.
         <system_message backrefs="title-1" level="2" line="9" source="test data" type="WARNING">
             <paragraph>
                 Duplicate explicit target name: "title".
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Duplicate targets:
 
 Target
@@ -361,7 +395,7 @@ Explicit internal target.
 .. rubric:: directive with target
    :name: Target
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Duplicate targets:
@@ -399,8 +433,10 @@ Explicit internal target.
             <system_message backrefs="target-5" level="2" line="4" source="test data" type="WARNING">
                 <paragraph>
                     Duplicate explicit target name: "target".
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. _unescaped colon at end:: no good
 
 .. _:: no good either
@@ -409,7 +445,7 @@ Explicit internal target.
 
 .. _`unescaped colon, quoted:`: OK
 """,
-"""\
+            """\
 <document source="test data">
     <comment xml:space="preserve">
         _unescaped colon at end:: no good
@@ -423,72 +459,83 @@ Explicit internal target.
             malformed hyperlink target.
     <target ids="escaped-colon" names="escaped\\ colon:" refuri="OK">
     <target ids="unescaped-colon-quoted" names="unescaped\\ colon,\\ quoted:" refuri="OK">
-"""],
-]
-
-totest['anonymous_targets'] = [
-["""\
+""",
+        ],
+    ],
+    'anonymous_targets': [
+        [
+            """\
 Anonymous external hyperlink target:
 
 .. __: http://w3c.org/
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Anonymous external hyperlink target:
     <target anonymous="1" ids="target-1" refuri="http://w3c.org/">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Anonymous external hyperlink target:
 
 __ http://w3c.org/
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Anonymous external hyperlink target:
     <target anonymous="1" ids="target-1" refuri="http://w3c.org/">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Anonymous indirect hyperlink target:
 
 .. __: reference_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Anonymous indirect hyperlink target:
     <target anonymous="1" ids="target-1" refname="reference">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Anonymous external hyperlink target, not indirect:
 
 __ uri\\_
 
 __ this URI ends with an underscore_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Anonymous external hyperlink target, not indirect:
     <target anonymous="1" ids="target-1" refuri="uri_">
     <target anonymous="1" ids="target-2" refuri="thisURIendswithanunderscore_">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Anonymous indirect hyperlink targets:
 
 __ reference_
 __ `a very long
    reference`_
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Anonymous indirect hyperlink targets:
     <target anonymous="1" ids="target-1" refname="reference">
     <target anonymous="1" ids="target-2" refname="a very long reference">
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Mixed anonymous & named indirect hyperlink targets:
 
 __ reference_
@@ -503,7 +550,7 @@ __ reference_
 __ reference_
 no blank line
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Mixed anonymous & named indirect hyperlink targets:
@@ -525,16 +572,20 @@ no blank line
             Explicit markup ends without a blank line; unexpected unindent.
     <paragraph>
         no blank line
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. _
 """,
-"""\
+            """\
 <document source="test data">
     <comment xml:space="preserve">
         _
-"""],
-]
+""",
+        ],
+    ],
+}
 
 
 if __name__ == '__main__':

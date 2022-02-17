@@ -19,14 +19,10 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['basic'] = [
-["""\
+totest = {'basic': [["""\
 This is a paragraph.
 """,
-None]
-]
+None]]}
 
 if __name__ == '__main__':
     import unittest

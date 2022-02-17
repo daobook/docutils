@@ -118,11 +118,10 @@ class Headers(Transform):
                 space = nodes.Text(' ')
                 for refpep in re.split(r',?\s+', body.astext()):
                     pepno = int(refpep)
-                    newbody.append(nodes.reference(
+                    newbody.extend((nodes.reference(
                         refpep, refpep,
                         refuri=(self.document.settings.pep_base_url
-                                + self.pep_url % pepno)))
-                    newbody.append(space)
+                                + self.pep_url % pepno)), space))
                 para[:] = newbody[:-1] # drop trailing space
             elif name == 'last-modified':
                 utils.clean_rcs_keywords(para, self.rcs_keyword_substitutions)
@@ -292,17 +291,15 @@ def mask_email(ref, pepno=None):
     listed in `non_masked_addresses`).  If a PEP number (`pepno`) is given,
     return a reference including a default email subject.
     """
-    if ref.hasattr('refuri') and ref['refuri'].startswith('mailto:'):
-        if ref['refuri'][8:] in non_masked_addresses:
-            replacement = ref[0]
-        else:
-            replacement_text = ref.astext().replace('@', '&#32;&#97;t&#32;')
-            replacement = nodes.raw('', replacement_text, format='html')
-        if pepno is None:
-            return replacement
-        else:
-            ref['refuri'] += '?subject=PEP%%20%s' % pepno
-            ref[:] = [replacement]
-            return ref
-    else:
+    if not ref.hasattr('refuri') or not ref['refuri'].startswith('mailto:'):
         return ref
+    if ref['refuri'][8:] in non_masked_addresses:
+        replacement = ref[0]
+    else:
+        replacement_text = ref.astext().replace('@', '&#32;&#97;t&#32;')
+        replacement = nodes.raw('', replacement_text, format='html')
+    if pepno is None:
+        return replacement
+    ref['refuri'] += '?subject=PEP%%20%s' % pepno
+    ref[:] = [replacement]
+    return ref

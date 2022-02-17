@@ -76,8 +76,7 @@ class Writer(Component):
             document.reporter)
         self.destination = destination
         self.translate()
-        output = self.destination.write(self.output)
-        return output
+        return self.destination.write(self.output)
 
     def translate(self):
         """
@@ -144,10 +143,10 @@ def get_writer_class(writer_name):
     if writer_name in _writer_aliases:
         writer_name = _writer_aliases[writer_name]
     try:
-        module = import_module('docutils.writers.'+writer_name)
+        module = import_module(f'docutils.writers.{writer_name}')
     except ImportError:
         try:
             module = import_module(writer_name)
         except ImportError as err:
-            raise ImportError('No writer named "%s".' % writer_name) 
+            raise ImportError('No writer named "%s".' % writer_name)
     return module.Writer

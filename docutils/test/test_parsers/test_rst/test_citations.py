@@ -18,36 +18,40 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['citations'] = [
-["""\
+totest = {
+    'citations': [
+        [
+            """\
 .. [citation] This is a citation.
 """,
-"""\
+            """\
 <document source="test data">
     <citation ids="citation" names="citation">
         <label>
             citation
         <paragraph>
             This is a citation.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. [citation1234] This is a citation with year.
 """,
-"""\
+            """\
 <document source="test data">
     <citation ids="citation1234" names="citation1234">
         <label>
             citation1234
         <paragraph>
             This is a citation with year.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. [citation] This is a citation
    on multiple lines.
 """,
-"""\
+            """\
 <document source="test data">
     <citation ids="citation" names="citation">
         <label>
@@ -55,15 +59,17 @@ totest['citations'] = [
         <paragraph>
             This is a citation
             on multiple lines.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. [citation1] This is a citation
      on multiple lines with more space.
 
 .. [citation2] This is a citation
   on multiple lines with less space.
 """,
-"""\
+            """\
 <document source="test data">
     <citation ids="citation1" names="citation1">
         <label>
@@ -77,13 +83,15 @@ totest['citations'] = [
         <paragraph>
             This is a citation
             on multiple lines with less space.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. [citation]
    This is a citation on multiple lines
    whose block starts on line 2.
 """,
-"""\
+            """\
 <document source="test data">
     <citation ids="citation" names="citation">
         <label>
@@ -91,25 +99,29 @@ totest['citations'] = [
         <paragraph>
             This is a citation on multiple lines
             whose block starts on line 2.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. [citation]
 
 That was an empty citation.
 """,
-"""\
+            """\
 <document source="test data">
     <citation ids="citation" names="citation">
         <label>
             citation
     <paragraph>
         That was an empty citation.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. [citation]
 No blank line.
 """,
-"""\
+            """\
 <document source="test data">
     <citation ids="citation" names="citation">
         <label>
@@ -119,20 +131,24 @@ No blank line.
             Explicit markup ends without a blank line; unexpected unindent.
     <paragraph>
         No blank line.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. [citation label with spaces] this isn't a citation
 
 .. [*citationlabelwithmarkup*] this isn't a citation
 """,
-"""\
+            """\
 <document source="test data">
     <comment xml:space="preserve">
         [citation label with spaces] this isn't a citation
     <comment xml:space="preserve">
         [*citationlabelwithmarkup*] this isn't a citation
-"""],
-["""
+""",
+        ],
+        [
+            """
 isolated internals : ``.-_``.
 
 .. [citation.withdot] one dot
@@ -145,7 +161,7 @@ isolated internals : ``.-_``.
 
 .. [citation+withplus] one plus
 """,
-"""<document source="test data">
+            """<document source="test data">
     <paragraph>
         isolated internals : \n\
         <literal>
@@ -176,8 +192,10 @@ isolated internals : ``.-_``.
             citation+withplus
         <paragraph>
             one plus
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

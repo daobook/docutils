@@ -19,27 +19,29 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['sectnum'] = [
-["""\
+totest = {
+    'sectnum': [
+        [
+            """\
 .. sectnum::
 """,
-"""\
+            """\
 <document source="test data">
     <pending>
         .. internal attributes:
              .transform: docutils.transforms.parts.SectNum
              .details:
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. sectnum::
    :depth: 23
    :start: 42
    :prefix: A Prefix
    :suffix: A Suffix
 """,
-"""\
+            """\
 <document source="test data">
     <pending>
         .. internal attributes:
@@ -49,8 +51,10 @@ totest['sectnum'] = [
                prefix: 'A Prefix'
                start: 42
                suffix: 'A Suffix'
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

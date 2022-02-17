@@ -109,12 +109,10 @@ class Publisher(object):
             parts = config_section.split()
             if len(parts) > 1 and parts[-1] == 'application':
                 settings_spec.config_section_dependencies = ['applications']
-        #@@@ Add self.source & self.destination to components in future?
-        option_parser = OptionParser(
+        return OptionParser(
             components=(self.parser, self.reader, self.writer, settings_spec),
             defaults=defaults, read_config_files=True,
             usage=usage, description=description)
-        return option_parser
 
     def get_settings(self, usage=None, description=None,
                      settings_spec=None, config_section=None, **defaults):
@@ -350,10 +348,9 @@ def publish_cmdline(reader=None, reader_name='standalone',
     """
     pub = Publisher(reader, parser, writer, settings=settings)
     pub.set_components(reader_name, parser_name, writer_name)
-    output = pub.publish(
+    return pub.publish(
         argv, usage, description, settings_spec, settings_overrides,
         config_section=config_section, enable_exit_status=enable_exit_status)
-    return output
 
 def publish_file(source=None, source_path=None,
                  destination=None, destination_path=None,
@@ -549,10 +546,9 @@ def publish_cmdline_to_binary(reader=None, reader_name='standalone',
     pub = Publisher(reader, parser, writer, settings=settings,
         destination_class=destination_class)
     pub.set_components(reader_name, parser_name, writer_name)
-    output = pub.publish(
+    return pub.publish(
         argv, usage, description, settings_spec, settings_overrides,
         config_section=config_section, enable_exit_status=enable_exit_status)
-    return output
 
 def publish_programmatically(source_class, source, source_path,
                              destination_class, destination, destination_path,

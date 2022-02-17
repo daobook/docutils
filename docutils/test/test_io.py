@@ -103,10 +103,10 @@ print("hello world")
         self.assertEqual(data, [u'Some include text.\n'])
 
     def test_heuristics_utf8(self):
-        # if no encoding is given, try decoding with utf8:
-        input = io.FileInput(source_path='functional/input/cyrillic.txt')
-        data = input.read()
         if sys.version_info < (3, 0):
+            # if no encoding is given, try decoding with utf8:
+            input = io.FileInput(source_path='functional/input/cyrillic.txt')
+            data = input.read()
             # in Py3k, the locale encoding is used without --input-encoding
             # skipping the heuristic
             self.assertEqual(input.successful_encoding, 'utf-8')

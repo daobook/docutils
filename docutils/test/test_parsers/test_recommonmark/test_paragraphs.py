@@ -19,42 +19,48 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['paragraphs'] = [
-["""\
+totest = {
+    'paragraphs': [
+        [
+            """\
 A paragraph.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Paragraph 1.
 
 Paragraph 2.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Paragraph 1.
     <paragraph>
         Paragraph 2.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Line 1.
 Line 2.
 Line 3.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Line 1.
         Line 2.
         Line 3.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Paragraph 1, Line 1.
 Line 2.
 Line 3.
@@ -63,7 +69,7 @@ Paragraph 2, Line 1.
 Line 2.
 Line 3.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Paragraph 1, Line 1.
@@ -73,8 +79,11 @@ Line 3.
         Paragraph 2, Line 1.
         Line 2.
         Line 3.
-"""],
-]
+""",
+        ],
+    ]
+}
+
 
 if __name__ == '__main__':
     import unittest

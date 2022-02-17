@@ -13,6 +13,7 @@ Spanish-language mappings for language-dependent features of
 reStructuredText.
 """
 
+
 __docformat__ = 'reStructuredText'
 
 
@@ -86,7 +87,6 @@ roles = {
     u'abreviatura': 'abbreviation',
     u'ab': 'abbreviation',
     u'acronimo': 'acronym',
-    u'acronimo': 'acronym',
     u'ac': 'acronym',
     u'code (translation required)': 'code',
     u'indice': 'index',
@@ -105,7 +105,7 @@ roles = {
     u'enfasis': 'emphasis',
     u'\u00e9nfasis': 'emphasis',
     u'destacado': 'strong',
-    u'literal': 'literal',              # "literal" is also a word in Spanish :-)
+    u'literal': 'literal',
     u'math (translation required)': 'math',
     u'referencia-con-nombre': 'named-reference',
     u'referencia-anonima': 'anonymous-reference',
@@ -121,5 +121,6 @@ roles = {
     u'sin-analisis': 'raw',
     u'sin-an\u00e1lisis': 'raw',
 }
+
 """Mapping of Spanish role names to canonical role names for interpreted text.
 """

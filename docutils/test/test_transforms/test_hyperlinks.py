@@ -24,34 +24,40 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-# Exhaustive listing of hyperlink variations: every combination of
-# target/reference, direct/indirect, internal/external, and named/anonymous,
-# plus embedded URIs.
-totest['exhaustive_hyperlinks'] = ((PropagateTargets, AnonymousHyperlinks,
-                                    IndirectHyperlinks, ExternalTargets,
-                                    InternalTargets, DanglingReferences), [
-["""\
+totest = {
+    'exhaustive_hyperlinks': (
+        (
+            PropagateTargets,
+            AnonymousHyperlinks,
+            IndirectHyperlinks,
+            ExternalTargets,
+            InternalTargets,
+            DanglingReferences,
+        ),
+        [
+            [
+                """\
 direct_ external
 
 .. _direct: http://direct
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         <reference name="direct" refuri="http://direct">
             direct
          external
     <target ids="direct" names="direct" refuri="http://direct">
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 indirect_ external
 
 .. _indirect: xtarget_
 .. _xtarget: http://indirect
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         <reference name="indirect" refuri="http://indirect">
@@ -59,21 +65,25 @@ indirect_ external
          external
     <target ids="indirect" names="indirect" refuri="http://indirect">
     <target ids="xtarget" names="xtarget" refuri="http://indirect">
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _direct:
 
 direct_ internal
 """,
-"""\
+                """\
 <document source="test data">
     <target refid="direct">
     <paragraph ids="direct" names="direct">
         <reference name="direct" refid="direct">
             direct
          internal
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _ztarget:
 
 indirect_ internal
@@ -81,7 +91,7 @@ indirect_ internal
 .. _indirect2: ztarget_
 .. _indirect: indirect2_
 """,
-"""\
+                """\
 <document source="test data">
     <target refid="ztarget">
     <paragraph ids="ztarget" names="ztarget">
@@ -90,8 +100,10 @@ indirect_ internal
          internal
     <target ids="indirect2" names="indirect2" refid="ztarget">
     <target ids="indirect" names="indirect" refid="ztarget">
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Implicit
 --------
 
@@ -99,7 +111,7 @@ indirect_ internal
 
 .. _indirect: implicit_
 """,
-"""\
+                """\
 <document source="test data">
     <section ids="implicit" names="implicit">
         <title>
@@ -109,8 +121,10 @@ indirect_ internal
                 indirect
              internal
         <target ids="indirect" names="indirect" refid="implicit">
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Implicit
 --------
 
@@ -119,7 +133,7 @@ Implicit
 .. _multiply-indirect: indirect_
 .. _indirect: implicit_
 """,
-"""\
+                """\
 <document source="test data">
     <section ids="implicit" names="implicit">
         <title>
@@ -130,14 +144,16 @@ Implicit
              internal
         <target ids="multiply-indirect" names="multiply-indirect" refid="implicit">
         <target ids="indirect" names="indirect" refid="implicit">
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 circular_ indirect reference
 
 .. _circular: indirect_
 .. _indirect: circular_
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         <problematic ids="problematic-1" refid="system-message-1">
@@ -149,8 +165,10 @@ circular_ indirect reference
     <system_message backrefs="problematic-1 problematic-2" ids="system-message-1" level="3" line="3" source="test data" type="ERROR">
         <paragraph>
             Indirect hyperlink target "circular" (id="circular") refers to target "indirect", forming a circular reference.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Implicit
 --------
 
@@ -165,7 +183,7 @@ indirect_ internal
 
 Direct internal reference: Implicit_
 """,
-"""\
+                """\
 <document source="test data">
     <section dupnames="implicit" ids="implicit">
         <title>
@@ -193,61 +211,71 @@ Direct internal reference: Implicit_
     <system_message backrefs="problematic-2" ids="system-message-2" level="3" line="13" source="test data" type="ERROR">
         <paragraph>
             Duplicate target name, cannot be used as a unique reference: "implicit".
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 `direct external`__
 
 __ http://direct
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         <reference anonymous="1" name="direct external" refuri="http://direct">
             direct external
     <target anonymous="1" ids="target-1" refuri="http://direct">
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 `indirect external`__
 
 __ xtarget_
 .. _xtarget: http://indirect
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         <reference anonymous="1" name="indirect external" refuri="http://indirect">
             indirect external
     <target anonymous="1" ids="target-1" refuri="http://indirect">
     <target ids="xtarget" names="xtarget" refuri="http://indirect">
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 __
 
 `direct internal`__
 """,
-"""\
+                """\
 <document source="test data">
     <target anonymous="1" refid="target-1">
     <paragraph ids="target-1">
         <reference anonymous="1" name="direct internal" refid="target-1">
             direct internal
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _ztarget:
 
 `indirect internal`__
 
 __ ztarget_
 """,
-"""\
+                """\
 <document source="test data">
     <target refid="ztarget">
     <paragraph ids="ztarget" names="ztarget">
         <reference anonymous="1" name="indirect internal" refid="ztarget">
             indirect internal
     <target anonymous="1" ids="target-1" refid="ztarget">
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _ztarget:
 
 First
@@ -260,7 +288,7 @@ Second
 
 __ ztarget_
 """,
-"""\
+                """\
 <document source="test data">
     <target dupnames="ztarget" refid="ztarget">
     <paragraph ids="ztarget">
@@ -278,8 +306,10 @@ __ ztarget_
     <system_message backrefs="problematic-1" ids="system-message-1" level="3" line="11" source="test data" type="ERROR">
         <paragraph>
             Indirect hyperlink target (id="target-1") refers to target "ztarget", which is a duplicate, and cannot be used as a unique reference.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 The next anonymous hyperlink reference is parsed (and discarded) at
 some point, but nonetheless anonymous hyperlink references and targets
 match in this snippet.
@@ -290,7 +320,7 @@ hyperlink__
 
 __ URL
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         The next anonymous hyperlink reference is parsed (and discarded) at
@@ -308,13 +338,15 @@ __ URL
         <reference anonymous="1" name="hyperlink" refuri="URL">
             hyperlink
     <target anonymous="1" ids="target-1" refuri="URL">
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 An `embedded uri <http://direct>`_.
 
 Another reference to the same `embedded URI`_.
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         An \n\
@@ -327,26 +359,30 @@ Another reference to the same `embedded URI`_.
         <reference name="embedded URI" refuri="http://direct">
             embedded URI
         .
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 An `anonymous embedded uri <http://direct>`__.
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         An \n\
         <reference name="anonymous embedded uri" refuri="http://direct">
             anonymous embedded uri
         .
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 An `embedded alias <alias_>`_.
 
 Another reference to the same `embedded alias`_.
 
 .. _alias: ham.py
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         An \n\
@@ -360,13 +396,15 @@ Another reference to the same `embedded alias`_.
             embedded alias
         .
     <target ids="alias" names="alias" refuri="ham.py">
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 An `anonymous embedded alias <redirect_>`__.
 
 .. _redirect: spam.py
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         An \n\
@@ -374,11 +412,13 @@ An `anonymous embedded alias <redirect_>`__.
             anonymous embedded alias
         .
     <target ids="redirect" names="redirect" refuri="spam.py">
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 An `embedded alias <alias_>`_ with unknown reference.
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         An \n\
@@ -395,20 +435,24 @@ An `embedded alias <alias_>`_ with unknown reference.
     <system_message level="1" line="1" source="test data" type="INFO">
         <paragraph>
             Hyperlink target "embedded alias" is not referenced.\
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 An embedded URI with trailing underline:
 `__init__ <http:example.py.html#__init__>`__.
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         An embedded URI with trailing underline:
         <reference name="__init__" refuri="http:example.py.html#__init__">
             __init__
         .
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Hyperlinks with angle-bracketed text need escaping.
 
 See `Element \\<a>`_, `Element <b\\>`_, and `Element <c>\\ `_.
@@ -417,7 +461,7 @@ See `Element \\<a>`_, `Element <b\\>`_, and `Element <c>\\ `_.
 .. _`Element <b>`:
 .. _`Element <c>`: elements.txt
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         Hyperlinks with angle-bracketed text need escaping.
@@ -435,13 +479,15 @@ See `Element \\<a>`_, `Element <b\\>`_, and `Element <c>\\ `_.
     <target refid="element-a">
     <target refid="element-b">
     <target ids="element-c element-b element-a" names="element\\ <c> element\\ <b> element\\ <a>" refuri="elements.txt">
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _target:
 
 .. [1] Footnote; target_
 """,
-"""\
+                """\
 <document source="test data">
     <target ids="target" names="target">
     <footnote ids="footnote-1" names="1">
@@ -451,13 +497,15 @@ See `Element \\<a>`_, `Element <b\\>`_, and `Element <c>\\ `_.
             Footnote; \n\
             <reference name="target" refid="target">
                 target
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _target:
 
 .. [cit] Citation; target_
 """,
-"""\
+                """\
 <document source="test data">
     <target ids="target" names="target">
     <citation ids="cit" names="cit">
@@ -467,20 +515,29 @@ See `Element \\<a>`_, `Element <b\\>`_, and `Element <c>\\ `_.
             Citation; \n\
             <reference name="target" refid="target">
                 target
-"""],
-])
-
-totest['hyperlinks'] = ((PropagateTargets, AnonymousHyperlinks,
-                         IndirectHyperlinks, ExternalTargets,
-                         InternalTargets, DanglingReferences), [
-["""\
+""",
+            ],
+        ],
+    ),
+    'hyperlinks': (
+        (
+            PropagateTargets,
+            AnonymousHyperlinks,
+            IndirectHyperlinks,
+            ExternalTargets,
+            InternalTargets,
+            DanglingReferences,
+        ),
+        [
+            [
+                """\
 .. _internal hyperlink:
 
 This paragraph referenced.
 
 By this `internal hyperlink`_ reference.
 """,
-"""\
+                """\
 <document source="test data">
     <target refid="internal-hyperlink">
     <paragraph ids="internal-hyperlink" names="internal\\ hyperlink">
@@ -490,8 +547,10 @@ By this `internal hyperlink`_ reference.
         <reference name="internal hyperlink" refid="internal-hyperlink">
             internal hyperlink
          reference.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _chained:
 .. _internal hyperlink:
 
@@ -502,7 +561,7 @@ as well as by this chained_ reference.
 
 The results of the transform are not visible at the XML level.
 """,
-"""\
+                """\
 <document source="test data">
     <target refid="chained">
     <target refid="internal-hyperlink">
@@ -519,14 +578,16 @@ The results of the transform are not visible at the XML level.
          reference.
     <paragraph>
         The results of the transform are not visible at the XML level.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _chained:
 __ http://anonymous
 
 Anonymous__ and chained_ both refer to the same URI.
 """,
-"""\
+                """\
 <document source="test data">
     <target refid="chained">
     <target anonymous="1" ids="target-1 chained" names="chained" refuri="http://anonymous">
@@ -537,14 +598,16 @@ Anonymous__ and chained_ both refer to the same URI.
         <reference name="chained" refuri="http://anonymous">
             chained
          both refer to the same URI.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _a:
 .. _b:
 
 x
 """,
-"""\
+                """\
 <document source="test data">
     <target refid="a">
     <target refid="b">
@@ -556,14 +619,16 @@ x
     <system_message level="1" line="2" source="test data" type="INFO">
         <paragraph>
             Hyperlink target "b" is not referenced.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _a:
 .. _b:
 
 a_
 """,
-"""\
+                """\
 <document source="test data">
     <target refid="a">
     <target refid="b">
@@ -573,14 +638,16 @@ a_
     <system_message level="1" line="2" source="test data" type="INFO">
         <paragraph>
             Hyperlink target "b" is not referenced.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _a:
 .. _b:
 
 b_
 """,
-"""\
+                """\
 <document source="test data">
     <target refid="a">
     <target refid="b">
@@ -590,14 +657,16 @@ b_
     <system_message level="1" line="1" source="test data" type="INFO">
         <paragraph>
             Hyperlink target "a" is not referenced.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _a:
 .. _b:
 
 a_\\ b_
 """,
-"""\
+                """\
 <document source="test data">
     <target refid="a">
     <target refid="b">
@@ -606,40 +675,46 @@ a_\\ b_
             a
         <reference name="b" refid="b">
             b
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _external hyperlink: http://uri
 
 `External hyperlink`_ reference.
 """,
-"""\
+                """\
 <document source="test data">
     <target ids="external-hyperlink" names="external\\ hyperlink" refuri="http://uri">
     <paragraph>
         <reference name="External hyperlink" refuri="http://uri">
             External hyperlink
          reference.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _external hyperlink: http://uri
 .. _indirect target: `external hyperlink`_
 """,
-"""\
+                """\
 <document source="test data">
     <target ids="external-hyperlink" names="external\\ hyperlink" refuri="http://uri">
     <target ids="indirect-target" names="indirect\\ target" refuri="http://uri">
     <system_message level="1" line="2" source="test data" type="INFO">
         <paragraph>
             Hyperlink target "indirect target" is not referenced.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _chained:
 .. _external hyperlink: http://uri
 
 `External hyperlink`_ reference
 and a chained_ reference too.
 """,
-"""\
+                """\
 <document source="test data">
     <target refid="chained">
     <target ids="external-hyperlink chained" names="external\\ hyperlink chained" refuri="http://uri">
@@ -651,14 +726,16 @@ and a chained_ reference too.
         <reference name="chained" refuri="http://uri">
             chained
          reference too.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _external hyperlink: http://uri
 .. _indirect hyperlink: `external hyperlink`_
 
 `Indirect hyperlink`_ reference.
 """,
-"""\
+                """\
 <document source="test data">
     <target ids="external-hyperlink" names="external\\ hyperlink" refuri="http://uri">
     <target ids="indirect-hyperlink" names="indirect\\ hyperlink" refuri="http://uri">
@@ -666,15 +743,17 @@ and a chained_ reference too.
         <reference name="Indirect hyperlink" refuri="http://uri">
             Indirect hyperlink
          reference.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _external hyperlink: http://uri
 .. _chained:
 .. _indirect hyperlink: `external hyperlink`_
 
 Chained_ `indirect hyperlink`_ reference.
 """,
-"""\
+                """\
 <document source="test data">
     <target ids="external-hyperlink" names="external\\ hyperlink" refuri="http://uri">
     <target refuri="http://uri">
@@ -686,8 +765,10 @@ Chained_ `indirect hyperlink`_ reference.
         <reference name="indirect hyperlink" refuri="http://uri">
             indirect hyperlink
          reference.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. __: http://full
 __
 __ http://simplified
@@ -701,7 +782,7 @@ __
 `indirect anonymous hyperlink reference`__,
 `internal anonymous hyperlink reference`__.
 """,
-"""\
+                """\
 <document source="test data">
     <target anonymous="1" ids="target-1" refuri="http://full">
     <target anonymous="1" refid="target-2">
@@ -725,15 +806,17 @@ __
         <reference anonymous="1" name="internal anonymous hyperlink reference" refid="target-5">
             internal anonymous hyperlink reference
         .
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Duplicate external target_'s (different URIs):
 
 .. _target: first
 
 .. _target: second
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         Duplicate external \n\
@@ -748,15 +831,17 @@ Duplicate external target_'s (different URIs):
     <system_message backrefs="problematic-1" ids="system-message-1" level="3" line="1" source="test data" type="ERROR">
         <paragraph>
             Duplicate target name, cannot be used as a unique reference: "target".
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Duplicate external targets (different URIs) without reference:
 
 .. _target: first
 
 .. _target: second
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         Duplicate external targets (different URIs) without reference:
@@ -765,13 +850,15 @@ Duplicate external targets (different URIs) without reference:
         <paragraph>
             Duplicate explicit target name: "target".
     <target dupnames="target" ids="target-1" refuri="second">
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Several__ anonymous__ hyperlinks__, but not enough targets.
 
 __ http://example.org
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         <problematic ids="problematic-1" refid="system-message-1">
@@ -788,8 +875,10 @@ __ http://example.org
         <paragraph>
             Anonymous hyperlink mismatch: 3 references but 1 targets.
             See "backrefs" attribute for IDs.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _external: http://uri
 .. _indirect: external_
 .. _internal:
@@ -803,7 +892,7 @@ __ http://example.org
 .. image:: picture.png
    :target: internal_
 """,
-"""\
+                """\
 <document source="test data">
     <target ids="external" names="external" refuri="http://uri">
     <target ids="indirect" names="indirect" refuri="http://uri">
@@ -814,8 +903,10 @@ __ http://example.org
         <image uri="picture.png">
     <reference name="internal" refid="internal">
         <image uri="picture.png">
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. contents:: Table of Contents
 .. _indirect reference to the table of contents: `table of contents`_
 
@@ -824,7 +915,7 @@ Section
 
 Testing an `indirect reference to the table of contents`_.
 """,
-"""\
+                """\
 <document source="test data">
     <topic classes="contents" ids="table-of-contents" names="table\\ of\\ contents">
         <title>
@@ -843,8 +934,10 @@ Testing an `indirect reference to the table of contents`_.
             <reference name="indirect reference to the table of contents" refid="table-of-contents">
                 indirect reference to the table of contents
             .
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _explicit target:
 
 Title
@@ -852,7 +945,7 @@ Title
 
 Let's reference it (`explicit target`_) to avoid an irrelevant error.
 """,
-"""\
+                """\
 <document source="test data">
     <target refid="explicit-target">
     <section ids="title explicit-target" names="title explicit\\ target">
@@ -863,8 +956,10 @@ Let's reference it (`explicit target`_) to avoid an irrelevant error.
             <reference name="explicit target" refid="explicit-target">
                 explicit target
             ) to avoid an irrelevant error.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 target1_ should refer to target2_, not the Title.
 
 .. _target1:
@@ -873,7 +968,7 @@ target1_ should refer to target2_, not the Title.
 Title
 =====
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         <reference name="target1" refuri="URI">
@@ -887,11 +982,13 @@ Title
     <section ids="title" names="title">
         <title>
             Title
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Unknown reference_.
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         Unknown \n\
@@ -901,15 +998,17 @@ Unknown reference_.
     <system_message backrefs="problematic-1" ids="system-message-1" level="3" line="1" source="test data" type="ERROR">
         <paragraph>
             Unknown target name: "reference".
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Duplicate manual footnote labels, with reference ([1]_):
 
 .. [1] Footnote.
 
 .. [1] Footnote.
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         Duplicate manual footnote labels, with reference (
@@ -932,8 +1031,11 @@ Duplicate manual footnote labels, with reference ([1]_):
     <system_message backrefs="footnote-reference-1" ids="system-message-1" level="3" line="1" source="test data" type="ERROR">
         <paragraph>
             Duplicate target name, cannot be used as a unique reference: "1".
-"""],
-])
+""",
+            ],
+        ],
+    ),
+}
 
 
 if __name__ == '__main__':

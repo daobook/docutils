@@ -23,10 +23,12 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['tables_of_contents'] = ((Substitutions,), [
-["""\
+totest = {
+    'tables_of_contents': (
+        (Substitutions,),
+        [
+            [
+                """\
 .. contents::
 
 Title 1
@@ -45,7 +47,7 @@ Title 4
 -------
 Paragraph 4.
 """,
-"""\
+                """\
 <document source="test data">
     <topic classes="contents" ids="contents" names="contents">
         <title>
@@ -95,8 +97,10 @@ Paragraph 4.
                 Title 4
             <paragraph>
                 Paragraph 4.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. contents:: Table of Contents
 
 Title 1
@@ -107,7 +111,7 @@ Title 2
 -------
 Paragraph 2.
 """,
-"""\
+                """\
 <document source="test data">
     <topic classes="contents" ids="table-of-contents" names="table\\ of\\ contents">
         <title>
@@ -132,8 +136,10 @@ Paragraph 2.
                 Title 2
             <paragraph>
                 Paragraph 2.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. contents:: There's an image in Title 2
 
 Title 1
@@ -146,7 +152,7 @@ Paragraph 2.
 
 .. |Title 2| image:: title2.png
 """,
-"""\
+                """\
 <document source="test data">
     <topic classes="contents" ids="there-s-an-image-in-title-2" names="there's\\ an\\ image\\ in\\ title\\ 2">
         <title>
@@ -172,8 +178,10 @@ Paragraph 2.
             Paragraph 2.
         <substitution_definition names="Title\\ 2">
             <image alt="Title 2" uri="title2.png">
-"""],                                   # emacs cruft: "
-["""\
+""",
+            ],  # emacs cruft: "
+            [
+                """\
 .. contents::
    :depth: 2
 
@@ -193,7 +201,7 @@ Title 4
 -------
 Paragraph 4.
 """,
-"""\
+                """\
 <document source="test data">
     <topic classes="contents" ids="contents" names="contents">
         <title>
@@ -232,8 +240,10 @@ Paragraph 4.
                 Title 4
             <paragraph>
                 Paragraph 4.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Title 1
 =======
 
@@ -254,7 +264,7 @@ Title 4
 -------
 Paragraph 4.
 """,
-"""\
+                """\
 <document source="test data">
     <section ids="title-1" names="title\\ 1">
         <title>
@@ -291,8 +301,10 @@ Paragraph 4.
                 Title 4
             <paragraph>
                 Paragraph 4.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. contents::
    :local:
 
@@ -302,7 +314,7 @@ Section
 --------
 Paragraph.
 """,
-"""\
+                """\
 <document source="test data">
     <topic classes="contents local" ids="contents" names="contents">
         <bullet_list>
@@ -317,8 +329,10 @@ Paragraph.
             Section
         <paragraph>
             Paragraph.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. contents::
    :backlinks: top
 
@@ -326,7 +340,7 @@ Section
 --------
 Paragraph.
 """,
-"""\
+                """\
 <document source="test data">
     <topic classes="contents" ids="contents" names="contents">
         <title>
@@ -341,8 +355,10 @@ Paragraph.
             Section
         <paragraph>
             Paragraph.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. contents::
    :backlinks: none
 
@@ -350,7 +366,7 @@ Section
 --------
 Paragraph.
 """,
-"""\
+                """\
 <document source="test data">
     <topic classes="contents" ids="contents" names="contents">
         <title>
@@ -365,18 +381,22 @@ Paragraph.
             Section
         <paragraph>
             Paragraph.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. contents::
 
 Degenerate case, no table of contents generated.
 """,
-"""\
+                """\
 <document source="test data">
     <paragraph>
         Degenerate case, no table of contents generated.
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 Title 1
 =======
 
@@ -395,7 +415,7 @@ Title 3
 ```````
 Paragraph 3.
 """,
-"""\
+                """\
 <document source="test data">
     <section ids="title-1" names="title\\ 1">
         <title>
@@ -426,8 +446,11 @@ Paragraph 3.
                     Title 3
                 <paragraph>
                     Paragraph 3.
-"""],
-])
+""",
+            ],
+        ],
+    )
+}
 
 
 if __name__ == '__main__':

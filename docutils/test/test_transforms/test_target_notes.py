@@ -25,21 +25,26 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['tables_of_contents'] = ((PropagateTargets, AnonymousHyperlinks,
-                                 IndirectHyperlinks,
-                                 ExternalTargets, InternalTargets,
-                                 DanglingReferences,
-    ), [
-["""\
+totest = {
+    'tables_of_contents': (
+        (
+            PropagateTargets,
+            AnonymousHyperlinks,
+            IndirectHyperlinks,
+            ExternalTargets,
+            InternalTargets,
+            DanglingReferences,
+        ),
+        [
+            [
+                """\
 .. _target: http://example.org
 
 A reference to a target_.
 
 .. target-notes::
 """,
-"""\
+                """\
 <document source="test data">
     <target ids="target" names="target" refuri="http://example.org">
     <paragraph>
@@ -53,15 +58,17 @@ A reference to a target_.
         <paragraph>
             <reference refuri="http://example.org">
                 http://example.org
-"""],
-["""\
+""",
+            ],
+            [
+                """\
 .. _target: http://example.org
 
 A reference to a target_.
 
 .. target-notes:: :class: custom
 """,
-"""\
+                """\
 <document source="test data">
     <target ids="target" names="target" refuri="http://example.org">
     <paragraph>
@@ -76,8 +83,11 @@ A reference to a target_.
         <paragraph>
             <reference refuri="http://example.org">
                 http://example.org
-"""],
-])
+""",
+            ],
+        ],
+    )
+}
 
 
 if __name__ == '__main__':

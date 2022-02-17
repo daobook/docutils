@@ -149,10 +149,7 @@ class Parser(docutils.parsers.Parser):
     config_section_dependencies = ('parsers',)
 
     def __init__(self, rfc2822=False, inliner=None):
-        if rfc2822:
-            self.initial_state = 'RFC2822Body'
-        else:
-            self.initial_state = 'Body'
+        self.initial_state = 'RFC2822Body' if rfc2822 else 'Body'
         self.state_classes = states.state_classes
         self.inliner = inliner
 

@@ -19,17 +19,12 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['title'] = [
-["""\
+totest = {'title': [["""\
 .. title:: This is the document title.
 """,
 """\
 <document source="test data" title="This is the document title.">
-"""],
-]
-
+"""]]}
 
 if __name__ == '__main__':
     import unittest

@@ -24,15 +24,15 @@ def suite():
 mydir = 'test_parsers/test_rst/'
 include2 = os.path.join(mydir, 'test_directives/include2.txt')
 
-totest = {}
-
-totest['grid_tables'] = [
-["""\
+totest = {
+    'grid_tables': [
+        [
+            """\
 +-------------------------------------+
 | A table with one cell and one line. |
 +-------------------------------------+
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="1">
@@ -42,14 +42,16 @@ totest['grid_tables'] = [
                     <entry>
                         <paragraph>
                             A table with one cell and one line.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 +-----------------------+
 | A table with one cell |
 | and two lines.        |
 +-----------------------+
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="1">
@@ -60,13 +62,15 @@ totest['grid_tables'] = [
                         <paragraph>
                             A table with one cell
                             and two lines.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 +-----------------------+
 | A malformed table. |
 +-----------------------+
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -75,8 +79,10 @@ totest['grid_tables'] = [
             +-----------------------+
             | A malformed table. |
             +-----------------------+
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 +------------------------+
 | A well-formed | table. |
 +------------------------+
@@ -85,7 +91,7 @@ totest['grid_tables'] = [
 | This +----------+ too! |
 +------------------------+
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="1">
@@ -103,13 +109,15 @@ totest['grid_tables'] = [
                     <entry>
                         <paragraph>
                             This +----------+ too!
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 +--------------+--------------+
 | A table with | two columns. |
 +--------------+--------------+
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -123,15 +131,17 @@ totest['grid_tables'] = [
                     <entry>
                         <paragraph>
                             two columns.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 +--------------+
 | A table with |
 +--------------+
 | two rows.    |
 +--------------+
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="1">
@@ -145,15 +155,17 @@ totest['grid_tables'] = [
                     <entry>
                         <paragraph>
                             two rows.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 +--------------+-------------+
 | A table with | two columns |
 +--------------+-------------+
 | and          | two rows.   |
 +--------------+-------------+
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -174,15 +186,17 @@ totest['grid_tables'] = [
                     <entry>
                         <paragraph>
                             two rows.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 +--------------+---------------+
 | A table with | two columns,  |
 +--------------+---------------+
 | two rows, and a column span. |
 +------------------------------+
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -200,8 +214,10 @@ totest['grid_tables'] = [
                     <entry morecols="1">
                         <paragraph>
                             two rows, and a column span.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 +--------------------------+
 | A table with three rows, |
 +------------+-------------+
@@ -211,7 +227,7 @@ totest['grid_tables'] = [
 | contains column spans.   |
 +--------------------------+
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -234,15 +250,17 @@ totest['grid_tables'] = [
                         <paragraph>
                             First and last rows
                             contains column spans.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 +--------------+--------------+
 | A table with | two columns, |
 +--------------+ and a row    |
 | two rows,    | span.        |
 +--------------+--------------+
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -262,15 +280,17 @@ totest['grid_tables'] = [
                     <entry>
                         <paragraph>
                             two rows,
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 +------------+-------------+---------------+
 | A table    | two rows in | and row spans |
 | with three +-------------+ to left and   |
 | columns,   | the middle, | right.        |
 +------------+-------------+---------------+
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="3">
@@ -296,8 +316,10 @@ totest['grid_tables'] = [
                     <entry>
                         <paragraph>
                             the middle,
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Complex spanning pattern (no edge knows all rows/cols):
 
 +-----------+-------------------------+
@@ -308,7 +330,7 @@ Complex spanning pattern (no edge knows all rows/cols):
 | S/SE cell               |           |
 +-------------------------+-----------+
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Complex spanning pattern (no edge knows all rows/cols):
@@ -336,8 +358,10 @@ Complex spanning pattern (no edge knows all rows/cols):
                     <entry morecols="1">
                         <paragraph>
                             S/SE cell
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 +------------------------+------------+----------+----------+
 | Header row, column 1   | Header 2   | Header 3 | Header 4 |
 +========================+============+==========+==========+
@@ -350,7 +374,7 @@ Complex spanning pattern (no edge knows all rows/cols):
 | body row 4             |            | - body elements.    |
 +------------------------+------------+---------------------+
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="4">
@@ -416,8 +440,10 @@ Complex spanning pattern (no edge knows all rows/cols):
                     <entry>
                         <paragraph>
                             body row 4
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 +-----------------+--------+
 | A simple table  | cell 2 |
 +-----------------+--------+
@@ -425,7 +451,7 @@ Complex spanning pattern (no edge knows all rows/cols):
 +-----------------+--------+
 No blank line after table.
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -451,8 +477,10 @@ No blank line after table.
             Blank line required after table.
     <paragraph>
         No blank line after table.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 +-----------------+--------+
 | A simple table  | cell 2 |
 +-----------------+--------+
@@ -460,7 +488,7 @@ No blank line after table.
 +-----------------+--------+
     Unexpected indent and no blank line after table.
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -490,15 +518,17 @@ No blank line after table.
     <block_quote>
         <paragraph>
             Unexpected indent and no blank line after table.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 +--------------+-------------+
 | A bad table. |             |
 +--------------+             |
 | Cells must be rectangles.  |
 +----------------------------+
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -510,8 +540,10 @@ No blank line after table.
             +--------------+             |
             | Cells must be rectangles.  |
             +----------------------------+
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 +------------------------------+
 | This table contains another. |
 |                              |
@@ -520,7 +552,7 @@ No blank line after table.
 | +-------------------------+  |
 +------------------------------+
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="1">
@@ -538,15 +570,17 @@ No blank line after table.
                                         <entry>
                                             <paragraph>
                                                 A table within a table.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 +------------------+--------+
 | A simple table   |        |
 +------------------+--------+
 | with empty cells |        |
 +------------------+--------+
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -563,8 +597,11 @@ No blank line after table.
                         <paragraph>
                             with empty cells
                     <entry>
-"""],
-[("""\
+""",
+        ],
+        [
+            (
+                """\
 +------------------------------------------------------------------------------+
 | .. include::                                                                 |
 %s
@@ -572,9 +609,18 @@ No blank line after table.
 | (The first cell of this table may expand                                     |
 | to accommodate long filesystem paths.)                                       |
 +------------------------------------------------------------------------------+
-""") % ('\n'.join(['|    %-70s    |' % include2[part * 70 : (part + 1) * 70]
-                   for part in range(len(include2) // 70 + 1)])),
-"""\
+"""
+            )
+            % (
+                '\n'.join(
+                    [
+                        '|    %-70s    |'
+                        % include2[part * 70 : (part + 1) * 70]
+                        for part in range(len(include2) // 70 + 1)
+                    ]
+                )
+            ),
+            """\
 <document source="test data">
     <table>
         <tgroup cols="1">
@@ -595,8 +641,11 @@ No blank line after table.
                         <paragraph>
                             (The first cell of this table may expand
                             to accommodate long filesystem paths.)
-"""],
-[("""\
+""",
+        ],
+        [
+            (
+                """\
 Something before.
 
 +------------------------------------------------------------------------------+
@@ -607,9 +656,18 @@ Something before.
 Something afterwards.
 
 And more.
-""") % ('\n'.join(['|    %-70s    |' % include2[part * 70 : (part + 1) * 70]
-                   for part in range(len(include2) // 70 + 1)])),
-"""\
+"""
+            )
+            % (
+                '\n'.join(
+                    [
+                        '|    %-70s    |'
+                        % include2[part * 70 : (part + 1) * 70]
+                        for part in range(len(include2) // 70 + 1)
+                    ]
+                )
+            ),
+            """\
 <document source="test data">
     <paragraph>
         Something before.
@@ -631,18 +689,19 @@ And more.
         Something afterwards.
     <paragraph>
         And more.
-"""],
-]
-
-totest['simple_tables'] = [
-["""\
+""",
+        ],
+    ],
+    'simple_tables': [
+        [
+            """\
 ============  ============
 A table with  two columns.
 ============  ============
 
 Paragraph.
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -658,14 +717,16 @@ Paragraph.
                             two columns.
     <paragraph>
         Paragraph.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ============  ============
 A table with  two columns
 and           two rows.
 ============  ============
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -686,14 +747,16 @@ and           two rows.
                     <entry>
                         <paragraph>
                             two rows.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ============  ==============
 A table with  two columns,
 two rows, and a column span.
 ============================
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -711,8 +774,10 @@ two rows, and a column span.
                     <entry morecols="1">
                         <paragraph>
                             two rows, and a column span.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ==  ===========  ===========
 1   A table with three rows,
 --  ------------------------
@@ -725,7 +790,7 @@ two rows, and a column span.
 4   One last     row.
 ==  ===========  ===========
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="3">
@@ -770,13 +835,15 @@ two rows, and a column span.
                     <entry>
                         <paragraph>
                             row.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 =======  =========  ========
 A table with three  columns.
 ==================  ========
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="3">
@@ -791,14 +858,16 @@ A table with three  columns.
                     <entry>
                         <paragraph>
                             columns.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ==============  ======
 A simple table  this text extends to the right
 cell 3          as does this text
 ==============  ======
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -819,14 +888,16 @@ cell 3          as does this text
                     <entry>
                         <paragraph>
                             as does this text
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ==============  ======
 A simple table  this text extends to the right
                 continuation of cell 2
 ==============  ======
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -841,13 +912,15 @@ A simple table  this text extends to the right
                         <paragraph>
                             this text extends to the right
                             continuation of cell 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ==============  ======
 A simple table  with
 no bottom       border
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -857,15 +930,17 @@ no bottom       border
             ==============  ======
             A simple table  with
             no bottom       border
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ==============  ======
 A simple table  cell 2
 cell 3          cell 4
 ==============  ======
 No blank line after table.
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -881,8 +956,10 @@ No blank line after table.
             Blank line required after table.
     <paragraph>
         No blank line after table.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ==============  ======
 A simple table  cell 2
 ==============  ======
@@ -890,7 +967,7 @@ cell 3          cell 4
 ==============  ======
 No blank line after table.
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -917,15 +994,17 @@ No blank line after table.
             Blank line required after table.
     <paragraph>
         No blank line after table.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ==============  ======
 A simple table  cell 2
 cell 3          cell 4
 ==============  ======
     Unexpected indent and no blank line after table.
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -942,14 +1021,16 @@ cell 3          cell 4
     <block_quote>
         <paragraph>
             Unexpected indent and no blank line after table.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ==============  ======
 A bad table     cell 2
 cell 3          cell 4
 ============  ========
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="4" source="test data" type="ERROR">
         <paragraph>
@@ -960,14 +1041,16 @@ cell 3          cell 4
             A bad table     cell 2
             cell 3          cell 4
             ============  ========
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ========  =========
 A bad table  cell 2
 cell 3       cell 4
 ========  =========
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="2" source="test data" type="ERROR">
         <paragraph>
@@ -978,8 +1061,10 @@ cell 3       cell 4
             A bad table  cell 2
             cell 3       cell 4
             ========  =========
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ==  ============================
 1   This table contains another.
 2   =======  ======  ========
@@ -991,7 +1076,7 @@ cell 3       cell 4
     though.
 ==  ============================
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -1030,14 +1115,16 @@ cell 3       cell 4
                             The outer table does have to
                             have at least two columns
                             though.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ================  ======
 A simple table
 with empty cells
 ================  ======
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -1054,8 +1141,10 @@ with empty cells
                         <paragraph>
                             with empty cells
                     <entry>
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ==============  ========
    A table        with
 ==============  ========
@@ -1063,7 +1152,7 @@ with empty cells
 
 ==============  ========
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -1085,14 +1174,16 @@ with empty cells
                     <entry>
                         <paragraph>
                             cells.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ==============  ======
 A simple table  this text extends to the right
 cell 3          the bottom border below is too long
 ==============  ========
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -1103,8 +1194,10 @@ cell 3          the bottom border below is too long
             A simple table  this text extends to the right
             cell 3          the bottom border below is too long
             ==============  ========
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ============  =================
 A table with  row separators.
 ------------  -----------------
@@ -1119,7 +1212,7 @@ Blank line    after.
 
 ============  =================
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -1154,8 +1247,10 @@ Blank line    after.
                     <entry>
                         <paragraph>
                             after.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ============  ====================
 A table with  many row separators.
 ------------  --------------------
@@ -1164,7 +1259,7 @@ A table with  many row separators.
 ------------  --------------------
 ============  ====================
 """,
-"""\
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -1187,8 +1282,10 @@ A table with  many row separators.
                 <row>
                     <entry>
                     <entry>
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 ==  ===========  ===========
 1   Span columns 2 & 3
 --  ------------------------
@@ -1211,7 +1308,7 @@ A table with  many row separators.
 2
 ==  ===========  ===========
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="4" source="test data" type="ERROR">
         <paragraph>
@@ -1267,17 +1364,27 @@ A table with  many row separators.
                             2
                     <entry>
                     <entry>
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 =========  =====================================================================
 Inclusion  .. include::
 %s
 Note       The first row of this table may expand
            to accommodate long filesystem paths.
 =========  =====================================================================
-""" % ('\n'.join(['              %-65s' % include2[part * 65 : (part + 1) * 65]
-                  for part in range(len(include2) // 65 + 1)])),
-"""\
+"""
+            % (
+                '\n'.join(
+                    [
+                        '              %-65s'
+                        % include2[part * 65 : (part + 1) * 65]
+                        for part in range(len(include2) // 65 + 1)
+                    ]
+                )
+            ),
+            """\
 <document source="test data">
     <table>
         <tgroup cols="2">
@@ -1305,8 +1412,10 @@ Note       The first row of this table may expand
                         <paragraph>
                             The first row of this table may expand
                             to accommodate long filesystem paths.
-"""],
-]
+""",
+        ],
+    ],
+}
 
 
 if __name__ == '__main__':

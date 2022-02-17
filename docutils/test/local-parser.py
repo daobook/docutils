@@ -17,5 +17,5 @@ class Parser(parsers.Parser):
 
     def parser(self, inputstring, document):
         self.setup_parse(inputstring, document)
-        document = dict()
+        document = {}
         self.finish_parse()

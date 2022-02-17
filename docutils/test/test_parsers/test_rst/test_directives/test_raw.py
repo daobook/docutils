@@ -33,34 +33,39 @@ if sys.version_info < (3, 0):
                         "Tried the following encodings: 'ascii'.\n"
                         "            (%s)" % utf_16_error_str)
 
-totest = {}
-
-totest['raw'] = [
-["""\
+totest = {
+    'raw': [
+        [
+            """\
 .. raw:: html
 
    <span>This is some plain old raw text.</span>
 """,
-"""\
+            """\
 <document source="test data">
     <raw format="html" xml:space="preserve">
         <span>This is some plain old raw text.</span>
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. raw:: html
    :file: %s
 """ % raw1,
-"""\
+            """\
 <document source="test data">
     <raw format="html" source="%s" xml:space="preserve">
         <p>This file is used by <tt>test_raw.py</tt>.</p>
-""" % DocutilsTestSupport.utils.relative_path(None, raw1)],
-["""\
+"""
+            % DocutilsTestSupport.utils.relative_path(None, raw1),
+        ],
+        [
+            """\
 .. raw:: html
    :file: rawfile.html
    :url: http://example.org/
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -69,14 +74,16 @@ totest['raw'] = [
             .. raw:: html
                :file: rawfile.html
                :url: http://example.org/
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. raw:: html
    :file: rawfile.html
 
    <p>Can't have both content and file attribute.</p>
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
@@ -86,23 +93,28 @@ totest['raw'] = [
                :file: rawfile.html
             \n\
                <p>Can't have both content and file attribute.</p>
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 .. raw:: latex html
 
    \[ \sum_{n=1}^\infty \frac{1}{n} \text{ etc.} \]
 """,
-"""\
+            """\
 <document source="test data">
     <raw format="latex html" xml:space="preserve">
         \\[ \\sum_{n=1}^\\infty \\frac{1}{n} \\text{ etc.} \\]
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. raw:: html
    :file: %s
    :encoding: utf-16
-""" % utf_16_file_rel,
-b"""\
+"""
+            % utf_16_file_rel,
+            b"""\
 <document source="test data">
     <raw format="html" source="%s" xml:space="preserve">
         "Treat", "Quantity", "Description"
@@ -110,15 +122,21 @@ b"""\
         "Crunchy Frog", 1.49, "If we took the b\xf6nes out, it wouldn\\u2019t be
         crunchy, now would it?"
         "Gannet Ripple", 1.99, "\xbfOn a \\u03c3\\u03c4\\u03b9\\u03ba?"
-""".decode('raw_unicode_escape') % utf_16_file_rel],
-["""\
+""".decode(
+                'raw_unicode_escape'
+            )
+            % utf_16_file_rel,
+        ],
+        [
+            """\
 Raw input file is UTF-16-encoded, and is not valid ASCII.
 
 .. raw:: html
    :file: %s
    :encoding: ascii
-""" % utf_16_file_rel,
-"""\
+"""
+            % utf_16_file_rel,
+            """\
 <document source="test data">
     <paragraph>
         Raw input file is UTF-16-encoded, and is not valid ASCII.
@@ -130,34 +148,41 @@ Raw input file is UTF-16-encoded, and is not valid ASCII.
             .. raw:: html
                :file: %s
                :encoding: ascii
-""" % (utf_16_error_str, utf_16_file_rel)],
-[u"""\
+"""
+            % (utf_16_error_str, utf_16_file_rel),
+        ],
+        [
+            u"""\
 .. raw:: html
    :encoding: utf-8
 
    Should the parser complain becau\xdfe there is no :file:?  BUG?
 """,
-"""\
+            """\
 <document source="test data">
     <raw format="html" xml:space="preserve">
         Should the parser complain becau\xdfe there is no :file:?  BUG?
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. raw:: html
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="3" line="1" source="test data" type="ERROR">
         <paragraph>
             Content block expected for the "raw" directive; none found.
         <literal_block xml:space="preserve">
             .. raw:: html
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. raw:: html
    :file: non-existent.file
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="4" line="1" source="test data" type="SEVERE">
         <paragraph>
@@ -166,9 +191,11 @@ Raw input file is UTF-16-encoded, and is not valid ASCII.
         <literal_block xml:space="preserve">
             .. raw:: html
                :file: non-existent.file
-"""],
-# note that this output is rewritten below for certain python versions
-]
+""",
+        ],
+    ]
+}
+
 
 if __name__ == '__main__':
     import unittest

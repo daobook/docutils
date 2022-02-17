@@ -26,66 +26,74 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['targets'] = [
-[r"""
+totest = {
+    'targets': [
+        [
+            r"""
 External hyperlink [target]s:
 
 [target]: http://www.python.org/
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         External hyperlink \n\
         <reference name="target" refuri="http://www.python.org/">
             target
         s:
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Indirect hyperlink [target]s:
 
 [target]: target2
 
 [target2]: /url
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Indirect hyperlink \n\
         <reference name="target" refuri="target2">
             target
         s:
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Duplicate external [targets] (different URIs):
 
 [targets]: <first wins>
 [targets]: second
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Duplicate external \n\
         <reference name="targets" refuri="first wins">
             targets
          (different URIs):
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Duplicate external [targets] (same URIs):
 
 [targets]: spam
 [targets]: spam
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Duplicate external \n\
         <reference name="targets" refuri="spam">
             targets
          (same URIs):
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Duplicate implicit targets.
 
 Title
@@ -98,7 +106,7 @@ Title
 
 Paragraph.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Duplicate implicit targets.
@@ -115,8 +123,10 @@ Paragraph.
                 Duplicate implicit target name: "title".
         <paragraph>
             Paragraph.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Duplicate implicit/explicit targets.
 
 Title
@@ -126,7 +136,7 @@ Title
 
 Paragraph with link to [title].
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Duplicate implicit/explicit targets.
@@ -138,8 +148,10 @@ Paragraph with link to [title].
             <reference name="title" refuri="hoppla">
                 title
             .
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

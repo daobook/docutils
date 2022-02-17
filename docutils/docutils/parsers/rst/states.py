@@ -361,17 +361,15 @@ class RSTState(StateWS):
             # back up 2 lines for underline title, 3 for overline title
             self.state_machine.previous_line(len(style) + 1)
             raise EOFError              # let parent section re-evaluate
-        if level == mylevel + 1:        # immediate subsection
+        if level == mylevel + 1:
             return True
-        else:                           # invalid subsection
-            self.parent += self.title_inconsistent(source, lineno)
-            return False
+        self.parent += self.title_inconsistent(source, lineno)
+        return False
 
     def title_inconsistent(self, sourcetext, lineno):
-        error = self.reporter.severe(
+        return self.reporter.severe(
             'Title level inconsistent:', nodes.literal_block('', sourcetext),
             line=lineno)
-        return error
 
     def new_subsection(self, title, lineno, messages):
         """Append new subsection to document tree. On return, check level."""
@@ -453,10 +451,7 @@ def build_regexp(definition, compile=True):
             part_strings.append(part)
     or_group = '|'.join(part_strings)
     regexp = '%(prefix)s(?P<%(name)s>%(or_group)s)%(suffix)s' % locals()
-    if compile:
-        return re.compile(regexp, re.UNICODE)
-    else:
-        return regexp
+    return re.compile(regexp, re.UNICODE) if compile else regexp
 
 
 class Inliner(object):
@@ -517,13 +512,17 @@ class Inliner(object):
         self.parts = parts
 
         self.patterns = Struct(
-          initial=build_regexp(parts),
-          emphasis=re.compile(self.non_whitespace_escape_before
-                              + r'(\*)' + end_string_suffix, re.UNICODE),
-          strong=re.compile(self.non_whitespace_escape_before
-                            + r'(\*\*)' + end_string_suffix, re.UNICODE),
-          interpreted_or_phrase_ref=re.compile(
-              r"""
+            initial=build_regexp(parts),
+            emphasis=re.compile(
+                self.non_whitespace_escape_before + r'(\*)' + end_string_suffix,
+                re.UNICODE,
+            ),
+            strong=re.compile(
+                self.non_whitespace_escape_before + r'(\*\*)' + end_string_suffix,
+                re.UNICODE,
+            ),
+            interpreted_or_phrase_ref=re.compile(
+                r"""
               %(non_unescaped_whitespace_escape_before)s
               (
                 `
@@ -533,9 +532,12 @@ class Inliner(object):
                 )
               )
               %(end_string_suffix)s
-              """ % args, re.VERBOSE | re.UNICODE),
-          embedded_link=re.compile(
-              r"""
+              """
+                % args,
+                re.VERBOSE | re.UNICODE,
+            ),
+            embedded_link=re.compile(
+                r"""
               (
                 (?:[ \n]+|^)            # spaces or beginning of line/string
                 <                       # open bracket
@@ -545,18 +547,30 @@ class Inliner(object):
                 >                       # close bracket
               )
               $                         # end of string
-              """ % args, re.VERBOSE | re.UNICODE),
-          literal=re.compile(self.non_whitespace_before + '(``)'
-                             + end_string_suffix, re.UNICODE),
-          target=re.compile(self.non_whitespace_escape_before
-                            + r'(`)' + end_string_suffix, re.UNICODE),
-          substitution_ref=re.compile(self.non_whitespace_escape_before
-                                      + r'(\|_{0,2})'
-                                      + end_string_suffix, re.UNICODE),
-          email=re.compile(self.email_pattern % args + '$',
-                           re.VERBOSE | re.UNICODE),
-          uri=re.compile(
-                (r"""
+              """
+                % args,
+                re.VERBOSE | re.UNICODE,
+            ),
+            literal=re.compile(
+                (f'{self.non_whitespace_before}(``)' + end_string_suffix),
+                re.UNICODE,
+            ),
+            target=re.compile(
+                self.non_whitespace_escape_before + r'(`)' + end_string_suffix,
+                re.UNICODE,
+            ),
+            substitution_ref=re.compile(
+                self.non_whitespace_escape_before
+                + r'(\|_{0,2})'
+                + end_string_suffix,
+                re.UNICODE,
+            ),
+            email=re.compile(
+                self.email_pattern % args + '$', re.VERBOSE | re.UNICODE
+            ),
+            uri=re.compile(
+                (
+                    r"""
                 %(start_string_prefix)s
                 (?P<whole>
                   (?P<absolute>           # absolute URI
@@ -582,12 +596,18 @@ class Inliner(object):
                   )
                 |                       # *OR*
                   (?P<email>              # email address
-                    """ + self.email_pattern + r"""
+                    """
+                    + self.email_pattern
+                    + r"""
                   )
                 )
                 %(end_string_suffix)s
-                """) % args, re.VERBOSE | re.UNICODE),
-          pep=re.compile(
+                """
+                )
+                % args,
+                re.VERBOSE | re.UNICODE,
+            ),
+            pep=re.compile(
                 r"""
                 %(start_string_prefix)s
                 (
@@ -595,12 +615,20 @@ class Inliner(object):
                 |
                   (PEP\s+(?P<pepnum2>\d+))      # reference by name
                 )
-                %(end_string_suffix)s""" % args, re.VERBOSE | re.UNICODE),
-          rfc=re.compile(
+                %(end_string_suffix)s"""
+                % args,
+                re.VERBOSE | re.UNICODE,
+            ),
+            rfc=re.compile(
                 r"""
                 %(start_string_prefix)s
                 (RFC(-|\s+)?(?P<rfcnum>\d+))
-                %(end_string_suffix)s""" % args, re.VERBOSE | re.UNICODE))
+                %(end_string_suffix)s"""
+                % args,
+                re.VERBOSE | re.UNICODE,
+            ),
+        )
+
 
         self.implicit_dispatch.append((self.patterns.uri,
                                        self.standalone_uri))
@@ -641,24 +669,21 @@ class Inliner(object):
         unprocessed = []
         messages = []
         while remaining:
-            match = pattern_search(remaining)
-            if match:
-                groups = match.groupdict()
-                method = dispatch[groups['start'] or groups['backquote']
-                                  or groups['refend'] or groups['fnend']]
-                before, inlines, remaining, sysmessages = method(self, match,
-                                                                 lineno)
-                unprocessed.append(before)
-                messages += sysmessages
-                if inlines:
-                    processed += self.implicit_inline(''.join(unprocessed),
-                                                      lineno)
-                    processed += inlines
-                    unprocessed = []
-            else:
+            if not (match := pattern_search(remaining)):
                 break
-        remaining = ''.join(unprocessed) + remaining
-        if remaining:
+            groups = match.groupdict()
+            method = dispatch[groups['start'] or groups['backquote']
+                              or groups['refend'] or groups['fnend']]
+            before, inlines, remaining, sysmessages = method(self, match,
+                                                             lineno)
+            unprocessed.append(before)
+            messages += sysmessages
+            if inlines:
+                processed += self.implicit_inline(''.join(unprocessed),
+                                                  lineno)
+                processed += inlines
+                unprocessed = []
+        if remaining := ''.join(unprocessed) + remaining:
             processed += self.implicit_inline(remaining, lineno)
         return processed, messages
 
@@ -801,17 +826,18 @@ class Inliner(object):
         return string[:matchstart], [prb], string[matchend:], [msg]
 
     def phrase_ref(self, before, after, rawsource, escaped, text=None):
-        # `text` is ignored (since 0.16)
-        match = self.patterns.embedded_link.search(escaped)
-        if match: # embedded <URI> or <alias_>
+        if match := self.patterns.embedded_link.search(escaped):
             text = escaped[:match.start(0)]
             unescaped = unescape(text)
             rawtext = unescape(text, True)
             aliastext = match.group(2)
             rawaliastext = unescape(aliastext, True)
             underscore_escaped = rawaliastext.endswith(r'\_')
-            if aliastext.endswith('_') and not (underscore_escaped
-                                        or self.patterns.uri.match(aliastext)):
+            if (
+                aliastext.endswith('_')
+                and not underscore_escaped
+                and not self.patterns.uri.match(aliastext)
+            ):
                 aliastype = 'name'
                 alias = normalize_name(unescape(aliastext[:-1]))
                 target = nodes.target(match.group(1), refname=alias)
@@ -825,7 +851,7 @@ class Inliner(object):
                                  for part in alias_parts)
                 alias = self.adjust_uri(unescape(alias))
                 if alias.endswith(r'\_'):
-                    alias = alias[:-2] + '_'
+                    alias = f'{alias[:-2]}_'
                 target = nodes.target(match.group(1), refuri=alias)
                 target.referenced = 1
             if not aliastext:
@@ -857,30 +883,25 @@ class Inliner(object):
                 reference['refuri'] = alias
             else:
                 reference['anonymous'] = 1
-        else:
-            if target:
-                target['names'].append(refname)
-                if aliastype == 'name':
-                    reference['refname'] = alias
-                    self.document.note_indirect_target(target)
-                    self.document.note_refname(reference)
-                else:
-                    reference['refuri'] = alias
-                    self.document.note_explicit_target(target, self.parent)
-                # target.note_referenced_by(name=refname)
-                node_list.append(target)
-            else:
-                reference['refname'] = refname
+        elif target:
+            target['names'].append(refname)
+            if aliastype == 'name':
+                reference['refname'] = alias
+                self.document.note_indirect_target(target)
                 self.document.note_refname(reference)
+            else:
+                reference['refuri'] = alias
+                self.document.note_explicit_target(target, self.parent)
+            # target.note_referenced_by(name=refname)
+            node_list.append(target)
+        else:
+            reference['refname'] = refname
+            self.document.note_refname(reference)
         return before, node_list, after, []
 
 
     def adjust_uri(self, uri):
-        match = self.patterns.email.match(uri)
-        if match:
-            return 'mailto:' + uri
-        else:
-            return uri
+        return f'mailto:{uri}' if (match := self.patterns.email.match(uri)) else uri
 
     def interpreted(self, rawsource, text, role, lineno):
         role_fn, messages = roles.role(role, self.language, lineno,
@@ -989,19 +1010,17 @@ class Inliner(object):
         return self.reference(match, lineno, anonymous=1)
 
     def standalone_uri(self, match, lineno):
-        if (not match.group('scheme')
-                or match.group('scheme').lower() in urischemes.schemes):
-            if match.group('email'):
-                addscheme = 'mailto:'
-            else:
-                addscheme = ''
-            text = match.group('whole')
-            refuri = addscheme + unescape(text)
-            reference = nodes.reference(unescape(text, True), text,
-                                        refuri=refuri)
-            return [reference]
-        else:                   # not a valid scheme
+        if (
+            match.group('scheme')
+            and match.group('scheme').lower() not in urischemes.schemes
+        ):
             raise MarkupMismatch
+        addscheme = 'mailto:' if match.group('email') else ''
+        text = match.group('whole')
+        refuri = addscheme + unescape(text)
+        reference = nodes.reference(unescape(text, True), text,
+                                    refuri=refuri)
+        return [reference]
 
     def pep_reference(self, match, lineno):
         text = match.group(0)
@@ -1036,8 +1055,7 @@ class Inliner(object):
         if not text:
             return []
         for pattern, method in self.implicit_dispatch:
-            match = pattern.search(text)
-            if match:
+            if match := pattern.search(text):
                 try:
                     # Must recurse on strings before *and* after the match;
                     # there may be multiple patterns.
@@ -1214,11 +1232,9 @@ class Body(RSTState):
         blank = None
         nonblank_seen = False
         for i in range(len(indented)):
-            line = indented[i].rstrip()
-            if line:
+            if line := indented[i].rstrip():
                 if nonblank_seen and blank == i - 1: # last line blank
-                    match = self.attribution_pattern.match(line)
-                    if match:
+                    if match := self.attribution_pattern.match(line):
                         attribution_end, indent = self.check_attribution(
                             indented, i)
                         if attribution_end:
@@ -1231,8 +1247,7 @@ class Body(RSTState):
                 nonblank_seen = True
             else:
                 blank = i
-        else:
-            return (indented, None, None, None, None)
+        return (indented, None, None, None, None)
 
     def check_attribution(self, indented, attribution_start):
         """
@@ -1302,10 +1317,7 @@ class Body(RSTState):
             raise statemachine.TransitionCorrection('text')
         enumlist = nodes.enumerated_list()
         self.parent += enumlist
-        if sequence == '#':
-            enumlist['enumtype'] = 'arabic'
-        else:
-            enumlist['enumtype'] = sequence
+        enumlist['enumtype'] = 'arabic' if sequence == '#' else sequence
         enumlist['prefix'] = self.enum.formatinfo[format].prefix
         enumlist['suffix'] = self.enum.formatinfo[format].suffix
         if ordinal != 1:
@@ -1403,8 +1415,7 @@ class Body(RSTState):
             self.state_machine.previous_line()
         if not next_line[:1].strip():   # blank or indented
             return 1
-        result = self.make_enumerator(ordinal + 1, sequence, format)
-        if result:
+        if result := self.make_enumerator(ordinal + 1, sequence, format):
             next_enumerator, auto_enumerator = result
             try:
                 if ( next_line.startswith(next_enumerator) or
@@ -1448,7 +1459,7 @@ class Body(RSTState):
         formatinfo = self.enum.formatinfo[format]
         next_enumerator = (formatinfo.prefix + enumerator + formatinfo.suffix
                            + ' ')
-        auto_enumerator = formatinfo.prefix + '#' + formatinfo.suffix + ' '
+        auto_enumerator = f'{formatinfo.prefix}#{formatinfo.suffix} '
         return next_enumerator, auto_enumerator
 
     def field_marker(self, match, context, next_state):
@@ -1570,17 +1581,16 @@ class Body(RSTState):
                                     and tokens[-1].endswith('>')):
                 # "-o <value1 value2>" form; join all values into one token
                 tokens[1:] = [' '.join(tokens[1:])]
-            if 0 < len(tokens) <= 2:
-                option = nodes.option(optionstring)
-                option += nodes.option_string(tokens[0], tokens[0])
-                if len(tokens) > 1:
-                    option += nodes.option_argument(tokens[1], tokens[1],
-                                                    delimiter=delimiter)
-                optlist.append(option)
-            else:
+            if not 0 < len(tokens) <= 2:
                 raise MarkupError(
                     'wrong number of option tokens (=%s), should be 1 or 2: '
                     '"%s"' % (len(tokens), optionstring))
+            option = nodes.option(optionstring)
+            option += nodes.option_string(tokens[0], tokens[0])
+            if len(tokens) > 1:
+                option += nodes.option_argument(tokens[1], tokens[1],
+                                                delimiter=delimiter)
+            optlist.append(option)
         return optlist
 
     def doctest(self, match, context, next_state):
@@ -1745,8 +1755,7 @@ class Body(RSTState):
         i = start + 1
         while i <= limit:
             line = lines[i]
-            match = pattern_match(line)
-            if match:
+            if match := pattern_match(line):
                 if len(line.strip()) != toplen:
                     self.state_machine.next_line(i - start)
                     messages = self.malformed_table(
@@ -1949,7 +1958,7 @@ class Body(RSTState):
             except IndexError:
                 raise MarkupError('malformed hyperlink target.')
         del block[:blockindex]
-        block[0] = (block[0] + ' ')[targetmatch.end()-len(escaped)-1:].strip()
+        block[0] = f'{block[0]} '[targetmatch.end()-len(escaped)-1:].strip()
         target = self.make_target(block, blocktext, lineno,
                                   targetmatch.group('name'))
         return [target], blank_finish
@@ -1981,8 +1990,7 @@ class Body(RSTState):
         """
         if block and block[-1].strip()[-1:] == '_': # possible indirect target
             reference = ' '.join([line.strip() for line in block])
-            refname = self.is_reference(reference)
-            if refname:
+            if refname := self.is_reference(reference):
                 return 'refname', refname
         ref_parts = split_escaped_whitespace(' '.join(block))
         reference = ' '.join(''.join(unescape(part).split())
@@ -2002,8 +2010,7 @@ class Body(RSTState):
             name = normalize_name(unescape(targetname))
             target['names'].append(name)
             if refuri:
-                uri = self.inliner.adjust_uri(refuri)
-                if uri:
+                if uri := self.inliner.adjust_uri(refuri):
                     target['refuri'] = uri
                 else:
                     raise ApplicationError('problem with URI: %r' % refuri)
@@ -2030,11 +2037,11 @@ class Body(RSTState):
                 break
             blockindex += 1
             try:
-                escaped = escaped + ' ' + escape2null(block[blockindex].strip())
+                escaped = f'{escaped} {escape2null(block[blockindex].strip())}'
             except IndexError:
                 raise MarkupError('malformed substitution definition.')
         del block[:blockindex]          # strip out the substitution marker
-        block[0] = (block[0].strip() + ' ')[subdefmatch.end()-len(escaped)-1:-1]
+        block[0] = f'{block[0].strip()} '[subdefmatch.end()-len(escaped)-1:-1]
         if not block[0]:
             del block[0]
             offset += 1
@@ -2058,8 +2065,7 @@ class Body(RSTState):
               initial_state='SubstitutionDef', blank_finish=blank_finish)
         i = 0
         for node in substitution_node[:]:
-            if not (isinstance(node, nodes.Inline) or
-                    isinstance(node, nodes.Text)):
+            if not isinstance(node, (nodes.Inline, nodes.Text)):
                 self.parent += substitution_node[i]
                 del substitution_node[i]
             else:
@@ -2084,12 +2090,9 @@ class Body(RSTState):
         return [substitution_node], blank_finish
 
     def disallowed_inside_substitution_definitions(self, node):
-        if (node['ids'] or
+        return bool((node['ids'] or
             isinstance(node, nodes.reference) and node.get('anonymous') or
-            isinstance(node, nodes.footnote_reference) and node.get('auto')):
-            return True
-        else:
-            return False
+            isinstance(node, nodes.footnote_reference) and node.get('auto')))
 
     def directive(self, match, **option_presets):
         """Returns a 2-tuple: list of nodes, and a "blank finish" boolean."""
@@ -2192,8 +2195,11 @@ class Body(RSTState):
                 option_presets, option_spec, arg_block)
         else:
             options = {}
-        if arg_block and not (directive.required_arguments
-                              or directive.optional_arguments):
+        if (
+            arg_block
+            and not directive.required_arguments
+            and not directive.optional_arguments
+        ):
             content = arg_block + indented[i:]
             content_offset = line_offset
             arg_block = []
@@ -2358,8 +2364,7 @@ class Body(RSTState):
         """Determine which explicit construct this is, parse & return it."""
         errors = []
         for method, pattern in self.explicit.constructs:
-            expmatch = pattern.match(match.string)
-            if expmatch:
+            if expmatch := pattern.match(match.string):
                 try:
                     return method(self, expmatch)
                 except MarkupError as error:

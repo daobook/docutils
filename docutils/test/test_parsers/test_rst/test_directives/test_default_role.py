@@ -19,28 +19,30 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['default-role'] = [
-["""\
+totest = {
+    'default-role': [
+        [
+            """\
 .. default-role:: subscript
 
 This is a `subscript`.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         This is a \n\
         <subscript>
             subscript
         .
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Must define a custom role before using it.
 
 .. default-role:: custom
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Must define a custom role before using it.
@@ -53,8 +55,10 @@ Must define a custom role before using it.
             Unknown interpreted text role "custom".
         <literal_block xml:space="preserve">
             .. default-role:: custom
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 .. role:: custom
 .. default-role:: custom
 
@@ -64,7 +68,7 @@ This text uses the `default role`.
 
 Returned the `default role` to its standard default.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         This text uses the \n\
@@ -76,8 +80,10 @@ Returned the `default role` to its standard default.
         <title_reference>
             default role
          to its standard default.
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':

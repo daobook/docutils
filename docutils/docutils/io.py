@@ -99,19 +99,17 @@ class Input(TransformSpec):
             # We believe the user/application when the encoding is
             # explicitly given.
             encodings = [self.encoding]
+        elif data_encoding := self.determine_encoding_from_data(data):
+            # If the data declares its encoding (explicitly or via a BOM),
+            # we believe it.
+            encodings = [data_encoding]
         else:
-            data_encoding = self.determine_encoding_from_data(data)
-            if data_encoding:
-                # If the data declares its encoding (explicitly or via a BOM),
-                # we believe it.
-                encodings = [data_encoding]
-            else:
-                # Apply heuristics only if no encoding is explicitly given and
-                # no BOM found.  Start with UTF-8, because that only matches
-                # data that *IS* UTF-8:
-                encodings = ['utf-8', 'latin-1']
-                if locale_encoding:
-                    encodings.insert(1, locale_encoding)
+            # Apply heuristics only if no encoding is explicitly given and
+            # no BOM found.  Start with UTF-8, because that only matches
+            # data that *IS* UTF-8:
+            encodings = ['utf-8', 'latin-1']
+            if locale_encoding:
+                encodings.insert(1, locale_encoding)
         for enc in encodings:
             try:
                 decoded = unicode(data, enc, self.error_handler)
@@ -147,8 +145,7 @@ class Input(TransformSpec):
                 return encoding
         # check for an encoding declaration pattern in first 2 lines of file:
         for line in data.splitlines()[:2]:
-            match = self.coding_slug.search(line)
-            if match:
+            if match := self.coding_slug.search(line):
                 return match.group(1).decode('ascii')
         return None
 
@@ -266,15 +263,12 @@ class FileInput(Input):
             else:
                 data = self.source.read()
         except (UnicodeError, LookupError) as err: # (in Py3k read() decodes)
-            if not self.encoding and self.source_path:
-                # re-read in binary mode and decode with heuristics
-                b_source = open(self.source_path, 'rb')
-                data = b_source.read()
-                b_source.close()
-                # normalize newlines
-                data = b'\n'.join(data.splitlines()) + b'\n'
-            else:
+            if self.encoding or not self.source_path:
                 raise
+            with open(self.source_path, 'rb') as b_source:
+                data = b_source.read()
+            # normalize newlines
+            data = b'\n'.join(data.splitlines()) + b'\n'
         finally:
             if self.autoclose:
                 self.close()

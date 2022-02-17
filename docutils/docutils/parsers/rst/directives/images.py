@@ -58,17 +58,19 @@ class Image(Directive):
                    'name': directives.unchanged}
 
     def run(self):
-        if 'align' in self.options:
-            if isinstance(self.state, states.SubstitutionDef):
-                # Check for align_v_values.
-                if self.options['align'] not in self.align_v_values:
-                    raise self.error(
-                        'Error in "%s" directive: "%s" is not a valid value '
-                        'for the "align" option within a substitution '
-                        'definition.  Valid values for "align" are: "%s".'
-                        % (self.name, self.options['align'],
-                           '", "'.join(self.align_v_values)))
-            elif self.options['align'] not in self.align_h_values:
+        if isinstance(self.state, states.SubstitutionDef):
+            if (
+                'align' in self.options
+                and self.options['align'] not in self.align_v_values
+            ):
+                raise self.error(
+                    'Error in "%s" directive: "%s" is not a valid value '
+                    'for the "align" option within a substitution '
+                    'definition.  Valid values for "align" are: "%s".'
+                    % (self.name, self.options['align'],
+                       '", "'.join(self.align_v_values)))
+        elif self.options['align'] not in self.align_h_values:
+            if 'align' in self.options:
                 raise self.error(
                     'Error in "%s" directive: "%s" is not a valid value for '
                     'the "align" option.  Valid values for "align" are: "%s".'
@@ -81,7 +83,7 @@ class Image(Directive):
         if 'target' in self.options:
             block = states.escape2null(
                 self.options['target']).splitlines()
-            block = [line for line in block]
+            block = list(block)
             target_type, data = self.state.parse_target(
                 block, self.block_text, self.lineno)
             if target_type == 'refuri':
@@ -98,11 +100,10 @@ class Image(Directive):
         set_classes(self.options)
         image_node = nodes.image(self.block_text, **self.options)
         self.add_name(image_node)
-        if reference_node:
-            reference_node += image_node
-            return messages + [reference_node]
-        else:
+        if not reference_node:
             return messages + [image_node]
+        reference_node += image_node
+        return messages + [reference_node]
 
 
 class Figure(Image):

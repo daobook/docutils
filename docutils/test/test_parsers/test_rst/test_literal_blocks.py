@@ -19,34 +19,38 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['indented_literal_blocks'] = [
-["""\
+totest = {
+    'indented_literal_blocks': [
+        [
+            """\
 A paragraph::
 
     A literal block.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
     <literal_block xml:space="preserve">
         A literal block.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph with a space after the colons:: \n\
 
     A literal block.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph with a space after the colons:
     <literal_block xml:space="preserve">
         A literal block.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph::
 
     A literal block.
@@ -59,7 +63,7 @@ Another paragraph::
 
 A final paragraph.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
@@ -72,15 +76,17 @@ A final paragraph.
         With two blank lines following.
     <paragraph>
         A final paragraph.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph
 on more than
 one line::
 
     A literal block.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph
@@ -88,15 +94,17 @@ one line::
         one line:
     <literal_block xml:space="preserve">
         A literal block.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph
 on more than
 one line::
     A literal block
     with no blank line above.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph
@@ -108,14 +116,16 @@ one line::
     <literal_block xml:space="preserve">
         A literal block
         with no blank line above.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph::
 
     A literal block.
 no blank line
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
@@ -126,8 +136,10 @@ no blank line
             Literal block ends without a blank line; unexpected unindent.
     <paragraph>
         no blank line
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 A paragraph\\::
 
     A literal block.
@@ -136,7 +148,7 @@ A paragraph\::
 
     Not a literal block.
 """,
-r"""<document source="test data">
+            r"""<document source="test data">
     <paragraph>
         A paragraph\:
     <literal_block xml:space="preserve">
@@ -146,8 +158,10 @@ r"""<document source="test data">
     <block_quote>
         <paragraph>
             Not a literal block.
-"""],
-[r"""
+""",
+        ],
+        [
+            r"""
 \\::
 
     A literal block.
@@ -156,7 +170,7 @@ r"""<document source="test data">
 
     Not a literal block.
 """,
-r"""<document source="test data">
+            r"""<document source="test data">
     <paragraph>
         \:
     <literal_block xml:space="preserve">
@@ -166,40 +180,46 @@ r"""<document source="test data">
     <block_quote>
         <paragraph>
             Not a literal block.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph: ::
 
     A literal block.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
     <literal_block xml:space="preserve">
         A literal block.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph:
 
 ::
 
     A literal block.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
     <literal_block xml:space="preserve">
         A literal block.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph:
 ::
 
     A literal block.
 """,
-"""\
+            """\
 <document source="test data">
     <system_message level="1" line="2" source="test data" type="INFO">
         <paragraph>
@@ -209,27 +229,31 @@ A paragraph:
         A paragraph:
     <literal_block xml:space="preserve">
         A literal block.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph:
 
 ::
 
     A literal block.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
     <literal_block xml:space="preserve">
         A literal block.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph::
 
 Not a literal block.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
@@ -238,8 +262,10 @@ Not a literal block.
             Literal block expected; none found.
     <paragraph>
         Not a literal block.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph::
 
     A wonky literal block.
@@ -247,7 +273,7 @@ A paragraph::
 
     Literal line 3.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
@@ -256,67 +282,76 @@ A paragraph::
         Literal line 2.
         \n\
           Literal line 3.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 EOF, even though a literal block is indicated::
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         EOF, even though a literal block is indicated:
     <system_message level="2" line="2" source="test data" type="WARNING">
         <paragraph>
             Literal block expected; none found.
-"""],
-]
-
-totest['quoted_literal_blocks'] = [
-["""\
+""",
+        ],
+    ],
+    'quoted_literal_blocks': [
+        [
+            """\
 A paragraph::
 
 > A literal block.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
     <literal_block xml:space="preserve">
         > A literal block.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph::
 
 
 > A literal block.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
     <literal_block xml:space="preserve">
         > A literal block.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph::
 
 > A literal block.
 > Line 2.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
     <literal_block xml:space="preserve">
         > A literal block.
         > Line 2.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph::
 
 > A literal block.
   Indented line.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
@@ -328,14 +363,16 @@ A paragraph::
     <block_quote>
         <paragraph>
             Indented line.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph::
 
 > A literal block.
 Text.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
@@ -346,14 +383,16 @@ Text.
             Inconsistent literal block quoting.
     <paragraph>
         Text.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 A paragraph::
 
 > A literal block.
 $ Inconsistent line.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         A paragraph:
@@ -364,8 +403,10 @@ $ Inconsistent line.
             Inconsistent literal block quoting.
     <paragraph>
         $ Inconsistent line.
-"""],
-]
+""",
+        ],
+    ],
+}
 
 
 if __name__ == '__main__':

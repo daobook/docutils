@@ -19,10 +19,10 @@ def suite():
     s.generateTests(totest)
     return s
 
-totest = {}
-
-totest['option_lists'] = [
-["""\
+totest = {
+    'option_lists': [
+        [
+            """\
 Short options:
 
 -a       option -a
@@ -31,7 +31,7 @@ Short options:
 
 -c name  option -c
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Short options:
@@ -64,8 +64,10 @@ Short options:
             <description>
                 <paragraph>
                     option -c
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Long options:
 
 --aaaa       option --aaaa
@@ -74,7 +76,7 @@ Long options:
 --d-e-f-g    option --d-e-f-g
 --h_i_j_k    option --h_i_j_k
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Long options:
@@ -123,8 +125,10 @@ Long options:
             <description>
                 <paragraph>
                     option --h_i_j_k
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Old GNU-style options:
 
 +a       option +a
@@ -133,7 +137,7 @@ Old GNU-style options:
 
 +c name  option +c
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Old GNU-style options:
@@ -166,8 +170,10 @@ Old GNU-style options:
             <description>
                 <paragraph>
                     option +c
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 VMS/DOS-style options:
 
 /A        option /A
@@ -176,7 +182,7 @@ VMS/DOS-style options:
 /DDD string  option /DDD
 /EEE=int  option /EEE
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         VMS/DOS-style options:
@@ -227,8 +233,10 @@ VMS/DOS-style options:
             <description>
                 <paragraph>
                     option /EEE
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Mixed short, long, and VMS/DOS options:
 
 -a           option -a
@@ -238,7 +246,7 @@ Mixed short, long, and VMS/DOS options:
 -e string    option -e
 /F file      option /F
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Mixed short, long, and VMS/DOS options:
@@ -299,14 +307,16 @@ Mixed short, long, and VMS/DOS options:
             <description>
                 <paragraph>
                     option /F
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Aliased options:
 
 -a, --aaaa, /A                 option -a, --aaaa, /A
 -b file, --bbbb=file, /B file  option -b, --bbbb, /B
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Aliased options:
@@ -345,8 +355,10 @@ Aliased options:
             <description>
                 <paragraph>
                     option -b, --bbbb, /B
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Multiple lines in descriptions, aligned:
 
 -a       option -a, line 1
@@ -354,7 +366,7 @@ Multiple lines in descriptions, aligned:
 -b file  option -b, line 1
          line 2
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Multiple lines in descriptions, aligned:
@@ -379,8 +391,10 @@ Multiple lines in descriptions, aligned:
                 <paragraph>
                     option -b, line 1
                     line 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Multiple lines in descriptions, not aligned:
 
 -a  option -a, line 1
@@ -388,7 +402,7 @@ Multiple lines in descriptions, not aligned:
 -b file  option -b, line 1
     line 2
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Multiple lines in descriptions, not aligned:
@@ -413,8 +427,10 @@ Multiple lines in descriptions, not aligned:
                 <paragraph>
                     option -b, line 1
                     line 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Descriptions begin on next line:
 
 -a
@@ -424,7 +440,7 @@ Descriptions begin on next line:
     option -b, line 1
     line 2
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Descriptions begin on next line:
@@ -449,8 +465,10 @@ Descriptions begin on next line:
                 <paragraph>
                     option -b, line 1
                     line 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Multiple body elements in descriptions:
 
 -a  option -a, para 1
@@ -461,7 +479,7 @@ Multiple body elements in descriptions:
 
     para 2
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Multiple body elements in descriptions:
@@ -488,18 +506,22 @@ Multiple body elements in descriptions:
                     option -b, para 1
                 <paragraph>
                     para 2
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 --option
 empty item above, no blank line
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         --option
         empty item above, no blank line
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 An option list using equals:
 
 --long1=arg1  Description 1
@@ -519,7 +541,7 @@ An option list using mixed delimiters in one line:
 
 --long1=arg1, --long2 arg2  Description
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         An option list using equals:
@@ -608,8 +630,10 @@ An option list using mixed delimiters in one line:
             <description>
                 <paragraph>
                     Description
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Some edge cases:
 
 --option=arg arg  too many arguments
@@ -642,7 +666,7 @@ These next ones should be simple paragraphs:
 
 -1 and this one too.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Some edge cases:
@@ -678,8 +702,10 @@ These next ones should be simple paragraphs:
         --1
     <paragraph>
         -1 and this one too.
-"""],
-["""\
+""",
+        ],
+        [
+            """\
 Complex optargs:
 
 --source-url=<URL>      Use the supplied <URL> verbatim.
@@ -692,7 +718,7 @@ Complex optargs:
 -d <src dest>           Use diff from <src> to <dest>.
 --bogus=<x y z>         Bogus 3D coordinates.
 """,
-"""\
+            """\
 <document source="test data">
     <paragraph>
         Complex optargs:
@@ -766,8 +792,10 @@ Complex optargs:
             <description>
                 <paragraph>
                     Bogus 3D coordinates.
-"""],
-]
+""",
+        ],
+    ]
+}
 
 
 if __name__ == '__main__':
